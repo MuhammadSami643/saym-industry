@@ -1,34 +1,37 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import "./index.css";
 import "./globals.css";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import SiteShell from "./components/SiteShell";
 
 export const metadata: Metadata = {
-  title: "ZYPFIT | Private Label Activewear Manufacturer in Pakistan",
-  description: "Private label activewear manufacturer in Sialkot, Pakistan for custom fitness and gym wear, low MOQ orders, premium fabrics and worldwide shipping.",
+  title: "Private Label Activewear Manufacturer in Pakistan | ZYPFIT",
+  description: "Private label activewear, fitness wear, sportswear, and gym apparel manufacturer from Sialkot, Pakistan for startup brands and established international buyers. Low MOQ, custom sampling, and worldwide export.",
+  icons: {
+    icon: "/images/favicon.png",
+    shortcut: "/images/favicon.png",
+    apple: "/images/favicon.png",
+  },
+  keywords: [
+    "private label activewear manufacturer",
+    "fitness wear manufacturer pakistan",
+    "sportswear sialkot",
+    "gym wear wholesale",
+    "custom sportswear manufacturer"
+  ]
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">
-        <Navbar />
-        <main style={{ flex: 1 }}>{children}</main>
-        <Footer />
+    <html lang="en">
+      <head>
+        <link rel="icon" href="/images/favicon.png" type="image/png" />
+      </head>
+      <body>
+        <SiteShell>{children}</SiteShell>
       </body>
     </html>
   );

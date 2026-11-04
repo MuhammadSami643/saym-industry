@@ -1,7 +1,51 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async rewrites() {
+    return [
+      { source: '/categories', destination: '/products' },
+      { source: '/product-catalog', destination: '/products' },
+      { source: '/contact-us', destination: '/contact' },
+      { source: '/manufacturing-capabilities', destination: '/manufacturing' },
+      { source: '/private-label-manufacturing', destination: '/private-label' },
+      { source: '/sampling-process', destination: '/manufacturing' },
+      { source: '/quality-control', destination: '/manufacturing' },
+      { source: '/shipping-export', destination: '/manufacturing' },
+      { source: '/low-moq-activewear-manufacturer', destination: '/private-label' },
+      { source: '/activewear-manufacturer-for-startups', destination: '/private-label' },
+      { source: '/private-label-activewear-manufacturer', destination: '/private-label' },
+      { source: '/custom-activewear-manufacturer', destination: '/fitness-wear-manufacturer' },
+      { source: '/custom-leggings-manufacturer', destination: '/fitness-wear-manufacturer' },
+      { source: '/custom-sports-bra-manufacturer', destination: '/fitness-wear-manufacturer' },
+      { source: '/private-label-gym-wear-manufacturer', destination: '/fitness-wear-manufacturer' },
+      { source: '/private-label-fitness-wear-manufacturer', destination: '/fitness-wear-manufacturer' },
+      { source: '/oem-activewear-manufacturer', destination: '/private-label' },
+      { source: '/oem-gym-wear-manufacturer', destination: '/private-label' },
+      { source: '/white-label-activewear-manufacturer', destination: '/private-label' },
+      { source: '/custom-athleisure-manufacturer', destination: '/fitness-wear-manufacturer' },
+      { source: '/activewear-manufacturer-for-fitness-influencers', destination: '/private-label' },
+      { source: '/activewear-manufacturer-for-gym-owners', destination: '/private-label' },
+      { source: '/activewear-manufacturer-for-small-brands', destination: '/private-label' },
+      { source: '/sustainable-activewear-manufacturer-pakistan', destination: '/manufacturing' },
+      { source: '/gym-wear-manufacturer-pakistan', destination: '/fitness-wear-manufacturer' },
+      { source: '/activewear-manufacturer-sialkot', destination: '/fitness-wear-manufacturer-sialkot' },
+      { source: '/leggings-manufacturer-pakistan', destination: '/fitness-wear-manufacturer' },
+      { source: '/sports-bra-manufacturer-pakistan', destination: '/fitness-wear-manufacturer' },
+      { source: '/yoga-wear-manufacturer-pakistan', destination: '/fitness-wear-manufacturer' },
+      { source: '/wholesale-activewear-suppliers-uk', destination: '/private-label' },
+      { source: '/wholesale-activewear-suppliers-usa', destination: '/private-label' },
+      { source: '/wholesale-fitness-apparel-suppliers-europe', destination: '/private-label' },
+      { source: '/private-label-activewear-manufacturer-europe', destination: '/private-label' },
+      { source: '/private-label-activewear-manufacturer-uk', destination: '/private-label' },
+      { source: '/private-label-activewear-manufacturer-usa', destination: '/private-label' },
+      { source: '/private-label-activewear-manufacturer-germany', destination: '/private-label' },
+      { source: '/private-label-activewear-manufacturer-france', destination: '/private-label' },
+      { source: '/private-label-activewear-manufacturer-netherlands', destination: '/private-label' },
+      { source: '/private-label-activewear-manufacturer-italy', destination: '/private-label' },
+      { source: '/private-label-activewear-manufacturer-spain', destination: '/private-label' },
+      { source: '/fitness-wear-manufacturer/joggers/:path*', destination: '/products' },
+    ];
+  },
 };
 
 export default nextConfig;
