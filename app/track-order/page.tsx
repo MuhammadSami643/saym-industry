@@ -25,7 +25,7 @@ interface OrderRecord {
   estimatedRemainingTime: string;
   carrier: string;
   trackingNumber: string;
-  overallStatus: 'Tech Pack' | 'Cutting' | 'Stitching & Branding' | 'Quality Control' | 'Pressing & Packing' | 'Dispatched';
+  overallStatus: 'Tech Pack' | 'Cutting' | 'Stitching & Branding' | 'Quality Control' | 'Steam Pressing' | 'Packaging' | 'Dispatched';
   milestones: OrderMilestone[];
 }
 
@@ -42,7 +42,7 @@ const DEMO_ORDERS: Record<string, OrderRecord> = {
     estimatedRemainingTime: '3-4 Working Days to Air Cargo Departure',
     carrier: 'DHL Express Worldwide Air Cargo',
     trackingNumber: 'DHL-PK-9821449012',
-    overallStatus: 'Pressing & Packing',
+    overallStatus: 'Steam Pressing',
     milestones: [
       {
         stage: '01',
@@ -82,16 +82,25 @@ const DEMO_ORDERS: Record<string, OrderRecord> = {
       },
       {
         stage: '05',
-        title: '♨️ Industrial Steam Pressing & Custom Packaging',
-        desc: 'Heavy vacuum steam ironing, woven neck label verification, frosted zipper polybagging, and export master carton packing.',
+        title: '♨️ Industrial Steam Pressing',
+        desc: 'Heavy vacuum steam ironing, crease removal, thread cleanup, and fabric shape stabilization.',
         completed: false,
         active: true,
-        date: 'In Progress (Nov 14-16)',
-        estimatedDuration: '2 Business Days (Active Now)'
+        date: 'In Progress (Nov 14-15)',
+        estimatedDuration: '24-48 Hours (Active Now)'
       },
       {
         stage: '06',
-        title: 'Export Customs Clearance & Air Dispatch',
+        title: '📦 Custom Retail Packaging',
+        desc: 'Woven neck label verification, hangtag barcode attachment, individual frosted biodegradable zipper polybagging, and export master carton sealing.',
+        completed: false,
+        active: false,
+        date: 'Scheduled (Nov 16-17)',
+        estimatedDuration: '24 Hours (Next Step)'
+      },
+      {
+        stage: '07',
+        title: '✈️ Export Customs Clearance & Air Dispatch',
         desc: 'Sialkot Dry Port customs clearance to DHL Hub & Air Bill of Lading departure.',
         completed: false,
         active: false,
@@ -152,16 +161,25 @@ const DEMO_ORDERS: Record<string, OrderRecord> = {
       },
       {
         stage: '05',
-        title: '♨️ Steam Pressing & Retail Polybag Packing',
+        title: '♨️ Industrial Steam Pressing',
+        desc: 'Crease removal and fabric stabilization.',
+        completed: true,
+        active: false,
+        date: 'Nov 10, 2026',
+        estimatedDuration: '12 Hours'
+      },
+      {
+        stage: '06',
+        title: '📦 Custom Retail Packaging',
         desc: 'Individual barcoded packaging & hangtag attached.',
         completed: true,
         active: false,
         date: 'Nov 10, 2026',
-        estimatedDuration: '24 Hours'
+        estimatedDuration: '12 Hours'
       },
       {
-        stage: '06',
-        title: 'Sample Dispatched via FedEx Priority',
+        stage: '07',
+        title: '✈️ Sample Dispatched via FedEx Priority',
         desc: 'In transit to Heathrow International Airport.',
         completed: true,
         active: false,
@@ -242,16 +260,25 @@ export default function TrackOrderPage() {
           },
           {
             stage: '05',
-            title: '♨️ Industrial Steam Pressing & Custom Packaging',
-            desc: 'Vacuum steam ironing, brand tags, barcode labeling, and individual frosted polybags.',
+            title: '♨️ Industrial Steam Pressing',
+            desc: 'Vacuum steam ironing, crease removal, thread trimming, and garment shape stabilization.',
             completed: false,
             active: false,
             date: 'Scheduled',
-            estimatedDuration: '2 Days'
+            estimatedDuration: '24-48 Hours'
           },
           {
             stage: '06',
-            title: 'Customs Clearance & Air Cargo Dispatch',
+            title: '📦 Custom Retail Packaging',
+            desc: 'Brand woven tags, hangtags, barcodes, individual frosted polybags, and master cartons.',
+            completed: false,
+            active: false,
+            date: 'Scheduled',
+            estimatedDuration: '24 Hours'
+          },
+          {
+            stage: '07',
+            title: '✈️ Customs Clearance & Air Cargo Dispatch',
             desc: 'Dry Port handover, DHL/FedEx AWB tracking issuance, and air freight departure.',
             completed: false,
             active: false,
@@ -307,7 +334,7 @@ export default function TrackOrderPage() {
               onClick={() => { setSearchInput('BRE-2026-9014'); setCurrentOrder(DEMO_ORDERS['BRE-2026-9014']); }}
               style={{ background: '#f1f5f9', border: '1px solid #cbd5e1', padding: '4px 10px', borderRadius: '6px', cursor: 'pointer', fontWeight: 700 }}
             >
-              BRE-2026-9014 (Bulk Hoodies - Pressing &amp; Packing)
+              BRE-2026-9014 (Bulk Hoodies - Steam Pressing)
             </button>
             <button
               type="button"
@@ -392,14 +419,14 @@ export default function TrackOrderPage() {
               </div>
             </div>
 
-            {/* 6-Step Visual Timeline */}
+            {/* 7-Step Visual Timeline */}
             <div style={{ padding: '36px 28px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px', flexWrap: 'wrap', gap: '10px' }}>
                 <h3 style={{ fontSize: '18px', fontWeight: 800, color: '#0f172a', margin: 0 }}>
                   Manufacturing Stage Progression &amp; Timeline
                 </h3>
                 <span style={{ fontSize: '12px', color: '#64748b', background: '#f1f5f9', padding: '4px 10px', borderRadius: '6px', fontWeight: 600 }}>
-                  6 Production Checkpoints
+                  7 Production Checkpoints
                 </span>
               </div>
 

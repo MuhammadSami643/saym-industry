@@ -10,7 +10,7 @@ interface BatchOrder {
   item: string;
   type: 'Bulk Production' | 'Sample Prototype';
   quantity: number;
-  stage: 'Tech Pack' | 'Cutting' | 'Stitching & Branding' | 'Quality Control' | 'Pressing & Packing' | 'Dispatched';
+  stage: 'Tech Pack' | 'Cutting' | 'Stitching & Branding' | 'Quality Control' | 'Steam Pressing' | 'Packaging' | 'Dispatched';
   progress: number;
   startDate: string;
   targetDispatch: string;
@@ -91,12 +91,13 @@ const INITIAL_BATCHES: BatchOrder[] = [
   }
 ];
 
-const STAGES: ('Tech Pack' | 'Cutting' | 'Stitching & Branding' | 'Quality Control' | 'Pressing & Packing' | 'Dispatched')[] = [
+const STAGES: ('Tech Pack' | 'Cutting' | 'Stitching & Branding' | 'Quality Control' | 'Steam Pressing' | 'Packaging' | 'Dispatched')[] = [
   'Tech Pack',
   'Cutting',
   'Stitching & Branding',
   'Quality Control',
-  'Pressing & Packing',
+  'Steam Pressing',
+  'Packaging',
   'Dispatched'
 ];
 
