@@ -167,15 +167,15 @@ export default function Home() {
                 <p className="muted">Build a focused first collection or expand an established range with coordinated fabrics, colors, branding, and packaging.</p>
             </div>
             <div className="home-card-grid">
-                                    <a href="/fitness-wear-manufacturer" className="home-card category-card" aria-label="Explore Fitness Wear manufacturing">
+                                    <a href="/fitness-wear" className="home-card category-card" aria-label="Explore Fitness Wear manufacturing">
                                                     <img src="/images/categories/1776540259_fitness-wear.webp" alt="Private label fitness wear manufacturer in Sialkot Pakistan" loading="lazy" decoding="async" />
                                                 <div className="category-card-body">
-                            <h3>Fitness Wear</h3>
+                            <h3>Fitness &amp; Activewear</h3>
                             <p className="muted">Cut-and-sew fitness apparel development, private labeling and bulk manufacturing for fitness brands.</p>
                             <span className="card-action">Explore Fitness Wear</span>
                         </div>
                     </a>
-                                    <a href="/sportswear-manufacturer-exporter" className="home-card category-card" aria-label="Explore Sports Wear manufacturing">
+                                    <a href="/sportswear" className="home-card category-card" aria-label="Explore Sports Wear manufacturing">
                                                     <img src="/images/categories/1776540279_sports-wear.webp" alt="Custom sportswear manufacturer and wholesale supplier in Sialkot Pakistan" loading="lazy" decoding="async" />
                                                 <div className="category-card-body">
                             <h3>Sports Wear</h3>
@@ -183,18 +183,18 @@ export default function Home() {
                             <span className="card-action">Explore Sports Wear</span>
                         </div>
                     </a>
-                                    <a href="/boxing-gear-manufacturer-bulk" className="home-card category-card" aria-label="Explore Boxing Wear manufacturing">
+                                    <a href="/boxing-gear" className="home-card category-card" aria-label="Explore Boxing Wear manufacturing">
                                                     <img src="/images/categories/1776540301_boxing-wear.webp" alt="Custom boxing wear and fight gear manufacturer in Sialkot Pakistan" loading="lazy" decoding="async" />
                                                 <div className="category-card-body">
-                            <h3>Boxing Wear</h3>
+                            <h3>Boxing &amp; Combat Gear</h3>
                             <p className="muted">Boxing wear manufacturer in Sialkot, Pakistan producing custom boxing trunks, fight shorts, rash guards, corner wear, and private label combat sports apparel.</p>
-                            <span className="card-action">Explore Boxing Wear</span>
+                            <span className="card-action">Explore Boxing Gear</span>
                         </div>
                     </a>
-                                    <a href="/streetwear-manufacturer-pakistan" className="home-card category-card" aria-label="Explore Streetwear manufacturing">
+                                    <a href="/streetwear" className="home-card category-card" aria-label="Explore Streetwear manufacturing">
                                                     <img src="/images/categories/1789894942_streetwear.webp" alt="Bin Rasool Enterprises branded oversized hoodie, baggy sweatpants and varsity jacket in a colorful studio" loading="lazy" decoding="async" />
                                                 <div className="category-card-body">
-                            <h3>Streetwear</h3>
+                            <h3>Streetwear &amp; Hoodies</h3>
                             <p className="muted">Cut-and-sew streetwear and winter collections for clothing brands: hoodies, sweatshirts, relaxed bottoms, matching sets and jacket enquiries.</p>
                             <span className="card-action">Explore Streetwear</span>
                         </div>

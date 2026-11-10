@@ -50,7 +50,7 @@ export default function Footer() {
               <p className="footer-title">Services</p>
               <ul className="footer-list">
                 <li><Link href="/private-label">Private Label</Link></li>
-                <li><Link href="/fitness-wear-manufacturer">Custom Activewear</Link></li>
+                <li><Link href="/fitness-wear">Custom Activewear</Link></li>
                 <li><Link href="/linesheet" style={{ color: 'var(--brand-orange)', fontWeight: 700 }}>📄 2026 Line Sheet (PDF)</Link></li>
                 <li><Link href="/private-label#low-moq">Low MOQ Production</Link></li>
                 <li><Link href="/manufacturing#sampling">Sampling</Link></li>

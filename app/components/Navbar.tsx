@@ -168,14 +168,14 @@ export default function Navbar() {
                   Categories <span className="chevron" aria-hidden="true"></span>
                 </button>
                 <div className="dropdown-menu">
-                  <Link href="/fitness-wear-manufacturer" onClick={handleLinkClick}>Fitness Wear</Link>
-                  <Link href="/sportswear-manufacturer-exporter" onClick={handleLinkClick}>Sports Wear &amp; Teamwear</Link>
-                  <Link href="/tracksuits-manufacturer-pakistan" onClick={handleLinkClick}>Tracksuits &amp; Warmups</Link>
-                  <Link href="/boxing-gear-manufacturer-bulk" onClick={handleLinkClick}>Boxing &amp; Martial Arts</Link>
+                  <Link href="/fitness-wear" onClick={handleLinkClick}>Fitness &amp; Activewear</Link>
+                  <Link href="/sportswear" onClick={handleLinkClick}>Sports Wear &amp; Teamwear</Link>
+                  <Link href="/tracksuits" onClick={handleLinkClick}>Tracksuits &amp; Warmups</Link>
+                  <Link href="/boxing-gear" onClick={handleLinkClick}>Boxing &amp; Martial Arts</Link>
                   <Link href="/compression-wear-manufacturer-pakistan" onClick={handleLinkClick}>Compression &amp; Baselayers</Link>
-                  <Link href="/streetwear-manufacturer-pakistan" onClick={handleLinkClick}>Streetwear &amp; Outerwear</Link>
-                  <Link href="/hoodies-manufacturer-pakistan" onClick={handleLinkClick}>Hoodies &amp; Sweatshirts</Link>
-                  <Link href="/jeans-manufacturer-pakistan" onClick={handleLinkClick}>Jeans &amp; Denim</Link>
+                  <Link href="/streetwear" onClick={handleLinkClick}>Streetwear &amp; Outerwear</Link>
+                  <Link href="/custom-hoodies" onClick={handleLinkClick}>Hoodies &amp; Sweatshirts</Link>
+                  <Link href="/custom-jeans" onClick={handleLinkClick}>Jeans &amp; Denim</Link>
                   <Link href="/products" onClick={handleLinkClick} style={{ fontWeight: 700, color: 'var(--brand-orange-dark, #c57608)' }}>All Products Catalog →</Link>
                 </div>
               </div>
