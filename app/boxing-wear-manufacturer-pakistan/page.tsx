@@ -1,8 +1,21 @@
+import FaqSection from '../components/FaqSection';
+import { BOXING_WEAR_FAQS } from '../lib/faqs';
 import Link from 'next/link';
+import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd';
+import type { Metadata } from 'next';
 
-export const metadata = {
-  title: "Boxing Wear Manufacturer Pakistan | Fight Gear & Apparel",
-  description: "Traditional satin boxing trunks, satin fight robes, custom corner jackets, MMA fight shorts, and compression rash guards with custom embroidery and sublimation."
+export const metadata: Metadata = {
+  title: "Boxing Wear & Combat Apparel Manufacturer Pakistan | Bin Rasool Enterprises",
+  description: "Traditional satin boxing trunks, satin fight robes, custom corner jackets, MMA fight shorts, and compression rash guards with custom embroidery and sublimation.",
+  alternates: {
+    canonical: '/boxing-wear-manufacturer-pakistan',
+  },
+  openGraph: {
+    title: "Boxing Wear & Fight Gear Manufacturer Sialkot | Bin Rasool Enterprises",
+    description: "Export combat gear, satin boxing shorts, fight robes, MMA rash guards, and BJJ gear manufactured in Sialkot.",
+    url: "/boxing-wear-manufacturer-pakistan",
+    images: [{ url: "/images/categories/1776540291_boxing-wear.webp", width: 1200, height: 630 }],
+  },
 };
 
 export default function CategoryPage() {
@@ -11,9 +24,13 @@ export default function CategoryPage() {
       {/* Hero Banner */}
       <section className="hero" style={{ padding: '80px 0 60px' }}>
         <div className="container">
-          <div className="breadcrumbs" style={{ color: '#cbd5e1' }}>
-            <Link href="/" style={{ color: 'var(--brand-orange)' }}>Home</Link> / <span>Boxing Wear</span>
-          </div>
+          <BreadcrumbJsonLd
+            items={[
+              { label: 'Home', href: '/' },
+              { label: 'Categories', href: '/products' },
+              { label: 'Boxing & Combat Apparel' },
+            ]}
+          />
           <h1 style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)', margin: '16px 0 12px' }}>
             Boxing Wear & Fight Gear Manufacturer in Sialkot, Pakistan
           </h1>
@@ -89,6 +106,13 @@ export default function CategoryPage() {
           </div>
         </div>
       </section>
+    
+      {/* Category Specific FAQs */}
+      <FaqSection
+        title="Boxing & Combat Fightwear FAQs"
+        categoryBadge="Boxing Wear"
+        items={BOXING_WEAR_FAQS}
+      />
     </div>
   );
 }

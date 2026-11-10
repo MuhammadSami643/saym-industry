@@ -1,8 +1,21 @@
+import FaqSection from '../components/FaqSection';
+import { SPORTSWEAR_FAQS } from '../lib/faqs';
 import Link from 'next/link';
+import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd';
+import type { Metadata } from 'next';
 
-export const metadata = {
-  title: "Sportswear Manufacturer Pakistan | Private Label & Wholesale",
-  description: "Custom performance teamwear, tracksuits, polyester tees, compression apparel, and athletic shorts manufactured in Sialkot, Pakistan."
+export const metadata: Metadata = {
+  title: "Sportswear Manufacturer Pakistan | Private Label & Wholesale Factory",
+  description: "Custom performance teamwear, tracksuits, polyester tees, compression apparel, and athletic shorts manufactured in Sialkot, Pakistan. Low MOQ, fast sampling & export.",
+  alternates: {
+    canonical: '/sportswear-manufacturer-pakistan',
+  },
+  openGraph: {
+    title: "Sportswear Manufacturer Pakistan | Bin Rasool Enterprises",
+    description: "Export manufacturer for custom teamwear, tracksuits, polyester tees, and athletic apparel from Sialkot.",
+    url: "/sportswear-manufacturer-pakistan",
+    images: [{ url: "/images/categories/1776540279_sports-wear.webp", width: 1200, height: 630 }],
+  },
 };
 
 export default function CategoryPage() {
@@ -11,9 +24,13 @@ export default function CategoryPage() {
       {/* Hero Banner */}
       <section className="hero" style={{ padding: '80px 0 60px' }}>
         <div className="container">
-          <div className="breadcrumbs" style={{ color: '#cbd5e1' }}>
-            <Link href="/" style={{ color: 'var(--brand-orange)' }}>Home</Link> / <span>Sports Wear</span>
-          </div>
+          <BreadcrumbJsonLd
+            items={[
+              { label: 'Home', href: '/' },
+              { label: 'Categories', href: '/products' },
+              { label: 'Sportswear Manufacturer Pakistan' },
+            ]}
+          />
           <h1 style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)', margin: '16px 0 12px' }}>
             Sportswear Manufacturer in Pakistan for International Brands
           </h1>
@@ -89,6 +106,13 @@ export default function CategoryPage() {
           </div>
         </div>
       </section>
+    
+      {/* Category Specific FAQs */}
+      <FaqSection
+        title="Sportswear & Sublimation Manufacturing FAQs"
+        categoryBadge="Sportswear"
+        items={SPORTSWEAR_FAQS}
+      />
     </div>
   );
 }

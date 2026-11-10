@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: "Private Label Activewear Manufacturing | ZYPFIT Pakistan",
+  title: "Private Label Activewear Manufacturing | Bin Rasool Enterprises Pakistan",
   description: "Comprehensive private label manufacturing services: custom woven tags, heat transfer logos, custom packaging, low MOQs, and full cut-and-sew production in Sialkot, Pakistan."
 };
 
@@ -27,7 +27,7 @@ export default function PrivateLabelPage() {
                 PRIVATE LABEL MANUFACTURER &nbsp;&nbsp;• &nbsp;SIALKOT</div>
                 <h1>Private Label Manufacturing for Sportswear, Fitness Wear & Boxing Wear Brands</h1>
                 <p>
-                    ZYPFIT helps brands, gyms, clubs, wholesalers, fight brands, and online sellers create custom apparel under their own label. From Sialkot, Pakistan, we support private label sportswear manufacturing with product development, custom branding, sampling, flexible MOQ options, and export-ready production.
+                    Bin Rasool Enterprises helps brands, gyms, clubs, wholesalers, fight brands, and online sellers create custom apparel under their own label. From Sialkot, Pakistan, we support private label sportswear manufacturing with product development, custom branding, sampling, flexible MOQ options, and export-ready production.
                 </p>
             </div>
             <div className="pl-summary">
@@ -47,7 +47,7 @@ export default function PrivateLabelPage() {
             </div>
             <div className="pl-note">
                 <p className="muted">
-                    Private label manufacturing allows you to sell custom sportswear, fitness wear, boxing wear, and activewear under your own brand identity while working with a manufacturer that handles sampling, construction, branding, and production. ZYPFIT supports buyers who want to launch new apparel collections or grow an existing product line with factory-direct manufacturing from Pakistan.
+                    Private label manufacturing allows you to sell custom sportswear, fitness wear, boxing wear, and activewear under your own brand identity while working with a manufacturer that handles sampling, construction, branding, and production. Bin Rasool Enterprises supports buyers who want to launch new apparel collections or grow an existing product line with factory-direct manufacturing from Pakistan.
                 </p>
                 <p className="muted">
                     We help with the details that make a product feel like your brand: labels, hang tags, packaging, logo placement, print or embroidery method, fabric selection, fit direction, color combinations, and finishing standards.
@@ -131,7 +131,7 @@ export default function PrivateLabelPage() {
         <span className="pl-label">Product Categories</span>
         <h2>Build a private label collection in focused apparel categories</h2>
         <p className="muted" style={{ 'maxWidth': '850px' }}>
-            ZYPFIT focuses on performance apparel categories where custom branding, fit, fabric, and durability matter for the buyer and the end customer.
+            Bin Rasool Enterprises focuses on performance apparel categories where custom branding, fit, fabric, and durability matter for the buyer and the end customer.
         </p>
 
         <div className="pl-category-grid">
@@ -161,7 +161,7 @@ export default function PrivateLabelPage() {
                 <span className="pl-label">Who We Support</span>
                 <h2>Private label manufacturing for brands at different stages</h2>
                 <p className="muted">
-                    Whether you are starting your first drop or expanding an existing collection, ZYPFIT can help you build a clearer path from product idea to manufactured apparel.
+                    Whether you are starting your first drop or expanding an existing collection, Bin Rasool Enterprises can help you build a clearer path from product idea to manufactured apparel.
                 </p>
             </div>
             <div>
@@ -205,7 +205,7 @@ export default function PrivateLabelPage() {
                     </div>
                                                         <div className="faq-item ">
                         <button type="button" className="faq-question" aria-expanded="false">
-                            <span>Can ZYPFIT make custom private label sportswear?</span>
+                            <span>Can Bin Rasool Enterprises make custom private label sportswear?</span>
                             <span className="faq-icon" aria-hidden="true">+</span>
                         </button>
                         <div className="faq-answer">

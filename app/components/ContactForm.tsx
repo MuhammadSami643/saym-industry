@@ -1,10 +1,14 @@
 "use client";
 
 import { useState } from 'react';
+import TechPackUploader from './TechPackUploader';
 
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [whatsAppLink, setWhatsAppLink] = useState<string | null>(null);
+  const [techpackUrl, setTechpackUrl] = useState<string | null>(null);
+  const [videoUrl, setVideoUrl] = useState<string | null>(null);
   const [error, setError] = useState('');
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -24,7 +28,9 @@ export default function ContactForm() {
           email: formData.get('email'),
           phone: formData.get('phone'),
           subject: formData.get('subject'),
-          details: formData.get('details')
+          details: formData.get('details'),
+          techpackUrl: techpackUrl,
+          videoUrl: videoUrl
         })
       });
 
@@ -35,6 +41,9 @@ export default function ContactForm() {
         setError(data.error || 'Failed to submit inquiry. Please try again.');
       } else {
         setSuccess(true);
+        if (data.whatsAppDirectUrl) {
+          setWhatsAppLink(data.whatsAppDirectUrl);
+        }
         form.reset();
       }
     } catch (err: any) {
@@ -52,7 +61,30 @@ export default function ContactForm() {
 
       {success && (
         <div className="alert-success" style={{ marginBottom: '20px' }}>
-          <strong>Thank you!</strong> Your manufacturing inquiry has been submitted successfully to our backend. Our production team will review your brief and contact you shortly.
+          <strong>Thank you!</strong> Your manufacturing inquiry has been submitted successfully. Our production team will review your brief and contact you shortly.
+          {whatsAppLink && (
+            <div style={{ marginTop: '14px' }}>
+              <a
+                href={whatsAppLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  background: '#22c55e',
+                  color: '#ffffff',
+                  padding: '9px 16px',
+                  borderRadius: '6px',
+                  fontWeight: 800,
+                  fontSize: '13px',
+                  textDecoration: 'none'
+                }}
+              >
+                <span>💬</span> Chat Directly on WhatsApp with Production Team ➔
+              </a>
+            </div>
+          )}
         </div>
       )}
 
@@ -93,6 +125,12 @@ export default function ContactForm() {
           placeholder="Please describe products, target fabrics, estimated order quantity, sizing, colors, branding requirements, and destination country."
         />
       </div>
+
+      <TechPackUploader
+        label="Attach Tech Pack, Vector Art, or Sample Video"
+        onUploaded={(url) => setTechpackUrl(url)}
+        onVideoUploaded={(url) => setVideoUrl(url)}
+      />
 
       <button type="submit" disabled={loading} className="btn btn-primary" style={{ width: '100%', marginTop: '10px' }}>
         {loading ? 'Submitting Inquiry...' : 'Submit Manufacturing Inquiry'}

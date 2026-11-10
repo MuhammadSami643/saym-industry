@@ -2,8 +2,8 @@ import ContactForm from '../components/ContactForm';
 import Link from 'next/link';
 
 export const metadata = {
-  title: "Contact ZYPFIT | Private Label Sportswear Manufacturer Pakistan",
-  description: "Contact ZYPFIT for private label sportswear, fitness wear, boxing wear, teamwear, activewear, sampling, wholesale manufacturing, and export production inquiries from Sialkot, Pakistan."
+  title: "Contact Bin Rasool Enterprises | Private Label Sportswear Manufacturer Pakistan",
+  description: "Contact Bin Rasool Enterprises for private label sportswear, fitness wear, boxing wear, teamwear, activewear, sampling, wholesale manufacturing, and export production inquiries from Sialkot, Pakistan."
 };
 
 export default function ContactPage() {
@@ -62,8 +62,8 @@ export default function ContactPage() {
                     <div>
                       <strong>Email Inquiries</strong>
                       <div>
-                        <a href="mailto:info@zypfit.com" style={{ color: 'var(--brand-orange-dark)', fontWeight: 700 }}>
-                          info@zypfit.com
+                        <a href="mailto:info@binrasoolenterprises.com" style={{ color: 'var(--brand-orange-dark)', fontWeight: 700 }}>
+                          info@binrasoolenterprises.com
                         </a>
                       </div>
                     </div>

@@ -11,6 +11,11 @@ const nextConfig: NextConfig = {
       { source: '/sampling-process', destination: '/manufacturing' },
       { source: '/quality-control', destination: '/manufacturing' },
       { source: '/shipping-export', destination: '/manufacturing' },
+      { source: '/hoodies', destination: '/hoodies-manufacturer-pakistan' },
+      { source: '/custom-hoodies', destination: '/hoodies-manufacturer-pakistan' },
+      { source: '/jeans', destination: '/jeans-manufacturer-pakistan' },
+      { source: '/denim', destination: '/jeans-manufacturer-pakistan' },
+      { source: '/custom-jeans', destination: '/jeans-manufacturer-pakistan' },
       { source: '/low-moq-activewear-manufacturer', destination: '/private-label' },
       { source: '/activewear-manufacturer-for-startups', destination: '/private-label' },
       { source: '/private-label-activewear-manufacturer', destination: '/private-label' },
@@ -43,6 +48,38 @@ const nextConfig: NextConfig = {
       { source: '/private-label-activewear-manufacturer-netherlands', destination: '/private-label' },
       { source: '/private-label-activewear-manufacturer-italy', destination: '/private-label' },
       { source: '/private-label-activewear-manufacturer-spain', destination: '/private-label' },
+      { source: '/private-label-activewear-manufacturer-australia', destination: '/private-label' },
+
+      // High-Converting Sialkot Export Niche Rewrites:
+      // 1. Martial Arts & MMA Combat Gear
+      { source: '/martial-arts-gear-manufacturer-pakistan', destination: '/boxing-gear-manufacturer-bulk' },
+      { source: '/bjj-gi-manufacturer-pakistan', destination: '/boxing-wear-manufacturer-pakistan' },
+      { source: '/custom-rashguard-manufacturer', destination: '/boxing-wear-manufacturer-pakistan' },
+      { source: '/mma-shorts-manufacturer', destination: '/boxing-gear-manufacturer-bulk' },
+
+      // 2. Custom Tracksuits & Warmups
+      { source: '/tracksuits-manufacturer-pakistan', destination: '/sportswear-manufacturer-pakistan' },
+      { source: '/custom-tracksuits', destination: '/sportswear-manufacturer-pakistan' },
+      { source: '/fleece-tracksuits-manufacturer', destination: '/sportswear-manufacturer-pakistan' },
+      { source: '/poly-tricot-warmup-manufacturer', destination: '/sportswear-manufacturer-pakistan' },
+
+      // 3. Compression & Baselayers
+      { source: '/compression-wear-manufacturer-pakistan', destination: '/fitness-wear-manufacturer' },
+      { source: '/custom-compression-tights', destination: '/fitness-wear-manufacturer' },
+      { source: '/athletic-baselayers-manufacturer', destination: '/fitness-wear-manufacturer' },
+
+      // 4. Sublimated Team Uniforms & Teamwear
+      { source: '/custom-teamwear-manufacturer-pakistan', destination: '/sportswear-manufacturer-exporter' },
+      { source: '/sublimated-jerseys-manufacturer', destination: '/sportswear-manufacturer-exporter' },
+      { source: '/soccer-uniforms-manufacturer-sialkot', destination: '/sportswear-manufacturer-exporter' },
+      { source: '/basketball-uniforms-manufacturer', destination: '/sportswear-manufacturer-exporter' },
+
+      // 5. Custom Jackets & Outerwear
+      { source: '/custom-jackets-manufacturer-pakistan', destination: '/streetwear-manufacturer-pakistan' },
+      { source: '/varsity-jackets-manufacturer-sialkot', destination: '/streetwear-manufacturer-pakistan' },
+      { source: '/puffer-jackets-manufacturer-bulk', destination: '/streetwear-manufacturer-pakistan' },
+      { source: '/windbreaker-jackets-manufacturer', destination: '/streetwear-manufacturer-pakistan' },
+
       { source: '/fitness-wear-manufacturer/joggers/:path*', destination: '/products' },
     ];
   },

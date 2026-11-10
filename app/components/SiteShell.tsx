@@ -3,6 +3,8 @@
 import { usePathname } from 'next/navigation';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import FloatingWhatsAppSelector from './FloatingWhatsAppSelector';
+import { CurrencyProvider } from '../lib/currency';
 
 export default function SiteShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -13,11 +15,11 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <>
+    <CurrencyProvider>
       <Navbar />
-      <main style={{ minHeight: '80vh' }}>{children}</main>
+      <main style={{ minHeight: '80vh', paddingTop: '85px' }}>{children}</main>
       <Footer />
-    </>
+      <FloatingWhatsAppSelector />
+    </CurrencyProvider>
   );
 }
-

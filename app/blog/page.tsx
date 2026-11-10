@@ -1,48 +1,10 @@
 import Link from 'next/link';
+import { BLOG_POSTS } from '../lib/blogs';
 
 export const metadata = {
-  title: "Private Label Activewear & Sportswear Manufacturing Blog | ZYPFIT",
+  title: "Private Label Activewear & Sportswear Manufacturing Blog | Bin Rasool Enterprises",
   description: "Insights, guides, and technical advice for starting, scaling, and manufacturing private label activewear, sportswear, and boxing apparel from Sialkot, Pakistan."
 };
-
-const POSTS = [
-  {
-    title: "How to Find a Private Label Sportswear Manufacturer in Pakistan",
-    category: "Sourcing Guide",
-    date: "October 2026",
-    excerpt: "Key factors to evaluate when selecting a factory in Sialkot: minimum order quantities, fabric capabilities, sampling turnaround, and export certifications."
-  },
-  {
-    title: "Activewear Branding Options: Logos, Labels, Tags and Packaging",
-    category: "Branding",
-    date: "October 2026",
-    excerpt: "A complete walkthrough of silicone heat transfers, high-density prints, woven neck labels, custom hangtags, and branded poly mailers for fitness apparel."
-  },
-  {
-    title: "How to Prepare a Tech Pack for Activewear Manufacturing",
-    category: "Product Development",
-    date: "September 2026",
-    excerpt: "What information your factory needs to cut patterns accurately: grade rules, flat sketches, stitch specifications, and bill of materials (BOM)."
-  },
-  {
-    title: "Boxing Wear Manufacturer Pakistan: Shorts, Rash Guards and Fightwear",
-    category: "Boxing Wear",
-    date: "September 2026",
-    excerpt: "Behind the scenes of manufacturing custom fight shorts, satin robes, sublimated BJJ rash guards, and training gloves in Sialkot."
-  },
-  {
-    title: "Sublimation Sportswear Manufacturing: Artwork, Fabric and Teamwear Tips",
-    category: "Sportswear",
-    date: "August 2026",
-    excerpt: "How dye sublimation locks vibrant colors and complex patterns directly into performance polyester without peeling or cracking."
-  },
-  {
-    title: "Compression Wear Manufacturer Guide for Fitness and Training Brands",
-    category: "Fitness Wear",
-    date: "August 2026",
-    excerpt: "Selecting the ideal Nylon/Spandex ratios, 4-way stretch fabrics, and flatlock anti-chafing stitching for high-performance workout gear."
-  }
-];
 
 export default function BlogPage() {
   return (
@@ -69,30 +31,49 @@ export default function BlogPage() {
             <div>
               <span className="home-kicker">Industry Insights</span>
               <h2 style={{ marginTop: '8px' }}>Manufacturing Guides for Growing Brands</h2>
+              <p className="muted">
+                Learn from our engineering and production specialists to build world-class fitness, fightwear, and sportswear lines.
+              </p>
             </div>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '26px' }}>
-            {POSTS.map((post, idx) => (
-              <article key={idx} className="card clickable-card" style={{ display: 'flex', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
-                  <span style={{ background: 'var(--brand-orange-light)', color: 'var(--brand-orange-dark)', fontWeight: 800, fontSize: '12px', padding: '4px 10px', borderRadius: '999px', textTransform: 'uppercase' }}>
-                    {post.category}
-                  </span>
-                  <span className="muted" style={{ fontSize: '13px' }}>
-                    {post.date}
-                  </span>
-                </div>
-                <h3 style={{ fontSize: '1.25rem', margin: '0 0 12px', lineHeight: 1.35 }}>
-                  {post.title}
-                </h3>
-                <p className="muted" style={{ fontSize: '14px', lineHeight: 1.7, flexGrow: 1, margin: '0 0 20px' }}>
-                  {post.excerpt}
-                </p>
-                <div style={{ paddingTop: '16px', borderTop: '1px solid var(--border)' }}>
-                  <Link href="/contact" style={{ fontWeight: 700, color: 'var(--brand-orange-dark)', fontSize: '14px' }}>
-                    Discuss this production topic →
-                  </Link>
+            {BLOG_POSTS.map((post) => (
+              <article key={post.slug} className="card clickable-card" style={{ padding: '0', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+                <Link href={`/blog/${post.slug}`} style={{ display: 'block', width: '100%', aspectRatio: '16/9', overflow: 'hidden', background: '#e2e8f0' }}>
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.3s ease' }}
+                  />
+                </Link>
+
+                <div style={{ padding: '24px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
+                    <span style={{ background: 'var(--brand-orange-light)', color: 'var(--brand-orange-dark)', fontWeight: 800, fontSize: '11px', padding: '4px 10px', borderRadius: '999px', textTransform: 'uppercase' }}>
+                      {post.category}
+                    </span>
+                    <span className="muted" style={{ fontSize: '12px' }}>
+                      {post.readTime}
+                    </span>
+                  </div>
+
+                  <h3 style={{ fontSize: '1.25rem', margin: '0 0 12px', lineHeight: 1.35 }}>
+                    <Link href={`/blog/${post.slug}`} style={{ color: 'var(--text-main)' }}>
+                      {post.title}
+                    </Link>
+                  </h3>
+
+                  <p className="muted" style={{ fontSize: '14px', lineHeight: 1.7, flexGrow: 1, margin: '0 0 20px' }}>
+                    {post.excerpt}
+                  </p>
+
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '16px', borderTop: '1px solid var(--border)' }}>
+                    <span style={{ fontSize: '12px', color: '#94a3b8' }}>{post.date}</span>
+                    <Link href={`/blog/${post.slug}`} style={{ fontWeight: 800, color: 'var(--brand-orange-dark)', fontSize: '13px' }}>
+                      Read Article →
+                    </Link>
+                  </div>
                 </div>
               </article>
             ))}
@@ -109,7 +90,7 @@ export default function BlogPage() {
             </div>
             <div className="home-cta-actions">
               <Link href="/contact" className="btn btn-primary">
-                Contact Our Team
+                Contact Our Production Team
               </Link>
             </div>
           </div>
@@ -118,4 +99,3 @@ export default function BlogPage() {
     </div>
   );
 }
-

@@ -1,8 +1,21 @@
+import FaqSection from '../components/FaqSection';
+import { STREETWEAR_FAQS } from '../lib/faqs';
 import Link from 'next/link';
+import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd';
+import type { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Streetwear Manufacturer Pakistan | Luxury Heavyweight Hoodies & Tees",
-  description: "400+ GSM heavyweight French Terry hoodies, acid wash oversized tees, heavyweight sweatpants, and luxury streetwear collections with puff print and vintage wash."
+  description: "400+ GSM heavyweight French Terry hoodies, acid wash oversized tees, heavyweight sweatpants, and luxury streetwear collections with puff print and vintage wash.",
+  alternates: {
+    canonical: '/streetwear-manufacturer-pakistan',
+  },
+  openGraph: {
+    title: "Streetwear Manufacturer Pakistan | Bin Rasool Enterprises",
+    description: "Factory direct cut-and-sew heavyweight streetwear, acid wash tees, and oversized hoodies.",
+    url: "/streetwear-manufacturer-pakistan",
+    images: [{ url: "/images/categories/1776540300_streetwear.webp", width: 1200, height: 630 }],
+  },
 };
 
 export default function CategoryPage() {
@@ -11,9 +24,13 @@ export default function CategoryPage() {
       {/* Hero Banner */}
       <section className="hero" style={{ padding: '80px 0 60px' }}>
         <div className="container">
-          <div className="breadcrumbs" style={{ color: '#cbd5e1' }}>
-            <Link href="/" style={{ color: 'var(--brand-orange)' }}>Home</Link> / <span>Streetwear</span>
-          </div>
+          <BreadcrumbJsonLd
+            items={[
+              { label: 'Home', href: '/' },
+              { label: 'Categories', href: '/products' },
+              { label: 'Streetwear Manufacturer Pakistan' },
+            ]}
+          />
           <h1 style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)', margin: '16px 0 12px' }}>
             Heavyweight Streetwear Manufacturer in Sialkot Pakistan
           </h1>
@@ -89,6 +106,13 @@ export default function CategoryPage() {
           </div>
         </div>
       </section>
+    
+      {/* Category Specific FAQs */}
+      <FaqSection
+        title="Streetwear Manufacturing & Wash FAQs"
+        categoryBadge="Streetwear Production"
+        items={STREETWEAR_FAQS}
+      />
     </div>
   );
 }

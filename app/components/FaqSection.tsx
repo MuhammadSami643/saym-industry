@@ -1,48 +1,23 @@
 "use client";
 
 import { useState } from 'react';
+import { FaqItem, GLOBAL_FAQS } from '../lib/faqs';
 
-interface FaqItem {
-  question: string;
-  answer: string;
+interface FaqSectionProps {
+  title?: string;
+  subtitle?: string;
+  categoryBadge?: string;
+  items?: FaqItem[];
+  backgroundColor?: string;
 }
 
-const FAQ_LIST: FaqItem[] = [
-  {
-    question: "What is the MOQ for private label activewear?",
-    answer: "A typical starting MOQ is 50 pieces per style, depending on the fabric, colors, sizing, branding, and construction. The final MOQ is confirmed after the product brief is reviewed."
-  },
-  {
-    question: "Can ZYPFIT manufacture custom activewear for startup brands?",
-    answer: "Yes. ZYPFIT works with startup activewear brands and established businesses. Startup projects can begin with a focused range, sample approval, practical quantity planning, and private label branding before larger repeat orders."
-  },
-  {
-    question: "Which activewear and gym wear products can you manufacture?",
-    answer: "The product range includes leggings, sports bras, shorts, tops, T-shirts, tanks, hoodies, joggers, tracksuits, compression wear, teamwear, and related fitness apparel, subject to specification review."
-  },
-  {
-    question: "What private label branding options are available?",
-    answer: "Branding options include woven and printed labels, care and size labels, hang tags, screen printing, heat transfer, sublimation, embroidery, branded poly bags, retail packaging, and export carton markings."
-  },
-  {
-    question: "Do you provide samples before bulk production?",
-    answer: "Yes. Samples are used to review fit, measurements, fabric, construction, colors, labels, logo placement, and finishing before bulk production is approved."
-  },
-  {
-    question: "How do you control activewear quality?",
-    answer: "Quality checks cover measurements, stitching, stretch points, panels, trims, logo placement, labels, finishing, quantities, packing, and alignment with the approved sample or specifications."
-  },
-  {
-    question: "Can you ship private label activewear worldwide?",
-    answer: "Yes. ZYPFIT supports international buyers with export-ready packing and shipment coordination. Courier, air, and sea freight options can be discussed according to destination, order size, timing, and buyer preference."
-  },
-  {
-    question: "What should I send to request an activewear manufacturing quote?",
-    answer: "Send your product references or tech packs, estimated quantity, fabric direction, colors, size range, branding requirements, packaging needs, target price if available, and delivery country. Complete details help produce a more useful quote."
-  }
-];
-
-export default function FaqSection() {
+export default function FaqSection({
+  title = "Private Label Activewear Manufacturing FAQs",
+  subtitle = "Common questions asked by international apparel buyers, startups, and established brands.",
+  categoryBadge,
+  items = GLOBAL_FAQS,
+  backgroundColor = "#ffffff"
+}: FaqSectionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggle = (idx: number) => {
@@ -50,11 +25,65 @@ export default function FaqSection() {
   };
 
   return (
-    <section className="faq-section-shared faq-section-premium" style={{ background: '#fff', padding: '62px 0', borderTop: '1px solid #eee' }}>
-      <div className="container" style={{ maxWidth: '900px' }}>
-        <h2 style={{ textAlign: 'left', marginBottom: '26px' }}>Private Label Activewear Manufacturing FAQs</h2>
+    <section
+      className="faq-section-shared faq-section-premium"
+      style={{
+        background: backgroundColor,
+        padding: '64px 0',
+        borderTop: '1px solid var(--border)'
+      }}
+    >
+      <div className="container" style={{ maxWidth: '920px' }}>
+        {categoryBadge && (
+          <span
+            style={{
+              background: 'var(--brand-orange-light)',
+              color: 'var(--brand-orange-dark)',
+              fontWeight: 800,
+              fontSize: '11px',
+              padding: '4px 10px',
+              borderRadius: '999px',
+              textTransform: 'uppercase',
+              letterSpacing: '0.06em',
+              display: 'inline-block',
+              marginBottom: '10px'
+            }}
+          >
+            {categoryBadge}
+          </span>
+        )}
+
+        <h2 style={{ textAlign: 'left', marginBottom: '8px', fontSize: 'clamp(1.6rem, 2.5vw, 2.2rem)' }}>
+          {title}
+        </h2>
+
+        {subtitle && (
+          <p className="muted" style={{ margin: '0 0 28px', fontSize: '15px' }}>
+            {subtitle}
+          </p>
+        )}
+
         <div>
-          {FAQ_LIST.map((faq, idx) => {
+          {/* Automatic Google Rich Snippets FAQPage Schema */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                mainEntity: items.map(item => ({
+                  "@type": "Question",
+                  name: item.question,
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: item.answer
+                  }
+                }))
+              })
+            }}
+          />
+
+          {items.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
               <div key={idx} className={`faq-item ${isOpen ? 'is-open' : ''}`}>
@@ -64,11 +93,17 @@ export default function FaqSection() {
                   aria-expanded={isOpen}
                   onClick={() => toggle(idx)}
                 >
-                  <span>{faq.question}</span>
-                  <span className="faq-icon" aria-hidden="true">+</span>
+                  <span style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-main)' }}>
+                    {faq.question}
+                  </span>
+                  <span className="faq-icon" aria-hidden="true">
+                    {isOpen ? '−' : '+'}
+                  </span>
                 </button>
-                <div className="faq-answer" style={{ display: isOpen ? 'block' : 'none' }}>
-                  <p className="muted">{faq.answer}</p>
+                <div className="faq-answer" style={{ display: isOpen ? 'block' : 'none', paddingBottom: '18px' }}>
+                  <p className="muted" style={{ margin: 0, fontSize: '15px', lineHeight: 1.75 }}>
+                    {faq.answer}
+                  </p>
                 </div>
               </div>
             );
@@ -78,4 +113,3 @@ export default function FaqSection() {
     </section>
   );
 }
-

@@ -1,8 +1,21 @@
+import FaqSection from '../components/FaqSection';
+import { FITNESS_WEAR_FAQS } from '../lib/faqs';
 import Link from 'next/link';
+import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd';
+import type { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Private Label Fitness Wear Manufacturer | Low MOQ Custom Gym Wear",
-  description: "Complete cut-and-sew fitness wear production for emerging activewear labels, gym studio apparel, and fitness influencers."
+  description: "Complete cut-and-sew fitness wear production for emerging activewear labels, gym studio apparel, and fitness influencers. Sialkot export factory.",
+  alternates: {
+    canonical: '/fitness-wear-manufacturer',
+  },
+  openGraph: {
+    title: "Fitness Wear Manufacturer Sialkot | Bin Rasool Enterprises",
+    description: "Custom seamless gym leggings, sports bras, pump covers, compression wear, and gym joggers.",
+    url: "/fitness-wear-manufacturer",
+    images: [{ url: "/images/categories/1776540259_fitness-wear.webp", width: 1200, height: 630 }],
+  },
 };
 
 export default function CategoryPage() {
@@ -11,9 +24,13 @@ export default function CategoryPage() {
       {/* Hero Banner */}
       <section className="hero" style={{ padding: '80px 0 60px' }}>
         <div className="container">
-          <div className="breadcrumbs" style={{ color: '#cbd5e1' }}>
-            <Link href="/" style={{ color: 'var(--brand-orange)' }}>Home</Link> / <span>Fitness Wear</span>
-          </div>
+          <BreadcrumbJsonLd
+            items={[
+              { label: 'Home', href: '/' },
+              { label: 'Categories', href: '/products' },
+              { label: 'Fitness Wear Manufacturer' },
+            ]}
+          />
           <h1 style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)', margin: '16px 0 12px' }}>
             Private Label Fitness Wear Manufacturer
           </h1>
@@ -89,6 +106,13 @@ export default function CategoryPage() {
           </div>
         </div>
       </section>
+    
+      {/* Category Specific FAQs */}
+      <FaqSection
+        title="Fitness Wear & Leggings Manufacturing FAQs"
+        categoryBadge="Fitness Wear"
+        items={FITNESS_WEAR_FAQS}
+      />
     </div>
   );
 }

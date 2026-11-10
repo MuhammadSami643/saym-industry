@@ -8,7 +8,7 @@ export async function POST(request: Request) {
 
     // Verify credentials
     if (
-      (normalizedEmail === 'admin@zypfit.com' || normalizedEmail === 'admin@saym.com') &&
+      (normalizedEmail === 'admin@binrasoolenterprises.com' || normalizedEmail === 'admin@saym.com') &&
       password === 'admin123'
     ) {
       const response = NextResponse.json({

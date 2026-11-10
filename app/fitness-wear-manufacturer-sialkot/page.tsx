@@ -1,3 +1,5 @@
+import FaqSection from '../components/FaqSection';
+import { FITNESS_WEAR_FAQS } from '../lib/faqs';
 import Link from 'next/link';
 
 export const metadata = {
@@ -89,6 +91,13 @@ export default function CategoryPage() {
           </div>
         </div>
       </section>
+    
+      {/* Category Specific FAQs */}
+      <FaqSection
+        title="Sialkot Fitness Wear Production FAQs"
+        categoryBadge="Gym & Activewear"
+        items={FITNESS_WEAR_FAQS}
+      />
     </div>
   );
 }

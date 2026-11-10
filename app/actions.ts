@@ -1,6 +1,7 @@
 "use server";
 
 import { supabase } from './lib/supabase';
+import { sendInquiryNotificationEmails } from './lib/mailer';
 
 export type Inquiry = {
   id?: string;
@@ -17,11 +18,28 @@ export async function submitInquiry(formData: FormData) {
   const name = (formData.get('name') as string)?.trim();
   const email = (formData.get('email') as string)?.trim();
   const phone = (formData.get('phone') as string)?.trim() || '';
+  const company = (formData.get('company') as string)?.trim() || '';
+  const country = (formData.get('country') as string)?.trim() || '';
   const subject = (formData.get('subject') as string)?.trim() || 'General Inquiry';
   const details = ((formData.get('details') || formData.get('message') || '') as string).trim();
 
   if (!name || !email || !details) {
     return { error: "Please fill in all required fields (Name, Email, Details/Message)." };
+  }
+
+  // Trigger automated email dispatch
+  try {
+    await sendInquiryNotificationEmails({
+      name,
+      email,
+      phone,
+      company,
+      country,
+      subject,
+      details
+    });
+  } catch (mErr) {
+    console.error("Non-fatal mailer error:", mErr);
   }
 
   try {
@@ -73,7 +91,7 @@ export async function getInquiries(): Promise<Inquiry[]> {
           email: 'sarah@athletixstudio.co.uk',
           phone: '+44 20 7946 0919',
           subject: 'Private Label Leggings & Sports Bras',
-          details: 'Hi ZYPFIT, we want to launch a 4-colorway activewear capsule: 75% Nylon 25% Spandex squat proof leggings with matching bra tops.',
+          details: 'Hi Bin Rasool Enterprises, we want to launch a 4-colorway activewear capsule: 75% Nylon 25% Spandex squat proof leggings with matching bra tops.',
           date: new Date(Date.now() - 86400000).toISOString(),
           status: 'contacted'
         }

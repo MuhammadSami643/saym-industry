@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import HeroSlider from './components/HeroSlider';
 import FaqSection from './components/FaqSection';
+import FactoryVirtualTour from './components/FactoryVirtualTour';
 
 export default function Home() {
   return (
@@ -26,7 +27,7 @@ export default function Home() {
         <div className="container">
             <div className="home-section-head">
                 <div>
-                    <span className="home-kicker">Why choose ZYPFIT</span>
+                    <span className="home-kicker">Why choose Bin Rasool Enterprises</span>
                     <h2>A manufacturing partner built around commercial clarity</h2>
                 </div>
                 <p className="muted">Good manufacturing is not only the garment that leaves the production line. It is the quality of the decisions made before sampling, the control maintained during bulk production, and the accuracy of the order that reaches your market.</p>
@@ -75,7 +76,7 @@ export default function Home() {
                 <div>
                     <span className="home-kicker">Production accountability</span>
                     <h2>Built for Real Manufacturing</h2>
-                    <p className="home-lead">A credible production partner should make the process visible. ZYPFIT keeps product requirements, approvals, quality checks, and export preparation connected so buyers know what is being made and what will be checked before dispatch.</p>
+                    <p className="home-lead">A credible production partner should make the process visible. Bin Rasool Enterprises keeps product requirements, approvals, quality checks, and export preparation connected so buyers know what is being made and what will be checked before dispatch.</p>
                 </div>
                 <div className="real-trust-list">
                                             <article className="real-trust-item">
@@ -191,7 +192,7 @@ export default function Home() {
                         </div>
                     </a>
                                     <a href="/streetwear-manufacturer-pakistan" className="home-card category-card" aria-label="Explore Streetwear manufacturing">
-                                                    <img src="/images/categories/1789894942_streetwear.webp" alt="ZYPFIT branded oversized hoodie, baggy sweatpants and varsity jacket in a colorful studio" loading="lazy" decoding="async" />
+                                                    <img src="/images/categories/1789894942_streetwear.webp" alt="Bin Rasool Enterprises branded oversized hoodie, baggy sweatpants and varsity jacket in a colorful studio" loading="lazy" decoding="async" />
                                                 <div className="category-card-body">
                             <h3>Streetwear</h3>
                             <p className="muted">Cut-and-sew streetwear and winter collections for clothing brands: hoodies, sweatshirts, relaxed bottoms, matching sets and jacket enquiries.</p>
@@ -300,7 +301,7 @@ export default function Home() {
                         Pakistan has a mature textile and apparel supply base, while Sialkot has built an international reputation around export sports goods, performance clothing, teamwear, and specialist garment production. Working with an <strong>activewear manufacturer in Pakistan</strong> can give buyers access to skilled cutting, stitching, decoration, packing, and export knowledge within a commercially competitive production environment.
                     </p>
                     <p>
-                        As a <strong>fitness wear manufacturer in Sialkot</strong>, ZYPFIT combines that regional production experience with direct B2B communication. Cost efficiency matters, but it should not come from removing the steps that protect fit and quality. The stronger advantage is the ability to align product development, labor skill, branding, quality checks, and export preparation around one approved specification.
+                        As a <strong>fitness wear manufacturer in Sialkot</strong>, Bin Rasool Enterprises combines that regional production experience with direct B2B communication. Cost efficiency matters, but it should not come from removing the steps that protect fit and quality. The stronger advantage is the ability to align product development, labor skill, branding, quality checks, and export preparation around one approved specification.
                     </p>
                     <p>
                         Buyers sourcing broader teamwear and performance categories can also explore our work as a <a className="context-link" href="/sportswear-manufacturer-pakistan">sportswear manufacturer in Pakistan</a>. The right sourcing decision should balance product capability, sample quality, responsiveness, lead time, and landed cost rather than comparing unit price alone.
@@ -330,7 +331,7 @@ export default function Home() {
             <div className="factory-proof-grid">
                                     <article className="factory-proof-card">
                         <div className="factory-proof-media">
-                                                            <img src="/images/site/1776612585_manufacturing-cutting-image.webp" alt="Cutting Process at ZYPFIT activewear manufacturing facility" loading="lazy" decoding="async" />
+                                                            <img src="/images/site/1776612585_manufacturing-cutting-image.webp" alt="Cutting Process at Bin Rasool Enterprises activewear manufacturing facility" loading="lazy" decoding="async" />
                                                     </div>
                         <div className="factory-proof-body">
                             <h3>Cutting Process</h3>
@@ -339,7 +340,7 @@ export default function Home() {
                     </article>
                                     <article className="factory-proof-card">
                         <div className="factory-proof-media">
-                                                            <img src="/images/site/1776612585_manufacturing-stitching-image.webp" alt="Stitching Line at ZYPFIT activewear manufacturing facility" loading="lazy" decoding="async" />
+                                                            <img src="/images/site/1776612585_manufacturing-stitching-image.webp" alt="Stitching Line at Bin Rasool Enterprises activewear manufacturing facility" loading="lazy" decoding="async" />
                                                     </div>
                         <div className="factory-proof-body">
                             <h3>Stitching Line</h3>
@@ -348,7 +349,7 @@ export default function Home() {
                     </article>
                                     <article className="factory-proof-card">
                         <div className="factory-proof-media">
-                                                            <img src="/images/site/1776612585_manufacturing-checking-image.webp" alt="Quality Control at ZYPFIT activewear manufacturing facility" loading="lazy" decoding="async" />
+                                                            <img src="/images/site/1776612585_manufacturing-checking-image.webp" alt="Quality Control at Bin Rasool Enterprises activewear manufacturing facility" loading="lazy" decoding="async" />
                                                     </div>
                         <div className="factory-proof-body">
                             <h3>Quality Control</h3>
@@ -357,7 +358,7 @@ export default function Home() {
                     </article>
                                     <article className="factory-proof-card">
                         <div className="factory-proof-media">
-                                                            <img src="/images/site/1776612585_manufacturing-packing-image.webp" alt="Packaging & Export Prep at ZYPFIT activewear manufacturing facility" loading="lazy" decoding="async" />
+                                                            <img src="/images/site/1776612585_manufacturing-packing-image.webp" alt="Packaging & Export Prep at Bin Rasool Enterprises activewear manufacturing facility" loading="lazy" decoding="async" />
                                                     </div>
                         <div className="factory-proof-body">
                             <h3>Packaging & Export Prep</h3>
@@ -367,6 +368,9 @@ export default function Home() {
                             </div>
         </div>
     </section>
+
+    {/* Interactive Live Factory Virtual Tour */}
+    <FactoryVirtualTour />
 
     <section className="section" style={{ 'background': 'var(--bg-light)', 'paddingTop': '0' }}>
         <div className="container">
@@ -435,7 +439,7 @@ export default function Home() {
                 </div>
                 <div className="buyer-card">
                     <p className="home-lead">
-                        ZYPFIT supports buyers outside Pakistan with remote sample approvals, production communication, export packing, and shipment planning. Courier, air, or sea freight options can be discussed according to order size, destination, timing, and buyer preference.
+                        Bin Rasool Enterprises supports buyers outside Pakistan with remote sample approvals, production communication, export packing, and shipment planning. Courier, air, or sea freight options can be discussed according to order size, destination, timing, and buyer preference.
                     </p>
                     <div style={{ 'display': 'flex', 'gap': '10px', 'flexWrap': 'wrap', 'marginTop': '24px' }}>
                         <a href="/shipping-export" className="btn btn-primary">View Shipping and Export Support</a>

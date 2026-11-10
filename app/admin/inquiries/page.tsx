@@ -4,7 +4,7 @@ import InquiriesManagerClient from './InquiriesManagerClient';
 export const dynamic = 'force-dynamic';
 
 export const metadata = {
-  title: "Admin - Customer Inquiries | ZYPFIT",
+  title: "Admin - Customer Inquiries | Bin Rasool Enterprises",
 };
 
 export default async function AdminInquiries() {
