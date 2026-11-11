@@ -5,15 +5,27 @@ import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Hoodies Manufacturer Pakistan | Luxury French Terry & Heavyweight Fleece",
-  description: "380 to 500+ GSM heavyweight custom hoodies, zip-ups, oversized drop-shoulder fits, and loopback fleece manufactured in Sialkot, Pakistan. Low MOQ, worldwide export.",
+  title: "Hoodies Manufacturer | Custom Heavyweight Fleece & Luxury French Terry OEM",
+  description: "Leading hoodies manufacturer specializing in 380 to 500+ GSM heavyweight custom hoodies, oversized drop-shoulder fits, zip-ups, and loopback fleece. Direct factory OEM/ODM in Sialkot, Pakistan with low MOQ and worldwide export.",
+  keywords: [
+    "hoodies manufacturer",
+    "custom hoodies manufacturer",
+    "hoodie manufacturer",
+    "hoodies manufacturer pakistan",
+    "hoodies manufacturer sialkot",
+    "heavyweight hoodie manufacturer",
+    "private label hoodies manufacturer",
+    "oversized hoodie manufacturer",
+    "french terry hoodie manufacturer",
+    "custom hoodie supplier"
+  ],
   alternates: {
-    canonical: '/hoodies-manufacturer-pakistan',
+    canonical: '/custom-hoodies',
   },
   openGraph: {
-    title: "Heavyweight Hoodies Manufacturer Pakistan | Bin Rasool Enterprises",
-    description: "Custom oversized luxury French Terry 450 GSM & brushed fleece hoodies. Custom puff printing, embroidery & acid wash.",
-    url: "/hoodies-manufacturer-pakistan",
+    title: "Hoodies Manufacturer | Bin Rasool Enterprises",
+    description: "Custom oversized luxury French Terry 450 GSM & brushed fleece hoodies manufacturer. Custom puff printing, embroidery & acid wash.",
+    url: "/custom-hoodies",
     images: [{ url: "/images/categories/1776540316_hoodies.webp", width: 1200, height: 630 }],
   },
 };

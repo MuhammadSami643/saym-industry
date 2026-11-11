@@ -24,6 +24,8 @@ export const metadata: Metadata = {
     apple: '/favicon.ico',
   },
   keywords: [
+    "hoodies manufacturer",
+    "custom hoodies manufacturer",
     "private label activewear manufacturer",
     "fitness wear manufacturer pakistan",
     "sportswear sialkot",
