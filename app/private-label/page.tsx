@@ -1,8 +1,59 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 
-export const metadata = {
-  title: "Private Label Activewear Manufacturing | Bin Rasool Enterprises Pakistan",
-  description: "Comprehensive private label manufacturing services: custom woven tags, heat transfer logos, custom packaging, low MOQs, and full cut-and-sew production in Sialkot, Pakistan."
+export const metadata: Metadata = {
+  title: "Private Label Clothing Manufacturer Pakistan | Custom Woven Labels, Hangtags & Packaging",
+  description: "Direct OEM private label clothing manufacturer in Sialkot, Pakistan. Custom woven neck labels, 400 gsm coated hang tags, frosted zipper polybags, silicone heat transfer logos, 3D puff embroidery, chenille patches, and Amazon FBA barcode packaging for startups and retail brands.",
+  keywords: [
+    "private label manufacturer",
+    "custom clothing manufacturer",
+    "woven labels manufacturer",
+    "hang tags manufacturer",
+    "custom polybags",
+    "screen printing manufacturer",
+    "embroidery manufacturer",
+    "apparel packaging supplier",
+    "private label clothing manufacturer Pakistan",
+    "clothing manufacturer with custom tags",
+    "custom woven neck labels manufacturer",
+    "high density damask woven label",
+    "custom hang tags wholesale",
+    "400 gsm coated hang tags",
+    "embossed logo hang tag manufacturer",
+    "spot UV hang tags clothing",
+    "metal eyelet hang tags wholesale",
+    "custom frosted zipper polybag manufacturer",
+    "biodegradable polybags clothing",
+    "printed mailing bags wholesale",
+    "custom care labels satin printed",
+    "TPU care label manufacturer",
+    "silicone heat transfer labels manufacturer",
+    "high density silicone logo printing",
+    "3D puff embroidery manufacturer",
+    "chenille patch manufacturer Pakistan",
+    "custom embroidered patches wholesale",
+    "woven patch manufacturer Pakistan",
+    "custom metal hardware clothing",
+    "custom cord locks drawstring aglets",
+    "clothing manufacturer low MOQ custom packaging",
+    "complete private label clothing service",
+    "start clothing brand manufacturer Pakistan",
+    "turnkey apparel manufacturer",
+    "full package clothing manufacturer",
+    "OEM clothing manufacturer Pakistan",
+    "apparel manufacturer tech pack to retail ready",
+    "clothing manufacturer with custom polybags",
+    "Amazon FBA barcode labeling clothing manufacturer"
+  ],
+  alternates: {
+    canonical: '/private-label',
+  },
+  openGraph: {
+    title: "Complete Private Label Clothing & Packaging Factory | Bin Rasool Enterprises",
+    description: "Turnkey apparel manufacturing: high density damask woven labels, 400 gsm hangtags, frosted zip polybags, 3D puff embroidery, and FBA retail packaging.",
+    url: "/private-label",
+    images: [{ url: "/images/hero-factory.webp", width: 1200, height: 630 }],
+  },
 };
 
 export default function PrivateLabelPage() {

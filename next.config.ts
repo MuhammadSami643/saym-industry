@@ -60,10 +60,10 @@ const nextConfig: NextConfig = {
 
       // High-Converting Sialkot Export Niche Rewrites:
       // 1. Martial Arts & MMA Combat Gear
-      { source: '/martial-arts-gear-manufacturer-pakistan', destination: '/boxing-gear-manufacturer-bulk' },
-      { source: '/bjj-gi-manufacturer-pakistan', destination: '/boxing-wear-manufacturer-pakistan' },
-      { source: '/custom-rashguard-manufacturer', destination: '/boxing-wear-manufacturer-pakistan' },
-      { source: '/mma-shorts-manufacturer', destination: '/boxing-gear-manufacturer-bulk' },
+      { source: '/martial-arts-gear-manufacturer-pakistan', destination: '/mma-gear' },
+      { source: '/bjj-gi-manufacturer-pakistan', destination: '/mma-gear' },
+      { source: '/custom-rashguard-manufacturer', destination: '/mma-gear' },
+      { source: '/mma-shorts-manufacturer', destination: '/mma-gear' },
 
       // 2. Custom Tracksuits & Warmups
       { source: '/tracksuits-manufacturer-pakistan', destination: '/sportswear-manufacturer-pakistan' },
@@ -72,9 +72,9 @@ const nextConfig: NextConfig = {
       { source: '/poly-tricot-warmup-manufacturer', destination: '/sportswear-manufacturer-pakistan' },
 
       // 3. Compression & Baselayers
-      { source: '/compression-wear-manufacturer-pakistan', destination: '/fitness-wear-manufacturer' },
-      { source: '/custom-compression-tights', destination: '/fitness-wear-manufacturer' },
-      { source: '/athletic-baselayers-manufacturer', destination: '/fitness-wear-manufacturer' },
+      { source: '/compression-wear-manufacturer-pakistan', destination: '/compression-wear' },
+      { source: '/custom-compression-tights', destination: '/compression-wear' },
+      { source: '/athletic-baselayers-manufacturer', destination: '/compression-wear' },
 
       // 4. Sublimated Team Uniforms & Teamwear
       { source: '/custom-teamwear-manufacturer-pakistan', destination: '/sportswear-manufacturer-exporter' },

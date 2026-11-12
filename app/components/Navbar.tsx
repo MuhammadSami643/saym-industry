@@ -168,14 +168,16 @@ export default function Navbar() {
                   Categories <span className="chevron" aria-hidden="true"></span>
                 </button>
                 <div className="dropdown-menu">
-                  <Link href="/fitness-wear" onClick={handleLinkClick}>Fitness &amp; Activewear</Link>
-                  <Link href="/sportswear" onClick={handleLinkClick}>Sports Wear &amp; Teamwear</Link>
-                  <Link href="/tracksuits" onClick={handleLinkClick}>Tracksuits &amp; Warmups</Link>
-                  <Link href="/boxing-gear" onClick={handleLinkClick}>Boxing &amp; Martial Arts</Link>
-                  <Link href="/compression-wear-manufacturer-pakistan" onClick={handleLinkClick}>Compression &amp; Baselayers</Link>
+                  <Link href="/custom-hoodies" onClick={handleLinkClick}>Heavyweight Hoodies &amp; Fleece</Link>
                   <Link href="/streetwear" onClick={handleLinkClick}>Streetwear &amp; Outerwear</Link>
-                  <Link href="/custom-hoodies" onClick={handleLinkClick}>Hoodies &amp; Sweatshirts</Link>
-                  <Link href="/custom-jeans" onClick={handleLinkClick}>Jeans &amp; Denim</Link>
+                  <Link href="/fitness-wear" onClick={handleLinkClick}>Fitness &amp; Activewear</Link>
+                  <Link href="/boxing-gear" onClick={handleLinkClick}>Boxing Gloves &amp; Fight Gear</Link>
+                  <Link href="/mma-gear" onClick={handleLinkClick}>MMA, BJJ Gis &amp; Rashguards</Link>
+                  <Link href="/tracksuits" onClick={handleLinkClick}>Tracksuits &amp; Warmups</Link>
+                  <Link href="/sportswear" onClick={handleLinkClick}>Sublimated Teamwear &amp; Kits</Link>
+                  <Link href="/compression-wear" onClick={handleLinkClick}>Compression &amp; Baselayers</Link>
+                  <Link href="/custom-jeans" onClick={handleLinkClick}>Custom Denim &amp; Jeans</Link>
+                  <Link href="/private-label" onClick={handleLinkClick}>Private Label Trims &amp; Packaging</Link>
                   <Link href="/products" onClick={handleLinkClick} style={{ fontWeight: 700, color: 'var(--brand-orange-dark, #c57608)' }}>All Products Catalog →</Link>
                 </div>
               </div>

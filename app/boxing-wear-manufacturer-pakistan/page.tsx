@@ -5,8 +5,26 @@ import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Boxing Wear & Combat Apparel Manufacturer Pakistan | Bin Rasool Enterprises",
-  description: "Traditional satin boxing trunks, satin fight robes, custom corner jackets, MMA fight shorts, and compression rash guards with custom embroidery and sublimation.",
+  title: "Boxing Wear & Combat Apparel Manufacturer Pakistan | Sialkot Fightwear Factory",
+  description: "Direct Sialkot manufacturer of custom satin boxing trunks, pro fight shorts, ring walk fight robes, corner jackets, shin guards, and fightwear gear with OEM embroidery and low MOQ.",
+  keywords: [
+    "boxing trunks manufacturer",
+    "custom boxing shorts manufacturer",
+    "fight gear manufacturer",
+    "ring walk robe manufacturer",
+    "custom boxing robe manufacturer",
+    "corner jacket manufacturer boxing",
+    "custom hand wraps manufacturer",
+    "shin guards manufacturer Pakistan",
+    "custom fightwear manufacturer",
+    "fightwear brand manufacturer",
+    "MMA promotion custom gear supplier",
+    "boxing gym equipment wholesale supplier",
+    "custom boxing apparel manufacturer",
+    "boxing gear manufacturer for brands",
+    "boxing gloves manufacturer Pakistan",
+    "satin boxing trunks manufacturer"
+  ],
   alternates: {
     canonical: '/boxing-wear-manufacturer-pakistan',
   },
