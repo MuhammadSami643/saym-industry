@@ -361,7 +361,10 @@ export default function AdminLogin() {
             disabled={loading}
             style={{
               width: '100%',
-              background: 'linear-gradient(135deg, #f3a626 0%, #d98816 100%)',
+              minHeight: '48px',
+              background: loading
+                ? '#d98816'
+                : 'linear-gradient(135deg, #f3a626 0%, #d98816 100%)',
               color: '#0b0b0d',
               border: 'none',
               borderRadius: '10px',
@@ -370,11 +373,15 @@ export default function AdminLogin() {
               fontWeight: 800,
               letterSpacing: '0.02em',
               cursor: loading ? 'not-allowed' : 'pointer',
+              opacity: loading ? 0.75 : 1,
+              pointerEvents: loading ? 'none' : 'auto',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               gap: '10px',
-              boxShadow: '0 10px 25px -5px rgba(243, 166, 38, 0.4)',
+              boxShadow: loading
+                ? 'none'
+                : '0 10px 25px -5px rgba(243, 166, 38, 0.4)',
               transition: 'all 0.2s ease',
               marginTop: '4px',
             }}
@@ -386,20 +393,19 @@ export default function AdminLogin() {
             }}
           >
             {loading ? (
-              <>
-                <span
-                  style={{
-                    width: '16px',
-                    height: '16px',
-                    border: '2px solid rgba(0,0,0,0.25)',
-                    borderTopColor: '#000',
-                    borderRadius: '50%',
-                    display: 'inline-block',
-                    animation: 'spin 0.8s linear infinite',
-                  }}
-                />
-                <span>Authenticating Portal...</span>
-              </>
+              <span
+                style={{
+                  width: '22px',
+                  height: '22px',
+                  border: '3px solid rgba(11, 11, 13, 0.22)',
+                  borderTopColor: '#0b0b0d',
+                  borderRadius: '50%',
+                  display: 'inline-block',
+                  animation: 'breSpinLoader 0.65s linear infinite',
+                }}
+                role="status"
+                aria-label="Loading..."
+              />
             ) : (
               <>
                 <span>Sign In to Factory Dashboard</span>
@@ -407,6 +413,13 @@ export default function AdminLogin() {
               </>
             )}
           </button>
+
+          <style jsx>{`
+            @keyframes breSpinLoader {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(360deg); }
+            }
+          `}</style>
         </form>
 
         {/* Security badge at bottom - NO return to website link */}
