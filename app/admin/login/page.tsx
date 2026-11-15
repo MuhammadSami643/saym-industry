@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRightIcon } from '@/app/components/AdminIcons';
 
 export default function AdminLogin() {
   const router = useRouter();
@@ -460,7 +461,10 @@ export default function AdminLogin() {
                 }}
               />
             ) : (
-              <span>Sign In to Command Portal &rarr;</span>
+              <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                <span>Sign In to Command Portal</span>
+                <ArrowRightIcon size={16} />
+              </span>
             )}
           </button>
         </form>

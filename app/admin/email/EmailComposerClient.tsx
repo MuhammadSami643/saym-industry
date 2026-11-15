@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
+import { ArrowRightIcon } from '@/app/components/AdminIcons';
 
 export interface BuyerContact {
   id?: string;
@@ -27,7 +28,7 @@ Thank you for your inquiry with Bin Rasool Enterprises. We have reviewed your te
 We are pleased to confirm that our Sialkot manufacturing floor can accommodate your order with our standard AQL 2.5 quality control standards, custom private label woven labels, and custom polybag packaging.
 
 Please review your attached proforma quotation details and let us know your preferred courier delivery schedule so our sampling team can initiate the pre-production prototype.`,
-    buttonText: 'VIEW PROFORMA INVOICE →',
+    buttonText: 'VIEW PROFORMA INVOICE',
     buttonUrl: '/get-quote',
   },
   {
@@ -40,7 +41,7 @@ This is a progress update from the Bin Rasool Enterprises production line regard
 Your fabric lots have completed inspection and have moved into automated laser cutting and 4-needle flatlock stitching. All embroidery and custom screen print proofs have successfully passed our quality benchmark.
 
 We anticipate final pressing, QC audit, and export packing clearance within the next 4 business days.`,
-    buttonText: 'TRACK PRODUCTION STAGES →',
+    buttonText: 'TRACK PRODUCTION STAGES',
     buttonUrl: '/track-order',
   },
   {
@@ -53,7 +54,7 @@ Your physical pre-production sample pack has been dispatched via DHL Express Air
 Once you have inspected the fabric drape, seam strength, sizing fit, and embroidery placement, please share your feedback or sign off so our factory floor can proceed with the bulk cutting run.
 
 Feel free to reply directly to this email or connect with our production head on WhatsApp.`,
-    buttonText: 'CONFIRM SAMPLE FEEDBACK →',
+    buttonText: 'CONFIRM SAMPLE FEEDBACK',
     buttonUrl: '/contact',
   },
 ];
@@ -613,7 +614,9 @@ export default function EmailComposerClient({ initialBuyers }: EmailComposerClie
                 <div style={{ textAlign: 'center', margin: '20px 0' }}>
                   <span
                     style={{
-                      display: 'inline-block',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '6px',
                       background: '#00e599',
                       color: '#05140d',
                       fontWeight: 800,
@@ -624,7 +627,8 @@ export default function EmailComposerClient({ initialBuyers }: EmailComposerClie
                       boxShadow: '0 0 14px rgba(0, 229, 153, 0.3)',
                     }}
                   >
-                    {buttonText || 'VISIT FACTORY PORTAL →'}
+                    <span>{buttonText ? buttonText.replace(/\s*→\s*$/, '') : 'VISIT FACTORY PORTAL'}</span>
+                    <ArrowRightIcon size={13} />
                   </span>
                 </div>
 

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import AnimatedCounter from '../../components/AnimatedCounter';
+import { ArrowRightIcon, ExternalLinkIcon } from '../../components/AdminIcons';
 
 interface BatchOrder {
   id: string;
@@ -246,7 +247,8 @@ export default function ProductionPipelinePage() {
             boxShadow: '0 0 14px rgba(0, 229, 153, 0.3)',
           }}
         >
-          View Public Client Tracker ↗
+          <span>View Public Client Tracker</span>
+          <ExternalLinkIcon size={12} />
         </Link>
       </div>
 
@@ -401,10 +403,14 @@ export default function ProductionPipelinePage() {
                       fontSize: '12px',
                       fontWeight: 800,
                       cursor: 'pointer',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '5px',
                       boxShadow: '0 0 12px rgba(0, 229, 153, 0.3)',
                     }}
                   >
-                    Advance Stage ➔
+                    <span>Advance Stage</span>
+                    <ArrowRightIcon size={13} />
                   </button>
                 )}
               </div>
@@ -446,15 +452,15 @@ export default function ProductionPipelinePage() {
                       background: isPast
                         ? 'rgba(0, 229, 153, 0.12)'
                         : isCurrent
-                        ? 'rgba(251, 191, 36, 0.15)'
-                        : '#090d0f',
+                          ? 'rgba(251, 191, 36, 0.15)'
+                          : '#090d0f',
                       color: isPast ? '#00e599' : isCurrent ? '#fbbf24' : '#94a3b8',
                       fontWeight: isCurrent ? 800 : 600,
                       border: isCurrent
                         ? '1px solid #fbbf24'
                         : isPast
-                        ? '1px solid rgba(0, 229, 153, 0.25)'
-                        : '1px solid rgba(255, 255, 255, 0.05)',
+                          ? '1px solid rgba(0, 229, 153, 0.25)'
+                          : '1px solid rgba(255, 255, 255, 0.05)',
                     }}
                   >
                     {isPast ? '✓ ' : ''}{st}
@@ -471,9 +477,10 @@ export default function ProductionPipelinePage() {
               <Link
                 href={`/track-order?search=${b.id}`}
                 target="_blank"
-                style={{ color: '#00e599', fontWeight: 700, textDecoration: 'none' }}
+                style={{ color: '#00e599', fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px' }}
               >
-                Open Client Tracking Page ↗
+                <span>Open Client Tracking Page</span>
+                <ExternalLinkIcon size={12} />
               </Link>
             </div>
           </motion.div>

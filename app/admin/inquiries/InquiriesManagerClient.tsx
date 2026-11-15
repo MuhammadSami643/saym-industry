@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Inquiry } from '../../actions';
 import AnimatedCounter from '../../components/AnimatedCounter';
+import { ExternalLinkIcon } from '../../components/AdminIcons';
 
 function parseInquiryAttachments(details: string) {
   let cleanDetails = details || '';
@@ -481,9 +482,10 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
                         target="_blank"
                         rel="noopener noreferrer"
                         download={isDirectVideo ? true : undefined}
-                        style={{ color: '#38bdf8', fontSize: '11.5px', fontWeight: 700, textDecoration: 'none' }}
+                        style={{ color: '#38bdf8', fontSize: '11.5px', fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px' }}
                       >
-                        {isDirectVideo ? 'Download Video File ↗' : 'Open Video Link ↗'}
+                        <span>{isDirectVideo ? 'Download Video File' : 'Open Video Link'}</span>
+                        <ExternalLinkIcon size={12} />
                       </a>
                     </div>
 
@@ -567,7 +569,9 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
                         gap: '6px'
                       }}
                     >
-                      <span>📥</span> View &amp; Download Tech Pack ↗
+                      <span>📥</span>
+                      <span>View &amp; Download Tech Pack</span>
+                      <ExternalLinkIcon size={12} />
                     </a>
                   </div>
                 )}
@@ -601,9 +605,13 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
                       padding: '8px 16px',
                       borderRadius: '8px',
                       textDecoration: 'none',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '6px',
                     }}
                   >
-                    📄 Proforma Invoice ↗
+                    <span>📄 Proforma Invoice</span>
+                    <ExternalLinkIcon size={12} />
                   </Link>
                   {inq.phone && (
                     <a
@@ -619,9 +627,13 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
                         padding: '8px 16px',
                         borderRadius: '8px',
                         textDecoration: 'none',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px',
                       }}
                     >
-                      Open in WhatsApp ↗
+                      <span>Open in WhatsApp</span>
+                      <ExternalLinkIcon size={12} />
                     </a>
                   )}
                 </div>

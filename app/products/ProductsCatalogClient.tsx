@@ -6,6 +6,7 @@ import SampleOrderModal, { SampleProductInfo } from '@/app/components/SampleOrde
 import DownloadCatalogModal from '@/app/components/DownloadCatalogModal';
 import { useCurrency } from '@/app/lib/currency';
 import type { Product } from '@/app/actions';
+import { ArrowRightIcon } from '@/app/components/AdminIcons';
 
 interface ProductsCatalogClientProps {
   initialProducts: Product[];
@@ -112,9 +113,13 @@ export default function ProductsCatalogClient({ initialProducts }: ProductsCatal
             fontSize: '13px',
             fontWeight: 800,
             whiteSpace: 'nowrap',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '6px',
           }}
         >
-          Order Physical Sample →
+          <span>Order Physical Sample</span>
+          <ArrowRightIcon size={14} />
         </button>
       </div>
 
@@ -382,9 +387,14 @@ export default function ProductsCatalogClient({ initialProducts }: ProductsCatal
                       fontWeight: 700,
                       textAlign: 'center',
                       borderRadius: '8px',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '5px',
                     }}
                   >
-                    Inquire Style →
+                    <span>Inquire Style</span>
+                    <ArrowRightIcon size={12} />
                   </Link>
                 </div>
               </div>

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import LogoutButton from '../components/LogoutButton';
+import { ExternalLinkIcon } from '@/app/components/AdminIcons';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -132,11 +133,12 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                 display: 'grid',
                 placeItems: 'center',
                 fontWeight: 900,
-                fontSize: '16px',
+                fontSize: '11px',
+                letterSpacing: '0.04em',
                 boxShadow: '0 0 14px rgba(0, 229, 153, 0.5)',
               }}
             >
-              V
+              BRE
             </div>
             <div style={{ minWidth: 0, flex: 1 }}>
               <div style={{ fontSize: '14px', fontWeight: 800, color: '#fff', letterSpacing: '-0.01em', lineHeight: 1.2 }}>
@@ -319,11 +321,13 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
         {/* Live Site Link */}
         <div style={{ padding: '10px 14px', borderTop: '1px solid rgba(255,255,255,0.06)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexShrink: 0, fontSize: '11px' }}>
-          <Link href="/" target="_blank" style={{ color: '#94a3b8', textDecoration: 'none' }}>
-            Live Website ↗
+          <Link href="/" target="_blank" style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', color: '#94a3b8', textDecoration: 'none' }}>
+            <span>Live Website</span>
+            <ExternalLinkIcon size={11} />
           </Link>
-          <Link href="/track-order" target="_blank" style={{ color: '#00e599', fontWeight: 700, textDecoration: 'none' }}>
-            Tracker ↗
+          <Link href="/track-order" target="_blank" style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', color: '#00e599', fontWeight: 700, textDecoration: 'none' }}>
+            <span>Tracker</span>
+            <ExternalLinkIcon size={11} />
           </Link>
         </div>
       </aside>

@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import AnimatedCounter from '../../components/AnimatedCounter';
+import { ArrowRightIcon } from '../../components/AdminIcons';
 
 interface Props {
   inquiries: any[];
@@ -625,9 +626,13 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
                 fontWeight: 700,
                 color: '#00e599',
                 textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '5px',
               }}
             >
-              Floor Dispatch &rarr;
+              <span>Floor Dispatch</span>
+              <ArrowRightIcon size={12} />
             </Link>
           </div>
         </motion.div>
@@ -655,9 +660,10 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
             </div>
             <Link
               href="/admin/production"
-              style={{ fontSize: '12px', fontWeight: 700, color: '#00e599', textDecoration: 'none' }}
+              style={{ fontSize: '12px', fontWeight: 700, color: '#00e599', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '5px' }}
             >
-              View All 48 Batches &rarr;
+              <span>View All 48 Batches</span>
+              <ArrowRightIcon size={12} />
             </Link>
           </div>
 
@@ -764,10 +770,15 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
                       borderRadius: '8px',
                       textAlign: 'center',
                       textDecoration: 'none',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '6px',
                       boxShadow: '0 0 12px rgba(0, 229, 153, 0.35)',
                     }}
                   >
-                    Release to Cutting &rarr;
+                    <span>Release to Cutting</span>
+                    <ArrowRightIcon size={13} />
                   </Link>
                   <button
                     onClick={() => setCopilotDismissed(true)}
@@ -800,8 +811,9 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
                   Recent Buyer Inquiries
                 </h4>
               </div>
-              <Link href="/admin/inquiries" style={{ fontSize: '11.5px', color: '#00e599', fontWeight: 700, textDecoration: 'none' }}>
-                Open Queue &rarr;
+              <Link href="/admin/inquiries" style={{ fontSize: '11.5px', color: '#00e599', fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                <span>Open Queue</span>
+                <ArrowRightIcon size={12} />
               </Link>
             </div>
 
