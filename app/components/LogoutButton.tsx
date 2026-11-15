@@ -19,18 +19,26 @@ export default function LogoutButton() {
       onClick={handleLogout}
       type="button"
       style={{
-        background: 'transparent',
-        border: '1px solid rgba(255,255,255,0.15)',
+        background: '#11171a',
+        border: '1px solid rgba(248, 113, 113, 0.25)',
         color: '#f87171',
-        padding: '6px 12px',
-        borderRadius: '6px',
-        fontSize: '12px',
+        padding: '6px 14px',
+        borderRadius: '9999px',
+        fontSize: '11.5px',
         fontWeight: 700,
-        cursor: 'pointer'
+        cursor: 'pointer',
+        transition: 'all 0.15s ease',
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.background = 'rgba(248, 113, 113, 0.12)';
+        e.currentTarget.style.borderColor = '#f87171';
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.background = '#11171a';
+        e.currentTarget.style.borderColor = 'rgba(248, 113, 113, 0.25)';
       }}
     >
       Sign Out
     </button>
   );
 }
-

@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { motion, AnimatePresence } from 'framer-motion';
 import LogoutButton from '../components/LogoutButton';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
@@ -127,11 +128,11 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               V
             </div>
             <div style={{ minWidth: 0, flex: 1 }}>
-              <div style={{ fontSize: '14.5px', fontWeight: 800, color: '#fff', letterSpacing: '-0.01em', lineHeight: 1.2 }}>
-                Veyra / BRE
+              <div style={{ fontSize: '14px', fontWeight: 800, color: '#fff', letterSpacing: '-0.01em', lineHeight: 1.2 }}>
+                Bin Rasool
               </div>
-              <div style={{ fontSize: '11px', color: '#64748b', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                Alder Ridge &bull; Sialkot HQ
+              <div style={{ fontSize: '11px', color: '#00e599', fontWeight: 700, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                Director Command &bull; HQ
               </div>
             </div>
           </div>
@@ -151,7 +152,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
           <Link href="/admin/inquiries" style={navItemClass('/admin/inquiries')}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '9px' }}>
-              <span style={{ color: isActive('/admin/inquiries') ? '#00e599' : '#64748b' }}>≡</span> Authorization queue
+              <span style={{ color: isActive('/admin/inquiries') ? '#00e599' : '#64748b' }}>✉</span> Inquiries &amp; RFQs
             </span>
             <span
               style={{
@@ -169,7 +170,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
           <Link href="/admin/production" style={navItemClass('/admin/production')}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '9px' }}>
-              <span style={{ color: isActive('/admin/production') ? '#00e599' : '#64748b' }}>⚙</span> Documentation
+              <span style={{ color: isActive('/admin/production') ? '#00e599' : '#64748b' }}>⚙</span> Production Floor
             </span>
             <span
               style={{
@@ -187,7 +188,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
           <Link href="/admin/email" style={navItemClass('/admin/email')}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '9px' }}>
-              <span style={{ color: isActive('/admin/email') ? '#00e599' : '#64748b' }}>✉</span> Denials and appeals
+              <span style={{ color: isActive('/admin/email') ? '#00e599' : '#64748b' }}>✈</span> Email Dispatch
             </span>
             <span
               style={{
@@ -205,32 +206,32 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
           <Link href="/admin/buyers" style={navItemClass('/admin/buyers')}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '9px' }}>
-              <span style={{ color: isActive('/admin/buyers') ? '#00e599' : '#64748b' }}>👤</span> Patients &amp; Buyers
+              <span style={{ color: isActive('/admin/buyers') ? '#00e599' : '#64748b' }}>👤</span> Buyer CRM
             </span>
           </Link>
 
           <Link href="/admin/products" style={navItemClass('/admin/products')}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '9px' }}>
-              <span style={{ color: isActive('/admin/products') ? '#00e599' : '#64748b' }}>📦</span> Payers &amp; Catalog
+              <span style={{ color: isActive('/admin/products') ? '#00e599' : '#64748b' }}>📦</span> Garment Catalog
             </span>
           </Link>
 
           <Link href="/admin/analytics" style={navItemClass('/admin/analytics')}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '9px' }}>
-              <span style={{ color: isActive('/admin/analytics') ? '#00e599' : '#64748b' }}>⚡</span> Operational intel
+              <span style={{ color: isActive('/admin/analytics') ? '#00e599' : '#64748b' }}>📊</span> Export Analytics
             </span>
           </Link>
 
-          {/* SAVED VIEWS SECTION AS SEEN IN THE REEL */}
+          {/* SAVED VIEWS SECTION */}
           <div style={{ fontSize: '10px', textTransform: 'uppercase', color: '#64748b', fontWeight: 800, padding: '16px 8px 6px', letterSpacing: '0.08em', display: 'flex', justifyContent: 'space-between' }}>
-            <span>SAVED VIEWS</span>
+            <span>FLOOR VIEWS</span>
             <span style={{ cursor: 'pointer', color: '#94a3b8' }}>+</span>
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '7px 8px', fontSize: '12.5px', color: '#94a3b8', cursor: 'pointer', borderRadius: '6px' }}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#f87171' }}></span>
-              Clock risk
+              Sampling Rush
             </span>
             <span style={{ fontSize: '11px', color: '#64748b' }}>6</span>
           </div>
@@ -238,7 +239,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '7px 8px', fontSize: '12.5px', color: '#94a3b8', cursor: 'pointer', borderRadius: '6px' }}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#00e599' }}></span>
-              Expedited
+              Active Cutting
             </span>
             <span style={{ fontSize: '11px', color: '#64748b' }}>11</span>
           </div>
@@ -246,7 +247,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '7px 8px', fontSize: '12.5px', color: '#94a3b8', cursor: 'pointer', borderRadius: '6px' }}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#38bdf8' }}></span>
-              Assigned to me
+              Stitching Lines
             </span>
             <span style={{ fontSize: '11px', color: '#64748b' }}>38</span>
           </div>
@@ -254,7 +255,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '7px 8px', fontSize: '12.5px', color: '#94a3b8', cursor: 'pointer', borderRadius: '6px' }}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#fbbf24' }}></span>
-              Appeals due
+              DHL Clearance
             </span>
             <span style={{ fontSize: '11px', color: '#64748b' }}>9</span>
           </div>
@@ -282,11 +283,16 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <span style={{ fontSize: '10px', color: '#64748b' }}>2 m ago</span>
           </div>
           <div style={{ width: '100%', height: '3px', background: 'rgba(255,255,255,0.08)', borderRadius: '9999px', overflow: 'hidden' }}>
-            <div style={{ width: '78%', height: '100%', background: '#00e599', borderRadius: '9999px', boxShadow: '0 0 8px #00e599' }}></div>
+            <motion.div
+              initial={{ width: 0 }}
+              animate={{ width: '84%' }}
+              transition={{ duration: 1.2, ease: "easeOut" as const }}
+              style={{ height: '100%', background: '#00e599', borderRadius: '9999px', boxShadow: '0 0 8px #00e599' }}
+            />
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '6px', fontSize: '10.5px', color: '#64748b' }}>
-            <span>Holden is slow today</span>
-            <span style={{ color: '#00e599', cursor: 'pointer', fontWeight: 600 }}>View</span>
+            <span>Floor Sync: Normal</span>
+            <span style={{ color: '#00e599', fontWeight: 700 }}>Optimal</span>
           </div>
         </div>
 
@@ -364,7 +370,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             {/* Live Dual Time Indicator */}
             <div style={{ fontSize: '12px', fontWeight: 600, color: '#94a3b8', display: 'flex', alignItems: 'center', gap: '6px' }}>
               <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#00e599', display: 'inline-block' }}></span>
-              <span>{currentDateTime}</span>
+              <span suppressHydrationWarning>{currentDateTime}</span>
             </div>
 
             {/* AI Sparkle Icon Pill */}
@@ -429,14 +435,14 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                   width: '32px',
                   height: '32px',
                   borderRadius: '50%',
-                  background: 'linear-gradient(135deg, #f97316, #e11d48)',
+                  background: 'linear-gradient(135deg, #00e599, #0284c7)',
                   border: '2px solid #00e599',
                   display: 'grid',
                   placeItems: 'center',
-                  color: '#ffffff',
-                  fontWeight: 800,
+                  color: '#05140d',
+                  fontWeight: 900,
                   fontSize: '12px',
-                  boxShadow: '0 0 10px rgba(0, 229, 153, 0.3)',
+                  boxShadow: '0 0 10px rgba(0, 229, 153, 0.4)',
                 }}
               >
                 DR
@@ -446,11 +452,20 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           </div>
         </header>
 
-        {/* 4. SCROLLABLE CONTENT CANVAS (Deep Obsidian #090d0f) */}
+        {/* 4. SCROLLABLE CONTENT CANVAS (Deep Obsidian #090d0f with smooth page transitions) */}
         <main style={{ flex: 1, overflowY: 'auto', padding: '24px 28px', background: '#090d0f' }}>
-          <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
-            {children}
-          </div>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={pathname}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.28, ease: "easeOut" }}
+              style={{ maxWidth: '1440px', margin: '0 auto' }}
+            >
+              {children}
+            </motion.div>
+          </AnimatePresence>
         </main>
       </div>
     </div>

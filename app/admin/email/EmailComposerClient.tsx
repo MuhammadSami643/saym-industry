@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { motion } from 'framer-motion';
 
 export interface BuyerContact {
   id?: string;
@@ -57,6 +58,21 @@ Feel free to reply directly to this email or connect with our production head on
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.06,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 12 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.35, ease: "easeOut" as const } },
+};
+
 export default function EmailComposerClient({ initialBuyers }: EmailComposerClientProps) {
   const searchParams = useSearchParams();
 
@@ -67,7 +83,6 @@ export default function EmailComposerClient({ initialBuyers }: EmailComposerClie
 
   const [buyers] = useState<BuyerContact[]>(() => {
     if (initialBuyers.length > 0) return initialBuyers;
-    // Default fallback contacts for clean initial state
     return [
       { name: 'John Doe', email: 'john@apexapparel.com', company: 'Apex NYC', country: 'United States' },
       { name: 'Marcus Sterling', email: 'marcus@ironathletics.co.uk', company: 'Iron Athletics UK', country: 'United Kingdom' },
@@ -85,7 +100,6 @@ export default function EmailComposerClient({ initialBuyers }: EmailComposerClie
   const [loading, setLoading] = useState(false);
   const [statusMessage, setStatusMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
-  // Sync if query params change
   useEffect(() => {
     if (queryEmail) {
       setTargetAudience('individual');
@@ -96,7 +110,6 @@ export default function EmailComposerClient({ initialBuyers }: EmailComposerClie
     }
   }, [queryEmail, querySubject]);
 
-  // Recipient list based on mode
   const activeRecipients = targetAudience === 'all'
     ? buyers
     : buyers.filter(b => b.email === selectedBuyerEmail);
@@ -144,44 +157,74 @@ export default function EmailComposerClient({ initialBuyers }: EmailComposerClie
   };
 
   return (
-    <div>
-      {/* 1. TOP STATUS CONFIGURATION CARDS (Exact match to screenshot) */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '20px', marginBottom: '28px' }}>
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      style={{ paddingBottom: '40px' }}
+    >
+      {/* 1. Header & Live Status */}
+      <motion.div
+        variants={itemVariants}
+        style={{ marginBottom: '24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '14px' }}
+      >
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+            <span style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#00e599' }}>
+              DIRECT BUYER BROADCAST &bull; SMTP GATEWAY
+            </span>
+            <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#00e599', boxShadow: '0 0 8px #00e599' }} />
+          </div>
+          <h1 style={{ fontSize: '22px', fontWeight: 800, margin: 0, color: '#ffffff', letterSpacing: '-0.02em' }}>
+            Export Client Email Dispatch Studio
+          </h1>
+          <p style={{ margin: '4px 0 0', color: '#64748b', fontSize: '13px' }}>
+            Broadcast tech pack evaluations, proforma invoices, and production status updates directly to international buyers.
+          </p>
+        </div>
+      </motion.div>
+
+      {/* 2. Top 3 Status Configuration Cards */}
+      <motion.div
+        variants={itemVariants}
+        style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '14px', marginBottom: '24px' }}
+      >
         {/* Card 1: Buyers Count */}
         <div
           style={{
-            background: '#ffffff',
-            borderRadius: '16px',
-            padding: '22px 24px',
-            border: '1px solid #e5e7eb',
-            boxShadow: '0 1px 3px rgba(0,0,0,0.03)',
+            background: '#11171a',
+            borderRadius: '12px',
+            padding: '18px 22px',
+            border: '1px solid rgba(255, 255, 255, 0.07)',
             display: 'flex',
             alignItems: 'center',
-            gap: '18px',
+            gap: '16px',
           }}
         >
           <div
             style={{
-              width: '52px',
-              height: '52px',
-              borderRadius: '12px',
-              background: '#0b0f19',
-              color: '#ffffff',
+              width: '46px',
+              height: '46px',
+              borderRadius: '10px',
+              background: '#090d0f',
+              border: '1px solid rgba(0, 229, 153, 0.3)',
+              color: '#00e599',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              fontSize: '22px',
+              fontSize: '20px',
               flexShrink: 0,
+              boxShadow: '0 0 12px rgba(0, 229, 153, 0.15)',
             }}
           >
             👥
           </div>
           <div>
             <div style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', color: '#64748b', letterSpacing: '0.06em' }}>
-              Purchasing Customers
+              PURCHASING BUYERS
             </div>
-            <div style={{ fontSize: '28px', fontWeight: 900, color: '#0f172a', lineHeight: 1.15, marginTop: '2px' }}>
-              {buyers.length}
+            <div style={{ fontSize: '26px', fontWeight: 900, color: '#ffffff', lineHeight: 1.15, marginTop: '2px' }}>
+              {buyers.length} Contacts
             </div>
           </div>
         </div>
@@ -189,37 +232,38 @@ export default function EmailComposerClient({ initialBuyers }: EmailComposerClie
         {/* Card 2: Sender Address */}
         <div
           style={{
-            background: '#ffffff',
-            borderRadius: '16px',
-            padding: '22px 24px',
-            border: '1px solid #e5e7eb',
-            boxShadow: '0 1px 3px rgba(0,0,0,0.03)',
+            background: '#11171a',
+            borderRadius: '12px',
+            padding: '18px 22px',
+            border: '1px solid rgba(255, 255, 255, 0.07)',
             display: 'flex',
             alignItems: 'center',
-            gap: '18px',
+            gap: '16px',
           }}
         >
           <div
             style={{
-              width: '52px',
-              height: '52px',
-              borderRadius: '12px',
-              background: '#dcfce7',
-              color: '#16a34a',
+              width: '46px',
+              height: '46px',
+              borderRadius: '10px',
+              background: '#090d0f',
+              border: '1px solid rgba(56, 189, 248, 0.3)',
+              color: '#38bdf8',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              fontSize: '22px',
+              fontSize: '20px',
               flexShrink: 0,
+              boxShadow: '0 0 12px rgba(56, 189, 248, 0.15)',
             }}
           >
             ✉️
           </div>
           <div style={{ overflow: 'hidden' }}>
             <div style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', color: '#64748b', letterSpacing: '0.06em' }}>
-              Sender Address
+              SENDER ADDRESS
             </div>
-            <div style={{ fontSize: '14.5px', fontWeight: 800, color: '#0f172a', marginTop: '4px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+            <div style={{ fontSize: '13.5px', fontWeight: 700, color: '#38bdf8', marginTop: '4px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
               sales@binrasoolenterprises.com
             </div>
           </div>
@@ -228,99 +272,111 @@ export default function EmailComposerClient({ initialBuyers }: EmailComposerClie
         {/* Card 3: Replies Routed To */}
         <div
           style={{
-            background: '#ffffff',
-            borderRadius: '16px',
-            padding: '22px 24px',
-            border: '1px solid #e5e7eb',
-            boxShadow: '0 1px 3px rgba(0,0,0,0.03)',
+            background: '#11171a',
+            borderRadius: '12px',
+            padding: '18px 22px',
+            border: '1px solid rgba(255, 255, 255, 0.07)',
             display: 'flex',
             alignItems: 'center',
-            gap: '18px',
+            gap: '16px',
           }}
         >
           <div
             style={{
-              width: '52px',
-              height: '52px',
-              borderRadius: '12px',
-              background: '#e0f2fe',
-              color: '#0284c7',
+              width: '46px',
+              height: '46px',
+              borderRadius: '10px',
+              background: '#090d0f',
+              border: '1px solid rgba(251, 191, 36, 0.3)',
+              color: '#fbbf24',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              fontSize: '22px',
+              fontSize: '20px',
               flexShrink: 0,
+              boxShadow: '0 0 12px rgba(251, 191, 36, 0.15)',
             }}
           >
             🛡️
           </div>
           <div style={{ overflow: 'hidden' }}>
             <div style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', color: '#64748b', letterSpacing: '0.06em' }}>
-              Replies Routed To
+              REPLIES ROUTED TO
             </div>
-            <div style={{ fontSize: '14.5px', fontWeight: 800, color: '#0f172a', marginTop: '4px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+            <div style={{ fontSize: '13.5px', fontWeight: 700, color: '#fbbf24', marginTop: '4px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
               info@binrasoolenterprises.com
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Alert Status */}
       {statusMessage && (
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: -6 }}
+          animate={{ opacity: 1, y: 0 }}
           style={{
-            background: statusMessage.type === 'success' ? '#f0fdf4' : '#fef2f2',
-            border: `1px solid ${statusMessage.type === 'success' ? '#bbf7d0' : '#fecaca'}`,
-            color: statusMessage.type === 'success' ? '#15803d' : '#991b1b',
+            background: statusMessage.type === 'success' ? 'rgba(0, 229, 153, 0.12)' : 'rgba(248, 113, 113, 0.12)',
+            border: `1px solid ${statusMessage.type === 'success' ? 'rgba(0, 229, 153, 0.3)' : 'rgba(248, 113, 113, 0.3)'}`,
+            color: statusMessage.type === 'success' ? '#00e599' : '#f87171',
             padding: '12px 18px',
             borderRadius: '10px',
-            marginBottom: '24px',
-            fontSize: '13.5px',
-            fontWeight: 600,
+            marginBottom: '20px',
+            fontSize: '13px',
+            fontWeight: 700,
           }}
         >
           {statusMessage.text}
-        </div>
+        </motion.div>
       )}
 
-      {/* 2. DUAL COLUMN: FORM ON LEFT, LIVE INBOX PREVIEW ON RIGHT */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(460px, 1fr))', gap: '28px', alignItems: 'start' }}>
+      {/* 3. DUAL COLUMN: FORM ON LEFT, LIVE INBOX PREVIEW ON RIGHT */}
+      <motion.div
+        variants={itemVariants}
+        style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(460px, 1fr))', gap: '24px', alignItems: 'start' }}
+      >
         {/* LEFT COLUMN: Compose Message Form */}
         <div
           style={{
-            background: '#ffffff',
-            borderRadius: '16px',
-            padding: '28px',
-            border: '1px solid #e5e7eb',
-            boxShadow: '0 1px 3px rgba(0,0,0,0.03)',
+            background: '#11171a',
+            borderRadius: '14px',
+            padding: '24px',
+            border: '1px solid rgba(255, 255, 255, 0.07)',
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.36)',
           }}
         >
           {/* Header & Presets */}
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '22px', flexWrap: 'wrap', gap: '10px' }}>
-            <h2 style={{ fontSize: '18px', fontWeight: 800, color: '#0f172a', margin: 0 }}>
-              Compose Message
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', flexWrap: 'wrap', gap: '10px' }}>
+            <h2 style={{ fontSize: '16px', fontWeight: 800, color: '#ffffff', margin: 0 }}>
+              Compose Client Message
             </h2>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <span style={{ fontSize: '12px', color: '#f3a626', fontWeight: 700 }}>✨ Presets:</span>
+              <span style={{ fontSize: '11px', color: '#00e599', fontWeight: 700 }}>✨ Presets:</span>
               {PRESETS.map((p) => (
                 <button
                   key={p.name}
                   type="button"
                   onClick={() => handleApplyPreset(p)}
                   style={{
-                    background: '#f1f5f9',
-                    border: '1px solid #e2e8f0',
-                    color: '#334155',
-                    fontSize: '12px',
+                    background: '#090d0f',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    color: '#94a3b8',
+                    fontSize: '11.5px',
                     fontWeight: 700,
                     padding: '4px 10px',
                     borderRadius: '6px',
                     cursor: 'pointer',
                     transition: 'all 0.15s ease',
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.background = '#e2e8f0')}
-                  onMouseLeave={(e) => (e.currentTarget.style.background = '#f1f5f9')}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = '#00e599';
+                    e.currentTarget.style.borderColor = 'rgba(0, 229, 153, 0.3)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = '#94a3b8';
+                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                  }}
                 >
                   {p.name}
                 </button>
@@ -328,7 +384,7 @@ export default function EmailComposerClient({ initialBuyers }: EmailComposerClie
             </div>
           </div>
 
-          <form onSubmit={handleSend} style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+          <form onSubmit={handleSend} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             {/* Subject Field */}
             <div>
               <label
@@ -338,12 +394,12 @@ export default function EmailComposerClient({ initialBuyers }: EmailComposerClie
                   fontSize: '11px',
                   fontWeight: 800,
                   textTransform: 'uppercase',
-                  color: '#475569',
-                  marginBottom: '8px',
+                  color: '#64748b',
+                  marginBottom: '6px',
                   letterSpacing: '0.05em',
                 }}
               >
-                Email Subject
+                EMAIL SUBJECT
               </label>
               <input
                 id="subject"
@@ -351,13 +407,15 @@ export default function EmailComposerClient({ initialBuyers }: EmailComposerClie
                 required
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
-                placeholder="e.g. VIP Offer / New Star Wars Replica Collection Launch"
+                placeholder="e.g. Official Manufacturing Quotation - Bin Rasool Enterprises"
                 style={{
                   width: '100%',
-                  padding: '12px 14px',
-                  border: '1px solid #cbd5e1',
-                  borderRadius: '10px',
-                  fontSize: '14px',
+                  background: '#090d0f',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  borderRadius: '8px',
+                  padding: '10px 14px',
+                  fontSize: '13px',
+                  color: '#ffffff',
                   outline: 'none',
                   boxSizing: 'border-box',
                 }}
@@ -373,26 +431,28 @@ export default function EmailComposerClient({ initialBuyers }: EmailComposerClie
                   fontSize: '11px',
                   fontWeight: 800,
                   textTransform: 'uppercase',
-                  color: '#475569',
-                  marginBottom: '8px',
+                  color: '#64748b',
+                  marginBottom: '6px',
                   letterSpacing: '0.05em',
                 }}
               >
-                Message Content
+                MESSAGE BODY
               </label>
               <textarea
                 id="content"
                 required
-                rows={9}
+                rows={8}
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
-                placeholder="Write your email announcement or offer here..."
+                placeholder="Write your email announcement or manufacturing update here..."
                 style={{
                   width: '100%',
-                  padding: '14px',
-                  border: '1px solid #cbd5e1',
-                  borderRadius: '10px',
-                  fontSize: '14px',
+                  background: '#090d0f',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  borderRadius: '8px',
+                  padding: '12px 14px',
+                  fontSize: '13px',
+                  color: '#ffffff',
                   fontFamily: 'inherit',
                   lineHeight: '1.6',
                   outline: 'none',
@@ -400,28 +460,25 @@ export default function EmailComposerClient({ initialBuyers }: EmailComposerClie
                   resize: 'vertical',
                 }}
               />
-              <div style={{ fontSize: '11.5px', color: '#94a3b8', marginTop: '6px' }}>
-                Paragraph breaks are formatted into standard HTML paragraphs automatically.
-              </div>
             </div>
 
-            {/* Target Audience Selector (Exact match to screenshot) */}
-            <div style={{ paddingTop: '8px', borderTop: '1px solid #f1f5f9' }}>
+            {/* Target Audience Selector */}
+            <div style={{ paddingTop: '8px', borderTop: '1px solid rgba(255, 255, 255, 0.06)' }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '10px', marginBottom: '8px' }}>
-                <span style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', color: '#475569', letterSpacing: '0.05em' }}>
-                  Target Audience: {activeRecipients.length} Recipient(s)
+                <span style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', color: '#64748b', letterSpacing: '0.05em' }}>
+                  TARGET AUDIENCE: <span style={{ color: '#00e599' }}>{activeRecipients.length} Recipient(s)</span>
                 </span>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', fontSize: '13px', fontWeight: 600, color: '#334155' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '14px', fontSize: '12px', fontWeight: 600, color: '#94a3b8' }}>
                   <label style={{ display: 'flex', alignItems: 'center', gap: '6px', cursor: 'pointer' }}>
                     <input
                       type="radio"
                       name="audience"
                       checked={targetAudience === 'all'}
                       onChange={() => setTargetAudience('all')}
-                      style={{ accentColor: '#2563eb' }}
+                      style={{ accentColor: '#00e599' }}
                     />
-                    <span>All Customers ({buyers.length})</span>
+                    <span>All Buyers ({buyers.length})</span>
                   </label>
 
                   <label style={{ display: 'flex', alignItems: 'center', gap: '6px', cursor: 'pointer' }}>
@@ -430,30 +487,32 @@ export default function EmailComposerClient({ initialBuyers }: EmailComposerClie
                       name="audience"
                       checked={targetAudience === 'individual'}
                       onChange={() => setTargetAudience('individual')}
-                      style={{ accentColor: '#2563eb' }}
+                      style={{ accentColor: '#00e599' }}
                     />
-                    <span>Custom Selection</span>
+                    <span>Individual Client</span>
                   </label>
                 </div>
               </div>
 
               {/* Dropdown if individual selection */}
               {targetAudience === 'individual' && (
-                <div style={{ marginTop: '10px' }}>
+                <div style={{ marginTop: '8px' }}>
                   <select
                     value={selectedBuyerEmail}
                     onChange={(e) => setSelectedBuyerEmail(e.target.value)}
                     style={{
                       width: '100%',
-                      padding: '10px 12px',
-                      border: '1px solid #cbd5e1',
+                      background: '#090d0f',
+                      border: '1px solid rgba(255, 255, 255, 0.1)',
+                      color: '#ffffff',
+                      padding: '9px 12px',
                       borderRadius: '8px',
-                      fontSize: '13px',
-                      background: '#ffffff',
+                      fontSize: '12.5px',
+                      outline: 'none',
                     }}
                   >
                     {buyers.map((b) => (
-                      <option key={b.email} value={b.email}>
+                      <option key={b.email} value={b.email} style={{ background: '#090d0f', color: '#ffffff' }}>
                         {b.name} ({b.email}) - {b.company || b.country || 'Inquiry Client'}
                       </option>
                     ))}
@@ -468,37 +527,29 @@ export default function EmailComposerClient({ initialBuyers }: EmailComposerClie
               disabled={loading}
               style={{
                 width: '100%',
-                background: '#475569',
-                color: '#ffffff',
+                background: '#00e599',
+                color: '#05140d',
                 border: 'none',
-                borderRadius: '10px',
-                padding: '14px',
-                fontSize: '14px',
+                borderRadius: '8px',
+                padding: '12px',
+                fontSize: '13.5px',
                 fontWeight: 800,
-                textTransform: 'uppercase',
-                letterSpacing: '0.04em',
                 cursor: loading ? 'not-allowed' : 'pointer',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                gap: '10px',
-                boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-                transition: 'background 0.2s ease',
-              }}
-              onMouseEnter={(e) => {
-                if (!loading) e.currentTarget.style.background = '#334155';
-              }}
-              onMouseLeave={(e) => {
-                if (!loading) e.currentTarget.style.background = '#475569';
+                gap: '8px',
+                boxShadow: '0 0 16px rgba(0, 229, 153, 0.35)',
+                transition: 'transform 0.15s ease',
               }}
             >
               {loading ? (
-                <span>Dispatching Email...</span>
+                <span>Dispatching SMTP Broadcast...</span>
               ) : (
                 <>
                   <span>✈️</span>
                   <span>
-                    Send Broadcast to {activeRecipients.length} Customer{activeRecipients.length > 1 ? 's' : ''}
+                    Send Broadcast to {activeRecipients.length} Buyer{activeRecipients.length > 1 ? 's' : ''}
                   </span>
                 </>
               )}
@@ -506,55 +557,55 @@ export default function EmailComposerClient({ initialBuyers }: EmailComposerClie
           </form>
         </div>
 
-        {/* RIGHT COLUMN: Recipient Inbox Live Preview (Exact match to screenshot) */}
+        {/* RIGHT COLUMN: Recipient Inbox Live Preview */}
         <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', color: '#ea580c', letterSpacing: '0.08em', marginBottom: '10px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', color: '#00e599', letterSpacing: '0.08em', marginBottom: '10px' }}>
             <span>👁</span>
-            <span>Recipient Inbox Live Preview</span>
+            <span>Buyer Inbox Live Preview</span>
           </div>
 
           <div
             style={{
-              background: '#ffffff',
-              borderRadius: '16px',
-              border: '1px solid #e2e8f0',
-              boxShadow: '0 4px 20px rgba(0,0,0,0.06)',
+              background: '#0d1316',
+              borderRadius: '14px',
+              border: '1px solid rgba(255, 255, 255, 0.08)',
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.45)',
               overflow: 'hidden',
             }}
           >
             {/* Fake Email Client Metadata Header */}
-            <div style={{ padding: '16px 20px', background: '#ffffff', borderBottom: '1px solid #f1f5f9', fontSize: '12px', color: '#475569', lineHeight: '1.7' }}>
-              <div><strong>From:</strong> Bin Rasool Enterprises &lt;sales@binrasoolenterprises.com&gt;</div>
-              <div><strong>Reply-To:</strong> info@binrasoolenterprises.com</div>
-              <div><strong>Subject:</strong> {subject || '(Enter subject above)'}</div>
+            <div style={{ padding: '14px 18px', background: '#090d0f', borderBottom: '1px solid rgba(255, 255, 255, 0.06)', fontSize: '12px', color: '#94a3b8', lineHeight: '1.7' }}>
+              <div><strong style={{ color: '#cbd5e1' }}>From:</strong> Bin Rasool Enterprises &lt;sales@binrasoolenterprises.com&gt;</div>
+              <div><strong style={{ color: '#cbd5e1' }}>Reply-To:</strong> info@binrasoolenterprises.com</div>
+              <div><strong style={{ color: '#cbd5e1' }}>Subject:</strong> <span style={{ color: '#00e599' }}>{subject || '(Enter subject above)'}</span></div>
             </div>
 
             {/* Email Body Rendering */}
-            <div style={{ padding: '0 0 24px' }}>
-              {/* Dark Brand Header Banner (Velmoras style from user's image) */}
+            <div style={{ padding: '0 0 20px' }}>
+              {/* Brand Header Banner */}
               <div
                 style={{
-                  background: '#0b0b0d',
-                  padding: '24px 20px',
+                  background: '#05080a',
+                  padding: '22px 18px',
                   textAlign: 'center',
-                  borderBottom: '3px solid #f3a626',
+                  borderBottom: '2px solid #00e599',
                 }}
               >
-                <div style={{ color: '#ffffff', fontSize: '18px', fontWeight: 900, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                <div style={{ color: '#ffffff', fontSize: '17px', fontWeight: 900, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                   Bin Rasool Enterprises
                 </div>
-                <div style={{ color: '#f3a626', fontSize: '10.5px', fontWeight: 800, letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: '4px' }}>
+                <div style={{ color: '#00e599', fontSize: '10px', fontWeight: 800, letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: '4px' }}>
                   Custom Apparel Manufacturer &bull; Sialkot, Pakistan
                 </div>
               </div>
 
               {/* Main Content Preview Area */}
-              <div style={{ padding: '28px 24px' }}>
-                <h3 style={{ fontSize: '18px', fontWeight: 800, color: '#0f172a', margin: '0 0 16px' }}>
+              <div style={{ padding: '24px 20px' }}>
+                <h3 style={{ fontSize: '16px', fontWeight: 800, color: '#ffffff', margin: '0 0 14px' }}>
                   {subject || 'Your Subject Preview Here'}
                 </h3>
 
-                <div style={{ fontSize: '13.5px', color: '#475569', lineHeight: '1.7', whiteSpace: 'pre-wrap', marginBottom: '24px' }}>
+                <div style={{ fontSize: '13px', color: '#cbd5e1', lineHeight: '1.7', whiteSpace: 'pre-wrap', marginBottom: '22px' }}>
                   {content || 'Your message preview will appear here in real-time as you type...'}
                 </div>
 
@@ -563,33 +614,33 @@ export default function EmailComposerClient({ initialBuyers }: EmailComposerClie
                   <span
                     style={{
                       display: 'inline-block',
-                      background: '#1e3a8a',
-                      color: '#ffffff',
+                      background: '#00e599',
+                      color: '#05140d',
                       fontWeight: 800,
-                      fontSize: '13px',
-                      padding: '12px 24px',
+                      fontSize: '12px',
+                      padding: '11px 22px',
                       borderRadius: '8px',
                       letterSpacing: '0.04em',
+                      boxShadow: '0 0 14px rgba(0, 229, 153, 0.3)',
                     }}
                   >
                     {buttonText || 'VISIT FACTORY PORTAL →'}
                   </span>
                 </div>
 
-                <div style={{ fontSize: '11px', color: '#94a3b8', textAlign: 'center', marginTop: '28px' }}>
-                  You are receiving this update because you placed an inquiry at Bin Rasool Enterprises.
+                <div style={{ fontSize: '11px', color: '#64748b', textAlign: 'center', marginTop: '24px' }}>
+                  You are receiving this update because you placed an export inquiry at Bin Rasool Enterprises.
                 </div>
               </div>
 
               {/* Copyright strip */}
-              <div style={{ textAlign: 'center', fontSize: '11px', color: '#cbd5e1', borderTop: '1px solid #f8fafc', paddingTop: '12px' }}>
+              <div style={{ textAlign: 'center', fontSize: '11px', color: '#475569', borderTop: '1px solid rgba(255, 255, 255, 0.04)', paddingTop: '12px' }}>
                 &copy; {new Date().getFullYear()} Bin Rasool Enterprises &bull; binrasoolenterprises.com
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
-

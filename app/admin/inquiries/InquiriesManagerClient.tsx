@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Inquiry } from '../../actions';
 
 function parseInquiryAttachments(details: string) {
@@ -40,11 +41,22 @@ function parseInquiryAttachments(details: string) {
 export default function InquiriesManagerClient({ initialInquiries }: { initialInquiries: Inquiry[] }) {
   const [inquiries, setInquiries] = useState<Inquiry[]>(initialInquiries);
   const [filter, setFilter] = useState<string>('all');
+  const [search, setSearch] = useState<string>('');
 
   const filtered = inquiries.filter(inq => {
-    if (filter === 'all') return true;
-    return inq.status?.toLowerCase() === filter.toLowerCase();
+    const matchesFilter = filter === 'all' || (inq.status || 'new').toLowerCase() === filter.toLowerCase();
+    const matchesSearch =
+      search === '' ||
+      inq.name.toLowerCase().includes(search.toLowerCase()) ||
+      inq.email.toLowerCase().includes(search.toLowerCase()) ||
+      (inq.subject || '').toLowerCase().includes(search.toLowerCase()) ||
+      (inq.details || '').toLowerCase().includes(search.toLowerCase());
+    return matchesFilter && matchesSearch;
   });
+
+  const newCount = inquiries.filter(i => (i.status || 'new').toLowerCase() === 'new').length;
+  const contactedCount = inquiries.filter(i => (i.status || 'new').toLowerCase() === 'contacted').length;
+  const completedCount = inquiries.filter(i => (i.status || 'new').toLowerCase() === 'completed').length;
 
   async function handleStatusChange(id: string, newStatus: string) {
     try {
@@ -69,10 +81,7 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
     if (!confirm('Are you sure you want to delete this inquiry?')) return;
 
     try {
-      const res = await fetch(`/api/inquiries/${id}`, {
-        method: 'DELETE'
-      });
-
+      const res = await fetch(`/api/inquiries/${id}`, { method: 'DELETE' });
       if (res.ok) {
         setInquiries(prev => prev.filter(inq => inq.id !== id));
       } else {
@@ -139,71 +148,220 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
   };
 
   return (
-    <div>
-      <div style={{ marginBottom: '24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '14px' }}>
+    <div style={{ color: '#e2e8f0', fontFamily: 'inherit' }}>
+      <style jsx>{`
+        .inq-card {
+          background: #11171a;
+          border: 1px solid rgba(255, 255, 255, 0.07);
+          border-radius: 14px;
+          padding: 24px;
+          transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+        }
+        .inq-card:hover {
+          border-color: rgba(0, 229, 153, 0.25);
+          box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5), 0 0 1px 1px rgba(0, 229, 153, 0.15);
+        }
+        .kpi-mini {
+          background: #11171a;
+          border: 1px solid rgba(255, 255, 255, 0.07);
+          border-radius: 12px;
+          padding: 16px 20px;
+          display: flex;
+          flex-direction: column;
+          justifyContent: space-between;
+          transition: all 0.2s ease;
+        }
+        .kpi-mini:hover {
+          background: #131b1f;
+          border-color: rgba(0, 229, 153, 0.3);
+          transform: translateY(-2px);
+        }
+        .tag-pill {
+          display: inline-flex;
+          align-items: center;
+          gap: 4px;
+          font-size: 11px;
+          font-weight: 700;
+          padding: 3px 8px;
+          border-radius: 9999px;
+        }
+        .tag-mint {
+          background: rgba(0, 229, 153, 0.12);
+          color: #00e599;
+          border: 1px solid rgba(0, 229, 153, 0.25);
+        }
+        .tag-amber {
+          background: rgba(251, 191, 36, 0.12);
+          color: #fbbf24;
+          border: 1px solid rgba(251, 191, 36, 0.25);
+        }
+        .tag-rose {
+          background: rgba(248, 113, 113, 0.12);
+          color: #f87171;
+          border: 1px solid rgba(248, 113, 113, 0.25);
+        }
+      `}</style>
+
+      {/* Title & Actions */}
+      <div style={{ marginBottom: '24px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '16px' }}>
         <div>
-          <h1 style={{ fontSize: '24px', fontWeight: 800, margin: '0 0 6px', color: '#111827' }}>
-            Customer Inquiries &amp; Quote Requests
-          </h1>
-          <p style={{ margin: 0, color: '#6b7280', fontSize: '14px' }}>
-            Powered by backend REST API (<code>/api/inquiries</code>) with Supabase persistence &amp; sample video inspection.
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '4px' }}>
+            <h1 style={{ fontSize: '26px', fontWeight: 800, margin: 0, color: '#ffffff', letterSpacing: '-0.02em' }}>
+              Authorization Queue &amp; RFQs
+            </h1>
+            <span className="tag-pill tag-mint">
+              <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#00e599' }}></span>
+              LIVE PIPELINE
+            </span>
+          </div>
+          <p style={{ margin: 0, color: '#94a3b8', fontSize: '13.5px' }}>
+            International wholesale buyers, custom sample requests, and instant quote submissions.
           </p>
         </div>
 
-        {/* Controls: Status Filters & CSV Export */}
+        {/* Controls */}
         <div style={{ display: 'flex', gap: '10px', alignItems: 'center', flexWrap: 'wrap' }}>
-          <div style={{ display: 'flex', gap: '6px' }}>
-            {['all', 'new', 'contacted', 'completed'].map((st) => (
-              <button
-                key={st}
-                onClick={() => setFilter(st)}
-                style={{
-                  background: filter === st ? 'var(--brand-orange, #f3a626)' : '#fff',
-                  color: filter === st ? '#000' : '#475569',
-                  border: '1px solid #cbd5e1',
-                  borderRadius: '999px',
-                  padding: '6px 12px',
-                  fontSize: '12px',
-                  fontWeight: 700,
-                  textTransform: 'capitalize',
-                  cursor: 'pointer'
-                }}
-              >
-                {st} ({st === 'all' ? inquiries.length : inquiries.filter(i => (i.status || 'new').toLowerCase() === st).length})
-              </button>
-            ))}
+          {/* Search bar */}
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              background: '#11171a',
+              border: '1px solid rgba(255, 255, 255, 0.08)',
+              borderRadius: '9999px',
+              padding: '6px 14px',
+              width: '240px',
+            }}
+          >
+            <span style={{ color: '#64748b', fontSize: '12px' }}>🔍</span>
+            <input
+              type="text"
+              placeholder="Search RFQs, buyer, email..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              style={{
+                background: 'transparent',
+                border: 'none',
+                outline: 'none',
+                color: '#ffffff',
+                fontSize: '12px',
+                width: '100%',
+              }}
+            />
           </div>
 
           <button
             onClick={exportToCSV}
             style={{
-              background: '#047857',
-              color: '#ffffff',
+              background: '#00e599',
+              color: '#05140d',
               border: 'none',
-              borderRadius: '8px',
-              padding: '7px 14px',
-              fontSize: '12px',
+              borderRadius: '9999px',
+              padding: '8px 16px',
+              fontSize: '12.5px',
               fontWeight: 800,
               cursor: 'pointer',
               display: 'inline-flex',
               alignItems: 'center',
               gap: '6px',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+              boxShadow: '0 0 14px rgba(0, 229, 153, 0.3)',
+              transition: 'transform 0.15s ease',
             }}
-            title="Download inquiries as Excel-ready CSV spreadsheet"
           >
-            <span>📊</span> Export to Excel (CSV)
+            <span>📊</span> Export to CSV
           </button>
         </div>
       </div>
 
-      <div style={{ display: 'grid', gap: '18px' }}>
+      {/* 4-KPI Stat Strip */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '14px', marginBottom: '24px' }}>
+        <div className="kpi-mini">
+          <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#64748b' }}>
+            TOTAL INQUIRIES
+          </span>
+          <div style={{ fontSize: '28px', fontWeight: 800, color: '#ffffff', margin: '4px 0 2px' }}>
+            {inquiries.length}
+          </div>
+          <span style={{ fontSize: '11.5px', color: '#64748b' }}>All time submissions</span>
+        </div>
+
+        <div className="kpi-mini">
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#64748b' }}>
+              NEW UNTOUCHED
+            </span>
+            <span className="tag-pill tag-rose">Action Needed</span>
+          </div>
+          <div style={{ fontSize: '28px', fontWeight: 800, color: '#f87171', margin: '4px 0 2px' }}>
+            {newCount}
+          </div>
+          <span style={{ fontSize: '11.5px', color: '#64748b' }}>Awaiting factory reply</span>
+        </div>
+
+        <div className="kpi-mini">
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#64748b' }}>
+              CONTACTED / QUOTED
+            </span>
+            <span className="tag-pill tag-amber">In Negotiation</span>
+          </div>
+          <div style={{ fontSize: '28px', fontWeight: 800, color: '#fbbf24', margin: '4px 0 2px' }}>
+            {contactedCount}
+          </div>
+          <span style={{ fontSize: '11.5px', color: '#64748b' }}>Price &amp; tech pack shared</span>
+        </div>
+
+        <div className="kpi-mini">
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#64748b' }}>
+              CONFIRMED ORDERS
+            </span>
+            <span className="tag-pill tag-mint">Converted</span>
+          </div>
+          <div style={{ fontSize: '28px', fontWeight: 800, color: '#00e599', margin: '4px 0 2px' }}>
+            {completedCount}
+          </div>
+          <span style={{ fontSize: '11.5px', color: '#64748b' }}>Moved to factory floor</span>
+        </div>
+      </div>
+
+      {/* Filter Tabs */}
+      <div style={{ display: 'flex', gap: '8px', marginBottom: '20px' }}>
+        {[
+          { key: 'all', label: 'All Inquiries', count: inquiries.length },
+          { key: 'new', label: 'New & Untouched', count: newCount },
+          { key: 'contacted', label: 'In Contact', count: contactedCount },
+          { key: 'completed', label: 'Completed', count: completedCount },
+        ].map((tab) => (
+          <button
+            key={tab.key}
+            onClick={() => setFilter(tab.key)}
+            style={{
+              background: filter === tab.key ? 'rgba(0, 229, 153, 0.15)' : '#11171a',
+              color: filter === tab.key ? '#00e599' : '#94a3b8',
+              border: filter === tab.key ? '1px solid rgba(0, 229, 153, 0.3)' : '1px solid rgba(255, 255, 255, 0.08)',
+              padding: '6px 14px',
+              borderRadius: '9999px',
+              fontSize: '12px',
+              fontWeight: 700,
+              cursor: 'pointer',
+              transition: 'all 0.2s ease',
+            }}
+          >
+            {tab.label} <span style={{ opacity: 0.75 }}>({tab.count})</span>
+          </button>
+        ))}
+      </div>
+
+      {/* Inquiries Cards Grid */}
+      <div style={{ display: 'grid', gap: '16px' }}>
         {filtered.length === 0 ? (
-          <div style={{ background: '#fff', padding: '48px', textAlign: 'center', borderRadius: '12px', border: '1px solid #e5e7eb' }}>
-            <div style={{ fontSize: '32px', marginBottom: '12px' }}>📭</div>
-            <h3 style={{ margin: '0 0 8px' }}>No inquiries in this category</h3>
-            <p style={{ color: '#64748b', margin: 0 }}>
-              All new submissions from the contact form appear here via <code>POST /api/contact</code>.
+          <div style={{ background: '#11171a', border: '1px solid rgba(255, 255, 255, 0.08)', padding: '56px 20px', textAlign: 'center', borderRadius: '14px' }}>
+            <div style={{ fontSize: '36px', marginBottom: '12px' }}>📭</div>
+            <h3 style={{ margin: '0 0 6px', color: '#ffffff', fontSize: '16px' }}>No inquiries matching this filter</h3>
+            <p style={{ color: '#64748b', margin: 0, fontSize: '13px' }}>
+              All new submissions from contact forms and RFQs appear here automatically.
             </p>
           </div>
         ) : (
@@ -217,21 +375,22 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
             const isYouTube = videoUrl && (videoUrl.includes('youtube.com') || videoUrl.includes('youtu.be'));
             const isLoom = videoUrl && videoUrl.includes('loom.com');
 
+            const status = (inq.status || 'new').toLowerCase();
+            const statusBadgeClass = status === 'completed' ? 'tag-mint' : status === 'contacted' ? 'tag-amber' : 'tag-rose';
+
             return (
-              <div
+              <motion.div
                 key={inq.id || idx}
-                style={{
-                  background: '#fff',
-                  borderRadius: '12px',
-                  border: '1px solid #e5e7eb',
-                  padding: '24px',
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.05)'
-                }}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.38, ease: "easeOut" as const }}
+                className="inq-card"
               >
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '12px', marginBottom: '16px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '12px', marginBottom: '14px' }}>
                   <div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                      <h2 style={{ fontSize: '18px', fontWeight: 800, margin: 0, color: '#0f172a' }}>
+                      <h2 style={{ fontSize: '17px', fontWeight: 800, margin: 0, color: '#ffffff' }}>
                         {inq.name}
                       </h2>
 
@@ -240,15 +399,16 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
                         value={inq.status || 'new'}
                         onChange={(e) => inq.id && handleStatusChange(inq.id, e.target.value)}
                         style={{
-                          background: 'var(--brand-orange-light, #fff1d6)',
-                          color: 'var(--brand-orange-dark, #9a5b00)',
+                          background: '#090d0f',
+                          color: status === 'completed' ? '#00e599' : status === 'contacted' ? '#fbbf24' : '#f87171',
                           fontSize: '11px',
                           fontWeight: 800,
                           textTransform: 'uppercase',
-                          padding: '4px 8px',
+                          padding: '4px 10px',
                           borderRadius: '6px',
-                          border: '1px solid rgba(0,0,0,0.08)',
-                          cursor: 'pointer'
+                          border: '1px solid rgba(255,255,255,0.12)',
+                          cursor: 'pointer',
+                          outline: 'none',
                         }}
                       >
                         <option value="new">Status: New</option>
@@ -257,35 +417,35 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
                       </select>
 
                       {videoUrl && (
-                        <span style={{ background: '#fef3c7', color: '#b45309', border: '1px solid #fde68a', fontSize: '11px', fontWeight: 800, padding: '3px 8px', borderRadius: '6px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                          🎥 Video Spec Attached
+                        <span className="tag-pill tag-amber" style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                          🎥 Video Spec
                         </span>
                       )}
                     </div>
-                    <div style={{ display: 'flex', gap: '16px', marginTop: '6px', fontSize: '13px', color: '#64748b' }}>
-                      <span>✉️ <a href={`mailto:${inq.email}`} style={{ color: '#2563eb' }}>{inq.email}</a></span>
+                    <div style={{ display: 'flex', gap: '16px', marginTop: '6px', fontSize: '12.5px', color: '#94a3b8' }}>
+                      <span>✉️ <a href={`mailto:${inq.email}`} style={{ color: '#38bdf8', textDecoration: 'none' }}>{inq.email}</a></span>
                       {inq.phone && (
-                        <span>📱 <a href={`https://wa.me/${inq.phone.replace(/[^0-9]/g, '')}`} target="_blank" rel="noopener noreferrer" style={{ color: '#16a34a' }}>{inq.phone}</a></span>
+                        <span>📱 <a href={`https://wa.me/${inq.phone.replace(/[^0-9]/g, '')}`} target="_blank" rel="noopener noreferrer" style={{ color: '#00e599', textDecoration: 'none' }}>{inq.phone}</a></span>
                       )}
                     </div>
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <span style={{ fontSize: '12px', color: '#94a3b8' }}>
-                      {inq.date ? new Date(inq.date).toLocaleString() : 'Recent'}
+                    <span style={{ fontSize: '11.5px', color: '#64748b' }}>
+                      {inq.date ? new Date(inq.date).toLocaleString('en-GB') : 'Recent'}
                     </span>
                     {inq.id && (
                       <button
                         onClick={() => handleDelete(inq.id!)}
                         style={{
-                          background: '#fee2e2',
-                          color: '#991b1b',
-                          border: 'none',
+                          background: 'rgba(248, 113, 113, 0.1)',
+                          color: '#f87171',
+                          border: '1px solid rgba(248, 113, 113, 0.25)',
                           borderRadius: '6px',
-                          padding: '4px 8px',
+                          padding: '4px 10px',
                           fontSize: '11px',
                           fontWeight: 700,
-                          cursor: 'pointer'
+                          cursor: 'pointer',
                         }}
                       >
                         Delete
@@ -295,37 +455,32 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
                 </div>
 
                 {inq.subject && (
-                  <div style={{ fontSize: '14px', fontWeight: 700, color: '#334155', marginBottom: '8px' }}>
-                    Subject / Category: <span style={{ fontWeight: 500 }}>{inq.subject}</span>
+                  <div style={{ fontSize: '13px', fontWeight: 700, color: '#cbd5e1', marginBottom: '10px' }}>
+                    Subject / Category: <span style={{ color: '#00e599', fontWeight: 600 }}>{inq.subject}</span>
                   </div>
                 )}
 
-                {/* Inquiry text content */}
-                <div style={{ background: '#f8fafc', padding: '16px', borderRadius: '8px', border: '1px solid #e2e8f0', color: '#334155', fontSize: '14px', lineHeight: '1.7', whiteSpace: 'pre-wrap' }}>
+                {/* Inquiry text content in dark frosted box */}
+                <div style={{ background: '#090d0f', padding: '14px 16px', borderRadius: '10px', border: '1px solid rgba(255, 255, 255, 0.05)', color: '#cbd5e1', fontSize: '13px', lineHeight: '1.6', whiteSpace: 'pre-wrap' }}>
                   {cleanDetails}
                 </div>
 
-                {/* ----------------- IN-BROWSER VIDEO INSPECTION PLAYER ----------------- */}
+                {/* Video Inspection Player */}
                 {videoUrl && (
-                  <div style={{ marginTop: '16px', background: '#090d16', borderRadius: '10px', padding: '14px 16px', border: '1px solid #1e293b' }}>
+                  <div style={{ marginTop: '14px', background: '#0c1114', borderRadius: '10px', padding: '14px', border: '1px solid rgba(0, 229, 153, 0.2)' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px', flexWrap: 'wrap', gap: '8px' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <span style={{ fontSize: '18px' }}>🎬</span>
-                        <div>
-                          <span style={{ color: '#f3a626', fontSize: '13px', fontWeight: 800 }}>
-                            Garment Sample &amp; Stitching Video Spec
-                          </span>
-                          <span style={{ color: '#94a3b8', fontSize: '11px', marginLeft: '8px' }}>
-                            (360° product review, fabric stretch or seam inspection)
-                          </span>
-                        </div>
+                        <span style={{ fontSize: '16px' }}>🎬</span>
+                        <span style={{ color: '#00e599', fontSize: '12.5px', fontWeight: 800 }}>
+                          Garment Sample &amp; Stitching Video Spec
+                        </span>
                       </div>
                       <a
                         href={videoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         download={isDirectVideo ? true : undefined}
-                        style={{ color: '#38bdf8', fontSize: '12px', fontWeight: 700, textDecoration: 'underline' }}
+                        style={{ color: '#38bdf8', fontSize: '11.5px', fontWeight: 700, textDecoration: 'none' }}
                       >
                         {isDirectVideo ? 'Download Video File ↗' : 'Open Video Link ↗'}
                       </a>
@@ -361,34 +516,33 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
                         />
                       </div>
                     ) : (
-                      <div style={{ background: '#1e293b', padding: '14px', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px' }}>
-                        <span style={{ color: '#cbd5e1', fontSize: '13px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                      <div style={{ background: '#11171a', padding: '12px', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px' }}>
+                        <span style={{ color: '#94a3b8', fontSize: '12px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                           🔗 {videoUrl}
                         </span>
                         <a
                           href={videoUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="btn btn-primary"
-                          style={{ fontSize: '12px', padding: '6px 14px', whiteSpace: 'nowrap' }}
+                          style={{ background: '#00e599', color: '#05140d', fontSize: '11.5px', fontWeight: 800, padding: '6px 14px', borderRadius: '6px', textDecoration: 'none', whiteSpace: 'nowrap' }}
                         >
-                          ▶️ Open in Google Drive / Cloud
+                          ▶️ Open Cloud Video
                         </a>
                       </div>
                     )}
                   </div>
                 )}
 
-                {/* ----------------- ATTACHED TECH PACK CARD ----------------- */}
+                {/* Tech Pack Card */}
                 {techpackUrl && (
-                  <div style={{ marginTop: '12px', background: '#f0fdf4', borderRadius: '8px', padding: '12px 16px', border: '1px solid #86efac', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', flexWrap: 'wrap' }}>
+                  <div style={{ marginTop: '12px', background: '#0c1114', borderRadius: '10px', padding: '12px 14px', border: '1px solid rgba(0, 229, 153, 0.2)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', flexWrap: 'wrap' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                      <span style={{ fontSize: '22px' }}>📁</span>
+                      <span style={{ fontSize: '20px' }}>📁</span>
                       <div>
-                        <div style={{ fontSize: '13px', fontWeight: 800, color: '#166534' }}>
+                        <div style={{ fontSize: '12.5px', fontWeight: 800, color: '#00e599' }}>
                           Tech Pack / CAD Spec Attached
                         </div>
-                        <div style={{ fontSize: '11px', color: '#4b5563' }}>
+                        <div style={{ fontSize: '11px', color: '#64748b' }}>
                           Production measurement chart, vector artwork, or fabric spec sheet
                         </div>
                       </div>
@@ -399,11 +553,12 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
                       rel="noopener noreferrer"
                       download
                       style={{
-                        background: '#16a34a',
-                        color: '#ffffff',
-                        padding: '7px 14px',
+                        background: 'rgba(0, 229, 153, 0.15)',
+                        color: '#00e599',
+                        border: '1px solid rgba(0, 229, 153, 0.3)',
+                        padding: '6px 14px',
                         borderRadius: '6px',
-                        fontSize: '12px',
+                        fontSize: '11.5px',
                         fontWeight: 700,
                         textDecoration: 'none',
                         display: 'inline-flex',
@@ -417,19 +572,35 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
                 )}
 
                 {/* Action Buttons */}
-                <div style={{ marginTop: '18px', display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+                <div style={{ marginTop: '16px', display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
                   <Link
                     href={`/admin/email?email=${encodeURIComponent(inq.email)}&name=${encodeURIComponent(inq.name)}&subject=${encodeURIComponent('Quotation for ' + (inq.subject || 'Manufacturing Inquiry'))}`}
-                    className="btn btn-primary"
-                    style={{ fontSize: '13px', padding: '8px 16px', minHeight: '36px' }}
+                    style={{
+                      background: '#00e599',
+                      color: '#05140d',
+                      fontSize: '12.5px',
+                      fontWeight: 800,
+                      padding: '8px 16px',
+                      borderRadius: '8px',
+                      textDecoration: 'none',
+                      boxShadow: '0 0 12px rgba(0, 229, 153, 0.3)',
+                    }}
                   >
                     📨 Compose Email Reply
                   </Link>
                   <Link
                     href={`/invoice?name=${encodeURIComponent(inq.name)}&email=${encodeURIComponent(inq.email)}&phone=${encodeURIComponent(inq.phone || '')}&garment=${encodeURIComponent(inq.subject || 'Custom Apparel Batch')}&notes=${encodeURIComponent(cleanDetails)}`}
                     target="_blank"
-                    className="btn btn-outline"
-                    style={{ fontSize: '13px', padding: '8px 16px', minHeight: '36px', background: '#0f172a', color: '#fff', border: 'none' }}
+                    style={{
+                      background: '#151d21',
+                      color: '#e2e8f0',
+                      border: '1px solid rgba(255, 255, 255, 0.1)',
+                      fontSize: '12.5px',
+                      fontWeight: 700,
+                      padding: '8px 16px',
+                      borderRadius: '8px',
+                      textDecoration: 'none',
+                    }}
                   >
                     📄 Proforma Invoice ↗
                   </Link>
@@ -438,14 +609,22 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
                       href={`https://wa.me/${inq.phone.replace(/[^0-9]/g, '')}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn btn-outline"
-                      style={{ fontSize: '13px', padding: '8px 16px', minHeight: '36px', color: '#16a34a', borderColor: '#16a34a' }}
+                      style={{
+                        background: 'rgba(0, 229, 153, 0.1)',
+                        color: '#00e599',
+                        border: '1px solid rgba(0, 229, 153, 0.25)',
+                        fontSize: '12.5px',
+                        fontWeight: 700,
+                        padding: '8px 16px',
+                        borderRadius: '8px',
+                        textDecoration: 'none',
+                      }}
                     >
-                      Open in WhatsApp
+                      Open in WhatsApp ↗
                     </a>
                   )}
                 </div>
-              </div>
+              </motion.div>
             );
           })
         )}

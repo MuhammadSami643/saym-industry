@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function AdminLogin() {
   const router = useRouter();
@@ -11,9 +12,12 @@ export default function AdminLogin() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [rememberMe, setRememberMe] = useState(true);
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (loading) return;
+
     setError('');
     setLoading(true);
 
@@ -28,13 +32,18 @@ export default function AdminLogin() {
       });
 
       const data = await res.json();
-      setLoading(false);
 
       if (!res.ok || data.error) {
+        setLoading(false);
         setError(data.error || 'Invalid director credentials. Please try again.');
       } else {
-        router.push('/admin');
-        router.refresh();
+        // Successful login
+        setToastMessage('Authentication successful! Welcome, Director. Redirecting...');
+        // Brief smooth pause so user sees the toast confirmation
+        setTimeout(() => {
+          router.push('/admin');
+          router.refresh();
+        }, 900);
       }
     } catch (err: any) {
       setLoading(false);
@@ -50,70 +59,124 @@ export default function AdminLogin() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: 'radial-gradient(circle at 50% 20%, #1e293b 0%, #0b0f19 75%, #05070c 100%)',
+        background: '#090d0f',
         padding: '24px',
         position: 'relative',
         overflow: 'hidden',
         fontFamily: 'inherit',
       }}
     >
+      <style jsx global>{`
+        @keyframes breSpinLoader {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      `}</style>
+
+      {/* Floating Success Toast Notification */}
+      <AnimatePresence>
+        {toastMessage && (
+          <motion.div
+            initial={{ opacity: 0, y: -30, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -20, scale: 0.95 }}
+            transition={{ duration: 0.28, ease: "easeOut" }}
+            style={{
+              position: 'fixed',
+              top: '28px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              zIndex: 999999,
+              background: '#11171a',
+              border: '1px solid #00e599',
+              boxShadow: '0 16px 40px rgba(0, 0, 0, 0.8), 0 0 24px rgba(0, 229, 153, 0.25)',
+              borderRadius: '9999px',
+              padding: '12px 24px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px',
+              color: '#ffffff',
+              fontSize: '13.5px',
+              fontWeight: 700,
+            }}
+          >
+            <span
+              style={{
+                width: '22px',
+                height: '22px',
+                borderRadius: '50%',
+                background: '#00e599',
+                color: '#05140d',
+                display: 'grid',
+                placeItems: 'center',
+                fontSize: '12px',
+                fontWeight: 900,
+                boxShadow: '0 0 8px #00e599',
+              }}
+            >
+              ✓
+            </span>
+            <span>{toastMessage}</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Ambient background glow */}
       <div
         style={{
           position: 'absolute',
-          top: '-15%',
+          top: '-20%',
           left: '50%',
           transform: 'translateX(-50%)',
-          width: '600px',
-          height: '400px',
-          background: 'radial-gradient(circle, rgba(243, 166, 38, 0.12) 0%, rgba(0,0,0,0) 70%)',
+          width: '640px',
+          height: '420px',
+          background: 'radial-gradient(circle, rgba(0, 229, 153, 0.08) 0%, rgba(9, 13, 15, 0) 70%)',
           pointerEvents: 'none',
         }}
       />
 
-      {/* Main Luxury Admin Card */}
+      {/* Main Luxury Obsidian Admin Card */}
       <div
         style={{
           width: '100%',
-          maxWidth: '440px',
-          background: 'rgba(17, 24, 39, 0.88)',
-          backdropFilter: 'blur(20px)',
-          borderRadius: '20px',
-          border: '1px solid rgba(255, 255, 255, 0.12)',
-          boxShadow: '0 25px 60px -15px rgba(0, 0, 0, 0.75), 0 0 40px rgba(243, 166, 38, 0.08)',
-          padding: '40px 36px',
+          maxWidth: '430px',
+          background: '#11171a',
+          borderRadius: '18px',
+          border: '1px solid rgba(255, 255, 255, 0.08)',
+          boxShadow: '0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 229, 153, 0.05)',
+          padding: '38px 34px',
           position: 'relative',
           zIndex: 10,
         }}
       >
         {/* Header Branding */}
-        <div style={{ textAlign: 'center', marginBottom: '32px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '28px' }}>
           <div
             style={{
-              width: '68px',
-              height: '68px',
-              borderRadius: '16px',
-              background: 'linear-gradient(135deg, rgba(243, 166, 38, 0.15) 0%, rgba(255, 255, 255, 0.04) 100%)',
-              border: '1px solid rgba(243, 166, 38, 0.35)',
+              width: '60px',
+              height: '60px',
+              borderRadius: '14px',
+              background: '#0d1316',
+              border: '1px solid rgba(0, 229, 153, 0.3)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               margin: '0 auto 16px',
-              boxShadow: '0 8px 20px rgba(0, 0, 0, 0.3)',
+              boxShadow: '0 0 20px rgba(0, 229, 153, 0.15)',
             }}
           >
-            <img
-              src="/images/site/1776250498_logo.webp"
-              alt="Bin Rasool Enterprises"
-              style={{ height: '42px', width: 'auto' }}
-            />
+            <span style={{ fontSize: '24px', fontWeight: 900, color: '#00e599' }}>BRE</span>
           </div>
 
           <div
             style={{
               fontSize: '11px',
               fontWeight: 800,
-              color: 'var(--brand-orange, #f3a626)',
+              color: '#00e599',
               textTransform: 'uppercase',
               letterSpacing: '0.12em',
               marginBottom: '6px',
@@ -124,17 +187,17 @@ export default function AdminLogin() {
 
           <h1
             style={{
-              fontSize: '1.65rem',
+              fontSize: '1.5rem',
               fontWeight: 900,
               color: '#ffffff',
-              margin: '0 0 8px',
+              margin: '0 0 6px',
               letterSpacing: '-0.02em',
             }}
           >
             Bin Rasool Enterprises
           </h1>
 
-          <p style={{ margin: 0, color: '#94a3b8', fontSize: '13.5px', lineHeight: 1.5 }}>
+          <p style={{ margin: 0, color: '#94a3b8', fontSize: '13px', lineHeight: 1.5 }}>
             Sign in to access factory orders, RFQ pipeline &amp; production floor.
           </p>
         </div>
@@ -143,17 +206,16 @@ export default function AdminLogin() {
         {error && (
           <div
             style={{
-              background: 'rgba(239, 68, 68, 0.12)',
-              border: '1px solid rgba(239, 68, 68, 0.3)',
-              color: '#fca5a5',
+              background: 'rgba(248, 113, 113, 0.12)',
+              border: '1px solid rgba(248, 113, 113, 0.3)',
+              color: '#f87171',
               padding: '12px 16px',
               borderRadius: '10px',
-              marginBottom: '22px',
+              marginBottom: '20px',
               fontSize: '13px',
               display: 'flex',
               alignItems: 'center',
               gap: '10px',
-              animation: 'shake 0.3s ease-in-out',
             }}
           >
             <span>⚠️</span>
@@ -161,18 +223,18 @@ export default function AdminLogin() {
           </div>
         )}
 
-        {/* Modern Form */}
-        <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+        {/* Login Form */}
+        <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
           {/* Email Field */}
           <div>
             <label
               htmlFor="email"
               style={{
                 display: 'block',
-                fontSize: '12.5px',
+                fontSize: '12px',
                 fontWeight: 700,
                 color: '#cbd5e1',
-                marginBottom: '8px',
+                marginBottom: '6px',
                 letterSpacing: '0.02em',
               }}
             >
@@ -201,27 +263,29 @@ export default function AdminLogin() {
                 id="email"
                 type="email"
                 required
+                disabled={loading}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="admin@binrasoolenterprises.com"
                 style={{
                   width: '100%',
-                  background: '#0b1120',
+                  background: '#090d0f',
                   color: '#ffffff',
-                  border: '1px solid rgba(255, 255, 255, 0.16)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
                   borderRadius: '10px',
-                  padding: '13px 14px 13px 44px',
-                  fontSize: '14px',
+                  padding: '12px 14px 12px 42px',
+                  fontSize: '13.5px',
                   outline: 'none',
                   transition: 'all 0.2s ease',
                   boxSizing: 'border-box',
+                  opacity: loading ? 0.7 : 1,
                 }}
                 onFocus={(e) => {
-                  e.target.style.borderColor = 'var(--brand-orange, #f3a626)';
-                  e.target.style.boxShadow = '0 0 0 3px rgba(243, 166, 38, 0.2)';
+                  e.target.style.borderColor = '#00e599';
+                  e.target.style.boxShadow = '0 0 0 3px rgba(0, 229, 153, 0.15)';
                 }}
                 onBlur={(e) => {
-                  e.target.style.borderColor = 'rgba(255, 255, 255, 0.16)';
+                  e.target.style.borderColor = 'rgba(255, 255, 255, 0.1)';
                   e.target.style.boxShadow = 'none';
                 }}
               />
@@ -234,10 +298,10 @@ export default function AdminLogin() {
               htmlFor="password"
               style={{
                 display: 'block',
-                fontSize: '12.5px',
+                fontSize: '12px',
                 fontWeight: 700,
                 color: '#cbd5e1',
-                marginBottom: '8px',
+                marginBottom: '6px',
                 letterSpacing: '0.02em',
               }}
             >
@@ -266,27 +330,29 @@ export default function AdminLogin() {
                 id="password"
                 type={showPassword ? 'text' : 'password'}
                 required
+                disabled={loading}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter password"
                 style={{
                   width: '100%',
-                  background: '#0b1120',
+                  background: '#090d0f',
                   color: '#ffffff',
-                  border: '1px solid rgba(255, 255, 255, 0.16)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
                   borderRadius: '10px',
-                  padding: '13px 44px 13px 44px',
-                  fontSize: '14px',
+                  padding: '12px 42px 12px 42px',
+                  fontSize: '13.5px',
                   outline: 'none',
                   transition: 'all 0.2s ease',
                   boxSizing: 'border-box',
+                  opacity: loading ? 0.7 : 1,
                 }}
                 onFocus={(e) => {
-                  e.target.style.borderColor = 'var(--brand-orange, #f3a626)';
-                  e.target.style.boxShadow = '0 0 0 3px rgba(243, 166, 38, 0.2)';
+                  e.target.style.borderColor = '#00e599';
+                  e.target.style.boxShadow = '0 0 0 3px rgba(0, 229, 153, 0.15)';
                 }}
                 onBlur={(e) => {
-                  e.target.style.borderColor = 'rgba(255, 255, 255, 0.16)';
+                  e.target.style.borderColor = 'rgba(255, 255, 255, 0.1)';
                   e.target.style.boxShadow = 'none';
                 }}
               />
@@ -345,7 +411,7 @@ export default function AdminLogin() {
                 checked={rememberMe}
                 onChange={(e) => setRememberMe(e.target.checked)}
                 style={{
-                  accentColor: 'var(--brand-orange, #f3a626)',
+                  accentColor: '#00e599',
                   width: '15px',
                   height: '15px',
                   cursor: 'pointer',
@@ -355,89 +421,67 @@ export default function AdminLogin() {
             </label>
           </div>
 
-          {/* Submit Button */}
+          {/* Submit Button with Instant Disable & Loading Spinner */}
           <button
             type="submit"
             disabled={loading}
             style={{
               width: '100%',
               minHeight: '48px',
-              background: loading
-                ? '#d98816'
-                : 'linear-gradient(135deg, #f3a626 0%, #d98816 100%)',
-              color: '#0b0b0d',
+              background: '#00e599',
+              color: '#05140d',
               border: 'none',
               borderRadius: '10px',
-              padding: '14px',
-              fontSize: '14.5px',
+              padding: '12px',
+              fontSize: '14px',
               fontWeight: 800,
               letterSpacing: '0.02em',
               cursor: loading ? 'not-allowed' : 'pointer',
-              opacity: loading ? 0.75 : 1,
+              opacity: loading ? 0.85 : 1,
               pointerEvents: loading ? 'none' : 'auto',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              gap: '10px',
-              boxShadow: loading
-                ? 'none'
-                : '0 10px 25px -5px rgba(243, 166, 38, 0.4)',
+              boxShadow: '0 0 20px rgba(0, 229, 153, 0.4)',
               transition: 'all 0.2s ease',
-              marginTop: '4px',
-            }}
-            onMouseEnter={(e) => {
-              if (!loading) e.currentTarget.style.transform = 'translateY(-1px)';
-            }}
-            onMouseLeave={(e) => {
-              if (!loading) e.currentTarget.style.transform = 'translateY(0)';
+              position: 'relative',
             }}
           >
             {loading ? (
               <span
                 style={{
+                  display: 'inline-block',
                   width: '22px',
                   height: '22px',
-                  border: '3px solid rgba(11, 11, 13, 0.22)',
-                  borderTopColor: '#0b0b0d',
+                  border: '3px solid rgba(5, 20, 13, 0.25)',
+                  borderTopColor: '#05140d',
                   borderRadius: '50%',
-                  display: 'inline-block',
-                  animation: 'breSpinLoader 0.65s linear infinite',
+                  animation: 'breSpinLoader 0.75s linear infinite',
                 }}
-                role="status"
-                aria-label="Loading..."
               />
             ) : (
-              <>
-                <span>Sign In to Factory Dashboard</span>
-                <span>&rarr;</span>
-              </>
+              <span>Sign In to Command Portal &rarr;</span>
             )}
           </button>
-
-          <style jsx>{`
-            @keyframes breSpinLoader {
-              0% { transform: rotate(0deg); }
-              100% { transform: rotate(360deg); }
-            }
-          `}</style>
         </form>
 
-        {/* Security badge at bottom - NO return to website link */}
+        {/* Security badge footer */}
         <div
           style={{
             marginTop: '28px',
-            paddingTop: '20px',
-            borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+            paddingTop: '18px',
+            borderTop: '1px solid rgba(255, 255, 255, 0.06)',
+            textAlign: 'center',
+            fontSize: '11px',
+            color: '#64748b',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: '8px',
-            fontSize: '11.5px',
-            color: '#64748b',
+            gap: '6px',
           }}
         >
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
           </svg>
           <span>256-Bit Encrypted Admin Session &bull; Sialkot HQ</span>
         </div>
