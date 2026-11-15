@@ -105,11 +105,22 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           flexDirection: 'column',
           borderRight: '1px solid rgba(255, 255, 255, 0.07)',
           flexShrink: 0,
-          overflowY: 'auto',
+          overflow: 'hidden',
+          position: 'relative',
         }}
       >
-        {/* Brand Header */}
-        <div style={{ padding: '18px 16px', borderBottom: '1px solid rgba(255,255,255,0.06)', flexShrink: 0 }}>
+        {/* Brand Header (Sticky & Scrollbar-free) */}
+        <div
+          style={{
+            padding: '18px 16px',
+            borderBottom: '1px solid rgba(255, 255, 255, 0.06)',
+            flexShrink: 0,
+            background: '#0d1316',
+            position: 'sticky',
+            top: 0,
+            zIndex: 10,
+          }}
+        >
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             <div
               style={{
@@ -138,8 +149,18 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           </div>
         </div>
 
-        {/* Navigation Tabs */}
-        <nav style={{ padding: '16px 12px', display: 'flex', flexDirection: 'column', gap: '4px', flexGrow: 1 }}>
+        {/* Navigation Tabs (Scrollable body below header) */}
+        <nav
+          style={{
+            padding: '16px 12px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '4px',
+            flex: 1,
+            overflowY: 'auto',
+            minHeight: 0,
+          }}
+        >
           <div style={{ fontSize: '10.5px', textTransform: 'uppercase', color: '#94a3b8', fontWeight: 800, padding: '4px 8px', letterSpacing: '0.08em' }}>
             OPERATIONS COMMAND
           </div>
