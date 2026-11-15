@@ -253,7 +253,7 @@ export default function ProductionPipelinePage() {
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '14px', marginBottom: '24px' }}>
         <div className="kpi-mini">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#64748b' }}>
+            <span style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#94a3b8' }}>
               ACTIVE RUNS
             </span>
             <span className="tag-pill tag-amber">On Floor</span>
@@ -261,12 +261,12 @@ export default function ProductionPipelinePage() {
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#ffffff', margin: '4px 0 2px' }}>
             {batches.filter(b => b.stage !== 'Dispatched').length}
           </div>
-          <span style={{ fontSize: '11.5px', color: '#64748b' }}>Cutting to packing stages</span>
+          <span style={{ fontSize: '11.5px', color: '#cbd5e1' }}>Cutting to packing stages</span>
         </div>
 
         <div className="kpi-mini">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#64748b' }}>
+            <span style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#94a3b8' }}>
               SAMPLING PROTOS
             </span>
             <span className="tag-pill tag-cyan">Proto Lab</span>
@@ -274,12 +274,12 @@ export default function ProductionPipelinePage() {
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#38bdf8', margin: '4px 0 2px' }}>
             {batches.filter(b => b.type === 'Sample Prototype').length}
           </div>
-          <span style={{ fontSize: '11.5px', color: '#64748b' }}>Fit &amp; embroidery review</span>
+          <span style={{ fontSize: '11.5px', color: '#cbd5e1' }}>Fit &amp; embroidery review</span>
         </div>
 
         <div className="kpi-mini">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#64748b' }}>
+            <span style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#94a3b8' }}>
               UNITS ON LINE
             </span>
             <span className="tag-pill tag-mint">Capacity</span>
@@ -287,12 +287,12 @@ export default function ProductionPipelinePage() {
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#00e599', margin: '4px 0 2px' }}>
             {batches.filter(b => b.stage !== 'Dispatched').reduce((acc, b) => acc + b.quantity, 0).toLocaleString()}
           </div>
-          <span style={{ fontSize: '11.5px', color: '#64748b' }}>Pieces in active stitching</span>
+          <span style={{ fontSize: '11.5px', color: '#cbd5e1' }}>Pieces in active stitching</span>
         </div>
 
         <div className="kpi-mini">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#64748b' }}>
+            <span style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#94a3b8' }}>
               DISPATCHED
             </span>
             <span className="tag-pill tag-mint">Delivered</span>
@@ -300,7 +300,7 @@ export default function ProductionPipelinePage() {
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#ffffff', margin: '4px 0 2px' }}>
             {batches.filter(b => b.stage === 'Dispatched').length}
           </div>
-          <span style={{ fontSize: '11.5px', color: '#64748b' }}>Air cargo waybills cleared</span>
+          <span style={{ fontSize: '11.5px', color: '#cbd5e1' }}>Air cargo waybills cleared</span>
         </div>
       </div>
 
@@ -447,7 +447,7 @@ export default function ProductionPipelinePage() {
                         : isCurrent
                         ? 'rgba(251, 191, 36, 0.15)'
                         : '#090d0f',
-                      color: isPast ? '#00e599' : isCurrent ? '#fbbf24' : '#64748b',
+                      color: isPast ? '#00e599' : isCurrent ? '#fbbf24' : '#94a3b8',
                       fontWeight: isCurrent ? 800 : 600,
                       border: isCurrent
                         ? '1px solid #fbbf24'

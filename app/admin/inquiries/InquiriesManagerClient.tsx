@@ -277,18 +277,18 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
       {/* 4-KPI Stat Strip */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '14px', marginBottom: '24px' }}>
         <div className="kpi-mini">
-          <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#64748b' }}>
+          <span style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#94a3b8' }}>
             TOTAL INQUIRIES
           </span>
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#ffffff', margin: '4px 0 2px' }}>
             {inquiries.length}
           </div>
-          <span style={{ fontSize: '11.5px', color: '#64748b' }}>All time submissions</span>
+          <span style={{ fontSize: '11.5px', color: '#cbd5e1' }}>All time submissions</span>
         </div>
 
         <div className="kpi-mini">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#64748b' }}>
+            <span style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#94a3b8' }}>
               NEW UNTOUCHED
             </span>
             <span className="tag-pill tag-rose">Action Needed</span>
@@ -301,7 +301,7 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
 
         <div className="kpi-mini">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#64748b' }}>
+            <span style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#94a3b8' }}>
               CONTACTED / QUOTED
             </span>
             <span className="tag-pill tag-amber">In Negotiation</span>
@@ -309,12 +309,12 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#fbbf24', margin: '4px 0 2px' }}>
             {contactedCount}
           </div>
-          <span style={{ fontSize: '11.5px', color: '#64748b' }}>Price &amp; tech pack shared</span>
+          <span style={{ fontSize: '11.5px', color: '#cbd5e1' }}>Price &amp; tech pack shared</span>
         </div>
 
         <div className="kpi-mini">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#64748b' }}>
+            <span style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#94a3b8' }}>
               CONFIRMED ORDERS
             </span>
             <span className="tag-pill tag-mint">Converted</span>
@@ -322,7 +322,7 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#00e599', margin: '4px 0 2px' }}>
             {completedCount}
           </div>
-          <span style={{ fontSize: '11.5px', color: '#64748b' }}>Moved to factory floor</span>
+          <span style={{ fontSize: '11.5px', color: '#cbd5e1' }}>Moved to factory floor</span>
         </div>
       </div>
 
@@ -360,7 +360,7 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
           <div style={{ background: '#11171a', border: '1px solid rgba(255, 255, 255, 0.08)', padding: '56px 20px', textAlign: 'center', borderRadius: '14px' }}>
             <div style={{ fontSize: '36px', marginBottom: '12px' }}>📭</div>
             <h3 style={{ margin: '0 0 6px', color: '#ffffff', fontSize: '16px' }}>No inquiries matching this filter</h3>
-            <p style={{ color: '#64748b', margin: 0, fontSize: '13px' }}>
+            <p style={{ color: '#cbd5e1', margin: 0, fontSize: '13px' }}>
               All new submissions from contact forms and RFQs appear here automatically.
             </p>
           </div>
@@ -411,9 +411,9 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
                           outline: 'none',
                         }}
                       >
-                        <option value="new">Status: New</option>
-                        <option value="contacted">Status: Contacted</option>
-                        <option value="completed">Status: Completed</option>
+                        <option value="new" style={{ background: '#090d0f', color: '#f87171' }}>Status: New</option>
+                        <option value="contacted" style={{ background: '#090d0f', color: '#fbbf24' }}>Status: Contacted</option>
+                        <option value="completed" style={{ background: '#090d0f', color: '#00e599' }}>Status: Completed</option>
                       </select>
 
                       {videoUrl && (

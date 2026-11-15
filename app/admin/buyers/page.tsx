@@ -373,13 +373,13 @@ export default function BuyerCrmPage() {
         <div style={{ overflowX: 'auto' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '13px' }}>
             <thead>
-              <tr style={{ background: '#0d1316', borderBottom: '1px solid rgba(255, 255, 255, 0.08)', color: '#64748b' }}>
-                <th style={{ padding: '14px 18px', fontWeight: 700, fontSize: '11.5px', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Company &amp; Contact</th>
-                <th style={{ padding: '14px 18px', fontWeight: 700, fontSize: '11.5px', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Country</th>
-                <th style={{ padding: '14px 18px', fontWeight: 700, fontSize: '11.5px', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Tier</th>
-                <th style={{ padding: '14px 18px', fontWeight: 700, fontSize: '11.5px', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Specialty</th>
-                <th style={{ padding: '14px 18px', fontWeight: 700, fontSize: '11.5px', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Est. Volume</th>
-                <th style={{ padding: '14px 18px', fontWeight: 700, fontSize: '11.5px', textTransform: 'uppercase', letterSpacing: '0.04em', textAlign: 'right' }}>Actions</th>
+              <tr style={{ background: '#0d1316', borderBottom: '1px solid rgba(255, 255, 255, 0.08)', color: '#94a3b8' }}>
+                <th style={{ padding: '14px 18px', fontWeight: 800, fontSize: '11.5px', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Company &amp; Contact</th>
+                <th style={{ padding: '14px 18px', fontWeight: 800, fontSize: '11.5px', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Country</th>
+                <th style={{ padding: '14px 18px', fontWeight: 800, fontSize: '11.5px', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Tier</th>
+                <th style={{ padding: '14px 18px', fontWeight: 800, fontSize: '11.5px', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Specialty</th>
+                <th style={{ padding: '14px 18px', fontWeight: 800, fontSize: '11.5px', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Est. Volume</th>
+                <th style={{ padding: '14px 18px', fontWeight: 800, fontSize: '11.5px', textTransform: 'uppercase', letterSpacing: '0.04em', textAlign: 'right' }}>Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -389,10 +389,10 @@ export default function BuyerCrmPage() {
                   <tr key={b.id} className="table-row-hover" style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.04)' }}>
                     <td style={{ padding: '14px 18px' }}>
                       <div style={{ fontWeight: 800, color: '#ffffff', fontSize: '14px' }}>{b.company}</div>
-                      <div style={{ fontSize: '12px', color: '#94a3b8', marginTop: '2px' }}>
+                      <div style={{ fontSize: '12px', color: '#cbd5e1', marginTop: '2px' }}>
                         {b.name} &bull; <a href={`mailto:${b.email}`} style={{ color: '#38bdf8', textDecoration: 'none' }}>{b.email}</a>
                       </div>
-                      <div style={{ fontSize: '11.5px', color: '#64748b', marginTop: '3px' }}>
+                      <div style={{ fontSize: '11.5px', color: '#94a3b8', marginTop: '3px' }}>
                         Note: {b.notes}
                       </div>
                     </td>

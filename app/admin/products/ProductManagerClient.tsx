@@ -165,7 +165,7 @@ export default function ProductManagerClient({ initialProducts }: { initialProdu
         style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '14px', marginBottom: '24px' }}
       >
         <div style={{ background: '#11171a', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '12px', padding: '16px 20px' }}>
-          <div style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: '#64748b', letterSpacing: '0.06em' }}>
+          <div style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', color: '#94a3b8', letterSpacing: '0.06em' }}>
             TOTAL CATALOG STYLES
           </div>
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#ffffff', margin: '4px 0 2px' }}>
@@ -177,19 +177,19 @@ export default function ProductManagerClient({ initialProducts }: { initialProdu
         </div>
 
         <div style={{ background: '#11171a', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '12px', padding: '16px 20px' }}>
-          <div style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: '#64748b', letterSpacing: '0.06em' }}>
+          <div style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', color: '#94a3b8', letterSpacing: '0.06em' }}>
             ACTIVE CATEGORIES
           </div>
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#38bdf8', margin: '4px 0 2px' }}>
             4 Lines
           </div>
-          <div style={{ fontSize: '11.5px', color: '#64748b' }}>
+          <div style={{ fontSize: '11.5px', color: '#cbd5e1' }}>
             Streetwear, Active, Combat, Sport
           </div>
         </div>
 
         <div style={{ background: '#11171a', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '12px', padding: '16px 20px' }}>
-          <div style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: '#64748b', letterSpacing: '0.06em' }}>
+          <div style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', color: '#94a3b8', letterSpacing: '0.06em' }}>
             SAMPLE LEAD TIME
           </div>
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#fbbf24', margin: '4px 0 2px' }}>
@@ -201,7 +201,7 @@ export default function ProductManagerClient({ initialProducts }: { initialProdu
         </div>
 
         <div style={{ background: '#11171a', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '12px', padding: '16px 20px' }}>
-          <div style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: '#64748b', letterSpacing: '0.06em' }}>
+          <div style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', color: '#94a3b8', letterSpacing: '0.06em' }}>
             STANDARD BULK MOQ
           </div>
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#00e599', margin: '4px 0 2px' }}>
@@ -428,12 +428,12 @@ export default function ProductManagerClient({ initialProducts }: { initialProdu
         <div style={{ overflowX: 'auto' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '13px' }}>
             <thead>
-              <tr style={{ background: '#0d1316', borderBottom: '1px solid rgba(255, 255, 255, 0.06)', color: '#64748b' }}>
-                <th style={{ padding: '14px 18px', fontWeight: 700, fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>PREVIEW</th>
-                <th style={{ padding: '14px 18px', fontWeight: 700, fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>PRODUCT TITLE</th>
-                <th style={{ padding: '14px 18px', fontWeight: 700, fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>CATEGORY</th>
-                <th style={{ padding: '14px 18px', fontWeight: 700, fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>SPECIFICATION &amp; FABRIC</th>
-                <th style={{ padding: '14px 18px', fontWeight: 700, fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.06em', textAlign: 'right' }}>ACTIONS</th>
+              <tr style={{ background: '#0d1316', borderBottom: '1px solid rgba(255, 255, 255, 0.08)', color: '#94a3b8' }}>
+                <th style={{ padding: '14px 18px', fontWeight: 800, fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>PREVIEW</th>
+                <th style={{ padding: '14px 18px', fontWeight: 800, fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>PRODUCT TITLE</th>
+                <th style={{ padding: '14px 18px', fontWeight: 800, fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>CATEGORY</th>
+                <th style={{ padding: '14px 18px', fontWeight: 800, fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>SPECIFICATION &amp; FABRIC</th>
+                <th style={{ padding: '14px 18px', fontWeight: 800, fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.06em', textAlign: 'right' }}>ACTIONS</th>
               </tr>
             </thead>
             <tbody>

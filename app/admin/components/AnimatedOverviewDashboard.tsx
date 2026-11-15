@@ -333,7 +333,7 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
         {/* KPI 1: Monthly Export Shipments */}
         <motion.div className="kpi-card" whileHover={{ scale: 1.015 }} transition={{ duration: 0.2 }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
-            <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#64748b' }}>
+            <span style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#94a3b8' }}>
               MONTHLY EXPORT INVOICING
             </span>
             <span className="tag-pill tag-mint">+18.4% MoM</span>
@@ -341,7 +341,7 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em' }}>
             $<AnimatedCounter value={348} />,<AnimatedCounter value={200} />
           </div>
-          <div style={{ fontSize: '12px', color: '#64748b', marginTop: '4px' }}>
+          <div style={{ fontSize: '12px', color: '#cbd5e1', marginTop: '4px' }}>
             Direct FOB Karachi / DHL Sialkot Air
           </div>
         </motion.div>
@@ -349,15 +349,15 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
         {/* KPI 2: Active Garment Production Runs */}
         <motion.div className="kpi-card" whileHover={{ scale: 1.015 }} transition={{ duration: 0.2 }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
-            <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#64748b' }}>
+            <span style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#94a3b8' }}>
               ACTIVE FACTORY RUNS
             </span>
             <span className="tag-pill tag-cyan">48 Batches</span>
           </div>
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em' }}>
-            <AnimatedCounter value={142} />,<AnimatedCounter value={500} /><span style={{ fontSize: '15px', color: '#64748b', fontWeight: 600 }}> pcs</span>
+            <AnimatedCounter value={142} />,<AnimatedCounter value={500} /><span style={{ fontSize: '15px', color: '#94a3b8', fontWeight: 600 }}> pcs</span>
           </div>
-          <div style={{ fontSize: '12px', color: '#64748b', marginTop: '4px' }}>
+          <div style={{ fontSize: '12px', color: '#cbd5e1', marginTop: '4px' }}>
             Hoodies, Active, Combat &amp; Denim
           </div>
         </motion.div>
@@ -365,7 +365,7 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
         {/* KPI 3: Buyer RFQs & Inquiries */}
         <motion.div className="kpi-card" whileHover={{ scale: 1.015 }} transition={{ duration: 0.2 }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
-            <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#64748b' }}>
+            <span style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#94a3b8' }}>
               PENDING BUYER RFQS
             </span>
             <span className="tag-pill tag-amber">6 Tech Packs</span>
@@ -373,7 +373,7 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#fbbf24', letterSpacing: '-0.02em' }}>
             <AnimatedCounter value={inquiries.length > 0 ? inquiries.length : 23} />
           </div>
-          <div style={{ fontSize: '12px', color: '#64748b', marginTop: '4px' }}>
+          <div style={{ fontSize: '12px', color: '#cbd5e1', marginTop: '4px' }}>
             Average quotation turnaround: 2.4h
           </div>
         </motion.div>
@@ -381,7 +381,7 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
         {/* KPI 4: AQL 2.5 Quality Inspection Clearance */}
         <motion.div className="kpi-card" whileHover={{ scale: 1.015 }} transition={{ duration: 0.2 }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
-            <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#64748b' }}>
+            <span style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#94a3b8' }}>
               AQL 2.5 EXPORT PASS RATE
             </span>
             <span className="tag-pill tag-mint">Export Grade</span>
@@ -389,7 +389,7 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#00e599', letterSpacing: '-0.02em' }}>
             99.2%
           </div>
-          <div style={{ fontSize: '12px', color: '#64748b', marginTop: '4px' }}>
+          <div style={{ fontSize: '12px', color: '#cbd5e1', marginTop: '4px' }}>
             Zero international shipment rejections
           </div>
         </motion.div>
@@ -416,13 +416,13 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginTop: '8px' }}>
                 <div>
-                  <span style={{ fontSize: '10px', textTransform: 'uppercase', color: '#64748b', fontWeight: 700 }}>REVENUE SHIPPED</span>
+                  <span style={{ fontSize: '10.5px', textTransform: 'uppercase', color: '#94a3b8', fontWeight: 800 }}>REVENUE SHIPPED</span>
                   <div style={{ fontSize: '16px', fontWeight: 800, color: '#00e599' }}>
                     $<AnimatedCounter value={348} />k USD
                   </div>
                 </div>
                 <div style={{ borderLeft: '1px solid rgba(255,255,255,0.08)', paddingLeft: '16px' }}>
-                  <span style={{ fontSize: '10px', textTransform: 'uppercase', color: '#64748b', fontWeight: 700 }}>UNITS DISPATCHED</span>
+                  <span style={{ fontSize: '10.5px', textTransform: 'uppercase', color: '#94a3b8', fontWeight: 800 }}>UNITS DISPATCHED</span>
                   <div style={{ fontSize: '16px', fontWeight: 800, color: '#38bdf8' }}>
                     <AnimatedCounter value={142} />k Pcs
                   </div>
@@ -691,12 +691,12 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '12.5px' }}>
               <thead>
-                <tr style={{ background: '#0d1316', borderBottom: '1px solid rgba(255,255,255,0.06)', color: '#64748b' }}>
-                  <th style={{ padding: '10px 14px', fontWeight: 700, fontSize: '10.5px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>ORDER / BUYER</th>
-                  <th style={{ padding: '10px 14px', fontWeight: 700, fontSize: '10.5px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>GARMENT SPECIFICATION</th>
-                  <th style={{ padding: '10px 14px', fontWeight: 700, fontSize: '10.5px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>STAGE</th>
-                  <th style={{ padding: '10px 14px', fontWeight: 700, fontSize: '10.5px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>LEAD CLOCK</th>
-                  <th style={{ padding: '10px 14px', fontWeight: 700, fontSize: '10.5px', textTransform: 'uppercase', letterSpacing: '0.06em', textAlign: 'right' }}>PRIORITY</th>
+                <tr style={{ background: '#0d1316', borderBottom: '1px solid rgba(255,255,255,0.08)', color: '#94a3b8' }}>
+                  <th style={{ padding: '10px 14px', fontWeight: 800, fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>ORDER / BUYER</th>
+                  <th style={{ padding: '10px 14px', fontWeight: 800, fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>GARMENT SPECIFICATION</th>
+                  <th style={{ padding: '10px 14px', fontWeight: 800, fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>STAGE</th>
+                  <th style={{ padding: '10px 14px', fontWeight: 800, fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>LEAD CLOCK</th>
+                  <th style={{ padding: '10px 14px', fontWeight: 800, fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.06em', textAlign: 'right' }}>PRIORITY</th>
                 </tr>
               </thead>
               <tbody>
@@ -712,9 +712,9 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
                   >
                     <td style={{ padding: '12px 14px' }}>
                       <div style={{ fontWeight: 800, color: '#ffffff' }}>{b.buyer} {b.country}</div>
-                      <div style={{ fontSize: '11px', color: '#64748b' }}>{b.brand} &bull; <span style={{ color: '#38bdf8' }}>{b.id}</span></div>
+                      <div style={{ fontSize: '11.5px', color: '#94a3b8', marginTop: '2px' }}>{b.brand} &bull; <span style={{ color: '#38bdf8' }}>{b.id}</span></div>
                     </td>
-                    <td style={{ padding: '12px 14px', color: '#cbd5e1', maxWidth: '240px' }}>
+                    <td style={{ padding: '12px 14px', color: '#e2e8f0', maxWidth: '240px' }}>
                       {b.item}
                     </td>
                     <td style={{ padding: '12px 14px' }}>
@@ -729,7 +729,7 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
                         />
                       </div>
                     </td>
-                    <td style={{ padding: '12px 14px', color: '#94a3b8', fontWeight: 600 }}>
+                    <td style={{ padding: '12px 14px', color: '#cbd5e1', fontWeight: 600 }}>
                       {b.deliveryClock}
                     </td>
                     <td style={{ padding: '12px 14px', textAlign: 'right' }}>

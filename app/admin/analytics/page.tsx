@@ -87,25 +87,25 @@ export default function AnalyticsPage() {
         style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '14px', marginBottom: '24px' }}
       >
         <div style={{ background: '#11171a', padding: '18px 20px', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.07)' }}>
-          <div style={{ fontSize: '11px', color: '#64748b', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em' }}>Total Inquiries Processed</div>
+          <div style={{ fontSize: '11px', color: '#94a3b8', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em' }}>Total Inquiries Processed</div>
           <div style={{ fontSize: '28px', fontWeight: 900, color: '#ffffff', margin: '6px 0 2px' }}>324</div>
           <span style={{ fontSize: '11.5px', color: '#00e599', fontWeight: 700 }}>+28% month-over-month</span>
         </div>
 
         <div style={{ background: '#11171a', padding: '18px 20px', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.07)' }}>
-          <div style={{ fontSize: '11px', color: '#64748b', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em' }}>Sample-to-Bulk Conversion</div>
+          <div style={{ fontSize: '11px', color: '#94a3b8', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em' }}>Sample-to-Bulk Conversion</div>
           <div style={{ fontSize: '28px', fontWeight: 900, color: '#38bdf8', margin: '6px 0 2px' }}>64.2%</div>
-          <span style={{ fontSize: '11.5px', color: '#64748b' }}>Industry benchmark: 40%</span>
+          <span style={{ fontSize: '11.5px', color: '#cbd5e1' }}>Industry benchmark: 40%</span>
         </div>
 
         <div style={{ background: '#11171a', padding: '18px 20px', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.07)' }}>
-          <div style={{ fontSize: '11px', color: '#64748b', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em' }}>Average Production Order</div>
+          <div style={{ fontSize: '11px', color: '#94a3b8', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em' }}>Average Production Order</div>
           <div style={{ fontSize: '28px', fontWeight: 900, color: '#fbbf24', margin: '6px 0 2px' }}>480 pcs</div>
           <span style={{ fontSize: '11.5px', color: '#fbbf24', fontWeight: 700 }}>$14,200 avg invoice</span>
         </div>
 
         <div style={{ background: '#11171a', padding: '18px 20px', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.07)' }}>
-          <div style={{ fontSize: '11px', color: '#64748b', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em' }}>On-Time Export Clearance</div>
+          <div style={{ fontSize: '11px', color: '#94a3b8', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em' }}>On-Time Export Clearance</div>
           <div style={{ fontSize: '28px', fontWeight: 900, color: '#00e599', margin: '6px 0 2px' }}>99.2%</div>
           <span style={{ fontSize: '11.5px', color: '#00e599', fontWeight: 700 }}>Direct FOB Sialkot clearance</span>
         </div>
@@ -158,7 +158,7 @@ export default function AnalyticsPage() {
               Export Value &amp; Buyer Volume by Country
             </h2>
           </div>
-          <span style={{ fontSize: '12px', color: '#64748b' }}>Updated live from active inquiries</span>
+          <span style={{ fontSize: '12px', color: '#cbd5e1' }}>Updated live from active inquiries</span>
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -178,7 +178,7 @@ export default function AnalyticsPage() {
                   <span style={{ fontSize: '18px' }}>{c.flag}</span> {c.country}
                 </span>
                 <span style={{ color: '#00e599', fontWeight: 800 }}>
-                  {c.amount} &bull; <span style={{ color: '#64748b', fontWeight: 600 }}>{c.share}% ({c.inquiries} inquiries)</span>
+                  {c.amount} &bull; <span style={{ color: '#94a3b8', fontWeight: 600 }}>{c.share}% ({c.inquiries} inquiries)</span>
                 </span>
               </div>
               <div style={{ height: '6px', background: 'rgba(255, 255, 255, 0.06)', borderRadius: '999px', overflow: 'hidden' }}>

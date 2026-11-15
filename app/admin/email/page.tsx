@@ -26,16 +26,7 @@ export default async function AdminEmailPage() {
 
   return (
     <div style={{ paddingBottom: '40px' }}>
-      <div style={{ marginBottom: '24px' }}>
-        <h1 style={{ fontSize: '24px', fontWeight: 800, margin: '0 0 6px', color: '#111827' }}>
-          Email Communication &amp; Broadcast Suite
-        </h1>
-        <p style={{ margin: 0, color: '#6b7280', fontSize: '14px' }}>
-          Compose custom manufacturing quotations, production updates, or broadcast announcements with live inbox preview.
-        </p>
-      </div>
-
-      <Suspense fallback={<div style={{ padding: '40px', textAlign: 'center', color: '#64748b' }}>Loading email workspace...</div>}>
+      <Suspense fallback={<div style={{ padding: '40px', textAlign: 'center', color: '#94a3b8' }}>Loading email workspace...</div>}>
         <EmailComposerClient initialBuyers={buyers} />
       </Suspense>
     </div>

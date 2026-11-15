@@ -215,7 +215,7 @@ export function MonthlyExportChart() {
                 y={height + 20}
                 textAnchor="middle"
                 fontSize="11"
-                fill={hoveredIdx === i ? '#00e599' : '#64748b'}
+                fill={hoveredIdx === i ? '#00e599' : '#94a3b8'}
                 fontWeight={hoveredIdx === i ? '800' : '600'}
               >
                 {p.month}
@@ -405,7 +405,7 @@ export function B2BConversionFunnel() {
             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12.5px', marginBottom: '6px' }}>
               <span style={{ fontWeight: 600, color: '#cbd5e1' }}>{s.stage}</span>
               <span style={{ color: '#00e599', fontWeight: 800 }}>
-                {s.count} orders <span style={{ color: '#64748b', fontWeight: 600 }}>({s.pct}%)</span>
+                {s.count} orders <span style={{ color: '#94a3b8', fontWeight: 600 }}>({s.pct}%)</span>
               </span>
             </div>
             <div style={{ height: '8px', background: 'rgba(255, 255, 255, 0.06)', borderRadius: '9999px', overflow: 'hidden' }}>
@@ -481,7 +481,7 @@ export function FactoryCapacityGauges() {
                 }}
               />
             </div>
-            <div style={{ fontSize: '11px', color: '#64748b', marginTop: '6px' }}>
+            <div style={{ fontSize: '11.5px', color: '#cbd5e1', marginTop: '6px' }}>
               Target: {m.target}
             </div>
           </div>

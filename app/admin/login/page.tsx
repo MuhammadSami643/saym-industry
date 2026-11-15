@@ -473,7 +473,7 @@ export default function AdminLogin() {
             borderTop: '1px solid rgba(255, 255, 255, 0.06)',
             textAlign: 'center',
             fontSize: '11px',
-            color: '#64748b',
+            color: '#94a3b8',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',

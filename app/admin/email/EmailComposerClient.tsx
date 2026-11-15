@@ -394,7 +394,7 @@ export default function EmailComposerClient({ initialBuyers }: EmailComposerClie
                   fontSize: '11px',
                   fontWeight: 800,
                   textTransform: 'uppercase',
-                  color: '#64748b',
+                  color: '#cbd5e1',
                   marginBottom: '6px',
                   letterSpacing: '0.05em',
                 }}
@@ -431,7 +431,7 @@ export default function EmailComposerClient({ initialBuyers }: EmailComposerClie
                   fontSize: '11px',
                   fontWeight: 800,
                   textTransform: 'uppercase',
-                  color: '#64748b',
+                  color: '#cbd5e1',
                   marginBottom: '6px',
                   letterSpacing: '0.05em',
                 }}
@@ -634,7 +634,7 @@ export default function EmailComposerClient({ initialBuyers }: EmailComposerClie
               </div>
 
               {/* Copyright strip */}
-              <div style={{ textAlign: 'center', fontSize: '11px', color: '#475569', borderTop: '1px solid rgba(255, 255, 255, 0.04)', paddingTop: '12px' }}>
+              <div style={{ textAlign: 'center', fontSize: '11px', color: '#94a3b8', borderTop: '1px solid rgba(255, 255, 255, 0.08)', paddingTop: '12px' }}>
                 &copy; {new Date().getFullYear()} Bin Rasool Enterprises &bull; binrasoolenterprises.com
               </div>
             </div>

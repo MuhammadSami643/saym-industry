@@ -140,19 +140,19 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
         {/* Navigation Tabs */}
         <nav style={{ padding: '16px 12px', display: 'flex', flexDirection: 'column', gap: '4px', flexGrow: 1 }}>
-          <div style={{ fontSize: '10px', textTransform: 'uppercase', color: '#64748b', fontWeight: 800, padding: '4px 8px', letterSpacing: '0.08em' }}>
-            MAIN
+          <div style={{ fontSize: '10.5px', textTransform: 'uppercase', color: '#94a3b8', fontWeight: 800, padding: '4px 8px', letterSpacing: '0.08em' }}>
+            OPERATIONS COMMAND
           </div>
 
           <Link href="/admin" style={navItemClass('/admin')}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '9px' }}>
-              <span style={{ color: isActive('/admin') ? '#00e599' : '#64748b' }}>⊞</span> Overview
+              <span style={{ color: isActive('/admin') ? '#00e599' : '#94a3b8' }}>⊞</span> Overview
             </span>
           </Link>
 
           <Link href="/admin/inquiries" style={navItemClass('/admin/inquiries')}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '9px' }}>
-              <span style={{ color: isActive('/admin/inquiries') ? '#00e599' : '#64748b' }}>✉</span> Inquiries &amp; RFQs
+              <span style={{ color: isActive('/admin/inquiries') ? '#00e599' : '#94a3b8' }}>✉</span> Inquiries &amp; RFQs
             </span>
             <span
               style={{
@@ -170,7 +170,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
           <Link href="/admin/production" style={navItemClass('/admin/production')}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '9px' }}>
-              <span style={{ color: isActive('/admin/production') ? '#00e599' : '#64748b' }}>⚙</span> Production Floor
+              <span style={{ color: isActive('/admin/production') ? '#00e599' : '#94a3b8' }}>⚙</span> Production Floor
             </span>
             <span
               style={{
@@ -188,7 +188,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
           <Link href="/admin/email" style={navItemClass('/admin/email')}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '9px' }}>
-              <span style={{ color: isActive('/admin/email') ? '#00e599' : '#64748b' }}>✈</span> Email Dispatch
+              <span style={{ color: isActive('/admin/email') ? '#00e599' : '#94a3b8' }}>✈</span> Email Dispatch
             </span>
             <span
               style={{
@@ -206,69 +206,69 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
           <Link href="/admin/buyers" style={navItemClass('/admin/buyers')}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '9px' }}>
-              <span style={{ color: isActive('/admin/buyers') ? '#00e599' : '#64748b' }}>👤</span> Buyer CRM
+              <span style={{ color: isActive('/admin/buyers') ? '#00e599' : '#94a3b8' }}>👤</span> Buyer CRM
             </span>
           </Link>
 
           <Link href="/admin/products" style={navItemClass('/admin/products')}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '9px' }}>
-              <span style={{ color: isActive('/admin/products') ? '#00e599' : '#64748b' }}>📦</span> Garment Catalog
+              <span style={{ color: isActive('/admin/products') ? '#00e599' : '#94a3b8' }}>📦</span> Garment Catalog
             </span>
           </Link>
 
           <Link href="/admin/analytics" style={navItemClass('/admin/analytics')}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '9px' }}>
-              <span style={{ color: isActive('/admin/analytics') ? '#00e599' : '#64748b' }}>📊</span> Export Analytics
+              <span style={{ color: isActive('/admin/analytics') ? '#00e599' : '#94a3b8' }}>📊</span> Export Analytics
             </span>
           </Link>
 
           {/* SAVED VIEWS SECTION */}
-          <div style={{ fontSize: '10px', textTransform: 'uppercase', color: '#64748b', fontWeight: 800, padding: '16px 8px 6px', letterSpacing: '0.08em', display: 'flex', justifyContent: 'space-between' }}>
+          <div style={{ fontSize: '10.5px', textTransform: 'uppercase', color: '#94a3b8', fontWeight: 800, padding: '16px 8px 6px', letterSpacing: '0.08em', display: 'flex', justifyContent: 'space-between' }}>
             <span>FLOOR VIEWS</span>
-            <span style={{ cursor: 'pointer', color: '#94a3b8' }}>+</span>
+            <span style={{ cursor: 'pointer', color: '#cbd5e1' }}>+</span>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '7px 8px', fontSize: '12.5px', color: '#94a3b8', cursor: 'pointer', borderRadius: '6px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '7px 8px', fontSize: '12.5px', color: '#cbd5e1', cursor: 'pointer', borderRadius: '6px' }}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#f87171' }}></span>
               Sampling Rush
             </span>
-            <span style={{ fontSize: '11px', color: '#64748b' }}>6</span>
+            <span style={{ fontSize: '11px', color: '#94a3b8' }}>6</span>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '7px 8px', fontSize: '12.5px', color: '#94a3b8', cursor: 'pointer', borderRadius: '6px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '7px 8px', fontSize: '12.5px', color: '#cbd5e1', cursor: 'pointer', borderRadius: '6px' }}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#00e599' }}></span>
               Active Cutting
             </span>
-            <span style={{ fontSize: '11px', color: '#64748b' }}>11</span>
+            <span style={{ fontSize: '11px', color: '#94a3b8' }}>11</span>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '7px 8px', fontSize: '12.5px', color: '#94a3b8', cursor: 'pointer', borderRadius: '6px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '7px 8px', fontSize: '12.5px', color: '#cbd5e1', cursor: 'pointer', borderRadius: '6px' }}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#38bdf8' }}></span>
               Stitching Lines
             </span>
-            <span style={{ fontSize: '11px', color: '#64748b' }}>38</span>
+            <span style={{ fontSize: '11px', color: '#94a3b8' }}>38</span>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '7px 8px', fontSize: '12.5px', color: '#94a3b8', cursor: 'pointer', borderRadius: '6px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '7px 8px', fontSize: '12.5px', color: '#cbd5e1', cursor: 'pointer', borderRadius: '6px' }}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#fbbf24' }}></span>
               DHL Clearance
             </span>
-            <span style={{ fontSize: '11px', color: '#64748b' }}>9</span>
+            <span style={{ fontSize: '11px', color: '#94a3b8' }}>9</span>
           </div>
 
           {/* WORKSPACE SECTION */}
-          <div style={{ fontSize: '10px', textTransform: 'uppercase', color: '#64748b', fontWeight: 800, padding: '16px 8px 6px', letterSpacing: '0.08em' }}>
+          <div style={{ fontSize: '10.5px', textTransform: 'uppercase', color: '#94a3b8', fontWeight: 800, padding: '16px 8px 6px', letterSpacing: '0.08em' }}>
             WORKSPACE
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '7px 8px', fontSize: '12.5px', color: '#94a3b8', cursor: 'pointer' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '7px 8px', fontSize: '12.5px', color: '#cbd5e1', cursor: 'pointer' }}>
             <span>👥</span> Team management
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '7px 8px', fontSize: '12.5px', color: '#94a3b8', cursor: 'pointer' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '7px 8px', fontSize: '12.5px', color: '#cbd5e1', cursor: 'pointer' }}>
             <span>⚙️</span> Settings
           </div>
         </nav>
@@ -340,7 +340,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <span style={{ color: '#64748b', fontSize: '13px' }}>🔍</span>
             <input
               type="text"
-              placeholder="Search patients, auth IDs or payers..."
+              placeholder="Search orders, buyer RFQs, batch IDs or styles..."
               style={{
                 background: 'transparent',
                 border: 'none',
@@ -353,7 +353,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <span
               style={{
                 fontSize: '10px',
-                color: '#64748b',
+                color: '#cbd5e1',
                 background: '#151d21',
                 padding: '2px 6px',
                 borderRadius: '4px',
