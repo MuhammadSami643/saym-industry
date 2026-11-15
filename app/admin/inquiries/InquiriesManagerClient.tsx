@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Inquiry } from '../../actions';
+import AnimatedCounter from '../../components/AnimatedCounter';
 
 function parseInquiryAttachments(details: string) {
   let cleanDetails = details || '';
@@ -281,7 +282,7 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
             TOTAL INQUIRIES
           </span>
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#ffffff', margin: '4px 0 2px' }}>
-            {inquiries.length}
+            <AnimatedCounter value={inquiries.length} duration={1.2} delay={0.2} />
           </div>
           <span style={{ fontSize: '11.5px', color: '#cbd5e1' }}>All time submissions</span>
         </div>
@@ -294,9 +295,9 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
             <span className="tag-pill tag-rose">Action Needed</span>
           </div>
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#f87171', margin: '4px 0 2px' }}>
-            {newCount}
+            <AnimatedCounter value={newCount} duration={1.2} delay={0.25} />
           </div>
-          <span style={{ fontSize: '11.5px', color: '#64748b' }}>Awaiting factory reply</span>
+          <span style={{ fontSize: '11.5px', color: '#cbd5e1' }}>Awaiting factory reply</span>
         </div>
 
         <div className="kpi-mini">
@@ -307,7 +308,7 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
             <span className="tag-pill tag-amber">In Negotiation</span>
           </div>
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#fbbf24', margin: '4px 0 2px' }}>
-            {contactedCount}
+            <AnimatedCounter value={contactedCount} duration={1.2} delay={0.3} />
           </div>
           <span style={{ fontSize: '11.5px', color: '#cbd5e1' }}>Price &amp; tech pack shared</span>
         </div>
@@ -320,7 +321,7 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
             <span className="tag-pill tag-mint">Converted</span>
           </div>
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#00e599', margin: '4px 0 2px' }}>
-            {completedCount}
+            <AnimatedCounter value={completedCount} duration={1.2} delay={0.35} />
           </div>
           <span style={{ fontSize: '11.5px', color: '#cbd5e1' }}>Moved to factory floor</span>
         </div>

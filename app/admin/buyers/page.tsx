@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import AnimatedCounter from '../../components/AnimatedCounter';
 
 interface BuyerRecord {
   id: string;
@@ -275,52 +276,52 @@ export default function BuyerCrmPage() {
       {/* Metric Cards */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '14px', marginBottom: '24px' }}>
         <div className="kpi-mini">
-          <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#64748b' }}>
+          <span style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#94a3b8' }}>
             TOTAL ACCOUNTS
           </span>
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#ffffff', margin: '4px 0 2px' }}>
-            {buyers.length}
+            <AnimatedCounter value={buyers.length} duration={1.2} delay={0.2} />
           </div>
-          <span style={{ fontSize: '11.5px', color: '#64748b' }}>Worldwide B2B Portfolio</span>
+          <span style={{ fontSize: '11.5px', color: '#cbd5e1' }}>Worldwide B2B Portfolio</span>
         </div>
 
         <div className="kpi-mini">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#64748b' }}>
+            <span style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#94a3b8' }}>
               VIP PARTNERS
             </span>
             <span className="tag-pill tag-amber">High Volume</span>
           </div>
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#fbbf24', margin: '4px 0 2px' }}>
-            {buyers.filter(b => b.tier === 'VIP Partner').length}
+            <AnimatedCounter value={buyers.filter(b => b.tier === 'VIP Partner').length} duration={1.2} delay={0.25} />
           </div>
-          <span style={{ fontSize: '11.5px', color: '#64748b' }}>Monthly recurring batches</span>
+          <span style={{ fontSize: '11.5px', color: '#cbd5e1' }}>Monthly recurring batches</span>
         </div>
 
         <div className="kpi-mini">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#64748b' }}>
+            <span style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#94a3b8' }}>
               SAMPLING ACCOUNTS
             </span>
             <span className="tag-pill tag-cyan">Proto Phase</span>
           </div>
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#38bdf8', margin: '4px 0 2px' }}>
-            {buyers.filter(b => b.tier === 'Sampling').length}
+            <AnimatedCounter value={buyers.filter(b => b.tier === 'Sampling').length} duration={1.2} delay={0.3} />
           </div>
-          <span style={{ fontSize: '11.5px', color: '#64748b' }}>Samples in development</span>
+          <span style={{ fontSize: '11.5px', color: '#cbd5e1' }}>Samples in development</span>
         </div>
 
         <div className="kpi-mini">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#64748b' }}>
+            <span style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#94a3b8' }}>
               PIPELINE VALUE
             </span>
             <span className="tag-pill tag-mint">FOB Value</span>
           </div>
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#00e599', margin: '4px 0 2px' }}>
-            $150,500
+            <AnimatedCounter value={150500} prefix="$" duration={1.6} delay={0.35} />
           </div>
-          <span style={{ fontSize: '11.5px', color: '#64748b' }}>Confirmed export orders</span>
+          <span style={{ fontSize: '11.5px', color: '#cbd5e1' }}>Confirmed export orders</span>
         </div>
       </div>
 

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
+import AnimatedCounter from '../../components/AnimatedCounter';
 
 interface BatchOrder {
   id: string;
@@ -259,7 +260,7 @@ export default function ProductionPipelinePage() {
             <span className="tag-pill tag-amber">On Floor</span>
           </div>
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#ffffff', margin: '4px 0 2px' }}>
-            {batches.filter(b => b.stage !== 'Dispatched').length}
+            <AnimatedCounter value={batches.filter(b => b.stage !== 'Dispatched').length} duration={1.2} delay={0.2} />
           </div>
           <span style={{ fontSize: '11.5px', color: '#cbd5e1' }}>Cutting to packing stages</span>
         </div>
@@ -272,7 +273,7 @@ export default function ProductionPipelinePage() {
             <span className="tag-pill tag-cyan">Proto Lab</span>
           </div>
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#38bdf8', margin: '4px 0 2px' }}>
-            {batches.filter(b => b.type === 'Sample Prototype').length}
+            <AnimatedCounter value={batches.filter(b => b.type === 'Sample Prototype').length} duration={1.2} delay={0.25} />
           </div>
           <span style={{ fontSize: '11.5px', color: '#cbd5e1' }}>Fit &amp; embroidery review</span>
         </div>
@@ -285,7 +286,7 @@ export default function ProductionPipelinePage() {
             <span className="tag-pill tag-mint">Capacity</span>
           </div>
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#00e599', margin: '4px 0 2px' }}>
-            {batches.filter(b => b.stage !== 'Dispatched').reduce((acc, b) => acc + b.quantity, 0).toLocaleString()}
+            <AnimatedCounter value={batches.filter(b => b.stage !== 'Dispatched').reduce((acc, b) => acc + b.quantity, 0)} duration={1.8} delay={0.3} />
           </div>
           <span style={{ fontSize: '11.5px', color: '#cbd5e1' }}>Pieces in active stitching</span>
         </div>
@@ -298,7 +299,7 @@ export default function ProductionPipelinePage() {
             <span className="tag-pill tag-mint">Delivered</span>
           </div>
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#ffffff', margin: '4px 0 2px' }}>
-            {batches.filter(b => b.stage === 'Dispatched').length}
+            <AnimatedCounter value={batches.filter(b => b.stage === 'Dispatched').length} duration={1.2} delay={0.35} />
           </div>
           <span style={{ fontSize: '11.5px', color: '#cbd5e1' }}>Air cargo waybills cleared</span>
         </div>

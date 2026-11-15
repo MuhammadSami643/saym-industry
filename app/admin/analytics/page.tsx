@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import AnimatedCounter from '../../components/AnimatedCounter';
 import {
   MonthlyExportChart,
   CategoryDonutChart,
@@ -88,25 +89,33 @@ export default function AnalyticsPage() {
       >
         <div style={{ background: '#11171a', padding: '18px 20px', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.07)' }}>
           <div style={{ fontSize: '11px', color: '#94a3b8', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em' }}>Total Inquiries Processed</div>
-          <div style={{ fontSize: '28px', fontWeight: 900, color: '#ffffff', margin: '6px 0 2px' }}>324</div>
+          <div style={{ fontSize: '28px', fontWeight: 900, color: '#ffffff', margin: '6px 0 2px' }}>
+            <AnimatedCounter value={324} duration={1.6} delay={0.2} />
+          </div>
           <span style={{ fontSize: '11.5px', color: '#00e599', fontWeight: 700 }}>+28% month-over-month</span>
         </div>
 
         <div style={{ background: '#11171a', padding: '18px 20px', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.07)' }}>
           <div style={{ fontSize: '11px', color: '#94a3b8', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em' }}>Sample-to-Bulk Conversion</div>
-          <div style={{ fontSize: '28px', fontWeight: 900, color: '#38bdf8', margin: '6px 0 2px' }}>64.2%</div>
+          <div style={{ fontSize: '28px', fontWeight: 900, color: '#38bdf8', margin: '6px 0 2px' }}>
+            <AnimatedCounter value={64.2} suffix="%" decimals={1} duration={1.6} delay={0.25} />
+          </div>
           <span style={{ fontSize: '11.5px', color: '#cbd5e1' }}>Industry benchmark: 40%</span>
         </div>
 
         <div style={{ background: '#11171a', padding: '18px 20px', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.07)' }}>
           <div style={{ fontSize: '11px', color: '#94a3b8', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em' }}>Average Production Order</div>
-          <div style={{ fontSize: '28px', fontWeight: 900, color: '#fbbf24', margin: '6px 0 2px' }}>480 pcs</div>
+          <div style={{ fontSize: '28px', fontWeight: 900, color: '#fbbf24', margin: '6px 0 2px' }}>
+            <AnimatedCounter value={480} suffix=" pcs" duration={1.6} delay={0.3} />
+          </div>
           <span style={{ fontSize: '11.5px', color: '#fbbf24', fontWeight: 700 }}>$14,200 avg invoice</span>
         </div>
 
         <div style={{ background: '#11171a', padding: '18px 20px', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.07)' }}>
           <div style={{ fontSize: '11px', color: '#94a3b8', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em' }}>On-Time Export Clearance</div>
-          <div style={{ fontSize: '28px', fontWeight: 900, color: '#00e599', margin: '6px 0 2px' }}>99.2%</div>
+          <div style={{ fontSize: '28px', fontWeight: 900, color: '#00e599', margin: '6px 0 2px' }}>
+            <AnimatedCounter value={99.2} suffix="%" decimals={1} duration={1.6} delay={0.35} />
+          </div>
           <span style={{ fontSize: '11.5px', color: '#00e599', fontWeight: 700 }}>Direct FOB Sialkot clearance</span>
         </div>
       </motion.div>

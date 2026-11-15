@@ -3,38 +3,11 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
+import AnimatedCounter from '../../components/AnimatedCounter';
 
 interface Props {
   inquiries: any[];
   products: any[];
-}
-
-// Interactive Animated Counter for realistic financial & production stats
-function AnimatedCounter({ value, duration = 1.2 }: { value: number; duration?: number }) {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    let startTime: number | null = null;
-    let animationFrameId: number;
-
-    const animateCount = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const progress = Math.min((timestamp - startTime) / (duration * 1000), 1);
-      const easeOut = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-      setCount(Math.floor(easeOut * value));
-
-      if (progress < 1) {
-        animationFrameId = requestAnimationFrame(animateCount);
-      } else {
-        setCount(value);
-      }
-    };
-
-    animationFrameId = requestAnimationFrame(animateCount);
-    return () => cancelAnimationFrame(animationFrameId);
-  }, [value, duration]);
-
-  return <>{count.toLocaleString()}</>;
 }
 
 export default function AnimatedOverviewDashboard({ inquiries, products }: Props) {
@@ -339,7 +312,7 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
             <span className="tag-pill tag-mint">+18.4% MoM</span>
           </div>
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em' }}>
-            $<AnimatedCounter value={348} />,<AnimatedCounter value={200} />
+            <AnimatedCounter value={348200} prefix="$" duration={1.8} delay={0.25} />
           </div>
           <div style={{ fontSize: '12px', color: '#cbd5e1', marginTop: '4px' }}>
             Direct FOB Karachi / DHL Sialkot Air
@@ -355,7 +328,7 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
             <span className="tag-pill tag-cyan">48 Batches</span>
           </div>
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em' }}>
-            <AnimatedCounter value={142} />,<AnimatedCounter value={500} /><span style={{ fontSize: '15px', color: '#94a3b8', fontWeight: 600 }}> pcs</span>
+            <AnimatedCounter value={142500} suffix=" pcs" duration={1.8} delay={0.3} />
           </div>
           <div style={{ fontSize: '12px', color: '#cbd5e1', marginTop: '4px' }}>
             Hoodies, Active, Combat &amp; Denim
@@ -371,7 +344,7 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
             <span className="tag-pill tag-amber">6 Tech Packs</span>
           </div>
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#fbbf24', letterSpacing: '-0.02em' }}>
-            <AnimatedCounter value={inquiries.length > 0 ? inquiries.length : 23} />
+            <AnimatedCounter value={inquiries.length > 0 ? inquiries.length : 23} duration={1.4} delay={0.35} />
           </div>
           <div style={{ fontSize: '12px', color: '#cbd5e1', marginTop: '4px' }}>
             Average quotation turnaround: 2.4h
@@ -387,7 +360,7 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
             <span className="tag-pill tag-mint">Export Grade</span>
           </div>
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#00e599', letterSpacing: '-0.02em' }}>
-            99.2%
+            <AnimatedCounter value={99.2} suffix="%" decimals={1} duration={1.8} delay={0.4} />
           </div>
           <div style={{ fontSize: '12px', color: '#cbd5e1', marginTop: '4px' }}>
             Zero international shipment rejections
@@ -418,13 +391,13 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
                 <div>
                   <span style={{ fontSize: '10.5px', textTransform: 'uppercase', color: '#94a3b8', fontWeight: 800 }}>REVENUE SHIPPED</span>
                   <div style={{ fontSize: '16px', fontWeight: 800, color: '#00e599' }}>
-                    $<AnimatedCounter value={348} />k USD
+                    <AnimatedCounter value={348} prefix="$" suffix="k USD" duration={1.6} delay={0.4} />
                   </div>
                 </div>
                 <div style={{ borderLeft: '1px solid rgba(255,255,255,0.08)', paddingLeft: '16px' }}>
                   <span style={{ fontSize: '10.5px', textTransform: 'uppercase', color: '#94a3b8', fontWeight: 800 }}>UNITS DISPATCHED</span>
                   <div style={{ fontSize: '16px', fontWeight: 800, color: '#38bdf8' }}>
-                    <AnimatedCounter value={142} />k Pcs
+                    <AnimatedCounter value={142} suffix="k Pcs" duration={1.6} delay={0.45} />
                   </div>
                 </div>
               </div>

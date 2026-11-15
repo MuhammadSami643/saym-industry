@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Product } from '../../actions';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
+import AnimatedCounter from '../../components/AnimatedCounter';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -169,7 +170,7 @@ export default function ProductManagerClient({ initialProducts }: { initialProdu
             TOTAL CATALOG STYLES
           </div>
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#ffffff', margin: '4px 0 2px' }}>
-            {products.length}
+            <AnimatedCounter value={products.length} duration={1.2} delay={0.2} />
           </div>
           <div style={{ fontSize: '11.5px', color: '#00e599', fontWeight: 700 }}>
             Active on live B2B showroom
@@ -181,7 +182,7 @@ export default function ProductManagerClient({ initialProducts }: { initialProdu
             ACTIVE CATEGORIES
           </div>
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#38bdf8', margin: '4px 0 2px' }}>
-            4 Lines
+            <AnimatedCounter value={4} suffix=" Lines" duration={1.2} delay={0.25} />
           </div>
           <div style={{ fontSize: '11.5px', color: '#cbd5e1' }}>
             Streetwear, Active, Combat, Sport
@@ -193,7 +194,7 @@ export default function ProductManagerClient({ initialProducts }: { initialProdu
             SAMPLE LEAD TIME
           </div>
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#fbbf24', margin: '4px 0 2px' }}>
-            7 Days
+            <AnimatedCounter value={7} suffix=" Days" duration={1.2} delay={0.3} />
           </div>
           <div style={{ fontSize: '11.5px', color: '#fbbf24', fontWeight: 700 }}>
             Rapid prototype turnaround
@@ -205,7 +206,7 @@ export default function ProductManagerClient({ initialProducts }: { initialProdu
             STANDARD BULK MOQ
           </div>
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#00e599', margin: '4px 0 2px' }}>
-            50 Pcs
+            <AnimatedCounter value={50} suffix=" Pcs" duration={1.4} delay={0.35} />
           </div>
           <div style={{ fontSize: '11.5px', color: '#00e599', fontWeight: 700 }}>
             Custom dye &amp; private label
