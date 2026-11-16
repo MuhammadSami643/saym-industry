@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import AnimatedCounter from '../../components/AnimatedCounter';
+import { WhatsAppIcon } from '../../components/AdminIcons';
 
 interface BuyerRecord {
   id: string;
@@ -201,11 +202,13 @@ export default function BuyerCrmPage() {
         .tag-pill {
           display: inline-flex;
           align-items: center;
-          gap: 4px;
+          gap: 5px;
           font-size: 11px;
           font-weight: 700;
-          padding: 3px 8px;
+          padding: 4px 10px;
           border-radius: 9999px;
+          white-space: nowrap;
+          letter-spacing: 0.02em;
         }
         .tag-mint {
           background: rgba(0, 229, 153, 0.12);
@@ -376,11 +379,11 @@ export default function BuyerCrmPage() {
             <thead>
               <tr style={{ background: '#0d1316', borderBottom: '1px solid rgba(255, 255, 255, 0.08)', color: '#94a3b8' }}>
                 <th style={{ padding: '14px 18px', fontWeight: 800, fontSize: '11.5px', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Company &amp; Contact</th>
-                <th style={{ padding: '14px 18px', fontWeight: 800, fontSize: '11.5px', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Country</th>
-                <th style={{ padding: '14px 18px', fontWeight: 800, fontSize: '11.5px', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Tier</th>
+                <th style={{ padding: '14px 18px', fontWeight: 800, fontSize: '11.5px', textTransform: 'uppercase', letterSpacing: '0.04em', whiteSpace: 'nowrap' }}>Country</th>
+                <th style={{ padding: '14px 18px', fontWeight: 800, fontSize: '11.5px', textTransform: 'uppercase', letterSpacing: '0.04em', whiteSpace: 'nowrap' }}>Tier</th>
                 <th style={{ padding: '14px 18px', fontWeight: 800, fontSize: '11.5px', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Specialty</th>
-                <th style={{ padding: '14px 18px', fontWeight: 800, fontSize: '11.5px', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Est. Volume</th>
-                <th style={{ padding: '14px 18px', fontWeight: 800, fontSize: '11.5px', textTransform: 'uppercase', letterSpacing: '0.04em', textAlign: 'right' }}>Actions</th>
+                <th style={{ padding: '14px 18px', fontWeight: 800, fontSize: '11.5px', textTransform: 'uppercase', letterSpacing: '0.04em', whiteSpace: 'nowrap' }}>Est. Volume</th>
+                <th style={{ padding: '14px 18px', fontWeight: 800, fontSize: '11.5px', textTransform: 'uppercase', letterSpacing: '0.04em', textAlign: 'right', whiteSpace: 'nowrap' }}>Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -388,7 +391,7 @@ export default function BuyerCrmPage() {
                 const phoneClean = b.phone.replace(/[^0-9]/g, '');
                 return (
                   <tr key={b.id} className="table-row-hover" style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.04)' }}>
-                    <td style={{ padding: '14px 18px' }}>
+                    <td style={{ padding: '14px 18px', minWidth: '220px' }}>
                       <div style={{ fontWeight: 800, color: '#ffffff', fontSize: '14px' }}>{b.company}</div>
                       <div style={{ fontSize: '12px', color: '#cbd5e1', marginTop: '2px' }}>
                         {b.name} &bull; <a href={`mailto:${b.email}`} style={{ color: '#38bdf8', textDecoration: 'none' }}>{b.email}</a>
@@ -397,10 +400,10 @@ export default function BuyerCrmPage() {
                         Note: {b.notes}
                       </div>
                     </td>
-                    <td style={{ padding: '14px 18px', color: '#e2e8f0', fontWeight: 600 }}>
+                    <td style={{ padding: '14px 18px', color: '#e2e8f0', fontWeight: 600, whiteSpace: 'nowrap' }}>
                       {b.country}
                     </td>
-                    <td style={{ padding: '14px 18px' }}>
+                    <td style={{ padding: '14px 18px', whiteSpace: 'nowrap' }}>
                       <span className={`tag-pill ${getTierClass(b.tier)}`}>
                         {b.tier}
                       </span>
@@ -408,11 +411,11 @@ export default function BuyerCrmPage() {
                     <td style={{ padding: '14px 18px', color: '#cbd5e1' }}>
                       {b.category}
                     </td>
-                    <td style={{ padding: '14px 18px' }}>
+                    <td style={{ padding: '14px 18px', whiteSpace: 'nowrap' }}>
                       <strong style={{ color: '#00e599' }}>{b.estVolume}</strong>
                       <div style={{ fontSize: '11px', color: '#64748b' }}>{b.rfqCount} Batches</div>
                     </td>
-                    <td style={{ padding: '14px 18px', textAlign: 'right' }}>
+                    <td style={{ padding: '14px 18px', textAlign: 'right', whiteSpace: 'nowrap' }}>
                       <a
                         href={`https://wa.me/${phoneClean}?text=Hello%20${encodeURIComponent(b.name)},%20this%20is%20Bin%20Rasool%20Enterprises%20following%20up%20on%20your%20production%20account.`}
                         target="_blank"
@@ -420,18 +423,23 @@ export default function BuyerCrmPage() {
                         style={{
                           display: 'inline-flex',
                           alignItems: 'center',
+                          justifyContent: 'center',
                           gap: '6px',
-                          background: 'rgba(0, 229, 153, 0.15)',
+                          whiteSpace: 'nowrap',
+                          background: 'rgba(0, 229, 153, 0.12)',
                           color: '#00e599',
-                          border: '1px solid rgba(0, 229, 153, 0.3)',
-                          padding: '6px 14px',
+                          border: '1px solid rgba(0, 229, 153, 0.28)',
+                          padding: '7px 14px',
                           borderRadius: '8px',
                           fontSize: '11.5px',
                           fontWeight: 700,
                           textDecoration: 'none',
+                          boxShadow: '0 0 10px rgba(0, 229, 153, 0.12)',
+                          transition: 'all 0.15s ease',
                         }}
                       >
-                        💬 WhatsApp
+                        <WhatsAppIcon size={13} />
+                        <span>WhatsApp</span>
                       </a>
                     </td>
                   </tr>

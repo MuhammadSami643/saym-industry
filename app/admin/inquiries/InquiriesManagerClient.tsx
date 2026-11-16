@@ -186,6 +186,7 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
           font-weight: 700;
           padding: 3px 8px;
           border-radius: 9999px;
+          white-space: nowrap;
         }
         .tag-mint {
           background: rgba(0, 229, 153, 0.12);

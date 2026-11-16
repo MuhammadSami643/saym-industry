@@ -194,6 +194,7 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
           font-weight: 700;
           padding: 2px 8px;
           border-radius: 9999px;
+          white-space: nowrap;
           letter-spacing: 0.02em;
         }
         .tag-mint {
