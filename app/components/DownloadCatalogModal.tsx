@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { ArrowRightIcon } from './AdminIcons';
 
 interface DownloadCatalogModalProps {
   isOpen: boolean;
@@ -209,7 +210,14 @@ export default function DownloadCatalogModal({ isOpen, onClose }: DownloadCatalo
               boxShadow: '0 4px 12px rgba(243,166,38,0.25)'
             }}
           >
-            {isSubmitting ? 'Unlocking Document...' : 'Unlock & View 2026 Line Sheet (PDF) ➔'}
+            {isSubmitting ? (
+              <span>Unlocking Document...</span>
+            ) : (
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                <span>Unlock &amp; View 2026 Line Sheet (PDF)</span>
+                <ArrowRightIcon size={14} />
+              </span>
+            )}
           </button>
         </form>
 

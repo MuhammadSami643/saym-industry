@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Inquiry } from '../../actions';
 import AnimatedCounter from '../../components/AnimatedCounter';
-import { ExternalLinkIcon } from '../../components/AdminIcons';
+import { ExternalLinkIcon, MailIcon, PhoneIcon, FileTextIcon, WhatsAppIcon, VideoIcon, FolderIcon, DownloadIcon } from '../../components/AdminIcons';
 
 function parseInquiryAttachments(details: string) {
   let cleanDetails = details || '';
@@ -420,15 +420,22 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
                       </select>
 
                       {videoUrl && (
-                        <span className="tag-pill tag-amber" style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                          🎥 Video Spec
+                        <span className="tag-pill tag-amber" style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+                          <VideoIcon size={12} />
+                          <span>Video Spec</span>
                         </span>
                       )}
                     </div>
-                    <div style={{ display: 'flex', gap: '16px', marginTop: '6px', fontSize: '12.5px', color: '#94a3b8' }}>
-                      <span>✉️ <a href={`mailto:${inq.email}`} style={{ color: '#38bdf8', textDecoration: 'none' }}>{inq.email}</a></span>
+                    <div style={{ display: 'flex', gap: '16px', marginTop: '6px', fontSize: '12.5px', color: '#94a3b8', flexWrap: 'wrap' }}>
+                      <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+                        <MailIcon size={13} style={{ color: '#64748b' }} />
+                        <a href={`mailto:${inq.email}`} style={{ color: '#38bdf8', textDecoration: 'none' }}>{inq.email}</a>
+                      </span>
                       {inq.phone && (
-                        <span>📱 <a href={`https://wa.me/${inq.phone.replace(/[^0-9]/g, '')}`} target="_blank" rel="noopener noreferrer" style={{ color: '#00e599', textDecoration: 'none' }}>{inq.phone}</a></span>
+                        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+                          <PhoneIcon size={13} style={{ color: '#64748b' }} />
+                          <a href={`https://wa.me/${inq.phone.replace(/[^0-9]/g, '')}`} target="_blank" rel="noopener noreferrer" style={{ color: '#00e599', textDecoration: 'none' }}>{inq.phone}</a>
+                        </span>
                       )}
                     </div>
                   </div>
@@ -473,7 +480,7 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
                   <div style={{ marginTop: '14px', background: '#0c1114', borderRadius: '10px', padding: '14px', border: '1px solid rgba(0, 229, 153, 0.2)' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px', flexWrap: 'wrap', gap: '8px' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <span style={{ fontSize: '16px' }}>🎬</span>
+                        <VideoIcon size={16} />
                         <span style={{ color: '#00e599', fontSize: '12.5px', fontWeight: 800 }}>
                           Garment Sample &amp; Stitching Video Spec
                         </span>
@@ -541,7 +548,7 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
                 {techpackUrl && (
                   <div style={{ marginTop: '12px', background: '#0c1114', borderRadius: '10px', padding: '12px 14px', border: '1px solid rgba(0, 229, 153, 0.2)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', flexWrap: 'wrap' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                      <span style={{ fontSize: '20px' }}>📁</span>
+                      <FolderIcon size={22} style={{ color: '#00e599' }} />
                       <div>
                         <div style={{ fontSize: '12.5px', fontWeight: 800, color: '#00e599' }}>
                           Tech Pack / CAD Spec Attached
@@ -570,9 +577,8 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
                         gap: '6px'
                       }}
                     >
-                      <span>📥</span>
                       <span>View &amp; Download Tech Pack</span>
-                      <ExternalLinkIcon size={12} />
+                      <DownloadIcon size={13} />
                     </a>
                   </div>
                 )}
@@ -589,10 +595,14 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
                       padding: '8px 16px',
                       borderRadius: '8px',
                       textDecoration: 'none',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '7px',
                       boxShadow: '0 0 12px rgba(0, 229, 153, 0.3)',
                     }}
                   >
-                    📨 Compose Email Reply
+                    <MailIcon size={14} />
+                    <span>Compose Email Reply</span>
                   </Link>
                   <Link
                     href={`/invoice?name=${encodeURIComponent(inq.name)}&email=${encodeURIComponent(inq.email)}&phone=${encodeURIComponent(inq.phone || '')}&garment=${encodeURIComponent(inq.subject || 'Custom Apparel Batch')}&notes=${encodeURIComponent(cleanDetails)}`}
@@ -608,10 +618,11 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
                       textDecoration: 'none',
                       display: 'inline-flex',
                       alignItems: 'center',
-                      gap: '6px',
+                      gap: '7px',
                     }}
                   >
-                    <span>📄 Proforma Invoice</span>
+                    <FileTextIcon size={14} />
+                    <span>Proforma Invoice</span>
                     <ExternalLinkIcon size={12} />
                   </Link>
                   {inq.phone && (
@@ -630,9 +641,10 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
                         textDecoration: 'none',
                         display: 'inline-flex',
                         alignItems: 'center',
-                        gap: '6px',
+                        gap: '7px',
                       }}
                     >
+                      <WhatsAppIcon size={14} />
                       <span>Open in WhatsApp</span>
                       <ExternalLinkIcon size={12} />
                     </a>

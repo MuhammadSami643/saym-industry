@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import TechPackUploader from './TechPackUploader';
+import { ArrowRightIcon, WhatsAppIcon } from './AdminIcons';
 
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
@@ -81,7 +82,9 @@ export default function ContactForm() {
                   textDecoration: 'none'
                 }}
               >
-                <span>💬</span> Chat Directly on WhatsApp with Production Team ➔
+                <WhatsAppIcon size={16} />
+                <span>Chat Directly on WhatsApp with Production Team</span>
+                <ArrowRightIcon size={14} />
               </a>
             </div>
           )}

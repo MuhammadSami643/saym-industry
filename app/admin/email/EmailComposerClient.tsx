@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { ArrowRightIcon } from '@/app/components/AdminIcons';
+import { ArrowRightIcon, MailIcon, SendIcon } from '@/app/components/AdminIcons';
 
 export interface BuyerContact {
   id?: string;
@@ -258,7 +258,7 @@ export default function EmailComposerClient({ initialBuyers }: EmailComposerClie
               boxShadow: '0 0 12px rgba(56, 189, 248, 0.15)',
             }}
           >
-            ✉️
+            <MailIcon size={20} />
           </div>
           <div style={{ overflow: 'hidden' }}>
             <div style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', color: '#64748b', letterSpacing: '0.06em' }}>
@@ -548,7 +548,7 @@ export default function EmailComposerClient({ initialBuyers }: EmailComposerClie
                 <span>Dispatching SMTP Broadcast...</span>
               ) : (
                 <>
-                  <span>✈️</span>
+                  <SendIcon size={15} />
                   <span>
                     Send Broadcast to {activeRecipients.length} Buyer{activeRecipients.length > 1 ? 's' : ''}
                   </span>

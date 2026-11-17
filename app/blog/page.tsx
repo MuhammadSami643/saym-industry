@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { BLOG_POSTS } from '../lib/blogs';
+import { ArrowRightIcon } from '../components/AdminIcons';
 
 export const metadata = {
   title: "Private Label Activewear & Sportswear Manufacturing Blog | Bin Rasool Enterprises",
@@ -70,8 +71,9 @@ export default function BlogPage() {
 
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '16px', borderTop: '1px solid var(--border)' }}>
                     <span style={{ fontSize: '12px', color: '#94a3b8' }}>{post.date}</span>
-                    <Link href={`/blog/${post.slug}`} style={{ fontWeight: 800, color: 'var(--brand-orange-dark)', fontSize: '13px' }}>
-                      Read Article →
+                    <Link href={`/blog/${post.slug}`} style={{ fontWeight: 800, color: 'var(--brand-orange-dark)', fontSize: '13px', display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+                      <span>Read Article</span>
+                      <ArrowRightIcon size={13} />
                     </Link>
                   </div>
                 </div>

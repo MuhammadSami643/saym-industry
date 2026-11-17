@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { BLOG_POSTS, getBlogPost } from '../../lib/blogs';
+import { ArrowRightIcon } from '../../components/AdminIcons';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -238,8 +239,9 @@ export default async function BlogPostPage({ params }: Props) {
                   <h4 style={{ margin: '0 0 8px', fontSize: '15px', color: 'var(--text-main)', lineHeight: 1.4 }}>
                     {rel.title}
                   </h4>
-                  <span style={{ marginTop: 'auto', fontSize: '12px', color: 'var(--brand-orange-dark)', fontWeight: 700 }}>
-                    Read Guide →
+                  <span style={{ marginTop: 'auto', fontSize: '12px', color: 'var(--brand-orange-dark)', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+                    <span>Read Guide</span>
+                    <ArrowRightIcon size={12} />
                   </span>
                 </Link>
               ))}

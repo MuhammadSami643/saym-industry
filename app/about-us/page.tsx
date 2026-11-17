@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import FaqSection from '../components/FaqSection';
+import { ArrowRightIcon } from '../components/AdminIcons';
 
 export const metadata = {
   title: "About Bin Rasool Enterprises | Private Label Fitness, Sportswear & Boxing Manufacturer",
@@ -176,19 +177,28 @@ export default function AboutPage() {
                 <h3>Fitness Wear Manufacturing</h3>
                 <p className="muted">Private label gym wear, activewear sets, leggings, joggers, hoodies, compression wear,
                   and dry-fit training t-shirts for fitness brands and online stores.</p>
-                <Link href="/fitness-wear-manufacturer">Explore Fitness Wear &rarr;</Link>
+                <Link href="/fitness-wear-manufacturer" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                  <span>Explore Fitness Wear</span>
+                  <ArrowRightIcon size={13} />
+                </Link>
               </article>
               <article className="about-focus">
                 <h3>Sportswear Manufacturing</h3>
                 <p className="muted">Custom teamwear, soccer jerseys, basketball uniforms, tracksuits, training wear,
                   sublimation sportswear, and club uniforms for wholesale buyers.</p>
-                <Link href="/sportswear-manufacturer-exporter">Explore Sports Wear &rarr;</Link>
+                <Link href="/sportswear-manufacturer-exporter" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                  <span>Explore Sports Wear</span>
+                  <ArrowRightIcon size={13} />
+                </Link>
               </article>
               <article className="about-focus">
                 <h3>Boxing Wear Manufacturing</h3>
                 <p className="muted">Boxing shorts, fight wear apparel, rash guards, combat sports clothing, and training
                   tops for fight brands, boxing gyms, MMA, and BJJ markets.</p>
-                <Link href="/boxing-gear-manufacturer-bulk">Explore Boxing Wear &rarr;</Link>
+                <Link href="/boxing-gear-manufacturer-bulk" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                  <span>Explore Boxing Wear</span>
+                  <ArrowRightIcon size={13} />
+                </Link>
               </article>
             </div>
           </div>

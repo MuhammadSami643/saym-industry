@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import { ArrowRightIcon } from './AdminIcons';
 
 const GARMENT_CATEGORIES = [
   'Heavyweight French Terry Hoodies (400–500 GSM)',
@@ -357,7 +358,7 @@ export default function FloatingWhatsAppSelector() {
               }}
             >
               <span>Open WhatsApp &amp; Chat Live</span>
-              <span>&rarr;</span>
+              <ArrowRightIcon size={14} />
             </button>
 
             <div

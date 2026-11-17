@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import CurrencySelector from './CurrencySelector';
+import { ArrowRightIcon } from './AdminIcons';
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -178,7 +179,10 @@ export default function Navbar() {
                   <Link href="/compression-wear" onClick={handleLinkClick}>Compression &amp; Baselayers</Link>
                   <Link href="/custom-jeans" onClick={handleLinkClick}>Custom Denim &amp; Jeans</Link>
                   <Link href="/private-label" onClick={handleLinkClick}>Private Label Trims &amp; Packaging</Link>
-                  <Link href="/products" onClick={handleLinkClick} style={{ fontWeight: 700, color: 'var(--brand-orange-dark, #c57608)' }}>All Products Catalog →</Link>
+                  <Link href="/products" onClick={handleLinkClick} style={{ fontWeight: 700, color: 'var(--brand-orange-dark, #c57608)', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                    <span>All Products Catalog</span>
+                    <ArrowRightIcon size={13} />
+                  </Link>
                 </div>
               </div>
 
