@@ -403,28 +403,47 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
                         {inq.name}
                       </h2>
 
-                      {/* Status Dropdown */}
-                      <select
-                        value={inq.status || 'new'}
-                        onChange={(e) => inq.id && handleStatusChange(inq.id, e.target.value)}
-                        style={{
-                          background: status === 'completed' ? 'rgba(52, 211, 153, 0.12)' : status === 'contacted' ? 'rgba(245, 158, 11, 0.12)' : 'rgba(248, 113, 113, 0.12)',
-                          color: status === 'completed' ? '#34d399' : status === 'contacted' ? '#fbbf24' : '#f87171',
-                          fontSize: '11px',
-                          fontWeight: 700,
-                          textTransform: 'uppercase',
-                          letterSpacing: '0.04em',
-                          padding: '5px 12px',
-                          borderRadius: '9999px',
-                          border: status === 'completed' ? '1px solid rgba(52, 211, 153, 0.28)' : status === 'contacted' ? '1px solid rgba(245, 158, 11, 0.28)' : '1px solid rgba(248, 113, 113, 0.28)',
-                          cursor: 'pointer',
-                          outline: 'none',
-                        }}
-                      >
-                        <option value="new" style={{ background: '#0f171a', color: '#f87171' }}>Status: New</option>
-                        <option value="contacted" style={{ background: '#0f171a', color: '#fbbf24' }}>Status: Contacted</option>
-                        <option value="completed" style={{ background: '#0f171a', color: '#34d399' }}>Status: Completed</option>
-                      </select>
+                      {/* Status Dropdown with custom centered chevron */}
+                      <div style={{ position: 'relative', display: 'inline-flex', alignItems: 'center' }}>
+                        <select
+                          value={inq.status || 'new'}
+                          onChange={(e) => inq.id && handleStatusChange(inq.id, e.target.value)}
+                          style={{
+                            appearance: 'none',
+                            WebkitAppearance: 'none',
+                            MozAppearance: 'none',
+                            background: status === 'completed' ? 'rgba(52, 211, 153, 0.12)' : status === 'contacted' ? 'rgba(245, 158, 11, 0.12)' : 'rgba(248, 113, 113, 0.12)',
+                            color: status === 'completed' ? '#34d399' : status === 'contacted' ? '#fbbf24' : '#f87171',
+                            fontSize: '11px',
+                            fontWeight: 700,
+                            textTransform: 'uppercase',
+                            letterSpacing: '0.04em',
+                            padding: '5px 28px 5px 14px',
+                            borderRadius: '9999px',
+                            border: status === 'completed' ? '1px solid rgba(52, 211, 153, 0.28)' : status === 'contacted' ? '1px solid rgba(245, 158, 11, 0.28)' : '1px solid rgba(248, 113, 113, 0.28)',
+                            cursor: 'pointer',
+                            outline: 'none',
+                          }}
+                        >
+                          <option value="new" style={{ background: '#0f171a', color: '#f87171' }}>Status: New</option>
+                          <option value="contacted" style={{ background: '#0f171a', color: '#fbbf24' }}>Status: Contacted</option>
+                          <option value="completed" style={{ background: '#0f171a', color: '#34d399' }}>Status: Completed</option>
+                        </select>
+                        <span
+                          style={{
+                            position: 'absolute',
+                            right: '11px',
+                            pointerEvents: 'none',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            color: status === 'completed' ? '#34d399' : status === 'contacted' ? '#fbbf24' : '#f87171',
+                          }}
+                        >
+                          <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M1 1L5 5L9 1" />
+                          </svg>
+                        </span>
+                      </div>
 
                       {videoUrl && (
                         <span className="tag-pill tag-amber" style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
