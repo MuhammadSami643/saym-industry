@@ -34,21 +34,21 @@ export default function ContactPage() {
 
             {/* Right: Direct Contact & Factory Info */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-              <div className="card" style={{ background: '#fff' }}>
-                <h3 style={{ marginTop: 0, fontSize: '1.25rem', marginBottom: '14px' }}>Direct Factory Contact</h3>
+              <div className="card" style={{ background: '#ffffff', padding: '30px', borderRadius: '18px', border: '1px solid #e2e8f0', boxShadow: '0 4px 20px rgba(15, 23, 42, 0.05)' }}>
+                <h3 style={{ marginTop: 0, fontSize: '1.25rem', marginBottom: '16px', color: '#0f172a', fontWeight: 800 }}>Direct Factory Contact</h3>
                 <div style={{ display: 'grid', gap: '14px', color: 'var(--text-main)', fontSize: '15px' }}>
                   <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
-                    <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'var(--brand-orange-light)', color: 'var(--brand-orange-dark)', display: 'grid', placeItems: 'center', fontWeight: 900 }}>📍</div>
+                    <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'var(--brand-orange-light)', color: 'var(--brand-orange-dark)', display: 'grid', placeItems: 'center', fontWeight: 900, flexShrink: 0 }}>📍</div>
                     <div>
-                      <strong>Location</strong>
-                      <div className="muted">Sialkot, Punjab, Pakistan (Global Sports Goods Manufacturing Hub)</div>
+                      <strong style={{ color: '#0f172a' }}>Location</strong>
+                      <div className="muted" style={{ fontSize: '13.5px' }}>Sialkot, Punjab, Pakistan (Global Sports Goods Manufacturing Hub)</div>
                     </div>
                   </div>
 
                   <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
-                    <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#dcfce7', color: '#15803d', display: 'grid', placeItems: 'center', fontWeight: 900 }}>💬</div>
+                    <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#dcfce7', color: '#15803d', display: 'grid', placeItems: 'center', fontWeight: 900, flexShrink: 0 }}>💬</div>
                     <div>
-                      <strong>WhatsApp Support</strong>
+                      <strong style={{ color: '#0f172a' }}>WhatsApp Support</strong>
                       <div>
                         <a href="https://wa.me/923376793383" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--brand-orange-dark)', fontWeight: 700 }}>
                           +92 337 6793383
@@ -58,9 +58,9 @@ export default function ContactPage() {
                   </div>
 
                   <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
-                    <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'var(--brand-orange-light)', color: 'var(--brand-orange-dark)', display: 'grid', placeItems: 'center', fontWeight: 900 }}>✉️</div>
+                    <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'var(--brand-orange-light)', color: 'var(--brand-orange-dark)', display: 'grid', placeItems: 'center', fontWeight: 900, flexShrink: 0 }}>✉️</div>
                     <div>
-                      <strong>Email Inquiries</strong>
+                      <strong style={{ color: '#0f172a' }}>Email Inquiries</strong>
                       <div>
                         <a href="mailto:info@binrasoolenterprises.com" style={{ color: 'var(--brand-orange-dark)', fontWeight: 700 }}>
                           info@binrasoolenterprises.com
@@ -70,19 +70,19 @@ export default function ContactPage() {
                   </div>
 
                   <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
-                    <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'var(--brand-orange-light)', color: 'var(--brand-orange-dark)', display: 'grid', placeItems: 'center', fontWeight: 900 }}>⏱️</div>
+                    <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'var(--brand-orange-light)', color: 'var(--brand-orange-dark)', display: 'grid', placeItems: 'center', fontWeight: 900, flexShrink: 0 }}>⏱️</div>
                     <div>
-                      <strong>Working Hours</strong>
-                      <div className="muted">Monday – Saturday: 9:00 AM – 6:00 PM PKT (UTC+5)</div>
+                      <strong style={{ color: '#0f172a' }}>Working Hours</strong>
+                      <div className="muted" style={{ fontSize: '13.5px' }}>Monday – Saturday: 9:00 AM – 6:00 PM PKT (UTC+5)</div>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* What to Include Card */}
-              <div className="card" style={{ background: '#fff' }}>
-                <h3 style={{ marginTop: 0, fontSize: '1.2rem', marginBottom: '12px' }}>Best Details to Include</h3>
-                <ul className="list" style={{ color: 'var(--text-muted)', fontSize: '14px', lineHeight: '1.8' }}>
+              <div className="card" style={{ background: '#ffffff', padding: '30px', borderRadius: '18px', border: '1px solid #e2e8f0', boxShadow: '0 4px 20px rgba(15, 23, 42, 0.05)' }}>
+                <h3 style={{ marginTop: 0, fontSize: '1.2rem', marginBottom: '14px', color: '#0f172a', fontWeight: 800 }}>Best Details to Include</h3>
+                <ul className="list" style={{ color: '#475569', fontSize: '14px', lineHeight: '1.8', margin: 0, paddingLeft: '20px' }}>
                   <li>Target apparel items (leggings, joggers, hoodies, fight shorts, etc.)</li>
                   <li>Approximate quantity per style / colorway (e.g. 50, 100, 300+ pcs)</li>
                   <li>Fabric preferences (Nylon/Spandex, French Terry, Fleece, Mesh)</li>
@@ -92,8 +92,8 @@ export default function ContactPage() {
               </div>
 
               {/* Buyer Markets */}
-              <div className="card-dark">
-                <h3 style={{ marginTop: 0, fontSize: '1.2rem', color: '#fff', marginBottom: '10px' }}>Worldwide Export Markets</h3>
+              <div className="card-dark" style={{ background: '#0b1220', padding: '30px', borderRadius: '18px', border: '1px solid rgba(255, 255, 255, 0.1)', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.25)' }}>
+                <h3 style={{ marginTop: 0, fontSize: '1.2rem', color: '#ffffff', marginBottom: '12px', fontWeight: 800 }}>Worldwide Export Markets</h3>
                 <p style={{ color: '#cbd5e1', fontSize: '14px', margin: 0, lineHeight: '1.7' }}>
                   We export worldwide via DHL Express, FedEx, air cargo, and sea freight to activewear startups, fitness brands, gym chains, and wholesale distributors in North America, United Kingdom, European Union, Australia, and the Middle East.
                 </p>
