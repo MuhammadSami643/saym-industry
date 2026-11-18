@@ -67,6 +67,20 @@ export default function FloatingWhatsAppSelector() {
           onClick={() => setIsOpen(true)}
           aria-label="Open WhatsApp Factory Chat"
           className="wa-floating-btn"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '12px',
+            background: 'linear-gradient(135deg, #0b1220 0%, #172235 100%)',
+            border: '1px solid rgba(255, 255, 255, 0.16)',
+            borderRadius: '9999px',
+            padding: '8px 18px 8px 10px',
+            cursor: 'pointer',
+            boxShadow: '0 10px 30px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(34, 197, 94, 0.2)',
+            backdropFilter: 'blur(12px)',
+            transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
+            outline: 'none',
+          }}
         >
           {/* Circular WhatsApp Icon Badge with pulsing live online indicator */}
           <span
