@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "Sublimated Teamwear & Sports Uniform Manufacturer Pakistan | Custom Jerseys Sialkot",
-  description: "OEM teamwear manufacturer in Pakistan. Custom sublimated soccer kits, football uniforms, basketball jerseys, cricket whites, rugby jerseys, esports jerseys, training vests, and dry-fit polyester mesh uniforms for clubs, schools, and brands.",
+  description: "OEM teamwear manufacturer in Pakistan. Custom sublimated soccer kits, football uniforms, basketball jerseys, cricket whites, rugby jerseys, esports jerseys, training vests and dry-fit polyester mesh uniforms for clubs, schools and brands.",
   keywords: [
     "teamwear manufacturer",
     "sports uniform manufacturer",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Sublimated Sports Uniform & Jersey Manufacturer | Bin Rasool Enterprises",
-    description: "Export sports uniform supplier in Sialkot, Pakistan. Sublimated football kits, basketball uniforms, cricket whites, and athletic teamwear with custom names and numbers.",
+    description: "Export sports uniform supplier in Sialkot, Pakistan. Sublimated football kits, basketball uniforms, cricket whites and athletic teamwear with custom names and numbers.",
     url: "/sportswear-manufacturer-exporter",
     images: [{ url: "/images/categories/1776540279_sports-wear.webp", width: 1200, height: 630 }],
   },
@@ -67,7 +67,7 @@ export default function CategoryPage() {
             Sublimated Teamwear &amp; Sports Uniform Manufacturer Pakistan
           </h1>
           <p style={{ maxWidth: '820px', color: '#cbd5e1', fontSize: '18px', margin: 0 }}>
-            Leading sports uniform manufacturer &amp; sublimated jersey factory in Sialkot, Pakistan. We produce custom soccer kits, basketball uniforms, cricket whites, rugby jerseys, esports team apparel, and breathable training vests with custom player names and numbers.
+            Leading sports uniform manufacturer &amp; sublimated jersey factory in Sialkot, Pakistan. We produce custom soccer kits, basketball uniforms, cricket whites, rugby jerseys, esports team apparel and breathable training vests with custom player names and numbers.
           </p>
           <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '28px' }}>
             <Link href="/contact" className="btn btn-primary">
@@ -88,12 +88,12 @@ export default function CategoryPage() {
               <span className="home-kicker">Professional Team Outfitting</span>
               <h2 style={{ margin: '8px 0 16px' }}>Direct Factory Custom Sports Uniforms &amp; Club Kits</h2>
               <p className="muted" style={{ fontSize: '16px', lineHeight: '1.7', marginBottom: '20px' }}>
-                Bin Rasool Enterprises is a full-service teamwear manufacturer supplying amateur leagues, professional sports clubs, school athletic departments, and retail brands across the UK, USA, Europe, and Australia. We specialize in all-over dye sublimation using premium Italian fade-resistant inks on moisture-wicking, anti-bacterial polyester fabrics.
+                Bin Rasool Enterprises is a full-service teamwear manufacturer supplying amateur leagues, professional sports clubs, school athletic departments and retail brands across the UK, USA, Europe and Australia. We specialize in all-over dye sublimation using premium Italian fade-resistant inks on moisture-wicking, anti-bacterial polyester fabrics.
               </p>
               
               <h3 style={{ fontSize: '1.15rem', marginBottom: '12px' }}>Sports Teamwear Production Disciplines</h3>
               <ul className="list" style={{ color: 'var(--text-main)', lineHeight: '1.9', marginBottom: '26px' }}>
-                <li><strong>Soccer &amp; Football Kits</strong> – Interlock &amp; jacquard mesh jerseys, matching shorts, and custom knitted team socks.</li>
+                <li><strong>Soccer &amp; Football Kits</strong> – Interlock &amp; jacquard mesh jerseys, matching shorts and custom knitted team socks.</li>
                 <li><strong>Basketball Uniforms</strong> – Reversible poly-mesh tanks and dazzle trim shorts with tackle twill or sublimated numbering.</li>
                 <li><strong>Cricket Whites &amp; T20 Sublimated Kits</strong> – Premium breathable pique and dry-fit performance fabrics with embroidered club crests.</li>
                 <li><strong>Rugby, Volleyball &amp; Hockey Jerseys</strong> – Heavyweight 280 GSM reinforced spandex rugby jerseys and lightweight quick-dry volleyball tops.</li>
@@ -116,7 +116,7 @@ export default function CategoryPage() {
                 <span className="card-tag">Low MOQ from 50 pcs</span>
                 <h3 style={{ margin: '8px 0 6px' }}>Factory Direct Sialkot</h3>
                 <p className="muted" style={{ margin: 0, fontSize: '14px' }}>
-                  Complete private labeling: custom neck labels, hangtags, care tags, and polybag packaging.
+                  Complete private labeling: custom neck labels, hangtags, care tags and polybag packaging.
                 </p>
               </div>
             </div>

@@ -40,7 +40,7 @@ export default function AnalyticsPage() {
             B2B Sourcing Analytics &amp; Throughput
           </h1>
           <p style={{ margin: '4px 0 0', color: '#64748b', fontSize: '13px' }}>
-            Real-time interactive metrics on export destinations, fabric demand trends, and sample-to-bulk conversion rates.
+            Real-time interactive metrics on export destinations, fabric demand trends and sample-to-bulk conversion rates.
           </p>
         </div>
 

@@ -506,7 +506,7 @@ Total Sample & Courier Estimate: $${totalUsd} USD (${currency.code})
                           </span>
                         </div>
                         <p style={{ fontSize: '12px', color: '#64748b', margin: '6px 0 0', lineHeight: 1.4 }}>
-                          Plain unbranded sample to inspect sizing pattern, drape, stitching precision, and fabric GSM.
+                          Plain unbranded sample to inspect sizing pattern, drape, stitching precision and fabric GSM.
                         </p>
                       </div>
                     </div>

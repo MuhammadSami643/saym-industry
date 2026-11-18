@@ -222,7 +222,7 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
             </span>
           </div>
           <p style={{ margin: 0, color: '#94a3b8', fontSize: '13.5px' }}>
-            International wholesale buyers, custom sample requests, and instant quote submissions.
+            International wholesale buyers, custom sample requests and instant quote submissions.
           </p>
         </div>
 

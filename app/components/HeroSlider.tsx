@@ -17,7 +17,7 @@ export default function HeroSlider() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % SLIDES.length);
-    }, 5800);
+    }, 9000);
     return () => clearInterval(timer);
   }, []);
 
@@ -37,7 +37,7 @@ export default function HeroSlider() {
           <span className="home-kicker">Private label manufacturing in Sialkot, Pakistan</span>
           <h1>Private Label Activewear Manufacturer for Custom Fitness and Gym Wear</h1>
           <p className="home-hero-copy">
-            Build premium custom activewear with a low MOQ private label manufacturer in Sialkot, Pakistan. We help startups and growing fitness brands with sampling, custom branding, performance fabrics, and worldwide shipping.
+            Build premium custom activewear with a low MOQ private label manufacturer in Sialkot, Pakistan. We help startups and growing fitness brands with sampling, custom branding, performance fabrics and worldwide shipping.
           </p>
           <div className="home-hero-actions">
             <Link href="/contact" className="btn btn-primary">
@@ -48,7 +48,7 @@ export default function HeroSlider() {
             </Link>
           </div>
           <p className="hero-cta-microcopy">
-            Get practical MOQ guidance, sampling support, and a production plan matched to your first or next collection.
+            Get practical MOQ guidance, sampling support and a production plan matched to your first or next collection.
           </p>
           <ul className="home-hero-points" aria-label="Key manufacturing benefits">
             <li>Typical MOQ from 50 pieces</li>

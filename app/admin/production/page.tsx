@@ -227,7 +227,7 @@ export default function ProductionPipelinePage() {
             </span>
           </div>
           <p style={{ margin: 0, color: '#94a3b8', fontSize: '13.5px' }}>
-            Real-time tracking of garment cutting, stitching, steam pressing, and retail packaging lines.
+            Real-time tracking of garment cutting, stitching, steam pressing and retail packaging lines.
           </p>
         </div>
 

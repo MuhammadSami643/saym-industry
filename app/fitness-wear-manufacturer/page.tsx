@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "Activewear & Gym Wear Manufacturer | Custom Leggings & Sports Bras OEM",
-  description: "Premier activewear manufacturer in Sialkot, Pakistan. 75/25 Nylon Spandex squat-proof leggings, sports bras, seamless gym wear, and tapered joggers. Low MOQ, Amazon FBA ready.",
+  description: "Premier activewear manufacturer in Sialkot, Pakistan. 75/25 Nylon Spandex squat-proof leggings, sports bras, seamless gym wear and tapered joggers. Low MOQ, Amazon FBA ready.",
   keywords: [
     "activewear manufacturer",
     "gym wear manufacturer",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Activewear & Gym Wear Manufacturer | Bin Rasool Enterprises",
-    description: "Custom seamless gym leggings, sports bras, pump covers, compression wear, and gym joggers.",
+    description: "Custom seamless gym leggings, sports bras, pump covers, compression wear and gym joggers.",
     url: "/fitness-wear",
     images: [{ url: "/images/categories/1776540259_fitness-wear.webp", width: 1200, height: 630 }],
   },
@@ -75,7 +75,7 @@ export default function CategoryPage() {
             Private Label Fitness Wear Manufacturer
           </h1>
           <p style={{ maxWidth: '780px', color: '#cbd5e1', fontSize: '18px', margin: 0 }}>
-            Complete cut-and-sew fitness wear production for emerging activewear labels, gym studio apparel, and fitness influencers.
+            Complete cut-and-sew fitness wear production for emerging activewear labels, gym studio apparel and fitness influencers.
           </p>
           <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '28px' }}>
             <Link href="/contact" className="btn btn-primary">
@@ -96,7 +96,7 @@ export default function CategoryPage() {
               <span className="home-kicker">Manufacturing Excellence</span>
               <h2 style={{ margin: '8px 0 16px' }}>Custom Fitness Wear Production Built to Your Standard</h2>
               <p className="muted" style={{ fontSize: '16px', lineHeight: '1.7', marginBottom: '20px' }}>
-                We work directly with startup brands, sports clubs, gyms, and international apparel importers. From initial pattern drafting and fabric selection to sample verification, custom branding, and bulk packaging, your order is crafted in our Sialkot production unit under strict quality control.
+                We work directly with startup brands, sports clubs, gyms and international apparel importers. From initial pattern drafting and fabric selection to sample verification, custom branding and bulk packaging, your order is crafted in our Sialkot production unit under strict quality control.
               </p>
               
               <h3 style={{ fontSize: '1.15rem', marginBottom: '12px' }}>Featured Product Styles</h3>
@@ -123,7 +123,7 @@ export default function CategoryPage() {
                 <span className="card-tag">Low MOQ from 50 pcs</span>
                 <h3 style={{ margin: '8px 0 6px' }}>Factory Direct Sialkot</h3>
                 <p className="muted" style={{ margin: 0, fontSize: '14px' }}>
-                  Complete private labeling: custom neck labels, hangtags, care tags, and polybag packaging.
+                  Complete private labeling: custom neck labels, hangtags, care tags and polybag packaging.
                 </p>
               </div>
             </div>

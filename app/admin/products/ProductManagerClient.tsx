@@ -135,7 +135,7 @@ export default function ProductManagerClient({ initialProducts }: { initialProdu
             Garment Styles &amp; Product Specification
           </h1>
           <p style={{ margin: '4px 0 0', color: '#64748b', fontSize: '13px' }}>
-            Manage active export silhouettes, tech specs, fabric blends, and buyer presentation cards.
+            Manage active export silhouettes, tech specs, fabric blends and buyer presentation cards.
           </p>
         </div>
 
@@ -332,7 +332,7 @@ export default function ProductManagerClient({ initialProducts }: { initialProdu
               <textarea
                 name="description"
                 rows={3}
-                placeholder="Product details, fabric blend (e.g. 100% Organic Ring-Spun Cotton 280 GSM), stitching, and fit."
+                placeholder="Product details, fabric blend (e.g. 100% Organic Ring-Spun Cotton 280 GSM), stitching and fit."
                 style={{
                   width: '100%',
                   background: '#090d0f',

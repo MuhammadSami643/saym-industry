@@ -74,7 +74,7 @@ const DEMO_ORDERS: Record<string, OrderRecord> = {
       {
         stage: '04',
         title: 'AQL 2.5 Quality Inspection & Seam Strength Audit',
-        desc: 'Dimensional checks, thread trimming, and wash-fastness testing passed 100%.',
+        desc: 'Dimensional checks, thread trimming and wash-fastness testing passed 100%.',
         completed: true,
         active: false,
         date: 'Nov 13, 2026',
@@ -83,7 +83,7 @@ const DEMO_ORDERS: Record<string, OrderRecord> = {
       {
         stage: '05',
         title: '♨️ Industrial Steam Pressing',
-        desc: 'Heavy vacuum steam ironing, crease removal, thread cleanup, and fabric shape stabilization.',
+        desc: 'Heavy vacuum steam ironing, crease removal, thread cleanup and fabric shape stabilization.',
         completed: false,
         active: true,
         date: 'In Progress (Nov 14-15)',
@@ -92,7 +92,7 @@ const DEMO_ORDERS: Record<string, OrderRecord> = {
       {
         stage: '06',
         title: '📦 Custom Retail Packaging',
-        desc: 'Woven neck label verification, hangtag barcode attachment, individual frosted biodegradable zipper polybagging, and export master carton sealing.',
+        desc: 'Woven neck label verification, hangtag barcode attachment, individual frosted biodegradable zipper polybagging and export master carton sealing.',
         completed: false,
         active: false,
         date: 'Scheduled (Nov 16-17)',
@@ -243,7 +243,7 @@ export default function TrackOrderPage() {
           {
             stage: '03',
             title: 'Industrial Stitching & Private Label Printing',
-            desc: 'Assembly line sewing, custom inner tags, and decorative embroidery.',
+            desc: 'Assembly line sewing, custom inner tags and decorative embroidery.',
             completed: false,
             active: false,
             date: 'Scheduled',
@@ -261,7 +261,7 @@ export default function TrackOrderPage() {
           {
             stage: '05',
             title: '♨️ Industrial Steam Pressing',
-            desc: 'Vacuum steam ironing, crease removal, thread trimming, and garment shape stabilization.',
+            desc: 'Vacuum steam ironing, crease removal, thread trimming and garment shape stabilization.',
             completed: false,
             active: false,
             date: 'Scheduled',
@@ -270,7 +270,7 @@ export default function TrackOrderPage() {
           {
             stage: '06',
             title: '📦 Custom Retail Packaging',
-            desc: 'Brand woven tags, hangtags, barcodes, individual frosted polybags, and master cartons.',
+            desc: 'Brand woven tags, hangtags, barcodes, individual frosted polybags and master cartons.',
             completed: false,
             active: false,
             date: 'Scheduled',
@@ -279,7 +279,7 @@ export default function TrackOrderPage() {
           {
             stage: '07',
             title: '✈️ Customs Clearance & Air Cargo Dispatch',
-            desc: 'Dry Port handover, DHL/FedEx AWB tracking issuance, and air freight departure.',
+            desc: 'Dry Port handover, DHL/FedEx AWB tracking issuance and air freight departure.',
             completed: false,
             active: false,
             date: 'Scheduled',

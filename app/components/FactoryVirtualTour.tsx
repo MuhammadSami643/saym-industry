@@ -29,7 +29,7 @@ const FACTORY_STATIONS: FactoryStation[] = [
     keyHighlights: [
       'Digitized CAD grading across XS through 5XL with 0.5mm precision',
       'Automated fabric tension-free relaxation prior to cutting (prevents garment shrinkage)',
-      'Grainline laser alignment for heavy French terry, fleece, and raw denim'
+      'Grainline laser alignment for heavy French terry, fleece and raw denim'
     ],
     description: 'Every production batch starts with digital CAD pattern grading. Fabrics are unrolled on 40-foot vacuum tables and allowed to rest to eliminate roll tension, ensuring that cut panels match tech pack sizing measurements 100%.',
     qaFocus: 'Zero-tolerance cross-ply measurement audit before sewing allocation.'
@@ -61,7 +61,7 @@ const FACTORY_STATIONS: FactoryStation[] = [
     dailyCapacity: '5,000 Logo Impressions / Day',
     personnel: '12 Graphic Pre-Press Technicians & Color Masters',
     keyHighlights: [
-      'Eco-friendly OEKO-TEX certified water-based, plastisol, and 3D puff screen print inks',
+      'Eco-friendly OEKO-TEX certified water-based, plastisol and 3D puff screen print inks',
       'Raised high-density matte silicone heat transfers with extreme wash durability',
       'Metallic and lurex embroidery threads with soft backing for skin comfort'
     ],
@@ -99,8 +99,8 @@ const FACTORY_STATIONS: FactoryStation[] = [
       'Custom embossed hangtags with branded cotton strings and safety seals',
       'Heavy-duty 7-ply double-wall export master cartons with waterproof inner liners'
     ],
-    description: 'Finished garments pass through high-pressure steam finishing to give the fabric a pristine retail-ready handfeel. Items are folded, tagged, bagged, and boxed according to carton assortment breakdowns ready for air cargo dispatch via DHL, FedEx, or sea container freight.',
-    qaFocus: 'Gross/Net weight verification, barcode scan accuracy, and moisture control packs.'
+    description: 'Finished garments pass through high-pressure steam finishing to give the fabric a pristine retail-ready handfeel. Items are folded, tagged, bagged and boxed according to carton assortment breakdowns ready for air cargo dispatch via DHL, FedEx, or sea container freight.',
+    qaFocus: 'Gross/Net weight verification, barcode scan accuracy and moisture control packs.'
   }
 ];
 

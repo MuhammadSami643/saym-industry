@@ -201,7 +201,7 @@ export default async function BlogPostPage({ params }: Props) {
                 Bin Rasool Enterprises Technical Merchandising
               </h4>
               <p style={{ margin: 0, fontSize: '13px', color: 'var(--text-muted)', lineHeight: 1.6 }}>
-                Direct manufacturing team located in Sialkot, Pakistan. We guide startup activewear brands and established international labels through low MOQ production, fabric sourcing, and export delivery.
+                Direct manufacturing team located in Sialkot, Pakistan. We guide startup activewear brands and established international labels through low MOQ production, fabric sourcing and export delivery.
               </p>
             </div>
           </div>
@@ -212,7 +212,7 @@ export default async function BlogPostPage({ params }: Props) {
               <span className="home-kicker">Start Production</span>
               <h2>Ready to build your activewear collection?</h2>
               <p>
-                Get direct factory pricing, low MOQ advice, and a custom sample development plan matched to your target delivery date.
+                Get direct factory pricing, low MOQ advice and a custom sample development plan matched to your target delivery date.
               </p>
             </div>
             <div className="home-cta-actions">

@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "OEM Boxing Gloves & Fight Gear Manufacturer Sialkot | Bin Rasool Enterprises",
-    description: "Export quality genuine leather boxing gloves, pro sparring gloves, satin fight robes, custom corner jackets, and shin guards wholesale.",
+    description: "Export quality genuine leather boxing gloves, pro sparring gloves, satin fight robes, custom corner jackets and shin guards wholesale.",
     url: "/boxing-gear-manufacturer-bulk",
     images: [{ url: "/images/categories/1776540301_boxing-wear.webp", width: 1200, height: 630 }],
   },
@@ -67,7 +67,7 @@ export default function CategoryPage() {
             Boxing Gloves Manufacturer & Custom Fight Gear Factory Sialkot
           </h1>
           <p style={{ maxWidth: '820px', color: '#cbd5e1', fontSize: '18px', margin: 0 }}>
-            OEM boxing gloves factory Pakistan delivering genuine cowhide leather boxing gloves, pro sparring gloves 16 oz &amp; 10 oz, satin boxing trunks, custom boxing robes, corner jackets, shin guards, and hand wraps for USA and European combat brands.
+            OEM boxing gloves factory Pakistan delivering genuine cowhide leather boxing gloves, pro sparring gloves 16 oz &amp; 10 oz, satin boxing trunks, custom boxing robes, corner jackets, shin guards and hand wraps for USA and European combat brands.
           </p>
           <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '28px' }}>
             <Link href="/contact" className="btn btn-primary">
@@ -88,7 +88,7 @@ export default function CategoryPage() {
               <span className="home-kicker">OEM Combat Sports Production</span>
               <h2 style={{ margin: '8px 0 16px' }}>Private Label Boxing Gloves Manufacturer &amp; Fight Equipment</h2>
               <p className="muted" style={{ fontSize: '16px', lineHeight: '1.7', marginBottom: '20px' }}>
-                As a leading Sialkot boxing gloves manufacturer and custom fightwear manufacturer, Bin Rasool Enterprises supplies combat sports promotions, gyms, and fight gear brands worldwide. We engineer boxing gloves with multi-layer foam padding (EVA, latex, horsehair blends), premium cowhide or microfibre leather, reinforced wrist enclosures, and triple-stitched seams.
+                As a leading Sialkot boxing gloves manufacturer and custom fightwear manufacturer, Bin Rasool Enterprises supplies combat sports promotions, gyms and fight gear brands worldwide. We engineer boxing gloves with multi-layer foam padding (EVA, latex, horsehair blends), premium cowhide or microfibre leather, reinforced wrist enclosures and triple-stitched seams.
               </p>
               
               <h3 style={{ fontSize: '1.15rem', marginBottom: '12px' }}>Fight Gear &amp; Boxing Equipment Wholesale</h3>
@@ -115,7 +115,7 @@ export default function CategoryPage() {
                 <span className="card-tag">Low MOQ from 50 pcs</span>
                 <h3 style={{ margin: '8px 0 6px' }}>Factory Direct Sialkot</h3>
                 <p className="muted" style={{ margin: 0, fontSize: '14px' }}>
-                  Complete private labeling: custom neck labels, hangtags, care tags, and polybag packaging.
+                  Complete private labeling: custom neck labels, hangtags, care tags and polybag packaging.
                 </p>
               </div>
             </div>

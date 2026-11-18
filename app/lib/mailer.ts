@@ -142,7 +142,7 @@ export async function sendInquiryNotificationEmails(payload: InquiryEmailPayload
               </div>
               <div class="step-item">
                 <span class="step-num">1</span>
-                <div><strong>Tech Pack &amp; GSM Review:</strong> We verify yarn availability, sizing specifications, and branding techniques.</div>
+                <div><strong>Tech Pack &amp; GSM Review:</strong> We verify yarn availability, sizing specifications and branding techniques.</div>
               </div>
               <div class="step-item">
                 <span class="step-num">2</span>

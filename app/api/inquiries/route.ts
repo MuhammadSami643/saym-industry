@@ -81,7 +81,7 @@ export async function POST(request: Request) {
 
     if (!name || !email || !messageContent) {
       return NextResponse.json(
-        { error: 'Name, email, and details/message are required fields.' },
+        { error: 'Name, email and details/message are required fields.' },
         { status: 400 }
       );
     }

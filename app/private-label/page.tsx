@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "Private Label Clothing Manufacturer Pakistan | Custom Woven Labels, Hangtags & Packaging",
-  description: "Direct OEM private label clothing manufacturer in Sialkot, Pakistan. Custom woven neck labels, 400 gsm coated hang tags, frosted zipper polybags, silicone heat transfer logos, 3D puff embroidery, chenille patches, and Amazon FBA barcode packaging for startups and retail brands.",
+  description: "Direct OEM private label clothing manufacturer in Sialkot, Pakistan. Custom woven neck labels, 400 gsm coated hang tags, frosted zipper polybags, silicone heat transfer logos, 3D puff embroidery, chenille patches and Amazon FBA barcode packaging for startups and retail brands.",
   keywords: [
     "private label manufacturer",
     "custom clothing manufacturer",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Complete Private Label Clothing & Packaging Factory | Bin Rasool Enterprises",
-    description: "Turnkey apparel manufacturing: high density damask woven labels, 400 gsm hangtags, frosted zip polybags, 3D puff embroidery, and FBA retail packaging.",
+    description: "Turnkey apparel manufacturing: high density damask woven labels, 400 gsm hangtags, frosted zip polybags, 3D puff embroidery and FBA retail packaging.",
     url: "/private-label",
     images: [{ url: "/images/hero-factory.webp", width: 1200, height: 630 }],
   },
@@ -78,12 +78,12 @@ export default function PrivateLabelPage() {
                 PRIVATE LABEL MANUFACTURER &nbsp;&nbsp;• &nbsp;SIALKOT</div>
                 <h1>Private Label Manufacturing for Sportswear, Fitness Wear & Boxing Wear Brands</h1>
                 <p>
-                    Bin Rasool Enterprises helps brands, gyms, clubs, wholesalers, fight brands, and online sellers create custom apparel under their own label. From Sialkot, Pakistan, we support private label sportswear manufacturing with product development, custom branding, sampling, flexible MOQ options, and export-ready production.
+                    Bin Rasool Enterprises helps brands, gyms, clubs, wholesalers, fight brands and online sellers create custom apparel under their own label. From Sialkot, Pakistan, we support private label sportswear manufacturing with product development, custom branding, sampling, flexible MOQ options and export-ready production.
                 </p>
             </div>
             <div className="pl-summary">
                 <strong>Your brand. Your labels. Your collection.</strong>
-                <p>Build gym wear, teamwear, activewear, boxing wear, and combat sports clothing with custom branding and manufacturer support.</p>
+                <p>Build gym wear, teamwear, activewear, boxing wear and combat sports clothing with custom branding and manufacturer support.</p>
             </div>
         </div>
     </div>
@@ -98,10 +98,10 @@ export default function PrivateLabelPage() {
             </div>
             <div className="pl-note">
                 <p className="muted">
-                    Private label manufacturing allows you to sell custom sportswear, fitness wear, boxing wear, and activewear under your own brand identity while working with a manufacturer that handles sampling, construction, branding, and production. Bin Rasool Enterprises supports buyers who want to launch new apparel collections or grow an existing product line with factory-direct manufacturing from Pakistan.
+                    Private label manufacturing allows you to sell custom sportswear, fitness wear, boxing wear and activewear under your own brand identity while working with a manufacturer that handles sampling, construction, branding and production. Bin Rasool Enterprises supports buyers who want to launch new apparel collections or grow an existing product line with factory-direct manufacturing from Pakistan.
                 </p>
                 <p className="muted">
-                    We help with the details that make a product feel like your brand: labels, hang tags, packaging, logo placement, print or embroidery method, fabric selection, fit direction, color combinations, and finishing standards.
+                    We help with the details that make a product feel like your brand: labels, hang tags, packaging, logo placement, print or embroidery method, fabric selection, fit direction, color combinations and finishing standards.
                 </p>
             </div>
         </div>
@@ -113,33 +113,33 @@ export default function PrivateLabelPage() {
         <span className="pl-label">Branding & Customization</span>
         <h2>Private label options for brand-ready apparel</h2>
         <p className="muted" style={{ 'maxWidth': '850px' }}>
-            A strong private label product needs more than a logo. It needs the right fabric, fit, trims, labels, packaging, and consistent product presentation across the full collection.
+            A strong private label product needs more than a logo. It needs the right fabric, fit, trims, labels, packaging and consistent product presentation across the full collection.
         </p>
 
         <div className="pl-options-grid">
                             <article className="pl-option">
                     <h3>Neck Labels & Woven Labels</h3>
-                    <p className="muted">Custom neck labels, size labels, care labels, woven labels, and brand identity details for retail-ready apparel.</p>
+                    <p className="muted">Custom neck labels, size labels, care labels, woven labels and brand identity details for retail-ready apparel.</p>
                 </article>
                             <article className="pl-option">
                     <h3>Hang Tags & Packaging</h3>
-                    <p className="muted">Hang tags, poly bags, carton marks, product packaging direction, and presentation support for your private label line.</p>
+                    <p className="muted">Hang tags, poly bags, carton marks, product packaging direction and presentation support for your private label line.</p>
                 </article>
                             <article className="pl-option">
                     <h3>Logo Application</h3>
-                    <p className="muted">Embroidery, screen printing, heat transfer, sublimation, puff printing, and placement planning for each product category.</p>
+                    <p className="muted">Embroidery, screen printing, heat transfer, sublimation, puff printing and placement planning for each product category.</p>
                 </article>
                             <article className="pl-option">
                     <h3>Custom Fabric Direction</h3>
-                    <p className="muted">Fabric selection support for fleece, dry-fit, interlock, mesh, spandex blends, satin, compression fabrics, and sportswear materials.</p>
+                    <p className="muted">Fabric selection support for fleece, dry-fit, interlock, mesh, spandex blends, satin, compression fabrics and sportswear materials.</p>
                 </article>
                             <article className="pl-option">
                     <h3>Sample Development</h3>
-                    <p className="muted">Sample-first production to confirm fabric, fit, sizing, construction, branding, color, trims, and finishing before bulk orders.</p>
+                    <p className="muted">Sample-first production to confirm fabric, fit, sizing, construction, branding, color, trims and finishing before bulk orders.</p>
                 </article>
                             <article className="pl-option">
                     <h3>Bulk Production Support</h3>
-                    <p className="muted">Production planning for startup brands, wholesalers, gyms, clubs, fight brands, and online sellers scaling their collections.</p>
+                    <p className="muted">Production planning for startup brands, wholesalers, gyms, clubs, fight brands and online sellers scaling their collections.</p>
                 </article>
                     </div>
     </div>
@@ -152,25 +152,25 @@ export default function PrivateLabelPage() {
                 <span className="pl-label">How It Works</span>
                 <h2>Private label production process from idea to bulk order</h2>
                 <p className="muted">
-                    Our process is built to help buyers reduce confusion before production starts. The goal is to confirm the product direction, branding details, sample expectations, and manufacturing plan early.
+                    Our process is built to help buyers reduce confusion before production starts. The goal is to confirm the product direction, branding details, sample expectations and manufacturing plan early.
                 </p>
             </div>
             <div className="pl-step-list">
                                     <div className="pl-step">
                         <h3>Share Your Brand Direction</h3>
-                        <p className="muted">Send your product category, target market, quantity, logo files, reference images, fabric direction, and any existing tech pack.</p>
+                        <p className="muted">Send your product category, target market, quantity, logo files, reference images, fabric direction and any existing tech pack.</p>
                     </div>
                                     <div className="pl-step">
                         <h3>Confirm Product & Branding Details</h3>
-                        <p className="muted">We align on product type, fabric, stitching, labels, logo placement, packaging, colors, sizing, and sample requirements.</p>
+                        <p className="muted">We align on product type, fabric, stitching, labels, logo placement, packaging, colors, sizing and sample requirements.</p>
                     </div>
                                     <div className="pl-step">
                         <h3>Develop Samples</h3>
-                        <p className="muted">A sample helps confirm fit, construction, branding, materials, measurements, and finishing before moving into bulk manufacturing.</p>
+                        <p className="muted">A sample helps confirm fit, construction, branding, materials, measurements and finishing before moving into bulk manufacturing.</p>
                     </div>
                                     <div className="pl-step">
                         <h3>Start Bulk Manufacturing</h3>
-                        <p className="muted">After approval, production moves through cutting, stitching, checking, finishing, packing, and export-ready preparation.</p>
+                        <p className="muted">After approval, production moves through cutting, stitching, checking, finishing, packing and export-ready preparation.</p>
                     </div>
                             </div>
         </div>
@@ -182,23 +182,23 @@ export default function PrivateLabelPage() {
         <span className="pl-label">Product Categories</span>
         <h2>Build a private label collection in focused apparel categories</h2>
         <p className="muted" style={{ 'maxWidth': '850px' }}>
-            Bin Rasool Enterprises focuses on performance apparel categories where custom branding, fit, fabric, and durability matter for the buyer and the end customer.
+            Bin Rasool Enterprises focuses on performance apparel categories where custom branding, fit, fabric and durability matter for the buyer and the end customer.
         </p>
 
         <div className="pl-category-grid">
             <a className="pl-category" href="/fitness-wear-manufacturer">
                 <h3>Private Label Fitness Wear</h3>
-                <p className="muted">Joggers, hoodies, leggings, activewear sets, compression wear, dry-fit gym t-shirts, and gym apparel for fitness brands.</p>
+                <p className="muted">Joggers, hoodies, leggings, activewear sets, compression wear, dry-fit gym t-shirts and gym apparel for fitness brands.</p>
                 <span className="card-action">Explore Fitness Wear</span>
             </a>
             <a className="pl-category" href="/sportswear-manufacturer-exporter">
                 <h3>Private Label Sportswear</h3>
-                <p className="muted">Soccer jerseys, basketball uniforms, tracksuits, team uniforms, training wear, and sublimation sports apparel for clubs and wholesalers.</p>
+                <p className="muted">Soccer jerseys, basketball uniforms, tracksuits, team uniforms, training wear and sublimation sports apparel for clubs and wholesalers.</p>
                 <span className="card-action">Explore Sports Wear</span>
             </a>
             <a className="pl-category" href="/boxing-gear-manufacturer-bulk">
                 <h3>Private Label Boxing Wear</h3>
-                <p className="muted">Boxing shorts, rash guards, fight wear, combat sports clothing, training shirts, and gym tops for boxing and MMA brands.</p>
+                <p className="muted">Boxing shorts, rash guards, fight wear, combat sports clothing, training shirts and gym tops for boxing and MMA brands.</p>
                 <span className="card-action">Explore Boxing Wear</span>
             </a>
         </div>
@@ -234,7 +234,7 @@ export default function PrivateLabelPage() {
         <div className="pl-cta">
             <div>
                 <h2>Ready to build your private label apparel line?</h2>
-                <p>Send your logo, product category, reference images, quantity, and branding requirements. We will help you plan the right sample and production direction.</p>
+                <p>Send your logo, product category, reference images, quantity and branding requirements. We will help you plan the right sample and production direction.</p>
             </div>
             <a href="/contact" className="btn btn-primary">Discuss Your Brand</a>
         </div>
@@ -251,7 +251,7 @@ export default function PrivateLabelPage() {
                             <span className="faq-icon" aria-hidden="true">+</span>
                         </button>
                         <div className="faq-answer">
-                            <p className="muted">Private label manufacturing means producing garments under your own brand identity with your chosen labels, trims, packaging, logo application, and product presentation.</p>
+                            <p className="muted">Private label manufacturing means producing garments under your own brand identity with your chosen labels, trims, packaging, logo application and product presentation.</p>
                         </div>
                     </div>
                                                         <div className="faq-item ">
@@ -260,7 +260,7 @@ export default function PrivateLabelPage() {
                             <span className="faq-icon" aria-hidden="true">+</span>
                         </button>
                         <div className="faq-answer">
-                            <p className="muted">Yes. We support private label sportswear, fitness wear, boxing wear, and activewear with customization around fabric, branding, packaging, and fit direction.</p>
+                            <p className="muted">Yes. We support private label sportswear, fitness wear, boxing wear and activewear with customization around fabric, branding, packaging and fit direction.</p>
                         </div>
                     </div>
                                                         <div className="faq-item ">
@@ -269,7 +269,7 @@ export default function PrivateLabelPage() {
                             <span className="faq-icon" aria-hidden="true">+</span>
                         </button>
                         <div className="faq-answer">
-                            <p className="muted">Samples are strongly recommended because they help confirm fit, construction, branding placement, and finishing before a bulk order moves forward.</p>
+                            <p className="muted">Samples are strongly recommended because they help confirm fit, construction, branding placement and finishing before a bulk order moves forward.</p>
                         </div>
                     </div>
                                                         <div className="faq-item ">
@@ -278,7 +278,7 @@ export default function PrivateLabelPage() {
                             <span className="faq-icon" aria-hidden="true">+</span>
                         </button>
                         <div className="faq-answer">
-                            <p className="muted">Branding options can include neck labels, woven labels, hang tags, packaging, embroidery, screen printing, heat transfer, and sublimation depending on the product type.</p>
+                            <p className="muted">Branding options can include neck labels, woven labels, hang tags, packaging, embroidery, screen printing, heat transfer and sublimation depending on the product type.</p>
                         </div>
                     </div>
                                                         <div className="faq-item ">
@@ -299,13 +299,13 @@ export default function PrivateLabelPage() {
         <span className="pl-label">Private Label Activewear by Market</span>
         <h2>Private Label Activewear by Market</h2>
         <p className="muted" style={{ 'maxWidth': '850px' }}>
-            Explore market-focused private label activewear pages for brands comparing launch paths, buyer requirements, and product direction across different regions.
+            Explore market-focused private label activewear pages for brands comparing launch paths, buyer requirements and product direction across different regions.
         </p>
 
         <div className="pl-category-grid">
             <a className="pl-category" href="/private-label-activewear-manufacturer-europe">
                 <h3>Europe Buyers</h3>
-                <p className="muted">Private label activewear for EU brands, importers, and multi-country distribution buyers.</p>
+                <p className="muted">Private label activewear for EU brands, importers and multi-country distribution buyers.</p>
                 <span className="card-action">View Europe Page</span>
             </a>
             <a className="pl-category" href="/private-label-activewear-manufacturer-uk">
@@ -315,7 +315,7 @@ export default function PrivateLabelPage() {
             </a>
             <a className="pl-category" href="/private-label-activewear-manufacturer-usa">
                 <h3>USA Brands</h3>
-                <p className="muted">Private label activewear for US fitness brands, DTC labels, and Amazon sellers.</p>
+                <p className="muted">Private label activewear for US fitness brands, DTC labels and Amazon sellers.</p>
                 <span className="card-action">View USA Page</span>
             </a>
             <a className="pl-category" href="/private-label-activewear-manufacturer-germany">
@@ -335,12 +335,12 @@ export default function PrivateLabelPage() {
             </a>
             <a className="pl-category" href="/private-label-activewear-manufacturer-italy">
                 <h3>Italy Brands</h3>
-                <p className="muted">Private label activewear for boutique fitness, athleisure, and premium Italian buyers.</p>
+                <p className="muted">Private label activewear for boutique fitness, athleisure and premium Italian buyers.</p>
                 <span className="card-action">View Italy Page</span>
             </a>
             <a className="pl-category" href="/private-label-activewear-manufacturer-spain">
                 <h3>Spain Brands</h3>
-                <p className="muted">Private label activewear for Spanish online sellers, studios, and growth-stage labels.</p>
+                <p className="muted">Private label activewear for Spanish online sellers, studios and growth-stage labels.</p>
                 <span className="card-action">View Spain Page</span>
             </a>
             <a className="pl-category" href="/activewear-manufacturer-for-startups">

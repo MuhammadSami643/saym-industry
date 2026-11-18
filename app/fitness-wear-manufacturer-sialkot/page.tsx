@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export const metadata = {
   title: "Fitness Wear Manufacturer Sialkot | Custom Gym Apparel",
-  description: "High-waisted squat-proof leggings, seamless sports bras, tapered gym joggers, and stringer tanks made with premium Nylon/Spandex performance fabrics."
+  description: "High-waisted squat-proof leggings, seamless sports bras, tapered gym joggers and stringer tanks made with premium Nylon/Spandex performance fabrics."
 };
 
 export default function CategoryPage() {
@@ -20,7 +20,7 @@ export default function CategoryPage() {
             Custom Fitness Wear Manufacturer in Sialkot, Pakistan
           </h1>
           <p style={{ maxWidth: '780px', color: '#cbd5e1', fontSize: '18px', margin: 0 }}>
-            High-waisted squat-proof leggings, seamless sports bras, tapered gym joggers, and stringer tanks made with premium Nylon/Spandex performance fabrics.
+            High-waisted squat-proof leggings, seamless sports bras, tapered gym joggers and stringer tanks made with premium Nylon/Spandex performance fabrics.
           </p>
           <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '28px' }}>
             <Link href="/contact" className="btn btn-primary">
@@ -41,7 +41,7 @@ export default function CategoryPage() {
               <span className="home-kicker">Manufacturing Excellence</span>
               <h2 style={{ margin: '8px 0 16px' }}>Custom Fitness Wear Production Built to Your Standard</h2>
               <p className="muted" style={{ fontSize: '16px', lineHeight: '1.7', marginBottom: '20px' }}>
-                We work directly with startup brands, sports clubs, gyms, and international apparel importers. From initial pattern drafting and fabric selection to sample verification, custom branding, and bulk packaging, your order is crafted in our Sialkot production unit under strict quality control.
+                We work directly with startup brands, sports clubs, gyms and international apparel importers. From initial pattern drafting and fabric selection to sample verification, custom branding and bulk packaging, your order is crafted in our Sialkot production unit under strict quality control.
               </p>
               
               <h3 style={{ fontSize: '1.15rem', marginBottom: '12px' }}>Featured Product Styles</h3>
@@ -68,7 +68,7 @@ export default function CategoryPage() {
                 <span className="card-tag">Low MOQ from 50 pcs</span>
                 <h3 style={{ margin: '8px 0 6px' }}>Factory Direct Sialkot</h3>
                 <p className="muted" style={{ margin: 0, fontSize: '14px' }}>
-                  Complete private labeling: custom neck labels, hangtags, care tags, and polybag packaging.
+                  Complete private labeling: custom neck labels, hangtags, care tags and polybag packaging.
                 </p>
               </div>
             </div>

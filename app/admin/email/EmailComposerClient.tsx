@@ -25,7 +25,7 @@ const PRESETS = [
 
 Thank you for your inquiry with Bin Rasool Enterprises. We have reviewed your tech pack specifications and volume requirements.
 
-We are pleased to confirm that our Sialkot manufacturing floor can accommodate your order with our standard AQL 2.5 quality control standards, custom private label woven labels, and custom polybag packaging.
+We are pleased to confirm that our Sialkot manufacturing floor can accommodate your order with our standard AQL 2.5 quality control standards, custom private label woven labels and custom polybag packaging.
 
 Please review your attached proforma quotation details and let us know your preferred courier delivery schedule so our sampling team can initiate the pre-production prototype.`,
     buttonText: 'VIEW PROFORMA INVOICE',
@@ -40,7 +40,7 @@ This is a progress update from the Bin Rasool Enterprises production line regard
 
 Your fabric lots have completed inspection and have moved into automated laser cutting and 4-needle flatlock stitching. All embroidery and custom screen print proofs have successfully passed our quality benchmark.
 
-We anticipate final pressing, QC audit, and export packing clearance within the next 4 business days.`,
+We anticipate final pressing, QC audit and export packing clearance within the next 4 business days.`,
     buttonText: 'TRACK PRODUCTION STAGES',
     buttonUrl: '/track-order',
   },
@@ -51,7 +51,7 @@ We anticipate final pressing, QC audit, and export packing clearance within the 
 
 Your physical pre-production sample pack has been dispatched via DHL Express Air.
 
-Once you have inspected the fabric drape, seam strength, sizing fit, and embroidery placement, please share your feedback or sign off so our factory floor can proceed with the bulk cutting run.
+Once you have inspected the fabric drape, seam strength, sizing fit and embroidery placement, please share your feedback or sign off so our factory floor can proceed with the bulk cutting run.
 
 Feel free to reply directly to this email or connect with our production head on WhatsApp.`,
     buttonText: 'CONFIRM SAMPLE FEEDBACK',
@@ -180,7 +180,7 @@ export default function EmailComposerClient({ initialBuyers }: EmailComposerClie
             Export Client Email Dispatch Studio
           </h1>
           <p style={{ margin: '4px 0 0', color: '#64748b', fontSize: '13px' }}>
-            Broadcast tech pack evaluations, proforma invoices, and production status updates directly to international buyers.
+            Broadcast tech pack evaluations, proforma invoices and production status updates directly to international buyers.
           </p>
         </div>
       </motion.div>

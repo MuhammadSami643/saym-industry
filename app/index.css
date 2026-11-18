@@ -329,7 +329,6 @@ textarea.form-control {
   flex-shrink: 0;
   min-width: 0;
   z-index: 10;
-  margin-right: 16px;
 }
 
 .nav-brand-title {
@@ -354,7 +353,7 @@ textarea.form-control {
 .nav-center {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   flex: 1;
   min-width: 0;
 }
@@ -399,7 +398,7 @@ textarea.form-control {
   white-space: nowrap;
   flex-wrap: nowrap;
   align-items: center;
-  gap: 2px;
+  gap: 12px;
   display: flex;
 }
 
@@ -422,9 +421,10 @@ textarea.form-control {
   border-radius: 7px;
   align-items: center;
   gap: 4px;
-  padding: 6px 8px;
-  font-size: 13px;
-  font-weight: 700;
+  padding: 6px 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: inherit;
   text-decoration: none;
   display: inline-flex;
   transition: background 0.15s ease, color 0.15s ease;
@@ -441,12 +441,14 @@ textarea.form-control {
 .nav-link.is-active,
 .nav-trigger.is-active {
   color: var(--brand-orange-dark, #c57608);
-  font-weight: 800;
+  font-weight: 600;
   background: var(--brand-orange-soft, rgba(243, 166, 38, 0.12));
 }
 
 .nav-trigger {
-  font: inherit;
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
   border: none;
 }
 
@@ -511,7 +513,6 @@ textarea.form-control {
   align-items: center;
   gap: 8px;
   display: flex;
-  margin-left: 8px;
 }
 
 .chevron {
@@ -526,6 +527,10 @@ textarea.form-control {
 
 .nav-dropdown.is-open .chevron {
   transform: rotate(135deg) translateY(-1px);
+}
+
+.nav-dropdown.is-open .nav-chevron {
+  transform: rotate(180deg) !important;
 }
 
 /* RESPONSIVE NAVBAR: When screen is under 1180px, switch cleanly to mobile menu drawer */
@@ -843,6 +848,13 @@ textarea.form-control {
   border: 1px solid var(--border);
   border-radius: 10px;
   background: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+a.trust-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border-color: var(--brand-orange);
 }
 
 .trust-card h3 {
@@ -1574,9 +1586,14 @@ textarea.form-control {
 }
 
 .footer-main {
-  display: grid;
-  grid-template-columns: minmax(260px, 1.35fr) repeat(3, minmax(160px, .75fr));
-  gap: 42px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-brand-column {
+  max-width: 420px;
+  flex-shrink: 0;
 }
 
 .footer-brand {
@@ -1611,27 +1628,56 @@ textarea.form-control {
 
 .footer-list a,
 .footer-contact a,
-.footer-social a {
-  color: #b9c2cf;
+.footer-contact div {
+  color: #9da7b7;
+  font-size: 13px;
   text-decoration: none;
+  line-height: 1.6;
+}
+
+.footer-list a {
+  display: inline-block;
+  transition: color 0.15s ease, transform 0.15s ease;
 }
 
 .footer-list a:hover,
-.footer-contact a:hover,
-.footer-social a:hover {
-  color: #fff;
+.footer-contact a:hover {
+  color: #ffffff;
+  transform: translateX(4px);
 }
 
 .footer-contact {
-  color: #b9c2cf;
-  line-height: 1.75;
+  color: #9da7b7;
+  font-size: 13px;
+  line-height: 1.8;
 }
 
 .footer-social {
   display: flex;
-  gap: 16px;
+  gap: 10px;
   flex-wrap: wrap;
-  margin-top: 15px;
+  margin-top: 18px;
+}
+
+.footer-social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.footer-social-btn:hover {
+  background: rgba(243, 166, 38, 0.15);
+  border-color: rgba(243, 166, 38, 0.6);
+  color: #ffffff;
+  transform: translateY(-2px);
 }
 
 .footer-bottom {

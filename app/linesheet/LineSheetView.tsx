@@ -282,7 +282,7 @@ export default function LineSheetView() {
             </tbody>
           </table>
           <div style={{ fontSize: '10px', color: '#64748b', marginTop: '6px', fontStyle: 'italic' }}>
-            * Note: FOB unit costs vary based on exact custom branding techniques, GSM, order volume, and packaging configurations.
+            * Note: FOB unit costs vary based on exact custom branding techniques, GSM, order volume and packaging configurations.
           </div>
         </div>
 
@@ -333,7 +333,7 @@ export default function LineSheetView() {
             <ul style={{ margin: 0, paddingLeft: '18px', fontSize: '11px', color: '#475569', lineHeight: 1.8 }}>
               <li><strong>Sampling Protocol:</strong> 100% upfront sample development fee (credited against bulk).</li>
               <li><strong>Bulk Payment Terms:</strong> 50% advance deposit to commence production; 50% upon QA video signoff prior to courier dispatch.</li>
-              <li><strong>Carriers:</strong> Official DHL Express Worldwide, FedEx Priority, and Sialkot Airport Air Cargo.</li>
+              <li><strong>Carriers:</strong> Official DHL Express Worldwide, FedEx Priority and Sialkot Airport Air Cargo.</li>
             </ul>
           </div>
         </div>

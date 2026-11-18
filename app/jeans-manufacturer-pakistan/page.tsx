@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "Jeans Manufacturer Pakistan | Custom Denim Jeans & Selvedge Denim Factory",
-  description: "Leading custom jeans manufacturer in Pakistan. 14 oz raw selvedge denim, stretch jeans, baggy streetwear cuts, carpenter denim, enzyme stone wash, acid wash, custom leather back patches, and cast metal shank buttons for USA & European brands.",
+  description: "Leading custom jeans manufacturer in Pakistan. 14 oz raw selvedge denim, stretch jeans, baggy streetwear cuts, carpenter denim, enzyme stone wash, acid wash, custom leather back patches and cast metal shank buttons for USA & European brands.",
   keywords: [
     "jeans manufacturer",
     "custom jeans manufacturer",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Custom Jeans & Selvedge Denim Manufacturer Pakistan | Bin Rasool Enterprises",
-    description: "Export denim manufacturer for raw selvedge, stone-washed baggy jeans, cargo denim, and custom jackets in Pakistan.",
+    description: "Export denim manufacturer for raw selvedge, stone-washed baggy jeans, cargo denim and custom jackets in Pakistan.",
     url: "/jeans-manufacturer-pakistan",
     images: [{ url: "/images/categories/1776540327_jeans.webp", width: 1200, height: 630 }],
   },
@@ -77,7 +77,7 @@ export default function JeansPage() {
             Jeans Manufacturer Pakistan &amp; Custom Denim Apparel Factory
           </h1>
           <p style={{ maxWidth: '820px', color: '#cbd5e1', fontSize: '18px', margin: 0 }}>
-            OEM private label jeans manufacturer in Pakistan. We specialize in 14 oz raw selvedge denim, stretch slim jeans, baggy 90s streetwear cuts, cargo and carpenter jeans, denim jackets, enzyme stone washes, laser whiskering, and custom embossed leather patches with low MOQs.
+            OEM private label jeans manufacturer in Pakistan. We specialize in 14 oz raw selvedge denim, stretch slim jeans, baggy 90s streetwear cuts, cargo and carpenter jeans, denim jackets, enzyme stone washes, laser whiskering and custom embossed leather patches with low MOQs.
           </p>
           <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '28px' }}>
             <Link href="/contact" className="btn btn-primary">
@@ -97,15 +97,15 @@ export default function JeansPage() {
               <span className="home-kicker">Industrial Laundry &amp; Cut &amp; Sew</span>
               <h2 style={{ margin: '8px 0 16px' }}>Authentic Denim Washes, Selvedge Looms &amp; Custom Hardware</h2>
               <p className="muted" style={{ fontSize: '16px', lineHeight: '1.7', marginBottom: '20px' }}>
-                Full-package custom denim manufacturing from sustainable BCI and organic cotton yarns to shuttle-loom selvedge denim, eco-friendly laser fading, ozone washing, and custom-cast shank buttons and rivets.
+                Full-package custom denim manufacturing from sustainable BCI and organic cotton yarns to shuttle-loom selvedge denim, eco-friendly laser fading, ozone washing and custom-cast shank buttons and rivets.
               </p>
               <ul className="list" style={{ color: 'var(--text-main)', lineHeight: '1.9', marginBottom: '26px' }}>
                 <li><strong>14 oz Raw Selvedge Denim Jeans</strong> – Authentic red-line and rainbow selvedge woven on shuttle looms.</li>
-                <li><strong>Streetwear Baggy, Carpenter &amp; Cargo Jeans</strong> – Relaxed skate cuts with hammer loops, utility tool pockets, and triple-stitched outer seams.</li>
+                <li><strong>Streetwear Baggy, Carpenter &amp; Cargo Jeans</strong> – Relaxed skate cuts with hammer loops, utility tool pockets and triple-stitched outer seams.</li>
                 <li><strong>Enzyme Stone Wash, Acid Wash &amp; Vintage Distressed Finishes</strong> – Sustainable laser fading and artisanal hand-scraped abrasions.</li>
                 <li><strong>Custom Embossed Genuine Leather Back Patches</strong> – Full-grain cowhide or faux leather patches with branded foil or debossed stamping.</li>
                 <li><strong>Anti-Rust Copper Rivets &amp; Branded Cast Metal Buttons</strong> – Custom logo alloy shank buttons, zip flies with YKK brass zippers.</li>
-                <li><strong>Custom Denim Jackets &amp; Vests</strong> – Classic trucker jackets, sherpa-lined denim jackets, and oversized drop-shoulder denim outerwear.</li>
+                <li><strong>Custom Denim Jackets &amp; Vests</strong> – Classic trucker jackets, sherpa-lined denim jackets and oversized drop-shoulder denim outerwear.</li>
               </ul>
               <Link href="/contact" className="btn btn-primary">
                 Inquire About Custom Denim Production
@@ -122,7 +122,7 @@ export default function JeansPage() {
                 <span className="card-tag">Export Quality Denim</span>
                 <h3 style={{ margin: '8px 0 6px' }}>Full Denim Laundry</h3>
                 <p className="muted" style={{ margin: 0, fontSize: '14px' }}>
-                  Custom hardware, pocket prints, and bespoke distressing techniques.
+                  Custom hardware, pocket prints and bespoke distressing techniques.
                 </p>
               </div>
             </div>

@@ -7,6 +7,31 @@ import CurrencySelector from './CurrencySelector';
 import { ArrowRightIcon } from './AdminIcons';
 import BrandLogo from './BrandLogo';
 
+function ChevronDownIcon({ className = "nav-chevron" }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      width="9"
+      height="6"
+      viewBox="0 0 10 6"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      style={{
+        display: 'inline-block',
+        marginLeft: '5px',
+        transition: 'transform 0.2s ease',
+        flexShrink: 0,
+      }}
+    >
+      <path d="M1 1L5 5L9 1" />
+    </svg>
+  );
+}
+
 export default function Navbar() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -101,7 +126,7 @@ export default function Navbar() {
 
   return (
     <header className="site-header" ref={navRef}>
-      <div className="container" style={{ maxWidth: '1360px', padding: '10px 20px' }}>
+      <div className="container" style={{ maxWidth: '1360px', padding: '10px 24px' }}>
         <div className="navbar">
           {/* Logo & Brand: Fixed & Protected against overlap */}
           <div className="nav-left">
@@ -153,7 +178,7 @@ export default function Navbar() {
                   aria-expanded={openDropdown === 'company'}
                   onClick={(e) => handleDropdownClick('company', e)}
                 >
-                  Company <span className="chevron" aria-hidden="true"></span>
+                  Company <ChevronDownIcon />
                 </button>
                 <div className="dropdown-menu">
                   <Link href="/about-us" className={pathname === '/about-us' ? 'is-active' : ''} onClick={handleLinkClick}>About Us</Link>
@@ -162,7 +187,7 @@ export default function Navbar() {
                 </div>
               </div>
 
-              {/* Manufacturer Pages Dropdown */}
+              {/* Factory Units Dropdown */}
               <div
                 className={`nav-dropdown ${openDropdown === 'manufacturer' ? 'is-open' : ''}`}
                 onMouseEnter={() => handleMouseEnter('manufacturer')}
@@ -174,12 +199,12 @@ export default function Navbar() {
                   aria-expanded={openDropdown === 'manufacturer'}
                   onClick={(e) => handleDropdownClick('manufacturer', e)}
                 >
-                  Manufacturer Pages <span className="chevron" aria-hidden="true"></span>
+                  Factory Units <ChevronDownIcon />
                 </button>
                 <div className="dropdown-menu">
-                  <Link href="/sportswear-manufacturer-pakistan" className={pathname === '/sportswear-manufacturer-pakistan' ? 'is-active' : ''} onClick={handleLinkClick}>Sportswear Manufacturer Pakistan</Link>
-                  <Link href="/fitness-wear-manufacturer-sialkot" className={pathname === '/fitness-wear-manufacturer-sialkot' ? 'is-active' : ''} onClick={handleLinkClick}>Fitness Wear Manufacturer Sialkot</Link>
-                  <Link href="/boxing-wear-manufacturer-pakistan" className={pathname === '/boxing-wear-manufacturer-pakistan' ? 'is-active' : ''} onClick={handleLinkClick}>Boxing Wear Manufacturer Pakistan</Link>
+                  <Link href="/sportswear-manufacturer-pakistan" className={pathname === '/sportswear-manufacturer-pakistan' ? 'is-active' : ''} onClick={handleLinkClick}>Sportswear &amp; Teamwear Division</Link>
+                  <Link href="/fitness-wear-manufacturer-sialkot" className={pathname === '/fitness-wear-manufacturer-sialkot' ? 'is-active' : ''} onClick={handleLinkClick}>Activewear &amp; Fitness Plant</Link>
+                  <Link href="/boxing-wear-manufacturer-pakistan" className={pathname === '/boxing-wear-manufacturer-pakistan' ? 'is-active' : ''} onClick={handleLinkClick}>Boxing &amp; Fight Gear Workshop</Link>
                 </div>
               </div>
 
@@ -195,7 +220,7 @@ export default function Navbar() {
                   aria-expanded={openDropdown === 'categories'}
                   onClick={(e) => handleDropdownClick('categories', e)}
                 >
-                  Categories <span className="chevron" aria-hidden="true"></span>
+                  Categories <ChevronDownIcon />
                 </button>
                 <div className="dropdown-menu">
                   <Link href="/custom-hoodies" className={pathname === '/custom-hoodies' ? 'is-active' : ''} onClick={handleLinkClick}>Heavyweight Hoodies &amp; Fleece</Link>

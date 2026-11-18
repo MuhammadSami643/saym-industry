@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata = {
   title: "Contact Bin Rasool Enterprises | Private Label Sportswear Manufacturer Pakistan",
-  description: "Contact Bin Rasool Enterprises for private label sportswear, fitness wear, boxing wear, teamwear, activewear, sampling, wholesale manufacturing, and export production inquiries from Sialkot, Pakistan."
+  description: "Contact Bin Rasool Enterprises for private label sportswear, fitness wear, boxing wear, teamwear, activewear, sampling, wholesale manufacturing and export production inquiries from Sialkot, Pakistan."
 };
 
 export default function ContactPage() {
@@ -19,7 +19,7 @@ export default function ContactPage() {
             Start Your Private Label Activewear, Fitness Wear or Sportswear Inquiry
           </h1>
           <p style={{ maxWidth: '750px', color: '#cbd5e1', fontSize: '18px', margin: 0 }}>
-            Connect with our Sialkot factory team for sample development, low MOQ manufacturing, custom private labeling, and worldwide export delivery.
+            Connect with our Sialkot factory team for sample development, low MOQ manufacturing, custom private labeling and worldwide export delivery.
           </p>
         </div>
       </section>
@@ -95,7 +95,7 @@ export default function ContactPage() {
               <div className="card-dark" style={{ background: '#0b1220', padding: '30px', borderRadius: '18px', border: '1px solid rgba(255, 255, 255, 0.1)', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.25)' }}>
                 <h3 style={{ marginTop: 0, fontSize: '1.2rem', color: '#ffffff', marginBottom: '12px', fontWeight: 800 }}>Worldwide Export Markets</h3>
                 <p style={{ color: '#cbd5e1', fontSize: '14px', margin: 0, lineHeight: '1.7' }}>
-                  We export worldwide via DHL Express, FedEx, air cargo, and sea freight to activewear startups, fitness brands, gym chains, and wholesale distributors in North America, United Kingdom, European Union, Australia, and the Middle East.
+                  We export worldwide via DHL Express, FedEx, air cargo and sea freight to activewear startups, fitness brands, gym chains and wholesale distributors in North America, United Kingdom, European Union, Australia and the Middle East.
                 </p>
               </div>
             </div>
@@ -120,19 +120,19 @@ export default function ContactPage() {
             </div>
             <div className="process-card">
               <h3>Production Direction</h3>
-              <p className="muted">We confirm fabric availability, pattern requirements, branding methods, and provide an initial price and MOQ quote.</p>
+              <p className="muted">We confirm fabric availability, pattern requirements, branding methods and provide an initial price and MOQ quote.</p>
             </div>
             <div className="process-card">
               <h3>Sample Planning</h3>
-              <p className="muted">Once approved, our sampling line cuts, sews, and brands a physical prototype for your hands-on approval.</p>
+              <p className="muted">Once approved, our sampling line cuts, sews and brands a physical prototype for your hands-on approval.</p>
             </div>
             <div className="process-card">
               <h3>Bulk Order Path</h3>
-              <p className="muted">Bulk cutting, printing, stitching, and multistage quality checks proceed strictly against your approved golden sample.</p>
+              <p className="muted">Bulk cutting, printing, stitching and multistage quality checks proceed strictly against your approved golden sample.</p>
             </div>
             <div className="process-card">
               <h3>Packaging &amp; Export</h3>
-              <p className="muted">Individual custom polybagging, carton labeling, and door-to-door or port-to-port export shipping.</p>
+              <p className="muted">Individual custom polybagging, carton labeling and door-to-door or port-to-port export shipping.</p>
             </div>
           </div>
         </div>

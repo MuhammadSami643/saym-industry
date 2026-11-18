@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     default: "Private Label Activewear Manufacturer in Pakistan | Bin Rasool Enterprises",
     template: "%s | Bin Rasool Enterprises Sialkot",
   },
-  description: "Premier private label sportswear, fitness wear, fight gear, and streetwear apparel manufacturer in Sialkot, Pakistan. Low MOQ, fast custom sampling, DHL air courier, and worldwide B2B export.",
+  description: "Premier private label sportswear, fitness wear, fight gear and streetwear apparel manufacturer in Sialkot, Pakistan. Low MOQ, fast custom sampling, DHL air courier and worldwide B2B export.",
   alternates: {
     canonical: '/',
   },
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Bin Rasool Enterprises | Custom Apparel Manufacturer Sialkot",
-    description: "OEM & Private Label manufacturer for fitness apparel, heavyweight streetwear, fight gear, and sportswear. Worldwide B2B export.",
+    description: "OEM & Private Label manufacturer for fitness apparel, heavyweight streetwear, fight gear and sportswear. Worldwide B2B export.",
     url: siteUrl,
     siteName: "Bin Rasool Enterprises",
     images: [
@@ -104,7 +104,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Bin Rasool Enterprises | Sialkot Apparel Manufacturer",
-    description: "Private label activewear, combat gear, tracksuits, and heavyweight streetwear. Low MOQ export factory.",
+    description: "Private label activewear, combat gear, tracksuits and heavyweight streetwear. Low MOQ export factory.",
     images: ["/images/site/1776603661_home-hero-slider-image-1.webp"],
   },
 };
@@ -117,7 +117,7 @@ const organizationSchema = {
   url: siteUrl,
   logo: `${siteUrl}/images/site/1776250498_logo.webp`,
   image: `${siteUrl}/images/site/1776603661_home-hero-slider-image-1.webp`,
-  description: "Private label activewear, sportswear, boxing gear, hoodies, jeans, and fitness apparel manufacturer from Sialkot, Pakistan.",
+  description: "Private label activewear, sportswear, boxing gear, hoodies, jeans and fitness apparel manufacturer from Sialkot, Pakistan.",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Export Processing Zone / Industrial Area",

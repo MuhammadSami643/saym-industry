@@ -4,7 +4,7 @@ import { ArrowRightIcon } from '../components/AdminIcons';
 
 export const metadata = {
   title: "Private Label Activewear & Sportswear Manufacturing Blog | Bin Rasool Enterprises",
-  description: "Insights, guides, and technical advice for starting, scaling, and manufacturing private label activewear, sportswear, and boxing apparel from Sialkot, Pakistan."
+  description: "Insights, guides and technical advice for starting, scaling and manufacturing private label activewear, sportswear and boxing apparel from Sialkot, Pakistan."
 };
 
 export default function BlogPage() {
@@ -20,7 +20,7 @@ export default function BlogPage() {
             Private Label Activewear &amp; Sportswear Blog
           </h1>
           <p style={{ maxWidth: '780px', color: '#cbd5e1', fontSize: '18px', margin: 0 }}>
-            Practical manufacturing guides, tech pack preparation tips, fabric selection advice, and industry insights directly from our apparel workshop in Sialkot, Pakistan.
+            Practical manufacturing guides, tech pack preparation tips, fabric selection advice and industry insights directly from our apparel workshop in Sialkot, Pakistan.
           </p>
         </div>
       </section>
@@ -33,7 +33,7 @@ export default function BlogPage() {
               <span className="home-kicker">Industry Insights</span>
               <h2 style={{ marginTop: '8px' }}>Manufacturing Guides for Growing Brands</h2>
               <p className="muted">
-                Learn from our engineering and production specialists to build world-class fitness, fightwear, and sportswear lines.
+                Learn from our engineering and production specialists to build world-class fitness, fightwear and sportswear lines.
               </p>
             </div>
           </div>

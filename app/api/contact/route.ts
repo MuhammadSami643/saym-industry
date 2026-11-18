@@ -60,7 +60,7 @@ export async function POST(request: Request) {
 
     if (!name || !email || !details) {
       return NextResponse.json(
-        { error: 'Name, email, and details are required.' },
+        { error: 'Name, email and details are required.' },
         { status: 400 }
       );
     }

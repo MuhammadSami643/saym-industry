@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "Boxing Wear & Combat Apparel Manufacturer Pakistan | Sialkot Fightwear Factory",
-  description: "Direct Sialkot manufacturer of custom satin boxing trunks, pro fight shorts, ring walk fight robes, corner jackets, shin guards, and fightwear gear with OEM embroidery and low MOQ.",
+  description: "Direct Sialkot manufacturer of custom satin boxing trunks, pro fight shorts, ring walk fight robes, corner jackets, shin guards and fightwear gear with OEM embroidery and low MOQ.",
   keywords: [
     "boxing trunks manufacturer",
     "custom boxing shorts manufacturer",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Boxing Wear & Fight Gear Manufacturer Sialkot | Bin Rasool Enterprises",
-    description: "Export combat gear, satin boxing shorts, fight robes, MMA rash guards, and BJJ gear manufactured in Sialkot.",
+    description: "Export combat gear, satin boxing shorts, fight robes, MMA rash guards and BJJ gear manufactured in Sialkot.",
     url: "/boxing-wear-manufacturer-pakistan",
     images: [{ url: "/images/categories/1776540291_boxing-wear.webp", width: 1200, height: 630 }],
   },
@@ -53,7 +53,7 @@ export default function CategoryPage() {
             Boxing Wear & Fight Gear Manufacturer in Sialkot, Pakistan
           </h1>
           <p style={{ maxWidth: '780px', color: '#cbd5e1', fontSize: '18px', margin: 0 }}>
-            Traditional satin boxing trunks, satin fight robes, custom corner jackets, MMA fight shorts, and compression rash guards with custom embroidery and sublimation.
+            Traditional satin boxing trunks, satin fight robes, custom corner jackets, MMA fight shorts and compression rash guards with custom embroidery and sublimation.
           </p>
           <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '28px' }}>
             <Link href="/contact" className="btn btn-primary">
@@ -74,7 +74,7 @@ export default function CategoryPage() {
               <span className="home-kicker">Manufacturing Excellence</span>
               <h2 style={{ margin: '8px 0 16px' }}>Custom Boxing Wear Production Built to Your Standard</h2>
               <p className="muted" style={{ fontSize: '16px', lineHeight: '1.7', marginBottom: '20px' }}>
-                We work directly with startup brands, sports clubs, gyms, and international apparel importers. From initial pattern drafting and fabric selection to sample verification, custom branding, and bulk packaging, your order is crafted in our Sialkot production unit under strict quality control.
+                We work directly with startup brands, sports clubs, gyms and international apparel importers. From initial pattern drafting and fabric selection to sample verification, custom branding and bulk packaging, your order is crafted in our Sialkot production unit under strict quality control.
               </p>
               
               <h3 style={{ fontSize: '1.15rem', marginBottom: '12px' }}>Featured Product Styles</h3>
@@ -101,7 +101,7 @@ export default function CategoryPage() {
                 <span className="card-tag">Low MOQ from 50 pcs</span>
                 <h3 style={{ margin: '8px 0 6px' }}>Factory Direct Sialkot</h3>
                 <p className="muted" style={{ margin: 0, fontSize: '14px' }}>
-                  Complete private labeling: custom neck labels, hangtags, care tags, and polybag packaging.
+                  Complete private labeling: custom neck labels, hangtags, care tags and polybag packaging.
                 </p>
               </div>
             </div>

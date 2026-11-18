@@ -9,13 +9,13 @@ export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: "Private Label Activewear & Apparel Product Catalog | Bin Rasool Enterprises",
-  description: "Browse custom fitness wear, gym joggers, high-waist compression leggings, sportswear tracksuits, boxing apparel, and premium streetwear hoodies manufactured by Bin Rasool Enterprises in Sialkot, Pakistan. Fast physical DHL pre-production sampling available.",
+  description: "Browse custom fitness wear, gym joggers, high-waist compression leggings, sportswear tracksuits, boxing apparel and premium streetwear hoodies manufactured by Bin Rasool Enterprises in Sialkot, Pakistan. Fast physical DHL pre-production sampling available.",
   alternates: {
     canonical: '/products',
   },
   openGraph: {
     title: "Apparel Product Catalog | Bin Rasool Enterprises Sialkot",
-    description: "Browse factory-direct custom activewear, streetwear, combat gear, and denim manufactured with private label branding.",
+    description: "Browse factory-direct custom activewear, streetwear, combat gear and denim manufactured with private label branding.",
     url: "/products",
     images: [{ url: "/images/products/1780565647_slim-fit-gym-joggers.webp", width: 1200, height: 630 }],
   },
@@ -40,7 +40,7 @@ export default async function Products() {
             Private Label Activewear &amp; Apparel Catalog
           </h1>
           <p style={{ maxWidth: '780px', color: '#cbd5e1', fontSize: '18px', margin: 0 }}>
-            Explore our custom manufacturing options across fitness wear, sports performance apparel, fight gear, and heavyweight streetwear. All styles are customizable with low MOQs, custom branding, and fast DHL pre-production sampling.
+            Explore our custom manufacturing options across fitness wear, sports performance apparel, fight gear and heavyweight streetwear. All styles are customizable with low MOQs, custom branding and fast DHL pre-production sampling.
           </p>
         </div>
       </section>
@@ -53,7 +53,7 @@ export default async function Products() {
               <span className="home-kicker">Custom Production Showcase</span>
               <h2 style={{ marginTop: '8px' }}>Available Activewear &amp; Garment Styles</h2>
               <p className="muted">
-                Each product is custom built to your technical specifications, fabric blend, GSM, colors, size chart, and private label branding.
+                Each product is custom built to your technical specifications, fabric blend, GSM, colors, size chart and private label branding.
               </p>
             </div>
             <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>

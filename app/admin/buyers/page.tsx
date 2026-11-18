@@ -251,7 +251,7 @@ export default function BuyerCrmPage() {
             </span>
           </div>
           <p style={{ margin: 0, color: '#94a3b8', fontSize: '13.5px' }}>
-            Manage relationships with global streetwear labels, activewear brands, gym chains, and wholesale distributors.
+            Manage relationships with global streetwear labels, activewear brands, gym chains and wholesale distributors.
           </p>
         </div>
 

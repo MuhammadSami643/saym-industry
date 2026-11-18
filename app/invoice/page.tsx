@@ -182,7 +182,7 @@ function InvoiceContent() {
                 <td style={{ padding: '16px 14px', verticalAlign: 'top' }}>
                   <div style={{ fontWeight: 800, color: '#0f172a', fontSize: '14px' }}>{garment}</div>
                   <div style={{ fontSize: '12px', color: '#475569', marginTop: '4px' }}>
-                    Custom cut &amp; sew production, grading across S, M, L, XL, 2XL. Includes OEM private label woven neck tags, care labels, and individual polybag packaging.
+                    Custom cut &amp; sew production, grading across S, M, L, XL, 2XL. Includes OEM private label woven neck tags, care labels and individual polybag packaging.
                   </div>
                   {notes && (
                     <div style={{ fontSize: '11px', color: '#64748b', marginTop: '4px', fontStyle: 'italic' }}>

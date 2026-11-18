@@ -16,7 +16,7 @@ export interface AnimatedCounterProps {
 
 /**
  * AnimatedCounter component that visibly rolls up numbers from 0
- * Triggers when scrolled into view, with configurable delay, duration, and format.
+ * Triggers when scrolled into view, with configurable delay, duration and format.
  */
 export default function AnimatedCounter({
   value,

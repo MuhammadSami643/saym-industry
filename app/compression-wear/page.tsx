@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "Compression Wear Manufacturer & Athletic Baselayer Factory Pakistan | Sialkot",
-  description: "Direct OEM compression wear manufacturer in Sialkot, Pakistan. Graduated compression tights, thermal long sleeve baselayers, anti-chafing compression shorts, padded football shirts, compression arm sleeves, and 4-needle flatlock activewear.",
+  description: "Direct OEM compression wear manufacturer in Sialkot, Pakistan. Graduated compression tights, thermal long sleeve baselayers, anti-chafing compression shorts, padded football shirts, compression arm sleeves and 4-needle flatlock activewear.",
   keywords: [
     "compression wear manufacturer",
     "baselayer manufacturer",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Compression Wear Manufacturer & Baselayers Factory | Bin Rasool Enterprises",
-    description: "Export manufacturer of graduated compression tights, thermal baselayers, padded football shirts, and custom arm sleeves from Sialkot.",
+    description: "Export manufacturer of graduated compression tights, thermal baselayers, padded football shirts and custom arm sleeves from Sialkot.",
     url: "/compression-wear",
     images: [{ url: "/images/categories/1776540268_fitness-wear.webp", width: 1200, height: 630 }],
   },
@@ -63,7 +63,7 @@ export default function CompressionWearPage() {
             Compression Wear Manufacturer &amp; Baselayer Factory Pakistan
           </h1>
           <p style={{ maxWidth: '820px', color: '#cbd5e1', fontSize: '18px', margin: 0 }}>
-            OEM compression wear manufacturer in Sialkot, Pakistan. We specialize in high-performance muscle recovery compression tights, thermal long sleeve baselayers, 4-needle flatlock compression shorts, football padded compression gear, and wholesale custom arm sleeves.
+            OEM compression wear manufacturer in Sialkot, Pakistan. We specialize in high-performance muscle recovery compression tights, thermal long sleeve baselayers, 4-needle flatlock compression shorts, football padded compression gear and wholesale custom arm sleeves.
           </p>
           <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '28px' }}>
             <Link href="/contact" className="btn btn-primary">
@@ -84,15 +84,15 @@ export default function CompressionWearPage() {
               <span className="home-kicker">High-Performance Compression</span>
               <h2 style={{ margin: '8px 0 16px' }}>Engineered Graduated Compression &amp; Thermal Baselayers</h2>
               <p className="muted" style={{ fontSize: '16px', lineHeight: '1.7', marginBottom: '20px' }}>
-                As an export compression wear manufacturer, Bin Rasool Enterprises uses true multi-directional circular knit poly-spandex and nylon-elastane blends. Our calibrated pressure zones enhance venous return, stabilize muscle oscillation, and accelerate recovery. Every garment is constructed with anti-chafing 4-needle 6-thread flatlock seams for zero friction against the skin.
+                As an export compression wear manufacturer, Bin Rasool Enterprises uses true multi-directional circular knit poly-spandex and nylon-elastane blends. Our calibrated pressure zones enhance venous return, stabilize muscle oscillation and accelerate recovery. Every garment is constructed with anti-chafing 4-needle 6-thread flatlock seams for zero friction against the skin.
               </p>
 
               <h3 style={{ fontSize: '1.15rem', marginBottom: '12px' }}>Compression Wear Product Capabilities</h3>
               <ul className="list" style={{ color: 'var(--text-main)', lineHeight: '1.9', marginBottom: '26px' }}>
                 <li><strong>Muscle Recovery Compression Tights</strong> – 250–280 GSM nylon-spandex graduated pressure leggings with targeted calf and quad support.</li>
-                <li><strong>Thermal Long Sleeve Baselayers</strong> – Brushed micro-fleece interior with breathable exterior for winter running, skiing, and outdoor sports.</li>
+                <li><strong>Thermal Long Sleeve Baselayers</strong> – Brushed micro-fleece interior with breathable exterior for winter running, skiing and outdoor sports.</li>
                 <li><strong>Anti-Chafing Compression Shorts</strong> – Ergonomic multi-panel construction with optional protective cup pocket or phone pocket.</li>
-                <li><strong>Padded Football &amp; Rugby Compression Shirts</strong> – High-density EVA protective pads laminated over ribs, shoulders, and chest zones.</li>
+                <li><strong>Padded Football &amp; Rugby Compression Shirts</strong> – High-density EVA protective pads laminated over ribs, shoulders and chest zones.</li>
                 <li><strong>Compression Arm Sleeves &amp; Calf Sleeves</strong> – Seamless circular knit or flatlock-stitched sleeves with silicone non-slip upper bands.</li>
                 <li><strong>Custom Printed Compression Tights</strong> – Vibrant digital sublimation or matte silicone logo transfers that stretch without cracking.</li>
               </ul>
@@ -112,7 +112,7 @@ export default function CompressionWearPage() {
                 <span className="card-tag">Low MOQ from 50 pcs</span>
                 <h3 style={{ margin: '8px 0 6px' }}>Custom Private Label Compression</h3>
                 <p className="muted" style={{ margin: 0, fontSize: '14px' }}>
-                  Custom jacquard elastic waistbands, reflective safety prints, internal care tags, and branded zip polybags.
+                  Custom jacquard elastic waistbands, reflective safety prints, internal care tags and branded zip polybags.
                 </p>
               </div>
             </div>

@@ -13,7 +13,7 @@ interface FaqSectionProps {
 
 export default function FaqSection({
   title = "Private Label Activewear Manufacturing FAQs",
-  subtitle = "Common questions asked by international apparel buyers, startups, and established brands.",
+  subtitle = "Common questions asked by international apparel buyers, startups and established brands.",
   categoryBadge,
   items = GLOBAL_FAQS,
   backgroundColor = "#ffffff"

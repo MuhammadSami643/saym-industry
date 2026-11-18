@@ -249,7 +249,7 @@ export default function ContactForm() {
           name="details"
           rows={5}
           required
-          placeholder="Please describe products, target fabrics, estimated order quantity, sizing, colors, branding requirements, and destination country."
+          placeholder="Please describe products, target fabrics, estimated order quantity, sizing, colors, branding requirements and destination country."
           style={{
             display: 'block',
             width: '100%',
@@ -301,7 +301,7 @@ export default function ContactForm() {
       </button>
 
       <span className="cta-microcopy" style={{ display: 'block', textAlign: 'center', marginTop: '14px', fontSize: '12.5px', color: '#64748b' }}>
-        We typically respond within 1 business day with preliminary MOQ, pricing direction, and next steps.
+        We typically respond within 1 business day with preliminary MOQ, pricing direction and next steps.
       </span>
     </form>
   );

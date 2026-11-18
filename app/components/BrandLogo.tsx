@@ -12,7 +12,7 @@ interface BrandLogoProps {
 
 /**
  * Bin Rasool Enterprises (BRE) - Official Brand Identity & Emblem
- * Represents premier Sialkot manufacturing in boxing, gym wear, and activewear.
+ * Represents premier Sialkot manufacturing in boxing, gym wear and activewear.
  */
 export default function BrandLogo({ size = 42, className = '', style, variant = 'icon', theme = 'light' }: BrandLogoProps) {
   const [imgFailed, setImgFailed] = useState(false);

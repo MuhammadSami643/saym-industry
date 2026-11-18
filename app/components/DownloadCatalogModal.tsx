@@ -124,7 +124,7 @@ export default function DownloadCatalogModal({ isOpen, onClose }: DownloadCatalo
             Download 2026 B2B Line Sheet &amp; Catalog
           </h3>
           <p style={{ fontSize: '13px', color: '#64748b', margin: 0, lineHeight: 1.5 }}>
-            Access our factory-direct wholesale pricing matrix, fabric GSM specs, MOQ tiers, and private label branding techniques.
+            Access our factory-direct wholesale pricing matrix, fabric GSM specs, MOQ tiers and private label branding techniques.
           </p>
         </div>
 

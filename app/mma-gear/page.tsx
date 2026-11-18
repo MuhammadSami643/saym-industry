@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "MMA Gear Manufacturer & BJJ Gi Factory Pakistan | Custom Rashguards & Fight Shorts",
-  description: "Direct OEM MMA gear manufacturer in Sialkot, Pakistan. Pearl weave & gold weave BJJ Gis, custom sublimated compression rashguards (Italian ink), grappling spats, and MMA board shorts with flex crotch and triple lock stitching for fight teams and brands.",
+  description: "Direct OEM MMA gear manufacturer in Sialkot, Pakistan. Pearl weave & gold weave BJJ Gis, custom sublimated compression rashguards (Italian ink), grappling spats and MMA board shorts with flex crotch and triple lock stitching for fight teams and brands.",
   keywords: [
     "MMA gear manufacturer",
     "BJJ gi manufacturer",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Custom MMA Gear & BJJ Gi Manufacturer Pakistan | Bin Rasool Enterprises",
-    description: "Export combat apparel: Pearl weave BJJ gis, custom rashguards with Italian sublimation ink, MMA flex crotch shorts, grappling spats, and Muay Thai shorts.",
+    description: "Export combat apparel: Pearl weave BJJ gis, custom rashguards with Italian sublimation ink, MMA flex crotch shorts, grappling spats and Muay Thai shorts.",
     url: "/mma-gear",
     images: [{ url: "/images/categories/1776540301_boxing-wear.webp", width: 1200, height: 630 }],
   },
@@ -71,7 +71,7 @@ export default function MmaGearPage() {
             MMA Gear Manufacturer &amp; BJJ Gi Factory Pakistan
           </h1>
           <p style={{ maxWidth: '820px', color: '#cbd5e1', fontSize: '18px', margin: 0 }}>
-            Custom MMA gear manufacturer and grappling apparel exporter in Sialkot, Pakistan. We specialize in pearl weave and gold weave BJJ Gis, crack-resistant Italian ink sublimated rashguards, flex-crotch MMA shorts with triple lock stitching, grappling spats, and custom Muay Thai fight shorts with low MOQs.
+            Custom MMA gear manufacturer and grappling apparel exporter in Sialkot, Pakistan. We specialize in pearl weave and gold weave BJJ Gis, crack-resistant Italian ink sublimated rashguards, flex-crotch MMA shorts with triple lock stitching, grappling spats and custom Muay Thai fight shorts with low MOQs.
           </p>
           <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '28px' }}>
             <Link href="/contact" className="btn btn-primary">
@@ -92,17 +92,17 @@ export default function MmaGearPage() {
               <span className="home-kicker">Professional Combat Specs</span>
               <h2 style={{ margin: '8px 0 16px' }}>Engineered for Mat Durability, Flex &amp; Tear Resistance</h2>
               <p className="muted" style={{ fontSize: '16px', lineHeight: '1.7', marginBottom: '20px' }}>
-                Combat athletes put gear through extreme friction and stress. As an OEM MMA gear manufacturer, we utilize heavy-duty 4-way stretch crotch gussets, reinforced waistband closures, and indestructible triple-needle lock stitching. For rashguards, our high-density Italian sublimation ink guarantees zero cracking or fading even after hundreds of wash and roll sessions.
+                Combat athletes put gear through extreme friction and stress. As an OEM MMA gear manufacturer, we utilize heavy-duty 4-way stretch crotch gussets, reinforced waistband closures and indestructible triple-needle lock stitching. For rashguards, our high-density Italian sublimation ink guarantees zero cracking or fading even after hundreds of wash and roll sessions.
               </p>
 
               <h3 style={{ fontSize: '1.15rem', marginBottom: '12px' }}>MMA &amp; Combat Sports Production Range</h3>
               <ul className="list" style={{ color: 'var(--text-main)', lineHeight: '1.9', marginBottom: '26px' }}>
-                <li><strong>Custom BJJ Gis (Pearl Weave &amp; Gold Weave)</strong> – 350 GSM to 550 GSM preshrunk cotton jackets with ripstop or twill pants, EVA foam collar, and custom brand embroidery patches.</li>
-                <li><strong>Sublimated Compression Rashguards</strong> – Long sleeve and short sleeve 220–250 GSM 85/15 poly-spandex with anti-microbial finish, flatlock stitching, and all-over sublimated graphics.</li>
-                <li><strong>MMA Board Shorts &amp; Fight Shorts</strong> – 4-way stretch microfibre with high side slits, Lycra flex crotch panel, internal drawstring, and secure double Velcro closure.</li>
+                <li><strong>Custom BJJ Gis (Pearl Weave &amp; Gold Weave)</strong> – 350 GSM to 550 GSM preshrunk cotton jackets with ripstop or twill pants, EVA foam collar and custom brand embroidery patches.</li>
+                <li><strong>Sublimated Compression Rashguards</strong> – Long sleeve and short sleeve 220–250 GSM 85/15 poly-spandex with anti-microbial finish, flatlock stitching and all-over sublimated graphics.</li>
+                <li><strong>MMA Board Shorts &amp; Fight Shorts</strong> – 4-way stretch microfibre with high side slits, Lycra flex crotch panel, internal drawstring and secure double Velcro closure.</li>
                 <li><strong>Grappling Spats &amp; Compression Tights</strong> – Ergonomic multi-panel construction with reinforced knee zones and non-slip silicone inner waistband.</li>
-                <li><strong>Muay Thai &amp; Kickboxing Shorts</strong> – Traditional satin or lightweight microfibre with wide elastic waistband, retro leg cut, and direct custom embroidery.</li>
-                <li><strong>Custom Martial Arts Uniforms</strong> – Karate gis, judo gis wholesale, and fight team training gear with custom gym crests.</li>
+                <li><strong>Muay Thai &amp; Kickboxing Shorts</strong> – Traditional satin or lightweight microfibre with wide elastic waistband, retro leg cut and direct custom embroidery.</li>
+                <li><strong>Custom Martial Arts Uniforms</strong> – Karate gis, judo gis wholesale and fight team training gear with custom gym crests.</li>
               </ul>
 
               <Link href="/contact" className="btn btn-primary">
@@ -120,7 +120,7 @@ export default function MmaGearPage() {
                 <span className="card-tag">Low MOQ from 30–50 pcs</span>
                 <h3 style={{ margin: '8px 0 6px' }}>Private Label BJJ &amp; MMA Uniforms</h3>
                 <p className="muted" style={{ margin: 0, fontSize: '14px' }}>
-                  Custom woven patches, silicone interior waistbands, custom embroidery, and individual branded frosted zipper polybag packaging.
+                  Custom woven patches, silicone interior waistbands, custom embroidery and individual branded frosted zipper polybag packaging.
                 </p>
               </div>
             </div>

@@ -80,7 +80,7 @@ export default function ProductCatalogJsonLd({ products }: ProductCatalogJsonLdP
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'Private Label Apparel & Activewear Product Catalog',
-    description: 'Custom sportswear, gym wear, combat apparel, and streetwear manufactured in Sialkot, Pakistan.',
+    description: 'Custom sportswear, gym wear, combat apparel and streetwear manufactured in Sialkot, Pakistan.',
     numberOfItems: products.length,
     itemListElement: productSchemas,
   };

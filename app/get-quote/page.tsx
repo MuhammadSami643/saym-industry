@@ -217,7 +217,7 @@ Client Notes: ${notes || 'No extra notes'}
             Instant B2B Garment Cost &amp; RFQ Estimator
           </h1>
           <p style={{ color: '#64748b', fontSize: '16px', maxWidth: '720px', margin: '0 auto' }}>
-            Configure your apparel specifications, select premium fabrics, quantities, and branding techniques. Get real-time transparent OEM/ODM wholesale estimates directly from our Sialkot manufacturing plant.
+            Configure your apparel specifications, select premium fabrics, quantities and branding techniques. Get real-time transparent OEM/ODM wholesale estimates directly from our Sialkot manufacturing plant.
           </p>
         </div>
 

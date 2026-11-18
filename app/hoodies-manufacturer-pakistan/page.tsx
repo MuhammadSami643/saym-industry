@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "Hoodies Manufacturer | Custom Heavyweight Fleece & Luxury French Terry OEM",
-  description: "Leading hoodies manufacturer specializing in 380 to 500+ GSM heavyweight custom hoodies, oversized drop-shoulder fits, zip-ups, and loopback fleece. Direct factory OEM/ODM in Sialkot, Pakistan with low MOQ and worldwide export.",
+  description: "Leading hoodies manufacturer specializing in 380 to 500+ GSM heavyweight custom hoodies, oversized drop-shoulder fits, zip-ups and loopback fleece. Direct factory OEM/ODM in Sialkot, Pakistan with low MOQ and worldwide export.",
   keywords: [
     "heavyweight hoodie manufacturer",
     "custom hoodie manufacturer",
@@ -74,7 +74,7 @@ export default function HoodiesPage() {
             Custom Hoodies &amp; Sweatshirts Manufacturer in Sialkot, Pakistan
           </h1>
           <p style={{ maxWidth: '780px', color: '#cbd5e1', fontSize: '18px', margin: 0 }}>
-            Specializing in 380 GSM to 500+ GSM luxury 100% cotton French Terry, double-layered structure hoods, custom metal aglets, and pre-shrunk fleece.
+            Specializing in 380 GSM to 500+ GSM luxury 100% cotton French Terry, double-layered structure hoods, custom metal aglets and pre-shrunk fleece.
           </p>
           <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '28px' }}>
             <Link href="/contact" className="btn btn-primary">
@@ -94,7 +94,7 @@ export default function HoodiesPage() {
               <span className="home-kicker">Heavyweight Craftsmanship</span>
               <h2 style={{ margin: '8px 0 16px' }}>Engineered for Luxury Streetwear &amp; Gym Lifestyle</h2>
               <p className="muted" style={{ fontSize: '16px', lineHeight: '1.7', marginBottom: '20px' }}>
-                From oversized drop-shoulder pullovers to YKK metal two-way zip hoodies, we knit, cut, dye, and sew premium hoodies with custom-dyed ribbed cuffs, kangaroo pockets, and high-density branding.
+                From oversized drop-shoulder pullovers to YKK metal two-way zip hoodies, we knit, cut, dye and sew premium hoodies with custom-dyed ribbed cuffs, kangaroo pockets and high-density branding.
               </p>
               <ul className="list" style={{ color: 'var(--text-main)', lineHeight: '1.9', marginBottom: '26px' }}>
                 <li><strong>450 GSM 100% Combed Cotton French Terry</strong></li>

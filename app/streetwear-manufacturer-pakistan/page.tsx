@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "Streetwear Manufacturer | Cut & Sew Heavyweight Hoodies, Tees & Outerwear",
-  description: "Premier streetwear manufacturer in Sialkot, Pakistan. 400+ GSM heavyweight French Terry, 280 GSM boxy tees, varsity jackets, cargo sweatpants, and luxury puff print. Low MOQ, worldwide export.",
+  description: "Premier streetwear manufacturer in Sialkot, Pakistan. 400+ GSM heavyweight French Terry, 280 GSM boxy tees, varsity jackets, cargo sweatpants and luxury puff print. Low MOQ, worldwide export.",
   keywords: [
     "streetwear manufacturer",
     "custom streetwear",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Streetwear Manufacturer | Bin Rasool Enterprises",
-    description: "Factory direct cut-and-sew heavyweight streetwear, acid wash tees, and oversized hoodies.",
+    description: "Factory direct cut-and-sew heavyweight streetwear, acid wash tees and oversized hoodies.",
     url: "/streetwear",
     images: [{ url: "/images/categories/1776540300_streetwear.webp", width: 1200, height: 630 }],
   },
@@ -75,7 +75,7 @@ export default function CategoryPage() {
             Heavyweight Streetwear Manufacturer in Sialkot Pakistan
           </h1>
           <p style={{ maxWidth: '780px', color: '#cbd5e1', fontSize: '18px', margin: 0 }}>
-            400+ GSM heavyweight French Terry hoodies, acid wash oversized tees, heavyweight sweatpants, and luxury streetwear collections with puff print and vintage wash.
+            400+ GSM heavyweight French Terry hoodies, acid wash oversized tees, heavyweight sweatpants and luxury streetwear collections with puff print and vintage wash.
           </p>
           <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '28px' }}>
             <Link href="/contact" className="btn btn-primary">
@@ -96,7 +96,7 @@ export default function CategoryPage() {
               <span className="home-kicker">Manufacturing Excellence</span>
               <h2 style={{ margin: '8px 0 16px' }}>Custom Streetwear Production Built to Your Standard</h2>
               <p className="muted" style={{ fontSize: '16px', lineHeight: '1.7', marginBottom: '20px' }}>
-                We work directly with startup brands, sports clubs, gyms, and international apparel importers. From initial pattern drafting and fabric selection to sample verification, custom branding, and bulk packaging, your order is crafted in our Sialkot production unit under strict quality control.
+                We work directly with startup brands, sports clubs, gyms and international apparel importers. From initial pattern drafting and fabric selection to sample verification, custom branding and bulk packaging, your order is crafted in our Sialkot production unit under strict quality control.
               </p>
               
               <h3 style={{ fontSize: '1.15rem', marginBottom: '12px' }}>Featured Product Styles</h3>
@@ -123,7 +123,7 @@ export default function CategoryPage() {
                 <span className="card-tag">Low MOQ from 50 pcs</span>
                 <h3 style={{ margin: '8px 0 6px' }}>Factory Direct Sialkot</h3>
                 <p className="muted" style={{ margin: 0, fontSize: '14px' }}>
-                  Complete private labeling: custom neck labels, hangtags, care tags, and polybag packaging.
+                  Complete private labeling: custom neck labels, hangtags, care tags and polybag packaging.
                 </p>
               </div>
             </div>
