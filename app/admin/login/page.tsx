@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRightIcon } from '@/app/components/AdminIcons';
+import BrandLogo from '@/app/components/BrandLogo';
 
 export default function AdminLogin() {
   const router = useRouter();
@@ -156,22 +157,8 @@ export default function AdminLogin() {
       >
         {/* Header Branding */}
         <div style={{ textAlign: 'center', marginBottom: '28px' }}>
-          <div
-            style={{
-              width: '64px',
-              height: '64px',
-              borderRadius: '16px',
-              overflow: 'hidden',
-              margin: '0 auto 16px',
-              boxShadow: '0 0 24px rgba(0, 229, 153, 0.3)',
-              border: '1px solid rgba(0, 229, 153, 0.4)',
-            }}
-          >
-            <img
-              src="/images/site/bre-logo-icon.webp"
-              alt="Bin Rasool Enterprises Emblem"
-              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-            />
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>
+            <BrandLogo size={64} />
           </div>
 
           <div

@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import LogoutButton from '../components/LogoutButton';
 import { ExternalLinkIcon } from '@/app/components/AdminIcons';
+import BrandLogo from '@/app/components/BrandLogo';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -123,18 +124,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <img
-              src="/images/site/bre-logo-icon.webp"
-              alt="BRE Logo"
-              style={{
-                width: '32px',
-                height: '32px',
-                borderRadius: '8px',
-                objectFit: 'cover',
-                boxShadow: '0 0 14px rgba(0, 229, 153, 0.4)',
-                border: '1px solid rgba(0, 229, 153, 0.3)',
-              }}
-            />
+            <BrandLogo size={32} />
             <div style={{ minWidth: 0, flex: 1 }}>
               <div style={{ fontSize: '14px', fontWeight: 800, color: '#fff', letterSpacing: '-0.01em', lineHeight: 1.2 }}>
                 Bin Rasool

@@ -165,7 +165,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
   width: 100%;
   position: relative;
 }
@@ -174,9 +174,9 @@ img {
   display: flex;
   align-items: center;
   flex-shrink: 0;
-  min-width: max-content;
+  min-width: 0;
   z-index: 10;
-  margin-right: 12px;
+  margin-right: 16px;
 }
 
 .nav-brand-title {

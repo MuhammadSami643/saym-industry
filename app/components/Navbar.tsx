@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import CurrencySelector from './CurrencySelector';
 import { ArrowRightIcon } from './AdminIcons';
+import BrandLogo from './BrandLogo';
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -78,25 +79,13 @@ export default function Navbar() {
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: '10px',
+                gap: '12px',
                 textDecoration: 'none',
-                minWidth: 'max-content'
+                flexShrink: 0,
               }}
             >
-              <img
-                src="/images/site/bre-logo-icon.webp"
-                alt="Bin Rasool Enterprises Logo"
-                style={{
-                  height: '42px',
-                  width: '42px',
-                  borderRadius: '10px',
-                  objectFit: 'cover',
-                  display: 'block',
-                  boxShadow: '0 0 12px rgba(0, 229, 153, 0.25)',
-                  border: '1px solid rgba(0, 229, 153, 0.25)',
-                }}
-              />
-              <div style={{ lineHeight: 1.15 }}>
+              <BrandLogo size={42} />
+              <div style={{ lineHeight: 1.15, flexShrink: 0 }}>
                 <div className="nav-brand-title">Bin Rasool Enterprises</div>
                 <div className="nav-brand-sub">Sialkot &bull; Custom Manufacturer</div>
               </div>
