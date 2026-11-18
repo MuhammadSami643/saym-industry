@@ -1103,3 +1103,50 @@ img {
     font-size: 18px;
   }
 }
+
+/* ==========================================================================
+   FLOATING WHATSAPP FACTORY DISPATCH WIDGET
+   ========================================================================== */
+.wa-floating-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 14px 7px 8px;
+  background: rgba(11, 18, 32, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: #ffffff;
+  border: 1px solid rgba(37, 211, 102, 0.35);
+  border-radius: 999px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35), 0 0 24px rgba(37, 211, 102, 0.18);
+  cursor: pointer;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.wa-floating-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  border-color: rgba(37, 211, 102, 0.65);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.45), 0 0 32px rgba(37, 211, 102, 0.32);
+}
+
+.wa-floating-btn:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+@keyframes waPulseRing {
+  0% { transform: scale(0.95); opacity: 0.9; }
+  50% { transform: scale(1.75); opacity: 0; }
+  100% { transform: scale(1.75); opacity: 0; }
+}
+
+@media (max-width: 600px) {
+  .wa-floating-btn {
+    padding: 6px 10px 6px 6px;
+    gap: 8px;
+  }
+  .wa-floating-btn .wa-text-sub {
+    display: none;
+  }
+}
+
