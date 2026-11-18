@@ -280,6 +280,12 @@ img {
   color: var(--brand-black);
 }
 
+.nav-link.is-active, .nav-trigger.is-active {
+  color: var(--brand-orange-dark, #c57608);
+  font-weight: 800;
+  background: var(--brand-orange-soft, rgba(243, 166, 38, 0.12));
+}
+
 .nav-trigger {
   font: inherit;
   border: none;
@@ -328,6 +334,12 @@ img {
 .dropdown-menu a:hover {
   background: var(--bg-soft);
   color: var(--brand-orange-dark);
+}
+
+.dropdown-menu a.is-active {
+  background: var(--brand-orange-soft, rgba(243, 166, 38, 0.12));
+  color: var(--brand-orange-dark, #c57608);
+  font-weight: 700;
 }
 
 /* Dropdown shows strictly when class is-open is active */

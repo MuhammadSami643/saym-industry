@@ -1,16 +1,48 @@
 "use client";
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
 import CurrencySelector from './CurrencySelector';
 import { ArrowRightIcon } from './AdminIcons';
 import BrandLogo from './BrandLogo';
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const navRef = useRef<HTMLDivElement>(null);
   const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Active route indicators
+  const isHome = pathname === '/';
+  const isCompany = ['/about-us', '/manufacturing', '/private-label'].some(
+    p => pathname === p || pathname?.startsWith(p + '/')
+  );
+  const isManufacturer = [
+    '/sportswear-manufacturer-pakistan',
+    '/fitness-wear-manufacturer-sialkot',
+    '/boxing-wear-manufacturer-pakistan',
+    '/sportswear-manufacturer-exporter',
+    '/fitness-wear-manufacturer',
+    '/boxing-gear-manufacturer-bulk',
+  ].some(p => pathname === p || pathname?.startsWith(p + '/'));
+  const isCategories = [
+    '/custom-hoodies',
+    '/streetwear',
+    '/fitness-wear',
+    '/boxing-gear',
+    '/mma-gear',
+    '/tracksuits',
+    '/sportswear',
+    '/compression-wear',
+    '/custom-jeans',
+    '/products',
+  ].some(p => pathname === p || pathname?.startsWith(p + '/'));
+  const isInstantRFQ = pathname === '/get-quote';
+  const isTrackOrder = pathname === '/track-order';
+  const isBlog = pathname === '/blog' || pathname?.startsWith('/blog/');
+  const isContact = pathname === '/contact';
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -105,7 +137,7 @@ export default function Navbar() {
             </button>
 
             <nav className={`site-nav ${mobileOpen ? 'is-active' : ''}`}>
-              <Link className="nav-link" href="/" onClick={handleLinkClick}>
+              <Link className={`nav-link ${isHome ? 'is-active' : ''}`} href="/" onClick={handleLinkClick}>
                 Home
               </Link>
 
@@ -116,7 +148,7 @@ export default function Navbar() {
                 onMouseLeave={handleMouseLeave}
               >
                 <button
-                  className="nav-trigger"
+                  className={`nav-trigger ${isCompany ? 'is-active' : ''}`}
                   type="button"
                   aria-expanded={openDropdown === 'company'}
                   onClick={(e) => handleDropdownClick('company', e)}
@@ -124,9 +156,9 @@ export default function Navbar() {
                   Company <span className="chevron" aria-hidden="true"></span>
                 </button>
                 <div className="dropdown-menu">
-                  <Link href="/about-us" onClick={handleLinkClick}>About Us</Link>
-                  <Link href="/manufacturing" onClick={handleLinkClick}>Manufacturing Process</Link>
-                  <Link href="/private-label" onClick={handleLinkClick}>Private Label Services</Link>
+                  <Link href="/about-us" className={pathname === '/about-us' ? 'is-active' : ''} onClick={handleLinkClick}>About Us</Link>
+                  <Link href="/manufacturing" className={pathname === '/manufacturing' ? 'is-active' : ''} onClick={handleLinkClick}>Manufacturing Process</Link>
+                  <Link href="/private-label" className={pathname === '/private-label' ? 'is-active' : ''} onClick={handleLinkClick}>Private Label Services</Link>
                 </div>
               </div>
 
@@ -137,7 +169,7 @@ export default function Navbar() {
                 onMouseLeave={handleMouseLeave}
               >
                 <button
-                  className="nav-trigger"
+                  className={`nav-trigger ${isManufacturer ? 'is-active' : ''}`}
                   type="button"
                   aria-expanded={openDropdown === 'manufacturer'}
                   onClick={(e) => handleDropdownClick('manufacturer', e)}
@@ -145,9 +177,9 @@ export default function Navbar() {
                   Manufacturer Pages <span className="chevron" aria-hidden="true"></span>
                 </button>
                 <div className="dropdown-menu">
-                  <Link href="/sportswear-manufacturer-pakistan" onClick={handleLinkClick}>Sportswear Manufacturer Pakistan</Link>
-                  <Link href="/fitness-wear-manufacturer-sialkot" onClick={handleLinkClick}>Fitness Wear Manufacturer Sialkot</Link>
-                  <Link href="/boxing-wear-manufacturer-pakistan" onClick={handleLinkClick}>Boxing Wear Manufacturer Pakistan</Link>
+                  <Link href="/sportswear-manufacturer-pakistan" className={pathname === '/sportswear-manufacturer-pakistan' ? 'is-active' : ''} onClick={handleLinkClick}>Sportswear Manufacturer Pakistan</Link>
+                  <Link href="/fitness-wear-manufacturer-sialkot" className={pathname === '/fitness-wear-manufacturer-sialkot' ? 'is-active' : ''} onClick={handleLinkClick}>Fitness Wear Manufacturer Sialkot</Link>
+                  <Link href="/boxing-wear-manufacturer-pakistan" className={pathname === '/boxing-wear-manufacturer-pakistan' ? 'is-active' : ''} onClick={handleLinkClick}>Boxing Wear Manufacturer Pakistan</Link>
                 </div>
               </div>
 
@@ -158,7 +190,7 @@ export default function Navbar() {
                 onMouseLeave={handleMouseLeave}
               >
                 <button
-                  className="nav-trigger"
+                  className={`nav-trigger ${isCategories ? 'is-active' : ''}`}
                   type="button"
                   aria-expanded={openDropdown === 'categories'}
                   onClick={(e) => handleDropdownClick('categories', e)}
@@ -166,36 +198,36 @@ export default function Navbar() {
                   Categories <span className="chevron" aria-hidden="true"></span>
                 </button>
                 <div className="dropdown-menu">
-                  <Link href="/custom-hoodies" onClick={handleLinkClick}>Heavyweight Hoodies &amp; Fleece</Link>
-                  <Link href="/streetwear" onClick={handleLinkClick}>Streetwear &amp; Outerwear</Link>
-                  <Link href="/fitness-wear" onClick={handleLinkClick}>Fitness &amp; Activewear</Link>
-                  <Link href="/boxing-gear" onClick={handleLinkClick}>Boxing Gloves &amp; Fight Gear</Link>
-                  <Link href="/mma-gear" onClick={handleLinkClick}>MMA, BJJ Gis &amp; Rashguards</Link>
-                  <Link href="/tracksuits" onClick={handleLinkClick}>Tracksuits &amp; Warmups</Link>
-                  <Link href="/sportswear" onClick={handleLinkClick}>Sublimated Teamwear &amp; Kits</Link>
-                  <Link href="/compression-wear" onClick={handleLinkClick}>Compression &amp; Baselayers</Link>
-                  <Link href="/custom-jeans" onClick={handleLinkClick}>Custom Denim &amp; Jeans</Link>
-                  <Link href="/private-label" onClick={handleLinkClick}>Private Label Trims &amp; Packaging</Link>
-                  <Link href="/products" onClick={handleLinkClick} style={{ fontWeight: 700, color: 'var(--brand-orange-dark, #c57608)', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                  <Link href="/custom-hoodies" className={pathname === '/custom-hoodies' ? 'is-active' : ''} onClick={handleLinkClick}>Heavyweight Hoodies &amp; Fleece</Link>
+                  <Link href="/streetwear" className={pathname === '/streetwear' ? 'is-active' : ''} onClick={handleLinkClick}>Streetwear &amp; Outerwear</Link>
+                  <Link href="/fitness-wear" className={pathname === '/fitness-wear' ? 'is-active' : ''} onClick={handleLinkClick}>Fitness &amp; Activewear</Link>
+                  <Link href="/boxing-gear" className={pathname === '/boxing-gear' ? 'is-active' : ''} onClick={handleLinkClick}>Boxing Gloves &amp; Fight Gear</Link>
+                  <Link href="/mma-gear" className={pathname === '/mma-gear' ? 'is-active' : ''} onClick={handleLinkClick}>MMA, BJJ Gis &amp; Rashguards</Link>
+                  <Link href="/tracksuits" className={pathname === '/tracksuits' ? 'is-active' : ''} onClick={handleLinkClick}>Tracksuits &amp; Warmups</Link>
+                  <Link href="/sportswear" className={pathname === '/sportswear' ? 'is-active' : ''} onClick={handleLinkClick}>Sublimated Teamwear &amp; Kits</Link>
+                  <Link href="/compression-wear" className={pathname === '/compression-wear' ? 'is-active' : ''} onClick={handleLinkClick}>Compression &amp; Baselayers</Link>
+                  <Link href="/custom-jeans" className={pathname === '/custom-jeans' ? 'is-active' : ''} onClick={handleLinkClick}>Custom Denim &amp; Jeans</Link>
+                  <Link href="/private-label" className={pathname === '/private-label' ? 'is-active' : ''} onClick={handleLinkClick}>Private Label Trims &amp; Packaging</Link>
+                  <Link href="/products" className={pathname?.startsWith('/products') ? 'is-active' : ''} onClick={handleLinkClick} style={{ fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
                     <span>All Products Catalog</span>
                     <ArrowRightIcon size={13} />
                   </Link>
                 </div>
               </div>
 
-              <Link className="nav-link" href="/get-quote" onClick={handleLinkClick} style={{ color: 'var(--brand-orange-dark, #c57608)', fontWeight: 800 }}>
+              <Link className={`nav-link ${isInstantRFQ ? 'is-active' : ''}`} href="/get-quote" onClick={handleLinkClick}>
                 Instant RFQ
               </Link>
 
-              <Link className="nav-link" href="/track-order" onClick={handleLinkClick}>
+              <Link className={`nav-link ${isTrackOrder ? 'is-active' : ''}`} href="/track-order" onClick={handleLinkClick}>
                 Track Order
               </Link>
 
-              <Link className="nav-link" href="/blog" onClick={handleLinkClick}>
+              <Link className={`nav-link ${isBlog ? 'is-active' : ''}`} href="/blog" onClick={handleLinkClick}>
                 Blog
               </Link>
 
-              <Link className="nav-link" href="/contact" onClick={handleLinkClick}>
+              <Link className={`nav-link ${isContact ? 'is-active' : ''}`} href="/contact" onClick={handleLinkClick}>
                 Contact
               </Link>
 
