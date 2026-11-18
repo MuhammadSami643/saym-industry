@@ -353,30 +353,33 @@ export default function EmailComposerClient({ initialBuyers }: EmailComposerClie
             </h2>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <span style={{ fontSize: '11px', color: '#00e599', fontWeight: 700 }}>✨ Presets:</span>
+              <span style={{ fontSize: '11px', color: '#34d399', fontWeight: 700 }}>✨ Presets:</span>
               {PRESETS.map((p) => (
                 <button
                   key={p.name}
                   type="button"
                   onClick={() => handleApplyPreset(p)}
                   style={{
-                    background: '#090d0f',
-                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    background: 'rgba(255, 255, 255, 0.04)',
+                    border: '1px solid rgba(255, 255, 255, 0.08)',
                     color: '#94a3b8',
                     fontSize: '11.5px',
-                    fontWeight: 700,
-                    padding: '4px 10px',
-                    borderRadius: '6px',
+                    fontWeight: 600,
+                    padding: '4px 12px',
+                    borderRadius: '9999px',
                     cursor: 'pointer',
+                    backdropFilter: 'blur(8px)',
                     transition: 'all 0.15s ease',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.color = '#00e599';
-                    e.currentTarget.style.borderColor = 'rgba(0, 229, 153, 0.3)';
+                    e.currentTarget.style.color = '#34d399';
+                    e.currentTarget.style.borderColor = 'rgba(52, 211, 153, 0.35)';
+                    e.currentTarget.style.background = 'rgba(52, 211, 153, 0.1)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.color = '#94a3b8';
-                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+                    e.currentTarget.style.background = 'rgba(255, 255, 255, 0.04)';
                   }}
                 >
                   {p.name}
@@ -528,27 +531,28 @@ export default function EmailComposerClient({ initialBuyers }: EmailComposerClie
               disabled={loading}
               style={{
                 width: '100%',
-                background: '#00e599',
-                color: '#05140d',
-                border: 'none',
-                borderRadius: '8px',
-                padding: '12px',
+                background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.22) 0%, rgba(5, 150, 105, 0.28) 100%)',
+                color: '#ffffff',
+                border: '1px solid rgba(52, 211, 153, 0.38)',
+                borderRadius: '9999px',
+                padding: '12px 24px',
                 fontSize: '13.5px',
-                fontWeight: 800,
+                fontWeight: 700,
                 cursor: loading ? 'not-allowed' : 'pointer',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: '8px',
-                boxShadow: '0 0 16px rgba(0, 229, 153, 0.35)',
-                transition: 'transform 0.15s ease',
+                backdropFilter: 'blur(8px)',
+                boxShadow: '0 2px 10px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+                transition: 'all 0.15s ease',
               }}
             >
               {loading ? (
                 <span>Dispatching SMTP Broadcast...</span>
               ) : (
                 <>
-                  <SendIcon size={15} />
+                  <SendIcon size={15} style={{ color: '#34d399' }} />
                   <span>
                     Send Broadcast to {activeRecipients.length} Buyer{activeRecipients.length > 1 ? 's' : ''}
                   </span>

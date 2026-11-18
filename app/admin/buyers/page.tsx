@@ -258,21 +258,23 @@ export default function BuyerCrmPage() {
         <button
           onClick={() => setShowAddModal(true)}
           style={{
-            background: '#00e599',
-            color: '#05140d',
-            fontWeight: 800,
-            fontSize: '12.5px',
-            padding: '9px 18px',
+            background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.22) 0%, rgba(5, 150, 105, 0.28) 100%)',
+            color: '#ffffff',
+            border: '1px solid rgba(52, 211, 153, 0.38)',
+            fontWeight: 700,
+            fontSize: '12px',
+            padding: '8px 18px',
             borderRadius: '9999px',
-            border: 'none',
             cursor: 'pointer',
             display: 'inline-flex',
             alignItems: 'center',
             gap: '6px',
-            boxShadow: '0 0 14px rgba(0, 229, 153, 0.3)',
+            backdropFilter: 'blur(8px)',
+            boxShadow: '0 2px 10px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+            transition: 'all 0.15s ease',
           }}
         >
-          + Add New Buyer Profile
+          <span style={{ color: '#34d399', fontWeight: 800 }}>+</span> Add New Buyer Profile
         </button>
       </div>
 
@@ -559,13 +561,24 @@ export default function BuyerCrmPage() {
                 <button
                   type="button"
                   onClick={() => setShowAddModal(false)}
-                  style={{ padding: '9px 16px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.1)', background: 'transparent', color: '#94a3b8', cursor: 'pointer' }}
+                  style={{ padding: '8px 18px', borderRadius: '9999px', border: '1px solid rgba(255,255,255,0.1)', background: 'transparent', color: '#94a3b8', fontSize: '12px', fontWeight: 600, cursor: 'pointer' }}
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  style={{ padding: '9px 20px', borderRadius: '8px', border: 'none', background: '#00e599', color: '#05140d', fontWeight: 800, cursor: 'pointer' }}
+                  style={{
+                    padding: '8px 22px',
+                    borderRadius: '9999px',
+                    border: '1px solid rgba(52, 211, 153, 0.38)',
+                    background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.22) 0%, rgba(5, 150, 105, 0.28) 100%)',
+                    color: '#ffffff',
+                    fontWeight: 700,
+                    fontSize: '12.5px',
+                    cursor: 'pointer',
+                    backdropFilter: 'blur(8px)',
+                    boxShadow: '0 2px 10px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+                  }}
                 >
                   Save Buyer Profile
                 </button>

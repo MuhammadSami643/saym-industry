@@ -50,16 +50,16 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
-      padding: '9px 12px',
-      borderRadius: '8px',
+      padding: '9px 14px',
+      borderRadius: '12px',
       fontSize: '13px',
       fontWeight: active ? 700 : 500,
       color: active ? '#ffffff' : '#94a3b8',
-      background: active ? 'rgba(0, 229, 153, 0.12)' : 'transparent',
-      border: active ? '1px solid rgba(0, 229, 153, 0.25)' : '1px solid transparent',
+      background: active ? 'rgba(52, 211, 153, 0.12)' : 'transparent',
+      border: active ? '1px solid rgba(52, 211, 153, 0.28)' : '1px solid transparent',
       textDecoration: 'none',
       transition: 'all 0.18s ease',
-      boxShadow: active ? '0 0 12px rgba(0, 229, 153, 0.12)' : 'none',
+      boxShadow: active ? '0 0 12px rgba(52, 211, 153, 0.1)' : 'none',
     };
   };
 
@@ -107,8 +107,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           background: rgba(14, 21, 26, 0.65) !important;
           backdrop-filter: blur(20px) !important;
           -webkit-backdrop-filter: blur(20px) !important;
-          border: 1px solid rgba(255, 255, 255, 0.09) !important;
-          border-top: 1px solid rgba(255, 255, 255, 0.18) !important;
+          border: 1px solid rgba(255, 255, 255, 0.08) !important;
+          border-top: 1px solid rgba(255, 255, 255, 0.16) !important;
+          border-radius: 16px !important;
           box-shadow: 0 12px 36px rgba(0, 0, 0, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
         }
 
@@ -117,9 +118,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         .glass-card:hover,
         .admin-card:hover {
           background: rgba(18, 28, 34, 0.8) !important;
-          border-color: rgba(0, 229, 153, 0.35) !important;
-          border-top: 1px solid rgba(0, 229, 153, 0.65) !important;
-          box-shadow: 0 16px 44px rgba(0, 0, 0, 0.48), 0 0 20px rgba(0, 229, 153, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+          border-color: rgba(52, 211, 153, 0.32) !important;
+          border-top: 1px solid rgba(52, 211, 153, 0.6) !important;
+          box-shadow: 0 16px 44px rgba(0, 0, 0, 0.48), 0 0 20px rgba(52, 211, 153, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
         }
 
         /* Glass table headers and rows */
@@ -128,6 +129,10 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           backdrop-filter: blur(14px) !important;
           -webkit-backdrop-filter: blur(14px) !important;
         }
+        table {
+          border-radius: 14px;
+          overflow: hidden;
+        }
 
         /* Glass modals */
         div[style*="background: #11171a"][style*="maxWidth"],
@@ -135,24 +140,28 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           background: rgba(14, 21, 26, 0.88) !important;
           backdrop-filter: blur(24px) !important;
           -webkit-backdrop-filter: blur(24px) !important;
-          box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 229, 153, 0.15) !important;
+          border-radius: 20px !important;
+          box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7), 0 0 30px rgba(52, 211, 153, 0.15) !important;
         }
 
         /* Glass search and filter bars */
         div[style*="background: #090d0f"],
         div[style*="background:#090d0f"],
         input[style*="background: #090d0f"],
-        select[style*="background: #090d0f"] {
+        select[style*="background: #090d0f"],
+        textarea[style*="background: #090d0f"] {
           background: rgba(255, 255, 255, 0.04) !important;
           backdrop-filter: blur(10px) !important;
           -webkit-backdrop-filter: blur(10px) !important;
           border: 1px solid rgba(255, 255, 255, 0.09) !important;
+          border-radius: 10px !important;
         }
 
-        /* Glass pills */
+        /* Glass pills and badges */
         .tag-pill {
           backdrop-filter: blur(8px) !important;
           -webkit-backdrop-filter: blur(8px) !important;
+          border-radius: 9999px !important;
         }
       `}</style>
 

@@ -153,20 +153,24 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
     <div style={{ color: '#e2e8f0', fontFamily: 'inherit' }}>
       <style jsx>{`
         .inq-card {
-          background: #11171a;
-          border: 1px solid rgba(255, 255, 255, 0.07);
-          border-radius: 14px;
+          background: rgba(17, 23, 26, 0.65);
+          backdrop-filter: blur(14px);
+          -webkit-backdrop-filter: blur(14px);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 16px;
           padding: 24px;
           transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
         }
         .inq-card:hover {
-          border-color: rgba(0, 229, 153, 0.25);
-          box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5), 0 0 1px 1px rgba(0, 229, 153, 0.15);
+          border-color: rgba(52, 211, 153, 0.28);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 1px 1px rgba(52, 211, 153, 0.15);
         }
         .kpi-mini {
-          background: #11171a;
-          border: 1px solid rgba(255, 255, 255, 0.07);
-          border-radius: 12px;
+          background: rgba(17, 23, 26, 0.65);
+          backdrop-filter: blur(14px);
+          -webkit-backdrop-filter: blur(14px);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 16px;
           padding: 16px 20px;
           display: flex;
           flex-direction: column;
@@ -174,8 +178,8 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
           transition: all 0.2s ease;
         }
         .kpi-mini:hover {
-          background: #131b1f;
-          border-color: rgba(0, 229, 153, 0.3);
+          background: rgba(22, 30, 34, 0.85);
+          border-color: rgba(52, 211, 153, 0.3);
           transform: translateY(-2px);
         }
         .tag-pill {
@@ -189,19 +193,19 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
           white-space: nowrap;
         }
         .tag-mint {
-          background: rgba(0, 229, 153, 0.12);
-          color: #00e599;
-          border: 1px solid rgba(0, 229, 153, 0.25);
+          background: rgba(52, 211, 153, 0.12);
+          color: #34d399;
+          border: 1px solid rgba(52, 211, 153, 0.28);
         }
         .tag-amber {
-          background: rgba(251, 191, 36, 0.12);
+          background: rgba(245, 158, 11, 0.12);
           color: #fbbf24;
-          border: 1px solid rgba(251, 191, 36, 0.25);
+          border: 1px solid rgba(245, 158, 11, 0.28);
         }
         .tag-rose {
           background: rgba(248, 113, 113, 0.12);
           color: #f87171;
-          border: 1px solid rgba(248, 113, 113, 0.25);
+          border: 1px solid rgba(248, 113, 113, 0.28);
         }
       `}</style>
 
@@ -213,7 +217,7 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
               Authorization Queue &amp; RFQs
             </h1>
             <span className="tag-pill tag-mint">
-              <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#00e599' }}></span>
+              <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#34d399' }}></span>
               LIVE PIPELINE
             </span>
           </div>
@@ -230,7 +234,8 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
               display: 'flex',
               alignItems: 'center',
               gap: '8px',
-              background: '#11171a',
+              background: 'rgba(17, 23, 26, 0.7)',
+              backdropFilter: 'blur(10px)',
               border: '1px solid rgba(255, 255, 255, 0.08)',
               borderRadius: '9999px',
               padding: '6px 14px',
@@ -257,19 +262,19 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
           <button
             onClick={exportToCSV}
             style={{
-              background: '#00e599',
-              color: '#05140d',
-              border: 'none',
+              background: 'rgba(52, 211, 153, 0.12)',
+              color: '#34d399',
+              border: '1px solid rgba(52, 211, 153, 0.28)',
               borderRadius: '9999px',
-              padding: '8px 16px',
-              fontSize: '12.5px',
-              fontWeight: 800,
+              padding: '7px 16px',
+              fontSize: '12px',
+              fontWeight: 700,
               cursor: 'pointer',
               display: 'inline-flex',
               alignItems: 'center',
               gap: '6px',
-              boxShadow: '0 0 14px rgba(0, 229, 153, 0.3)',
-              transition: 'transform 0.15s ease',
+              backdropFilter: 'blur(8px)',
+              transition: 'all 0.15s ease',
             }}
           >
             <span>📊</span> Export to CSV
@@ -322,7 +327,7 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
             </span>
             <span className="tag-pill tag-mint">Converted</span>
           </div>
-          <div style={{ fontSize: '28px', fontWeight: 800, color: '#00e599', margin: '4px 0 2px' }}>
+          <div style={{ fontSize: '28px', fontWeight: 800, color: '#34d399', margin: '4px 0 2px' }}>
             <AnimatedCounter value={completedCount} duration={1.2} delay={0.35} />
           </div>
           <span style={{ fontSize: '11.5px', color: '#cbd5e1' }}>Moved to factory floor</span>
@@ -330,7 +335,7 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
       </div>
 
       {/* Filter Tabs */}
-      <div style={{ display: 'flex', gap: '8px', marginBottom: '20px' }}>
+      <div style={{ display: 'flex', gap: '8px', marginBottom: '20px', flexWrap: 'wrap' }}>
         {[
           { key: 'all', label: 'All Inquiries', count: inquiries.length },
           { key: 'new', label: 'New & Untouched', count: newCount },
@@ -341,14 +346,15 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
             key={tab.key}
             onClick={() => setFilter(tab.key)}
             style={{
-              background: filter === tab.key ? 'rgba(0, 229, 153, 0.15)' : '#11171a',
-              color: filter === tab.key ? '#00e599' : '#94a3b8',
-              border: filter === tab.key ? '1px solid rgba(0, 229, 153, 0.3)' : '1px solid rgba(255, 255, 255, 0.08)',
+              background: filter === tab.key ? 'rgba(52, 211, 153, 0.14)' : 'rgba(17, 23, 26, 0.65)',
+              color: filter === tab.key ? '#34d399' : '#94a3b8',
+              border: filter === tab.key ? '1px solid rgba(52, 211, 153, 0.35)' : '1px solid rgba(255, 255, 255, 0.08)',
               padding: '6px 14px',
               borderRadius: '9999px',
               fontSize: '12px',
               fontWeight: 700,
               cursor: 'pointer',
+              backdropFilter: 'blur(8px)',
               transition: 'all 0.2s ease',
             }}
           >
@@ -402,21 +408,22 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
                         value={inq.status || 'new'}
                         onChange={(e) => inq.id && handleStatusChange(inq.id, e.target.value)}
                         style={{
-                          background: '#090d0f',
-                          color: status === 'completed' ? '#00e599' : status === 'contacted' ? '#fbbf24' : '#f87171',
+                          background: status === 'completed' ? 'rgba(52, 211, 153, 0.12)' : status === 'contacted' ? 'rgba(245, 158, 11, 0.12)' : 'rgba(248, 113, 113, 0.12)',
+                          color: status === 'completed' ? '#34d399' : status === 'contacted' ? '#fbbf24' : '#f87171',
                           fontSize: '11px',
-                          fontWeight: 800,
+                          fontWeight: 700,
                           textTransform: 'uppercase',
-                          padding: '4px 10px',
-                          borderRadius: '6px',
-                          border: '1px solid rgba(255,255,255,0.12)',
+                          letterSpacing: '0.04em',
+                          padding: '5px 12px',
+                          borderRadius: '9999px',
+                          border: status === 'completed' ? '1px solid rgba(52, 211, 153, 0.28)' : status === 'contacted' ? '1px solid rgba(245, 158, 11, 0.28)' : '1px solid rgba(248, 113, 113, 0.28)',
                           cursor: 'pointer',
                           outline: 'none',
                         }}
                       >
-                        <option value="new" style={{ background: '#090d0f', color: '#f87171' }}>Status: New</option>
-                        <option value="contacted" style={{ background: '#090d0f', color: '#fbbf24' }}>Status: Contacted</option>
-                        <option value="completed" style={{ background: '#090d0f', color: '#00e599' }}>Status: Completed</option>
+                        <option value="new" style={{ background: '#0f171a', color: '#f87171' }}>Status: New</option>
+                        <option value="contacted" style={{ background: '#0f171a', color: '#fbbf24' }}>Status: Contacted</option>
+                        <option value="completed" style={{ background: '#0f171a', color: '#34d399' }}>Status: Completed</option>
                       </select>
 
                       {videoUrl && (
@@ -434,7 +441,7 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
                       {inq.phone && (
                         <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
                           <PhoneIcon size={13} style={{ color: '#64748b' }} />
-                          <a href={`https://wa.me/${inq.phone.replace(/[^0-9]/g, '')}`} target="_blank" rel="noopener noreferrer" style={{ color: '#00e599', textDecoration: 'none' }}>{inq.phone}</a>
+                          <a href={`https://wa.me/${inq.phone.replace(/[^0-9]/g, '')}`} target="_blank" rel="noopener noreferrer" style={{ color: '#34d399', textDecoration: 'none' }}>{inq.phone}</a>
                         </span>
                       )}
                     </div>
@@ -448,14 +455,15 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
                       <button
                         onClick={() => handleDelete(inq.id!)}
                         style={{
-                          background: 'rgba(248, 113, 113, 0.1)',
+                          background: 'rgba(248, 113, 113, 0.08)',
                           color: '#f87171',
-                          border: '1px solid rgba(248, 113, 113, 0.25)',
-                          borderRadius: '6px',
-                          padding: '4px 10px',
+                          border: '1px solid rgba(248, 113, 113, 0.22)',
+                          borderRadius: '9999px',
+                          padding: '4px 12px',
                           fontSize: '11px',
-                          fontWeight: 700,
+                          fontWeight: 600,
                           cursor: 'pointer',
+                          transition: 'all 0.15s ease',
                         }}
                       >
                         Delete
@@ -465,13 +473,16 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
                 </div>
 
                 {inq.subject && (
-                  <div style={{ fontSize: '13px', fontWeight: 700, color: '#cbd5e1', marginBottom: '10px' }}>
-                    Subject / Category: <span style={{ color: '#00e599', fontWeight: 600 }}>{inq.subject}</span>
+                  <div style={{ fontSize: '13px', fontWeight: 600, color: '#94a3b8', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
+                    <span>Subject / Category:</span>
+                    <span style={{ color: '#34d399', fontWeight: 600, background: 'rgba(52, 211, 153, 0.08)', border: '1px solid rgba(52, 211, 153, 0.2)', padding: '3px 12px', borderRadius: '9999px' }}>
+                      {inq.subject}
+                    </span>
                   </div>
                 )}
 
                 {/* Inquiry text content in dark frosted box */}
-                <div style={{ background: '#090d0f', padding: '14px 16px', borderRadius: '10px', border: '1px solid rgba(255, 255, 255, 0.05)', color: '#cbd5e1', fontSize: '13px', lineHeight: '1.6', whiteSpace: 'pre-wrap' }}>
+                <div style={{ background: 'rgba(9, 13, 15, 0.7)', padding: '16px 18px', borderRadius: '14px', border: '1px solid rgba(255, 255, 255, 0.06)', color: '#cbd5e1', fontSize: '13px', lineHeight: '1.6', whiteSpace: 'pre-wrap', backdropFilter: 'blur(8px)' }}>
                   {cleanDetails}
                 </div>
 
@@ -527,7 +538,7 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
                         />
                       </div>
                     ) : (
-                      <div style={{ background: '#11171a', padding: '12px', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px' }}>
+                      <div style={{ background: 'rgba(17, 23, 26, 0.7)', padding: '12px 16px', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px' }}>
                         <span style={{ color: '#94a3b8', fontSize: '12px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                           🔗 {videoUrl}
                         </span>
@@ -535,7 +546,7 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
                           href={videoUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          style={{ background: '#00e599', color: '#05140d', fontSize: '11.5px', fontWeight: 800, padding: '6px 14px', borderRadius: '6px', textDecoration: 'none', whiteSpace: 'nowrap' }}
+                          style={{ background: 'rgba(52, 211, 153, 0.12)', color: '#34d399', border: '1px solid rgba(52, 211, 153, 0.28)', fontSize: '11.5px', fontWeight: 700, padding: '6px 14px', borderRadius: '9999px', textDecoration: 'none', whiteSpace: 'nowrap' }}
                         >
                           ▶️ Open Cloud Video
                         </a>
@@ -546,11 +557,11 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
 
                 {/* Tech Pack Card */}
                 {techpackUrl && (
-                  <div style={{ marginTop: '12px', background: '#0c1114', borderRadius: '10px', padding: '12px 14px', border: '1px solid rgba(0, 229, 153, 0.2)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', flexWrap: 'wrap' }}>
+                  <div style={{ marginTop: '12px', background: 'rgba(12, 17, 20, 0.75)', borderRadius: '14px', padding: '12px 16px', border: '1px solid rgba(52, 211, 153, 0.2)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', flexWrap: 'wrap' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                      <FolderIcon size={22} style={{ color: '#00e599' }} />
+                      <FolderIcon size={22} style={{ color: '#34d399' }} />
                       <div>
-                        <div style={{ fontSize: '12.5px', fontWeight: 800, color: '#00e599' }}>
+                        <div style={{ fontSize: '12.5px', fontWeight: 800, color: '#34d399' }}>
                           Tech Pack / CAD Spec Attached
                         </div>
                         <div style={{ fontSize: '11px', color: '#64748b' }}>
@@ -564,17 +575,18 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
                       rel="noopener noreferrer"
                       download
                       style={{
-                        background: 'rgba(0, 229, 153, 0.15)',
-                        color: '#00e599',
-                        border: '1px solid rgba(0, 229, 153, 0.3)',
-                        padding: '6px 14px',
-                        borderRadius: '6px',
+                        background: 'rgba(52, 211, 153, 0.1)',
+                        color: '#34d399',
+                        border: '1px solid rgba(52, 211, 153, 0.28)',
+                        padding: '6px 16px',
+                        borderRadius: '9999px',
                         fontSize: '11.5px',
                         fontWeight: 700,
                         textDecoration: 'none',
                         display: 'inline-flex',
                         alignItems: 'center',
-                        gap: '6px'
+                        gap: '6px',
+                        backdropFilter: 'blur(8px)',
                       }}
                     >
                       <span>View &amp; Download Tech Pack</span>
@@ -588,42 +600,47 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
                   <Link
                     href={`/admin/email?email=${encodeURIComponent(inq.email)}&name=${encodeURIComponent(inq.name)}&subject=${encodeURIComponent('Quotation for ' + (inq.subject || 'Manufacturing Inquiry'))}`}
                     style={{
-                      background: '#00e599',
-                      color: '#05140d',
+                      background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(5, 150, 105, 0.26) 100%)',
+                      color: '#ffffff',
+                      border: '1px solid rgba(52, 211, 153, 0.38)',
                       fontSize: '12.5px',
-                      fontWeight: 800,
-                      padding: '8px 16px',
-                      borderRadius: '8px',
+                      fontWeight: 700,
+                      padding: '8px 18px',
+                      borderRadius: '9999px',
                       textDecoration: 'none',
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '7px',
-                      boxShadow: '0 0 12px rgba(0, 229, 153, 0.3)',
+                      backdropFilter: 'blur(8px)',
+                      boxShadow: '0 2px 10px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.08)',
+                      transition: 'all 0.2s ease',
                     }}
                   >
-                    <MailIcon size={14} />
+                    <MailIcon size={14} style={{ color: '#34d399' }} />
                     <span>Compose Email Reply</span>
                   </Link>
                   <Link
                     href={`/invoice?name=${encodeURIComponent(inq.name)}&email=${encodeURIComponent(inq.email)}&phone=${encodeURIComponent(inq.phone || '')}&garment=${encodeURIComponent(inq.subject || 'Custom Apparel Batch')}&notes=${encodeURIComponent(cleanDetails)}`}
                     target="_blank"
                     style={{
-                      background: '#151d21',
+                      background: 'rgba(255, 255, 255, 0.04)',
                       color: '#e2e8f0',
                       border: '1px solid rgba(255, 255, 255, 0.1)',
                       fontSize: '12.5px',
                       fontWeight: 700,
-                      padding: '8px 16px',
-                      borderRadius: '8px',
+                      padding: '8px 18px',
+                      borderRadius: '9999px',
                       textDecoration: 'none',
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '7px',
+                      backdropFilter: 'blur(8px)',
+                      transition: 'all 0.2s ease',
                     }}
                   >
-                    <FileTextIcon size={14} />
+                    <FileTextIcon size={14} style={{ color: '#94a3b8' }} />
                     <span>Proforma Invoice</span>
-                    <ExternalLinkIcon size={12} />
+                    <ExternalLinkIcon size={12} style={{ color: '#64748b' }} />
                   </Link>
                   {inq.phone && (
                     <a
@@ -631,17 +648,19 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{
-                        background: 'rgba(0, 229, 153, 0.1)',
-                        color: '#00e599',
-                        border: '1px solid rgba(0, 229, 153, 0.25)',
+                        background: 'rgba(34, 197, 94, 0.1)',
+                        color: '#34d399',
+                        border: '1px solid rgba(34, 197, 94, 0.25)',
                         fontSize: '12.5px',
                         fontWeight: 700,
-                        padding: '8px 16px',
-                        borderRadius: '8px',
+                        padding: '8px 18px',
+                        borderRadius: '9999px',
                         textDecoration: 'none',
                         display: 'inline-flex',
                         alignItems: 'center',
                         gap: '7px',
+                        backdropFilter: 'blur(8px)',
+                        transition: 'all 0.2s ease',
                       }}
                     >
                       <WhatsAppIcon size={14} />

@@ -48,14 +48,15 @@ export default function AnalyticsPage() {
           <Link
             href="/admin/inquiries"
             style={{
-              fontSize: '12.5px',
+              fontSize: '12px',
               fontWeight: 700,
               padding: '8px 16px',
               borderRadius: '9999px',
               textDecoration: 'none',
-              background: '#11171a',
+              background: 'rgba(255, 255, 255, 0.04)',
               color: '#94a3b8',
               border: '1px solid rgba(255, 255, 255, 0.08)',
+              backdropFilter: 'blur(8px)',
               transition: 'all 0.15s ease',
             }}
           >
@@ -64,14 +65,17 @@ export default function AnalyticsPage() {
           <Link
             href="/admin/production"
             style={{
-              fontSize: '12.5px',
-              fontWeight: 800,
+              fontSize: '12px',
+              fontWeight: 700,
               padding: '8px 18px',
               borderRadius: '9999px',
               textDecoration: 'none',
-              background: '#00e599',
-              color: '#05140d',
-              boxShadow: '0 0 16px rgba(0, 229, 153, 0.35)',
+              background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.22) 0%, rgba(5, 150, 105, 0.28) 100%)',
+              color: '#ffffff',
+              border: '1px solid rgba(52, 211, 153, 0.38)',
+              backdropFilter: 'blur(8px)',
+              boxShadow: '0 2px 10px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+              transition: 'all 0.15s ease',
             }}
           >
             🏭 Factory Floor

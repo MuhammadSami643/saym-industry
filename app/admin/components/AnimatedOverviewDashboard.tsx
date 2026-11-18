@@ -173,10 +173,10 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
         }
         .kpi-card:hover {
           background: rgba(18, 28, 34, 0.78);
-          border-color: rgba(0, 229, 153, 0.35);
-          border-top: 1px solid rgba(0, 229, 153, 0.6);
+          border-color: rgba(52, 211, 153, 0.32);
+          border-top: 1px solid rgba(52, 211, 153, 0.6);
           transform: translateY(-2px);
-          box-shadow: 0 14px 38px rgba(0, 0, 0, 0.48), 0 0 18px rgba(0, 229, 153, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+          box-shadow: 0 14px 38px rgba(0, 0, 0, 0.48), 0 0 18px rgba(52, 211, 153, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.15);
         }
         .neon-card {
           background: rgba(14, 21, 26, 0.62);
@@ -191,9 +191,9 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
           transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .neon-card:hover {
-          border-color: rgba(0, 229, 153, 0.32);
-          border-top: 1px solid rgba(0, 229, 153, 0.55);
-          box-shadow: 0 16px 44px rgba(0, 0, 0, 0.48), 0 0 20px rgba(0, 229, 153, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+          border-color: rgba(52, 211, 153, 0.3);
+          border-top: 1px solid rgba(52, 211, 153, 0.55);
+          box-shadow: 0 16px 44px rgba(0, 0, 0, 0.48), 0 0 20px rgba(52, 211, 153, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.15);
         }
         .tag-pill {
           display: inline-flex;
@@ -201,15 +201,15 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
           gap: 4px;
           font-size: 11px;
           font-weight: 700;
-          padding: 2px 8px;
+          padding: 3px 10px;
           border-radius: 9999px;
           white-space: nowrap;
           letter-spacing: 0.02em;
         }
         .tag-mint {
-          background: rgba(0, 229, 153, 0.12);
-          color: #00e599;
-          border: 1px solid rgba(0, 229, 153, 0.25);
+          background: rgba(52, 211, 153, 0.12);
+          color: #34d399;
+          border: 1px solid rgba(52, 211, 153, 0.28);
         }
         .tag-cyan {
           background: rgba(56, 189, 248, 0.12);
@@ -217,14 +217,14 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
           border: 1px solid rgba(56, 189, 248, 0.25);
         }
         .tag-amber {
-          background: rgba(251, 191, 36, 0.12);
+          background: rgba(245, 158, 11, 0.12);
           color: #fbbf24;
-          border: 1px solid rgba(251, 191, 36, 0.25);
+          border: 1px solid rgba(245, 158, 11, 0.28);
         }
         .tag-rose {
           background: rgba(248, 113, 113, 0.12);
           color: #f87171;
-          border: 1px solid rgba(248, 113, 113, 0.25);
+          border: 1px solid rgba(248, 113, 113, 0.28);
         }
         .tab-btn {
           background: transparent;
@@ -238,8 +238,9 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
           transition: all 0.15s ease;
         }
         .tab-btn.is-active {
-          background: #1e293b;
-          color: #00e599;
+          background: rgba(52, 211, 153, 0.14);
+          color: #34d399;
+          border: 1px solid rgba(52, 211, 153, 0.32);
           box-shadow: 0 1px 3px rgba(0,0,0,0.3);
         }
       `}</style>
@@ -255,7 +256,7 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
               Operations Command Center
             </h1>
             <span className="tag-pill tag-mint" style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
-              <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#00e599', boxShadow: '0 0 8px #00e599' }}></span>
+              <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#34d399', boxShadow: '0 0 8px #34d399' }}></span>
               SIALKOT PLANT #1 &bull; LIVE
             </span>
           </div>
@@ -266,7 +267,7 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
 
         {/* Global Quick Action Buttons */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <div style={{ display: 'flex', background: '#11171a', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '9999px', padding: '3px' }}>
+          <div style={{ display: 'flex', background: 'rgba(17, 23, 26, 0.7)', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '9999px', padding: '3px' }}>
             <button
               onClick={() => setActiveBatchTab('all')}
               className={`tab-btn ${activeBatchTab === 'all' ? 'is-active' : ''}`}
@@ -290,21 +291,23 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
           <Link
             href="/admin/production"
             style={{
-              background: '#00e599',
-              color: '#05140d',
-              fontWeight: 800,
-              fontSize: '12.5px',
-              padding: '9px 18px',
+              background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.22) 0%, rgba(5, 150, 105, 0.28) 100%)',
+              color: '#ffffff',
+              fontWeight: 700,
+              fontSize: '12px',
+              padding: '8px 18px',
               borderRadius: '9999px',
+              border: '1px solid rgba(52, 211, 153, 0.38)',
               textDecoration: 'none',
               display: 'inline-flex',
               alignItems: 'center',
               gap: '6px',
-              boxShadow: '0 0 16px rgba(0, 229, 153, 0.35)',
-              transition: 'transform 0.15s ease',
+              backdropFilter: 'blur(8px)',
+              boxShadow: '0 2px 10px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+              transition: 'all 0.2s ease',
             }}
           >
-            <span>+</span> New Production Batch
+            <span style={{ color: '#34d399', fontWeight: 800 }}>+</span> New Production Batch
           </Link>
         </div>
       </motion.div>
@@ -744,8 +747,10 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
                 exit={{ opacity: 0, scale: 0.95 }}
                 className="neon-card"
                 style={{
-                  background: 'linear-gradient(180deg, #131d22 0%, #0d1316 100%)',
-                  border: '1px solid rgba(0, 229, 153, 0.25)',
+                  background: 'linear-gradient(180deg, rgba(19, 29, 34, 0.75) 0%, rgba(13, 19, 22, 0.85) 100%)',
+                  border: '1px solid rgba(52, 211, 153, 0.28)',
+                  backdropFilter: 'blur(16px)',
+                  borderRadius: '16px',
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px' }}>
@@ -755,7 +760,7 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
                       <div style={{ fontSize: '13px', fontWeight: 800, color: '#ffffff' }}>
                         Sialkot Operations AI
                       </div>
-                      <div style={{ fontSize: '10.5px', color: '#00e599', fontWeight: 700 }}>
+                      <div style={{ fontSize: '10.5px', color: '#34d399', fontWeight: 700 }}>
                         Fabric Lot Inspection Alert
                       </div>
                     </div>
@@ -772,35 +777,40 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
                     href="/admin/production"
                     style={{
                       flex: 1,
-                      background: '#00e599',
-                      color: '#05140d',
-                      fontWeight: 800,
+                      background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.22) 0%, rgba(5, 150, 105, 0.28) 100%)',
+                      color: '#ffffff',
+                      border: '1px solid rgba(52, 211, 153, 0.38)',
+                      fontWeight: 700,
                       fontSize: '12px',
-                      padding: '8px 12px',
-                      borderRadius: '8px',
+                      padding: '8px 16px',
+                      borderRadius: '9999px',
                       textAlign: 'center',
                       textDecoration: 'none',
                       display: 'inline-flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       gap: '6px',
-                      boxShadow: '0 0 12px rgba(0, 229, 153, 0.35)',
+                      backdropFilter: 'blur(8px)',
+                      boxShadow: '0 2px 10px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+                      transition: 'all 0.15s ease',
                     }}
                   >
                     <span>Release to Cutting</span>
-                    <ArrowRightIcon size={13} />
+                    <ArrowRightIcon size={13} style={{ color: '#34d399' }} />
                   </Link>
                   <button
                     onClick={() => setCopilotDismissed(true)}
                     style={{
-                      background: 'rgba(255,255,255,0.05)',
+                      background: 'rgba(255,255,255,0.04)',
                       color: '#94a3b8',
                       border: '1px solid rgba(255,255,255,0.08)',
-                      borderRadius: '8px',
+                      borderRadius: '9999px',
                       fontSize: '11.5px',
                       fontWeight: 600,
-                      padding: '8px 12px',
+                      padding: '8px 16px',
                       cursor: 'pointer',
+                      backdropFilter: 'blur(8px)',
+                      transition: 'all 0.15s ease',
                     }}
                   >
                     Dismiss
@@ -811,7 +821,7 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
           </AnimatePresence>
 
           {/* Card B: Live Inquiries Stream */}
-          <motion.div variants={itemVariants} className="neon-card" style={{ flex: 1 }}>
+          <motion.div variants={itemVariants} className="neon-card" style={{ flex: 1, borderRadius: '16px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
               <div>
                 <span style={{ fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#38bdf8', fontWeight: 800 }}>
@@ -821,7 +831,7 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
                   Recent Buyer Inquiries
                 </h4>
               </div>
-              <Link href="/admin/inquiries" style={{ fontSize: '11.5px', color: '#00e599', fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+              <Link href="/admin/inquiries" style={{ fontSize: '11.5px', color: '#34d399', fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
                 <span>Open Queue</span>
                 <ArrowRightIcon size={12} />
               </Link>
@@ -836,10 +846,11 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
                 <div
                   key={i}
                   style={{
-                    background: '#0d1316',
-                    border: '1px solid rgba(255, 255, 255, 0.05)',
-                    borderRadius: '8px',
-                    padding: '10px 12px',
+                    background: 'rgba(13, 19, 22, 0.75)',
+                    border: '1px solid rgba(255, 255, 255, 0.06)',
+                    borderRadius: '12px',
+                    padding: '12px 14px',
+                    backdropFilter: 'blur(8px)',
                   }}
                 >
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>

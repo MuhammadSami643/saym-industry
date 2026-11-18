@@ -141,15 +141,16 @@ export default function ProductManagerClient({ initialProducts }: { initialProdu
         <button
           onClick={() => setIsAdding(!isAdding)}
           style={{
-            background: isAdding ? '#1e293b' : '#00e599',
-            color: isAdding ? '#ffffff' : '#05140d',
-            fontWeight: 800,
-            fontSize: '13px',
+            background: isAdding ? 'rgba(255, 255, 255, 0.06)' : 'linear-gradient(135deg, rgba(16, 185, 129, 0.22) 0%, rgba(5, 150, 105, 0.28) 100%)',
+            color: '#ffffff',
+            border: isAdding ? '1px solid rgba(255, 255, 255, 0.1)' : '1px solid rgba(52, 211, 153, 0.38)',
+            fontWeight: 700,
+            fontSize: '12.5px',
             padding: '9px 18px',
             borderRadius: '9999px',
-            border: 'none',
             cursor: 'pointer',
-            boxShadow: isAdding ? 'none' : '0 0 16px rgba(0, 229, 153, 0.35)',
+            backdropFilter: 'blur(8px)',
+            boxShadow: isAdding ? 'none' : '0 2px 10px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
             display: 'inline-flex',
             alignItems: 'center',
             gap: '6px',
@@ -341,15 +342,18 @@ export default function ProductManagerClient({ initialProducts }: { initialProdu
               type="submit"
               disabled={loading}
               style={{
-                background: '#00e599',
-                color: '#05140d',
-                fontWeight: 800,
+                background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.22) 0%, rgba(5, 150, 105, 0.28) 100%)',
+                color: '#ffffff',
+                border: '1px solid rgba(52, 211, 153, 0.38)',
+                fontWeight: 700,
                 fontSize: '13px',
-                padding: '10px 22px',
-                borderRadius: '8px',
-                border: 'none',
+                padding: '10px 24px',
+                borderRadius: '9999px',
                 cursor: loading ? 'not-allowed' : 'pointer',
                 opacity: loading ? 0.7 : 1,
+                backdropFilter: 'blur(8px)',
+                boxShadow: '0 2px 10px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+                transition: 'all 0.15s ease',
               }}
             >
               {loading ? 'Saving to Database...' : 'Save Product via API'}
@@ -376,14 +380,15 @@ export default function ProductManagerClient({ initialProducts }: { initialProdu
               key={cat}
               onClick={() => setSelectedCategory(cat)}
               style={{
-                background: selectedCategory === cat ? '#1e293b' : '#11171a',
-                color: selectedCategory === cat ? '#00e599' : '#94a3b8',
-                border: selectedCategory === cat ? '1px solid rgba(0, 229, 153, 0.3)' : '1px solid rgba(255, 255, 255, 0.07)',
+                background: selectedCategory === cat ? 'rgba(52, 211, 153, 0.14)' : 'rgba(17, 23, 26, 0.65)',
+                color: selectedCategory === cat ? '#34d399' : '#94a3b8',
+                border: selectedCategory === cat ? '1px solid rgba(52, 211, 153, 0.32)' : '1px solid rgba(255, 255, 255, 0.08)',
                 fontSize: '12px',
                 fontWeight: 700,
                 padding: '6px 14px',
                 borderRadius: '9999px',
                 cursor: 'pointer',
+                backdropFilter: 'blur(8px)',
                 transition: 'all 0.15s ease',
               }}
             >
@@ -500,13 +505,13 @@ export default function ProductManagerClient({ initialProducts }: { initialProdu
                         <button
                           onClick={() => handleDelete(p.id!)}
                           style={{
-                            background: 'rgba(248, 113, 113, 0.1)',
+                            background: 'rgba(248, 113, 113, 0.08)',
                             color: '#f87171',
-                            border: '1px solid rgba(248, 113, 113, 0.25)',
-                            padding: '5px 12px',
-                            borderRadius: '6px',
-                            fontWeight: 700,
-                            fontSize: '11.5px',
+                            border: '1px solid rgba(248, 113, 113, 0.22)',
+                            padding: '4px 12px',
+                            borderRadius: '9999px',
+                            fontWeight: 600,
+                            fontSize: '11px',
                             cursor: 'pointer',
                             transition: 'all 0.15s ease',
                           }}

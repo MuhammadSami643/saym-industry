@@ -235,21 +235,24 @@ export default function ProductionPipelinePage() {
           href="/track-order"
           target="_blank"
           style={{
-            background: '#00e599',
-            color: '#05140d',
-            fontWeight: 800,
-            fontSize: '12.5px',
-            padding: '9px 18px',
+            background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.22) 0%, rgba(5, 150, 105, 0.28) 100%)',
+            color: '#ffffff',
+            border: '1px solid rgba(52, 211, 153, 0.38)',
+            fontWeight: 700,
+            fontSize: '12px',
+            padding: '8px 18px',
             borderRadius: '9999px',
             textDecoration: 'none',
             display: 'inline-flex',
             alignItems: 'center',
             gap: '6px',
-            boxShadow: '0 0 14px rgba(0, 229, 153, 0.3)',
+            backdropFilter: 'blur(8px)',
+            boxShadow: '0 2px 10px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+            transition: 'all 0.15s ease',
           }}
         >
           <span>View Public Client Tracker</span>
-          <ExternalLinkIcon size={12} />
+          <ExternalLinkIcon size={12} style={{ color: '#34d399' }} />
         </Link>
       </div>
 
@@ -396,22 +399,24 @@ export default function ProductionPipelinePage() {
                     type="button"
                     onClick={() => handleNextStage(b.id)}
                     style={{
-                      background: '#00e599',
-                      color: '#05140d',
-                      border: 'none',
-                      borderRadius: '8px',
-                      padding: '7px 14px',
+                      background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.22) 0%, rgba(5, 150, 105, 0.28) 100%)',
+                      color: '#ffffff',
+                      border: '1px solid rgba(52, 211, 153, 0.38)',
+                      borderRadius: '9999px',
+                      padding: '7px 16px',
                       fontSize: '12px',
-                      fontWeight: 800,
+                      fontWeight: 700,
                       cursor: 'pointer',
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '5px',
-                      boxShadow: '0 0 12px rgba(0, 229, 153, 0.3)',
+                      backdropFilter: 'blur(8px)',
+                      boxShadow: '0 2px 10px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+                      transition: 'all 0.15s ease',
                     }}
                   >
                     <span>Advance Stage</span>
-                    <ArrowRightIcon size={13} />
+                    <ArrowRightIcon size={13} style={{ color: '#34d399' }} />
                   </button>
                 )}
               </div>
@@ -448,20 +453,20 @@ export default function ProductionPipelinePage() {
                   <div
                     key={st}
                     style={{
-                      padding: '6px 4px',
-                      borderRadius: '6px',
+                      padding: '6px 8px',
+                      borderRadius: '9999px',
                       background: isPast
-                        ? 'rgba(0, 229, 153, 0.12)'
+                        ? 'rgba(52, 211, 153, 0.12)'
                         : isCurrent
-                          ? 'rgba(251, 191, 36, 0.15)'
-                          : '#090d0f',
-                      color: isPast ? '#00e599' : isCurrent ? '#fbbf24' : '#94a3b8',
+                          ? 'rgba(245, 158, 11, 0.15)'
+                          : 'rgba(255, 255, 255, 0.03)',
+                      color: isPast ? '#34d399' : isCurrent ? '#fbbf24' : '#94a3b8',
                       fontWeight: isCurrent ? 800 : 600,
                       border: isCurrent
                         ? '1px solid #fbbf24'
                         : isPast
-                          ? '1px solid rgba(0, 229, 153, 0.25)'
-                          : '1px solid rgba(255, 255, 255, 0.05)',
+                          ? '1px solid rgba(52, 211, 153, 0.28)'
+                          : '1px solid rgba(255, 255, 255, 0.06)',
                     }}
                   >
                     {isPast ? '✓ ' : ''}{st}
