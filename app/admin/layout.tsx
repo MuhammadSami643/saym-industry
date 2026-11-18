@@ -72,7 +72,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         width: '100vw',
         display: 'flex',
         overflow: 'hidden',
-        background: '#090d0f',
+        background: 'radial-gradient(ellipse 90% 60% at 50% -20%, rgba(0, 229, 153, 0.12), transparent 70%), radial-gradient(circle at 10% 40%, rgba(56, 189, 248, 0.07), transparent 45%), radial-gradient(circle at 90% 80%, rgba(0, 229, 153, 0.08), transparent 50%), #070b0d',
         color: '#e2e8f0',
         fontFamily: 'inherit',
         zIndex: 99999,
@@ -85,39 +85,104 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           height: 6px;
         }
         ::-webkit-scrollbar-track {
-          background: #090d0f;
+          background: rgba(7, 11, 13, 0.6);
         }
         ::-webkit-scrollbar-thumb {
-          background: #1e293b;
+          background: rgba(255, 255, 255, 0.12);
           border-radius: 9999px;
         }
         ::-webkit-scrollbar-thumb:hover {
           background: #00e599;
         }
+
+        /* ==========================================================================
+           GLASSMORPHISM ADMIN SYSTEM ARCHITECTURE
+           ========================================================================== */
+        div[style*="background: #11171a"],
+        div[style*="background:#11171a"],
+        .kpi-card,
+        .neon-card,
+        .glass-card,
+        .admin-card {
+          background: rgba(14, 21, 26, 0.65) !important;
+          backdrop-filter: blur(20px) !important;
+          -webkit-backdrop-filter: blur(20px) !important;
+          border: 1px solid rgba(255, 255, 255, 0.09) !important;
+          border-top: 1px solid rgba(255, 255, 255, 0.18) !important;
+          box-shadow: 0 12px 36px rgba(0, 0, 0, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+        }
+
+        .kpi-card:hover,
+        .neon-card:hover,
+        .glass-card:hover,
+        .admin-card:hover {
+          background: rgba(18, 28, 34, 0.8) !important;
+          border-color: rgba(0, 229, 153, 0.35) !important;
+          border-top: 1px solid rgba(0, 229, 153, 0.65) !important;
+          box-shadow: 0 16px 44px rgba(0, 0, 0, 0.48), 0 0 20px rgba(0, 229, 153, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+        }
+
+        /* Glass table headers and rows */
+        table thead tr {
+          background: rgba(13, 20, 25, 0.85) !important;
+          backdrop-filter: blur(14px) !important;
+          -webkit-backdrop-filter: blur(14px) !important;
+        }
+
+        /* Glass modals */
+        div[style*="background: #11171a"][style*="maxWidth"],
+        div[style*="background: #11171a"][style*="max-width"] {
+          background: rgba(14, 21, 26, 0.88) !important;
+          backdrop-filter: blur(24px) !important;
+          -webkit-backdrop-filter: blur(24px) !important;
+          box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 229, 153, 0.15) !important;
+        }
+
+        /* Glass search and filter bars */
+        div[style*="background: #090d0f"],
+        div[style*="background:#090d0f"],
+        input[style*="background: #090d0f"],
+        select[style*="background: #090d0f"] {
+          background: rgba(255, 255, 255, 0.04) !important;
+          backdrop-filter: blur(10px) !important;
+          -webkit-backdrop-filter: blur(10px) !important;
+          border: 1px solid rgba(255, 255, 255, 0.09) !important;
+        }
+
+        /* Glass pills */
+        .tag-pill {
+          backdrop-filter: blur(8px) !important;
+          -webkit-backdrop-filter: blur(8px) !important;
+        }
       `}</style>
 
-      {/* 2. 100% FIXED STICKY SIDEBAR (Dark Obsidian Aesthetic) */}
+      {/* 2. 100% FIXED STICKY SIDEBAR (Glassmorphic Dark Obsidian) */}
       <aside
         style={{
           width: '264px',
           height: '100%',
-          background: '#0d1316',
+          background: 'rgba(11, 17, 21, 0.72)',
+          backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)',
           color: '#ffffff',
           display: 'flex',
           flexDirection: 'column',
-          borderRight: '1px solid rgba(255, 255, 255, 0.07)',
+          borderRight: '1px solid rgba(255, 255, 255, 0.08)',
           flexShrink: 0,
           overflow: 'hidden',
           position: 'relative',
+          boxShadow: '4px 0 24px rgba(0, 0, 0, 0.3)',
         }}
       >
         {/* Brand Header (Sticky & Scrollbar-free) */}
         <div
           style={{
             padding: '18px 16px',
-            borderBottom: '1px solid rgba(255, 255, 255, 0.06)',
+            borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
             flexShrink: 0,
-            background: '#0d1316',
+            background: 'rgba(11, 17, 21, 0.85)',
+            backdropFilter: 'blur(16px)',
+            WebkitBackdropFilter: 'blur(16px)',
             position: 'sticky',
             top: 0,
             zIndex: 10,
@@ -320,17 +385,21 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       {/* 3. RIGHT COLUMN: FIXED DARK TOPBAR + SCROLLABLE DASHBOARD */}
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', height: '100%', minWidth: 0, overflow: 'hidden' }}>
         
-        {/* Top Navigation Bar from Reel */}
+        {/* Top Navigation Bar from Reel (Glassmorphic) */}
         <header
           style={{
             height: '60px',
             flexShrink: 0,
-            background: '#0d1316',
-            borderBottom: '1px solid rgba(255, 255, 255, 0.06)',
+            background: 'rgba(11, 17, 21, 0.72)',
+            backdropFilter: 'blur(20px)',
+            WebkitBackdropFilter: 'blur(20px)',
+            borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
             padding: '0 28px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
+            boxShadow: '0 4px 24px rgba(0, 0, 0, 0.25)',
+            zIndex: 20,
           }}
         >
           {/* Search Bar Pill with Command-K */}
@@ -339,12 +408,15 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               display: 'flex',
               alignItems: 'center',
               gap: '10px',
-              background: '#090d0f',
-              border: '1px solid rgba(255, 255, 255, 0.08)',
+              background: 'rgba(255, 255, 255, 0.04)',
+              backdropFilter: 'blur(12px)',
+              WebkitBackdropFilter: 'blur(12px)',
+              border: '1px solid rgba(255, 255, 255, 0.09)',
               borderRadius: '9999px',
               padding: '6px 14px',
               width: '380px',
               maxWidth: '100%',
+              boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.2)',
             }}
           >
             <span style={{ color: '#64748b', fontSize: '13px' }}>🔍</span>
@@ -364,11 +436,11 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               style={{
                 fontSize: '10px',
                 color: '#cbd5e1',
-                background: '#151d21',
+                background: 'rgba(255, 255, 255, 0.08)',
                 padding: '2px 6px',
                 borderRadius: '4px',
                 fontWeight: 700,
-                border: '1px solid rgba(255,255,255,0.06)',
+                border: '1px solid rgba(255,255,255,0.08)',
               }}
             >
               ⌘K
@@ -389,8 +461,10 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                 width: '32px',
                 height: '32px',
                 borderRadius: '50%',
-                background: '#131d22',
-                border: '1px solid rgba(0, 229, 153, 0.3)',
+                background: 'rgba(255, 255, 255, 0.04)',
+                backdropFilter: 'blur(10px)',
+                WebkitBackdropFilter: 'blur(10px)',
+                border: '1px solid rgba(0, 229, 153, 0.35)',
                 display: 'grid',
                 placeItems: 'center',
                 color: '#00e599',
@@ -408,8 +482,10 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                   width: '32px',
                   height: '32px',
                   borderRadius: '50%',
-                  background: '#131d22',
-                  border: '1px solid rgba(255, 255, 255, 0.08)',
+                  background: 'rgba(255, 255, 255, 0.04)',
+                  backdropFilter: 'blur(10px)',
+                  WebkitBackdropFilter: 'blur(10px)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
                   display: 'grid',
                   placeItems: 'center',
                   fontSize: '13px',
@@ -462,8 +538,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           </div>
         </header>
 
-        {/* 4. SCROLLABLE CONTENT CANVAS (Deep Obsidian #090d0f with smooth page transitions) */}
-        <main style={{ flex: 1, overflowY: 'auto', padding: '24px 28px', background: '#090d0f' }}>
+        {/* 4. SCROLLABLE CONTENT CANVAS (Transparent so radial backdrop refracts through glass cards) */}
+        <main style={{ flex: 1, overflowY: 'auto', padding: '24px 28px', background: 'transparent' }}>
           <AnimatePresence mode="wait">
             <motion.div
               key={pathname}

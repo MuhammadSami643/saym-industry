@@ -158,33 +158,42 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
     >
       <style jsx global>{`
         .kpi-card {
-          background: #11171a;
-          border: 1px solid rgba(255, 255, 255, 0.07);
-          border-radius: 12px;
+          background: rgba(14, 21, 26, 0.62);
+          backdrop-filter: blur(18px);
+          -webkit-backdrop-filter: blur(18px);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-top: 1px solid rgba(255, 255, 255, 0.16);
+          border-radius: 14px;
           padding: 18px 20px;
           display: flex;
           flex-direction: column;
-          justifyContent: space-between;
-          transition: all 0.22s ease;
+          justify-content: space-between;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+          transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .kpi-card:hover {
-          background: #131b1f;
-          border-color: rgba(0, 229, 153, 0.3);
+          background: rgba(18, 28, 34, 0.78);
+          border-color: rgba(0, 229, 153, 0.35);
+          border-top: 1px solid rgba(0, 229, 153, 0.6);
           transform: translateY(-2px);
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), 0 0 12px rgba(0, 229, 153, 0.1);
+          box-shadow: 0 14px 38px rgba(0, 0, 0, 0.48), 0 0 18px rgba(0, 229, 153, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.15);
         }
         .neon-card {
-          background: #11171a;
-          border: 1px solid rgba(255, 255, 255, 0.07);
-          border-radius: 14px;
+          background: rgba(14, 21, 26, 0.62);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-top: 1px solid rgba(255, 255, 255, 0.16);
+          border-radius: 16px;
           padding: 22px;
           position: relative;
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.36);
-          transition: border-color 0.2s ease, box-shadow 0.2s ease;
+          box-shadow: 0 12px 36px rgba(0, 0, 0, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+          transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .neon-card:hover {
-          border-color: rgba(0, 229, 153, 0.25);
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45), 0 0 1px 1px rgba(0, 229, 153, 0.15);
+          border-color: rgba(0, 229, 153, 0.32);
+          border-top: 1px solid rgba(0, 229, 153, 0.55);
+          box-shadow: 0 16px 44px rgba(0, 0, 0, 0.48), 0 0 20px rgba(0, 229, 153, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.15);
         }
         .tag-pill {
           display: inline-flex;
