@@ -158,7 +158,7 @@ export default function AdminLogin() {
         {/* Header Branding */}
         <div style={{ textAlign: 'center', marginBottom: '28px' }}>
           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>
-            <BrandLogo size={64} />
+            <BrandLogo size={64} theme="dark" />
           </div>
 
           <div

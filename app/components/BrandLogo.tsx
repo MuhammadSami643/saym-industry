@@ -7,15 +7,18 @@ interface BrandLogoProps {
   className?: string;
   style?: React.CSSProperties;
   variant?: 'icon' | 'full';
+  theme?: 'light' | 'dark';
 }
 
 /**
  * Bin Rasool Enterprises (BRE) - Official Brand Identity & Emblem
  * Represents premier Sialkot manufacturing in boxing, gym wear, and activewear.
  */
-export default function BrandLogo({ size = 42, className = '', style, variant = 'icon' }: BrandLogoProps) {
+export default function BrandLogo({ size = 42, className = '', style, variant = 'icon', theme = 'light' }: BrandLogoProps) {
   const [imgFailed, setImgFailed] = useState(false);
-  const src = variant === 'full' ? '/images/site/logo.webp' : '/images/site/bre-brand-mark.webp';
+  const src = theme === 'dark'
+    ? (variant === 'full' ? '/images/site/logo-dark.webp' : '/images/site/bre-brand-mark-dark.webp')
+    : (variant === 'full' ? '/images/site/logo.webp' : '/images/site/bre-brand-mark.webp');
 
   return (
     <div

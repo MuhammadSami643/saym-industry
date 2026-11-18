@@ -101,7 +101,7 @@ export default function Navbar() {
 
   return (
     <header className="site-header" ref={navRef}>
-      <div className="container" style={{ maxWidth: '1360px', padding: '10px 16px' }}>
+      <div className="container" style={{ maxWidth: '1360px', padding: '10px 20px' }}>
         <div className="navbar">
           {/* Logo & Brand: Fixed & Protected against overlap */}
           <div className="nav-left">

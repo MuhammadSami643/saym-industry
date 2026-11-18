@@ -23,11 +23,11 @@ export default function Footer() {
   return (
     <>
       <footer className="site-footer">
-        <div className="container footer-shell">
+        <div className="container footer-shell" style={{ maxWidth: '1360px', padding: '58px 20px 24px' }}>
           <div className="footer-main">
             <div className="footer-brand-column">
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
-                <BrandLogo size={36} />
+                <BrandLogo size={38} theme="dark" />
                 <div className="footer-brand" style={{ margin: 0 }}>Bin Rasool Enterprises</div>
               </div>
               <p className="footer-copy">
