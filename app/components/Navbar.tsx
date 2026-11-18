@@ -116,7 +116,7 @@ export default function Navbar() {
                 flexShrink: 0,
               }}
             >
-              <BrandLogo size={42} />
+              <BrandLogo size={44} />
               <div style={{ lineHeight: 1.15, flexShrink: 0 }}>
                 <div className="nav-brand-title">Bin Rasool Enterprises</div>
                 <div className="nav-brand-sub">Sialkot &bull; Custom Manufacturer</div>
