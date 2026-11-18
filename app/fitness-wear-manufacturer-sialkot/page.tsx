@@ -1,10 +1,11 @@
 import FaqSection from '../components/FaqSection';
 import { FITNESS_WEAR_FAQS } from '../lib/faqs';
 import Link from 'next/link';
+import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd';
 
 export const metadata = {
-  title: "Fitness Wear Manufacturer Sialkot | Custom Gym Apparel",
-  description: "High-waisted squat-proof leggings, seamless sports bras, tapered gym joggers and stringer tanks made with premium Nylon/Spandex performance fabrics."
+  title: "Fitness Wear Manufacturer Sialkot | Custom Gym Apparel Factory",
+  description: "High-waisted squat-proof leggings, seamless sports bras, tapered gym joggers and stringer tanks made with premium Nylon/Spandex performance fabrics in Sialkot, Pakistan."
 };
 
 export default function CategoryPage() {
@@ -13,9 +14,13 @@ export default function CategoryPage() {
       {/* Hero Banner */}
       <section className="hero" style={{ padding: '80px 0 60px' }}>
         <div className="container">
-          <div className="breadcrumbs" style={{ color: '#cbd5e1' }}>
-            <Link href="/" style={{ color: 'var(--brand-orange)' }}>Home</Link> / <span>Fitness Wear</span>
-          </div>
+          <BreadcrumbJsonLd
+            items={[
+              { label: 'Home', href: '/' },
+              { label: 'Categories', href: '/products' },
+              { label: 'Fitness Wear Manufacturer Sialkot' },
+            ]}
+          />
           <h1 style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)', margin: '16px 0 12px' }}>
             Custom Fitness Wear Manufacturer in Sialkot, Pakistan
           </h1>

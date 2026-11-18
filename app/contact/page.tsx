@@ -1,5 +1,6 @@
 import ContactForm from '../components/ContactForm';
 import Link from 'next/link';
+import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd';
 
 export const metadata = {
   title: "Contact Bin Rasool Enterprises | Private Label Sportswear Manufacturer Pakistan",
@@ -12,9 +13,12 @@ export default function ContactPage() {
       {/* Header Banner */}
       <section className="hero" style={{ padding: '80px 0 60px' }}>
         <div className="container">
-          <div className="breadcrumbs" style={{ color: '#cbd5e1' }}>
-            <Link href="/" style={{ color: 'var(--brand-orange)' }}>Home</Link> / <span>Contact Us</span>
-          </div>
+          <BreadcrumbJsonLd
+            items={[
+              { label: 'Home', href: '/' },
+              { label: 'Contact Us' },
+            ]}
+          />
           <h1 style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)', margin: '16px 0 12px' }}>
             Start Your Private Label Activewear, Fitness Wear or Sportswear Inquiry
           </h1>

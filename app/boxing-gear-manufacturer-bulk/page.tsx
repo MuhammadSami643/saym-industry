@@ -1,6 +1,7 @@
 import FaqSection from '../components/FaqSection';
-import { BOXING_WEAR_FAQS } from '../lib/faqs';
+import { BOXING_GEAR_BULK_FAQS } from '../lib/faqs';
 import Link from 'next/link';
+import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -60,14 +61,18 @@ export default function CategoryPage() {
       {/* Hero Banner */}
       <section className="hero" style={{ padding: '80px 0 60px' }}>
         <div className="container">
-          <div className="breadcrumbs" style={{ color: '#cbd5e1' }}>
-            <Link href="/" style={{ color: 'var(--brand-orange)' }}>Home</Link> / <span>Boxing Wear</span>
-          </div>
+          <BreadcrumbJsonLd
+            items={[
+              { label: 'Home', href: '/' },
+              { label: 'Categories', href: '/products' },
+              { label: 'Boxing Gear & Gloves Wholesale' },
+            ]}
+          />
           <h1 style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)', margin: '16px 0 12px' }}>
-            Boxing Gloves Manufacturer & Custom Fight Gear Factory Sialkot
+            Boxing Gloves Manufacturer &amp; Custom Fight Gear Factory Sialkot
           </h1>
           <p style={{ maxWidth: '820px', color: '#cbd5e1', fontSize: '18px', margin: 0 }}>
-            OEM boxing gloves factory Pakistan delivering genuine cowhide leather boxing gloves, pro sparring gloves 16 oz &amp; 10 oz, satin boxing trunks, custom boxing robes, corner jackets, shin guards and hand wraps for USA and European combat brands.
+            Precision-engineered combat sports equipment for international fight promotions, combat brands, and commercial gyms. Handcrafted genuine A-grade cowhide leather gloves, IMF shock-absorbing foam, and wholesale training gear with custom private labeling.
           </p>
           <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '28px' }}>
             <Link href="/contact" className="btn btn-primary">
@@ -141,9 +146,9 @@ export default function CategoryPage() {
     
       {/* Category Specific FAQs */}
       <FaqSection
-        title="Bulk Fightwear & Boxing Trunks FAQs"
-        categoryBadge="Combat Sports"
-        items={BOXING_WEAR_FAQS}
+        title="Boxing Gloves & Fight Equipment Wholesale FAQs"
+        categoryBadge="Combat Equipment"
+        items={BOXING_GEAR_BULK_FAQS}
       />
     </div>
   );

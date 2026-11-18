@@ -1,6 +1,7 @@
 import FaqSection from '../components/FaqSection';
 import { SPORTSWEAR_FAQS } from '../lib/faqs';
 import Link from 'next/link';
+import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -60,9 +61,13 @@ export default function CategoryPage() {
       {/* Hero Banner */}
       <section className="hero" style={{ padding: '80px 0 60px' }}>
         <div className="container">
-          <div className="breadcrumbs" style={{ color: '#cbd5e1' }}>
-            <Link href="/" style={{ color: 'var(--brand-orange)' }}>Home</Link> / <span>Teamwear &amp; Uniforms</span>
-          </div>
+          <BreadcrumbJsonLd
+            items={[
+              { label: 'Home', href: '/' },
+              { label: 'Categories', href: '/products' },
+              { label: 'Teamwear & Uniforms' },
+            ]}
+          />
           <h1 style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)', margin: '16px 0 12px' }}>
             Sublimated Teamwear &amp; Sports Uniform Manufacturer Pakistan
           </h1>

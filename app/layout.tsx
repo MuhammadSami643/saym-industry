@@ -18,7 +18,6 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.ico' },
-      { url: '/images/favicon.png', sizes: '512x512', type: 'image/png' },
       { url: '/icon.png', sizes: '512x512', type: 'image/png' },
     ],
     shortcut: '/favicon.ico',
@@ -152,8 +151,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/images/favicon.png" type="image/png" />
         {/* Core Web Vitals LCP Preload for Hero Banner */}
         <link
           rel="preload"

@@ -1,5 +1,30 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd';
+import FaqSection from '../components/FaqSection';
+
+const PRIVATE_LABEL_FAQS = [
+  {
+    question: "What custom branding and trim options do you provide for private label clients?",
+    answer: "We supply 50D high-density damask woven neck labels, tagless silicone heat transfers, satin wash care labels with legal compliance info, 400 GSM coated hangtags with embossed foil or matte finish, and custom frosted EVA zipper polybags with barcode stickers."
+  },
+  {
+    question: "What is your sample turnaround time for new private label collections?",
+    answer: "Initial prototypes are completed in 7 to 10 business days upon receiving your tech pack or reference garment. Samples are dispatched worldwide via DHL Express with tracking provided within 24 hours."
+  },
+  {
+    question: "Can you manufacture apparel from our custom tech pack or reference sample?",
+    answer: "Yes. Our CAD pattern masters work directly from PDF/AI tech packs or physical benchmark samples, developing digital grading charts tailored to US, UK, or EU anthropometric sizing specs."
+  },
+  {
+    question: "What are your Minimum Order Quantities (MOQs) for custom private label orders?",
+    answer: "We support emerging labels and established brands with an accessible MOQ starting from 50 pieces per style/colorway across standard size ranges (XS–3XL). For custom mill-dyed fabrics, MOQs align with fabric batch dyeing limits."
+  },
+  {
+    question: "How do you protect my tech packs, designs, and brand intellectual property?",
+    answer: "We sign formal Non-Disclosure Agreements (NDAs) with all clients. Your proprietary tech packs, grading blocks, artwork, and branding assets remain your exclusive property and are never shared or resold."
+  }
+];
 
 export const metadata: Metadata = {
   title: "Private Label Clothing Manufacturer Pakistan | Custom Woven Labels, Hangtags & Packaging",
@@ -65,17 +90,19 @@ export default function PrivateLabelPage() {
 
 <section className="pl-hero">
     <div className="container">
-        <nav aria-label="Breadcrumb" className="breadcrumbs">
-                                    <a href="/">Home</a>
-                <span>/</span>
-                                                <span>Private Label Manufacturing</span>
-                        </nav>
+        <BreadcrumbJsonLd
+          items={[
+            { label: 'Home', href: '/' },
+            { label: 'Private Label Manufacturing' },
+          ]}
+          style={{ marginBottom: '20px' }}
+        />
 
         <div className="pl-hero-grid">
             <div>
                 <div className="eyebrow"
-                style={{ 'display': 'inline-flex', 'alignItems': 'center', 'padding': '3px 12px', 'borderRadius': '10px', 'background': '#e7efff', 'color': '#12326b', 'border': '1px solid #c8d8ff', 'letterSpacing': '0.04em', 'fontSize': '12px' }}>
-                PRIVATE LABEL MANUFACTURER &nbsp;&nbsp;• &nbsp;SIALKOT</div>
+                style={{ display: 'inline-flex', alignItems: 'center', padding: '4px 14px', borderRadius: '999px', background: 'rgba(243, 166, 38, 0.14)', color: 'var(--brand-orange-dark, #c57608)', border: '1px solid rgba(243, 166, 38, 0.3)', letterSpacing: '0.06em', fontSize: '11px', fontWeight: 800 }}>
+                FULL-PACKAGE OEM / ODM &nbsp;&bull;&nbsp; SIALKOT, PAKISTAN</div>
                 <h1>Private Label Manufacturing for Sportswear, Fitness Wear & Boxing Wear Brands</h1>
                 <p>
                     Bin Rasool Enterprises helps brands, gyms, clubs, wholesalers, fight brands and online sellers create custom apparel under their own label. From Sialkot, Pakistan, we support private label sportswear manufacturing with product development, custom branding, sampling, flexible MOQ options and export-ready production.
@@ -241,58 +268,13 @@ export default function PrivateLabelPage() {
     </div>
 </section>
 
-    <section className="faq-section-shared " style={{ 'background': '#fff', 'padding': '56px 0', 'borderTop': '1px solid #eee' }}>
-        <div className="container" style={{ 'maxWidth': '900px' }}>
-            <h2 style={{ 'textAlign': 'left', 'marginBottom': '26px' }}>Private Label FAQs</h2>
-            <div>
-                                                        <div className="faq-item ">
-                        <button type="button" className="faq-question" aria-expanded="false">
-                            <span>What is private label manufacturing in apparel?</span>
-                            <span className="faq-icon" aria-hidden="true">+</span>
-                        </button>
-                        <div className="faq-answer">
-                            <p className="muted">Private label manufacturing means producing garments under your own brand identity with your chosen labels, trims, packaging, logo application and product presentation.</p>
-                        </div>
-                    </div>
-                                                        <div className="faq-item ">
-                        <button type="button" className="faq-question" aria-expanded="false">
-                            <span>Can Bin Rasool Enterprises make custom private label sportswear?</span>
-                            <span className="faq-icon" aria-hidden="true">+</span>
-                        </button>
-                        <div className="faq-answer">
-                            <p className="muted">Yes. We support private label sportswear, fitness wear, boxing wear and activewear with customization around fabric, branding, packaging and fit direction.</p>
-                        </div>
-                    </div>
-                                                        <div className="faq-item ">
-                        <button type="button" className="faq-question" aria-expanded="false">
-                            <span>Do I need samples before private label bulk production?</span>
-                            <span className="faq-icon" aria-hidden="true">+</span>
-                        </button>
-                        <div className="faq-answer">
-                            <p className="muted">Samples are strongly recommended because they help confirm fit, construction, branding placement and finishing before a bulk order moves forward.</p>
-                        </div>
-                    </div>
-                                                        <div className="faq-item ">
-                        <button type="button" className="faq-question" aria-expanded="false">
-                            <span>What branding options can be added to private label products?</span>
-                            <span className="faq-icon" aria-hidden="true">+</span>
-                        </button>
-                        <div className="faq-answer">
-                            <p className="muted">Branding options can include neck labels, woven labels, hang tags, packaging, embroidery, screen printing, heat transfer and sublimation depending on the product type.</p>
-                        </div>
-                    </div>
-                                                        <div className="faq-item ">
-                        <button type="button" className="faq-question" aria-expanded="false">
-                            <span>Is private label manufacturing suitable for startup brands?</span>
-                            <span className="faq-icon" aria-hidden="true">+</span>
-                        </button>
-                        <div className="faq-answer">
-                            <p className="muted">Yes. Private label production is often a strong option for startup brands that want to launch branded apparel with a manufacturer that can guide samples and production setup.</p>
-                        </div>
-                    </div>
-                            </div>
-        </div>
-    </section>
+    {/* Interactive B2B Private Label FAQ */}
+    <FaqSection
+      title="Private Label & Custom Branding FAQs"
+      subtitle="Detailed technical guidance on labels, custom trims, tech pack confidentiality, and low MOQ production."
+      items={PRIVATE_LABEL_FAQS}
+      categoryBadge="Private Label Program"
+    />
 
 <section className="section" style={{ 'background': 'var(--bg-light)' }}>
     <div className="container content">

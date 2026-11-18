@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import FactoryVirtualTour from '../components/FactoryVirtualTour';
 import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd';
+import FaqSection from '../components/FaqSection';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -76,6 +77,29 @@ const manufacturingSchema = {
   },
 };
 
+const MANUFACTURING_FAQS = [
+  {
+    question: "What manufacturing capabilities does Bin Rasool Enterprises operate in-house?",
+    answer: "We operate dedicated production lines for CAD grading, automated fabric cutting, 4-needle 6-thread flatlock stitching, multi-head Tajima embroidery, screen printing, heat transfers, and AQL 2.5 quality control."
+  },
+  {
+    question: "What is your sample lead time before authorizing bulk production?",
+    answer: "Proto samples are completed within 7 to 10 business days upon receiving your tech pack or reference sample. We ship samples globally via DHL Express (4-5 days delivery)."
+  },
+  {
+    question: "What are your minimum order quantities (MOQs) for custom manufacturing?",
+    answer: "Our standard MOQ starts from 50 pieces per style/colorway across standard size ranges (XS–3XL). For custom-knitted or mill-dyed fabrics, MOQs align with fabric batch requirements."
+  },
+  {
+    question: "How do you ensure export quality control (AQL 2.5)?",
+    answer: "Every production batch undergoes raw fabric inspection (GSM & shrinkage testing), in-line seam tensile testing, 100% garment measurement audit against grading sheets, and needle-detector safety scanning."
+  },
+  {
+    question: "What Incoterms and global freight options do you support?",
+    answer: "We support FOB Karachi, CIF, and door-to-door DDP air freight via DHL/FedEx for urgent collections, as well as consolidated ocean container freight for bulk wholesale shipments."
+  }
+];
+
 export default function ManufacturingPage() {
   return (
     <div className="manufacturing-page">
@@ -99,8 +123,8 @@ export default function ManufacturingPage() {
         <div className="manufacturing-hero-grid">
             <div>
                 <div className="eyebrow"
-                style={{ 'display': 'inline-flex', 'alignItems': 'center', 'padding': '3px 12px', 'borderRadius': '10px', 'background': '#e7efff', 'color': '#12326b', 'border': '1px solid #c8d8ff', 'letterSpacing': '0.04em', 'fontSize': '12px' }}>
-                PRIVATE LABEL MANUFACTURER &nbsp;&nbsp;• &nbsp;SIALKOT</div>
+                style={{ 'display': 'inline-flex', 'alignItems': 'center', 'padding': '4px 14px', 'borderRadius': '999px', 'background': 'rgba(243, 166, 38, 0.14)', 'color': 'var(--brand-orange-dark, #c57608)', 'border': '1px solid rgba(243, 166, 38, 0.3)', 'letterSpacing': '0.06em', 'fontSize': '11px', 'fontWeight': 800 }}>
+                DIRECT FACTORY PRODUCTION &nbsp;&bull;&nbsp; SIALKOT, PAKISTAN</div>
                 <h1>Manufacturing Capabilities for Private Label Sportswear, Fitness Wear & Boxing Wear</h1>
                 <p>
                     Bin Rasool Enterprises supports buyers who need custom apparel manufacturing from Pakistan with clear product development, sampling, private label branding, quality control and export-ready packing. Our process is built for sportswear brands, fitness labels, boxing gyms, clubs, wholesalers and online sellers.
@@ -263,11 +287,11 @@ export default function ManufacturingPage() {
             </div>
             <div>
                 <ul className="list muted">
-                    <li>Measurement and fit checks against approved sample direction.</li>
-                    <li>Stitching, trims, labels, printing, embroidery and finishing review during production.</li>
-                    <li>Support for buyer branding including labels, hang tags, poly bags, carton marks and packaging details.</li>
-                    <li>Clear communication for wholesalers, startup brands, gyms, clubs and international apparel buyers.</li>
-                    <li>Export-ready presentation for sportswear, fitness wear, boxing wear, activewear and teamwear orders.</li>
+                    <li><strong>AQL 2.5 Quality Standards:</strong> Independent inline and pre-shipment lot sampling inspecting seam elasticity, stitch balance, and measurement grading tolerances (±0.5 cm).</li>
+                    <li><strong>Fabric & Wash Integrity:</strong> Raw fabric batch lab testing for dimensional stability (under 3% shrinkage guarantee), colorfastness to washing and perspiration (Grade 4+), and GSM verification.</li>
+                    <li><strong>Full Private Label Trims:</strong> Custom woven damask neck labels, soft satin wash care tags with RN numbers, embossed hangtags, and custom printed frosted polybags.</li>
+                    <li><strong>Export-Ready Cartoning:</strong> Double-wall corrugated export master cartons, individual silica gel packs, clear SKU/size barcode stickers, and moisture-sealed strapping.</li>
+                    <li><strong>Incoterms & Global Logistics:</strong> Complete export handling for FOB Karachi sea freight, CIF Felixstowe/Hamburg/LA/Sydney, and door-to-door express air via DHL/FedEx (4-5 days delivery).</li>
                 </ul>
             </div>
         </div>
@@ -286,58 +310,13 @@ export default function ManufacturingPage() {
     </div>
 </section>
 
-    <section className="faq-section-shared " style={{ 'background': '#fff', 'padding': '56px 0', 'borderTop': '1px solid #eee' }}>
-        <div className="container" style={{ 'maxWidth': '900px' }}>
-            <h2 style={{ 'textAlign': 'left', 'marginBottom': '26px' }}>Manufacturing FAQs</h2>
-            <div>
-                                                        <div className="faq-item ">
-                        <button type="button" className="faq-question" aria-expanded="false">
-                            <span>What manufacturing services does Bin Rasool Enterprises provide?</span>
-                            <span className="faq-icon" aria-hidden="true">+</span>
-                        </button>
-                        <div className="faq-answer">
-                            <p className="muted">Bin Rasool Enterprises supports product development, sampling, cutting, stitching, logo application, finishing, packing and export-ready production for private label apparel.</p>
-                        </div>
-                    </div>
-                                                        <div className="faq-item ">
-                        <button type="button" className="faq-question" aria-expanded="false">
-                            <span>Can Bin Rasool Enterprises handle sportswear, fitness wear and boxing wear production?</span>
-                            <span className="faq-icon" aria-hidden="true">+</span>
-                        </button>
-                        <div className="faq-answer">
-                            <p className="muted">Yes. Our manufacturing direction is focused on sportswear, fitness wear, boxing wear, teamwear, activewear and related private label product categories.</p>
-                        </div>
-                    </div>
-                                                        <div className="faq-item ">
-                        <button type="button" className="faq-question" aria-expanded="false">
-                            <span>Do you help buyers before bulk production starts?</span>
-                            <span className="faq-icon" aria-hidden="true">+</span>
-                        </button>
-                        <div className="faq-answer">
-                            <p className="muted">Yes. We help review product requirements, fabric direction, branding needs, sample expectations and the right production path before bulk manufacturing begins.</p>
-                        </div>
-                    </div>
-                                                        <div className="faq-item ">
-                        <button type="button" className="faq-question" aria-expanded="false">
-                            <span>How does Bin Rasool Enterprises support quality during production?</span>
-                            <span className="faq-icon" aria-hidden="true">+</span>
-                        </button>
-                        <div className="faq-answer">
-                            <p className="muted">The process includes attention to measurements, stitching, trims, branding application, finishing, packing and buyer communication throughout production.</p>
-                        </div>
-                    </div>
-                                                        <div className="faq-item ">
-                        <button type="button" className="faq-question" aria-expanded="false">
-                            <span>Can manufacturing orders be prepared for export?</span>
-                            <span className="faq-icon" aria-hidden="true">+</span>
-                        </button>
-                        <div className="faq-answer">
-                            <p className="muted">Yes. Bin Rasool Enterprises is structured for export-focused production with practical buyer communication and order presentation for international markets.</p>
-                        </div>
-                    </div>
-                            </div>
-        </div>
-    </section>
+    {/* Interactive B2B FAQ with Rich Schema */}
+    <FaqSection
+      title="Manufacturing Capabilities & Quality FAQs"
+      subtitle="Commercial specifications, lead times, production minimums, and export logistics for apparel buyers."
+      items={MANUFACTURING_FAQS}
+      categoryBadge="Sialkot Factory Floor"
+    />
 
     </main>
     </div>

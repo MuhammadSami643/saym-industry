@@ -343,92 +343,43 @@ export default function Home() {
         </div>
     </section>
 
+    {/* Interactive Live Factory Virtual Tour */}
+    <FactoryVirtualTour />
+
     <section className="section" style={{ 'background': 'var(--bg-light)' }}>
         <div className="container">
             <div className="home-section-head">
                 <div>
-                    <span className="home-kicker">Factory proof</span>
-                    <h2>Inside Our Manufacturing Process</h2>
+                    <span className="home-kicker">Commercial Workflow</span>
+                    <h2>From tech pack &amp; prototype to bulk export</h2>
                 </div>
-                <p className="muted">Real production images belong here, not generic lifestyle photography. These four checkpoints show where product accuracy, workmanship, quality and export readiness are controlled.</p>
-            </div>
-            <div className="factory-proof-grid">
-                                    <article className="factory-proof-card">
-                        <div className="factory-proof-media">
-                                                            <img src="/images/site/1776612585_manufacturing-cutting-image.webp" alt="Cutting Process at Bin Rasool Enterprises activewear manufacturing facility" loading="lazy" decoding="async" />
-                                                    </div>
-                        <div className="factory-proof-body">
-                            <h3>Cutting Process</h3>
-                            <p className="muted">Fabric preparation, panel accuracy and cutting control before stitching begins.</p>
-                        </div>
-                    </article>
-                                    <article className="factory-proof-card">
-                        <div className="factory-proof-media">
-                                                            <img src="/images/site/1776612585_manufacturing-stitching-image.webp" alt="Stitching Line at Bin Rasool Enterprises activewear manufacturing facility" loading="lazy" decoding="async" />
-                                                    </div>
-                        <div className="factory-proof-body">
-                            <h3>Stitching Line</h3>
-                            <p className="muted">Garment construction managed against approved measurements and workmanship requirements.</p>
-                        </div>
-                    </article>
-                                    <article className="factory-proof-card">
-                        <div className="factory-proof-media">
-                                                            <img src="/images/site/1776612585_manufacturing-checking-image.webp" alt="Quality Control at Bin Rasool Enterprises activewear manufacturing facility" loading="lazy" decoding="async" />
-                                                    </div>
-                        <div className="factory-proof-body">
-                            <h3>Quality Control</h3>
-                            <p className="muted">Measurement, stitching, branding, finishing and presentation checks during production.</p>
-                        </div>
-                    </article>
-                                    <article className="factory-proof-card">
-                        <div className="factory-proof-media">
-                                                            <img src="/images/site/1776612585_manufacturing-packing-image.webp" alt="Packaging & Export Prep at Bin Rasool Enterprises activewear manufacturing facility" loading="lazy" decoding="async" />
-                                                    </div>
-                        <div className="factory-proof-body">
-                            <h3>Packaging & Export Prep</h3>
-                            <p className="muted">Folding, labels, poly bags, carton markings and dispatch preparation for export orders.</p>
-                        </div>
-                    </article>
-                            </div>
-        </div>
-    </section>
-
-    {/* Interactive Live Factory Virtual Tour */}
-    <FactoryVirtualTour />
-
-    <section className="section" style={{ 'background': 'var(--bg-light)', 'paddingTop': '0' }}>
-        <div className="container">
-            <div className="home-section-head">
-                <div>
-                    <span className="home-kicker">How production works</span>
-                    <h2>Our private label activewear manufacturing process</h2>
-                </div>
-                <p className="muted">A defined approval path reduces avoidable revisions and keeps commercial decisions visible before bulk production begins.</p>
+                <p className="muted">A transparent approval path with defined milestones: prototype sign-off, grading verification, and AQL 2.5 pre-shipment inspection.</p>
             </div>
             <div className="process-grid">
-                                    <article className="process-card">
-                        <h3>Send Your Product Brief</h3>
-                        <p className="muted">Share product references or tech packs, target quantity, sizes, colors, fabric direction, branding and destination market.</p>
-                    </article>
-                                    <article className="process-card">
-                        <h3>Confirm Scope and Quote</h3>
-                        <p className="muted">We review feasibility, MOQ, customization, sample requirements, estimated pricing and the proposed production route.</p>
-                    </article>
-                                    <article className="process-card">
-                        <h3>Develop and Approve Samples</h3>
-                        <p className="muted">Review fit, fabric, construction, measurements, color, labels and logo placement before authorizing bulk production.</p>
-                    </article>
-                                    <article className="process-card">
-                        <h3>Manufacture With QC Checks</h3>
-                        <p className="muted">Approved specifications guide cutting, stitching, decoration, finishing and inline quality checks during production.</p>
-                    </article>
-                                    <article className="process-card">
-                        <h3>Pack and Ship Worldwide</h3>
-                        <p className="muted">Your order is folded, labeled, packed, carton-marked and prepared for dispatch to your chosen market.</p>
-                    </article>
-                            </div>
+                <article className="process-card">
+                    <h3>01. Product Brief &amp; Sourcing</h3>
+                    <p className="muted">Share your tech packs or physical samples with target GSM, fabric compositions, colors, and order volumes for accurate FOB cost breakdown.</p>
+                </article>
+                <article className="process-card">
+                    <h3>02. Scope &amp; Commercial Terms</h3>
+                    <p className="muted">Confirm production feasibility, 50-piece low MOQs, custom trim schedules, sample fees, and scheduled delivery timelines.</p>
+                </article>
+                <article className="process-card">
+                    <h3>03. 7–10 Day Proto Sampling</h3>
+                    <p className="muted">Review physical fit samples, custom neck tags, stitch tension, and embroidery/print positioning before bulk cut authorization.</p>
+                </article>
+                <article className="process-card">
+                    <h3>04. Bulk Production &amp; QC</h3>
+                    <p className="muted">Eastman CNC cutting, 4-needle flatlock assembly, in-line tension checks, and 100% needle-detector scanning under one roof.</p>
+                </article>
+                <article className="process-card">
+                    <h3>05. Export Packaging &amp; Dispatch</h3>
+                    <p className="muted">Industrial steam tunnel pressing, custom polybagging, carton markings, and express air (DHL/FedEx) or ocean cargo dispatch.</p>
+                </article>
+            </div>
             <div style={{ 'marginTop': '28px' }}>
-                <a href="/sampling-process" className="btn btn-dark">Review the Sampling Process</a>
+                <a href="/get-quote" className="btn btn-primary" style={{ marginRight: '12px' }}>Request Sample Quote</a>
+                <a href="/sampling-process" className="btn btn-dark">Review Sampling Process</a>
             </div>
         </div>
     </section>

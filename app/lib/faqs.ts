@@ -136,3 +136,23 @@ export const BOXING_WEAR_FAQS: FaqItem[] = [
   }
 ];
 
+export const BOXING_GEAR_BULK_FAQS: FaqItem[] = [
+  {
+    question: "What leather grades and materials do you use for custom boxing gloves?",
+    answer: "We manufacture gloves in full-grain A-grade cowhide leather for professional fight promotions, as well as ultra-durable microfiber synthetic leather for high-volume commercial gym training lines."
+  },
+  {
+    question: "What internal padding structure is used for impact absorption?",
+    answer: "Our gloves feature multi-layer injection-molded foam (IMF) systems incorporating high-density EVA, latex foam sheets, and bonded horsehair padding for knuckle protection and shock dispersion."
+  },
+  {
+    question: "Do your boxing gloves feature ergonomic thumb locks and wrist protection?",
+    answer: "Yes. All sparring and competition gloves are engineered with anatomically curved attached thumbs to prevent eye pokes and sprains, paired with wide hook-and-loop velcro or traditional pro lace-up wrist closures."
+  },
+  {
+    question: "Can you produce custom gym equipment like focus mitts, Thai pads, and heavy bags?",
+    answer: "Yes. We supply complete commercial combat equipment packages including curved focus mitts, kick shields, heavy hanging bags, and hand wraps branded with your gym or promotion logo."
+  }
+];
+
+

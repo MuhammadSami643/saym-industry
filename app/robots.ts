@@ -7,24 +7,44 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: '*',
-        allow: '/',
+        allow: [
+          '/',
+          '/_next/static/',
+          '/_next/image',
+        ],
         disallow: [
           '/admin',
           '/admin/',
           '/api/',
-          '/_next/',
+          '/invoice',
           '/invoice?*',
         ],
       },
       {
         userAgent: 'Googlebot',
-        allow: '/',
-        disallow: ['/admin/', '/api/'],
+        allow: [
+          '/',
+          '/_next/static/',
+          '/_next/image',
+        ],
+        disallow: [
+          '/admin/',
+          '/api/',
+          '/invoice',
+        ],
       },
       {
         userAgent: 'Bingbot',
-        allow: '/',
-        disallow: ['/admin/', '/api/'],
+        allow: [
+          '/',
+          '/_next/static/',
+          '/_next/image',
+        ],
+        disallow: [
+          '/admin/',
+          '/api/',
+          '/invoice',
+        ],
       },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
