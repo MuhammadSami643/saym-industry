@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import LogoutButton from '../components/LogoutButton';
-import { ExternalLinkIcon } from '@/app/components/AdminIcons';
+import { ExternalLinkIcon, PlusIcon } from '@/app/components/AdminIcons';
 import BrandLogo from '@/app/components/BrandLogo';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
@@ -305,9 +305,11 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           </Link>
 
           {/* SAVED VIEWS SECTION */}
-          <div style={{ fontSize: '10.5px', textTransform: 'uppercase', color: '#94a3b8', fontWeight: 800, padding: '16px 8px 6px', letterSpacing: '0.08em', display: 'flex', justifyContent: 'space-between' }}>
+          <div style={{ fontSize: '10.5px', textTransform: 'uppercase', color: '#94a3b8', fontWeight: 800, padding: '16px 8px 6px', letterSpacing: '0.08em', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <span>FLOOR VIEWS</span>
-            <span style={{ cursor: 'pointer', color: '#cbd5e1' }}>+</span>
+            <span style={{ cursor: 'pointer', color: '#cbd5e1', display: 'inline-flex', alignItems: 'center' }} title="Add View">
+              <PlusIcon size={12} />
+            </span>
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '7px 8px', fontSize: '12.5px', color: '#cbd5e1', cursor: 'pointer', borderRadius: '6px' }}>

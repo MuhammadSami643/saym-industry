@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import AnimatedCounter from '../../components/AnimatedCounter';
-import { ArrowRightIcon } from '../../components/AdminIcons';
+import { ArrowRightIcon, PlusIcon } from '../../components/AdminIcons';
 
 interface Props {
   inquiries: any[];
@@ -301,13 +301,14 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
               textDecoration: 'none',
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '6px',
+              gap: '7px',
               backdropFilter: 'blur(8px)',
               boxShadow: '0 2px 10px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
               transition: 'all 0.2s ease',
             }}
           >
-            <span style={{ color: '#34d399', fontWeight: 800 }}>+</span> New Production Batch
+            <PlusIcon size={13} style={{ color: '#34d399' }} />
+            <span>New Production Batch</span>
           </Link>
         </div>
       </motion.div>

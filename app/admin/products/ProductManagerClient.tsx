@@ -5,6 +5,7 @@ import { Product } from '../../actions';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import AnimatedCounter from '../../components/AnimatedCounter';
+import { PlusIcon } from '../../components/AdminIcons';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -153,11 +154,18 @@ export default function ProductManagerClient({ initialProducts }: { initialProdu
             boxShadow: isAdding ? 'none' : '0 2px 10px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
             display: 'inline-flex',
             alignItems: 'center',
-            gap: '6px',
+            gap: '7px',
             transition: 'all 0.15s ease',
           }}
         >
-          {isAdding ? '✕ Cancel' : '+ Add New Style'}
+          {isAdding ? (
+            <span>✕ Cancel</span>
+          ) : (
+            <>
+              <PlusIcon size={13} style={{ color: '#34d399' }} />
+              <span>Add New Style</span>
+            </>
+          )}
         </button>
       </motion.div>
 

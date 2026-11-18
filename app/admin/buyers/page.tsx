@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import AnimatedCounter from '../../components/AnimatedCounter';
-import { WhatsAppIcon } from '../../components/AdminIcons';
+import { WhatsAppIcon, PlusIcon } from '../../components/AdminIcons';
 
 interface BuyerRecord {
   id: string;
@@ -268,13 +268,14 @@ export default function BuyerCrmPage() {
             cursor: 'pointer',
             display: 'inline-flex',
             alignItems: 'center',
-            gap: '6px',
+            gap: '7px',
             backdropFilter: 'blur(8px)',
             boxShadow: '0 2px 10px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
             transition: 'all 0.15s ease',
           }}
         >
-          <span style={{ color: '#34d399', fontWeight: 800 }}>+</span> Add New Buyer Profile
+          <PlusIcon size={13} style={{ color: '#34d399' }} />
+          <span>Add New Buyer Profile</span>
         </button>
       </div>
 
