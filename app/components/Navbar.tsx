@@ -234,7 +234,7 @@ export default function Navbar() {
               <div style={{ padding: '8px 12px' }} className="nav-mobile-currency">
                 <CurrencySelector />
               </div>
-              
+
               <Link className="btn btn-primary nav-mobile-cta" href="/get-quote" onClick={handleLinkClick}>
                 Get Instant Quote
               </Link>
