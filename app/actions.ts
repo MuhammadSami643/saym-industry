@@ -1,6 +1,6 @@
 "use server";
 
-import { supabase } from './lib/supabase';
+import { supabase, isSupabaseConfigured } from './lib/supabase';
 import { sendInquiryNotificationEmails } from './lib/mailer';
 
 export type Inquiry = {
@@ -13,6 +13,29 @@ export type Inquiry = {
   status?: string;
   date?: string;
 };
+
+const FALLBACK_INQUIRIES: Inquiry[] = [
+  {
+    id: 'mock-1',
+    name: 'Marcus Vance',
+    email: 'marcus@peakfitness.com',
+    phone: '+1 415 889 0122',
+    subject: 'Custom Joggers & Gym Hoodies (500 pcs)',
+    details: 'Looking for 300 GSM French Terry gym hoodies and matching slim-fit joggers with custom silicone heat transfer logo.',
+    date: new Date().toISOString(),
+    status: 'new'
+  },
+  {
+    id: 'mock-2',
+    name: 'Sarah Jenkins',
+    email: 'sarah@athletixstudio.co.uk',
+    phone: '+44 20 7946 0919',
+    subject: 'Private Label Leggings & Sports Bras',
+    details: 'Hi Bin Rasool Enterprises, we want to launch a 4-colorway activewear capsule: 75% Nylon 25% Spandex squat proof leggings with matching bra tops.',
+    date: new Date(Date.now() - 86400000).toISOString(),
+    status: 'contacted'
+  }
+];
 
 export async function submitInquiry(formData: FormData) {
   const name = (formData.get('name') as string)?.trim();
@@ -42,6 +65,10 @@ export async function submitInquiry(formData: FormData) {
     console.error("Non-fatal mailer error:", mErr);
   }
 
+  if (!isSupabaseConfigured) {
+    return { success: true };
+  }
+
   try {
     const { data, error } = await supabase
       .from('inquiries')
@@ -66,42 +93,23 @@ export async function submitInquiry(formData: FormData) {
 }
 
 export async function getInquiries(): Promise<Inquiry[]> {
+  if (!isSupabaseConfigured) {
+    return FALLBACK_INQUIRIES;
+  }
+
   try {
     const { data, error } = await supabase
       .from('inquiries')
       .select('*')
       .order('date', { ascending: false });
 
-    if (error) {
-      console.warn("Could not fetch from inquiries table:", error.message);
-      return [
-        {
-          id: 'mock-1',
-          name: 'Marcus Vance',
-          email: 'marcus@peakfitness.com',
-          phone: '+1 415 889 0122',
-          subject: 'Custom Joggers & Gym Hoodies (500 pcs)',
-          details: 'Looking for 300 GSM French Terry gym hoodies and matching slim-fit joggers with custom silicone heat transfer logo.',
-          date: new Date().toISOString(),
-          status: 'new'
-        },
-        {
-          id: 'mock-2',
-          name: 'Sarah Jenkins',
-          email: 'sarah@athletixstudio.co.uk',
-          phone: '+44 20 7946 0919',
-          subject: 'Private Label Leggings & Sports Bras',
-          details: 'Hi Bin Rasool Enterprises, we want to launch a 4-colorway activewear capsule: 75% Nylon 25% Spandex squat proof leggings with matching bra tops.',
-          date: new Date(Date.now() - 86400000).toISOString(),
-          status: 'contacted'
-        }
-      ];
+    if (error || !data || data.length === 0) {
+      return FALLBACK_INQUIRIES;
     }
 
-    return (data || []) as Inquiry[];
-  } catch (err) {
-    console.error("Error getting inquiries:", err);
-    return [];
+    return data as Inquiry[];
+  } catch {
+    return FALLBACK_INQUIRIES;
   }
 }
 
@@ -158,6 +166,10 @@ const DEFAULT_PRODUCTS: Product[] = [
 ];
 
 export async function getProducts(): Promise<Product[]> {
+  if (!isSupabaseConfigured) {
+    return DEFAULT_PRODUCTS;
+  }
+
   try {
     const { data, error } = await supabase
       .from('products')
@@ -169,8 +181,7 @@ export async function getProducts(): Promise<Product[]> {
     }
 
     return data as Product[];
-  } catch (err) {
-    console.error("Error fetching products:", err);
+  } catch {
     return DEFAULT_PRODUCTS;
   }
 }

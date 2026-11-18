@@ -5,20 +5,37 @@ const envKey =
   process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ||
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-// If placeholder string is present, fallback gracefully to the configured database
-const isPlaceholder = (val?: string) =>
+// Check if valid active Supabase configuration is present
+const isPlaceholderOrDead = (val?: string) =>
   !val ||
   val.includes('your_') ||
   val.includes('your-') ||
   val.includes('placeholder') ||
-  val.includes('example');
+  val.includes('example') ||
+  val.includes('usgibssilkfhjbqycnfj'); // Legacy dead/expired project that causes ENOTFOUND
 
-const supabaseUrl = isPlaceholder(envUrl)
-  ? 'https://usgibssilkfhjbqycnfj.supabase.co'
-  : envUrl!;
+export const isSupabaseConfigured =
+  !isPlaceholderOrDead(envUrl) && !isPlaceholderOrDead(envKey);
 
-const supabaseKey = isPlaceholder(envKey)
-  ? 'sb_publishable_zvE12ZsBNfuFPumKKGfF8w_onRup94b'
-  : envKey!;
+const supabaseUrl = isSupabaseConfigured
+  ? envUrl!
+  : 'https://placeholder.supabase.co';
 
-export const supabase = createClient(supabaseUrl, supabaseKey);
+const supabaseKey = isSupabaseConfigured
+  ? envKey!
+  : 'placeholder-anon-key';
+
+export const supabase = createClient(supabaseUrl, supabaseKey, {
+  auth: { persistSession: false },
+  global: {
+    fetch: (url, options = {}) => {
+      // 1.5s fast timeout to prevent pages hanging for 16+ seconds on dead connections
+      const controller = new AbortController();
+      const id = setTimeout(() => controller.abort(), 1500);
+      return fetch(url, {
+        ...options,
+        signal: controller.signal,
+      }).finally(() => clearTimeout(id));
+    },
+  },
+});

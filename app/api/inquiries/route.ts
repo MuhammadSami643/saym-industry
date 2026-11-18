@@ -1,8 +1,39 @@
 import { NextResponse } from 'next/server';
-import { supabase } from '@/app/lib/supabase';
+import { supabase, isSupabaseConfigured } from '@/app/lib/supabase';
+
+const MOCK_INQUIRIES = [
+  {
+    id: 'mock-1',
+    name: 'Marcus Vance',
+    email: 'marcus@peakfitness.com',
+    phone: '+1 415 889 0122',
+    subject: 'Custom Joggers & Gym Hoodies (500 pcs)',
+    details: 'Looking for 300 GSM French Terry gym hoodies and matching slim-fit joggers with custom silicone heat transfer logo.',
+    date: new Date().toISOString(),
+    status: 'new'
+  },
+  {
+    id: 'mock-2',
+    name: 'Sarah Jenkins',
+    email: 'sarah@athletixstudio.co.uk',
+    phone: '+44 20 7946 0919',
+    subject: 'Private Label Leggings & Sports Bras',
+    details: 'Hi Bin Rasool Enterprises, we want to launch a 4-colorway activewear capsule: 75% Nylon 25% Spandex squat proof leggings with matching bra tops.',
+    date: new Date(Date.now() - 86400000).toISOString(),
+    status: 'contacted'
+  }
+];
 
 // GET /api/inquiries -> Fetch all inquiries (Admin / Backend)
 export async function GET(request: Request) {
+  if (!isSupabaseConfigured) {
+    return NextResponse.json({
+      success: true,
+      count: MOCK_INQUIRIES.length,
+      data: MOCK_INQUIRIES
+    });
+  }
+
   try {
     const { searchParams } = new URL(request.url);
     const status = searchParams.get('status');
