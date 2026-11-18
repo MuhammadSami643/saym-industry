@@ -203,7 +203,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               <div style={{ fontSize: '14px', fontWeight: 800, color: '#fff', letterSpacing: '-0.01em', lineHeight: 1.2 }}>
                 Bin Rasool
               </div>
-              <div style={{ fontSize: '11px', color: '#00e599', fontWeight: 700, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+              <div style={{ fontSize: '11px', color: '#34d399', fontWeight: 700, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                 Director Command &bull; HQ
               </div>
             </div>

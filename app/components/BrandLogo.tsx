@@ -10,14 +10,12 @@ interface BrandLogoProps {
 }
 
 /**
- * Bin Rasool Enterprises (BRE) - Official Luxury Brand Emblem
- * Features high-resolution 3D athletic crest with zero layout shift and inline vector fallback.
+ * Bin Rasool Enterprises (BRE) - Official Luxury Athletic Brand Emblem
+ * Represents premier Sialkot manufacturing in boxing, gym wear, and activewear.
  */
-export default function BrandLogo({ size = 42, className = '', style, variant = 'gold' }: BrandLogoProps) {
+export default function BrandLogo({ size = 42, className = '', style }: BrandLogoProps) {
   const [imgFailed, setImgFailed] = useState(false);
-  const src = variant === 'titanium'
-    ? '/images/site/bre-logo-concept-titanium.webp'
-    : '/images/site/bre-logo-icon.webp';
+  const src = '/images/site/bre-brand-mark.webp';
 
   return (
     <div
@@ -28,15 +26,11 @@ export default function BrandLogo({ size = 42, className = '', style, variant = 
         minWidth: `${size}px`,
         maxWidth: `${size}px`,
         flexShrink: 0,
-        borderRadius: '10px',
-        overflow: 'hidden',
         display: 'inline-flex',
         alignItems: 'center',
         justifyContent: 'center',
         verticalAlign: 'middle',
-        boxShadow: '0 4px 14px rgba(0, 0, 0, 0.25)',
-        border: '1px solid rgba(245, 158, 11, 0.25)',
-        background: '#070a0f',
+        background: 'transparent',
         position: 'relative',
         ...style,
       }}
@@ -44,15 +38,16 @@ export default function BrandLogo({ size = 42, className = '', style, variant = 
       {!imgFailed ? (
         <img
           src={src}
-          alt="Bin Rasool Enterprises Official Logo"
+          alt="Bin Rasool Enterprises Official Brand Emblem"
           width={size}
           height={size}
           onError={() => setImgFailed(true)}
           style={{
             width: '100%',
             height: '100%',
-            objectFit: 'cover',
+            objectFit: 'contain',
             display: 'block',
+            filter: 'drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15))',
           }}
         />
       ) : (
@@ -67,22 +62,23 @@ export default function BrandLogo({ size = 42, className = '', style, variant = 
         >
           <defs>
             <linearGradient id="breGold" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#fde047" />
-              <stop offset="60%" stopColor="#f59e0b" />
-              <stop offset="100%" stopColor="#d97706" />
+              <stop offset="0%" stopColor="#fef08a" />
+              <stop offset="35%" stopColor="#f59e0b" />
+              <stop offset="100%" stopColor="#b45309" />
+            </linearGradient>
+            <linearGradient id="breCarbon" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#334155" />
+              <stop offset="100%" stopColor="#0f172a" />
             </linearGradient>
           </defs>
-          <rect width="512" height="512" rx="100" fill="#070a0f" />
           <path
-            d="M136 100 L214 100 L214 412 L136 412 Z"
-            fill="url(#breGold)"
+            d="M256 60 L370 120 L370 280 C370 380 256 450 256 450 C256 450 142 380 142 280 L142 120 Z"
+            fill="url(#breCarbon)"
+            stroke="url(#breGold)"
+            strokeWidth="16"
           />
           <path
-            d="M214 100 L320 100 C370 100 404 130 404 180 C404 230 370 256 320 256 L214 256 Z"
-            fill="url(#breGold)"
-          />
-          <path
-            d="M214 256 L330 256 C384 256 420 286 420 336 C420 386 384 412 330 412 L214 412 Z"
+            d="M200 170 L265 170 C290 170 305 182 305 205 C305 224 290 236 265 240 C295 244 312 258 312 282 C312 308 290 322 265 322 L200 322 Z"
             fill="url(#breGold)"
           />
         </svg>

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { ArrowRightIcon, ArrowUpIcon } from './AdminIcons';
+import BrandLogo from './BrandLogo';
 
 export default function Footer() {
   const [showTopBtn, setShowTopBtn] = useState(false);
@@ -25,7 +26,10 @@ export default function Footer() {
         <div className="container footer-shell">
           <div className="footer-main">
             <div className="footer-brand-column">
-              <div className="footer-brand">Bin Rasool Enterprises</div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
+                <BrandLogo size={36} />
+                <div className="footer-brand" style={{ margin: 0 }}>Bin Rasool Enterprises</div>
+              </div>
               <p className="footer-copy">
                 Private label activewear, fitness wear, sportswear, and gym apparel manufacturing from Sialkot, Pakistan for startup brands and established international buyers.
               </p>

@@ -100,7 +100,7 @@ function InvoiceContent() {
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: '2px solid #0f172a', paddingBottom: '24px', marginBottom: '28px' }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
-              <img src="/images/site/1776250498_logo.webp" alt="Bin Rasool Enterprises" style={{ height: '48px', width: 'auto' }} />
+              <img src="/images/site/bre-brand-mark.webp" alt="Bin Rasool Enterprises" style={{ height: '48px', width: 'auto', objectFit: 'contain' }} />
               <div>
                 <h1 style={{ fontSize: '22px', fontWeight: 900, margin: 0, color: '#0f172a', letterSpacing: '0.02em' }}>
                   Bin Rasool Enterprises
