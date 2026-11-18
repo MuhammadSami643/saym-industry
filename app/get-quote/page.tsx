@@ -207,7 +207,7 @@ Client Notes: ${notes || 'No extra notes'}
 
   return (
     <div style={{ background: '#f8fafc', minHeight: '100vh', padding: '40px 16px 80px' }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+      <div style={{ maxWidth: '1360px', margin: '0 auto' }}>
         {/* Breadcrumb & Header */}
         <div style={{ textAlign: 'center', marginBottom: '36px' }}>
           <div style={{ display: 'inline-block', background: 'rgba(243,166,38,0.12)', color: 'var(--brand-orange-dark, #c57608)', padding: '6px 16px', borderRadius: '999px', fontSize: '13px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '12px' }}>

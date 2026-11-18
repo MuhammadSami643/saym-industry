@@ -117,7 +117,7 @@ export default function FactoryVirtualTour() {
       {/* Decorative background glow */}
       <div style={{ position: 'absolute', top: '-120px', left: '50%', transform: 'translateX(-50%)', width: '800px', height: '350px', background: 'radial-gradient(ellipse at center, rgba(243,166,38,0.12), transparent 70%)', pointerEvents: 'none' }} />
 
-      <div style={{ maxWidth: '1240px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+      <div style={{ maxWidth: '1360px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '44px' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(243,166,38,0.15)', border: '1px solid rgba(243,166,38,0.4)', color: 'var(--brand-orange, #f3a626)', padding: '6px 16px', borderRadius: '999px', fontSize: '12px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '16px' }}>
