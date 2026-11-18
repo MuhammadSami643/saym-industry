@@ -123,23 +123,18 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <div
+            <img
+              src="/images/site/bre-logo-icon.webp"
+              alt="BRE Logo"
               style={{
                 width: '32px',
                 height: '32px',
                 borderRadius: '8px',
-                background: '#00e599',
-                color: '#05140d',
-                display: 'grid',
-                placeItems: 'center',
-                fontWeight: 900,
-                fontSize: '11px',
-                letterSpacing: '0.04em',
-                boxShadow: '0 0 14px rgba(0, 229, 153, 0.5)',
+                objectFit: 'cover',
+                boxShadow: '0 0 14px rgba(0, 229, 153, 0.4)',
+                border: '1px solid rgba(0, 229, 153, 0.3)',
               }}
-            >
-              BRE
-            </div>
+            />
             <div style={{ minWidth: 0, flex: 1 }}>
               <div style={{ fontSize: '14px', fontWeight: 800, color: '#fff', letterSpacing: '-0.01em', lineHeight: 1.2 }}>
                 Bin Rasool

@@ -158,19 +158,20 @@ export default function AdminLogin() {
         <div style={{ textAlign: 'center', marginBottom: '28px' }}>
           <div
             style={{
-              width: '60px',
-              height: '60px',
-              borderRadius: '14px',
-              background: '#0d1316',
-              border: '1px solid rgba(0, 229, 153, 0.3)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
+              width: '64px',
+              height: '64px',
+              borderRadius: '16px',
+              overflow: 'hidden',
               margin: '0 auto 16px',
-              boxShadow: '0 0 20px rgba(0, 229, 153, 0.15)',
+              boxShadow: '0 0 24px rgba(0, 229, 153, 0.3)',
+              border: '1px solid rgba(0, 229, 153, 0.4)',
             }}
           >
-            <span style={{ fontSize: '24px', fontWeight: 900, color: '#00e599' }}>BRE</span>
+            <img
+              src="/images/site/bre-logo-icon.webp"
+              alt="Bin Rasool Enterprises Emblem"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+            />
           </div>
 
           <div

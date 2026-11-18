@@ -84,9 +84,17 @@ export default function Navbar() {
               }}
             >
               <img
-                src="/images/site/1776250498_logo.webp"
+                src="/images/site/bre-logo-icon.webp"
                 alt="Bin Rasool Enterprises Logo"
-                style={{ height: '42px', width: 'auto', display: 'block' }}
+                style={{
+                  height: '42px',
+                  width: '42px',
+                  borderRadius: '10px',
+                  objectFit: 'cover',
+                  display: 'block',
+                  boxShadow: '0 0 12px rgba(0, 229, 153, 0.25)',
+                  border: '1px solid rgba(0, 229, 153, 0.25)',
+                }}
               />
               <div style={{ lineHeight: 1.15 }}>
                 <div className="nav-brand-title">Bin Rasool Enterprises</div>
