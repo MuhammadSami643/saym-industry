@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import HeroSlider from './components/HeroSlider';
 import FaqSection from './components/FaqSection';
-import FactoryVirtualTour from './components/FactoryVirtualTour';
 
 export default function Home() {
   return (
@@ -342,9 +341,6 @@ export default function Home() {
             </div>
         </div>
     </section>
-
-    {/* Interactive Live Factory Virtual Tour */}
-    <FactoryVirtualTour />
 
     <section className="section" style={{ 'background': 'var(--bg-light)' }}>
         <div className="container">

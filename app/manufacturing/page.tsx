@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import FactoryVirtualTour from '../components/FactoryVirtualTour';
 import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd';
 import FaqSection from '../components/FaqSection';
 import type { Metadata } from 'next';
@@ -156,9 +155,6 @@ export default function ManufacturingPage() {
         </div>
     </div>
 </section>
-
-{/* Interactive Live Factory Floor Virtual Tour */}
-<FactoryVirtualTour />
 
 <section className="section" style={{ 'background': 'var(--bg-light)' }}>
     <div className="container content">
