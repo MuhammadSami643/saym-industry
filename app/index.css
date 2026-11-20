@@ -2210,20 +2210,371 @@ a.trust-card:hover {
 
 /* Flow Connector Arrows */
 .mfg-flow-arrow {
-  position: absolute;
-  right: -16px;
-  top: 96px;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: var(--brand-orange, #f97316);
+  display: none;
+}
+
+/* ==========================================================================
+   Manufacturing Page Enhanced Design
+   ========================================================================== */
+
+/* Hero */
+.manufacturing-hero {
+  position: relative;
+  background: #090d16;
   color: #ffffff;
+  padding: 72px 0 64px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.manufacturing-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(243, 166, 38, 0.12), transparent 50%),
+              radial-gradient(circle at 10% 80%, rgba(56, 189, 248, 0.08), transparent 40%);
+  pointer-events: none;
+}
+
+.manufacturing-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.manufacturing-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.85fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.manufacturing-hero h1 {
+  font-size: clamp(2rem, 3.8vw, 3.1rem);
+  font-weight: 900;
+  line-height: 1.15;
+  color: #ffffff;
+  margin: 18px 0 16px;
+  letter-spacing: -0.02em;
+}
+
+.manufacturing-hero p {
+  color: #cbd5e1;
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 680px;
+  margin: 0;
+}
+
+.manufacturing-proof-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 28px 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+}
+
+.manufacturing-proof-box h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 16px;
+}
+
+.mfg-hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.mfg-metric-pill {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 14px 14px;
+}
+
+.mfg-metric-val {
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--brand-orange, #f3a626);
+  line-height: 1.1;
+}
+
+.mfg-metric-lbl {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 4px;
+}
+
+/* Manufacturing Intro */
+.manufacturing-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: 48px;
+  align-items: start;
+}
+
+.manufacturing-intro h2 {
+  font-size: clamp(1.8rem, 2.6vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.25;
+  margin: 12px 0 0;
+}
+
+.manufacturing-note {
+  background: #ffffff;
+  border-left: 4px solid var(--brand-orange, #f3a626);
+  border-radius: 0 12px 12px 0;
+  padding: 24px 28px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-left-width: 4px;
+}
+
+/* Workflow Step Cards (Refined Header Flow Pipeline) */
+.mfg-flow-step-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #e2e8f0;
+}
+
+.mfg-flow-phase {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-orange-dark, #c57608);
+  background: rgba(243, 166, 38, 0.12);
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.mfg-flow-line-connector {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.mfg-flow-line {
+  display: inline-block;
+  width: 44px;
+  height: 2px;
+  background: #cbd5e1;
+}
+
+.mfg-flow-chevron {
+  color: var(--brand-orange, #f3a626);
+  font-size: 14px;
+}
+
+.mfg-flow-done-tag {
+  color: #16a34a;
+  font-size: 11px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Production Capabilities Grid */
+.capability-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.capability-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 28px 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+}
+
+.capability-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(243, 166, 38, 0.12);
+  color: var(--brand-orange-dark, #c57608);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.45);
-  border: 2px solid #ffffff;
-  z-index: 10;
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+
+.capability-card h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 10px;
+}
+
+.capability-card p {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Categories We Manufacture */
+.category-manufacturing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.category-mfg-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+.category-mfg-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background: #0f172a;
+  display: block;
+}
+
+.category-mfg-body {
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.category-mfg-body h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 8px;
+}
+
+.category-mfg-body p {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0 0 16px;
+  flex: 1;
+}
+
+.category-mfg-link {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--brand-orange-dark, #c57608);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* QA & Compliance Bento Grid */
+.qa-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 36px;
+}
+
+.qa-bento-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.qa-bento-card.highlight {
+  grid-column: span 2;
+  background: #0f172a;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.qa-bento-card.highlight h3 {
+  color: #ffffff;
+}
+
+.qa-bento-card.highlight p {
+  color: #cbd5e1;
+}
+
+.qa-bento-badge {
+  display: inline-flex;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  background: rgba(243, 166, 38, 0.14);
+  color: var(--brand-orange, #f3a626);
+}
+
+.qa-bento-card h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 8px;
+}
+
+.qa-bento-card p {
+  font-size: 13.5px;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .manufacturing-hero-grid,
+  .manufacturing-intro {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .capability-grid,
+  .category-manufacturing-grid,
+  .qa-bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .qa-bento-card.highlight {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .capability-grid,
+  .category-manufacturing-grid,
+  .qa-bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .qa-bento-card.highlight {
+    grid-column: span 1;
+  }
+  .manufacturing-cta-box {
+    padding: 32px 24px;
+  }
 }
 
 .mfg-flow-arrow-down {

@@ -4,355 +4,416 @@ import FaqSection from '../components/FaqSection';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Manufacturing Capabilities & Process | Bin Rasool Enterprises Pakistan",
-  description: "Explore Bin Rasool Enterprises's activewear manufacturing capabilities in Sialkot, Pakistan. Technical fabric sourcing, pattern making, cutting, stitching, printing, embroidery, QC and worldwide export.",
-  alternates: {
-    canonical: '/manufacturing',
-  },
-  openGraph: {
-    title: "Apparel Factory Capabilities Sialkot | Bin Rasool Enterprises",
-    description: "60,000+ pcs monthly apparel production, AQL 2.5 quality control, 4-needle flatlock stitching and custom private label packaging.",
-    url: "/manufacturing",
-    images: [{ url: "/images/site/1776603661_home-hero-slider-image-1.webp", width: 1200, height: 630 }],
-  },
+    title: "Manufacturing Capabilities & Process | Bin Rasool Enterprises Pakistan",
+    description: "Explore Bin Rasool Enterprises's activewear manufacturing capabilities in Sialkot, Pakistan. Technical fabric sourcing, pattern making, cutting, stitching, printing, embroidery, QC and worldwide export.",
+    alternates: {
+        canonical: '/manufacturing',
+    },
+    openGraph: {
+        title: "Apparel Factory Capabilities Sialkot | Bin Rasool Enterprises",
+        description: "60,000+ pcs monthly apparel production, AQL 2.5 quality control, 4-needle flatlock stitching and custom private label packaging.",
+        url: "/manufacturing",
+        images: [{ url: "/images/site/1776603661_home-hero-slider-image-1.webp", width: 1200, height: 630 }],
+    },
 };
 
 const manufacturingSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  serviceType: "Custom Apparel & Activewear OEM/ODM Manufacturing",
-  provider: {
-    "@type": "ManufacturingBusiness",
-    name: "Bin Rasool Enterprises",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Sialkot",
-      addressRegion: "Punjab",
-      addressCountry: "PK",
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Custom Apparel & Activewear OEM/ODM Manufacturing",
+    provider: {
+        "@type": "ManufacturingBusiness",
+        name: "Bin Rasool Enterprises",
+        address: {
+            "@type": "PostalAddress",
+            addressLocality: "Sialkot",
+            addressRegion: "Punjab",
+            addressCountry: "PK",
+        },
+        telephone: "+923376793383",
     },
-    telephone: "+923376793383",
-  },
-  areaServed: ["United States", "United Kingdom", "Canada", "Australia", "European Union"],
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Factory Apparel Manufacturing Capabilities",
-    itemListElement: [
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Pattern Drafting & Pre-Production Sampling",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Cut & Sew Activewear Assembly (Flatlock / Overlock)",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Screen Printing, 3D Puff Print & Sublimation",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Multi-Head Computerized Embroidery",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "AQL 2.5 Quality Inspection & Export Packing",
-        },
-      },
-    ],
-  },
+    areaServed: ["United States", "United Kingdom", "Canada", "Australia", "European Union"],
+    hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Factory Apparel Manufacturing Capabilities",
+        itemListElement: [
+            {
+                "@type": "Offer",
+                itemOffered: {
+                    "@type": "Service",
+                    name: "Pattern Drafting & Pre-Production Sampling",
+                },
+            },
+            {
+                "@type": "Offer",
+                itemOffered: {
+                    "@type": "Service",
+                    name: "Cut & Sew Activewear Assembly (Flatlock / Overlock)",
+                },
+            },
+            {
+                "@type": "Offer",
+                itemOffered: {
+                    "@type": "Service",
+                    name: "Screen Printing, 3D Puff Print & Sublimation",
+                },
+            },
+            {
+                "@type": "Offer",
+                itemOffered: {
+                    "@type": "Service",
+                    name: "Multi-Head Computerized Embroidery",
+                },
+            },
+            {
+                "@type": "Offer",
+                itemOffered: {
+                    "@type": "Service",
+                    name: "AQL 2.5 Quality Inspection & Export Packing",
+                },
+            },
+        ],
+    },
 };
 
 const MANUFACTURING_FAQS = [
-  {
-    question: "What manufacturing capabilities does Bin Rasool Enterprises operate in-house?",
-    answer: "We operate dedicated production lines for CAD grading, automated fabric cutting, 4-needle 6-thread flatlock stitching, multi-head Tajima embroidery, screen printing, heat transfers, and AQL 2.5 quality control."
-  },
-  {
-    question: "What is your sample lead time before authorizing bulk production?",
-    answer: "Proto samples are completed within 7 to 10 business days upon receiving your tech pack or reference sample. We ship samples globally via DHL Express (4-5 days delivery)."
-  },
-  {
-    question: "What are your minimum order quantities (MOQs) for custom manufacturing?",
-    answer: "Our standard MOQ starts from 50 pieces per style/colorway across standard size ranges (XS–3XL). For custom-knitted or mill-dyed fabrics, MOQs align with fabric batch requirements."
-  },
-  {
-    question: "How do you ensure export quality control (AQL 2.5)?",
-    answer: "Every production batch undergoes raw fabric inspection (GSM & shrinkage testing), in-line seam tensile testing, 100% garment measurement audit against grading sheets, and needle-detector safety scanning."
-  },
-  {
-    question: "What Incoterms and global freight options do you support?",
-    answer: "We support FOB Karachi, CIF, and door-to-door DDP air freight via DHL/FedEx for urgent collections, as well as consolidated ocean container freight for bulk wholesale shipments."
-  }
+    {
+        question: "What manufacturing capabilities does Bin Rasool Enterprises operate in-house?",
+        answer: "We operate dedicated production lines for CAD grading, automated fabric cutting, 4-needle 6-thread flatlock stitching, multi-head Tajima embroidery, screen printing, heat transfers, and AQL 2.5 quality control."
+    },
+    {
+        question: "What is your sample lead time before authorizing bulk production?",
+        answer: "Proto samples are completed within 7 to 10 business days upon receiving your tech pack or reference sample. We ship samples globally via DHL Express (4-5 days delivery)."
+    },
+    {
+        question: "What are your minimum order quantities (MOQs) for custom manufacturing?",
+        answer: "Our standard MOQ starts from 50 pieces per style/colorway across standard size ranges (XS–3XL). For custom-knitted or mill-dyed fabrics, MOQs align with fabric batch requirements."
+    },
+    {
+        question: "How do you ensure export quality control (AQL 2.5)?",
+        answer: "Every production batch undergoes raw fabric inspection (GSM & shrinkage testing), in-line seam tensile testing, 100% garment measurement audit against grading sheets, and needle-detector safety scanning."
+    },
+    {
+        question: "What Incoterms and global freight options do you support?",
+        answer: "We support FOB Karachi, CIF, and door-to-door DDP air freight via DHL/FedEx for urgent collections, as well as consolidated ocean container freight for bulk wholesale shipments."
+    }
 ];
 
 export default function ManufacturingPage() {
-  return (
-    <div className="manufacturing-page">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(manufacturingSchema) }}
-      />
-      <main style={{ 'minHeight': '60vh' }}>
-        
+    return (
+        <div className="manufacturing-page">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(manufacturingSchema) }}
+            />
+            <main style={{ 'minHeight': '60vh' }}>
 
 
-<section className="manufacturing-hero">
-    <div className="container">
-        <BreadcrumbJsonLd
-          items={[
-            { label: 'Home', href: '/' },
-            { label: 'Manufacturing Capabilities' },
-          ]}
-        />
 
-        <div className="manufacturing-hero-grid">
-            <div>
-                <div className="eyebrow"
-                style={{ 'display': 'inline-flex', 'alignItems': 'center', 'padding': '4px 14px', 'borderRadius': '999px', 'background': 'rgba(243, 166, 38, 0.14)', 'color': 'var(--brand-orange-dark, #c57608)', 'border': '1px solid rgba(243, 166, 38, 0.3)', 'letterSpacing': '0.06em', 'fontSize': '11px', 'fontWeight': 800 }}>
-                DIRECT FACTORY PRODUCTION &nbsp;&bull;&nbsp; SIALKOT, PAKISTAN</div>
-                <h1>Manufacturing Capabilities for Private Label Sportswear, Fitness Wear & Boxing Wear</h1>
-                <p>
-                    Bin Rasool Enterprises supports buyers who need custom apparel manufacturing from Pakistan with clear product development, sampling, private label branding, quality control and export-ready packing. Our process is built for sportswear brands, fitness labels, boxing gyms, clubs, wholesalers and online sellers.
-                </p>
-            </div>
-            <div className="manufacturing-proof">
-                <strong>From sample to bulk production</strong>
-                <span>Structured support for custom apparel collections, teamwear, activewear, gym wear and combat sports clothing.</span>
-            </div>
-        </div>
-    </div>
-</section>
+                <section className="manufacturing-hero">
+                    <div className="container">
+                        <BreadcrumbJsonLd
+                            items={[
+                                { label: 'Home', href: '/' },
+                                { label: 'Manufacturing Capabilities' },
+                            ]}
+                        />
 
-<section className="section">
-    <div className="container content">
-        <div className="manufacturing-intro">
-            <div>
-                <span className="section-label">Manufacturing Approach</span>
-                <h2>Built for buyers searching for a reliable apparel manufacturer in Pakistan</h2>
-            </div>
-            <div className="manufacturing-note">
-                <p className="muted">
-                    A strong manufacturing process gives buyers confidence before they place an order. At Bin Rasool Enterprises, we focus on the details that matter in private label sportswear production: fabric selection, pattern direction, sample approval, stitching quality, branding placement, sizing consistency, finishing, packing and export communication.
-                </p>
-                <p className="muted">
-                    Whether you are sourcing gym wear, custom jerseys, tracksuits, boxing shorts, rash guards, team uniforms, activewear sets, or wholesale apparel, our process helps move your idea toward a production-ready collection.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section className="section" style={{ 'background': 'var(--bg-light)' }}>
-    <div className="container content">
-        <span className="section-label">Step-by-Step Workflow</span>
-        <h2>Private label apparel manufacturing process</h2>
-        <p className="muted" style={{ 'maxWidth': '850px' }}>
-            The workflow below shows how Bin Rasool Enterprises handles custom sportswear, fitness wear, boxing wear and teamwear manufacturing from first discussion to packed goods. This structure helps buyers understand what happens before bulk production starts and how quality is controlled during the order.
-        </p>
-
-        <div className="mfg-workflow-grid">
-            <article className="mfg-workflow-card">
-                <div className="mfg-workflow-media">
-                    <img src="/images/site/1776612585_manufacturing-designing-image.webp" alt="Requirement Review & Design Direction for sportswear manufacturing" />
-                </div>
-                <div className="mfg-workflow-body">
-                    <h3>Requirement Review & Design Direction</h3>
-                    <p className="muted">We review your reference samples, tech pack, target price, fabric direction, size range, branding needs and order quantity before recommending the right manufacturing path.</p>
-                </div>
-                <div className="mfg-flow-arrow" aria-hidden="true" title="Next: Pattern & Cutting Preparation">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                </div>
-            </article>
-
-            <article className="mfg-workflow-card">
-                <div className="mfg-workflow-media">
-                    <img src="/images/site/1776612585_manufacturing-cutting-image.webp" alt="Pattern, Fabric & Cutting Preparation for sportswear manufacturing" />
-                </div>
-                <div className="mfg-workflow-body">
-                    <h3>Pattern, Fabric & Cutting Preparation</h3>
-                    <p className="muted">Patterns, measurements, fabric behavior, panels, trims and cutting plans are prepared to support consistent sizing and production repeatability.</p>
-                </div>
-                <div className="mfg-flow-arrow" aria-hidden="true" title="Next: Stitching & Construction">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                </div>
-            </article>
-
-            <article className="mfg-workflow-card">
-                <div className="mfg-workflow-media">
-                    <img src="/images/site/1776612585_manufacturing-stitching-image.webp" alt="Stitching & Garment Construction for sportswear manufacturing" />
-                </div>
-                <div className="mfg-workflow-body">
-                    <h3>Stitching & Garment Construction</h3>
-                    <p className="muted">Garments move through stitching with attention to seam strength, fit, stretch points, finishing details and category-specific construction requirements.</p>
-                </div>
-                <div className="mfg-flow-arrow mfg-flow-arrow-down" aria-hidden="true" title="Next: Inline Quality Review">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <line x1="12" y1="5" x2="12" y2="19"></line>
-                        <polyline points="19 12 12 19 5 12"></polyline>
-                    </svg>
-                </div>
-            </article>
-
-            <article className="mfg-workflow-card">
-                <div className="mfg-workflow-media">
-                    <img src="/images/site/1776612585_manufacturing-checking-image.webp" alt="Inline Checking & Quality Review for sportswear manufacturing" />
-                </div>
-                <div className="mfg-workflow-body">
-                    <h3>Inline Checking & Quality Review</h3>
-                    <p className="muted">Production pieces are checked for stitching, measurements, labels, print placement, embroidery, trims, sizing and overall export presentation.</p>
-                </div>
-                <div className="mfg-flow-arrow" aria-hidden="true" title="Next: Finishing & Export Readiness">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                </div>
-            </article>
-
-            <article className="mfg-workflow-card">
-                <div className="mfg-workflow-media">
-                    <img src="/images/site/1776612585_manufacturing-packing-image.webp" alt="Finishing, Packing & Export Readiness for sportswear manufacturing" />
-                </div>
-                <div className="mfg-workflow-body">
-                    <h3>Finishing, Packing & Export Readiness</h3>
-                    <p className="muted">Products are cleaned, folded, tagged, packed, carton-marked and prepared for dispatch with a buyer-focused presentation.</p>
-                </div>
-                <div className="mfg-flow-arrow mfg-flow-arrow-done" aria-hidden="true" title="Final Export Readiness">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                </div>
-            </article>
-        </div>
-    </div>
-</section>
-
-<section className="section">
-    <div className="container content">
-        <span className="section-label">Production Capabilities</span>
-        <h2>What Bin Rasool Enterprises can support for your apparel brand</h2>
-        <p className="muted" style={{ 'maxWidth': '850px' }}>
-            Buyers searching for a sportswear manufacturer in Sialkot often need more than stitching. They need a supplier who can discuss fabrics, branding, samples, sizing, packaging and repeat orders with a B2B mindset.
-        </p>
-
-        <div className="capability-grid">
-                            <article className="capability-card">
-                    <h3>Private Label Manufacturing</h3>
-                    <p className="muted">Custom neck labels, woven labels, hang tags, packaging, brand placement, logo application and product presentation for startup and established brands.</p>
-                </article>
-                            <article className="capability-card">
-                    <h3>Fabric & Material Options</h3>
-                    <p className="muted">Fleece, interlock, mesh, dry-fit, polyester blends, cotton blends, spandex blends, satin, compression fabrics and category-specific performance materials.</p>
-                </article>
-                            <article className="capability-card">
-                    <h3>Customization Methods</h3>
-                    <p className="muted">Embroidery, screen printing, heat transfer, sublimation, custom panels, contrast stitching, team names, player numbers and club branding.</p>
-                </article>
-                            <article className="capability-card">
-                    <h3>Flexible MOQ Support</h3>
-                    <p className="muted">MOQ options for startup brands, gyms, boxing clubs, online sellers, wholesalers and buyers testing a new private label collection.</p>
-                </article>
-                            <article className="capability-card">
-                    <h3>B2B Communication</h3>
-                    <p className="muted">Clear discussion around samples, production timing, branding needs, packing requirements and export order expectations.</p>
-                </article>
-                            <article className="capability-card">
-                    <h3>Category-Focused Production</h3>
-                    <p className="muted">Manufacturing support for fitness wear, sportswear, boxing wear, activewear, team uniforms, rash guards, fight wear and gym apparel.</p>
-                </article>
+                        <div className="manufacturing-hero-grid">
+                            <div>
+                                <div className="eyebrow"
+                                    style={{ 'display': 'inline-flex', 'alignItems': 'center', 'padding': '5px 14px', 'borderRadius': '999px', 'background': 'rgba(243, 166, 38, 0.12)', 'color': 'var(--brand-orange, #f3a626)', 'border': '1px solid rgba(243, 166, 38, 0.3)', 'letterSpacing': '0.06em', 'fontSize': '11px', 'fontWeight': 800 }}>
+                                    ● DIRECT SIALKOT FACTORY PRODUCTION</div>
+                                <h1>Precision Apparel Manufacturing &amp; Private Label Export</h1>
+                                <p>
+                                    Bin Rasool Enterprises delivers end-to-end custom apparel manufacturing for sports brands, activewear startups, fitness labels, and combat sports distributors across the USA, UK, Europe, and Australia.
+                                </p>
+                            </div>
+                            <div className="manufacturing-proof-box">
+                                <h3>Industrial Sourcing Metrics</h3>
+                                <div className="mfg-hero-metrics">
+                                    <div className="mfg-metric-pill">
+                                        <div className="mfg-metric-val">60K+ Pcs</div>
+                                        <div className="mfg-metric-lbl">Monthly Apparel Capacity</div>
+                                    </div>
+                                    <div className="mfg-metric-pill">
+                                        <div className="mfg-metric-val">AQL 2.5</div>
+                                        <div className="mfg-metric-lbl">Strict Pre-Shipment Audit</div>
+                                    </div>
+                                    <div className="mfg-metric-pill">
+                                        <div className="mfg-metric-val">7-10 Days</div>
+                                        <div className="mfg-metric-lbl">Proto Sample Lead Time</div>
+                                    </div>
+                                    <div className="mfg-metric-pill">
+                                        <div className="mfg-metric-val">DDP / FOB</div>
+                                        <div className="mfg-metric-lbl">Express Air &amp; Sea Cargo</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-    </div>
-</section>
+                </section>
 
-<section className="section" style={{ 'background': 'var(--bg-light)' }}>
-    <div className="container content">
-        <span className="section-label">Categories We Manufacture</span>
-        <h2>Focused manufacturing for fitness, sports and boxing apparel</h2>
-        <p className="muted" style={{ 'maxWidth': '850px' }}>
-            Bin Rasool Enterprises keeps its manufacturing direction focused so international buyers can quickly understand what we make and where we can add value.
-        </p>
+                <section className="section">
+                    <div className="container content">
+                        <div className="manufacturing-intro">
+                            <div>
+                                <span className="section-label">Manufacturing Approach</span>
+                                <h2>Built for international buyers searching for a dependable factory partner in Pakistan</h2>
+                            </div>
+                            <div className="manufacturing-note">
+                                <p className="muted" style={{ margin: '0 0 14px' }}>
+                                    A reliable manufacturing process gives brand owners total confidence before bulk cutting begins. At Bin Rasool Enterprises, we control every critical phase in-house: digital pattern grading, fabric relaxation, seam tension testing, Pantone-matched branding, and strict pre-shipment measurement audits.
+                                </p>
+                                <p className="muted" style={{ margin: 0 }}>
+                                    Whether you are sourcing seamless gym sets, custom team tracksuits, boxing shorts, sublimated rash guards, or luxury heavyweight hoodies, our technical workflow ensures consistent sizing and export-grade repeatability.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-        <div className="category-manufacturing">
-            <a href="/fitness-wear-manufacturer">
-                <h3>Fitness Wear Manufacturing</h3>
-                <p className="muted">Joggers, hoodies, leggings, activewear sets, compression wear, dry-fit gym t-shirts and private label gym clothing.</p>
-                <span className="card-action">View Fitness Wear</span>
-            </a>
-            <a href="/sportswear-manufacturer-exporter">
-                <h3>Sportswear Manufacturing</h3>
-                <p className="muted">Soccer jerseys, basketball uniforms, tracksuits, training wear, team uniforms and sublimation sports apparel.</p>
-                <span className="card-action">View Sports Wear</span>
-            </a>
-            <a href="/boxing-gear-manufacturer-bulk">
-                <h3>Boxing Wear Manufacturing</h3>
-                <p className="muted">Boxing shorts, training shirts, rash guards, fight wear, gym tops and custom combat sports clothing.</p>
-                <span className="card-action">View Boxing Wear</span>
-            </a>
+                <section className="section" style={{ 'background': 'var(--bg-light)' }}>
+                    <div className="container content">
+                        <span className="section-label">Step-by-Step Production Pipeline</span>
+                        <h2>Private label apparel manufacturing process</h2>
+                        <p className="muted" style={{ 'maxWidth': '850px' }}>
+                            The workflow below shows how Bin Rasool Enterprises manages orders from first tech pack review to final packaged export cartons. This structured pipeline guarantees transparency and quality verification at every milestone.
+                        </p>
+
+                        <div className="mfg-workflow-grid">
+                            <article className="mfg-workflow-card">
+                                <div className="mfg-workflow-media">
+                                    <img src="/images/site/1776612585_manufacturing-designing-image.webp" alt="Requirement Review & Design Direction for sportswear manufacturing" />
+                                </div>
+                                <div className="mfg-workflow-body">
+                                    <div className="mfg-flow-step-bar">
+                                        <span className="mfg-flow-phase">Phase 01</span>
+                                        <div className="mfg-flow-line-connector">
+                                            <span className="mfg-flow-line"></span>
+                                            <span className="mfg-flow-chevron">➔</span>
+                                        </div>
+                                    </div>
+                                    <h3>Requirement Review &amp; Design Direction</h3>
+                                    <p className="muted">We review your reference samples, tech packs, target price points, fabric blends, size grading, and custom branding needs before recommending the optimal production path.</p>
+                                </div>
+                            </article>
+
+                            <article className="mfg-workflow-card">
+                                <div className="mfg-workflow-media">
+                                    <img src="/images/site/1776612585_manufacturing-cutting-image.webp" alt="Pattern, Fabric & Cutting Preparation for sportswear manufacturing" />
+                                </div>
+                                <div className="mfg-workflow-body">
+                                    <div className="mfg-flow-step-bar">
+                                        <span className="mfg-flow-phase">Phase 02</span>
+                                        <div className="mfg-flow-line-connector">
+                                            <span className="mfg-flow-line"></span>
+                                            <span className="mfg-flow-chevron">➔</span>
+                                        </div>
+                                    </div>
+                                    <h3>Pattern, Fabric &amp; Cutting Preparation</h3>
+                                    <p className="muted">Digital CAD pattern plotting, fabric tension relaxation, GSM verification, and laser knife spreading are prepared to ensure exact sizing repeatability across all sizes.</p>
+                                </div>
+                            </article>
+
+                            <article className="mfg-workflow-card">
+                                <div className="mfg-workflow-media">
+                                    <img src="/images/site/1776612585_manufacturing-stitching-image.webp" alt="Stitching & Garment Construction for sportswear manufacturing" />
+                                </div>
+                                <div className="mfg-workflow-body">
+                                    <div className="mfg-flow-step-bar">
+                                        <span className="mfg-flow-phase">Phase 03</span>
+                                        <div className="mfg-flow-line-connector">
+                                            <span className="mfg-flow-line" style={{ width: '28px' }}></span>
+                                            <span className="mfg-flow-chevron" title="Continues to Phase 04">↳</span>
+                                        </div>
+                                    </div>
+                                    <h3>Stitching &amp; Garment Construction</h3>
+                                    <p className="muted">Garments move through dedicated stitching cells utilizing 4-needle 6-thread flatlock, high-torque overlock, and twin-needle coverstitch calibrated for heavy fleece and stretch performance textiles.</p>
+                                </div>
+                            </article>
+
+                            <article className="mfg-workflow-card">
+                                <div className="mfg-workflow-media">
+                                    <img src="/images/site/1776612585_manufacturing-checking-image.webp" alt="Inline Checking & Quality Review for sportswear manufacturing" />
+                                </div>
+                                <div className="mfg-workflow-body">
+                                    <div className="mfg-flow-step-bar">
+                                        <span className="mfg-flow-phase">Phase 04</span>
+                                        <div className="mfg-flow-line-connector">
+                                            <span className="mfg-flow-line"></span>
+                                            <span className="mfg-flow-chevron">➔</span>
+                                        </div>
+                                    </div>
+                                    <h3>Inline Checking &amp; Quality Review</h3>
+                                    <p className="muted">Every batch is audited under AQL 2.5 standards for seam burst strength, grading tolerance adherence (±0.5 cm), thread trimming, print fastness, and 100% metal detector safety scanning.</p>
+                                </div>
+                            </article>
+
+                            <article className="mfg-workflow-card">
+                                <div className="mfg-workflow-media">
+                                    <img src="/images/site/1776612585_manufacturing-packing-image.webp" alt="Finishing, Packing & Export Readiness for sportswear manufacturing" />
+                                </div>
+                                <div className="mfg-workflow-body">
+                                    <div className="mfg-flow-step-bar">
+                                        <span className="mfg-flow-phase">Phase 05</span>
+                                        <span className="mfg-flow-done-tag">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            Export Ready
+                                        </span>
+                                    </div>
+                                    <h3>Finishing, Packing &amp; Export Readiness</h3>
+                                    <p className="muted">Garments are steam ironed, tagged with woven labels and barcode hangtags, packed in branded frosted polybags, and palletized in double-wall master cartons for worldwide dispatch.</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="section">
+                    <div className="container content">
+                        <span className="section-label">Production Capabilities</span>
+                        <h2>What Bin Rasool Enterprises can support for your apparel brand</h2>
+                        <p className="muted" style={{ 'maxWidth': '850px' }}>
+                            International buyers need more than basic sewing lines. They require an authentic manufacturer with comprehensive supply chain knowledge, premium fabric access, and direct export execution.
+                        </p>
+
+                        <div className="capability-grid">
+                            <article className="capability-card">
+                                <div className="capability-card-icon">🏷️</div>
+                                <h3>Private Label Packaging</h3>
+                                <p>Custom woven damask neck labels, soft satin care labels, debossed hangtags, branded frosted zipper polybags, and retail-ready barcode stickers.</p>
+                            </article>
+                            <article className="capability-card">
+                                <div className="capability-card-icon">🧵</div>
+                                <h3>Technical Fabrics &amp; Materials</h3>
+                                <p>High-stretch nylon-spandex, squat-proof interlock, heavyweight French terry, loopback fleece, anti-microbial mesh, and quick-dry dry-fit polyester.</p>
+                            </article>
+                            <article className="capability-card">
+                                <div className="capability-card-icon">🎨</div>
+                                <h3>Advanced Custom Branding</h3>
+                                <p>High-density 3D puff screen printing, matte silicone heat transfers, multi-head Tajima embroidery, discharge printing, and full-coverage dye sublimation.</p>
+                            </article>
+                            <article className="capability-card">
+                                <div className="capability-card-icon">📦</div>
+                                <h3>Low &amp; Flexible MOQs</h3>
+                                <p>Accessible minimum order quantities starting from 50 pieces per colorway, designed to help emerging fitness labels and gyms launch without inventory bloat.</p>
+                            </article>
+                            <article className="capability-card">
+                                <div className="capability-card-icon">🤝</div>
+                                <h3>Direct B2B Communication</h3>
+                                <p>Dedicated merchandising manager providing real-time production video updates, tech pack feedback, digital size grading charts, and sample approvals.</p>
+                            </article>
+                            <article className="capability-card">
+                                <div className="capability-card-icon">🥋</div>
+                                <h3>Specialized Category Pods</h3>
+                                <p>Independent production cells configured specifically for activewear &amp; leggings, teamwear uniforms, heavy streetwear hoodies, and combat sports fightwear.</p>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="section" style={{ 'background': 'var(--bg-light)' }}>
+                    <div className="container content">
+                        <span className="section-label">Categories We Manufacture</span>
+                        <h2>Specialized manufacturing for fitness, teamwear &amp; combat sports</h2>
+                        <p className="muted" style={{ 'maxWidth': '850px' }}>
+                            Explore our dedicated production lines tailored to international apparel specifications:
+                        </p>
+
+                        <div className="category-manufacturing-grid">
+                            <Link href="/fitness-wear-manufacturer" className="category-mfg-card">
+                                <img src="/images/categories/1776540259_fitness-wear.webp" alt="Fitness Wear Manufacturing Sialkot" className="category-mfg-img" />
+                                <div className="category-mfg-body">
+                                    <h3>Fitness &amp; Activewear</h3>
+                                    <p>Squat-proof leggings, seamless sports bras, compression tights, athletic shorts, and dry-fit performance workout tees.</p>
+                                    <span className="category-mfg-link">Explore Fitness Manufacturing &rarr;</span>
+                                </div>
+                            </Link>
+                            <Link href="/sportswear-manufacturer-exporter" className="category-mfg-card">
+                                <img src="/images/categories/1776540279_sports-wear.webp" alt="Sportswear Manufacturing Pakistan" className="category-mfg-img" />
+                                <div className="category-mfg-body">
+                                    <h3>Sportswear &amp; Teamwear</h3>
+                                    <p>Sublimated soccer jerseys, basketball uniforms, warm-up tracksuits, athletic jackets, and custom club training kits.</p>
+                                    <span className="category-mfg-link">Explore Sports Manufacturing &rarr;</span>
+                                </div>
+                            </Link>
+                            <Link href="/boxing-gear-manufacturer-bulk" className="category-mfg-card">
+                                <img src="/images/categories/1776540301_boxing-wear.webp" alt="Boxing Wear Manufacturing Sialkot" className="category-mfg-img" />
+                                <div className="category-mfg-body">
+                                    <h3>Boxing &amp; Combat Fightwear</h3>
+                                    <p>Heavy satin boxing trunks, BJJ rash guards, MMA fight shorts, corner walkout robes, and combat training accessories.</p>
+                                    <span className="category-mfg-link">Explore Boxing Manufacturing &rarr;</span>
+                                </div>
+                            </Link>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="section">
+                    <div className="container content">
+                        <span className="section-label">Quality &amp; Export Compliance</span>
+                        <h2>Industrial standards that protect your brand reputation</h2>
+                        <p className="muted" style={{ 'maxWidth': '850px' }}>
+                            Every shipment dispatched from our Sialkot facility adheres to internationally recognized quality assurance benchmarks:
+                        </p>
+
+                        <div className="qa-bento-grid">
+                            <div className="qa-bento-card highlight">
+                                <span className="qa-bento-badge">Core Benchmark</span>
+                                <h3>AQL 2.5 Strict Inspection Standard</h3>
+                                <p>Every production run is audited by certified quality controllers during inline stitching and final packing. Measurements are checked against tech pack grading tables with zero tolerance for seam slippage or stitching run-offs.</p>
+                            </div>
+                            <div className="qa-bento-card">
+                                <span className="qa-bento-badge">Textile Lab</span>
+                                <h3>&lt; 3% Shrinkage Guarantee</h3>
+                                <p>Raw fabrics are pre-tested for colorfastness to light and perspiration (Grade 4+), wash durability, and dimensional stability before cutting.</p>
+                            </div>
+                            <div className="qa-bento-card">
+                                <span className="qa-bento-badge">Safety Audit</span>
+                                <h3>100% Needle Detector Scanned</h3>
+                                <p>All finished apparel passes through calibrated 9-point electromagnetic needle detection tunnels to ensure total safety for export consignments.</p>
+                            </div>
+                            <div className="qa-bento-card">
+                                <span className="qa-bento-badge">Master Cartons</span>
+                                <h3>Export-Grade Corrugated Packing</h3>
+                                <p>Reinforced 7-ply double-wall export master cartons with moisture-proof poly-lining, individual silica gel packets, and clear SKU barcodes.</p>
+                            </div>
+                            <div className="qa-bento-card">
+                                <span className="qa-bento-badge">Logistics</span>
+                                <h3>DDP, FOB &amp; CIF Shipping</h3>
+                                <p>Express courier air freight via DHL/FedEx (4-5 days door-to-door delivery) and ocean container shipping via Karachi port with full customs paperwork.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="section">
+                    <div className="container">
+                        <div className="home-cta">
+                            <div>
+                                <span className="home-kicker">Start Your Inquiry</span>
+                                <h2>Ready to start your custom apparel order?</h2>
+                                <p>Send your tech pack, sample reference, or branding requirements. We will provide pricing, MOQ guidance, and sample timelines.</p>
+                            </div>
+                            <div className="home-cta-actions">
+                                <Link href="/contact" className="btn btn-primary">
+                                    Start Inquiry
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Interactive B2B FAQ with Rich Schema */}
+                <FaqSection
+                    title="Manufacturing Capabilities & Quality FAQs"
+                    subtitle="Commercial specifications, lead times, production minimums, and export logistics for apparel buyers."
+                    items={MANUFACTURING_FAQS}
+                    categoryBadge="Sialkot Factory Floor"
+                />
+
+            </main>
         </div>
-    </div>
-</section>
-
-<section className="section">
-    <div className="container content">
-        <div className="manufacturing-intro">
-            <div>
-                <span className="section-label">Quality & Export Readiness</span>
-                <h2>Made for brands that need consistency, communication and presentation</h2>
-            </div>
-            <div>
-                <ul className="list muted">
-                    <li><strong>AQL 2.5 Quality Standards:</strong> Independent inline and pre-shipment lot sampling inspecting seam elasticity, stitch balance, and measurement grading tolerances (±0.5 cm).</li>
-                    <li><strong>Fabric & Wash Integrity:</strong> Raw fabric batch lab testing for dimensional stability (under 3% shrinkage guarantee), colorfastness to washing and perspiration (Grade 4+), and GSM verification.</li>
-                    <li><strong>Full Private Label Trims:</strong> Custom woven damask neck labels, soft satin wash care tags with RN numbers, embossed hangtags, and custom printed frosted polybags.</li>
-                    <li><strong>Export-Ready Cartoning:</strong> Double-wall corrugated export master cartons, individual silica gel packs, clear SKU/size barcode stickers, and moisture-sealed strapping.</li>
-                    <li><strong>Incoterms & Global Logistics:</strong> Complete export handling for FOB Karachi sea freight, CIF Felixstowe/Hamburg/LA/Sydney, and door-to-door express air via DHL/FedEx (4-5 days delivery).</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section className="section">
-    <div className="container">
-        <div className="manufacturing-cta">
-            <div>
-                <h2>Need a private label sportswear manufacturer with a clear production process?</h2>
-                <p>Send your product details, reference images, quantity, fabric direction and branding requirements. We will help you plan the right sampling and manufacturing path.</p>
-            </div>
-            <a href="/contact" className="btn btn-primary">Start Inquiry</a>
-        </div>
-    </div>
-</section>
-
-    {/* Interactive B2B FAQ with Rich Schema */}
-    <FaqSection
-      title="Manufacturing Capabilities & Quality FAQs"
-      subtitle="Commercial specifications, lead times, production minimums, and export logistics for apparel buyers."
-      items={MANUFACTURING_FAQS}
-      categoryBadge="Sialkot Factory Floor"
-    />
-
-    </main>
-    </div>
-  );
+    );
 }
