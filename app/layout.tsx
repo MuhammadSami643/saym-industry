@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./index.css";
-import "./globals.css";
 import SiteShell from "./components/SiteShell";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://binrasoolenterprises.com';
