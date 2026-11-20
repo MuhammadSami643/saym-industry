@@ -165,10 +165,21 @@ export default function ContactPage() {
                       ✉️
                     </div>
                     <div>
-                      <strong style={{ color: '#0f172a', display: 'block', marginBottom: '2px' }}>Direct Email Desk</strong>
-                      <a href="mailto:sales@binrasoolenterprises.com" style={{ color: 'var(--brand-orange-dark, #c57608)', fontWeight: 700, fontSize: '14px' }}>
-                        sales@binrasoolenterprises.com
-                      </a>
+                      <strong style={{ color: '#0f172a', display: 'block', marginBottom: '4px' }}>Direct Email Desk</strong>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                        <div>
+                          <span style={{ color: '#64748b', fontSize: '13px' }}>RFQ &amp; Tech Packs: </span>
+                          <a href="mailto:sales@binrasoolenterprises.com" style={{ color: 'var(--brand-orange-dark, #c57608)', fontWeight: 700, fontSize: '14px' }}>
+                            sales@binrasoolenterprises.com
+                          </a>
+                        </div>
+                        <div>
+                          <span style={{ color: '#64748b', fontSize: '13px' }}>General Inquiries: </span>
+                          <a href="mailto:info@binrasoolenterprises.com" style={{ color: '#0284c7', fontWeight: 600, fontSize: '13.5px' }}>
+                            info@binrasoolenterprises.com
+                          </a>
+                        </div>
+                      </div>
                     </div>
                   </div>
 

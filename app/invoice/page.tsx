@@ -113,7 +113,7 @@ function InvoiceContent() {
 
             <div style={{ fontSize: '12px', color: '#64748b', lineHeight: 1.5 }}>
               Sambrial Road, Small Industrial Estate, Sialkot 51310, Punjab, Pakistan<br />
-              Email: sales@binrasoolenterprises.com &bull; Web: www.binrasoolenterprises.com<br />
+              Sales: sales@binrasoolenterprises.com &bull; General: info@binrasoolenterprises.com &bull; Web: www.binrasoolenterprises.com<br />
               NTN / Export Reg: PK-SKT-788219-01
             </div>
           </div>

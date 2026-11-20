@@ -17,7 +17,7 @@ export async function sendInquiryNotificationEmails(payload: InquiryEmailPayload
   provider: 'resend' | 'smtp' | 'simulated';
   error?: string;
 }> {
-  const adminEmail = process.env.ADMIN_NOTIFICATION_EMAIL || process.env.ADMIN_EMAIL || 'info@binrasoolenterprises.com';
+  const adminEmail = process.env.ADMIN_NOTIFICATION_EMAIL || process.env.ADMIN_EMAIL || 'sales@binrasoolenterprises.com, info@binrasoolenterprises.com';
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://binrasoolenterprises.com';
   const brandName = 'Bin Rasool Enterprises';
 
@@ -161,7 +161,7 @@ export async function sendInquiryNotificationEmails(payload: InquiryEmailPayload
           </div>
           <div class="footer">
             <strong>${brandName}</strong><br>
-            Sialkot, Punjab, Pakistan &bull; Email: ${adminEmail}<br>
+            Sialkot, Punjab, Pakistan &bull; Sales: sales@binrasoolenterprises.com &bull; General: info@binrasoolenterprises.com<br>
             Website: <a href="${siteUrl}" style="color: #f3a626; text-decoration: none;">${siteUrl}</a>
           </div>
         </div>
@@ -172,7 +172,7 @@ export async function sendInquiryNotificationEmails(payload: InquiryEmailPayload
   // Option A: Resend API
   if (process.env.RESEND_API_KEY) {
     try {
-      const fromEmail = process.env.RESEND_FROM_EMAIL || 'Bin Rasool Enterprises <inquiries@binrasoolenterprises.com>';
+      const fromEmail = process.env.RESEND_FROM_EMAIL || 'Bin Rasool Enterprises <sales@binrasoolenterprises.com>';
 
       // Admin email
       await fetch('https://api.resend.com/emails', {
