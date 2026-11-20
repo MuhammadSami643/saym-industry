@@ -100,9 +100,7 @@ export default function PrivateLabelPage() {
 
         <div className="pl-hero-grid">
             <div>
-                <div className="eyebrow"
-                style={{ display: 'inline-flex', alignItems: 'center', padding: '4px 14px', borderRadius: '999px', background: 'rgba(243, 166, 38, 0.14)', color: 'var(--brand-orange-dark, #c57608)', border: '1px solid rgba(243, 166, 38, 0.3)', letterSpacing: '0.06em', fontSize: '11px', fontWeight: 800 }}>
-                FULL-PACKAGE OEM / ODM &nbsp;&bull;&nbsp; SIALKOT, PAKISTAN</div>
+                <span className="page-kicker">Full-Package OEM / ODM &bull; Sialkot, Pakistan</span>
                 <h1>Private Label Manufacturing for Sportswear, Fitness Wear & Boxing Wear Brands</h1>
                 <p>
                     Bin Rasool Enterprises helps brands, gyms, clubs, wholesalers, fight brands and online sellers create custom apparel under their own label. From Sialkot, Pakistan, we support private label sportswear manufacturing with product development, custom branding, sampling, flexible MOQ options and export-ready production.

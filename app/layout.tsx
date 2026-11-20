@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || 'bre-google-search-console-verification',
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || 'google4c5916710aa3c49c',
     other: {
       'msvalidate.01': [process.env.NEXT_PUBLIC_BING_VERIFICATION || 'bre-bing-webmaster-verification'],
     },

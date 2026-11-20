@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd';
 import { BLOG_POSTS } from '../lib/blogs';
 import { ArrowRightIcon } from '../components/AdminIcons';
 
@@ -13,9 +14,12 @@ export default function BlogPage() {
       {/* Hero Header */}
       <section className="hero" style={{ padding: '80px 0 60px' }}>
         <div className="container">
-          <div className="breadcrumbs" style={{ color: '#cbd5e1' }}>
-            <Link href="/" style={{ color: 'var(--brand-orange)' }}>Home</Link> / <span>Blog</span>
-          </div>
+          <BreadcrumbJsonLd
+            items={[
+              { label: 'Home', href: '/' },
+              { label: 'Blog' },
+            ]}
+          />
           <h1 style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)', margin: '16px 0 12px' }}>
             Private Label Activewear &amp; Sportswear Blog
           </h1>

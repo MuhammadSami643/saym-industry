@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd';
 import FaqSection from '../components/FaqSection';
 import { ArrowRightIcon } from '../components/AdminIcons';
 
@@ -46,13 +47,14 @@ export default function AboutPage() {
           </div>
 
           <div className="container">
-              <nav aria-label="Breadcrumb" className="breadcrumbs" style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
-                <Link href="/">Home</Link>
-                <span style={{ color: 'var(--text-muted)' }}>/</span>
-                <span style={{ color: 'var(--brand-orange, #f3a626)', fontWeight: 600 }}>About Us</span>
-              </nav>
+              <BreadcrumbJsonLd
+                items={[
+                  { label: 'Home', href: '/' },
+                  { label: 'About Us' },
+                ]}
+              />
 
-              <div className="about-kicker">
+              <div className="page-kicker">
                 DIRECT FACTORY PRODUCTION &nbsp;&bull;&nbsp; SIALKOT, PAKISTAN
               </div>
 

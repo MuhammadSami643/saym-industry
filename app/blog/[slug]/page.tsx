@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd';
 import { BLOG_POSTS, getBlogPost } from '../../lib/blogs';
 import { ArrowRightIcon } from '../../components/AdminIcons';
 
@@ -50,11 +51,13 @@ export default async function BlogPostPage({ params }: Props) {
       {/* Article Header */}
       <section className="hero" style={{ padding: '80px 0 50px' }}>
         <div className="container" style={{ maxWidth: '900px' }}>
-          <div className="breadcrumbs" style={{ color: '#cbd5e1' }}>
-            <Link href="/" style={{ color: 'var(--brand-orange)' }}>Home</Link> /{' '}
-            <Link href="/blog" style={{ color: 'var(--brand-orange)' }}>Blog</Link> /{' '}
-            <span>{post.category}</span>
-          </div>
+          <BreadcrumbJsonLd
+            items={[
+              { label: 'Home', href: '/' },
+              { label: 'Blog', href: '/blog' },
+              { label: post.category },
+            ]}
+          />
 
           <div style={{ marginTop: '16px', marginBottom: '14px' }}>
             <span

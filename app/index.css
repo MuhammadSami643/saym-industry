@@ -1825,17 +1825,70 @@ a.trust-card:hover {
   z-index: 2;
 }
 
-.about-kicker {
-  display: inline-flex;
-  width: max-content;
-  max-width: 100%;
-  padding: 7px 12px;
-  border: 1px solid rgba(243, 166, 38, 0.45);
-  border-radius: 8px;
-  color: var(--brand-orange, #f3a626);
+/* ==========================================================================
+   Universal Breadcrumbs (Simple & 100% Consistent Across Whole Site)
+   ========================================================================== */
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
   font-size: 13px;
-  font-weight: 800;
+  line-height: 1.4;
+  margin: 0 0 10px;
+  color: #94a3b8;
+}
+
+.breadcrumbs a,
+.breadcrumbs .breadcrumb-link {
+  color: #94a3b8;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.breadcrumbs a:hover,
+.breadcrumbs .breadcrumb-link:hover {
+  color: var(--brand-orange, #f3a626);
+}
+
+.breadcrumbs .breadcrumb-sep {
+  color: #64748b;
+  opacity: 0.6;
+  font-size: 12px;
+  user-select: none;
+}
+
+.breadcrumbs .breadcrumb-current {
+  color: #f1f5f9;
+  font-weight: 600;
+}
+
+.about-kicker,
+.hero-kicker,
+.page-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--brand-orange, #f3a626);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
+  margin: 10px 0 6px;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.about-kicker::before,
+.hero-kicker::before,
+.page-kicker::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background: currentColor;
 }
 
 .about-hero h1 {

@@ -41,34 +41,19 @@ export default function BreadcrumbJsonLd({ items, className, style }: Breadcrumb
       <nav
         aria-label="Breadcrumbs"
         className={className || 'breadcrumbs'}
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: '8px',
-          fontSize: '13px',
-          color: '#cbd5e1',
-          ...style,
-        }}
+        style={style}
       >
         {items.map((item, idx) => {
           const isLast = idx === items.length - 1;
           return (
             <React.Fragment key={idx}>
-              {idx > 0 && <span style={{ opacity: 0.6 }} aria-hidden="true">/</span>}
+              {idx > 0 && <span className="breadcrumb-sep" aria-hidden="true">/</span>}
               {item.href && !isLast ? (
-                <Link
-                  href={item.href}
-                  style={{
-                    color: 'var(--brand-orange, #f3a626)',
-                    textDecoration: 'none',
-                    fontWeight: 600,
-                  }}
-                >
+                <Link href={item.href} className="breadcrumb-link">
                   {item.label}
                 </Link>
               ) : (
-                <span style={{ color: isLast ? '#ffffff' : '#cbd5e1', fontWeight: isLast ? 700 : 500 }}>
+                <span className="breadcrumb-current">
                   {item.label}
                 </span>
               )}

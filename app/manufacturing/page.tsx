@@ -121,9 +121,7 @@ export default function ManufacturingPage() {
 
                         <div className="manufacturing-hero-grid">
                             <div>
-                                <div className="eyebrow"
-                                    style={{ 'display': 'inline-flex', 'alignItems': 'center', 'padding': '5px 14px', 'borderRadius': '999px', 'background': 'rgba(243, 166, 38, 0.12)', 'color': 'var(--brand-orange, #f3a626)', 'border': '1px solid rgba(243, 166, 38, 0.3)', 'letterSpacing': '0.06em', 'fontSize': '11px', 'fontWeight': 800 }}>
-                                    ● DIRECT SIALKOT FACTORY PRODUCTION</div>
+                                <span className="page-kicker">Direct Factory Production &bull; Sialkot, Pakistan</span>
                                 <h1>Precision Apparel Manufacturing &amp; Private Label Export</h1>
                                 <p>
                                     Bin Rasool Enterprises delivers end-to-end custom apparel manufacturing for sports brands, activewear startups, fitness labels, and combat sports distributors across the USA, UK, Europe, and Australia.
