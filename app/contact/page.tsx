@@ -1,6 +1,6 @@
 import ContactForm from '../components/ContactForm';
 import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd';
-import { WhatsAppIcon } from '../components/AdminIcons';
+import { WhatsAppIcon, MailIcon, MapPinIcon, ClockIcon } from '../components/AdminIcons';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -121,54 +121,102 @@ export default function ContactPage() {
                   boxShadow: '0 4px 16px rgba(15, 23, 42, 0.03)',
                 }}
               >
-                <h3 style={{ margin: '0 0 20px', fontSize: '1.15rem', fontWeight: 800, color: '#0f172a' }}>
+                <h3 style={{ margin: '0 0 22px', fontSize: '1.15rem', fontWeight: 800, color: '#0f172a' }}>
                   Direct Factory Details
                 </h3>
 
-                <div style={{ display: 'grid', gap: '18px', fontSize: '14px' }}>
+                <div style={{ display: 'grid', gap: '20px', fontSize: '14px' }}>
                   {/* Email */}
-                  <div>
-                    <span style={{ color: '#64748b', fontSize: '12px', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '0.05em', display: 'block', marginBottom: '4px' }}>
-                      Email Inboxes
-                    </span>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                      <div>
-                        <span style={{ color: '#475569' }}>RFQ &amp; Tech Packs: </span>
-                        <a href="mailto:sales@binrasoolenterprises.com" style={{ color: '#0284c7', fontWeight: 700, textDecoration: 'none' }}>
-                          sales@binrasoolenterprises.com
-                        </a>
-                      </div>
-                      <div>
-                        <span style={{ color: '#475569' }}>General Inquiries: </span>
-                        <a href="mailto:info@binrasoolenterprises.com" style={{ color: '#0284c7', fontWeight: 600, textDecoration: 'none' }}>
-                          info@binrasoolenterprises.com
-                        </a>
+                  <div style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                    <div
+                      style={{
+                        width: '38px',
+                        height: '38px',
+                        borderRadius: '10px',
+                        background: '#0f172a',
+                        color: '#ffffff',
+                        display: 'grid',
+                        placeItems: 'center',
+                        flexShrink: 0,
+                      }}
+                    >
+                      <MailIcon size={18} />
+                    </div>
+                    <div>
+                      <span style={{ color: '#64748b', fontSize: '12px', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '0.05em', display: 'block', marginBottom: '3px' }}>
+                        Email Inboxes
+                      </span>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                        <div>
+                          <span style={{ color: '#475569' }}>RFQ &amp; Tech Packs: </span>
+                          <a href="mailto:sales@binrasoolenterprises.com" style={{ color: '#0284c7', fontWeight: 700, textDecoration: 'none' }}>
+                            sales@binrasoolenterprises.com
+                          </a>
+                        </div>
+                        <div>
+                          <span style={{ color: '#475569' }}>General Inquiries: </span>
+                          <a href="mailto:info@binrasoolenterprises.com" style={{ color: '#0284c7', fontWeight: 600, textDecoration: 'none' }}>
+                            info@binrasoolenterprises.com
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
 
-                  <hr style={{ border: 0, borderTop: '1px solid #f1f5f9', margin: '2px 0' }} />
+                  <hr style={{ border: 0, borderTop: '1px solid #f1f5f9', margin: '0' }} />
 
                   {/* Location */}
-                  <div>
-                    <span style={{ color: '#64748b', fontSize: '12px', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '0.05em', display: 'block', marginBottom: '4px' }}>
-                      Factory Location
-                    </span>
-                    <span style={{ color: '#334155', lineHeight: 1.5 }}>
-                      Small Industrial Estate, Sialkot 51310, Punjab, Pakistan
-                    </span>
+                  <div style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                    <div
+                      style={{
+                        width: '38px',
+                        height: '38px',
+                        borderRadius: '10px',
+                        background: '#0f172a',
+                        color: '#ffffff',
+                        display: 'grid',
+                        placeItems: 'center',
+                        flexShrink: 0,
+                      }}
+                    >
+                      <MapPinIcon size={18} />
+                    </div>
+                    <div>
+                      <span style={{ color: '#64748b', fontSize: '12px', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '0.05em', display: 'block', marginBottom: '3px' }}>
+                        Factory Location
+                      </span>
+                      <span style={{ color: '#334155', lineHeight: 1.5 }}>
+                        Small Industrial Estate, Sialkot 51310, Punjab, Pakistan
+                      </span>
+                    </div>
                   </div>
 
-                  <hr style={{ border: 0, borderTop: '1px solid #f1f5f9', margin: '2px 0' }} />
+                  <hr style={{ border: 0, borderTop: '1px solid #f1f5f9', margin: '0' }} />
 
                   {/* Working Hours */}
-                  <div>
-                    <span style={{ color: '#64748b', fontSize: '12px', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '0.05em', display: 'block', marginBottom: '4px' }}>
-                      Operating Hours
-                    </span>
-                    <span style={{ color: '#334155' }}>
-                      Monday – Saturday: 9:00 AM – 6:00 PM PKT (UTC+5)
-                    </span>
+                  <div style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
+                    <div
+                      style={{
+                        width: '38px',
+                        height: '38px',
+                        borderRadius: '10px',
+                        background: '#0f172a',
+                        color: '#ffffff',
+                        display: 'grid',
+                        placeItems: 'center',
+                        flexShrink: 0,
+                      }}
+                    >
+                      <ClockIcon size={18} />
+                    </div>
+                    <div>
+                      <span style={{ color: '#64748b', fontSize: '12px', textTransform: 'uppercase', fontWeight: 700, letterSpacing: '0.05em', display: 'block', marginBottom: '3px' }}>
+                        Operating Hours
+                      </span>
+                      <span style={{ color: '#334155' }}>
+                        Monday – Saturday: 9:00 AM – 6:00 PM PKT (UTC+5)
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
