@@ -410,8 +410,7 @@ export default function PrivateLabelPage() {
               <div className="pl-related-pills">
                 <Link href="/fitness-wear-manufacturer" className="pl-related-pill">Private Label Fitness Wear Manufacturer</Link>
                 <Link href="/fitness-wear-manufacturer-sialkot" className="pl-related-pill">Gym Wear Manufacturer Sialkot</Link>
-                <Link href="/sportswear-manufacturer-pakistan" className="pl-related-pill">Custom Sportswear Manufacturer</Link>
-                <Link href="/sportswear-manufacturer-exporter" className="pl-related-pill">OEM Activewear Exporter</Link>
+                <Link href="/sportswear-manufacturer" className="pl-related-pill">Custom Sportswear Manufacturer</Link>
                 <Link href="/streetwear-manufacturer-pakistan" className="pl-related-pill">Custom Streetwear &amp; Hoodies</Link>
                 <Link href="/boxing-gear-manufacturer-bulk" className="pl-related-pill">Boxing &amp; Fight Wear Manufacturer</Link>
                 <Link href="/activewear-manufacturer-for-startups" className="pl-related-pill">Low MOQ Activewear for Startups</Link>

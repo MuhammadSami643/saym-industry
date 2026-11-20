@@ -28,8 +28,8 @@ Thank you for your inquiry with Bin Rasool Enterprises. We have reviewed your te
 We are pleased to confirm that our Sialkot manufacturing floor can accommodate your order with our standard AQL 2.5 quality control standards, custom private label woven labels and custom polybag packaging.
 
 Please review your attached proforma quotation details and let us know your preferred courier delivery schedule so our sampling team can initiate the pre-production prototype.`,
-    buttonText: 'VIEW PROFORMA INVOICE',
-    buttonUrl: '/get-quote',
+    buttonText: 'CONTACT FACTORY DESK',
+    buttonUrl: '/contact',
   },
   {
     name: 'Update',

@@ -50,28 +50,35 @@ export default function CompressionWearPage() {
   return (
     <div className="category-landing-page">
       {/* Hero Banner */}
-      <section className="hero" style={{ padding: '80px 0 60px' }}>
+      <section className="hero">
         <div className="container">
           <BreadcrumbJsonLd
             items={[
               { label: 'Home', href: '/' },
-              { label: 'Categories', href: '/products' },
               { label: 'Compression Wear & Baselayers' },
             ]}
+            style={{ marginBottom: '20px' }}
           />
-          <h1 style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)', margin: '16px 0 12px' }}>
-            Compression Wear Manufacturer &amp; Baselayer Factory Pakistan
-          </h1>
-          <p style={{ maxWidth: '820px', color: '#cbd5e1', fontSize: '18px', margin: 0 }}>
-            OEM compression wear manufacturer in Sialkot, Pakistan. We specialize in high-performance muscle recovery compression tights, thermal long sleeve baselayers, 4-needle flatlock compression shorts, football padded compression gear and wholesale custom arm sleeves.
-          </p>
-          <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '28px' }}>
-            <Link href="/contact" className="btn btn-primary">
-              Request Baselayer Quote
-            </Link>
-            <Link href="/products" className="btn btn-outline">
-              Explore Compression Catalog
-            </Link>
+          <div className="pl-hero-grid">
+            <div>
+              <span className="pl-kicker">HIGH-PERFORMANCE BASELAYERS &bull; SIALKOT, PAKISTAN</span>
+              <h1>Compression Wear Manufacturer &amp; Baselayer Factory</h1>
+              <p>
+                OEM compression wear manufacturer in Sialkot, Pakistan. We specialize in high-performance muscle recovery compression tights, thermal long sleeve baselayers, 4-needle flatlock compression shorts, football padded compression gear and wholesale custom arm sleeves.
+              </p>
+              <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '26px' }}>
+                <Link href="/contact" className="btn btn-primary">
+                  Request Baselayer Quote
+                </Link>
+                <Link href="/products" className="btn btn-outline" style={{ color: '#fff', borderColor: 'rgba(255,255,255,0.3)' }}>
+                  Explore Compression Catalog
+                </Link>
+              </div>
+            </div>
+            <div className="pl-summary">
+              <strong>Graduated Compression &amp; Recovery</strong>
+              <p>4-needle flatlock anti-chafing seams, thermal brushed fleece linings, UV50+ sun protection and sublimated custom graphics with 50 pcs MOQ.</p>
+            </div>
           </div>
         </div>
       </section>

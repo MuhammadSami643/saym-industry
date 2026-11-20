@@ -59,28 +59,35 @@ export default function CategoryPage() {
   return (
     <div className="category-landing-page">
       {/* Hero Banner */}
-      <section className="hero" style={{ padding: '80px 0 60px' }}>
+      <section className="hero">
         <div className="container">
           <BreadcrumbJsonLd
             items={[
               { label: 'Home', href: '/' },
-              { label: 'Categories', href: '/products' },
-              { label: 'Boxing Gear & Gloves Wholesale' },
+              { label: 'Boxing Gloves & Fight Gear Wholesale' },
             ]}
+            style={{ marginBottom: '20px' }}
           />
-          <h1 style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)', margin: '16px 0 12px' }}>
-            Boxing Gloves Manufacturer &amp; Custom Fight Gear Factory Sialkot
-          </h1>
-          <p style={{ maxWidth: '820px', color: '#cbd5e1', fontSize: '18px', margin: 0 }}>
-            Precision-engineered combat sports equipment for international fight promotions, combat brands, and commercial gyms. Handcrafted genuine A-grade cowhide leather gloves, IMF shock-absorbing foam, and wholesale training gear with custom private labeling.
-          </p>
-          <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '28px' }}>
-            <Link href="/contact" className="btn btn-primary">
-              Request a Manufacturing Quote
-            </Link>
-            <Link href="/products" className="btn btn-outline">
-              Explore Product Catalog
-            </Link>
+          <div className="pl-hero-grid">
+            <div>
+              <span className="pl-kicker">FACTORY DIRECT COMBAT GEAR &bull; SIALKOT, PAKISTAN</span>
+              <h1>Boxing Gloves Manufacturer &amp; Custom Fight Gear Factory</h1>
+              <p>
+                Precision-engineered combat sports equipment for international fight promotions, combat brands, and commercial gyms. Handcrafted genuine A-grade cowhide leather gloves, IMF shock-absorbing foam, and wholesale training gear with custom private labeling.
+              </p>
+              <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '26px' }}>
+                <Link href="/contact" className="btn btn-primary">
+                  Request Fight Equipment Quote
+                </Link>
+                <Link href="/products" className="btn btn-outline" style={{ color: '#fff', borderColor: 'rgba(255,255,255,0.3)' }}>
+                  Explore Product Catalog
+                </Link>
+              </div>
+            </div>
+            <div className="pl-summary">
+              <strong>Pro Sparring &amp; Title Fight Gear</strong>
+              <p>A-grade genuine cowhide leather gloves, multi-layer IMF padding, hook-and-loop &amp; lace-up closures with 50 pairs low MOQ and fast DHL export.</p>
+            </div>
           </div>
         </div>
       </section>

@@ -7,8 +7,15 @@ const config = REGIONAL_MARKETS.germany;
 export const metadata: Metadata = {
   title: `${config.title} | Bin Rasool Enterprises`,
   description: config.description,
+  keywords: config.keywords,
   alternates: {
     canonical: `/${config.slug}`,
+  },
+  openGraph: {
+    title: `${config.title} | Bin Rasool Enterprises`,
+    description: config.description,
+    url: `/${config.slug}`,
+    images: [{ url: '/images/hero-factory.webp', width: 1200, height: 630 }],
   },
 };
 

@@ -10,6 +10,7 @@ export interface RegionalMarketConfig {
   badge: string;
   title: string;
   description: string;
+  keywords?: string[];
   metrics: { val: string; lbl: string }[];
   marketFocus: {
     heading: string;

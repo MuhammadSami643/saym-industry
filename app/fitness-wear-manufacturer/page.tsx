@@ -5,9 +5,10 @@ import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Activewear & Gym Wear Manufacturer | Custom Leggings & Sports Bras OEM",
-  description: "Premier activewear manufacturer in Sialkot, Pakistan. 75/25 Nylon Spandex squat-proof leggings, sports bras, seamless gym wear and tapered joggers. Low MOQ, Amazon FBA ready.",
+  title: "Fitness Wear & Activewear Manufacturer | Custom Leggings & Sports Bras | Bin Rasool Enterprises",
+  description: "Premier OEM fitness wear and activewear manufacturer in Sialkot, Pakistan. 75/25 Nylon Spandex squat-proof leggings, sports bras, seamless gym wear, crop tops and tapered joggers with 50 pcs MOQ and worldwide DHL export.",
   keywords: [
+    "fitness wear manufacturer",
     "activewear manufacturer",
     "gym wear manufacturer",
     "private label activewear",
@@ -18,138 +19,261 @@ export const metadata: Metadata = {
     "gym joggers manufacturer",
     "activewear manufacturer Pakistan",
     "custom activewear manufacturer low MOQ",
-    "private label activewear manufacturer USA",
-    "gym wear manufacturer for startups",
-    "women’s activewear manufacturer Pakistan",
-    "men’s gym wear manufacturer Pakistan",
     "squat proof leggings manufacturer",
     "high waist scrunch leggings manufacturer",
     "custom scrunch leggings private label",
     "non see through leggings manufacturer",
     "4 way stretch leggings manufacturer",
     "nylon spandex leggings manufacturer",
-    "75 nylon 25 spandex leggings wholesale",
     "compression sports bra manufacturer",
-    "custom sports bra private label",
     "biker shorts manufacturer wholesale",
     "custom gym t-shirt manufacturer",
     "tapered gym joggers manufacturer",
-    "silicone heat transfer activewear manufacturer",
-    "matte silicone logo gym wear",
-    "flatlock stitching activewear manufacturer",
-    "anti chafe activewear manufacturer",
-    "gusseted crotch leggings manufacturer",
     "Amazon FBA activewear manufacturer",
     "fitness clothing manufacturer UK",
-    "gymshark style activewear manufacturer",
-    "activewear tech pack manufacturer",
-    "yoga wear manufacturer Pakistan",
-    "custom gym wear manufacturer Europe",
-    "activewear manufacturer small batch"
+    "fitness clothing manufacturer USA"
   ],
   alternates: {
-    canonical: '/fitness-wear',
+    canonical: '/fitness-wear-manufacturer',
   },
   openGraph: {
-    title: "Activewear & Gym Wear Manufacturer | Bin Rasool Enterprises",
-    description: "Custom seamless gym leggings, sports bras, pump covers, compression wear and gym joggers.",
-    url: "/fitness-wear",
+    title: "Fitness Wear & Activewear Manufacturer | Bin Rasool Enterprises",
+    description: "Factory-direct custom seamless gym leggings, sports bras, pump covers, compression wear and gym joggers.",
+    url: "/fitness-wear-manufacturer",
     images: [{ url: "/images/categories/1776540259_fitness-wear.webp", width: 1200, height: 630 }],
   },
 };
 
-export default function CategoryPage() {
+const FITNESS_CATEGORIES = [
+  {
+    title: "High-Waist Squat-Proof Leggings",
+    description: "75/25 Nylon Spandex 4-way stretch interlock with gusseted crotch, flatlock seams, and zero-transparency opacity.",
+    image: "/images/categories/1776540259_fitness-wear.webp",
+    link: "/products",
+  },
+  {
+    title: "Supportive Sports Bras",
+    description: "High, medium, and light impact sports bras with removable molded pads, racerback styling, and brushed elastic underbands.",
+    image: "/images/categories/1776540259_fitness-wear.webp",
+    link: "/products",
+  },
+  {
+    title: "High-Rise Biker Shorts",
+    description: "Buttery-soft compression biker shorts with no-dig seamless waistbands and optional deep utility phone pockets.",
+    image: "/images/categories/1776540259_fitness-wear.webp",
+    link: "/products",
+  },
+  {
+    title: "Tapered Gym Joggers",
+    description: "Slim-fit 320 GSM cotton-poly fleece or French terry joggers with metal eyelet drawstrings and concealed zipper pockets.",
+    image: "/images/products/1780565647_slim-fit-gym-joggers.webp",
+    link: "/products",
+  },
+  {
+    title: "Oversized Pump Covers & Gym Tees",
+    description: "Heavyweight 240–280 GSM combed cotton drop-shoulder tees engineered for bodybuilding pump covers and athleisure streetwear.",
+    image: "/images/categories/1776540259_fitness-wear.webp",
+    link: "/products",
+  },
+  {
+    title: "Seamless Knitted Activewear",
+    description: "Engineered body-mapped jacquard circular knits providing targeted compression, moisture wicking, and second-skin comfort.",
+    image: "/images/categories/1776540259_fitness-wear.webp",
+    link: "/products",
+  },
+];
+
+const FITNESS_SPECS = [
+  {
+    title: "Squat-Proof Fabric Density & Opacity Testing",
+    content: "We test every roll of 220–280 GSM nylon-spandex interlock on high-stretch mannequins under bright studio lighting to guarantee 100% opacity and zero shear across squat and lunging motions.",
+  },
+  {
+    title: "Flatlock 4-Needle 6-Thread Anti-Chafe Seaming",
+    content: "All high-friction activewear seams are built using Japanese flatlock machines. Flat seams sit entirely flush against the skin, preventing chafing during high-intensity training sessions.",
+  },
+  {
+    title: "High-Recovery Waistband Construction",
+    content: "Our custom leggings feature reinforced multi-layer bonded waistbands that stay up during sprints, deadlifts, and cardio without slipping or folding over.",
+  },
+  {
+    title: "Tagless Silicone Heat-Seal Branding",
+    content: "For premium gym wear labels, we apply scratch-resistant, matte silicone heat-transfer logos and care instructions directly to the interior fabric for complete skin comfort.",
+  },
+  {
+    title: "Custom Pantone Fabric Dyeing & Lab Dips",
+    content: "We match any custom Pantone color code for your seasonal collections, providing physical lab dip swatches for your sign-off before commencing bulk fabric knitting.",
+  },
+  {
+    title: "Low MOQ Starting at 50 Pieces per Style",
+    content: "We support emerging fitness brands, boutique gym studios, and fitness creators with an accessible 50 pcs MOQ per style/colorway across standard size runs (XS to 3XL).",
+  },
+];
+
+const RELATED_SERVICES = [
+  { name: "Private Label Activewear", href: "/private-label" },
+  { name: "Sportswear Manufacturer", href: "/sportswear-manufacturer" },
+  { name: "Boxing Wear Manufacturer", href: "/boxing-wear-manufacturer" },
+  { name: "Custom Hoodies & Streetwear", href: "/hoodies-manufacturer" },
+  { name: "USA Activewear Brands", href: "/private-label-activewear-manufacturer-usa" },
+  { name: "UK Sports Brands", href: "/private-label-activewear-manufacturer-uk" },
+  { name: "Europe Activewear Buyers", href: "/private-label-activewear-manufacturer-europe" },
+  { name: "Startups Low MOQ Activewear", href: "/activewear-manufacturer-for-startups" },
+  { name: "Full Product Catalog", href: "/products" },
+];
+
+export default function FitnessWearManufacturerPage() {
   return (
-    <div className="category-landing-page">
-      {/* Hero Banner */}
-      <section className="hero" style={{ padding: '80px 0 60px' }}>
+    <div className="fitness-wear-page">
+      {/* Section 1: Hero (Matching Private Label Theme) */}
+      <section className="pl-hero">
         <div className="container">
           <BreadcrumbJsonLd
             items={[
               { label: 'Home', href: '/' },
-              { label: 'Categories', href: '/products' },
               { label: 'Fitness Wear Manufacturer' },
             ]}
+            style={{ marginBottom: '20px' }}
           />
-          <h1 style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)', margin: '16px 0 12px' }}>
-            Private Label Fitness Wear Manufacturer
-          </h1>
-          <p style={{ maxWidth: '780px', color: '#cbd5e1', fontSize: '18px', margin: 0 }}>
-            Complete cut-and-sew fitness wear production for emerging activewear labels, gym studio apparel and fitness influencers.
-          </p>
-          <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '28px' }}>
-            <Link href="/contact" className="btn btn-primary">
-              Request a Manufacturing Quote
-            </Link>
-            <Link href="/products" className="btn btn-outline">
-              Explore Product Catalog
-            </Link>
-          </div>
-        </div>
-      </section>
 
-      {/* Overview Grid */}
-      <section className="section" style={{ background: 'var(--bg-light)' }}>
-        <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '40px', alignItems: 'center' }}>
+          <div className="pl-hero-grid">
             <div>
-              <span className="home-kicker">Manufacturing Excellence</span>
-              <h2 style={{ margin: '8px 0 16px' }}>Custom Fitness Wear Production Built to Your Standard</h2>
-              <p className="muted" style={{ fontSize: '16px', lineHeight: '1.7', marginBottom: '20px' }}>
-                We work directly with startup brands, sports clubs, gyms and international apparel importers. From initial pattern drafting and fabric selection to sample verification, custom branding and bulk packaging, your order is crafted in our Sialkot production unit under strict quality control.
+              <span className="pl-kicker">PRIVATE LABEL ACTIVEWEAR &bull; SIALKOT, PAKISTAN</span>
+              <h1>Custom Fitness Wear &amp; Activewear Manufacturer</h1>
+              <p>
+                Bin Rasool Enterprises is a premier OEM activewear and fitness clothing manufacturer in Sialkot, Pakistan. We engineer squat-proof leggings, supportive sports bras, seamless sets, tapered joggers, and oversized gym tees for emerging fitness brands, creators, and international gym chains.
               </p>
-              
-              <h3 style={{ fontSize: '1.15rem', marginBottom: '12px' }}>Featured Product Styles</h3>
-              <ul className="list" style={{ color: 'var(--text-main)', lineHeight: '1.9', marginBottom: '26px' }}>
-                <li><strong>Seamless Knitted Leggings</strong></li>
-                <li><strong>Ribbed Activewear Sets</strong></li>
-                <li><strong>Crop Tops & Tanks</strong></li>
-                <li><strong>French Terry Gym Joggers</strong></li>
-                <li><strong>Oversized Pump Covers</strong></li>
-              </ul>
-
-              <Link href="/contact" className="btn btn-primary">
-                Inquire About Fitness Wear
-              </Link>
-            </div>
-
-            <div className="card" style={{ padding: '0', overflow: 'hidden', boxShadow: 'var(--shadow-lg)' }}>
-              <img
-                src="/images/categories/1776540259_fitness-wear.webp"
-                alt="Private Label Fitness Wear Manufacturer"
-                style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }}
-              />
-              <div style={{ padding: '24px' }}>
-                <span className="card-tag">Low MOQ from 50 pcs</span>
-                <h3 style={{ margin: '8px 0 6px' }}>Factory Direct Sialkot</h3>
-                <p className="muted" style={{ margin: 0, fontSize: '14px' }}>
-                  Complete private labeling: custom neck labels, hangtags, care tags and polybag packaging.
-                </p>
+              <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '26px' }}>
+                <Link href="/contact" className="btn btn-primary">
+                  Request Activewear Quote
+                </Link>
+                <Link href="/products" className="btn btn-outline" style={{ color: '#fff', borderColor: 'rgba(255,255,255,0.3)' }}>
+                  Explore Product Catalog
+                </Link>
               </div>
             </div>
-          </div>
 
-          {/* Bottom CTA Box */}
-          <div className="home-cta" style={{ marginTop: '64px' }}>
+            <div className="pl-summary">
+              <strong>Squat-Proof. Seamless. Retail-Ready.</strong>
+              <p>75/25 Nylon Spandex, brushed interlock, seamless circular knitting, and custom silicone branding with 50 pcs low MOQ and fast DHL sampling.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 2: Manufacturing Overview (Split Layout) */}
+      <section className="section" style={{ background: '#ffffff', padding: '64px 0' }}>
+        <div className="container content">
+          <div className="pl-split">
             <div>
-              <span className="home-kicker">Start Your Bulk Order</span>
-              <h2>Ready to sample or produce custom Fitness Wear?</h2>
-              <p>
-                Send your tech pack, sketches, or reference images and our merchandising team will reply with clear pricing and production timing.
+              <span className="pl-label">Activewear Engineering</span>
+              <h2 style={{ fontSize: 'clamp(1.8rem, 2.8vw, 2.2rem)', fontWeight: 800, color: '#0f172a', margin: '6px 0 14px' }}>
+                Technical fitness apparel crafted for modern gym culture
+              </h2>
+            </div>
+            <div className="pl-note">
+              <p className="muted" style={{ margin: '0 0 14px', color: '#475569', fontSize: '15.5px', lineHeight: '1.75' }}>
+                Activewear buyers demand garments that perform under heavy strain and look flattering on camera. We formulate our technical fabrics using micro-denier nylon and premium elastane, delivering high compressive recovery, four-way stretch, and zero transparency.
+              </p>
+              <p className="muted" style={{ margin: 0, color: '#475569', fontSize: '15.5px', lineHeight: '1.75' }}>
+                From custom woven neck labels and soft-touch satin wash care tags to branded frosted EVA zipper polybags, we handle every detail so your collection arrives retail-ready for e-commerce and Amazon FBA.
               </p>
             </div>
-            <div className="home-cta-actions">
-              <Link href="/contact" className="btn btn-primary">
-                Contact Production Team
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3: Core Categories Grid */}
+      <section className="section" id="categories" style={{ background: '#f8fafc', padding: '64px 0' }}>
+        <div className="container">
+          <div style={{ marginBottom: '36px' }}>
+            <span className="pl-label">Product Showcase</span>
+            <h2 style={{ fontSize: 'clamp(1.8rem, 2.8vw, 2.2rem)', fontWeight: 800, color: '#0f172a', margin: '6px 0 10px' }}>
+              Core Fitness &amp; Activewear Styles
+            </h2>
+            <p style={{ color: '#475569', fontSize: '15.5px', margin: 0 }}>
+              Customizable with your custom tech pack, GSM specifications, colorways, and private label branding.
+            </p>
+          </div>
+
+          <div className="sw-category-grid">
+            {FITNESS_CATEGORIES.map((cat, idx) => (
+              <article key={idx} className="sw-category-card">
+                <img
+                  src={cat.image}
+                  alt={cat.title}
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div className="sw-category-card-body">
+                  <h3>{cat.title}</h3>
+                  <p>{cat.description}</p>
+                  <Link href={cat.link} className="sw-category-link">
+                    <span>View Products</span>
+                    <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                      <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                    </svg>
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          {/* Section 4: Technical Specifications */}
+          <div style={{ marginTop: '56px', marginBottom: '32px' }}>
+            <span className="pl-label">Quality Standards</span>
+            <h2 style={{ fontSize: 'clamp(1.8rem, 2.8vw, 2.2rem)', fontWeight: 800, color: '#0f172a', margin: '6px 0 10px' }}>
+              Activewear Quality Control &amp; Construction Standards
+            </h2>
+            <p style={{ color: '#475569', fontSize: '15.5px', margin: 0 }}>
+              Rigorous manufacturing controls implemented for luxury gym labels and high-performance fitness brands.
+            </p>
+          </div>
+
+          <div className="sw-specs-stack">
+            {FITNESS_SPECS.map((card, idx) => (
+              <section key={idx} className="sw-spec-card">
+                <h2>{card.title}</h2>
+                <p>{card.content}</p>
+              </section>
+            ))}
+          </div>
+
+          {/* Related Collections Section */}
+          <div style={{ marginTop: '64px', background: '#ffffff', padding: '36px', borderRadius: '16px', border: '1px solid #e2e8f0' }}>
+            <span style={{ color: 'var(--brand-orange, #f3a626)', textTransform: 'uppercase', fontWeight: 800, letterSpacing: '1.5px', fontSize: '13px', display: 'block', marginBottom: '8px' }}>
+              EXPLORE RELATED ACTIVEWEAR SERVICES
+            </span>
+            <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0f172a', margin: '0 0 16px' }}>
+              Complementary Custom Apparel &amp; Export Programs
+            </h3>
+            <div className="pl-related-pills">
+              {RELATED_SERVICES.map((s, idx) => (
+                <Link key={idx} href={s.href} className="pl-related-pill">
+                  {s.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* High-Converting CTA Box */}
+          <div className="sw-cta-box">
+            <h2>Ready to develop your custom fitness wear line?</h2>
+            <p>
+              Send your tech packs, reference garments, or moodboard. Our product development team will evaluate fabric weights, trims, and provide clear sample pricing within 24 hours.
+            </p>
+            <div>
+              <Link href="/contact" className="sw-btn-primary" style={{ padding: '16px 36px', fontSize: '16px' }}>
+                Request Activewear Quote
               </Link>
             </div>
           </div>
         </div>
       </section>
-    
-      {/* Category Specific FAQs */}
+
+      {/* Fitness Wear FAQs Section */}
       <FaqSection
-        title="Fitness Wear & Leggings Manufacturing FAQs"
+        title="Fitness Wear & Leggings FAQs"
         categoryBadge="Fitness Wear"
         items={FITNESS_WEAR_FAQS}
       />

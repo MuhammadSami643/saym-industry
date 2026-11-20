@@ -43,7 +43,7 @@ function InvoiceContent() {
       {/* Action Header - Hidden during print */}
       <div className="no-print" style={{ maxWidth: '900px', margin: '0 auto 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
         <Link
-          href="/get-quote"
+          href="/contact"
           style={{
             display: 'inline-flex',
             alignItems: 'center',
@@ -113,7 +113,7 @@ function InvoiceContent() {
 
             <div style={{ fontSize: '12px', color: '#64748b', lineHeight: 1.5 }}>
               Sambrial Road, Small Industrial Estate, Sialkot 51310, Punjab, Pakistan<br />
-              Email: info@binrasoolenterprises.com &bull; Web: www.binrasoolenterprises.com<br />
+              Email: sales@binrasoolenterprises.com &bull; Web: www.binrasoolenterprises.com<br />
               NTN / Export Reg: PK-SKT-788219-01
             </div>
           </div>

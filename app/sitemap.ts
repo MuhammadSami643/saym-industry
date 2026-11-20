@@ -39,12 +39,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/get-quote`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.95,
-    },
-    {
       url: `${baseUrl}/track-order`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
@@ -72,15 +66,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // 2. High-Intent Category & Product Hub Pages (Highest B2B Buyer Traffic)
   const categorySlugs = [
-    // Primary Category Pages
-    'streetwear-manufacturer-pakistan',
-    'hoodies-manufacturer-pakistan',
-    'jeans-manufacturer-pakistan',
+    // Primary Category Pages (Clean International URLs)
+    'streetwear-manufacturer',
+    'hoodies-manufacturer',
+    'jeans-manufacturer',
     'fitness-wear-manufacturer',
-    'fitness-wear-manufacturer-sialkot',
-    'sportswear-manufacturer-pakistan',
-    'sportswear-manufacturer-exporter',
-    'boxing-wear-manufacturer-pakistan',
+    'sportswear-manufacturer',
+    'boxing-wear-manufacturer',
     'boxing-gear-manufacturer-bulk',
     'mma-gear',
     'compression-wear',
@@ -109,11 +101,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'private-label-fitness-wear-manufacturer',
     'oem-activewear-manufacturer',
     'white-label-activewear-manufacturer',
-    'gym-wear-manufacturer-pakistan',
-    'activewear-manufacturer-sialkot',
-    'leggings-manufacturer-pakistan',
-    'sports-bra-manufacturer-pakistan',
-    'yoga-wear-manufacturer-pakistan',
     
     // Geo-Targeted High-Converting Export Hubs
     'wholesale-activewear-suppliers-usa',
@@ -121,38 +108,33 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'wholesale-fitness-apparel-suppliers-europe',
     'private-label-activewear-manufacturer-usa',
     'private-label-activewear-manufacturer-uk',
+    'private-label-activewear-manufacturer-europe',
     'private-label-activewear-manufacturer-germany',
     'private-label-activewear-manufacturer-france',
     'private-label-activewear-manufacturer-netherlands',
+    'private-label-activewear-manufacturer-italy',
+    'private-label-activewear-manufacturer-spain',
     'private-label-activewear-manufacturer-australia',
 
-    // High-Volume Sialkot Niche Categories
+    // High-Volume Niche Categories
     // 1. Martial Arts & MMA Combat Gear
-    'martial-arts-gear-manufacturer-pakistan',
-    'bjj-gi-manufacturer-pakistan',
     'custom-rashguard-manufacturer',
     'mma-shorts-manufacturer',
 
     // 2. Custom Tracksuits & Warmups
-    'tracksuits-manufacturer-pakistan',
     'custom-tracksuits',
     'fleece-tracksuits-manufacturer',
     'poly-tricot-warmup-manufacturer',
 
     // 3. Compression & Baselayers
-    'compression-wear-manufacturer-pakistan',
     'custom-compression-tights',
     'athletic-baselayers-manufacturer',
 
     // 4. Sublimated Team Uniforms & Teamwear
-    'custom-teamwear-manufacturer-pakistan',
     'sublimated-jerseys-manufacturer',
-    'soccer-uniforms-manufacturer-sialkot',
     'basketball-uniforms-manufacturer',
 
     // 5. Custom Jackets & Outerwear
-    'custom-jackets-manufacturer-pakistan',
-    'varsity-jackets-manufacturer-sialkot',
     'puffer-jackets-manufacturer-bulk',
     'windbreaker-jackets-manufacturer',
   ];

@@ -114,7 +114,7 @@ export default function Footer() {
                 <a href="tel:+923376793383">Call: +92 337 6793383</a>
               </div>
               <div>
-                <a href="mailto:info@binrasoolenterprises.com">Email: info@binrasoolenterprises.com</a>
+                <a href="mailto:sales@binrasoolenterprises.com">Email: sales@binrasoolenterprises.com</a>
               </div>
               <div style={{ marginTop: '6px' }}>
                 <Link href="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>

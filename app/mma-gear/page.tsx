@@ -58,28 +58,35 @@ export default function MmaGearPage() {
   return (
     <div className="category-landing-page">
       {/* Hero Banner */}
-      <section className="hero" style={{ padding: '80px 0 60px' }}>
+      <section className="hero">
         <div className="container">
           <BreadcrumbJsonLd
             items={[
               { label: 'Home', href: '/' },
-              { label: 'Categories', href: '/products' },
-              { label: 'MMA & Combat Sports Gear' },
+              { label: 'MMA Gear & BJJ Gis' },
             ]}
+            style={{ marginBottom: '20px' }}
           />
-          <h1 style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)', margin: '16px 0 12px' }}>
-            MMA Gear Manufacturer &amp; BJJ Gi Factory Pakistan
-          </h1>
-          <p style={{ maxWidth: '820px', color: '#cbd5e1', fontSize: '18px', margin: 0 }}>
-            Custom MMA gear manufacturer and grappling apparel exporter in Sialkot, Pakistan. We specialize in pearl weave and gold weave BJJ Gis, crack-resistant Italian ink sublimated rashguards, flex-crotch MMA shorts with triple lock stitching, grappling spats and custom Muay Thai fight shorts with low MOQs.
-          </p>
-          <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '28px' }}>
-            <Link href="/contact" className="btn btn-primary">
-              Request Combat Gear Quote
-            </Link>
-            <Link href="/products" className="btn btn-outline">
-              Explore Combat Catalog
-            </Link>
+          <div className="pl-hero-grid">
+            <div>
+              <span className="pl-kicker">BJJ &amp; COMBAT APPAREL FACTORY &bull; SIALKOT, PAKISTAN</span>
+              <h1>MMA Gear Manufacturer &amp; Custom BJJ Gi Factory</h1>
+              <p>
+                Custom MMA gear manufacturer and grappling apparel exporter in Sialkot, Pakistan. We specialize in pearl weave and gold weave BJJ Gis, crack-resistant Italian ink sublimated rashguards, flex-crotch MMA shorts with triple lock stitching, grappling spats and custom Muay Thai fight shorts with low MOQs.
+              </p>
+              <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '26px' }}>
+                <Link href="/contact" className="btn btn-primary">
+                  Request Combat Gear Quote
+                </Link>
+                <Link href="/products" className="btn btn-outline" style={{ color: '#fff', borderColor: 'rgba(255,255,255,0.3)' }}>
+                  Explore Combat Catalog
+                </Link>
+              </div>
+            </div>
+            <div className="pl-summary">
+              <strong>IBJJF Regulation &amp; Durability</strong>
+              <p>450 GSM pearl weave kimonos, ripstop pants, anti-microbial sublimated rash guards and reinforced flex-crotch fight shorts with 50 pcs MOQ.</p>
+            </div>
           </div>
         </div>
       </section>

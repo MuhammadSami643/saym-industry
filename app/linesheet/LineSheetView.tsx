@@ -141,7 +141,7 @@ export default function LineSheetView() {
           </a>
 
           <Link
-            href="/get-quote"
+            href="/contact"
             style={{
               background: 'rgba(255,255,255,0.1)',
               color: '#ffffff',
@@ -153,7 +153,7 @@ export default function LineSheetView() {
               textDecoration: 'none'
             }}
           >
-            🧮 Cost Calculator
+            📋 Request a Quote
           </Link>
 
           <button
@@ -343,7 +343,7 @@ export default function LineSheetView() {
           <div>
             <strong>Bin Rasool Enterprises &bull; Export Sales Division</strong><br />
             Sialkot, Punjab, 51310, Pakistan &bull; Phone/WhatsApp: <strong>+92 337 6793383</strong><br />
-            Email: <strong style={{ color: '#0f172a' }}>info@binrasoolenterprises.com</strong> &bull; Web: binrasoolenterprises.com
+            Email: <strong style={{ color: '#0f172a' }}>sales@binrasoolenterprises.com</strong> &bull; Web: binrasoolenterprises.com
           </div>
           <div style={{ textAlign: 'right' }}>
             <div style={{ fontSize: '10px', fontWeight: 800, color: '#16a34a', textTransform: 'uppercase' }}>

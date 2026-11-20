@@ -8,6 +8,18 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
     badge: 'USA Export & Sourcing Program • Sialkot Factory',
     title: 'Private Label Activewear Manufacturer for USA Brands',
     description: 'Factory-direct OEM activewear manufacturing for American gym wear labels, DTC fitness brands, and Amazon FBA sellers. Custom damask woven neck labels, ASTM seam burst testing, and express DDP air cargo to the USA.',
+    keywords: [
+      'private label activewear manufacturer usa',
+      'custom gym wear manufacturer usa',
+      'activewear manufacturer for us brands',
+      'clothing manufacturer low moq usa',
+      'amazon fba activewear manufacturer',
+      'sports clothing manufacturer pakistan for usa',
+      'sialkot activewear manufacturer usa',
+      'custom leggings manufacturer usa',
+      'private label fitness clothing usa',
+      'oem sportswear manufacturer usa'
+    ],
     metrics: [
       { val: '50 Pcs', lbl: 'Startup MOQ / Style' },
       { val: '7-10 Days', lbl: 'DHL Proto Sampling' },
@@ -66,6 +78,17 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
     badge: 'UK Export & Sourcing Program • Sialkot Factory',
     title: 'Private Label Activewear Manufacturer for UK Brands',
     description: 'Direct factory manufacturing for British fitness labels, gym wear startups, sports clubs, and independent retailers across London, Manchester, and Birmingham. Custom trims, UK sizing, and fast DHL delivery.',
+    keywords: [
+      'private label activewear manufacturer uk',
+      'gym wear manufacturer uk brands',
+      'custom activewear manufacturer london',
+      'clothing manufacturer low moq uk',
+      'heavyweight streetwear manufacturer uk',
+      'tracksuits manufacturer uk',
+      'sialkot sportswear manufacturer uk',
+      'private label clothing manufacturer manchester',
+      'birmingham gym wear supplier'
+    ],
     metrics: [
       { val: '50 Pcs', lbl: 'Accessible UK MOQ' },
       { val: '7-10 Days', lbl: 'Rapid Sample Delivery' },
@@ -120,6 +143,16 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
     badge: 'EU Export Sourcing • Sialkot Factory',
     title: 'Private Label Activewear Manufacturer for European Brands',
     description: 'Direct OEM apparel production for European sportswear labels, boutique fitness brands, and multi-country distributors. REACH compliant textiles, European sizing charts, and streamlined EU logistics.',
+    keywords: [
+      'private label activewear manufacturer europe',
+      'sportswear manufacturer eu',
+      'reach compliant clothing manufacturer',
+      'custom activewear manufacturer europe',
+      'oem gym wear supplier europe',
+      'sustainable activewear manufacturer europe',
+      'sialkot apparel manufacturer for europe',
+      'low moq fitness wear manufacturer europe'
+    ],
     metrics: [
       { val: '50 Pcs', lbl: 'EU Low MOQ / Style' },
       { val: '7-10 Days', lbl: 'Proto Sample Turnaround' },
@@ -174,6 +207,15 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
     badge: 'German Market Precision Sourcing • Sialkot Factory',
     title: 'Private Label Activewear Manufacturer for German Brands',
     description: 'Precision apparel manufacturing for German fitness brands, gym chains, and sportswear distributors. German sizing specs, high-tensile flatlock construction, and strict AQL 2.5 pre-shipment inspection.',
+    keywords: [
+      'private label activewear manufacturer germany',
+      'sportbekleidung hersteller pakistan',
+      'activewear hersteller deutschland',
+      'fitnessbekleidung hersteller low moq',
+      'oem sportswear manufacturer germany',
+      'aql 2.5 clothing manufacturer germany',
+      'sportkleidung hersteller frankfurt'
+    ],
     metrics: [
       { val: '50 Pcs', lbl: 'Accessible MOQ' },
       { val: 'AQL 2.5', lbl: 'German QC Standard' },
@@ -224,6 +266,14 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
     badge: 'French Fashion & Activewear Sourcing • Sialkot Factory',
     title: 'Private Label Activewear Manufacturer for French Brands',
     description: 'Turnkey activewear and luxury athleisure manufacturing for French fashion labels, boutique fitness studios, and e-commerce creators across Paris, Lyon, and Marseille.',
+    keywords: [
+      'private label activewear manufacturer france',
+      'fabricant vetement de sport pakistan',
+      'fabricant activewear france',
+      'marque blanche vetement de sport',
+      'grossiste vetement fitness france',
+      'oem sportswear manufacturer paris'
+    ],
     metrics: [
       { val: '50 Pcs', lbl: 'Boutique MOQ' },
       { val: '7-10 Days', lbl: 'Proto Sampling' },
@@ -274,6 +324,14 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
     badge: 'Benelux Sourcing & Logistics Hub • Sialkot Factory',
     title: 'Private Label Activewear Manufacturer for Netherlands Brands',
     description: 'Factory-direct activewear manufacturing for Dutch sports labels, gym wear distributors, and European fulfillment hubs centered around Amsterdam and Rotterdam.',
+    keywords: [
+      'private label activewear manufacturer netherlands',
+      'sportkleding fabrikant pakistan',
+      'activewear manufacturer amsterdam',
+      'gym wear supplier rotterdam',
+      'custom sportswear manufacturer netherlands',
+      'tall activewear manufacturer'
+    ],
     metrics: [
       { val: '50 Pcs', lbl: 'Flexible Dutch MOQ' },
       { val: '7-10 Days', lbl: 'DHL Prototyping' },
@@ -324,6 +382,14 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
     badge: 'Italian Boutique Fitness & Combat Sourcing • Sialkot Factory',
     title: 'Private Label Activewear Manufacturer for Italian Brands',
     description: 'Custom activewear and combat fightwear production for Italian sportswear brands, padel clubs, and boutique gym studios in Milan, Rome, and Turin.',
+    keywords: [
+      'private label activewear manufacturer italy',
+      'produttore abbigliamento sportivo pakistan',
+      'activewear manufacturer milano',
+      'abbigliamento fitness personalizzato italia',
+      'fightwear manufacturer italy',
+      'padel wear manufacturer'
+    ],
     metrics: [
       { val: '50 Pcs', lbl: 'Capsule MOQ' },
       { val: '7-10 Days', lbl: 'DHL Sample Lead' },
@@ -374,6 +440,14 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
     badge: 'Spanish Market Activewear Sourcing • Sialkot Factory',
     title: 'Private Label Activewear Manufacturer for Spanish Brands',
     description: 'Custom manufacturing for Spanish activewear brands, padel sportswear clubs, and fitness creators across Madrid, Barcelona, and Valencia.',
+    keywords: [
+      'private label activewear manufacturer spain',
+      'fabricante ropa deportiva pakistan',
+      'activewear manufacturer espana',
+      'ropa fitness personalizada barcelona',
+      'padel clothing manufacturer spain',
+      'fabricante ropa deportiva madrid'
+    ],
     metrics: [
       { val: '50 Pcs', lbl: 'Accessible MOQ' },
       { val: '7-10 Days', lbl: 'DHL Prototyping' },
@@ -424,6 +498,16 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
     badge: 'Low MOQ Startup Launchpad • Sialkot Factory',
     title: 'Activewear Manufacturer for Startups & Emerging Brands',
     description: 'Turnkey activewear manufacturing designed specifically for first-time clothing brand founders, gym owners, and fitness influencers. Accessible 50 pcs MOQ per style, full tech pack guidance, and rapid proto sampling.',
+    keywords: [
+      'activewear manufacturer for startups',
+      'clothing manufacturer for new brands',
+      'low moq clothing manufacturer 50 pcs',
+      'start a gym wear brand manufacturer',
+      'clothing manufacturer with tech pack help',
+      'turnkey apparel manufacturer for beginners',
+      'fitness apparel manufacturer low minimums',
+      'small batch clothing manufacturer pakistan'
+    ],
     metrics: [
       { val: '50 Pcs', lbl: 'True Startup MOQ' },
       { val: '7-10 Days', lbl: 'Proto Counter-Sample' },

@@ -28,20 +28,28 @@ export default async function Products() {
     <div className="products-page">
       <ProductCatalogJsonLd products={products} />
       {/* Header Banner */}
-      <section className="hero" style={{ padding: '80px 0 60px' }}>
+      <section className="hero">
         <div className="container">
           <BreadcrumbJsonLd
             items={[
               { label: 'Home', href: '/' },
               { label: 'Product Catalog' },
             ]}
+            style={{ marginBottom: '20px' }}
           />
-          <h1 style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)', margin: '16px 0 12px' }}>
-            Private Label Activewear &amp; Apparel Catalog
-          </h1>
-          <p style={{ maxWidth: '780px', color: '#cbd5e1', fontSize: '18px', margin: 0 }}>
-            Explore our custom manufacturing options across fitness wear, sports performance apparel, fight gear and heavyweight streetwear. All styles are customizable with low MOQs, custom branding and fast DHL pre-production sampling.
-          </p>
+          <div className="pl-hero-grid">
+            <div>
+              <span className="pl-kicker">FACTORY DIRECT PRODUCT SHOWCASE &bull; SIALKOT, PAKISTAN</span>
+              <h1>Private Label Activewear &amp; Apparel Catalog</h1>
+              <p>
+                Explore our custom manufacturing options across fitness wear, sports performance apparel, fight gear and heavyweight streetwear. All styles are customizable with low MOQs, custom branding and fast DHL pre-production sampling.
+              </p>
+            </div>
+            <div className="pl-summary">
+              <strong>Turnkey Private Label</strong>
+              <p>Full-package apparel manufacturing: custom neck labels, 400 GSM hangtags, frosted EVA polybags and DHL Express sampling.</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -60,8 +68,8 @@ export default async function Products() {
               <Link href="/linesheet" className="btn btn-outline" style={{ background: '#fff', borderColor: '#cbd5e1' }}>
                 📄 View 2026 Line Sheet (PDF)
               </Link>
-              <Link href="/get-quote" className="btn btn-primary">
-                Instant RFQ Cost Calculator
+              <Link href="/contact" className="btn btn-primary">
+                Request a Custom Quote
               </Link>
             </div>
           </div>
@@ -79,7 +87,7 @@ export default async function Products() {
               </p>
             </div>
             <div className="home-cta-actions">
-              <Link href="/get-quote" className="btn btn-primary">
+              <Link href="/contact" className="btn btn-primary">
                 Get a Custom Quote
               </Link>
               <Link href="/track-order" className="btn btn-secondary">

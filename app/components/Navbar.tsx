@@ -45,11 +45,13 @@ export default function Navbar() {
     p => pathname === p || pathname?.startsWith(p + '/')
   );
   const isManufacturer = [
+    '/sportswear-manufacturer',
     '/sportswear-manufacturer-pakistan',
+    '/fitness-wear-manufacturer',
     '/fitness-wear-manufacturer-sialkot',
+    '/boxing-wear-manufacturer',
     '/boxing-wear-manufacturer-pakistan',
     '/sportswear-manufacturer-exporter',
-    '/fitness-wear-manufacturer',
     '/boxing-gear-manufacturer-bulk',
   ].some(p => pathname === p || pathname?.startsWith(p + '/'));
   const isCategories = [
@@ -64,7 +66,6 @@ export default function Navbar() {
     '/custom-jeans',
     '/products',
   ].some(p => pathname === p || pathname?.startsWith(p + '/'));
-  const isInstantRFQ = pathname === '/get-quote';
   const isTrackOrder = pathname === '/track-order';
   const isBlog = pathname === '/blog' || pathname?.startsWith('/blog/');
   const isContact = pathname === '/contact';
@@ -202,9 +203,9 @@ export default function Navbar() {
                   Factory Units <ChevronDownIcon />
                 </button>
                 <div className="dropdown-menu">
-                  <Link href="/sportswear-manufacturer-pakistan" className={pathname === '/sportswear-manufacturer-pakistan' ? 'is-active' : ''} onClick={handleLinkClick}>Sportswear &amp; Teamwear Division</Link>
-                  <Link href="/fitness-wear-manufacturer-sialkot" className={pathname === '/fitness-wear-manufacturer-sialkot' ? 'is-active' : ''} onClick={handleLinkClick}>Activewear &amp; Fitness Plant</Link>
-                  <Link href="/boxing-wear-manufacturer-pakistan" className={pathname === '/boxing-wear-manufacturer-pakistan' ? 'is-active' : ''} onClick={handleLinkClick}>Boxing &amp; Fight Gear Workshop</Link>
+                  <Link href="/sportswear-manufacturer" className={pathname === '/sportswear-manufacturer' || pathname === '/sportswear-manufacturer-pakistan' ? 'is-active' : ''} onClick={handleLinkClick}>Sportswear &amp; Teamwear Division</Link>
+                  <Link href="/fitness-wear-manufacturer" className={pathname === '/fitness-wear-manufacturer' || pathname === '/fitness-wear-manufacturer-sialkot' ? 'is-active' : ''} onClick={handleLinkClick}>Activewear &amp; Fitness Plant</Link>
+                  <Link href="/boxing-wear-manufacturer" className={pathname === '/boxing-wear-manufacturer' || pathname === '/boxing-wear-manufacturer-pakistan' ? 'is-active' : ''} onClick={handleLinkClick}>Boxing &amp; Fight Gear Workshop</Link>
                 </div>
               </div>
 
@@ -240,10 +241,6 @@ export default function Navbar() {
                 </div>
               </div>
 
-              <Link className={`nav-link ${isInstantRFQ ? 'is-active' : ''}`} href="/get-quote" onClick={handleLinkClick}>
-                Instant RFQ
-              </Link>
-
               <Link className={`nav-link ${isTrackOrder ? 'is-active' : ''}`} href="/track-order" onClick={handleLinkClick}>
                 Track Order
               </Link>
@@ -260,8 +257,8 @@ export default function Navbar() {
                 <CurrencySelector />
               </div>
 
-              <Link className="btn btn-primary nav-mobile-cta" href="/get-quote" onClick={handleLinkClick}>
-                Get Instant Quote
+              <Link className="btn btn-primary nav-mobile-cta" href="/contact" onClick={handleLinkClick}>
+                Request a Quote
               </Link>
             </nav>
           </div>
@@ -269,7 +266,7 @@ export default function Navbar() {
           {/* Right Action */}
           <div className="nav-right">
             <CurrencySelector compact />
-            <Link href="/get-quote" className="btn btn-primary" style={{ padding: '8px 16px', fontSize: '13px', minHeight: '38px', whiteSpace: 'nowrap' }}>
+            <Link href="/contact" className="btn btn-primary" style={{ padding: '8px 16px', fontSize: '13px', minHeight: '38px', whiteSpace: 'nowrap' }}>
               Request a Quote
             </Link>
           </div>

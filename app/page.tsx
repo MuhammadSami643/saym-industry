@@ -328,7 +328,7 @@ export default function Home() {
                         As a <strong>fitness wear manufacturer in Sialkot</strong>, Bin Rasool Enterprises combines that regional production experience with direct B2B communication. Cost efficiency matters, but it should not come from removing the steps that protect fit and quality. The stronger advantage is the ability to align product development, labor skill, branding, quality checks and export preparation around one approved specification.
                     </p>
                     <p>
-                        Buyers sourcing broader teamwear and performance categories can also explore our work as a <a className="context-link" href="/sportswear-manufacturer-pakistan">sportswear manufacturer in Pakistan</a>. The right sourcing decision should balance product capability, sample quality, responsiveness, lead time and landed cost rather than comparing unit price alone.
+                        Buyers sourcing broader teamwear and performance categories can also explore our work as a <a className="context-link" href="/sportswear-manufacturer">sportswear manufacturer in Pakistan</a>. The right sourcing decision should balance product capability, sample quality, responsiveness, lead time and landed cost rather than comparing unit price alone.
                     </p>
                 </div>
                 <div className="pakistan-points">
@@ -375,7 +375,7 @@ export default function Home() {
                 </article>
             </div>
             <div style={{ 'marginTop': '28px' }}>
-                <a href="/get-quote" className="btn btn-primary" style={{ marginRight: '12px' }}>Request Sample Quote</a>
+                <a href="/contact" className="btn btn-primary" style={{ marginRight: '12px' }}>Request Sample Quote</a>
                 <a href="/sampling-process" className="btn btn-dark">Review Sampling Process</a>
             </div>
         </div>

@@ -134,7 +134,7 @@ const organizationSchema = {
       "@type": "ContactPoint",
       telephone: "+923376793383",
       contactType: "sales & export inquiry",
-      email: "info@binrasoolenterprises.com",
+      email: "sales@binrasoolenterprises.com",
       areaServed: ["US", "GB", "CA", "AU", "DE", "FR", "NL", "AE"],
       availableLanguage: ["English", "Urdu"],
     },
