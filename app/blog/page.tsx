@@ -38,48 +38,58 @@ export default function BlogPage() {
             </div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '26px' }}>
-            {BLOG_POSTS.map((post) => (
-              <article key={post.slug} className="card clickable-card" style={{ padding: '0', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-                <Link href={`/blog/${post.slug}`} style={{ display: 'block', width: '100%', aspectRatio: '16/9', overflow: 'hidden', background: '#e2e8f0' }}>
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.3s ease' }}
-                  />
-                </Link>
+          {BLOG_POSTS.length === 0 ? (
+            <div style={{ textAlign: 'center', padding: '64px 20px', background: '#ffffff', borderRadius: '12px', border: '1px solid var(--border)' }}>
+              <div style={{ fontSize: '36px', marginBottom: '12px' }}>📝</div>
+              <h3 style={{ fontSize: '1.25rem', marginBottom: '8px', color: 'var(--text-main)' }}>Articles Coming Soon</h3>
+              <p className="muted" style={{ maxWidth: '480px', margin: '0 auto' }}>
+                We are currently preparing informative manufacturing guides, industry analysis, and sourcing insights.
+              </p>
+            </div>
+          ) : (
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '26px' }}>
+              {BLOG_POSTS.map((post) => (
+                <article key={post.slug} className="card clickable-card" style={{ padding: '0', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+                  <Link href={`/blog/${post.slug}`} style={{ display: 'block', width: '100%', aspectRatio: '16/9', overflow: 'hidden', background: '#e2e8f0' }}>
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.3s ease' }}
+                    />
+                  </Link>
 
-                <div style={{ padding: '24px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-                    <span style={{ background: 'var(--brand-orange-light)', color: 'var(--brand-orange-dark)', fontWeight: 800, fontSize: '11px', padding: '4px 10px', borderRadius: '999px', textTransform: 'uppercase' }}>
-                      {post.category}
-                    </span>
-                    <span className="muted" style={{ fontSize: '12px' }}>
-                      {post.readTime}
-                    </span>
+                  <div style={{ padding: '24px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
+                      <span style={{ background: 'var(--brand-orange-light)', color: 'var(--brand-orange-dark)', fontWeight: 800, fontSize: '11px', padding: '4px 10px', borderRadius: '999px', textTransform: 'uppercase' }}>
+                        {post.category}
+                      </span>
+                      <span className="muted" style={{ fontSize: '12px' }}>
+                        {post.readTime}
+                      </span>
+                    </div>
+
+                    <h3 style={{ fontSize: '1.25rem', margin: '0 0 12px', lineHeight: 1.35 }}>
+                      <Link href={`/blog/${post.slug}`} style={{ color: 'var(--text-main)' }}>
+                        {post.title}
+                      </Link>
+                    </h3>
+
+                    <p className="muted" style={{ fontSize: '14px', lineHeight: 1.7, flexGrow: 1, margin: '0 0 20px' }}>
+                      {post.excerpt}
+                    </p>
+
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '16px', borderTop: '1px solid var(--border)' }}>
+                      <span style={{ fontSize: '12px', color: '#94a3b8' }}>{post.date}</span>
+                      <Link href={`/blog/${post.slug}`} style={{ fontWeight: 800, color: 'var(--brand-orange-dark)', fontSize: '13px', display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+                        <span>Read Article</span>
+                        <ArrowRightIcon size={13} />
+                      </Link>
+                    </div>
                   </div>
-
-                  <h3 style={{ fontSize: '1.25rem', margin: '0 0 12px', lineHeight: 1.35 }}>
-                    <Link href={`/blog/${post.slug}`} style={{ color: 'var(--text-main)' }}>
-                      {post.title}
-                    </Link>
-                  </h3>
-
-                  <p className="muted" style={{ fontSize: '14px', lineHeight: 1.7, flexGrow: 1, margin: '0 0 20px' }}>
-                    {post.excerpt}
-                  </p>
-
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '16px', borderTop: '1px solid var(--border)' }}>
-                    <span style={{ fontSize: '12px', color: '#94a3b8' }}>{post.date}</span>
-                    <Link href={`/blog/${post.slug}`} style={{ fontWeight: 800, color: 'var(--brand-orange-dark)', fontSize: '13px', display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
-                      <span>Read Article</span>
-                      <ArrowRightIcon size={13} />
-                    </Link>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
+                </article>
+              ))}
+            </div>
+          )}
 
           {/* CTA Box */}
           <div className="home-cta" style={{ marginTop: '64px' }}>
