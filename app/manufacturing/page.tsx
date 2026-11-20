@@ -164,48 +164,86 @@ export default function ManufacturingPage() {
             The workflow below shows how Bin Rasool Enterprises handles custom sportswear, fitness wear, boxing wear and teamwear manufacturing from first discussion to packed goods. This structure helps buyers understand what happens before bulk production starts and how quality is controlled during the order.
         </p>
 
-        <div className="process-list">
-                            <article className="process-card">
-                                            <img src="/images/site/1776612585_manufacturing-designing-image.webp" alt="Requirement Review & Design Direction for sportswear manufacturing" />
-                                        <div className="process-card-body">
-                        <span className="process-number">01</span>
-                        <h3>Requirement Review & Design Direction</h3>
-                        <p className="muted">We review your reference samples, tech pack, target price, fabric direction, size range, branding needs and order quantity before recommending the right manufacturing path.</p>
-                    </div>
-                </article>
-                            <article className="process-card">
-                                            <img src="/images/site/1776612585_manufacturing-cutting-image.webp" alt="Pattern, Fabric & Cutting Preparation for sportswear manufacturing" />
-                                        <div className="process-card-body">
-                        <span className="process-number">02</span>
-                        <h3>Pattern, Fabric & Cutting Preparation</h3>
-                        <p className="muted">Patterns, measurements, fabric behavior, panels, trims and cutting plans are prepared to support consistent sizing and production repeatability.</p>
-                    </div>
-                </article>
-                            <article className="process-card">
-                                            <img src="/images/site/1776612585_manufacturing-stitching-image.webp" alt="Stitching & Garment Construction for sportswear manufacturing" />
-                                        <div className="process-card-body">
-                        <span className="process-number">03</span>
-                        <h3>Stitching & Garment Construction</h3>
-                        <p className="muted">Garments move through stitching with attention to seam strength, fit, stretch points, finishing details and category-specific construction requirements.</p>
-                    </div>
-                </article>
-                            <article className="process-card">
-                                            <img src="/images/site/1776612585_manufacturing-checking-image.webp" alt="Inline Checking & Quality Review for sportswear manufacturing" />
-                                        <div className="process-card-body">
-                        <span className="process-number">04</span>
-                        <h3>Inline Checking & Quality Review</h3>
-                        <p className="muted">Production pieces are checked for stitching, measurements, labels, print placement, embroidery, trims, sizing and overall export presentation.</p>
-                    </div>
-                </article>
-                            <article className="process-card">
-                                            <img src="/images/site/1776612585_manufacturing-packing-image.webp" alt="Finishing, Packing & Export Readiness for sportswear manufacturing" />
-                                        <div className="process-card-body">
-                        <span className="process-number">05</span>
-                        <h3>Finishing, Packing & Export Readiness</h3>
-                        <p className="muted">Products are cleaned, folded, tagged, packed, carton-marked and prepared for dispatch with a buyer-focused presentation.</p>
-                    </div>
-                </article>
-                    </div>
+        <div className="mfg-workflow-grid">
+            <article className="mfg-workflow-card">
+                <div className="mfg-workflow-media">
+                    <img src="/images/site/1776612585_manufacturing-designing-image.webp" alt="Requirement Review & Design Direction for sportswear manufacturing" />
+                </div>
+                <div className="mfg-workflow-body">
+                    <h3>Requirement Review & Design Direction</h3>
+                    <p className="muted">We review your reference samples, tech pack, target price, fabric direction, size range, branding needs and order quantity before recommending the right manufacturing path.</p>
+                </div>
+                <div className="mfg-flow-arrow" aria-hidden="true" title="Next: Pattern & Cutting Preparation">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </div>
+            </article>
+
+            <article className="mfg-workflow-card">
+                <div className="mfg-workflow-media">
+                    <img src="/images/site/1776612585_manufacturing-cutting-image.webp" alt="Pattern, Fabric & Cutting Preparation for sportswear manufacturing" />
+                </div>
+                <div className="mfg-workflow-body">
+                    <h3>Pattern, Fabric & Cutting Preparation</h3>
+                    <p className="muted">Patterns, measurements, fabric behavior, panels, trims and cutting plans are prepared to support consistent sizing and production repeatability.</p>
+                </div>
+                <div className="mfg-flow-arrow" aria-hidden="true" title="Next: Stitching & Construction">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </div>
+            </article>
+
+            <article className="mfg-workflow-card">
+                <div className="mfg-workflow-media">
+                    <img src="/images/site/1776612585_manufacturing-stitching-image.webp" alt="Stitching & Garment Construction for sportswear manufacturing" />
+                </div>
+                <div className="mfg-workflow-body">
+                    <h3>Stitching & Garment Construction</h3>
+                    <p className="muted">Garments move through stitching with attention to seam strength, fit, stretch points, finishing details and category-specific construction requirements.</p>
+                </div>
+                <div className="mfg-flow-arrow mfg-flow-arrow-down" aria-hidden="true" title="Next: Inline Quality Review">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <polyline points="19 12 12 19 5 12"></polyline>
+                    </svg>
+                </div>
+            </article>
+
+            <article className="mfg-workflow-card">
+                <div className="mfg-workflow-media">
+                    <img src="/images/site/1776612585_manufacturing-checking-image.webp" alt="Inline Checking & Quality Review for sportswear manufacturing" />
+                </div>
+                <div className="mfg-workflow-body">
+                    <h3>Inline Checking & Quality Review</h3>
+                    <p className="muted">Production pieces are checked for stitching, measurements, labels, print placement, embroidery, trims, sizing and overall export presentation.</p>
+                </div>
+                <div className="mfg-flow-arrow" aria-hidden="true" title="Next: Finishing & Export Readiness">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </div>
+            </article>
+
+            <article className="mfg-workflow-card">
+                <div className="mfg-workflow-media">
+                    <img src="/images/site/1776612585_manufacturing-packing-image.webp" alt="Finishing, Packing & Export Readiness for sportswear manufacturing" />
+                </div>
+                <div className="mfg-workflow-body">
+                    <h3>Finishing, Packing & Export Readiness</h3>
+                    <p className="muted">Products are cleaned, folded, tagged, packed, carton-marked and prepared for dispatch with a buyer-focused presentation.</p>
+                </div>
+                <div className="mfg-flow-arrow mfg-flow-arrow-done" aria-hidden="true" title="Final Export Readiness">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>
+            </article>
+        </div>
     </div>
 </section>
 
