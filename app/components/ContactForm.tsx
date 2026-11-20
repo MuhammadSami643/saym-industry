@@ -88,15 +88,12 @@ ${notes}
         boxShadow: '0 4px 25px rgba(15, 23, 42, 0.06)',
       }}
     >
-      <div style={{ marginBottom: '24px' }}>
-        <span style={{ color: 'var(--brand-orange, #f3a626)', textTransform: 'uppercase', fontWeight: 800, letterSpacing: '1.5px', fontSize: '12px', display: 'block', marginBottom: '6px' }}>
-          FACTORY DIRECT RFQ &bull; CONFIDENTIAL REVIEW
-        </span>
-        <h2 style={{ marginTop: 0, fontSize: '26px', fontWeight: 800, color: '#0f172a', letterSpacing: '-0.02em', marginBottom: '8px' }}>
-          Request a Manufacturing Quote
+      <div style={{ marginBottom: '22px' }}>
+        <h2 style={{ marginTop: 0, fontSize: '22px', fontWeight: 800, color: '#0f172a', marginBottom: '6px' }}>
+          Send an Inquiry
         </h2>
-        <p style={{ color: '#64748b', fontSize: '14.5px', margin: 0, lineHeight: 1.6 }}>
-          Share your target garments, fabric preferences, and order quantities. Our merchandising team will review your brief and reply with transparent factory pricing and sampling lead times within 24 hours.
+        <p style={{ color: '#64748b', fontSize: '14px', margin: 0, lineHeight: 1.5 }}>
+          Provide your specifications below and our factory merchandising desk will review and reply with pricing, MOQ options, and sampling lead times.
         </p>
       </div>
 
