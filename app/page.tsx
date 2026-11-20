@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import HeroSlider from './components/HeroSlider';
 import FaqSection from './components/FaqSection';
+import { ArrowRightIcon } from './components/AdminIcons';
 
 export default function Home() {
   return (
@@ -35,21 +36,21 @@ export default function Home() {
                 <Link href="/low-moq-activewear-manufacturer" className="trust-card" style={{ textDecoration: 'none', display: 'block' }}>
                     <h3 style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <span>Low MOQ Production</span>
-                        <span style={{ fontSize: '14px', color: 'var(--brand-orange)' }}>&rarr;</span>
+                        <ArrowRightIcon size={14} style={{ color: 'var(--brand-orange)' }} />
                     </h3>
                     <p className="muted">Typical orders can begin around 50 pieces per style, depending on fabric, construction, colors and branding.</p>
                 </Link>
                 <Link href="/activewear-manufacturer-for-startups" className="trust-card" style={{ textDecoration: 'none', display: 'block' }}>
                     <h3 style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <span>Startup-Friendly Planning</span>
-                        <span style={{ fontSize: '14px', color: 'var(--brand-orange)' }}>&rarr;</span>
+                        <ArrowRightIcon size={14} style={{ color: 'var(--brand-orange)' }} />
                     </h3>
                     <p className="muted">We help new brands control SKU count, sample carefully and protect working capital instead of pushing an oversized opening order.</p>
                 </Link>
                 <Link href="/private-label-activewear-manufacturer" className="trust-card" style={{ textDecoration: 'none', display: 'block' }}>
                     <h3 style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <span>Private Label Customization</span>
-                        <span style={{ fontSize: '14px', color: 'var(--brand-orange)' }}>&rarr;</span>
+                        <ArrowRightIcon size={14} style={{ color: 'var(--brand-orange)' }} />
                     </h3>
                     <p className="muted">Develop custom fits, colors, panels, labels, hang tags, logo applications, packaging and presentation under your own brand.</p>
                 </Link>
@@ -180,7 +181,7 @@ export default function Home() {
                             <span style={{ fontSize: '11px', fontWeight: 700, background: '#f1f5f9', color: '#334155', padding: '3px 8px', borderRadius: '6px' }}>4-Needle Flatlock</span>
                             <span style={{ fontSize: '11px', fontWeight: 700, background: '#f1f5f9', color: '#334155', padding: '3px 8px', borderRadius: '6px' }}>240 GSM Squat-Proof</span>
                         </div>
-                        <span className="card-action">Explore Fitness Wear &rarr;</span>
+                        <span className="card-action" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', lineHeight: 1 }}><span>Explore Fitness Wear</span><ArrowRightIcon size={13} /></span>
                     </div>
                 </a>
                 <a href="/sportswear" className="home-card category-card" aria-label="Explore Sports Wear manufacturing">
@@ -193,7 +194,7 @@ export default function Home() {
                             <span style={{ fontSize: '11px', fontWeight: 700, background: '#f1f5f9', color: '#334155', padding: '3px 8px', borderRadius: '6px' }}>Moisture-Wicking Poly</span>
                             <span style={{ fontSize: '11px', fontWeight: 700, background: '#f1f5f9', color: '#334155', padding: '3px 8px', borderRadius: '6px' }}>Reinforced Seams</span>
                         </div>
-                        <span className="card-action">Explore Sports Wear &rarr;</span>
+                        <span className="card-action" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', lineHeight: 1 }}><span>Explore Sports Wear</span><ArrowRightIcon size={13} /></span>
                     </div>
                 </a>
                 <a href="/boxing-gear" className="home-card category-card" aria-label="Explore Boxing Wear manufacturing">
@@ -206,7 +207,7 @@ export default function Home() {
                             <span style={{ fontSize: '11px', fontWeight: 700, background: '#f1f5f9', color: '#334155', padding: '3px 8px', borderRadius: '6px' }}>Multi-Layer Latex Foam</span>
                             <span style={{ fontSize: '11px', fontWeight: 700, background: '#f1f5f9', color: '#334155', padding: '3px 8px', borderRadius: '6px' }}>Anatomical Thumb Lock</span>
                         </div>
-                        <span className="card-action">Explore Boxing Gear &rarr;</span>
+                        <span className="card-action" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', lineHeight: 1 }}><span>Explore Boxing Gear</span><ArrowRightIcon size={13} /></span>
                     </div>
                 </a>
                 <a href="/streetwear" className="home-card category-card" aria-label="Explore Streetwear manufacturing">
@@ -219,7 +220,7 @@ export default function Home() {
                             <span style={{ fontSize: '11px', fontWeight: 700, background: '#f1f5f9', color: '#334155', padding: '3px 8px', borderRadius: '6px' }}>100% Combed Cotton</span>
                             <span style={{ fontSize: '11px', fontWeight: 700, background: '#f1f5f9', color: '#334155', padding: '3px 8px', borderRadius: '6px' }}>High-Density 3D Puff</span>
                         </div>
-                        <span className="card-action">Explore Streetwear &rarr;</span>
+                        <span className="card-action" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', lineHeight: 1 }}><span>Explore Streetwear</span><ArrowRightIcon size={13} /></span>
                     </div>
                 </a>
             </div>

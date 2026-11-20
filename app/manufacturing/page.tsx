@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd';
 import FaqSection from '../components/FaqSection';
+import { ArrowRightIcon } from '../components/AdminIcons';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -189,7 +190,7 @@ export default function ManufacturingPage() {
                                         <span className="mfg-flow-phase">Phase 01</span>
                                         <div className="mfg-flow-line-connector">
                                             <span className="mfg-flow-line"></span>
-                                            <span className="mfg-flow-chevron">➔</span>
+                                            <ArrowRightIcon size={14} className="mfg-flow-chevron" />
                                         </div>
                                     </div>
                                     <h3>Requirement Review &amp; Design Direction</h3>
@@ -206,7 +207,7 @@ export default function ManufacturingPage() {
                                         <span className="mfg-flow-phase">Phase 02</span>
                                         <div className="mfg-flow-line-connector">
                                             <span className="mfg-flow-line"></span>
-                                            <span className="mfg-flow-chevron">➔</span>
+                                            <ArrowRightIcon size={14} className="mfg-flow-chevron" />
                                         </div>
                                     </div>
                                     <h3>Pattern, Fabric &amp; Cutting Preparation</h3>
@@ -222,8 +223,8 @@ export default function ManufacturingPage() {
                                     <div className="mfg-flow-step-bar">
                                         <span className="mfg-flow-phase">Phase 03</span>
                                         <div className="mfg-flow-line-connector">
-                                            <span className="mfg-flow-line" style={{ width: '28px' }}></span>
-                                            <span className="mfg-flow-chevron" title="Continues to Phase 04">↳</span>
+                                            <span className="mfg-flow-line"></span>
+                                            <ArrowRightIcon size={14} className="mfg-flow-chevron" />
                                         </div>
                                     </div>
                                     <h3>Stitching &amp; Garment Construction</h3>
@@ -240,7 +241,7 @@ export default function ManufacturingPage() {
                                         <span className="mfg-flow-phase">Phase 04</span>
                                         <div className="mfg-flow-line-connector">
                                             <span className="mfg-flow-line"></span>
-                                            <span className="mfg-flow-chevron">➔</span>
+                                            <ArrowRightIcon size={14} className="mfg-flow-chevron" />
                                         </div>
                                     </div>
                                     <h3>Inline Checking &amp; Quality Review</h3>
@@ -278,32 +279,66 @@ export default function ManufacturingPage() {
 
                         <div className="capability-grid">
                             <article className="capability-card">
-                                <div className="capability-card-icon">🏷️</div>
+                                <div className="capability-card-icon" aria-hidden="true">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                                        <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                                    </svg>
+                                </div>
                                 <h3>Private Label Packaging</h3>
                                 <p>Custom woven damask neck labels, soft satin care labels, debossed hangtags, branded frosted zipper polybags, and retail-ready barcode stickers.</p>
                             </article>
                             <article className="capability-card">
-                                <div className="capability-card-icon">🧵</div>
+                                <div className="capability-card-icon" aria-hidden="true">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                        <polyline points="2 17 12 22 22 17"></polyline>
+                                        <polyline points="2 12 12 17 22 12"></polyline>
+                                    </svg>
+                                </div>
                                 <h3>Technical Fabrics &amp; Materials</h3>
                                 <p>High-stretch nylon-spandex, squat-proof interlock, heavyweight French terry, loopback fleece, anti-microbial mesh, and quick-dry dry-fit polyester.</p>
                             </article>
                             <article className="capability-card">
-                                <div className="capability-card-icon">🎨</div>
+                                <div className="capability-card-icon" aria-hidden="true">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <path d="M8 12h8"></path>
+                                        <path d="M12 8v8"></path>
+                                    </svg>
+                                </div>
                                 <h3>Advanced Custom Branding</h3>
                                 <p>High-density 3D puff screen printing, matte silicone heat transfers, multi-head Tajima embroidery, discharge printing, and full-coverage dye sublimation.</p>
                             </article>
                             <article className="capability-card">
-                                <div className="capability-card-icon">📦</div>
+                                <div className="capability-card-icon" aria-hidden="true">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                                    </svg>
+                                </div>
                                 <h3>Low &amp; Flexible MOQs</h3>
                                 <p>Accessible minimum order quantities starting from 50 pieces per colorway, designed to help emerging fitness labels and gyms launch without inventory bloat.</p>
                             </article>
                             <article className="capability-card">
-                                <div className="capability-card-icon">🤝</div>
+                                <div className="capability-card-icon" aria-hidden="true">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                    </svg>
+                                </div>
                                 <h3>Direct B2B Communication</h3>
                                 <p>Dedicated merchandising manager providing real-time production video updates, tech pack feedback, digital size grading charts, and sample approvals.</p>
                             </article>
                             <article className="capability-card">
-                                <div className="capability-card-icon">🥋</div>
+                                <div className="capability-card-icon" aria-hidden="true">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <rect x="3" y="3" width="7" height="7"></rect>
+                                        <rect x="14" y="3" width="7" height="7"></rect>
+                                        <rect x="14" y="14" width="7" height="7"></rect>
+                                        <rect x="3" y="14" width="7" height="7"></rect>
+                                    </svg>
+                                </div>
                                 <h3>Specialized Category Pods</h3>
                                 <p>Independent production cells configured specifically for activewear &amp; leggings, teamwear uniforms, heavy streetwear hoodies, and combat sports fightwear.</p>
                             </article>
@@ -325,7 +360,7 @@ export default function ManufacturingPage() {
                                 <div className="category-mfg-body">
                                     <h3>Fitness &amp; Activewear</h3>
                                     <p>Squat-proof leggings, seamless sports bras, compression tights, athletic shorts, and dry-fit performance workout tees.</p>
-                                    <span className="category-mfg-link">Explore Fitness Manufacturing &rarr;</span>
+                                    <span className="category-mfg-link"><span>Explore Fitness Manufacturing</span><ArrowRightIcon size={13} /></span>
                                 </div>
                             </Link>
                             <Link href="/sportswear-manufacturer-exporter" className="category-mfg-card">
@@ -333,7 +368,7 @@ export default function ManufacturingPage() {
                                 <div className="category-mfg-body">
                                     <h3>Sportswear &amp; Teamwear</h3>
                                     <p>Sublimated soccer jerseys, basketball uniforms, warm-up tracksuits, athletic jackets, and custom club training kits.</p>
-                                    <span className="category-mfg-link">Explore Sports Manufacturing &rarr;</span>
+                                    <span className="category-mfg-link"><span>Explore Sports Manufacturing</span><ArrowRightIcon size={13} /></span>
                                 </div>
                             </Link>
                             <Link href="/boxing-gear-manufacturer-bulk" className="category-mfg-card">
@@ -341,7 +376,7 @@ export default function ManufacturingPage() {
                                 <div className="category-mfg-body">
                                     <h3>Boxing &amp; Combat Fightwear</h3>
                                     <p>Heavy satin boxing trunks, BJJ rash guards, MMA fight shorts, corner walkout robes, and combat training accessories.</p>
-                                    <span className="category-mfg-link">Explore Boxing Manufacturing &rarr;</span>
+                                    <span className="category-mfg-link"><span>Explore Boxing Manufacturing</span><ArrowRightIcon size={13} /></span>
                                 </div>
                             </Link>
                         </div>
