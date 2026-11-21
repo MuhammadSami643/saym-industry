@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { supabase, isSupabaseConfigured } from '@/app/lib/supabase';
+import { getAllInquiries, addInquiry } from '@/app/lib/inquiriesStore';
 
 const MOCK_INQUIRIES = [
   {
@@ -26,41 +27,20 @@ const MOCK_INQUIRIES = [
 
 // GET /api/inquiries -> Fetch all inquiries (Admin / Backend)
 export async function GET(request: Request) {
-  if (!isSupabaseConfigured) {
-    return NextResponse.json({
-      success: true,
-      count: MOCK_INQUIRIES.length,
-      data: MOCK_INQUIRIES
-    });
-  }
-
   try {
     const { searchParams } = new URL(request.url);
     const status = searchParams.get('status');
 
-    let query = supabase
-      .from('inquiries')
-      .select('*')
-      .order('date', { ascending: false });
+    let all = getAllInquiries();
 
     if (status) {
-      query = query.eq('status', status);
-    }
-
-    const { data, error } = await query;
-
-    if (error) {
-      console.error('Supabase fetch error:', error);
-      return NextResponse.json(
-        { error: error.message, data: [] },
-        { status: 500 }
-      );
+      all = all.filter(item => item.status.toLowerCase() === status.toLowerCase());
     }
 
     return NextResponse.json({
       success: true,
-      count: data?.length || 0,
-      data: data || []
+      count: all.length,
+      data: all
     });
   } catch (err: any) {
     console.error('API /api/inquiries GET error:', err);
@@ -75,7 +55,7 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, phone, subject, details, message } = body;
+    const { name, email, phone, company, country, subject, details, message } = body;
 
     const messageContent = (details || message || '').trim();
 
@@ -86,34 +66,21 @@ export async function POST(request: Request) {
       );
     }
 
-    // Insert into Supabase
-    const { data, error } = await supabase
-      .from('inquiries')
-      .insert([
-        {
-          name: name.trim(),
-          email: email.trim().toLowerCase(),
-          phone: phone ? phone.trim() : null,
-          subject: subject ? subject.trim() : 'General Inquiry',
-          details: messageContent,
-          status: 'new'
-        }
-      ])
-      .select();
-
-    if (error) {
-      console.error('Supabase insert inquiry error:', error);
-      return NextResponse.json(
-        { error: error.message },
-        { status: 500 }
-      );
-    }
+    const saved = await addInquiry({
+      name,
+      email,
+      phone,
+      company,
+      country,
+      subject,
+      details: messageContent
+    });
 
     return NextResponse.json(
       {
         success: true,
-        message: 'Inquiry submitted successfully to database.',
-        data: data?.[0] || null
+        message: 'Inquiry submitted successfully.',
+        data: saved
       },
       { status: 201 }
     );

@@ -47,13 +47,13 @@ export const metadata: Metadata = {
 const FITNESS_CATEGORIES = [
   {
     title: "High-Waist Squat-Proof Leggings",
-    description: "75/25 Nylon Spandex 4-way stretch interlock with gusseted crotch, flatlock seams, and zero-transparency opacity.",
+    description: "75/25 Nylon Spandex 4-way stretch interlock with gusseted crotch, flatlock seams and zero-transparency opacity.",
     image: "/images/categories/1776540259_fitness-wear.webp",
     link: "/products",
   },
   {
     title: "Supportive Sports Bras",
-    description: "High, medium, and light impact sports bras with removable molded pads, racerback styling, and brushed elastic underbands.",
+    description: "High, medium and light impact sports bras with removable molded pads, racerback styling and brushed elastic underbands.",
     image: "/images/categories/1776540259_fitness-wear.webp",
     link: "/products",
   },
@@ -77,7 +77,7 @@ const FITNESS_CATEGORIES = [
   },
   {
     title: "Seamless Knitted Activewear",
-    description: "Engineered body-mapped jacquard circular knits providing targeted compression, moisture wicking, and second-skin comfort.",
+    description: "Engineered body-mapped jacquard circular knits providing targeted compression, moisture wicking and second-skin comfort.",
     image: "/images/categories/1776540259_fitness-wear.webp",
     link: "/products",
   },
@@ -94,7 +94,7 @@ const FITNESS_SPECS = [
   },
   {
     title: "High-Recovery Waistband Construction",
-    content: "Our custom leggings feature reinforced multi-layer bonded waistbands that stay up during sprints, deadlifts, and cardio without slipping or folding over.",
+    content: "Our custom leggings feature reinforced multi-layer bonded waistbands that stay up during sprints, deadlifts and cardio without slipping or folding over.",
   },
   {
     title: "Tagless Silicone Heat-Seal Branding",
@@ -106,7 +106,7 @@ const FITNESS_SPECS = [
   },
   {
     title: "Low MOQ Starting at 50 Pieces per Style",
-    content: "We support emerging fitness brands, boutique gym studios, and fitness creators with an accessible 50 pcs MOQ per style/colorway across standard size runs (XS to 3XL).",
+    content: "We support emerging fitness brands, boutique gym studios and fitness creators with an accessible 50 pcs MOQ per style/colorway across standard size runs (XS to 3XL).",
   },
 ];
 
@@ -141,7 +141,7 @@ export default function FitnessWearManufacturerPage() {
               <span className="pl-kicker">PRIVATE LABEL ACTIVEWEAR &bull; SIALKOT, PAKISTAN</span>
               <h1>Custom Fitness Wear &amp; Activewear Manufacturer</h1>
               <p>
-                Bin Rasool Enterprises is a premier OEM activewear and fitness clothing manufacturer in Sialkot, Pakistan. We engineer squat-proof leggings, supportive sports bras, seamless sets, tapered joggers, and oversized gym tees for emerging fitness brands, creators, and international gym chains.
+                Bin Rasool Enterprises is a premier OEM activewear and fitness clothing manufacturer in Sialkot, Pakistan. We engineer squat-proof leggings, supportive sports bras, seamless sets, tapered joggers and oversized gym tees for emerging fitness brands, creators and international gym chains.
               </p>
               <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '26px' }}>
                 <Link href="/contact" className="btn btn-primary">
@@ -155,7 +155,7 @@ export default function FitnessWearManufacturerPage() {
 
             <div className="pl-summary">
               <strong>Squat-Proof. Seamless. Retail-Ready.</strong>
-              <p>75/25 Nylon Spandex, brushed interlock, seamless circular knitting, and custom silicone branding with 50 pcs low MOQ and fast DHL sampling.</p>
+              <p>75/25 Nylon Spandex, brushed interlock, seamless circular knitting and custom silicone branding with 50 pcs low MOQ and fast DHL sampling.</p>
             </div>
           </div>
         </div>
@@ -173,7 +173,7 @@ export default function FitnessWearManufacturerPage() {
             </div>
             <div className="pl-note">
               <p className="muted" style={{ margin: '0 0 14px', color: '#475569', fontSize: '15.5px', lineHeight: '1.75' }}>
-                Activewear buyers demand garments that perform under heavy strain and look flattering on camera. We formulate our technical fabrics using micro-denier nylon and premium elastane, delivering high compressive recovery, four-way stretch, and zero transparency.
+                Activewear buyers demand garments that perform under heavy strain and look flattering on camera. We formulate our technical fabrics using micro-denier nylon and premium elastane, delivering high compressive recovery, four-way stretch and zero transparency.
               </p>
               <p className="muted" style={{ margin: 0, color: '#475569', fontSize: '15.5px', lineHeight: '1.75' }}>
                 From custom woven neck labels and soft-touch satin wash care tags to branded frosted EVA zipper polybags, we handle every detail so your collection arrives retail-ready for e-commerce and Amazon FBA.
@@ -192,7 +192,7 @@ export default function FitnessWearManufacturerPage() {
               Core Fitness &amp; Activewear Styles
             </h2>
             <p style={{ color: '#475569', fontSize: '15.5px', margin: 0 }}>
-              Customizable with your custom tech pack, GSM specifications, colorways, and private label branding.
+              Customizable with your custom tech pack, GSM specifications, colorways and private label branding.
             </p>
           </div>
 
@@ -260,7 +260,7 @@ export default function FitnessWearManufacturerPage() {
           <div className="sw-cta-box">
             <h2>Ready to develop your custom fitness wear line?</h2>
             <p>
-              Send your tech packs, reference garments, or moodboard. Our product development team will evaluate fabric weights, trims, and provide clear sample pricing within 24 hours.
+              Send your tech packs, reference garments or moodboard. Our product development team will evaluate fabric weights, trims and provide clear sample pricing within 24 hours.
             </p>
             <div>
               <Link href="/contact" className="sw-btn-primary" style={{ padding: '16px 36px', fontSize: '16px' }}>

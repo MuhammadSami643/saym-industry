@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd';
 import { WhatsAppIcon } from '../components/AdminIcons';
@@ -196,100 +196,138 @@ export default function TrackOrderPage() {
   const [searchInput, setSearchInput] = useState('');
   const [currentOrder, setCurrentOrder] = useState<OrderRecord | null>(DEMO_ORDERS['BRE-2026-9014']);
   const [errorMsg, setErrorMsg] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    const query = searchInput.trim().toUpperCase();
-    if (!query) {
-      setErrorMsg('Please enter an Order ID or Sample ID.');
+  // Auto-load if query param ?id=... or ?orderId=... is in URL
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const urlId = params.get('id') || params.get('orderId');
+      if (urlId) {
+        setSearchInput(urlId);
+        fetchOrder(urlId);
+      }
+    }
+  }, []);
+
+  const fetchOrder = async (orderId: string) => {
+    const query = orderId.trim().toUpperCase();
+    if (!query) return;
+
+    setLoading(true);
+    setErrorMsg('');
+
+    try {
+      const res = await fetch(`/api/orders?id=${encodeURIComponent(query)}`);
+      if (res.ok) {
+        const data = await res.json();
+        if (data.success && data.order) {
+          setCurrentOrder(data.order);
+          setLoading(false);
+          return;
+        }
+      }
+    } catch (e) {
+      console.warn('API order fetch fallback:', e);
+    }
+
+    // Fallback to local demo
+    if (DEMO_ORDERS[query]) {
+      setCurrentOrder(DEMO_ORDERS[query]);
+      setLoading(false);
       return;
     }
 
-    if (DEMO_ORDERS[query]) {
-      setCurrentOrder(DEMO_ORDERS[query]);
-      setErrorMsg('');
-    } else {
-      setCurrentOrder({
-        orderId: query,
-        clientName: 'Valued OEM Buyer',
-        brand: 'International Client Partner',
-        country: 'Worldwide Air/Sea Cargo',
-        item: 'Custom Cut & Sew Production Batch',
-        quantity: 'Active Batch',
-        fabricSpec: 'Factory Sourced Certified Mill Fabric',
-        targetDispatch: 'Est. 14 Working Days',
-        estimatedRemainingTime: 'Approx. 8-10 Working Days Total',
-        carrier: 'DHL / FedEx International',
-        trackingNumber: `AWB-${query}-PK`,
-        overallStatus: 'Cutting',
-        milestones: [
-          {
-            stage: '01',
-            title: 'Tech Pack Verification & Fabric Procurement',
-            desc: 'Yarn sourced and lab-dip swatches verified against Pantone standard.',
-            completed: true,
-            active: false,
-            date: 'Completed',
-            estimatedDuration: '3 Days'
-          },
-          {
-            stage: '02',
-            title: 'Pattern CAD Grading & Precision Fabric Cutting',
-            desc: 'Automated fabric layout and cutting table processing.',
-            completed: false,
-            active: true,
-            date: 'In Progress',
-            estimatedDuration: '4 Days'
-          },
-          {
-            stage: '03',
-            title: 'Industrial Stitching & Private Label Printing',
-            desc: 'Assembly line sewing, custom inner tags and decorative embroidery.',
-            completed: false,
-            active: false,
-            date: 'Scheduled',
-            estimatedDuration: '5-7 Days'
-          },
-          {
-            stage: '04',
-            title: 'AQL 2.5 Quality Audit & Seam Strength Check',
-            desc: 'Full measurement tolerance inspection and lab testing.',
-            completed: false,
-            active: false,
-            date: 'Scheduled',
-            estimatedDuration: '2 Days'
-          },
-          {
-            stage: '05',
-            title: 'Industrial Steam Pressing',
-            desc: 'Vacuum steam ironing, crease removal, thread trimming and garment shape stabilization.',
-            completed: false,
-            active: false,
-            date: 'Scheduled',
-            estimatedDuration: '24-48 Hours'
-          },
-          {
-            stage: '06',
-            title: 'Custom Retail Packaging',
-            desc: 'Brand woven tags, hangtags, barcodes, individual frosted polybags and master cartons.',
-            completed: false,
-            active: false,
-            date: 'Scheduled',
-            estimatedDuration: '24 Hours'
-          },
-          {
-            stage: '07',
-            title: 'Customs Clearance & Air Cargo Dispatch',
-            desc: 'Dry Port handover, DHL/FedEx AWB tracking issuance and air freight departure.',
-            completed: false,
-            active: false,
-            date: 'Scheduled',
-            estimatedDuration: '1-2 Days'
-          }
-        ]
-      });
-      setErrorMsg('');
+    // Default active batch simulation for new queries
+    setCurrentOrder({
+      orderId: query,
+      clientName: 'Valued OEM Buyer',
+      brand: 'International Client Partner',
+      country: 'Worldwide Air/Sea Cargo',
+      item: 'Custom Cut & Sew Production Batch',
+      quantity: 'Active Batch',
+      fabricSpec: 'Factory Sourced Certified Mill Fabric',
+      targetDispatch: 'Est. 14 Working Days',
+      estimatedRemainingTime: 'Approx. 8-10 Working Days Total',
+      carrier: 'DHL / FedEx International',
+      trackingNumber: `AWB-${query}-PK`,
+      overallStatus: 'Cutting',
+      milestones: [
+        {
+          stage: '01',
+          title: 'Tech Pack Verification & Fabric Procurement',
+          desc: 'Yarn sourced and lab-dip swatches verified against Pantone standard.',
+          completed: true,
+          active: false,
+          date: 'Completed',
+          estimatedDuration: '3 Days'
+        },
+        {
+          stage: '02',
+          title: 'Pattern CAD Grading & Precision Fabric Cutting',
+          desc: 'Automated fabric layout and cutting table processing.',
+          completed: false,
+          active: true,
+          date: 'In Progress',
+          estimatedDuration: '4 Days'
+        },
+        {
+          stage: '03',
+          title: 'Industrial Stitching & Private Label Printing',
+          desc: 'Assembly line sewing, custom inner tags and decorative embroidery.',
+          completed: false,
+          active: false,
+          date: 'Scheduled',
+          estimatedDuration: '5-7 Days'
+        },
+        {
+          stage: '04',
+          title: 'AQL 2.5 Quality Audit & Seam Strength Check',
+          desc: 'Full measurement tolerance inspection and lab testing.',
+          completed: false,
+          active: false,
+          date: 'Scheduled',
+          estimatedDuration: '2 Days'
+        },
+        {
+          stage: '05',
+          title: 'Industrial Steam Pressing',
+          desc: 'Vacuum steam ironing, crease removal, thread trimming and garment shape stabilization.',
+          completed: false,
+          active: false,
+          date: 'Scheduled',
+          estimatedDuration: '24-48 Hours'
+        },
+        {
+          stage: '06',
+          title: 'Custom Retail Packaging',
+          desc: 'Brand woven tags, hangtags, barcodes, individual frosted polybags and master cartons.',
+          completed: false,
+          active: false,
+          date: 'Scheduled',
+          estimatedDuration: '24 Hours'
+        },
+        {
+          stage: '07',
+          title: 'Customs Clearance & Air Cargo Dispatch',
+          desc: 'Dry Port handover, DHL/FedEx AWB tracking issuance and air freight departure.',
+          completed: false,
+          active: false,
+          date: 'Scheduled',
+          estimatedDuration: '1-2 Days'
+        }
+      ]
+    });
+    setLoading(false);
+  };
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!searchInput.trim()) {
+      setErrorMsg('Please enter an Order ID or Sample ID.');
+      return;
     }
+    fetchOrder(searchInput);
   };
 
   return (
@@ -300,44 +338,44 @@ export default function TrackOrderPage() {
           <BreadcrumbJsonLd
             items={[
               { label: 'Home', href: '/' },
-              { label: 'Track Order' },
+              { label: 'Track Production' },
             ]}
           />
           <span className="hero-kicker">LIVE PRODUCTION TRACKER</span>
-          <h1>Track Your Production Order</h1>
+          <h1>Track Live Factory Production</h1>
           <p>
-            Monitor real-time manufacturing progress, cutting, stitching, and international courier dispatch directly from our Sialkot factory floor.
+            Monitor real-time manufacturing progress, cutting, stitching and international courier dispatch directly from our Sialkot factory floor.
           </p>
         </div>
       </section>
 
       {/* Main Content */}
-      <section className="section" style={{ background: '#f8fafc', padding: '48px 0 72px' }}>
-        <div className="container" style={{ maxWidth: '980px' }}>
+      <section className="section" style={{ background: '#f8fafc', padding: '36px 0 64px' }}>
+        <div className="container" style={{ maxWidth: '960px' }}>
           
           {/* Search Card */}
           <div
             style={{
               background: '#ffffff',
-              borderRadius: '16px',
-              padding: '24px 28px',
+              borderRadius: '14px',
+              padding: '20px 24px',
               border: '1px solid #e2e8f0',
-              boxShadow: '0 4px 16px rgba(15, 23, 42, 0.04)',
-              marginBottom: '32px',
+              boxShadow: '0 2px 12px rgba(15, 23, 42, 0.03)',
+              marginBottom: '24px',
             }}
           >
-            <form onSubmit={handleSearch} style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+            <form onSubmit={handleSearch} style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
               <input
                 type="text"
                 value={searchInput}
                 onChange={e => setSearchInput(e.target.value)}
-                placeholder="Enter Order ID (e.g. BRE-2026-9014 or BRE-SAMPLE-104)"
+                placeholder="Enter Production or Sample ID (e.g. BRE-2026-9014 or BRE-SAMPLE-104)"
                 style={{
                   flex: '1 1 280px',
-                  padding: '13px 18px',
+                  padding: '11px 16px',
                   borderRadius: '10px',
                   border: '1.5px solid #cbd5e1',
-                  fontSize: '15px',
+                  fontSize: '14.5px',
                   color: '#0f172a',
                   outline: 'none',
                 }}
@@ -346,36 +384,40 @@ export default function TrackOrderPage() {
                 type="submit"
                 className="btn btn-primary"
                 style={{
-                  padding: '13px 26px',
-                  fontSize: '15px',
+                  padding: '11px 22px',
+                  fontSize: '14px',
                   fontWeight: 800,
-                  borderRadius: '10px',
-                  background: 'linear-gradient(135deg, #f3a626 0%, #d98816 100%)',
-                  color: '#ffffff',
+                  borderRadius: '999px',
+                  background: 'var(--brand-orange)',
+                  color: 'var(--brand-black)',
                   border: 'none',
                   cursor: 'pointer',
+                  boxShadow: '0 3px 12px rgba(243, 166, 38, 0.3)',
                 }}
               >
-                Track Order
+                Track Production
               </button>
             </form>
 
             {/* Quick Demo Batch Chips */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '14px', flexWrap: 'wrap', fontSize: '12.5px', color: '#64748b' }}>
-              <span style={{ fontWeight: 600 }}>Sample Batches:</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px', flexWrap: 'wrap', fontSize: '12px', color: '#64748b' }}>
+              <span style={{ fontWeight: 600 }}>Demo Batches:</span>
               <button
                 type="button"
                 onClick={() => { setSearchInput('BRE-2026-9014'); setCurrentOrder(DEMO_ORDERS['BRE-2026-9014']); }}
                 style={{
-                  background: '#f1f5f9',
+                  background: '#f8fafc',
                   border: '1px solid #e2e8f0',
-                  padding: '4px 10px',
-                  borderRadius: '6px',
+                  padding: '4px 12px',
+                  borderRadius: '999px',
                   cursor: 'pointer',
                   fontWeight: 600,
                   color: '#334155',
                   fontSize: '12px',
+                  transition: 'all 0.15s ease',
                 }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = '#f3a626'; e.currentTarget.style.color = '#0f172a'; }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = '#e2e8f0'; e.currentTarget.style.color = '#334155'; }}
               >
                 BRE-2026-9014 (Bulk Hoodies)
               </button>
@@ -383,15 +425,18 @@ export default function TrackOrderPage() {
                 type="button"
                 onClick={() => { setSearchInput('BRE-SAMPLE-104'); setCurrentOrder(DEMO_ORDERS['BRE-SAMPLE-104']); }}
                 style={{
-                  background: '#f1f5f9',
+                  background: '#f8fafc',
                   border: '1px solid #e2e8f0',
-                  padding: '4px 10px',
-                  borderRadius: '6px',
+                  padding: '4px 12px',
+                  borderRadius: '999px',
                   cursor: 'pointer',
                   fontWeight: 600,
                   color: '#334155',
                   fontSize: '12px',
+                  transition: 'all 0.15s ease',
                 }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = '#f3a626'; e.currentTarget.style.color = '#0f172a'; }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = '#e2e8f0'; e.currentTarget.style.color = '#334155'; }}
               >
                 BRE-SAMPLE-104 (Activewear Sets)
               </button>
@@ -409,9 +454,9 @@ export default function TrackOrderPage() {
             <div
               style={{
                 background: '#ffffff',
-                borderRadius: '16px',
+                borderRadius: '14px',
                 border: '1px solid #e2e8f0',
-                boxShadow: '0 4px 20px rgba(15, 23, 42, 0.05)',
+                boxShadow: '0 4px 20px rgba(15, 23, 42, 0.04)',
                 overflow: 'hidden',
               }}
             >
@@ -420,7 +465,7 @@ export default function TrackOrderPage() {
                 style={{
                   background: '#0f172a',
                   color: '#ffffff',
-                  padding: '24px 28px',
+                  padding: '20px 24px',
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center',
@@ -430,7 +475,7 @@ export default function TrackOrderPage() {
               >
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <span style={{ fontSize: '20px', fontWeight: 900, color: '#f3a626' }}>
+                    <span style={{ fontSize: '19px', fontWeight: 900, color: '#f3a626', letterSpacing: '0.02em' }}>
                       {currentOrder.orderId}
                     </span>
                     <span
@@ -445,10 +490,10 @@ export default function TrackOrderPage() {
                         letterSpacing: '0.04em',
                       }}
                     >
-                      {currentOrder.overallStatus}
+                      {currentOrder.overallStatus === 'Dispatched' ? 'Completed & Dispatched' : `Stage: ${currentOrder.overallStatus}`}
                     </span>
                   </div>
-                  <div style={{ fontSize: '13.5px', color: '#cbd5e1', marginTop: '6px' }}>
+                  <div style={{ fontSize: '13px', color: '#cbd5e1', marginTop: '4px' }}>
                     Buyer: <strong>{currentOrder.brand}</strong> &bull; {currentOrder.country}
                   </div>
                 </div>
@@ -457,7 +502,7 @@ export default function TrackOrderPage() {
                   <div style={{ fontSize: '11px', color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                     Target Dispatch Date
                   </div>
-                  <div style={{ fontSize: '16px', fontWeight: 800, color: '#ffffff', marginTop: '2px' }}>
+                  <div style={{ fontSize: '15px', fontWeight: 800, color: '#ffffff', marginTop: '2px' }}>
                     {currentOrder.targetDispatch}
                   </div>
                 </div>
@@ -467,154 +512,124 @@ export default function TrackOrderPage() {
               <div
                 style={{
                   display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-                  gap: '16px',
-                  padding: '18px 28px',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))',
+                  gap: '14px',
+                  padding: '14px 24px',
                   background: '#f8fafc',
                   borderBottom: '1px solid #e2e8f0',
                   fontSize: '13px',
                 }}
               >
                 <div>
-                  <span style={{ color: '#64748b', display: 'block', marginBottom: '3px', fontSize: '11px', textTransform: 'uppercase', fontWeight: 700 }}>
-                    Item
+                  <span style={{ color: '#64748b', display: 'block', marginBottom: '2px', fontSize: '10.5px', textTransform: 'uppercase', fontWeight: 700 }}>
+                    Garment Style
                   </span>
                   <strong style={{ color: '#0f172a' }}>{currentOrder.item}</strong>
                 </div>
                 <div>
-                  <span style={{ color: '#64748b', display: 'block', marginBottom: '3px', fontSize: '11px', textTransform: 'uppercase', fontWeight: 700 }}>
-                    Volume
+                  <span style={{ color: '#64748b', display: 'block', marginBottom: '2px', fontSize: '10.5px', textTransform: 'uppercase', fontWeight: 700 }}>
+                    Order Volume
                   </span>
                   <strong style={{ color: '#0f172a' }}>{currentOrder.quantity}</strong>
                 </div>
                 <div>
-                  <span style={{ color: '#64748b', display: 'block', marginBottom: '3px', fontSize: '11px', textTransform: 'uppercase', fontWeight: 700 }}>
-                    Fabric
+                  <span style={{ color: '#64748b', display: 'block', marginBottom: '2px', fontSize: '10.5px', textTransform: 'uppercase', fontWeight: 700 }}>
+                    Fabric Spec
                   </span>
                   <strong style={{ color: '#0f172a' }}>{currentOrder.fabricSpec}</strong>
                 </div>
                 <div>
-                  <span style={{ color: '#64748b', display: 'block', marginBottom: '3px', fontSize: '11px', textTransform: 'uppercase', fontWeight: 700 }}>
+                  <span style={{ color: '#64748b', display: 'block', marginBottom: '2px', fontSize: '10.5px', textTransform: 'uppercase', fontWeight: 700 }}>
                     Carrier &amp; AWB
                   </span>
                   <strong style={{ color: '#0284c7' }}>{currentOrder.carrier}</strong>
-                  <div style={{ fontSize: '11.5px', color: '#64748b', marginTop: '1px' }}>{currentOrder.trackingNumber}</div>
+                  <div style={{ fontSize: '11.5px', color: '#64748b' }}>{currentOrder.trackingNumber}</div>
                 </div>
               </div>
 
-              {/* Connected Milestone Progression with Arrows */}
-              <div style={{ padding: '32px 28px' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px', flexWrap: 'wrap', gap: '8px' }}>
-                  <h3 style={{ fontSize: '17px', fontWeight: 800, color: '#0f172a', margin: 0 }}>
-                    Production Milestones &amp; Progression
+              {/* Clean Streamlined Milestones List */}
+              <div style={{ padding: '24px 24px 28px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+                  <h3 style={{ fontSize: '15px', fontWeight: 800, color: '#0f172a', margin: 0, textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                    Factory Production Milestones
                   </h3>
-                  <span style={{ fontSize: '12px', color: '#64748b', background: '#f1f5f9', padding: '4px 10px', borderRadius: '6px', fontWeight: 600 }}>
-                    7 Production Stages
+                  <span style={{ fontSize: '12px', color: '#64748b' }}>
+                    {currentOrder.milestones.filter(m => m.completed).length} of {currentOrder.milestones.length} Completed
                   </span>
                 </div>
 
-                {/* Timeline with Arrows */}
+                {/* Timeline Container */}
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
                   {currentOrder.milestones.map((step, idx) => {
                     const isLast = idx === currentOrder.milestones.length - 1;
 
                     return (
-                      <div key={idx} style={{ display: 'flex', gap: '18px', alignItems: 'flex-start' }}>
+                      <div key={idx} style={{ display: 'flex', gap: '14px', alignItems: 'flex-start', minHeight: isLast ? 'auto' : '64px' }}>
                         
-                        {/* Circle Node + Connecting Line with Downward Arrow */}
-                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '38px', flexShrink: 0 }}>
-                          {/* Circle */}
+                        {/* Milestone Node + Line */}
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '28px', flexShrink: 0 }}>
                           <div
                             style={{
-                              width: '38px',
-                              height: '38px',
+                              width: '28px',
+                              height: '28px',
                               borderRadius: '50%',
-                              background: step.completed ? '#10b981' : (step.active ? '#f3a626' : '#f1f5f9'),
-                              color: step.completed ? '#ffffff' : (step.active ? '#0f172a' : '#64748b'),
-                              border: step.active ? '3px solid #fde68a' : (step.completed ? 'none' : '2px solid #e2e8f0'),
+                              background: step.completed ? '#10b981' : (step.active ? '#f3a626' : '#ffffff'),
+                              color: step.completed ? '#ffffff' : (step.active ? '#0f172a' : '#94a3b8'),
+                              border: step.active ? '2.5px solid #fde68a' : (step.completed ? 'none' : '2px solid #cbd5e1'),
                               display: 'grid',
                               placeItems: 'center',
                               fontWeight: 800,
-                              fontSize: '13.5px',
-                              boxShadow: step.active ? '0 0 14px rgba(243, 166, 38, 0.45)' : 'none',
-                              zIndex: 2,
+                              fontSize: step.completed ? '13px' : '11px',
+                              boxShadow: step.active ? '0 0 10px rgba(243, 166, 38, 0.4)' : 'none',
+                              zIndex: 1,
                             }}
                           >
                             {step.completed ? '✓' : step.stage}
                           </div>
 
-                          {/* Line + Downward Arrow */}
                           {!isLast && (
                             <div
                               style={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'center',
-                                padding: '4px 0',
-                                color: step.completed ? '#10b981' : '#cbd5e1',
+                                width: '2px',
+                                flex: 1,
+                                minHeight: '36px',
+                                background: step.completed ? '#10b981' : '#e2e8f0',
+                                margin: '3px 0',
                               }}
-                            >
-                              <div
-                                style={{
-                                  width: '2px',
-                                  height: '28px',
-                                  background: step.completed ? '#10b981' : '#e2e8f0',
-                                }}
-                              />
-                              <svg
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="3"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                style={{ marginTop: '-2px' }}
-                              >
-                                <polyline points="6 9 12 15 18 9" />
-                              </svg>
-                            </div>
+                            />
                           )}
                         </div>
 
-                        {/* Step Content Card */}
-                        <div
-                          style={{
-                            flex: 1,
-                            background: step.active ? '#fffdf7' : (step.completed ? '#ffffff' : '#ffffff'),
-                            border: step.active ? '1.5px solid #f3a626' : '1px solid #e2e8f0',
-                            borderRadius: '12px',
-                            padding: '14px 18px',
-                            boxShadow: step.active ? '0 4px 14px rgba(243, 166, 38, 0.08)' : '0 2px 6px rgba(15, 23, 42, 0.02)',
-                            marginBottom: !isLast ? '8px' : '0',
-                          }}
-                        >
-                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px' }}>
-                            <h4 style={{ margin: 0, fontSize: '15px', fontWeight: 800, color: step.completed || step.active ? '#0f172a' : '#64748b' }}>
-                              {step.title}
-                            </h4>
-
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                              <span
-                                style={{
-                                  fontSize: '11px',
-                                  fontWeight: 700,
-                                  background: step.active ? '#fef3c7' : (step.completed ? '#ecfdf5' : '#f1f5f9'),
-                                  color: step.active ? '#b45309' : (step.completed ? '#065f46' : '#64748b'),
-                                  padding: '2px 8px',
-                                  borderRadius: '4px',
-                                }}
-                              >
-                                {step.completed ? 'COMPLETED' : (step.active ? 'IN PRODUCTION' : 'SCHEDULED')}
-                              </span>
-                              <span style={{ fontSize: '12px', fontWeight: 600, color: step.completed ? '#059669' : (step.active ? '#d97706' : '#94a3b8') }}>
-                                {step.date}
-                              </span>
+                        {/* Milestone Text Row */}
+                        <div style={{ flex: 1, paddingBottom: isLast ? '0' : '16px' }}>
+                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '6px' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                              <h4 style={{ margin: 0, fontSize: '14.5px', fontWeight: 700, color: step.completed || step.active ? '#0f172a' : '#64748b' }}>
+                                {step.title}
+                              </h4>
+                              {step.active && (
+                                <span
+                                  style={{
+                                    fontSize: '10.5px',
+                                    fontWeight: 800,
+                                    background: '#fef3c7',
+                                    color: '#b45309',
+                                    padding: '1px 7px',
+                                    borderRadius: '4px',
+                                    textTransform: 'uppercase',
+                                  }}
+                                >
+                                  In Production Now
+                                </span>
+                              )}
                             </div>
+
+                            <span style={{ fontSize: '12px', fontWeight: 600, color: step.completed ? '#059669' : (step.active ? '#d97706' : '#94a3b8') }}>
+                              {step.date}
+                            </span>
                           </div>
 
-                          <p style={{ margin: '6px 0 0', fontSize: '13.5px', color: '#64748b', lineHeight: 1.5 }}>
+                          <p style={{ margin: '3px 0 0', fontSize: '13px', color: '#64748b', lineHeight: 1.45 }}>
                             {step.desc}
                           </p>
                         </div>
@@ -627,10 +642,10 @@ export default function TrackOrderPage() {
                 {/* Direct WhatsApp Action for Active Order */}
                 <div
                   style={{
-                    marginTop: '28px',
-                    padding: '16px 20px',
+                    marginTop: '20px',
+                    padding: '14px 18px',
                     background: '#f8fafc',
-                    borderRadius: '12px',
+                    borderRadius: '10px',
                     border: '1px solid #e2e8f0',
                     display: 'flex',
                     justifyContent: 'space-between',
@@ -639,28 +654,30 @@ export default function TrackOrderPage() {
                     gap: '12px',
                   }}
                 >
-                  <div style={{ fontSize: '13.5px', color: '#475569' }}>
-                    Need live production pictures or dispatch inquiry for batch <strong>{currentOrder.orderId}</strong>?
+                  <div style={{ fontSize: '13px', color: '#475569' }}>
+                    Need real-time cutting photos or packing inspection for batch <strong>{currentOrder.orderId}</strong>?
                   </div>
                   <a
-                    href={`https://wa.me/923376793383?text=Hi%20Bin%20Rasool%20Enterprises,%20inquiry%20regarding%20batch%20${currentOrder.orderId}`}
+                    href={`https://wa.me/923133599241?text=Hi%20Bin%20Rasool%20Enterprises,%20inquiry%20regarding%20batch%20${currentOrder.orderId}`}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="btn btn-primary"
                     style={{
                       display: 'inline-flex',
                       alignItems: 'center',
-                      gap: '8px',
-                      background: '#22c55e',
-                      color: '#ffffff',
-                      padding: '8px 16px',
-                      borderRadius: '8px',
-                      fontSize: '13.5px',
-                      fontWeight: 700,
+                      gap: '6px',
+                      padding: '8px 18px',
+                      borderRadius: '999px',
+                      fontSize: '13px',
+                      fontWeight: 800,
+                      background: 'var(--brand-orange)',
+                      color: 'var(--brand-black)',
                       textDecoration: 'none',
+                      whiteSpace: 'nowrap',
                     }}
                   >
-                    <WhatsAppIcon size={16} />
-                    <span>Chat with Factory Supervisor</span>
+                    <WhatsAppIcon size={15} />
+                    <span>Chat with Factory Manager</span>
                   </a>
                 </div>
 

@@ -64,7 +64,7 @@ export default function Home() {
                 </article>
                 <article className="trust-card">
                     <h3>Worldwide Export Support</h3>
-                    <p className="muted">Remote approvals, export packing, documentation coordination and courier, air, or sea shipment planning for international markets.</p>
+                    <p className="muted">Remote approvals, export packing, documentation coordination and courier, air or sea shipment planning for international markets.</p>
                 </article>
                 <article className="trust-card">
                     <h3>Strict Quality Control</h3>
@@ -115,7 +115,7 @@ export default function Home() {
                         <span className="real-trust-icon">05</span>
                         <div>
                             <strong>Global Logistics &amp; Export Incoterms</strong>
-                            <p className="muted">FOB Karachi handling, formal dry port customs clearing, and scheduled DHL / FedEx Priority air cargo door-to-door delivery.</p>
+                            <p className="muted">FOB Karachi handling, formal dry port customs clearing and scheduled DHL / FedEx Priority air cargo door-to-door delivery.</p>
                         </div>
                     </article>
                 </div>
@@ -287,7 +287,7 @@ export default function Home() {
                         Fabric choice affects stretch, recovery, opacity, moisture handling, hand feel, print compatibility and cost. We discuss suitable constructions and blends against your product brief instead of forcing one material across every style.
                     </p>
                     <p className="muted">
-                        Brands that need original silhouettes, product-specific fit, custom panels, or more technical construction can review our <a className="context-link" href="/custom-activewear-manufacturer">custom activewear manufacturer</a> capabilities. For complete garment labels, tags, packaging and brand presentation, see our <a className="context-link" href="/private-label">private label manufacturing</a> process.
+                        Brands that need original silhouettes, product-specific fit, custom panels or more technical construction can review our <a className="context-link" href="/custom-activewear-manufacturer">custom activewear manufacturer</a> capabilities. For complete garment labels, tags, packaging and brand presentation, see our <a className="context-link" href="/private-label">private label manufacturing</a> process.
                     </p>
                     <ul className="fabric-list">
                                                     <li>Polyester and spandex performance blends</li>
@@ -350,28 +350,28 @@ export default function Home() {
                     <span className="home-kicker">Commercial Workflow</span>
                     <h2>From tech pack &amp; prototype to bulk export</h2>
                 </div>
-                <p className="muted">A transparent approval path with defined milestones: prototype sign-off, grading verification, and AQL 2.5 pre-shipment inspection.</p>
+                <p className="muted">A transparent approval path with defined milestones: prototype sign-off, grading verification and AQL 2.5 pre-shipment inspection.</p>
             </div>
             <div className="process-grid">
                 <article className="process-card">
                     <h3>01. Product Brief &amp; Sourcing</h3>
-                    <p className="muted">Share your tech packs or physical samples with target GSM, fabric compositions, colors, and order volumes for accurate FOB cost breakdown.</p>
+                    <p className="muted">Share your tech packs or physical samples with target GSM, fabric compositions, colors and order volumes for accurate FOB cost breakdown.</p>
                 </article>
                 <article className="process-card">
                     <h3>02. Scope &amp; Commercial Terms</h3>
-                    <p className="muted">Confirm production feasibility, 50-piece low MOQs, custom trim schedules, sample fees, and scheduled delivery timelines.</p>
+                    <p className="muted">Confirm production feasibility, 50-piece low MOQs, custom trim schedules, sample fees and scheduled delivery timelines.</p>
                 </article>
                 <article className="process-card">
                     <h3>03. 7–10 Day Proto Sampling</h3>
-                    <p className="muted">Review physical fit samples, custom neck tags, stitch tension, and embroidery/print positioning before bulk cut authorization.</p>
+                    <p className="muted">Review physical fit samples, custom neck tags, stitch tension and embroidery/print positioning before bulk cut authorization.</p>
                 </article>
                 <article className="process-card">
                     <h3>04. Bulk Production &amp; QC</h3>
-                    <p className="muted">Eastman CNC cutting, 4-needle flatlock assembly, in-line tension checks, and 100% needle-detector scanning under one roof.</p>
+                    <p className="muted">Eastman CNC cutting, 4-needle flatlock assembly, in-line tension checks and 100% needle-detector scanning under one roof.</p>
                 </article>
                 <article className="process-card">
                     <h3>05. Export Packaging &amp; Dispatch</h3>
-                    <p className="muted">Industrial steam tunnel pressing, custom polybagging, carton markings, and express air (DHL/FedEx) or ocean cargo dispatch.</p>
+                    <p className="muted">Industrial steam tunnel pressing, custom polybagging, carton markings and express air (DHL/FedEx) or ocean cargo dispatch.</p>
                 </article>
             </div>
             <div style={{ 'marginTop': '28px' }}>
@@ -411,7 +411,7 @@ export default function Home() {
                 </div>
                 <div className="buyer-card">
                     <p className="home-lead">
-                        Bin Rasool Enterprises supports buyers outside Pakistan with remote sample approvals, production communication, export packing and shipment planning. Courier, air, or sea freight options can be discussed according to order size, destination, timing and buyer preference.
+                        Bin Rasool Enterprises supports buyers outside Pakistan with remote sample approvals, production communication, export packing and shipment planning. Courier, air or sea freight options can be discussed according to order size, destination, timing and buyer preference.
                     </p>
                     <div style={{ 'display': 'flex', 'gap': '10px', 'flexWrap': 'wrap', 'marginTop': '24px' }}>
                         <a href="/shipping-export" className="btn btn-primary">View Shipping and Export Support</a>
@@ -475,7 +475,7 @@ export default function Home() {
                 </div>
                 <div className="home-cta-actions">
                     <a href="/contact" className="btn btn-primary">Request a Quote</a>
-                    <a href="https://wa.me/923376793383" className="btn btn-outline" target="_blank" rel="noopener" data-track-location="home_cta">Chat on WhatsApp</a>
+                    <a href="https://wa.me/923133599241" className="btn btn-outline" target="_blank" rel="noopener" data-track-location="home_cta">Chat on WhatsApp</a>
                     <span className="cta-microcopy">Startup-friendly consultation. No oversized opening-order pressure.</span>
                 </div>
             </div>

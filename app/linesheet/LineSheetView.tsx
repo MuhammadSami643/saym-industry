@@ -121,7 +121,7 @@ export default function LineSheetView() {
 
         <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
           <a
-            href="https://wa.me/923376793383?text=Hi%20Bin%20Rasool%20Enterprises,%20I%20am%20reviewing%20your%202026%20Line%20Sheet%20and%20want%20to%20discuss%20a%20sample%20order."
+            href="https://wa.me/923133599241?text=Hi%20Bin%20Rasool%20Enterprises,%20I%20am%20reviewing%20your%202026%20Line%20Sheet%20and%20want%20to%20discuss%20a%20sample%20order."
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -342,7 +342,7 @@ export default function LineSheetView() {
         <div style={{ borderTop: '2px solid #e2e8f0', paddingTop: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '11px', color: '#64748b' }}>
           <div>
             <strong>Bin Rasool Enterprises &bull; Export Sales Division</strong><br />
-            Sialkot, Punjab, 51310, Pakistan &bull; Phone/WhatsApp: <strong>+92 337 6793383</strong><br />
+            Pakki Kotli, Daska Road, Sialkot 51310, Pakistan &bull; Phone/WhatsApp: <strong>+92 313 3599241</strong><br />
             Email: <strong style={{ color: '#0f172a' }}>sales@binrasoolenterprises.com</strong> &bull; Web: binrasoolenterprises.com
           </div>
           <div style={{ textAlign: 'right' }}>

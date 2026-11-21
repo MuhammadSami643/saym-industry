@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { supabase } from '@/app/lib/supabase';
+import { addInquiry } from '@/app/lib/inquiriesStore';
 import { sendInquiryNotificationEmails } from '@/app/lib/mailer';
 import { dispatchWhatsAppAlert, generateWhatsAppDirectLink } from '@/app/lib/whatsapp';
 
@@ -67,29 +68,20 @@ export async function POST(request: Request) {
 
     let insertedId: string | undefined;
 
-    // 1. Insert into Supabase Inquiries table
+    // 1. Persist inquiry into local store & database
     try {
-      const { data, error } = await supabase
-        .from('inquiries')
-        .insert([
-          {
-            name,
-            email,
-            phone: phone.trim() || null,
-            subject: subject.trim() || 'Website Inquiry',
-            details,
-            status: 'new'
-          }
-        ])
-        .select();
-
-      if (error) {
-        console.warn('Contact API notice: Supabase insert fallback', error.message);
-      } else if (data?.[0]?.id) {
-        insertedId = data[0].id;
-      }
-    } catch (dbErr) {
-      console.warn('Supabase insert skipped or unavailable:', dbErr);
+      const stored = await addInquiry({
+        name,
+        email,
+        phone,
+        company,
+        country,
+        subject: subject.trim() || 'Website Inquiry',
+        details
+      });
+      insertedId = stored.id;
+    } catch (saveErr) {
+      console.warn('Inquiry store warning:', saveErr);
     }
 
     // 2. Dispatch automated Email notifications (Factory Admin & Buyer confirmation)

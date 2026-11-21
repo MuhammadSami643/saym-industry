@@ -182,7 +182,7 @@ export default function MmaGearPage() {
               <span className="home-kicker">OEM &amp; Gym Team Orders</span>
               <h2>Ready to produce custom MMA gear or BJJ Gis for your brand?</h2>
               <p>
-                Send your tech pack, gym vector logo, or sample request. Our combat apparel production line provides physical proto samples in 7–10 days.
+                Send your tech pack, gym vector logo or sample request. Our combat apparel production line provides physical proto samples in 7–10 days.
               </p>
             </div>
             <div className="home-cta-actions">

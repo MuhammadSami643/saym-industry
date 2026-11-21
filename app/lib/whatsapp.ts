@@ -10,7 +10,7 @@ export interface WhatsAppAlertPayload {
 }
 
 export function generateWhatsAppDirectLink(payload: WhatsAppAlertPayload): string {
-  const factoryNumber = process.env.NEXT_PUBLIC_FACTORY_WHATSAPP || '923376793383';
+  const factoryNumber = process.env.NEXT_PUBLIC_FACTORY_WHATSAPP || '923133599241';
   const cleanNumber = factoryNumber.replace(/[^0-9]/g, '');
 
   const text = `*NEW INQUIRY / RFQ - BIN RASOOL ENTERPRISES*

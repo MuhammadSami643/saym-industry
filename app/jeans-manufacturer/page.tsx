@@ -103,9 +103,9 @@ export default function JeansPage() {
               <ul className="list" style={{ color: 'var(--text-main)', lineHeight: '1.9', marginBottom: '26px' }}>
                 <li><strong>12 oz to 16 oz Rigid &amp; Stretch Denim</strong> – 100% cotton ring-spun yarn or 98/2 elastane stretch.</li>
                 <li><strong>Classic Redline &amp; Custom Colored Selvedge ID</strong> – Authentic shuttle-loom woven outseams.</li>
-                <li><strong>Industrial Laundry Washes</strong> – Acid wash, stone wash, silicone softener wash, and bleach dip.</li>
-                <li><strong>Custom Cast Metal Hardware</strong> – Embossed donut shank buttons, pocket rivets, and YKK denim zips.</li>
-                <li><strong>Genuine Leather &amp; Jacron Back Patches</strong> – Hot stamped, debossed, or foiled brand logos.</li>
+                <li><strong>Industrial Laundry Washes</strong> – Acid wash, stone wash, silicone softener wash and bleach dip.</li>
+                <li><strong>Custom Cast Metal Hardware</strong> – Embossed donut shank buttons, pocket rivets and YKK denim zips.</li>
+                <li><strong>Genuine Leather &amp; Jacron Back Patches</strong> – Hot stamped, debossed or foiled brand logos.</li>
               </ul>
               <Link href="/contact" className="btn btn-primary">
                 Inquire About Custom Jeans
@@ -122,7 +122,7 @@ export default function JeansPage() {
                 <span className="card-tag">Low MOQ from 50 pcs</span>
                 <h3 style={{ margin: '8px 0 6px', color: '#0f172a' }}>Pre-Shrunk &amp; Colorfast</h3>
                 <p className="muted" style={{ margin: 0, fontSize: '14px', color: '#64748b' }}>
-                  Every production lot undergoes wash durability, tensile seam stress, and crocking colorfastness testing.
+                  Every production lot undergoes wash durability, tensile seam stress and crocking colorfastness testing.
                 </p>
               </div>
             </div>
@@ -149,7 +149,7 @@ export default function JeansPage() {
           <div className="sw-cta-box">
             <h2>Ready to manufacture custom jeans or denim jackets?</h2>
             <p>
-              Send your tech packs, fit specifications, or reference samples. Our denim merchandising team will review fabric ounce weights, wash effects, and provide transparent factory pricing within 24 hours.
+              Send your tech packs, fit specifications or reference samples. Our denim merchandising team will review fabric ounce weights, wash effects and provide transparent factory pricing within 24 hours.
             </p>
             <div>
               <Link href="/contact" className="sw-btn-primary" style={{ padding: '16px 36px', fontSize: '16px' }}>

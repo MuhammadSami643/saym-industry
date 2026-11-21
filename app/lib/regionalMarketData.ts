@@ -7,7 +7,7 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
     countryName: 'USA',
     badge: 'USA Export & Sourcing Program • Sialkot Factory',
     title: 'Private Label Activewear Manufacturer for USA Brands',
-    description: 'Factory-direct OEM activewear manufacturing for American gym wear labels, DTC fitness brands, and Amazon FBA sellers. Custom damask woven neck labels, ASTM seam burst testing, and express DDP air cargo to the USA.',
+    description: 'Factory-direct OEM activewear manufacturing for American gym wear labels, DTC fitness brands and Amazon FBA sellers. Custom damask woven neck labels, ASTM seam burst testing and express DDP air cargo to the USA.',
     keywords: [
       'private label activewear manufacturer usa',
       'custom gym wear manufacturer usa',
@@ -35,15 +35,15 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
         },
         {
           title: 'Amazon FBA & Retail Barcoding',
-          desc: 'Individually packed in frosted EVA zipper polybags with custom suffocation warning labels, product size labels, and high-density scannable FNSKU barcodes.'
+          desc: 'Individually packed in frosted EVA zipper polybags with custom suffocation warning labels, product size labels and high-density scannable FNSKU barcodes.'
         },
         {
           title: 'ASTM Seam Burst & Color Fastness',
-          desc: '4-needle 6-thread flatlock stitching tested for 4-way stretch rebound, squat-proof opacity, and ISO grade 4+ wash fastness.'
+          desc: '4-needle 6-thread flatlock stitching tested for 4-way stretch rebound, squat-proof opacity and ISO grade 4+ wash fastness.'
         },
         {
           title: 'DDP Door-to-Door US Delivery',
-          desc: 'We manage full customs clearance, ISF filings, and duties directly to your warehouse, 3PL fulfillment center, or Amazon distribution hub.'
+          desc: 'We manage full customs clearance, ISF filings and duties directly to your warehouse, 3PL fulfillment center or Amazon distribution hub.'
         }
       ]
     },
@@ -58,11 +58,11 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
     faqs: [
       {
         question: "How do you handle shipping and customs clearance to the United States?",
-        answer: "We offer complete DDP (Delivered Duty Paid) shipping to the USA. All customs duties, entry documentation, and freight forwarding are managed end-to-end, delivering directly to your door or Amazon FBA fulfillment center via DHL, FedEx, or air cargo."
+        answer: "We offer complete DDP (Delivered Duty Paid) shipping to the USA. All customs duties, entry documentation and freight forwarding are managed end-to-end, delivering directly to your door or Amazon FBA fulfillment center via DHL, FedEx or air cargo."
       },
       {
         question: "Can you manufacture apparel according to standard US sizing charts?",
-        answer: "Yes. Our pattern masters utilize standardized US apparel size specifications with digital CAD grading, ensuring accurate fit across XS, S, M, L, XL, 2XL, and plus sizes."
+        answer: "Yes. Our pattern masters utilize standardized US apparel size specifications with digital CAD grading, ensuring accurate fit across XS, S, M, L, XL, 2XL and plus sizes."
       },
       {
         question: "Are your gym wear fabrics squat-proof and opaque?",
@@ -77,7 +77,7 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
     countryName: 'United Kingdom',
     badge: 'UK Export & Sourcing Program • Sialkot Factory',
     title: 'Private Label Activewear Manufacturer for UK Brands',
-    description: 'Direct factory manufacturing for British fitness labels, gym wear startups, sports clubs, and independent retailers across London, Manchester, and Birmingham. Custom trims, UK sizing, and fast DHL delivery.',
+    description: 'Direct factory manufacturing for British fitness labels, gym wear startups, sports clubs and independent retailers across London, Manchester and Birmingham. Custom trims, UK sizing and fast DHL delivery.',
     keywords: [
       'private label activewear manufacturer uk',
       'gym wear manufacturer uk brands',
@@ -100,7 +100,7 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
       points: [
         {
           title: 'UK Metric Sizing & Tailored Cuts',
-          desc: 'Pattern templates designed specifically for UK body measurements, athletic tapered fits, and contemporary streetwear silhouettes.'
+          desc: 'Pattern templates designed specifically for UK body measurements, athletic tapered fits and contemporary streetwear silhouettes.'
         },
         {
           title: 'Fast DHL Air Cargo to Heathrow & Manchester',
@@ -108,11 +108,11 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
         },
         {
           title: 'Premium Heavyweight Streetwear Blends',
-          desc: '380–500 GSM loopback French terry, heavy brushed fleece, and acid wash tees tailored for UK streetwear fashion drops.'
+          desc: '380–500 GSM loopback French terry, heavy brushed fleece and acid wash tees tailored for UK streetwear fashion drops.'
         },
         {
           title: 'Custom Brand Trims & Packaging',
-          desc: 'Woven damask neck tags, branded care labels with UK care symbols, cardstock hangtags with GBP pricing, and frosted zip bags.'
+          desc: 'Woven damask neck tags, branded care labels with UK care symbols, cardstock hangtags with GBP pricing and frosted zip bags.'
         }
       ]
     },
@@ -142,7 +142,7 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
     countryName: 'Europe',
     badge: 'EU Export Sourcing • Sialkot Factory',
     title: 'Private Label Activewear Manufacturer for European Brands',
-    description: 'Direct OEM apparel production for European sportswear labels, boutique fitness brands, and multi-country distributors. REACH compliant textiles, European sizing charts, and streamlined EU logistics.',
+    description: 'Direct OEM apparel production for European sportswear labels, boutique fitness brands and multi-country distributors. REACH compliant textiles, European sizing charts and streamlined EU logistics.',
     keywords: [
       'private label activewear manufacturer europe',
       'sportswear manufacturer eu',
@@ -164,15 +164,15 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
       points: [
         {
           title: 'European Metric Sizing Standards',
-          desc: 'Precision digital CAD patterns aligned with CEN European sizing standards for activewear, teamwear, and athleisure.'
+          desc: 'Precision digital CAD patterns aligned with CEN European sizing standards for activewear, teamwear and athleisure.'
         },
         {
           title: 'REACH & OEKO-TEX Certified Inks & Dyes',
-          desc: 'Strictly zero banned azo dyes, phthalates, or heavy metals. All sublimation and screen printing utilize eco-friendly European inks.'
+          desc: 'Strictly zero banned azo dyes, phthalates or heavy metals. All sublimation and screen printing utilize eco-friendly European inks.'
         },
         {
           title: 'Multi-Country EU Distribution Support',
-          desc: 'Scheduled master carton palletization with multilingual wash care labeling for distribution across Germany, France, Italy, Spain, and Scandinavia.'
+          desc: 'Scheduled master carton palletization with multilingual wash care labeling for distribution across Germany, France, Italy, Spain and Scandinavia.'
         },
         {
           title: 'Direct Freight to Frankfurt, Amsterdam & Rotterdam',
@@ -191,11 +191,11 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
     faqs: [
       {
         question: "Are your fabrics compliant with EU REACH chemical regulations?",
-        answer: "Yes. All yarns, fabric dyes, sublimation inks, and silicone prints conform strictly to EU REACH standards and OEKO-TEX Standard 100 requirements."
+        answer: "Yes. All yarns, fabric dyes, sublimation inks and silicone prints conform strictly to EU REACH standards and OEKO-TEX Standard 100 requirements."
       },
       {
         question: "Can you ship DDP to European Union countries?",
-        answer: "Yes. We arrange Delivered Duty Paid (DDP) air and sea shipments to Germany, France, Netherlands, Italy, Spain, and other EU member states with customs clearance included."
+        answer: "Yes. We arrange Delivered Duty Paid (DDP) air and sea shipments to Germany, France, Netherlands, Italy, Spain and other EU member states with customs clearance included."
       }
     ]
   },
@@ -206,7 +206,7 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
     countryName: 'Germany',
     badge: 'German Market Precision Sourcing • Sialkot Factory',
     title: 'Private Label Activewear Manufacturer for German Brands',
-    description: 'Precision apparel manufacturing for German fitness brands, gym chains, and sportswear distributors. German sizing specs, high-tensile flatlock construction, and strict AQL 2.5 pre-shipment inspection.',
+    description: 'Precision apparel manufacturing for German fitness brands, gym chains and sportswear distributors. German sizing specs, high-tensile flatlock construction and strict AQL 2.5 pre-shipment inspection.',
     keywords: [
       'private label activewear manufacturer germany',
       'sportbekleidung hersteller pakistan',
@@ -227,7 +227,7 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
       points: [
         {
           title: 'Strict Quality Control & Tolerances',
-          desc: 'Every garment is audited under AQL 2.5 standards for seam burst strength, grading tolerance adherence (±0.5 cm), and 100% metal detector safety scanning.'
+          desc: 'Every garment is audited under AQL 2.5 standards for seam burst strength, grading tolerance adherence (±0.5 cm) and 100% metal detector safety scanning.'
         },
         {
           title: 'German DIN Sizing Compliance',
@@ -235,7 +235,7 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
         },
         {
           title: 'Sustainable & Recycled Fabric Options',
-          desc: 'Access to GRS-certified recycled polyester, organic cotton, and eco-friendly dye houses meeting German buyer expectations.'
+          desc: 'Access to GRS-certified recycled polyester, organic cotton and eco-friendly dye houses meeting German buyer expectations.'
         },
         {
           title: 'Direct Logistics to Frankfurt & Hamburg',
@@ -254,7 +254,7 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
     faqs: [
       {
         question: "What quality control standards do you maintain for German orders?",
-        answer: "We perform 100% inline checking and final random audits according to AQL 2.5 standards, verifying stitch density, seam tension, fabric GSM, and measurement tolerances before boxing."
+        answer: "We perform 100% inline checking and final random audits according to AQL 2.5 standards, verifying stitch density, seam tension, fabric GSM and measurement tolerances before boxing."
       }
     ]
   },
@@ -265,7 +265,7 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
     countryName: 'France',
     badge: 'French Fashion & Activewear Sourcing • Sialkot Factory',
     title: 'Private Label Activewear Manufacturer for French Brands',
-    description: 'Turnkey activewear and luxury athleisure manufacturing for French fashion labels, boutique fitness studios, and e-commerce creators across Paris, Lyon, and Marseille.',
+    description: 'Turnkey activewear and luxury athleisure manufacturing for French fashion labels, boutique fitness studios and e-commerce creators across Paris, Lyon and Marseille.',
     keywords: [
       'private label activewear manufacturer france',
       'fabricant vetement de sport pakistan',
@@ -285,7 +285,7 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
       points: [
         {
           title: 'Refined Finishing & Hand-Feel',
-          desc: 'Silicone wash treatments, carbon brushed peach-skin finishes, and ultra-soft interlock fabrics designed for upscale French athleisure brands.'
+          desc: 'Silicone wash treatments, carbon brushed peach-skin finishes and ultra-soft interlock fabrics designed for upscale French athleisure brands.'
         },
         {
           title: 'French Sizing Grids',
@@ -293,7 +293,7 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
         },
         {
           title: 'Boutique Branding & Trims',
-          desc: 'Embossed matte hangtags with French translation, satin care labels with EU legal mentions, and discreet tone-on-tone branding.'
+          desc: 'Embossed matte hangtags with French translation, satin care labels with EU legal mentions and discreet tone-on-tone branding.'
         },
         {
           title: 'Air Shipments to Paris CDG',
@@ -312,7 +312,7 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
     faqs: [
       {
         question: "Do your care labels include mandatory French textile labeling?",
-        answer: "Yes, our custom care labels can be printed in French with fiber composition, mandatory care symbols, and brand identifiers required for the French market."
+        answer: "Yes, our custom care labels can be printed in French with fiber composition, mandatory care symbols and brand identifiers required for the French market."
       }
     ]
   },
@@ -323,7 +323,7 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
     countryName: 'Netherlands',
     badge: 'Benelux Sourcing & Logistics Hub • Sialkot Factory',
     title: 'Private Label Activewear Manufacturer for Netherlands Brands',
-    description: 'Factory-direct activewear manufacturing for Dutch sports labels, gym wear distributors, and European fulfillment hubs centered around Amsterdam and Rotterdam.',
+    description: 'Factory-direct activewear manufacturing for Dutch sports labels, gym wear distributors and European fulfillment hubs centered around Amsterdam and Rotterdam.',
     keywords: [
       'private label activewear manufacturer netherlands',
       'sportkleding fabrikant pakistan',
@@ -351,7 +351,7 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
         },
         {
           title: 'Functional Performance Textiles',
-          desc: 'High-breathability moisture-wicking fabrics, compression interlock, and recycled polyester blends.'
+          desc: 'High-breathability moisture-wicking fabrics, compression interlock and recycled polyester blends.'
         },
         {
           title: 'Custom Frosted Polybags & E-Com Packaging',
@@ -381,7 +381,7 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
     countryName: 'Italy',
     badge: 'Italian Boutique Fitness & Combat Sourcing • Sialkot Factory',
     title: 'Private Label Activewear Manufacturer for Italian Brands',
-    description: 'Custom activewear and combat fightwear production for Italian sportswear brands, padel clubs, and boutique gym studios in Milan, Rome, and Turin.',
+    description: 'Custom activewear and combat fightwear production for Italian sportswear brands, padel clubs and boutique gym studios in Milan, Rome and Turin.',
     keywords: [
       'private label activewear manufacturer italy',
       'produttore abbigliamento sportivo pakistan',
@@ -401,15 +401,15 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
       points: [
         {
           title: 'Italian Athletic Fit & Styling',
-          desc: 'Sleek, body-contouring cuts designed for the stylish Italian fitness, padel, and athleisure markets.'
+          desc: 'Sleek, body-contouring cuts designed for the stylish Italian fitness, padel and athleisure markets.'
         },
         {
           title: 'Combat Sports & Martial Arts Gear',
-          desc: 'Custom sublimated BJJ rash guards, boxing trunks, and kickboxing fight shorts manufactured for Italian combat gyms.'
+          desc: 'Custom sublimated BJJ rash guards, boxing trunks and kickboxing fight shorts manufactured for Italian combat gyms.'
         },
         {
           title: 'Subtle High-Density Branding',
-          desc: 'Matte silicone heat transfers, tonally matched 3D puff embroidery, and damask woven labels for an understated luxury feel.'
+          desc: 'Matte silicone heat transfers, tonally matched 3D puff embroidery and damask woven labels for an understated luxury feel.'
         },
         {
           title: 'Air Freight to Milan Malpensa',
@@ -428,7 +428,7 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
     faqs: [
       {
         question: "Do you manufacture custom padel and tennis activewear?",
-        answer: "Yes, we produce sublimated padel teamwear polos, performance shorts, skirts, and warm-up tracksuits for Italian clubs and brands."
+        answer: "Yes, we produce sublimated padel teamwear polos, performance shorts, skirts and warm-up tracksuits for Italian clubs and brands."
       }
     ]
   },
@@ -439,7 +439,7 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
     countryName: 'Spain',
     badge: 'Spanish Market Activewear Sourcing • Sialkot Factory',
     title: 'Private Label Activewear Manufacturer for Spanish Brands',
-    description: 'Custom manufacturing for Spanish activewear brands, padel sportswear clubs, and fitness creators across Madrid, Barcelona, and Valencia.',
+    description: 'Custom manufacturing for Spanish activewear brands, padel sportswear clubs and fitness creators across Madrid, Barcelona and Valencia.',
     keywords: [
       'private label activewear manufacturer spain',
       'fabricante ropa deportiva pakistan',
@@ -459,7 +459,7 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
       points: [
         {
           title: 'Padel & Teamwear Manufacturing',
-          desc: 'Sublimated athletic jerseys, quick-dry shorts, and technical training gear designed for Spain’s booming sports culture.'
+          desc: 'Sublimated athletic jerseys, quick-dry shorts and technical training gear designed for Spain’s booming sports culture.'
         },
         {
           title: 'Warm Climate Lightweight Fabrics',
@@ -467,7 +467,7 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
         },
         {
           title: 'Full Private Label Trims & Packaging',
-          desc: 'Woven neck labels, Spanish care tags, and branded frosted polybags with EAN barcodes.'
+          desc: 'Woven neck labels, Spanish care tags and branded frosted polybags with EAN barcodes.'
         },
         {
           title: 'Direct Express Logistics to Spain',
@@ -486,7 +486,7 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
     faqs: [
       {
         question: "Can you supply lightweight activewear suitable for warm climates?",
-        answer: "Yes, we specialize in high-ventilation micro-mesh, antibacterial dry-fit polyester, and lightweight nylon-spandex blends ideal for Mediterranean markets."
+        answer: "Yes, we specialize in high-ventilation micro-mesh, antibacterial dry-fit polyester and lightweight nylon-spandex blends ideal for Mediterranean markets."
       }
     ]
   },
@@ -497,7 +497,7 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
     countryName: 'Startups & Emerging Labels',
     badge: 'Low MOQ Startup Launchpad • Sialkot Factory',
     title: 'Activewear Manufacturer for Startups & Emerging Brands',
-    description: 'Turnkey activewear manufacturing designed specifically for first-time clothing brand founders, gym owners, and fitness influencers. Accessible 50 pcs MOQ per style, full tech pack guidance, and rapid proto sampling.',
+    description: 'Turnkey activewear manufacturing designed specifically for first-time clothing brand founders, gym owners and fitness influencers. Accessible 50 pcs MOQ per style, full tech pack guidance and rapid proto sampling.',
     keywords: [
       'activewear manufacturer for startups',
       'clothing manufacturer for new brands',
@@ -523,15 +523,15 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
         },
         {
           title: 'Tech Pack & Design Assistance',
-          desc: 'Don’t have a full technical tech pack? Our pattern masters help translate your sketches, reference photos, or benchmark garments into production-ready CAD patterns.'
+          desc: 'Don’t have a full technical tech pack? Our pattern masters help translate your sketches, reference photos or benchmark garments into production-ready CAD patterns.'
         },
         {
           title: 'Complete Private Label Packaging from Day One',
-          desc: 'Even small orders receive custom damask woven neck tags, 400 GSM hangtags, and custom frosted EVA zipper polybags with barcodes.'
+          desc: 'Even small orders receive custom damask woven neck tags, 400 GSM hangtags and custom frosted EVA zipper polybags with barcodes.'
         },
         {
           title: 'Sample-First Risk-Free Verification',
-          desc: 'Review physical fit, fabric stretch, and custom branding in your hands before approving full production runs.'
+          desc: 'Review physical fit, fabric stretch and custom branding in your hands before approving full production runs.'
         }
       ]
     },
@@ -546,7 +546,7 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
     faqs: [
       {
         question: "I am launching my first clothing brand. Can you help me without a complete tech pack?",
-        answer: "Yes! Many of our startup clients begin with reference photos, sample garments they love, and vector artwork. Our technical merchandising team works with you to establish sizing, fabric weights, and construction details."
+        answer: "Yes! Many of our startup clients begin with reference photos, sample garments they love and vector artwork. Our technical merchandising team works with you to establish sizing, fabric weights and construction details."
       },
       {
         question: "Can I split the 50 pcs MOQ across different sizes?",
@@ -554,7 +554,7 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
       },
       {
         question: "Do I get full custom branding with a 50 piece order?",
-        answer: "Yes. Every startup order receives custom woven neck labels, custom hangtags, and branded frosted zipper polybags so your product arrives 100% retail-ready."
+        answer: "Yes. Every startup order receives custom woven neck labels, custom hangtags and branded frosted zipper polybags so your product arrives 100% retail-ready."
       }
     ]
   }

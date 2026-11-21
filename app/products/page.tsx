@@ -83,7 +83,7 @@ export default async function Products() {
               <span className="home-kicker">Start Your Line</span>
               <h2>Have custom tech packs or specific design requirements?</h2>
               <p>
-                We produce custom apparel beyond this catalog. Send us your mockups, tech packs, or reference samples for a detailed manufacturing review.
+                We produce custom apparel beyond this catalog. Send us your mockups, tech packs or reference samples for a detailed manufacturing review.
               </p>
             </div>
             <div className="home-cta-actions">

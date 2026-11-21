@@ -182,7 +182,7 @@ Total Sample & Courier Estimate: $${totalUsd} USD (${currency.code})
       const waText = encodeURIComponent(
         `Hi Bin Rasool Enterprises! 👋\nI just requested a physical sample for: *${garmentName}*\nType: *${sampleType === 'fit' ? 'Blank Fit Sample' : 'Custom Branded Prototype'}*\nSize: ${size} | Color: ${color}\nBuyer: ${buyerName} (${brandName || 'My Brand'})\nDestination: ${country}\nPlease confirm receipt and let me know when production starts!`
       );
-      setWhatsappUrl(`https://wa.me/923376793383?text=${waText}`);
+      setWhatsappUrl(`https://wa.me/923133599241?text=${waText}`);
 
       setSubmitted(true);
     } catch (err: any) {
@@ -593,7 +593,7 @@ Total Sample & Courier Estimate: $${totalUsd} USD (${currency.code})
                       type="text"
                       value={color}
                       onChange={(e) => setColor(e.target.value)}
-                      placeholder="e.g. Vintage Washed Charcoal, Olive Green, or Pantone 19-4007"
+                      placeholder="e.g. Vintage Washed Charcoal, Olive Green or Pantone 19-4007"
                       style={{
                         width: '100%',
                         padding: '10px 14px',

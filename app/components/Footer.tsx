@@ -69,7 +69,7 @@ export default function Footer() {
               <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="footer-social-btn" aria-label="Facebook">
                 <FacebookIcon size={18} />
               </a>
-              <a href="https://wa.me/923376793383" target="_blank" rel="noopener noreferrer" className="footer-social-btn" aria-label="WhatsApp">
+              <a href="https://wa.me/923133599241" target="_blank" rel="noopener noreferrer" className="footer-social-btn" aria-label="WhatsApp">
                 <WhatsAppIcon size={18} />
               </a>
               <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" className="footer-social-btn" aria-label="YouTube">
@@ -104,14 +104,14 @@ export default function Footer() {
           <div>
             <p className="footer-title">Contact</p>
             <div className="footer-contact">
-              <div>Sialkot, Pakistan</div>
+              <div>Pakki Kotli, Daska Road, Sialkot 51310, Pakistan</div>
               <div>
-                <a href="https://wa.me/923376793383" target="_blank" rel="noopener noreferrer">
-                  WhatsApp: +92 337 6793383
+                <a href="https://wa.me/923133599241" target="_blank" rel="noopener noreferrer">
+                  WhatsApp: +92 313 3599241
                 </a>
               </div>
               <div>
-                <a href="tel:+923376793383">Call: +92 337 6793383</a>
+                <a href="tel:+923133599241">Call: +92 313 3599241</a>
               </div>
               <div>
                 <a href="mailto:sales@binrasoolenterprises.com">Sales: sales@binrasoolenterprises.com</a>

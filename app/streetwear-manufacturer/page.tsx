@@ -69,7 +69,7 @@ export default function StreetwearPage() {
               <span className="pl-kicker">LUXURY CUT &amp; SEW STREETWEAR &bull; SIALKOT, PAKISTAN</span>
               <h1>Heavyweight Streetwear &amp; Apparel Manufacturer</h1>
               <p>
-                450+ GSM heavyweight French Terry hoodies, vintage acid wash oversized tees, baggy cargo sweatpants, wool-leather varsity jackets, and luxury streetwear collections crafted with puff print, distressed hems, and high-density embroidery.
+                450+ GSM heavyweight French Terry hoodies, vintage acid wash oversized tees, baggy cargo sweatpants, wool-leather varsity jackets and luxury streetwear collections crafted with puff print, distressed hems and high-density embroidery.
               </p>
               <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '26px' }}>
                 <Link href="/contact" className="btn btn-primary">
@@ -99,7 +99,7 @@ export default function StreetwearPage() {
                 Cut &amp; Sew Precision for Modern Street Fashion
               </h2>
               <p className="muted" style={{ fontSize: '15.5px', lineHeight: '1.75', marginBottom: '20px', color: '#475569' }}>
-                We translate streetwear tech packs into retail-grade garments with proprietary boxy fits, drop-shoulder silhouettes, thick 1-inch neck collars, and high-end wash treatments.
+                We translate streetwear tech packs into retail-grade garments with proprietary boxy fits, drop-shoulder silhouettes, thick 1-inch neck collars and high-end wash treatments.
               </p>
               <ul className="list" style={{ color: 'var(--text-main)', lineHeight: '1.9', marginBottom: '26px' }}>
                 <li><strong>240–280 GSM Heavyweight Combed Cotton Tees</strong> – Pre-shrunk, compact weave with thick neck ribbing.</li>
@@ -150,7 +150,7 @@ export default function StreetwearPage() {
           <div className="sw-cta-box">
             <h2>Ready to launch your custom streetwear collection?</h2>
             <p>
-              Send your tech packs, sketches, or reference garment photos. Our merchandising team will confirm custom fabric weights, wash treatments, and deliver transparent factory pricing within 24 hours.
+              Send your tech packs, sketches or reference garment photos. Our merchandising team will confirm custom fabric weights, wash treatments and deliver transparent factory pricing within 24 hours.
             </p>
             <div>
               <Link href="/contact" className="sw-btn-primary" style={{ padding: '16px 36px', fontSize: '16px' }}>

@@ -50,7 +50,7 @@ export async function POST(request: Request) {
 
     if (!ALLOWED_EXTENSIONS.has(ext)) {
       return NextResponse.json(
-        { error: `File type ${ext || 'unknown'} is not supported. Please upload PDF, AI, PSD, ZIP, video (MP4/WebM/MOV), or high-res images.` },
+        { error: `File type ${ext || 'unknown'} is not supported. Please upload PDF, AI, PSD, ZIP, video (MP4/WebM/MOV) or high-res images.` },
         { status: 400 }
       );
     }

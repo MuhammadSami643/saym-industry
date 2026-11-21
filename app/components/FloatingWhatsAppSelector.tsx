@@ -46,7 +46,7 @@ export default function FloatingWhatsAppSelector() {
     const text = encodeURIComponent(
       `Hi Bin Rasool Enterprises! 👋\n\nI am contacting you from *${cleanCountry}* regarding custom apparel manufacturing.\n\n• *Category:* ${category}\n• *Quantity Tier:* ${quantity}${customNote ? `\n• *Notes:* ${customNote}` : ''}\n\nCould you please connect me with a production manager for sampling details & quotation? Thank you!`
     );
-    window.open(`https://wa.me/923376793383?text=${text}`, '_blank', 'noopener,noreferrer');
+    window.open(`https://wa.me/923133599241?text=${text}`, '_blank', 'noopener,noreferrer');
     setIsOpen(false);
   };
 

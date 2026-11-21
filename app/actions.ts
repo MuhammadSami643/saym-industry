@@ -2,6 +2,7 @@
 
 import { supabase, isSupabaseConfigured } from './lib/supabase';
 import { sendInquiryNotificationEmails } from './lib/mailer';
+import { getAllInquiries, addInquiry } from './lib/inquiriesStore';
 
 export type Inquiry = {
   id?: string;
@@ -65,49 +66,27 @@ export async function submitInquiry(formData: FormData) {
     console.error("Non-fatal mailer error:", mErr);
   }
 
-  if (!isSupabaseConfigured) {
-    return { success: true };
-  }
-
+  // Persist inquiry to local store & database
   try {
-    const { data, error } = await supabase
-      .from('inquiries')
-      .insert([
-        { name, email, phone, subject, details }
-      ])
-      .select();
-
-    if (error) {
-      console.warn("Supabase insert warning:", error.message);
-      return { 
-        success: true, 
-        warning: "Inquiry received! Note: Supabase table 'inquiries' pending schema execution." 
-      };
-    }
-
-    return { success: true };
-  } catch (err: any) {
-    console.error("Error submitting inquiry:", err);
-    return { success: true, note: "Received inquiry successfully." };
+    await addInquiry({
+      name,
+      email,
+      phone,
+      company,
+      country,
+      subject,
+      details
+    });
+  } catch (saveErr) {
+    console.error("Error saving inquiry:", saveErr);
   }
+
+  return { success: true };
 }
 
 export async function getInquiries(): Promise<Inquiry[]> {
-  if (!isSupabaseConfigured) {
-    return FALLBACK_INQUIRIES;
-  }
-
   try {
-    const { data, error } = await supabase
-      .from('inquiries')
-      .select('*')
-      .order('date', { ascending: false });
-
-    if (error || !data || data.length === 0) {
-      return FALLBACK_INQUIRIES;
-    }
-
-    return data as Inquiry[];
+    return getAllInquiries() as Inquiry[];
   } catch {
     return FALLBACK_INQUIRIES;
   }

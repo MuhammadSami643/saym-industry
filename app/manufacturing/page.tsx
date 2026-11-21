@@ -31,7 +31,7 @@ const manufacturingSchema = {
             addressRegion: "Punjab",
             addressCountry: "PK",
         },
-        telephone: "+923376793383",
+        telephone: "+923133599241",
     },
     areaServed: ["United States", "United Kingdom", "Canada", "Australia", "European Union"],
     hasOfferCatalog: {
@@ -80,7 +80,7 @@ const manufacturingSchema = {
 const MANUFACTURING_FAQS = [
     {
         question: "What manufacturing capabilities does Bin Rasool Enterprises operate in-house?",
-        answer: "We operate dedicated production lines for CAD grading, automated fabric cutting, 4-needle 6-thread flatlock stitching, multi-head Tajima embroidery, screen printing, heat transfers, and AQL 2.5 quality control."
+        answer: "We operate dedicated production lines for CAD grading, automated fabric cutting, 4-needle 6-thread flatlock stitching, multi-head Tajima embroidery, screen printing, heat transfers and AQL 2.5 quality control."
     },
     {
         question: "What is your sample lead time before authorizing bulk production?",
@@ -92,11 +92,11 @@ const MANUFACTURING_FAQS = [
     },
     {
         question: "How do you ensure export quality control (AQL 2.5)?",
-        answer: "Every production batch undergoes raw fabric inspection (GSM & shrinkage testing), in-line seam tensile testing, 100% garment measurement audit against grading sheets, and needle-detector safety scanning."
+        answer: "Every production batch undergoes raw fabric inspection (GSM & shrinkage testing), in-line seam tensile testing, 100% garment measurement audit against grading sheets and needle-detector safety scanning."
     },
     {
         question: "What Incoterms and global freight options do you support?",
-        answer: "We support FOB Karachi, CIF, and door-to-door DDP air freight via DHL/FedEx for urgent collections, as well as consolidated ocean container freight for bulk wholesale shipments."
+        answer: "We support FOB Karachi, CIF and door-to-door DDP air freight via DHL/FedEx for urgent collections, as well as consolidated ocean container freight for bulk wholesale shipments."
     }
 ];
 
@@ -125,7 +125,7 @@ export default function ManufacturingPage() {
                                 <span className="page-kicker">Direct Factory Production &bull; Sialkot, Pakistan</span>
                                 <h1>Precision Apparel Manufacturing &amp; Private Label Export</h1>
                                 <p>
-                                    Bin Rasool Enterprises delivers end-to-end custom apparel manufacturing for sports brands, activewear startups, fitness labels, and combat sports distributors across the USA, UK, Europe, and Australia.
+                                    Bin Rasool Enterprises delivers end-to-end custom apparel manufacturing for sports brands, activewear startups, fitness labels and combat sports distributors across the USA, UK, Europe and Australia.
                                 </p>
                             </div>
                             <div className="manufacturing-proof-box">
@@ -162,10 +162,10 @@ export default function ManufacturingPage() {
                             </div>
                             <div className="manufacturing-note">
                                 <p className="muted" style={{ margin: '0 0 14px' }}>
-                                    A reliable manufacturing process gives brand owners total confidence before bulk cutting begins. At Bin Rasool Enterprises, we control every critical phase in-house: digital pattern grading, fabric relaxation, seam tension testing, Pantone-matched branding, and strict pre-shipment measurement audits.
+                                    A reliable manufacturing process gives brand owners total confidence before bulk cutting begins. At Bin Rasool Enterprises, we control every critical phase in-house: digital pattern grading, fabric relaxation, seam tension testing, Pantone-matched branding and strict pre-shipment measurement audits.
                                 </p>
                                 <p className="muted" style={{ margin: 0 }}>
-                                    Whether you are sourcing seamless gym sets, custom team tracksuits, boxing shorts, sublimated rash guards, or luxury heavyweight hoodies, our technical workflow ensures consistent sizing and export-grade repeatability.
+                                    Whether you are sourcing seamless gym sets, custom team tracksuits, boxing shorts, sublimated rash guards or luxury heavyweight hoodies, our technical workflow ensures consistent sizing and export-grade repeatability.
                                 </p>
                             </div>
                         </div>
@@ -194,7 +194,7 @@ export default function ManufacturingPage() {
                                         </div>
                                     </div>
                                     <h3>Requirement Review &amp; Design Direction</h3>
-                                    <p className="muted">We review your reference samples, tech packs, target price points, fabric blends, size grading, and custom branding needs before recommending the optimal production path.</p>
+                                    <p className="muted">We review your reference samples, tech packs, target price points, fabric blends, size grading and custom branding needs before recommending the optimal production path.</p>
                                 </div>
                             </article>
 
@@ -211,7 +211,7 @@ export default function ManufacturingPage() {
                                         </div>
                                     </div>
                                     <h3>Pattern, Fabric &amp; Cutting Preparation</h3>
-                                    <p className="muted">Digital CAD pattern plotting, fabric tension relaxation, GSM verification, and laser knife spreading are prepared to ensure exact sizing repeatability across all sizes.</p>
+                                    <p className="muted">Digital CAD pattern plotting, fabric tension relaxation, GSM verification and laser knife spreading are prepared to ensure exact sizing repeatability across all sizes.</p>
                                 </div>
                             </article>
 
@@ -228,7 +228,7 @@ export default function ManufacturingPage() {
                                         </div>
                                     </div>
                                     <h3>Stitching &amp; Garment Construction</h3>
-                                    <p className="muted">Garments move through dedicated stitching cells utilizing 4-needle 6-thread flatlock, high-torque overlock, and twin-needle coverstitch calibrated for heavy fleece and stretch performance textiles.</p>
+                                    <p className="muted">Garments move through dedicated stitching cells utilizing 4-needle 6-thread flatlock, high-torque overlock and twin-needle coverstitch calibrated for heavy fleece and stretch performance textiles.</p>
                                 </div>
                             </article>
 
@@ -245,7 +245,7 @@ export default function ManufacturingPage() {
                                         </div>
                                     </div>
                                     <h3>Inline Checking &amp; Quality Review</h3>
-                                    <p className="muted">Every batch is audited under AQL 2.5 standards for seam burst strength, grading tolerance adherence (±0.5 cm), thread trimming, print fastness, and 100% metal detector safety scanning.</p>
+                                    <p className="muted">Every batch is audited under AQL 2.5 standards for seam burst strength, grading tolerance adherence (±0.5 cm), thread trimming, print fastness and 100% metal detector safety scanning.</p>
                                 </div>
                             </article>
 
@@ -262,7 +262,7 @@ export default function ManufacturingPage() {
                                         </span>
                                     </div>
                                     <h3>Finishing, Packing &amp; Export Readiness</h3>
-                                    <p className="muted">Garments are steam ironed, tagged with woven labels and barcode hangtags, packed in branded frosted polybags, and palletized in double-wall master cartons for worldwide dispatch.</p>
+                                    <p className="muted">Garments are steam ironed, tagged with woven labels and barcode hangtags, packed in branded frosted polybags and palletized in double-wall master cartons for worldwide dispatch.</p>
                                 </div>
                             </article>
                         </div>
@@ -274,7 +274,7 @@ export default function ManufacturingPage() {
                         <span className="section-label">Production Capabilities</span>
                         <h2>What Bin Rasool Enterprises can support for your apparel brand</h2>
                         <p className="muted" style={{ 'maxWidth': '850px' }}>
-                            International buyers need more than basic sewing lines. They require an authentic manufacturer with comprehensive supply chain knowledge, premium fabric access, and direct export execution.
+                            International buyers need more than basic sewing lines. They require an authentic manufacturer with comprehensive supply chain knowledge, premium fabric access and direct export execution.
                         </p>
 
                         <div className="capability-grid">
@@ -286,7 +286,7 @@ export default function ManufacturingPage() {
                                     </svg>
                                 </div>
                                 <h3>Private Label Packaging</h3>
-                                <p>Custom woven damask neck labels, soft satin care labels, debossed hangtags, branded frosted zipper polybags, and retail-ready barcode stickers.</p>
+                                <p>Custom woven damask neck labels, soft satin care labels, debossed hangtags, branded frosted zipper polybags and retail-ready barcode stickers.</p>
                             </article>
                             <article className="capability-card">
                                 <div className="capability-card-icon" aria-hidden="true">
@@ -297,7 +297,7 @@ export default function ManufacturingPage() {
                                     </svg>
                                 </div>
                                 <h3>Technical Fabrics &amp; Materials</h3>
-                                <p>High-stretch nylon-spandex, squat-proof interlock, heavyweight French terry, loopback fleece, anti-microbial mesh, and quick-dry dry-fit polyester.</p>
+                                <p>High-stretch nylon-spandex, squat-proof interlock, heavyweight French terry, loopback fleece, anti-microbial mesh and quick-dry dry-fit polyester.</p>
                             </article>
                             <article className="capability-card">
                                 <div className="capability-card-icon" aria-hidden="true">
@@ -308,7 +308,7 @@ export default function ManufacturingPage() {
                                     </svg>
                                 </div>
                                 <h3>Advanced Custom Branding</h3>
-                                <p>High-density 3D puff screen printing, matte silicone heat transfers, multi-head Tajima embroidery, discharge printing, and full-coverage dye sublimation.</p>
+                                <p>High-density 3D puff screen printing, matte silicone heat transfers, multi-head Tajima embroidery, discharge printing and full-coverage dye sublimation.</p>
                             </article>
                             <article className="capability-card">
                                 <div className="capability-card-icon" aria-hidden="true">
@@ -328,7 +328,7 @@ export default function ManufacturingPage() {
                                     </svg>
                                 </div>
                                 <h3>Direct B2B Communication</h3>
-                                <p>Dedicated merchandising manager providing real-time production video updates, tech pack feedback, digital size grading charts, and sample approvals.</p>
+                                <p>Dedicated merchandising manager providing real-time production video updates, tech pack feedback, digital size grading charts and sample approvals.</p>
                             </article>
                             <article className="capability-card">
                                 <div className="capability-card-icon" aria-hidden="true">
@@ -340,7 +340,7 @@ export default function ManufacturingPage() {
                                     </svg>
                                 </div>
                                 <h3>Specialized Category Pods</h3>
-                                <p>Independent production cells configured specifically for activewear &amp; leggings, teamwear uniforms, heavy streetwear hoodies, and combat sports fightwear.</p>
+                                <p>Independent production cells configured specifically for activewear &amp; leggings, teamwear uniforms, heavy streetwear hoodies and combat sports fightwear.</p>
                             </article>
                         </div>
                     </div>
@@ -359,7 +359,7 @@ export default function ManufacturingPage() {
                                 <img src="/images/categories/1776540259_fitness-wear.webp" alt="Fitness Wear Manufacturing Sialkot" className="category-mfg-img" />
                                 <div className="category-mfg-body">
                                     <h3>Fitness &amp; Activewear</h3>
-                                    <p>Squat-proof leggings, seamless sports bras, compression tights, athletic shorts, and dry-fit performance workout tees.</p>
+                                    <p>Squat-proof leggings, seamless sports bras, compression tights, athletic shorts and dry-fit performance workout tees.</p>
                                     <span className="category-mfg-link"><span>Explore Fitness Manufacturing</span><ArrowRightIcon size={13} /></span>
                                 </div>
                             </Link>
@@ -367,7 +367,7 @@ export default function ManufacturingPage() {
                                 <img src="/images/categories/1776540279_sports-wear.webp" alt="Sportswear Manufacturing Pakistan" className="category-mfg-img" />
                                 <div className="category-mfg-body">
                                     <h3>Sportswear &amp; Teamwear</h3>
-                                    <p>Sublimated soccer jerseys, basketball uniforms, warm-up tracksuits, athletic jackets, and custom club training kits.</p>
+                                    <p>Sublimated soccer jerseys, basketball uniforms, warm-up tracksuits, athletic jackets and custom club training kits.</p>
                                     <span className="category-mfg-link"><span>Explore Sports Manufacturing</span><ArrowRightIcon size={13} /></span>
                                 </div>
                             </Link>
@@ -375,7 +375,7 @@ export default function ManufacturingPage() {
                                 <img src="/images/categories/1776540301_boxing-wear.webp" alt="Boxing Wear Manufacturing Sialkot" className="category-mfg-img" />
                                 <div className="category-mfg-body">
                                     <h3>Boxing &amp; Combat Fightwear</h3>
-                                    <p>Heavy satin boxing trunks, BJJ rash guards, MMA fight shorts, corner walkout robes, and combat training accessories.</p>
+                                    <p>Heavy satin boxing trunks, BJJ rash guards, MMA fight shorts, corner walkout robes and combat training accessories.</p>
                                     <span className="category-mfg-link"><span>Explore Boxing Manufacturing</span><ArrowRightIcon size={13} /></span>
                                 </div>
                             </Link>
@@ -400,7 +400,7 @@ export default function ManufacturingPage() {
                             <div className="qa-bento-card">
                                 <span className="qa-bento-badge">Textile Lab</span>
                                 <h3>&lt; 3% Shrinkage Guarantee</h3>
-                                <p>Raw fabrics are pre-tested for colorfastness to light and perspiration (Grade 4+), wash durability, and dimensional stability before cutting.</p>
+                                <p>Raw fabrics are pre-tested for colorfastness to light and perspiration (Grade 4+), wash durability and dimensional stability before cutting.</p>
                             </div>
                             <div className="qa-bento-card">
                                 <span className="qa-bento-badge">Safety Audit</span>
@@ -410,7 +410,7 @@ export default function ManufacturingPage() {
                             <div className="qa-bento-card">
                                 <span className="qa-bento-badge">Master Cartons</span>
                                 <h3>Export-Grade Corrugated Packing</h3>
-                                <p>Reinforced 7-ply double-wall export master cartons with moisture-proof poly-lining, individual silica gel packets, and clear SKU barcodes.</p>
+                                <p>Reinforced 7-ply double-wall export master cartons with moisture-proof poly-lining, individual silica gel packets and clear SKU barcodes.</p>
                             </div>
                             <div className="qa-bento-card">
                                 <span className="qa-bento-badge">Logistics</span>
@@ -427,7 +427,7 @@ export default function ManufacturingPage() {
                             <div>
                                 <span className="home-kicker">Start Your Inquiry</span>
                                 <h2>Ready to start your custom apparel order?</h2>
-                                <p>Send your tech pack, sample reference, or branding requirements. We will provide pricing, MOQ guidance, and sample timelines.</p>
+                                <p>Send your tech pack, sample reference or branding requirements. We will provide pricing, MOQ guidance and sample timelines.</p>
                             </div>
                             <div className="home-cta-actions">
                                 <Link href="/contact" className="btn btn-primary">
@@ -441,7 +441,7 @@ export default function ManufacturingPage() {
                 {/* Interactive B2B FAQ with Rich Schema */}
                 <FaqSection
                     title="Manufacturing Capabilities & Quality FAQs"
-                    subtitle="Commercial specifications, lead times, production minimums, and export logistics for apparel buyers."
+                    subtitle="Commercial specifications, lead times, production minimums and export logistics for apparel buyers."
                     items={MANUFACTURING_FAQS}
                     categoryBadge="Sialkot Factory Floor"
                 />

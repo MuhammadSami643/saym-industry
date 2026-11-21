@@ -106,7 +106,11 @@ export async function POST(request: Request) {
           message: `Dispatched email successfully to ${recipients.length} buyer(s).`,
         });
       } catch (smtpErr: any) {
-        console.warn('SMTP dispatch failed, returning simulated delivery:', smtpErr);
+        console.error('SMTP dispatch failed:', smtpErr);
+        return NextResponse.json(
+          { error: `SMTP Dispatch Error: ${smtpErr.message || 'Failed to send through Hostinger mail server'}` },
+          { status: 500 }
+        );
       }
     }
 

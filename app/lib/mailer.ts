@@ -156,12 +156,12 @@ export async function sendInquiryNotificationEmails(payload: InquiryEmailPayload
 
             <div class="contact-bar">
               <div style="font-size: 12px; color: #166534; margin-bottom: 4px;">Need immediate consultation or swatch photos?</div>
-              <a href="https://wa.me/923376793383" class="contact-link">Chat Directly with Export Manager on WhatsApp ➔</a>
+              <a href="https://wa.me/923133599241" class="contact-link">Chat Directly with Export Manager on WhatsApp ➔</a>
             </div>
           </div>
           <div class="footer">
             <strong>${brandName}</strong><br>
-            Sialkot, Punjab, Pakistan &bull; Sales: sales@binrasoolenterprises.com &bull; General: info@binrasoolenterprises.com<br>
+            Pakki Kotli, Daska Road, Sialkot 51310, Pakistan &bull; Sales: sales@binrasoolenterprises.com &bull; General: info@binrasoolenterprises.com<br>
             Website: <a href="${siteUrl}" style="color: #f3a626; text-decoration: none;">${siteUrl}</a>
           </div>
         </div>

@@ -1,0 +1,321 @@
+{
+  "BRE-2026-9014": {
+    "orderId": "BRE-2026-9014",
+    "clientName": "Liam Carter",
+    "brand": "Vanguard Streetwear LLC",
+    "country": "United States (Los Angeles, CA)",
+    "item": "450 GSM Heavy French Terry Boxy Hoodies",
+    "quantity": "600 pcs (Black, Vintage Grey, Forest Green)",
+    "fabricSpec": "100% Combed Ringspun Cotton French Terry, Pre-Shrunk",
+    "targetDispatch": "November 18, 2026",
+    "estimatedRemainingTime": "3-4 Working Days to Air Cargo Departure",
+    "carrier": "DHL Express Worldwide Air Cargo",
+    "trackingNumber": "DHL-PK-9821449012",
+    "overallStatus": "Steam Pressing",
+    "milestones": [
+      {
+        "stage": "01",
+        "title": "Tech Pack & Pre-Production Swatch Approved",
+        "desc": "Lab dips approved, sizing graded across XS to 3XL.",
+        "completed": true,
+        "active": false,
+        "date": "Oct 28, 2026",
+        "estimatedDuration": "3 Business Days"
+      },
+      {
+        "stage": "02",
+        "title": "Fabric Knitting, Dyeing & Precision Cutting",
+        "desc": "Custom combed yarn knitted and laser cut to CAD specifications.",
+        "completed": true,
+        "active": false,
+        "date": "Nov 03, 2026",
+        "estimatedDuration": "5 Business Days"
+      },
+      {
+        "stage": "03",
+        "title": "Industrial Stitching & 3D Puff Screen Print",
+        "desc": "Flatlock reinforced seam assembly & high-density chest print.",
+        "completed": true,
+        "active": false,
+        "date": "Nov 10, 2026",
+        "estimatedDuration": "6 Business Days"
+      },
+      {
+        "stage": "04",
+        "title": "AQL 2.5 Quality Inspection & Seam Strength Audit",
+        "desc": "Dimensional checks, thread trimming and wash-fastness testing passed 100%.",
+        "completed": true,
+        "active": false,
+        "date": "Nov 13, 2026",
+        "estimatedDuration": "2 Business Days"
+      },
+      {
+        "stage": "05",
+        "title": "Industrial Steam Pressing",
+        "desc": "Heavy vacuum steam ironing, crease removal, thread cleanup and fabric shape stabilization.",
+        "completed": false,
+        "active": true,
+        "date": "In Progress (Nov 14-15)",
+        "estimatedDuration": "24-48 Hours"
+      },
+      {
+        "stage": "06",
+        "title": "Custom Retail Packaging",
+        "desc": "Woven neck label verification, hangtag barcode attachment, individual frosted biodegradable zipper polybagging and export master carton sealing.",
+        "completed": false,
+        "active": false,
+        "date": "Scheduled (Nov 16-17)",
+        "estimatedDuration": "24 Hours"
+      },
+      {
+        "stage": "07",
+        "title": "Export Customs Clearance & Air Dispatch",
+        "desc": "Sialkot Dry Port customs clearance to DHL Hub & Air Bill of Lading departure.",
+        "completed": false,
+        "active": false,
+        "date": "Est. Nov 18, 2026",
+        "estimatedDuration": "1-2 Days"
+      }
+    ]
+  },
+  "BRE-SAMPLE-104": {
+    "orderId": "BRE-SAMPLE-104",
+    "clientName": "Sophie Bennett",
+    "brand": "Aura Athletics",
+    "country": "United Kingdom (London)",
+    "item": "Seamless High-Waist Scrunch Leggings & Sports Bra Set",
+    "quantity": "4 Sets (Prototyping & Fit Verification)",
+    "fabricSpec": "75% Micro-Nylon / 25% Spandex, 4-Way Stretch Compression",
+    "targetDispatch": "November 12, 2026",
+    "estimatedRemainingTime": "Completed & Dispatched via Air Express",
+    "carrier": "FedEx Priority Express",
+    "trackingNumber": "FDX-8730991204-GB",
+    "overallStatus": "Dispatched",
+    "milestones": [
+      {
+        "stage": "01",
+        "title": "Sample Pattern Drafting",
+        "desc": "Digitized grading created from buyer specs.",
+        "completed": true,
+        "active": false,
+        "date": "Nov 02, 2026",
+        "estimatedDuration": "24-48 Hours"
+      },
+      {
+        "stage": "02",
+        "title": "Seamless Circular Knitting",
+        "desc": "Santoni seamless machine knitting completed.",
+        "completed": true,
+        "active": false,
+        "date": "Nov 05, 2026",
+        "estimatedDuration": "48 Hours"
+      },
+      {
+        "stage": "03",
+        "title": "Heat Seal Logo Transfer & Assembly",
+        "desc": "Matte silicone reflective branding applied.",
+        "completed": true,
+        "active": false,
+        "date": "Nov 08, 2026",
+        "estimatedDuration": "24 Hours"
+      },
+      {
+        "stage": "04",
+        "title": "AQL Fit & Elasticity Verification",
+        "desc": "Squat-test and recovery elasticity passed 100%.",
+        "completed": true,
+        "active": false,
+        "date": "Nov 09, 2026",
+        "estimatedDuration": "24 Hours"
+      },
+      {
+        "stage": "05",
+        "title": "Industrial Steam Pressing",
+        "desc": "Crease removal and fabric stabilization.",
+        "completed": true,
+        "active": false,
+        "date": "Nov 10, 2026",
+        "estimatedDuration": "12 Hours"
+      },
+      {
+        "stage": "06",
+        "title": "Custom Retail Packaging",
+        "desc": "Individual barcoded packaging & hangtag attached.",
+        "completed": true,
+        "active": false,
+        "date": "Nov 10, 2026",
+        "estimatedDuration": "12 Hours"
+      },
+      {
+        "stage": "07",
+        "title": "Sample Dispatched via FedEx Priority",
+        "desc": "In transit to Heathrow International Airport.",
+        "completed": true,
+        "active": false,
+        "date": "Nov 11, 2026",
+        "estimatedDuration": "3-4 Days Global"
+      }
+    ]
+  },
+  "BRE-2026-2114": {
+    "orderId": "BRE-2026-2114",
+    "clientName": "Liam Carter",
+    "brand": "Vanguard Streetwear LLC",
+    "country": "International Export (Worldwide)",
+    "item": "Heavyweight French Terry Acid Wash Hoodies",
+    "quantity": "250 pcs",
+    "fabricSpec": "450 GSM 100% Combed Ringspun Cotton",
+    "targetDispatch": "December 9, 2026",
+    "estimatedRemainingTime": "Approx. 18 Business Days to Dispatch",
+    "carrier": "DHL Express Worldwide",
+    "trackingNumber": "AWB-BRE-2026-2114-PK",
+    "overallStatus": "Tech Pack",
+    "createdAt": "2026-11-21T06:25:25.915Z",
+    "milestones": [
+      {
+        "stage": "01",
+        "title": "Tech Pack Verification & Fabric Procurement",
+        "desc": "Buyer tech pack confirmed, grading tolerance set and mill yarn allocation initiated.",
+        "completed": false,
+        "active": true,
+        "date": "In Progress (Nov 21, 2026)",
+        "estimatedDuration": "2-3 Business Days"
+      },
+      {
+        "stage": "02",
+        "title": "Pattern CAD Grading & Precision Fabric Cutting",
+        "desc": "Automated fabric layout and Eastman CNC cutting table processing.",
+        "completed": false,
+        "active": false,
+        "date": "Scheduled",
+        "estimatedDuration": "3-4 Business Days"
+      },
+      {
+        "stage": "03",
+        "title": "Industrial Stitching & Private Label Printing",
+        "desc": "Assembly line sewing, custom inner tags, embroidery and screen printing.",
+        "completed": false,
+        "active": false,
+        "date": "Scheduled",
+        "estimatedDuration": "5-7 Business Days"
+      },
+      {
+        "stage": "04",
+        "title": "AQL 2.5 Quality Audit & Seam Strength Check",
+        "desc": "Dimensional tolerance checks, needle detection and wash colorfastness testing.",
+        "completed": false,
+        "active": false,
+        "date": "Scheduled",
+        "estimatedDuration": "2 Business Days"
+      },
+      {
+        "stage": "05",
+        "title": "Industrial Steam Pressing",
+        "desc": "Vacuum steam ironing, crease removal, thread trimming and garment shape stabilization.",
+        "completed": false,
+        "active": false,
+        "date": "Scheduled",
+        "estimatedDuration": "24-48 Hours"
+      },
+      {
+        "stage": "06",
+        "title": "Custom Retail Packaging",
+        "desc": "Brand woven neck tags, hangtag barcodes, individual frosted polybags and master export cartons.",
+        "completed": false,
+        "active": false,
+        "date": "Scheduled",
+        "estimatedDuration": "24 Hours"
+      },
+      {
+        "stage": "07",
+        "title": "Customs Clearance & Air Cargo Dispatch",
+        "desc": "Sialkot Dry Port customs clearance, DHL/FedEx AWB issuance and air freight departure.",
+        "completed": false,
+        "active": false,
+        "date": "Est. December 9, 2026",
+        "estimatedDuration": "1-2 Days"
+      }
+    ]
+  },
+  "BRE-2026-4230": {
+    "orderId": "BRE-2026-4230",
+    "clientName": "sami",
+    "brand": "sami",
+    "country": "sSA",
+    "item": "Quote Request for 50 - 100 pcs (Startup Run)x Sportswear & Teamwear - sami",
+    "quantity": "100 pcs per style",
+    "fabricSpec": "Factory Sourced Certified Mill Fabric",
+    "targetDispatch": "December 9, 2026",
+    "estimatedRemainingTime": "Approx. 18 Business Days to Dispatch",
+    "carrier": "DHL Express Worldwide Air Cargo",
+    "trackingNumber": "AWB-BRE-2026-4230-PK",
+    "overallStatus": "Tech Pack",
+    "createdAt": "2026-11-21T06:36:57.037Z",
+    "inquiryId": "INQ-854233",
+    "milestones": [
+      {
+        "stage": "01",
+        "title": "Tech Pack Verification & Fabric Procurement",
+        "desc": "Buyer tech pack confirmed, grading tolerance set and mill yarn allocation initiated.",
+        "completed": false,
+        "active": true,
+        "date": "In Progress (Nov 21, 2026)",
+        "estimatedDuration": "2-3 Business Days"
+      },
+      {
+        "stage": "02",
+        "title": "Pattern CAD Grading & Precision Fabric Cutting",
+        "desc": "Automated fabric layout and Eastman CNC cutting table processing.",
+        "completed": false,
+        "active": false,
+        "date": "Scheduled",
+        "estimatedDuration": "3-4 Business Days"
+      },
+      {
+        "stage": "03",
+        "title": "Industrial Stitching & Private Label Printing",
+        "desc": "Assembly line sewing, custom inner tags, embroidery and screen printing.",
+        "completed": false,
+        "active": false,
+        "date": "Scheduled",
+        "estimatedDuration": "5-7 Business Days"
+      },
+      {
+        "stage": "04",
+        "title": "AQL 2.5 Quality Audit & Seam Strength Check",
+        "desc": "Dimensional tolerance checks, needle detection and wash colorfastness testing.",
+        "completed": false,
+        "active": false,
+        "date": "Scheduled",
+        "estimatedDuration": "2 Business Days"
+      },
+      {
+        "stage": "05",
+        "title": "Industrial Steam Pressing",
+        "desc": "Vacuum steam ironing, crease removal, thread trimming and garment shape stabilization.",
+        "completed": false,
+        "active": false,
+        "date": "Scheduled",
+        "estimatedDuration": "24-48 Hours"
+      },
+      {
+        "stage": "06",
+        "title": "Custom Retail Packaging",
+        "desc": "Brand woven neck tags, hangtag barcodes, individual frosted polybags and master export cartons.",
+        "completed": false,
+        "active": false,
+        "date": "Scheduled",
+        "estimatedDuration": "24 Hours"
+      },
+      {
+        "stage": "07",
+        "title": "Customs Clearance & Air Cargo Dispatch",
+        "desc": "Sialkot Dry Port customs clearance, DHL/FedEx AWB issuance and air freight departure.",
+        "completed": false,
+        "active": false,
+        "date": "Est. December 9, 2026",
+        "estimatedDuration": "1-2 Days"
+      }
+    ]
+  }
+}

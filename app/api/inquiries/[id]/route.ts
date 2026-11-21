@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { supabase } from '@/app/lib/supabase';
+import { getAllInquiries, updateInquiryStatus, deleteInquiry } from '@/app/lib/inquiriesStore';
 
 // GET /api/inquiries/[id]
 export async function GET(
@@ -8,24 +8,20 @@ export async function GET(
 ) {
   try {
     const { id } = await params;
+    const all = getAllInquiries();
+    const item = all.find(i => i.id === id);
 
-    const { data, error } = await supabase
-      .from('inquiries')
-      .select('*')
-      .eq('id', id)
-      .single();
-
-    if (error) {
-      return NextResponse.json({ error: error.message }, { status: 404 });
+    if (!item) {
+      return NextResponse.json({ error: 'Inquiry not found' }, { status: 404 });
     }
 
-    return NextResponse.json({ success: true, data });
+    return NextResponse.json({ success: true, data: item });
   } catch (err: any) {
     return NextResponse.json({ error: err.message }, { status: 500 });
   }
 }
 
-// PATCH /api/inquiries/[id] -> Update inquiry status (e.g. 'contacted', 'completed')
+// PATCH /api/inquiries/[id] -> Update inquiry status (e.g. 'contacted', 'quoted', 'closed')
 export async function PATCH(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
@@ -42,20 +38,16 @@ export async function PATCH(
       );
     }
 
-    const { data, error } = await supabase
-      .from('inquiries')
-      .update({ status })
-      .eq('id', id)
-      .select();
+    const updated = await updateInquiryStatus(id, status);
 
-    if (error) {
-      return NextResponse.json({ error: error.message }, { status: 500 });
+    if (!updated) {
+      return NextResponse.json({ error: 'Inquiry not found or update failed' }, { status: 404 });
     }
 
     return NextResponse.json({
       success: true,
       message: 'Inquiry updated successfully',
-      data: data?.[0]
+      data: updated
     });
   } catch (err: any) {
     return NextResponse.json({ error: err.message }, { status: 500 });
@@ -69,19 +61,11 @@ export async function DELETE(
 ) {
   try {
     const { id } = await params;
-
-    const { error } = await supabase
-      .from('inquiries')
-      .delete()
-      .eq('id', id);
-
-    if (error) {
-      return NextResponse.json({ error: error.message }, { status: 500 });
-    }
+    const ok = await deleteInquiry(id);
 
     return NextResponse.json({
       success: true,
-      message: 'Inquiry deleted successfully'
+      message: ok ? 'Inquiry deleted successfully' : 'Inquiry removed'
     });
   } catch (err: any) {
     return NextResponse.json({ error: err.message }, { status: 500 });

@@ -53,7 +53,7 @@ export default function RegionalPrivateLabelTemplate({ config }: { config: Regio
 
               <div className="pl-summary">
                 <strong>Factory Direct Sialkot to {config.countryName}</strong>
-                <p>Full-package OEM activewear production with custom damask woven labels, frosted zip polybags, and express international air &amp; sea cargo.</p>
+                <p>Full-package OEM activewear production with custom damask woven labels, frosted zip polybags and express international air &amp; sea cargo.</p>
               </div>
             </div>
           </div>
@@ -81,7 +81,7 @@ export default function RegionalPrivateLabelTemplate({ config }: { config: Regio
                 <span className="pl-label">Regional Compliance &amp; Sizing</span>
                 <h2>{config.marketFocus.heading}</h2>
                 <p className="muted" style={{ lineHeight: 1.7, fontSize: '15px' }}>
-                  Sourcing apparel from Pakistan for {config.countryName} brands requires strict adherence to local sizing standards, textile compliance, fast DHL sampling, and retail-ready packaging. Bin Rasool Enterprises provides complete end-to-end support from Sialkot.
+                  Sourcing apparel from Pakistan for {config.countryName} brands requires strict adherence to local sizing standards, textile compliance, fast DHL sampling and retail-ready packaging. Bin Rasool Enterprises provides complete end-to-end support from Sialkot.
                 </p>
                 <div style={{ marginTop: '24px' }}>
                   <Link href="/contact" className="btn btn-primary" style={{ padding: '12px 24px' }}>
@@ -141,7 +141,7 @@ export default function RegionalPrivateLabelTemplate({ config }: { config: Regio
                   <tr>
                     <td><strong>Textile &amp; Safety Compliance</strong></td>
                     <td>{config.commercials.compliance}</td>
-                    <td>Certified fabrics safe for retail, gym members, and online sales.</td>
+                    <td>Certified fabrics safe for retail, gym members and online sales.</td>
                   </tr>
                 </tbody>
               </table>
@@ -158,17 +158,17 @@ export default function RegionalPrivateLabelTemplate({ config }: { config: Regio
             <div className="pl-category-grid">
               <Link className="pl-category" href="/fitness-wear-manufacturer">
                 <h3>Gym &amp; Activewear</h3>
-                <p className="muted">Squat-proof compression leggings, seamless sports bras, tapered fleece joggers, and dry-fit performance tops.</p>
+                <p className="muted">Squat-proof compression leggings, seamless sports bras, tapered fleece joggers and dry-fit performance tops.</p>
                 <span className="category-mfg-link"><span>Explore Fitness Wear</span><ArrowRightIcon size={13} /></span>
               </Link>
               <Link className="pl-category" href="/sportswear-manufacturer-exporter">
                 <h3>Sportswear &amp; Teamwear</h3>
-                <p className="muted">Sublimated club soccer jerseys, basketball kits, warm-up tracksuits, and custom coach athletic jackets.</p>
+                <p className="muted">Sublimated club soccer jerseys, basketball kits, warm-up tracksuits and custom coach athletic jackets.</p>
                 <span className="category-mfg-link"><span>Explore Sports Wear</span><ArrowRightIcon size={13} /></span>
               </Link>
               <Link className="pl-category" href="/boxing-gear-manufacturer-bulk">
                 <h3>Boxing &amp; Combat Fightwear</h3>
-                <p className="muted">Competition satin trunks, BJJ rash guards, MMA fight shorts, corner walkout robes, and leather equipment.</p>
+                <p className="muted">Competition satin trunks, BJJ rash guards, MMA fight shorts, corner walkout robes and leather equipment.</p>
                 <span className="category-mfg-link"><span>Explore Boxing Wear</span><ArrowRightIcon size={13} /></span>
               </Link>
             </div>
@@ -181,7 +181,7 @@ export default function RegionalPrivateLabelTemplate({ config }: { config: Regio
             <div className="pl-cta">
               <div>
                 <h2>Ready to manufacture for {config.countryName}?</h2>
-                <p>Send your tech pack, reference photos, target quantities, and branding requirements. We will provide a direct factory quotation within 24 hours.</p>
+                <p>Send your tech pack, reference photos, target quantities and branding requirements. We will provide a direct factory quotation within 24 hours.</p>
               </div>
               <Link href="/contact" className="btn btn-primary" style={{ whiteSpace: 'nowrap', padding: '14px 28px' }}>
                 Contact Factory Team
@@ -193,7 +193,7 @@ export default function RegionalPrivateLabelTemplate({ config }: { config: Regio
         {/* FAQs */}
         <FaqSection
           title={`${config.countryName} Private Label Activewear FAQs`}
-          subtitle={`Frequently asked questions by ${config.countryName} activewear brands, gym owners, and distributors.`}
+          subtitle={`Frequently asked questions by ${config.countryName} activewear brands, gym owners and distributors.`}
           items={config.faqs}
           categoryBadge={`${config.countryName} Sourcing`}
         />

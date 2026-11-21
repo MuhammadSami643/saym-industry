@@ -37,13 +37,13 @@ export const metadata: Metadata = {
 const BOXING_CATEGORIES = [
   {
     title: "Custom Satin Boxing Trunks",
-    description: "Traditional heavy silk-satin trunks with wide 4-inch elastic waistbands, side splits, and 3D metallic embroidery.",
+    description: "Traditional heavy silk-satin trunks with wide 4-inch elastic waistbands, side splits and 3D metallic embroidery.",
     image: "/images/categories/1776540301_boxing-wear.webp",
     link: "/products",
   },
   {
     title: "Fighter Walkout Robes",
-    description: "Full-length hooded or shawl collar walkout robes in satin, velvet, or fleece with contrast lapels and custom sponsor logos.",
+    description: "Full-length hooded or shawl collar walkout robes in satin, velvet or fleece with contrast lapels and custom sponsor logos.",
     image: "/images/categories/1776540301_boxing-wear.webp",
     link: "/products",
   },
@@ -55,7 +55,7 @@ const BOXING_CATEGORIES = [
   },
   {
     title: "MMA Fight Shorts",
-    description: "Ripstop or microfiber combat shorts with inner drawstring, hook-and-loop fly, lycra crotch flex panel, and reinforced high side slits.",
+    description: "Ripstop or microfiber combat shorts with inner drawstring, hook-and-loop fly, lycra crotch flex panel and reinforced high side slits.",
     image: "/images/categories/1776540301_boxing-wear.webp",
     link: "/products",
   },
@@ -67,7 +67,7 @@ const BOXING_CATEGORIES = [
   },
   {
     title: "Boxing Accessories & Corner Towels",
-    description: "100% ring-spun terry cotton corner towels, custom satin hand wrap pouches, and embroidered gym gear bags.",
+    description: "100% ring-spun terry cotton corner towels, custom satin hand wrap pouches and embroidered gym gear bags.",
     image: "/images/categories/1776540301_boxing-wear.webp",
     link: "/products",
   },
@@ -84,7 +84,7 @@ const BOXING_SPECS = [
   },
   {
     title: "High-Density 3D Embroidery & Metallic Appliques",
-    content: "We utilize multi-head Tajima embroidery machines for thick raised 3D lettering, metallic gold/silver thread work, sequin trims, and custom fighter name patches.",
+    content: "We utilize multi-head Tajima embroidery machines for thick raised 3D lettering, metallic gold/silver thread work, sequin trims and custom fighter name patches.",
   },
   {
     title: "Flex Crotch & High Mobility Side Slits",
@@ -92,11 +92,11 @@ const BOXING_SPECS = [
   },
   {
     title: "Fade-Resistant Sublimation Printing",
-    content: "For rash guards and modern fight shorts, all-over graphics, camouflage, sponsor logos, and rank colors are sublimated deep into the fabric fibers, ensuring zero cracking or peeling.",
+    content: "For rash guards and modern fight shorts, all-over graphics, camouflage, sponsor logos and rank colors are sublimated deep into the fabric fibers, ensuring zero cracking or peeling.",
   },
   {
     title: "Low MOQ Starting at 50 Pieces per Style",
-    content: "We support combat academies, boxing promotions, gyms, and fight brands with accessible 50 pcs MOQ per design, allowing custom size breakdowns from Youth to 4XL.",
+    content: "We support combat academies, boxing promotions, gyms and fight brands with accessible 50 pcs MOQ per design, allowing custom size breakdowns from Youth to 4XL.",
   },
 ];
 
@@ -131,7 +131,7 @@ export default function BoxingWearManufacturerPage() {
               <span className="pl-kicker">OEM COMBAT SPORTSWEAR &bull; SIALKOT, PAKISTAN</span>
               <h1>Custom Boxing Wear &amp; Fight Gear Manufacturer</h1>
               <p>
-                Bin Rasool Enterprises is an export manufacturer in Sialkot, Pakistan, engineering custom satin boxing trunks, fighter walkout robes, corner team jackets, BJJ rash guards, and MMA fight shorts for combat sports promotions, gyms, and private label fightwear brands worldwide.
+                Bin Rasool Enterprises is an export manufacturer in Sialkot, Pakistan, engineering custom satin boxing trunks, fighter walkout robes, corner team jackets, BJJ rash guards and MMA fight shorts for combat sports promotions, gyms and private label fightwear brands worldwide.
               </p>
               <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '26px' }}>
                 <Link href="/contact" className="btn btn-primary">
@@ -163,7 +163,7 @@ export default function BoxingWearManufacturerPage() {
             </div>
             <div className="pl-note">
               <p className="muted" style={{ margin: '0 0 14px', color: '#475569', fontSize: '15.5px', lineHeight: '1.75' }}>
-                Combat apparel must withstand high torque, grappling friction, and intense perspiration without tearing or slipping. From triple-needle reinforced seams on fight shorts to high-density 3D metallic embroidery on championship robes, our craftsmen in Sialkot engineer every piece for professional performance.
+                Combat apparel must withstand high torque, grappling friction and intense perspiration without tearing or slipping. From triple-needle reinforced seams on fight shorts to high-density 3D metallic embroidery on championship robes, our craftsmen in Sialkot engineer every piece for professional performance.
               </p>
               <p className="muted" style={{ margin: 0, color: '#475569', fontSize: '15.5px', lineHeight: '1.75' }}>
                 Whether you need a full roster kit for a title fight or 500 rash guards for a grappling tournament, we deliver factory-direct pricing with guaranteed international shipping.
@@ -182,7 +182,7 @@ export default function BoxingWearManufacturerPage() {
               Core Boxing &amp; Fight Wear Styles
             </h2>
             <p style={{ color: '#475569', fontSize: '15.5px', margin: 0 }}>
-              Customizable with your team colors, fighter embroidery, sponsor logos, and custom woven label packages.
+              Customizable with your team colors, fighter embroidery, sponsor logos and custom woven label packages.
             </p>
           </div>
 
@@ -216,7 +216,7 @@ export default function BoxingWearManufacturerPage() {
               Combat Sports Quality Control &amp; Stitching Standards
             </h2>
             <p style={{ color: '#475569', fontSize: '15.5px', margin: 0 }}>
-              High-impact construction methods designed for professional fighters, boxing clubs, and martial arts academies.
+              High-impact construction methods designed for professional fighters, boxing clubs and martial arts academies.
             </p>
           </div>
 
@@ -250,7 +250,7 @@ export default function BoxingWearManufacturerPage() {
           <div className="sw-cta-box">
             <h2>Ready to produce custom fight gear for your fighters or brand?</h2>
             <p>
-              Send your design mockups, fight kit requirements, or sponsor artwork. Our production team will confirm fabric options, embroidery sizing, and provide clear factory quotes within 24 hours.
+              Send your design mockups, fight kit requirements or sponsor artwork. Our production team will confirm fabric options, embroidery sizing and provide clear factory quotes within 24 hours.
             </p>
             <div>
               <Link href="/contact" className="sw-btn-primary" style={{ padding: '16px 36px', fontSize: '16px' }}>

@@ -62,7 +62,7 @@ export default function AboutPage() {
                   OEM &amp; Private Label Apparel Manufacturing for Global Brands
                 </h1>
                 <p style={{ maxWidth: '820px', fontSize: '16.5px', lineHeight: 1.65, color: '#94a3b8', margin: '0 0 32px' }}>
-                  Headquartered in Sialkot, Pakistan, Bin Rasool Enterprises operates specialized in-house production floors for custom athletic apparel, luxury heavyweight fleece, and combat gear. We partner with emerging labels and established global brands with low-MOQ sampling, tech pack execution, and strict AQL 2.5 quality compliance.
+                  Headquartered in Sialkot, Pakistan, Bin Rasool Enterprises operates specialized in-house production floors for custom athletic apparel, luxury heavyweight fleece and combat gear. We partner with emerging labels and established global brands with low-MOQ sampling, tech pack execution and strict AQL 2.5 quality compliance.
                 </p>
 
                 <div className="about-metrics" aria-label="Bin Rasool Enterprises manufacturing highlights">
@@ -121,7 +121,7 @@ export default function AboutPage() {
                             <span className="about-section-label">Our Mission &amp; Standards</span>
                             <h2 style={{ margin: '8px 0 12px' }}>Empowering Global Apparel Brands with Sialkot Manufacturing Excellence</h2>
                             <p className="muted" style={{ fontSize: '15px', lineHeight: 1.7 }}>
-                              Our mission is to make custom sportswear, activewear and combat gear sourcing effortless for international labels through transparent pricing, strict sample discipline, and reliable export turnaround.
+                              Our mission is to make custom sportswear, activewear and combat gear sourcing effortless for international labels through transparent pricing, strict sample discipline and reliable export turnaround.
                             </p>
                           </div>
 
@@ -133,10 +133,10 @@ export default function AboutPage() {
                             }}
                           >
                             {[
-                              { num: "01", title: "Our Vision", desc: "To be the most dependable OEM & private label athletic manufacturer in Pakistan, trusted by high-growth USA, UK, and European labels." },
-                              { num: "02", title: "Our Promise", desc: "No middleman guesswork. Direct access to floor managers, verified tech packs, accurate fabric weights, and scheduled production milestones." },
-                              { num: "03", title: "Our Standard", desc: "Strict ISO and AQL 2.5 quality audits at every stage: tensile seam pull testing, needle-detector scanning, and wash colorfastness." },
-                              { num: "04", title: "Our Focus", desc: "Dedicated production cells for activewear, French Terry luxury hoodies, and professional boxing combat gear tailored to brand specs." }
+                              { num: "01", title: "Our Vision", desc: "To be the most dependable OEM & private label athletic manufacturer in Pakistan, trusted by high-growth USA, UK and European labels." },
+                              { num: "02", title: "Our Promise", desc: "No middleman guesswork. Direct access to floor managers, verified tech packs, accurate fabric weights and scheduled production milestones." },
+                              { num: "03", title: "Our Standard", desc: "Strict ISO and AQL 2.5 quality audits at every stage: tensile seam pull testing, needle-detector scanning and wash colorfastness." },
+                              { num: "04", title: "Our Focus", desc: "Dedicated production cells for activewear, French Terry luxury hoodies and professional boxing combat gear tailored to brand specs." }
                             ].map((item, idx) => (
                               <div
                                 key={idx}
@@ -208,7 +208,7 @@ export default function AboutPage() {
                                 <div style={{ padding: '22px', display: 'flex', flexDirection: 'column', flex: 1 }}>
                                   <h3 style={{ fontSize: '18px', fontWeight: 800, margin: '0 0 8px', color: '#0f172a' }}>Fitness Wear Manufacturing</h3>
                                   <p className="muted" style={{ fontSize: '13.5px', lineHeight: 1.6, marginBottom: '18px' }}>
-                                    Private label gym wear, activewear sets, leggings, joggers, hoodies, compression wear, and dry-fit training t-shirts for fitness brands and online stores.
+                                    Private label gym wear, activewear sets, leggings, joggers, hoodies, compression wear and dry-fit training t-shirts for fitness brands and online stores.
                                   </p>
                                   <Link
                                     href="/fitness-wear-manufacturer"
@@ -335,7 +335,7 @@ export default function AboutPage() {
                                         <span className="about-section-label">How We Work</span>
                                         <h2 style={{ margin: '8px 0 12px' }}>From tech pack &amp; prototype to export-ready delivery</h2>
                                         <p className="muted" style={{ fontSize: '15px', lineHeight: 1.7 }}>
-                                          International buyers want more than a product list. We provide an end-to-end manufacturing workflow built around transparent communication, rapid sample turnaround, and strict pre-shipment quality standards.
+                                          International buyers want more than a product list. We provide an end-to-end manufacturing workflow built around transparent communication, rapid sample turnaround and strict pre-shipment quality standards.
                                         </p>
                                       </div>
 
@@ -350,22 +350,22 @@ export default function AboutPage() {
                                           {
                                             step: "01",
                                             title: "Requirement & Tech Pack Review",
-                                            desc: "We analyze CAD drawings, target GSM, fabric compositions (French Terry, Spandex blends), and trim specs before quoting realistic FOB timelines."
+                                            desc: "We analyze CAD drawings, target GSM, fabric compositions (French Terry, Spandex blends) and trim specs before quoting realistic FOB timelines."
                                           },
                                           {
                                             step: "02",
                                             title: "Rapid Sampling & Fit Approval",
-                                            desc: "Physical prototypes produced within 7–10 business days. We confirm grading tolerance (±0.5 cm), fabric drape, stitch density, and custom labeling."
+                                            desc: "Physical prototypes produced within 7–10 business days. We confirm grading tolerance (±0.5 cm), fabric drape, stitch density and custom labeling."
                                           },
                                           {
                                             step: "03",
                                             title: "In-House Precision Manufacturing",
-                                            desc: "Automated Eastman CNC cutting, 4-needle 6-thread flatlock assembly, and high-density printing or computerized embroidery executed under one roof."
+                                            desc: "Automated Eastman CNC cutting, 4-needle 6-thread flatlock assembly and high-density printing or computerized embroidery executed under one roof."
                                           },
                                           {
                                             step: "04",
                                             title: "AQL 2.5 Inspection & Dispatch",
-                                            desc: "Independent quality audits, 100% needle-detector scanning, industrial steam tunnel finishing, custom polybagging, and worldwide express air or sea freight."
+                                            desc: "Independent quality audits, 100% needle-detector scanning, industrial steam tunnel finishing, custom polybagging and worldwide express air or sea freight."
                                           }
                                         ].map((item, idx) => (
                 <div
@@ -418,7 +418,7 @@ export default function AboutPage() {
                                         <span className="about-section-label">Why Buyers Choose Us</span>
                                         <h2>Manufacturing support for startups, wholesalers and growing brands</h2>
                                         <p className="muted" style={{ marginTop: '14px', fontSize: '15px', lineHeight: 1.7 }}>
-                                          Direct access to our Sialkot manufacturing floor eliminates middleman markups, accelerates sampling, and guarantees consistent stitch precision across repeat export consignments.
+                                          Direct access to our Sialkot manufacturing floor eliminates middleman markups, accelerates sampling and guarantees consistent stitch precision across repeat export consignments.
                                         </p>
                                         <div style={{ marginTop: '22px', display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
                                           <div style={{ borderLeft: '3px solid var(--brand-orange, #f3a626)', paddingLeft: '12px' }}>

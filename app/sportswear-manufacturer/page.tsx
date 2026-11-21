@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "Sportswear Manufacturer | Custom Teamwear & Uniforms | Bin Rasool Enterprises",
-  description: "Direct OEM custom sportswear manufacturer in Sialkot, Pakistan. Factory-direct custom soccer jerseys, basketball uniforms, team tracksuits, training wear, and sublimation sports apparel for clubs, brands, and wholesalers.",
+  description: "Direct OEM custom sportswear manufacturer in Sialkot, Pakistan. Factory-direct custom soccer jerseys, basketball uniforms, team tracksuits, training wear and sublimation sports apparel for clubs, brands and wholesalers.",
   keywords: [
     "sportswear manufacturer",
     "custom sportswear manufacturer",
@@ -42,31 +42,31 @@ export const metadata: Metadata = {
 const CATEGORIES = [
   {
     title: "Soccer Jersey",
-    description: "Premium custom soccer jerseys, goalkeeper kits, and match uniforms for clubs, academies, and private label sports brands.",
+    description: "Premium custom soccer jerseys, goalkeeper kits and match uniforms for clubs, academies and private label sports brands.",
     image: "/images/categories/1780941233_soccer-jersey.webp",
     link: "/products",
   },
   {
     title: "Basketball Uniform",
-    description: "Professional lightweight moisture-wicking basketball uniforms, reversible scrimmage tops, and court shorts for teams and leagues.",
+    description: "Professional lightweight moisture-wicking basketball uniforms, reversible scrimmage tops and court shorts for teams and leagues.",
     image: "/images/categories/1780941289_basketball-uniform.webp",
     link: "/products",
   },
   {
     title: "Tracksuits",
-    description: "High-quality presentation tracksuits, brushed fleece warmup sets, and micro poly tricot training suits for athletes and club travel.",
+    description: "High-quality presentation tracksuits, brushed fleece warmup sets and micro poly tricot training suits for athletes and club travel.",
     image: "/images/categories/1780941369_tracksuits.webp",
     link: "/products",
   },
   {
     title: "Training Wear",
-    description: "Performance training wear designed for athletic agility: gym tees, compression base layers, training bibs, and technical shorts.",
+    description: "Performance training wear designed for athletic agility: gym tees, compression base layers, training bibs and technical shorts.",
     image: "/images/categories/1780941401_training-wear.webp",
     link: "/products",
   },
   {
     title: "Team Uniform",
-    description: "Professional custom team uniforms for multisport clubs, universities, and schools with coordinated colorways and player details.",
+    description: "Professional custom team uniforms for multisport clubs, universities and schools with coordinated colorways and player details.",
     image: "/images/categories/1780941073_team-uniform.webp",
     link: "/products",
   },
@@ -89,11 +89,11 @@ const SPEC_CARDS = [
   },
   {
     title: "Control team colours, numbers and sponsor artwork",
-    content: "Our sportswear manufacturing includes high-definition sublimation printing, embroidery badges, silicone transfers, and screen printing. Supply vector artwork where available, Pantone colour codes, number sizes, and a roster tying each name to a garment size. Confirm the chosen fabric and artwork combination before bulk approval.",
+    content: "Our sportswear manufacturing includes high-definition sublimation printing, embroidery badges, silicone transfers and screen printing. Supply vector artwork where available, Pantone colour codes, number sizes and a roster tying each name to a garment size. Confirm the chosen fabric and artwork combination before bulk approval.",
   },
   {
     title: "Review a decorated kit before ordering the roster",
-    content: "Request a pre-production sample representing the actual colour layout and key construction details. Assess movement, breathability, and legibility of names and numbers as well as flat measurements. Clarify how total quantity, garment type, colourways and individual player customisation affect your final quote.",
+    content: "Request a pre-production sample representing the actual colour layout and key construction details. Assess movement, breathability and legibility of names and numbers as well as flat measurements. Clarify how total quantity, garment type, colourways and individual player customisation affect your final quote.",
   },
   {
     title: "Evaluate performance fabric against use",
@@ -101,7 +101,7 @@ const SPEC_CARDS = [
   },
   {
     title: "Use a roster and a sport-specific size chart",
-    content: "Check sleeve reach, armhole shape and freedom of movement against the chosen sport. Separate youth and adult size runs where appropriate, and identify whether the fit is athletic slim, standard regular, or relaxed fit. For multi-piece uniforms, approve the top and bottom together and define measurement tolerances.",
+    content: "Check sleeve reach, armhole shape and freedom of movement against the chosen sport. Separate youth and adult size runs where appropriate and identify whether the fit is athletic slim, standard regular or relaxed fit. For multi-piece uniforms, approve the top and bottom together and define measurement tolerances.",
   },
   {
     title: "Build the uniform around the sport",
@@ -109,19 +109,19 @@ const SPEC_CARDS = [
   },
   {
     title: "Separate match kits from training and travel pieces",
-    content: "List the garments in each kit and whether they are ordered together or separately. For jerseys, show collar styling (V-neck, crew, round rib) and sleeve requirements; for tracksuits, include jacket zip opening, trouser cut, ankle zips, and pocket details. Bin Rasool Enterprises will confirm sport-specific construction from your tech packs.",
+    content: "List the garments in each kit and whether they are ordered together or separately. For jerseys, show collar styling (V-neck, crew, round rib) and sleeve requirements; for tracksuits, include jacket zip opening, trouser cut, ankle zips and pocket details. Bin Rasool Enterprises will confirm sport-specific construction from your tech packs.",
   },
   {
     title: "Sportswear manufacturing in Sialkot for global buyers",
-    content: "Pakistan has an established textile and apparel base serving international brands, importers, wholesalers, and clubs. Sialkot adds a concentrated network of sportswear skills, fabric and trim suppliers, sublimation, embroidery and printing services, packaging support, and export logistics. Bin Rasool Enterprises provides end-to-end manufacturing management directly from our factory floor.",
+    content: "Pakistan has an established textile and apparel base serving international brands, importers, wholesalers and clubs. Sialkot adds a concentrated network of sportswear skills, fabric and trim suppliers, sublimation, embroidery and printing services, packaging support and export logistics. Bin Rasool Enterprises provides end-to-end manufacturing management directly from our factory floor.",
   },
   {
     title: "Who we manufacture sportswear for",
-    content: "Sports clubs and academies needing coordinated uniforms, player details, training wear, and repeat orders. Private label and e-commerce sportswear brands that need controlled fit, custom woven labels, branded packaging, and dependable reorders. Gyms, schools, wholesalers, importers, and retailers sourcing teamwear and sports apparel for their own athletic programs.",
+    content: "Sports clubs and academies needing coordinated uniforms, player details, training wear and repeat orders. Private label and e-commerce sportswear brands that need controlled fit, custom woven labels, branded packaging and dependable reorders. Gyms, schools, wholesalers, importers and retailers sourcing teamwear and sports apparel for their own athletic programs.",
   },
   {
     title: "Minimums, sampling and production expectations",
-    content: "These are planning guidelines for straightforward sportswear products: Minimum Order Quantity (MOQ) starts at 50 pieces per style. A straightforward sample takes 2 to 3 weeks after specifications, materials, artwork, and payment confirmation. Bulk production takes 4 to 5 weeks after final pre-production sample sign-off and deposit. Worldwide shipping via DHL, FedEx, or air/sea cargo.",
+    content: "These are planning guidelines for straightforward sportswear products: Minimum Order Quantity (MOQ) starts at 50 pieces per style. A straightforward sample takes 2 to 3 weeks after specifications, materials, artwork and payment confirmation. Bulk production takes 4 to 5 weeks after final pre-production sample sign-off and deposit. Worldwide shipping via DHL, FedEx or air/sea cargo.",
   },
 ];
 
@@ -185,7 +185,7 @@ export default function SportswearManufacturerPage() {
               Explore Product Categories
             </h2>
             <p style={{ color: '#475569', fontSize: '15.5px', margin: 0 }}>
-              Factory-direct teamwear, club kits, and high-performance sports apparel customizable with low MOQs.
+              Factory-direct teamwear, club kits and high-performance sports apparel customizable with low MOQs.
             </p>
           </div>
 
@@ -219,7 +219,7 @@ export default function SportswearManufacturerPage() {
               Sportswear Manufacturing &amp; Quality Control Standards
             </h2>
             <p style={{ color: '#475569', fontSize: '15.5px', margin: 0 }}>
-              Key production disciplines we implement for professional sports teams, academies, and private label activewear brands.
+              Key production disciplines we implement for professional sports teams, academies and private label activewear brands.
             </p>
           </div>
 
@@ -253,7 +253,7 @@ export default function SportswearManufacturerPage() {
           <div className="sw-cta-box">
             <h2>Send your teamwear brief and quantity breakdown</h2>
             <p>
-              Include the sport, garment list, size chart, team artwork, roster requirements and intended order quantities. Our merchandising team will confirm fabric suitability, sampling terms, and deliver a transparent factory quote within 24 hours.
+              Include the sport, garment list, size chart, team artwork, roster requirements and intended order quantities. Our merchandising team will confirm fabric suitability, sampling terms and deliver a transparent factory quote within 24 hours.
             </p>
             <div>
               <Link href="/contact" className="sw-btn-primary" style={{ padding: '16px 36px', fontSize: '16px' }}>

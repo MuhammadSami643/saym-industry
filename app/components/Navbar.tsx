@@ -242,7 +242,7 @@ export default function Navbar() {
               </div>
 
               <Link className={`nav-link ${isTrackOrder ? 'is-active' : ''}`} href="/track-order" onClick={handleLinkClick}>
-                Track Order
+                Track Production
               </Link>
 
               <Link className={`nav-link ${isBlog ? 'is-active' : ''}`} href="/blog" onClick={handleLinkClick}>

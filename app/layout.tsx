@@ -118,7 +118,7 @@ const organizationSchema = {
   description: "Private label activewear, sportswear, boxing gear, hoodies, jeans and fitness apparel manufacturer from Sialkot, Pakistan.",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Export Processing Zone / Industrial Area",
+    streetAddress: "Pakki Kotli, Daska Road",
     addressLocality: "Sialkot",
     addressRegion: "Punjab",
     postalCode: "51310",
@@ -132,7 +132,7 @@ const organizationSchema = {
   contactPoint: [
     {
       "@type": "ContactPoint",
-      telephone: "+923376793383",
+      telephone: "+923133599241",
       contactType: "sales & export inquiry",
       email: "sales@binrasoolenterprises.com",
       areaServed: ["US", "GB", "CA", "AU", "DE", "FR", "NL", "AE"],

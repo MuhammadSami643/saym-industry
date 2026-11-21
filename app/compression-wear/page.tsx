@@ -174,7 +174,7 @@ export default function CompressionWearPage() {
               <span className="home-kicker">Start Your Baselayer Order</span>
               <h2>Ready to manufacture high-performance compression wear?</h2>
               <p>
-                Send us your sizing specs, compression requirements, or brand tech pack. We provide lab dip color matching and counter samples promptly.
+                Send us your sizing specs, compression requirements or brand tech pack. We provide lab dip color matching and counter samples promptly.
               </p>
             </div>
             <div className="home-cta-actions">

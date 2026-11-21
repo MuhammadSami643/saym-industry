@@ -47,7 +47,7 @@ export default function BlogPage() {
               <div style={{ fontSize: '36px', marginBottom: '12px' }}>📝</div>
               <h3 style={{ fontSize: '1.25rem', marginBottom: '8px', color: 'var(--text-main)' }}>Articles Coming Soon</h3>
               <p className="muted" style={{ maxWidth: '480px', margin: '0 auto' }}>
-                We are currently preparing informative manufacturing guides, industry analysis, and sourcing insights.
+                We are currently preparing informative manufacturing guides, industry analysis and sourcing insights.
               </p>
             </div>
           ) : (
@@ -101,7 +101,7 @@ export default function BlogPage() {
               <span className="home-kicker">Need Custom Guidance?</span>
               <h2>Ready to talk with an experienced activewear manufacturing specialist?</h2>
               <p>
-                Whether you need low MOQs, fabric recommendations, or a custom sampling quote, we are here to assist.
+                Whether you need low MOQs, fabric recommendations or a custom sampling quote, we are here to assist.
               </p>
             </div>
             <div className="home-cta-actions">

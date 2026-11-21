@@ -73,7 +73,7 @@ export default function CategoryPage() {
               <span className="pl-kicker">FACTORY DIRECT COMBAT GEAR &bull; SIALKOT, PAKISTAN</span>
               <h1>Boxing Gloves Manufacturer &amp; Custom Fight Gear Factory</h1>
               <p>
-                Precision-engineered combat sports equipment for international fight promotions, combat brands, and commercial gyms. Handcrafted genuine A-grade cowhide leather gloves, IMF shock-absorbing foam, and wholesale training gear with custom private labeling.
+                Precision-engineered combat sports equipment for international fight promotions, combat brands and commercial gyms. Handcrafted genuine A-grade cowhide leather gloves, IMF shock-absorbing foam and wholesale training gear with custom private labeling.
               </p>
               <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '26px' }}>
                 <Link href="/contact" className="btn btn-primary">
@@ -139,7 +139,7 @@ export default function CategoryPage() {
               <span className="home-kicker">Start Your Bulk Order</span>
               <h2>Ready to sample or produce custom Boxing Wear?</h2>
               <p>
-                Send your tech pack, sketches, or reference images and our merchandising team will reply with clear pricing and production timing.
+                Send your tech pack, sketches or reference images and our merchandising team will reply with clear pricing and production timing.
               </p>
             </div>
             <div className="home-cta-actions">

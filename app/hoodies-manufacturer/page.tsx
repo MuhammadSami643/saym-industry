@@ -72,7 +72,7 @@ export default function HoodiesPage() {
               <span className="pl-kicker">CUSTOM HEAVYWEIGHT FLEECE &bull; SIALKOT, PAKISTAN</span>
               <h1>Custom Hoodies &amp; Luxury Sweatshirts Manufacturer</h1>
               <p>
-                Specializing in 380 GSM to 500+ GSM luxury 100% cotton French Terry, double-layered structured hoods, custom laser-engraved metal aglets, vintage acid wash, and pre-shrunk fleece engineered for high-end streetwear and premium fitness labels.
+                Specializing in 380 GSM to 500+ GSM luxury 100% cotton French Terry, double-layered structured hoods, custom laser-engraved metal aglets, vintage acid wash and pre-shrunk fleece engineered for high-end streetwear and premium fitness labels.
               </p>
               <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '26px' }}>
                 <Link href="/contact" className="btn btn-primary">
@@ -102,12 +102,12 @@ export default function HoodiesPage() {
                 Engineered for Luxury Streetwear &amp; Gym Lifestyle
               </h2>
               <p className="muted" style={{ fontSize: '15.5px', lineHeight: '1.75', marginBottom: '20px', color: '#475569' }}>
-                From oversized drop-shoulder pullovers to YKK metal two-way zip hoodies, we knit, cut, dye and sew premium hoodies with custom-dyed 2x2 ribbed cuffs, deep kangaroo pockets, and high-density branding.
+                From oversized drop-shoulder pullovers to YKK metal two-way zip hoodies, we knit, cut, dye and sew premium hoodies with custom-dyed 2x2 ribbed cuffs, deep kangaroo pockets and high-density branding.
               </p>
               <ul className="list" style={{ color: 'var(--text-main)', lineHeight: '1.9', marginBottom: '26px' }}>
                 <li><strong>450 GSM 100% Combed Cotton French Terry</strong> – Heavy drape, zero synthetic pilling.</li>
                 <li><strong>Heavyweight Brushed-Back Fleece</strong> – Maximum interior warmth and cloud-soft hand feel.</li>
-                <li><strong>Custom Laser-Engraved Metal Eyelets &amp; Aglets</strong> – Matte black, chrome, and antique brass.</li>
+                <li><strong>Custom Laser-Engraved Metal Eyelets &amp; Aglets</strong> – Matte black, chrome and antique brass.</li>
                 <li><strong>Double-Layer 3-Panel Hood</strong> – Sits erect and structured without flopping flat.</li>
                 <li><strong>3D Puff Print &amp; Chenille Patches</strong> – High-density raised tactile branding.</li>
               </ul>
@@ -153,7 +153,7 @@ export default function HoodiesPage() {
           <div className="sw-cta-box">
             <h2>Ready to develop custom hoodies for your clothing label?</h2>
             <p>
-              Send your tech pack, reference garment, or vector artwork. Our merchandising team will confirm fabric weights, color lab dips, and provide transparent manufacturing pricing within 24 hours.
+              Send your tech pack, reference garment or vector artwork. Our merchandising team will confirm fabric weights, color lab dips and provide transparent manufacturing pricing within 24 hours.
             </p>
             <div>
               <Link href="/contact" className="sw-btn-primary" style={{ padding: '16px 36px', fontSize: '16px' }}>

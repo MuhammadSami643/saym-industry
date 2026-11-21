@@ -7,7 +7,7 @@ import { ArrowRightIcon } from '../components/AdminIcons';
 const PRIVATE_LABEL_FAQS = [
   {
     question: "What custom branding and trim options do you provide for private label clients?",
-    answer: "We supply 50D high-density damask woven neck labels, tagless silicone heat transfers, satin wash care labels with legal compliance info, 400 GSM coated hangtags with embossed foil or matte finish, and custom frosted EVA zipper polybags with barcode stickers."
+    answer: "We supply 50D high-density damask woven neck labels, tagless silicone heat transfers, satin wash care labels with legal compliance info, 400 GSM coated hangtags with embossed foil or matte finish and custom frosted EVA zipper polybags with barcode stickers."
   },
   {
     question: "What is your sample turnaround time for new private label collections?",
@@ -15,15 +15,15 @@ const PRIVATE_LABEL_FAQS = [
   },
   {
     question: "Can you manufacture apparel from our custom tech pack or reference sample?",
-    answer: "Yes. Our CAD pattern masters work directly from PDF/AI tech packs or physical benchmark samples, developing digital grading charts tailored to US, UK, or EU anthropometric sizing specs."
+    answer: "Yes. Our CAD pattern masters work directly from PDF/AI tech packs or physical benchmark samples, developing digital grading charts tailored to US, UK or EU anthropometric sizing specs."
   },
   {
     question: "What are your Minimum Order Quantities (MOQs) for custom private label orders?",
     answer: "We support emerging labels and established brands with an accessible MOQ starting from 50 pieces per style/colorway across standard size ranges (XS–3XL). For custom mill-dyed fabrics, MOQs align with fabric batch dyeing limits."
   },
   {
-    question: "How do you protect my tech packs, designs, and brand intellectual property?",
-    answer: "We sign formal Non-Disclosure Agreements (NDAs) with all clients. Your proprietary tech packs, grading blocks, artwork, and branding assets remain your exclusive property and are never shared or resold."
+    question: "How do you protect my tech packs, designs and brand intellectual property?",
+    answer: "We sign formal Non-Disclosure Agreements (NDAs) with all clients. Your proprietary tech packs, grading blocks, artwork and branding assets remain your exclusive property and are never shared or resold."
   }
 ];
 
@@ -180,7 +180,7 @@ export default function PrivateLabelPage() {
             <span className="pl-label">Choose your route</span>
             <h2>White label, private label, OEM or custom activewear?</h2>
             <p className="muted" style={{ maxWidth: '850px' }}>
-              All four routes produce apparel sold under your brand. The difference is how deep product development goes, how much control you need, and how much time and commitment the first order carries.
+              All four routes produce apparel sold under your brand. The difference is how deep product development goes, how much control you need and how much time and commitment the first order carries.
             </p>
 
             <div className="pl-table-wrapper">
@@ -196,34 +196,34 @@ export default function PrivateLabelPage() {
                 <tbody>
                   <tr>
                     <td><strong>White label</strong></td>
-                    <td>Startups, gyms, creators, and e-commerce sellers testing a category quickly.</td>
-                    <td>Established product direction with your fabric color, logo, labels, tags, and packaging.</td>
+                    <td>Startups, gyms, creators and e-commerce sellers testing a category quickly.</td>
+                    <td>Established product direction with your fabric color, logo, labels, tags and packaging.</td>
                     <td>Usually the fastest when available materials and construction suit the product.</td>
                   </tr>
                   <tr>
                     <td><strong>Private label</strong></td>
                     <td>Growing brands and retailers that want a stronger, coordinated own-brand collection.</td>
-                    <td>More control over measurements, colors, fabrics, trims, and presentation.</td>
-                    <td>Moderate, depending on fit changes, materials, branding, and sample revisions.</td>
+                    <td>More control over measurements, colors, fabrics, trims and presentation.</td>
+                    <td>Moderate, depending on fit changes, materials, branding and sample revisions.</td>
                   </tr>
                   <tr>
                     <td><strong>OEM</strong></td>
-                    <td>Brands that arrive with their own tech pack, measurement chart, and construction details.</td>
+                    <td>Brands that arrive with their own tech pack, measurement chart and construction details.</td>
                     <td>Production follows the buyer's specification; Bin Rasool Enterprises reviews it for sampling and bulk.</td>
                     <td>Depends on how complete the tech pack is and how many sample rounds it needs.</td>
                   </tr>
                   <tr>
                     <td><strong>Custom</strong></td>
-                    <td>Established or technical brands needing proprietary fit, fabric, or construction.</td>
-                    <td>Deep control over patterns, panels, seams, materials, and trims.</td>
-                    <td>Usually longest, because pattern work, testing, and revisions take more rounds.</td>
+                    <td>Established or technical brands needing proprietary fit, fabric or construction.</td>
+                    <td>Deep control over patterns, panels, seams, materials and trims.</td>
+                    <td>Usually longest, because pattern work, testing and revisions take more rounds.</td>
                   </tr>
                 </tbody>
               </table>
             </div>
 
             <p className="muted" style={{ maxWidth: '850px', marginTop: '20px' }}>
-              Many brands launch with white label or private label, learn from customer response, then move proven styles into deeper customization. MOQ: 50 pieces per style; special fabrics, trims, labels, or packaging can carry their own supplier minimums.
+              Many brands launch with white label or private label, learn from customer response, then move proven styles into deeper customization. MOQ: 50 pieces per style; special fabrics, trims, labels or packaging can carry their own supplier minimums.
             </p>
           </div>
         </section>
@@ -236,35 +236,35 @@ export default function PrivateLabelPage() {
                 <span className="pl-label">OEM Manufacturing</span>
                 <h2>OEM manufacturing from your tech pack</h2>
                 <p className="muted">
-                  OEM manufacturing is built around your own technical specification. You define the product, fit, materials, construction, branding, and size range; we turn that brief into an approved sample and then into repeatable bulk production in Sialkot, Pakistan.
+                  OEM manufacturing is built around your own technical specification. You define the product, fit, materials, construction, branding and size range; we turn that brief into an approved sample and then into repeatable bulk production in Sialkot, Pakistan.
                 </p>
                 <p className="muted" style={{ marginTop: '16px', marginBottom: '8px' }}><strong>What to send for an OEM quote:</strong></p>
                 <ul className="muted" style={{ paddingLeft: '20px', lineHeight: '1.75' }}>
-                  <li>Tech pack, measurement sheet, or reference sample</li>
-                  <li>Fabric composition, GSM, stretch, and finish</li>
-                  <li>Construction, trims, artwork, and labels</li>
-                  <li>Quantity by style, colour, and size</li>
+                  <li>Tech pack, measurement sheet or reference sample</li>
+                  <li>Fabric composition, GSM, stretch and finish</li>
+                  <li>Construction, trims, artwork and labels</li>
+                  <li>Quantity by style, colour and size</li>
                   <li>Delivery market and required timing</li>
                 </ul>
-                <p className="muted" style={{ marginTop: '16px' }}>MOQ: 50 pieces per style. Samples take 7-10 days, and bulk production takes 3-4 weeks after sample approval.</p>
+                <p className="muted" style={{ marginTop: '16px' }}>MOQ: 50 pieces per style. Samples take 7-10 days and bulk production takes 3-4 weeks after sample approval.</p>
               </div>
 
               <div className="pl-step-list">
                 <div className="pl-step">
                   <h3>Buyer-owned specifications</h3>
-                  <p className="muted">Your technical direction defines the garment, from fit and construction to branding, packaging, and the customer experience.</p>
+                  <p className="muted">Your technical direction defines the garment, from fit and construction to branding, packaging and the customer experience.</p>
                 </div>
                 <div className="pl-step">
                   <h3>Tech pack to approved sample</h3>
-                  <p className="muted">Patterns, materials, trims, construction, and artwork are turned into a physical sample for precise review and revision.</p>
+                  <p className="muted">Patterns, materials, trims, construction and artwork are turned into a physical sample for precise review and revision.</p>
                 </div>
                 <div className="pl-step">
                   <h3>Documented production standards</h3>
-                  <p className="muted">Approved measurements, tolerances, materials, colours, placements, and packing requirements guide bulk manufacturing.</p>
+                  <p className="muted">Approved measurements, tolerances, materials, colours, placements and packing requirements guide bulk manufacturing.</p>
                 </div>
                 <div className="pl-step">
                   <h3>Repeatable manufacturing</h3>
-                  <p className="muted">A controlled specification supports replenishment, larger runs, additional colours, and related styles.</p>
+                  <p className="muted">A controlled specification supports replenishment, larger runs, additional colours and related styles.</p>
                 </div>
               </div>
             </div>
@@ -343,7 +343,7 @@ export default function PrivateLabelPage() {
         {/* Section 10: Technical FAQs */}
         <FaqSection
           title="Private Label &amp; Custom Branding FAQs"
-          subtitle="Detailed technical guidance on labels, custom trims, tech pack confidentiality, and low MOQ production."
+          subtitle="Detailed technical guidance on labels, custom trims, tech pack confidentiality and low MOQ production."
           items={PRIVATE_LABEL_FAQS}
           categoryBadge="Private Label Program"
         />

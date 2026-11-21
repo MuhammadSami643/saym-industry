@@ -109,7 +109,7 @@ export const FITNESS_WEAR_FAQS: FaqItem[] = [
 export const SPORTSWEAR_FAQS: FaqItem[] = [
   {
     question: "How durable is dye sublimation for sports teamwear?",
-    answer: "Dye sublimation bonds thermally directly into the polyester polymer chains. It will never peel, crack, fade, or wash off and keeps the jersey fabric 100% breathable and lightweight."
+    answer: "Dye sublimation bonds thermally directly into the polyester polymer chains. It will never peel, crack, fade or wash off and keeps the jersey fabric 100% breathable and lightweight."
   },
   {
     question: "Can we include player names, individual numbers and club crests?",
@@ -143,15 +143,15 @@ export const BOXING_GEAR_BULK_FAQS: FaqItem[] = [
   },
   {
     question: "What internal padding structure is used for impact absorption?",
-    answer: "Our gloves feature multi-layer injection-molded foam (IMF) systems incorporating high-density EVA, latex foam sheets, and bonded horsehair padding for knuckle protection and shock dispersion."
+    answer: "Our gloves feature multi-layer injection-molded foam (IMF) systems incorporating high-density EVA, latex foam sheets and bonded horsehair padding for knuckle protection and shock dispersion."
   },
   {
     question: "Do your boxing gloves feature ergonomic thumb locks and wrist protection?",
     answer: "Yes. All sparring and competition gloves are engineered with anatomically curved attached thumbs to prevent eye pokes and sprains, paired with wide hook-and-loop velcro or traditional pro lace-up wrist closures."
   },
   {
-    question: "Can you produce custom gym equipment like focus mitts, Thai pads, and heavy bags?",
-    answer: "Yes. We supply complete commercial combat equipment packages including curved focus mitts, kick shields, heavy hanging bags, and hand wraps branded with your gym or promotion logo."
+    question: "Can you produce custom gym equipment like focus mitts, Thai pads and heavy bags?",
+    answer: "Yes. We supply complete commercial combat equipment packages including curved focus mitts, kick shields, heavy hanging bags and hand wraps branded with your gym or promotion logo."
   }
 ];
 

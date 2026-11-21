@@ -82,18 +82,18 @@ ${notes}
       className="card contact-form-card"
       style={{
         background: '#ffffff',
-        padding: '36px 32px',
-        borderRadius: '18px',
+        padding: '24px 22px',
+        borderRadius: '14px',
         border: '1px solid #e2e8f0',
-        boxShadow: '0 4px 25px rgba(15, 23, 42, 0.06)',
+        boxShadow: '0 2px 14px rgba(15, 23, 42, 0.04)',
       }}
     >
-      <div style={{ marginBottom: '22px' }}>
-        <h2 style={{ marginTop: 0, fontSize: '22px', fontWeight: 800, color: '#0f172a', marginBottom: '6px' }}>
+      <div style={{ marginBottom: '16px' }}>
+        <h2 style={{ marginTop: 0, fontSize: '20px', fontWeight: 800, color: '#0f172a', marginBottom: '4px' }}>
           Send an Inquiry
         </h2>
-        <p style={{ color: '#64748b', fontSize: '14px', margin: 0, lineHeight: 1.5 }}>
-          Provide your specifications below and our factory merchandising desk will review and reply with pricing, MOQ options, and sampling lead times.
+        <p style={{ color: '#64748b', fontSize: '13px', margin: 0, lineHeight: 1.4 }}>
+          Provide your specifications below and our factory team will review and reply within 24 hours.
         </p>
       </div>
 
@@ -101,22 +101,22 @@ ${notes}
         <div
           className="alert-success"
           style={{
-            marginBottom: '24px',
-            padding: '20px 22px',
-            borderRadius: '14px',
+            marginBottom: '16px',
+            padding: '14px 16px',
+            borderRadius: '10px',
             background: '#ecfdf5',
             border: '1px solid #a7f3d0',
             color: '#065f46',
-            fontSize: '14.5px',
-            lineHeight: 1.6,
+            fontSize: '13.5px',
+            lineHeight: 1.5,
           }}
         >
-          <strong style={{ fontWeight: 800, fontSize: '16px', display: 'block', marginBottom: '6px' }}>
+          <strong style={{ fontWeight: 800, fontSize: '15px', display: 'block', marginBottom: '4px' }}>
             Inquiry Successfully Submitted!
           </strong>
           Thank you! Your manufacturing inquiry has been logged with our Sialkot factory merchandising desk. A dedicated merchandising manager will review your brief and contact you shortly.
           {whatsAppLink && (
-            <div style={{ marginTop: '16px' }}>
+            <div style={{ marginTop: '12px' }}>
               <a
                 href={whatsAppLink}
                 target="_blank"
@@ -127,17 +127,16 @@ ${notes}
                   gap: '8px',
                   background: '#22c55e',
                   color: '#ffffff',
-                  padding: '12px 20px',
-                  borderRadius: '10px',
+                  padding: '10px 16px',
+                  borderRadius: '8px',
                   fontWeight: 700,
-                  fontSize: '14px',
+                  fontSize: '13.5px',
                   textDecoration: 'none',
-                  boxShadow: '0 4px 14px rgba(34, 197, 94, 0.3)',
                 }}
               >
-                <WhatsAppIcon size={18} />
+                <WhatsAppIcon size={16} />
                 <span>Chat Instantly with Production Team on WhatsApp</span>
-                <ArrowRightIcon size={15} />
+                <ArrowRightIcon size={14} />
               </a>
             </div>
           )}
@@ -148,13 +147,13 @@ ${notes}
         <div
           className="alert-error"
           style={{
-            marginBottom: '22px',
-            padding: '16px 20px',
-            borderRadius: '12px',
+            marginBottom: '16px',
+            padding: '12px 16px',
+            borderRadius: '10px',
             background: '#fef2f2',
             border: '1px solid #fecaca',
             color: '#991b1b',
-            fontSize: '14px',
+            fontSize: '13.5px',
           }}
         >
           {error}
@@ -162,9 +161,9 @@ ${notes}
       )}
 
       {/* Row 1: Name & Brand Name */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '18px', marginBottom: '18px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px', marginBottom: '12px' }}>
         <div className="form-group" style={{ display: 'flex', flexDirection: 'column' }}>
-          <label className="form-label" htmlFor="name" style={{ fontSize: '13.5px', fontWeight: 700, color: '#1e293b', marginBottom: '7px' }}>
+          <label className="form-label" htmlFor="name" style={{ fontSize: '12.5px', fontWeight: 700, color: '#1e293b', marginBottom: '4px' }}>
             Your Full Name <span style={{ color: '#ef4444' }}>*</span>
           </label>
           <input
@@ -176,12 +175,12 @@ ${notes}
             placeholder="e.g. Alex Morgan"
             style={{
               width: '100%',
-              padding: '12px 16px',
-              fontSize: '14.5px',
+              padding: '9px 13px',
+              fontSize: '13.5px',
               color: '#0f172a',
               background: '#ffffff',
               border: '1.5px solid #cbd5e1',
-              borderRadius: '10px',
+              borderRadius: '8px',
               outline: 'none',
               boxSizing: 'border-box',
             }}
@@ -189,7 +188,7 @@ ${notes}
         </div>
 
         <div className="form-group" style={{ display: 'flex', flexDirection: 'column' }}>
-          <label className="form-label" htmlFor="company" style={{ fontSize: '13.5px', fontWeight: 700, color: '#1e293b', marginBottom: '7px' }}>
+          <label className="form-label" htmlFor="company" style={{ fontSize: '12.5px', fontWeight: 700, color: '#1e293b', marginBottom: '4px' }}>
             Brand or Company Name
           </label>
           <input
@@ -197,15 +196,15 @@ ${notes}
             id="company"
             type="text"
             name="company"
-            placeholder="e.g. Apex Athletics or Startup Label"
+            placeholder="e.g. Apex Athletics"
             style={{
               width: '100%',
-              padding: '12px 16px',
-              fontSize: '14.5px',
+              padding: '9px 13px',
+              fontSize: '13.5px',
               color: '#0f172a',
               background: '#ffffff',
               border: '1.5px solid #cbd5e1',
-              borderRadius: '10px',
+              borderRadius: '8px',
               outline: 'none',
               boxSizing: 'border-box',
             }}
@@ -214,9 +213,9 @@ ${notes}
       </div>
 
       {/* Row 2: Email & Phone/WhatsApp */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '18px', marginBottom: '18px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px', marginBottom: '12px' }}>
         <div className="form-group" style={{ display: 'flex', flexDirection: 'column' }}>
-          <label className="form-label" htmlFor="email" style={{ fontSize: '13.5px', fontWeight: 700, color: '#1e293b', marginBottom: '7px' }}>
+          <label className="form-label" htmlFor="email" style={{ fontSize: '12.5px', fontWeight: 700, color: '#1e293b', marginBottom: '4px' }}>
             Business Email Address <span style={{ color: '#ef4444' }}>*</span>
           </label>
           <input
@@ -228,12 +227,12 @@ ${notes}
             placeholder="alex@brandname.com"
             style={{
               width: '100%',
-              padding: '12px 16px',
-              fontSize: '14.5px',
+              padding: '9px 13px',
+              fontSize: '13.5px',
               color: '#0f172a',
               background: '#ffffff',
               border: '1.5px solid #cbd5e1',
-              borderRadius: '10px',
+              borderRadius: '8px',
               outline: 'none',
               boxSizing: 'border-box',
             }}
@@ -241,8 +240,8 @@ ${notes}
         </div>
 
         <div className="form-group" style={{ display: 'flex', flexDirection: 'column' }}>
-          <label className="form-label" htmlFor="phone" style={{ fontSize: '13.5px', fontWeight: 700, color: '#1e293b', marginBottom: '7px' }}>
-            WhatsApp / Mobile (Recommended for Fast Contact)
+          <label className="form-label" htmlFor="phone" style={{ fontSize: '12.5px', fontWeight: 700, color: '#1e293b', marginBottom: '4px' }}>
+            WhatsApp / Mobile (Fast Contact)
           </label>
           <input
             className="form-control"
@@ -252,12 +251,12 @@ ${notes}
             placeholder="+1 555 123 4567"
             style={{
               width: '100%',
-              padding: '12px 16px',
-              fontSize: '14.5px',
+              padding: '9px 13px',
+              fontSize: '13.5px',
               color: '#0f172a',
               background: '#ffffff',
               border: '1.5px solid #cbd5e1',
-              borderRadius: '10px',
+              borderRadius: '8px',
               outline: 'none',
               boxSizing: 'border-box',
             }}
@@ -266,9 +265,9 @@ ${notes}
       </div>
 
       {/* Row 3: Product Category & Quantity */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '18px', marginBottom: '18px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px', marginBottom: '12px' }}>
         <div className="form-group" style={{ display: 'flex', flexDirection: 'column' }}>
-          <label className="form-label" htmlFor="category" style={{ fontSize: '13.5px', fontWeight: 700, color: '#1e293b', marginBottom: '7px' }}>
+          <label className="form-label" htmlFor="category" style={{ fontSize: '12.5px', fontWeight: 700, color: '#1e293b', marginBottom: '4px' }}>
             Primary Product Category <span style={{ color: '#ef4444' }}>*</span>
           </label>
           <select
@@ -279,30 +278,30 @@ ${notes}
             defaultValue="Sportswear & Teamwear"
             style={{
               width: '100%',
-              padding: '12px 16px',
-              fontSize: '14.5px',
+              padding: '9px 38px 9px 13px',
+              fontSize: '13.5px',
               color: '#0f172a',
               background: '#ffffff',
               border: '1.5px solid #cbd5e1',
-              borderRadius: '10px',
+              borderRadius: '8px',
               outline: 'none',
               boxSizing: 'border-box',
               cursor: 'pointer',
             }}
           >
-            <option value="Sportswear & Teamwear">Sportswear &amp; Team Uniforms (Jerseys, Tracksuits)</option>
-            <option value="Fitness & Activewear">Fitness Wear &amp; Gym (Leggings, Bras, Joggers)</option>
-            <option value="Heavyweight Hoodies & Fleece">Heavyweight Hoodies &amp; Sweatshirts (380–500 GSM)</option>
-            <option value="Streetwear & Outerwear">Streetwear Tees, Cargoes &amp; Varsity Jackets</option>
-            <option value="Boxing & Fight Gear">Boxing Wear &amp; Fight Gear (Trunks, Robes, Gloves)</option>
-            <option value="MMA, BJJ & Compression">MMA Shorts, BJJ Gis &amp; Rashguards</option>
-            <option value="Custom Denim & Jeans">Denim Jeans, Selvedge &amp; Denim Jackets</option>
-            <option value="Full Brand Collection">Multi-Category Custom Brand Collection</option>
+            <option value="Sportswear & Teamwear">Sportswear &amp; Team Uniforms</option>
+            <option value="Fitness & Activewear">Fitness Wear &amp; Gym (Leggings, Bras)</option>
+            <option value="Heavyweight Hoodies & Fleece">Heavyweight Hoodies (380–500 GSM)</option>
+            <option value="Streetwear & Outerwear">Streetwear Tees &amp; Jackets</option>
+            <option value="Boxing & Fight Gear">Boxing Wear &amp; Fight Gear</option>
+            <option value="MMA, BJJ & Compression">MMA, BJJ &amp; Rashguards</option>
+            <option value="Custom Denim & Jeans">Denim Jeans &amp; Jackets</option>
+            <option value="Full Brand Collection">Multi-Category Brand Collection</option>
           </select>
         </div>
 
         <div className="form-group" style={{ display: 'flex', flexDirection: 'column' }}>
-          <label className="form-label" htmlFor="quantity" style={{ fontSize: '13.5px', fontWeight: 700, color: '#1e293b', marginBottom: '7px' }}>
+          <label className="form-label" htmlFor="quantity" style={{ fontSize: '12.5px', fontWeight: 700, color: '#1e293b', marginBottom: '4px' }}>
             Target Order Volume
           </label>
           <select
@@ -312,31 +311,31 @@ ${notes}
             defaultValue="50 - 100 pcs (Startup Run)"
             style={{
               width: '100%',
-              padding: '12px 16px',
-              fontSize: '14.5px',
+              padding: '9px 38px 9px 13px',
+              fontSize: '13.5px',
               color: '#0f172a',
               background: '#ffffff',
               border: '1.5px solid #cbd5e1',
-              borderRadius: '10px',
+              borderRadius: '8px',
               outline: 'none',
               boxSizing: 'border-box',
               cursor: 'pointer',
             }}
           >
-            <option value="Sample Prototype Only">Pre-Production Sample / Prototype Only</option>
-            <option value="50 - 100 pcs (Startup Run)">50 – 100 pcs per style (Low MOQ Run)</option>
-            <option value="100 - 300 pcs (Growth Stage)">100 – 300 pcs per style (Commercial Run)</option>
+            <option value="Sample Prototype Only">Sample / Prototype Only</option>
+            <option value="50 - 100 pcs (Startup Run)">50 – 100 pcs per style (Low MOQ)</option>
+            <option value="100 - 300 pcs (Growth Stage)">100 – 300 pcs per style</option>
             <option value="300 - 500 pcs (Mid Volume)">300 – 500 pcs per style</option>
-            <option value="500 - 1,000+ pcs (Wholesale)">500 – 1,000+ pcs per style (Full Bulk)</option>
-            <option value="Ongoing Monthly Program">Ongoing Monthly Supply Contract</option>
+            <option value="500 - 1,000+ pcs (Wholesale)">500 – 1,000+ pcs (Full Bulk)</option>
+            <option value="Ongoing Monthly Program">Ongoing Monthly Contract</option>
           </select>
         </div>
       </div>
 
       {/* Row 4: Country */}
-      <div className="form-group" style={{ marginBottom: '18px', display: 'flex', flexDirection: 'column' }}>
-        <label className="form-label" htmlFor="country" style={{ fontSize: '13.5px', fontWeight: 700, color: '#1e293b', marginBottom: '7px' }}>
-          Destination Country (For DHL / Air / Ocean Freight Planning) <span style={{ color: '#ef4444' }}>*</span>
+      <div className="form-group" style={{ marginBottom: '12px', display: 'flex', flexDirection: 'column' }}>
+        <label className="form-label" htmlFor="country" style={{ fontSize: '12.5px', fontWeight: 700, color: '#1e293b', marginBottom: '4px' }}>
+          Destination Country (For DHL / Air / Sea Freight) <span style={{ color: '#ef4444' }}>*</span>
         </label>
         <input
           className="form-control"
@@ -347,12 +346,12 @@ ${notes}
           placeholder="e.g. United States, United Kingdom, Germany, Australia, Canada, etc."
           style={{
             width: '100%',
-            padding: '12px 16px',
-            fontSize: '14.5px',
+            padding: '9px 13px',
+            fontSize: '13.5px',
             color: '#0f172a',
             background: '#ffffff',
             border: '1.5px solid #cbd5e1',
-            borderRadius: '10px',
+            borderRadius: '8px',
             outline: 'none',
             boxSizing: 'border-box',
           }}
@@ -360,27 +359,27 @@ ${notes}
       </div>
 
       {/* Row 5: Detailed Specifications */}
-      <div className="form-group" style={{ marginBottom: '20px', display: 'flex', flexDirection: 'column' }}>
-        <label className="form-label" htmlFor="details" style={{ fontSize: '13.5px', fontWeight: 700, color: '#1e293b', marginBottom: '7px' }}>
+      <div className="form-group" style={{ marginBottom: '14px', display: 'flex', flexDirection: 'column' }}>
+        <label className="form-label" htmlFor="details" style={{ fontSize: '12.5px', fontWeight: 700, color: '#1e293b', marginBottom: '4px' }}>
           Project Specifications, Fabrics &amp; Branding Details <span style={{ color: '#ef4444' }}>*</span>
         </label>
         <textarea
           className="form-control"
           id="details"
           name="details"
-          rows={5}
+          rows={3}
           required
-          placeholder="Please describe your garments, desired fabric blend/GSM (e.g. 75/25 Nylon Spandex, 450 GSM French Terry), colorways, custom branding (silicone, puff print, embroidery, woven tags, polybags) and any specific deadline."
+          placeholder="Describe your garments, fabric blend/GSM (e.g. 75/25 Nylon Spandex, 450 GSM French Terry), colors and custom branding requirements."
           style={{
             width: '100%',
-            padding: '12px 16px',
-            fontSize: '14.5px',
-            lineHeight: 1.6,
+            padding: '9px 13px',
+            fontSize: '13.5px',
+            lineHeight: 1.5,
             color: '#0f172a',
             background: '#ffffff',
             border: '1.5px solid #cbd5e1',
-            borderRadius: '10px',
-            minHeight: '120px',
+            borderRadius: '8px',
+            minHeight: '80px',
             resize: 'vertical',
             outline: 'none',
             boxSizing: 'border-box',
@@ -390,7 +389,7 @@ ${notes}
 
       {/* Tech Pack Uploader */}
       <TechPackUploader
-        label="Attach Tech Pack (PDF, AI, PSD, ZIP), Sketches, or Reference Photos"
+        label="Attach Tech Pack (PDF, AI, ZIP) or Reference Photos"
         onUploaded={(url) => setTechpackUrl(url)}
         onVideoUploaded={(url) => setVideoUrl(url)}
       />
@@ -402,16 +401,16 @@ ${notes}
         className="btn btn-primary"
         style={{
           width: '100%',
-          marginTop: '20px',
-          padding: '16px 28px',
-          fontSize: '16px',
+          marginTop: '14px',
+          padding: '12px 20px',
+          fontSize: '15px',
           fontWeight: 800,
-          borderRadius: '12px',
-          background: 'linear-gradient(135deg, #f3a626 0%, #d98816 100%)',
-          color: '#ffffff',
+          borderRadius: '999px',
+          background: 'var(--brand-orange)',
+          color: 'var(--brand-black)',
           border: 'none',
           cursor: loading ? 'not-allowed' : 'pointer',
-          boxShadow: '0 4px 18px rgba(243, 166, 38, 0.35)',
+          boxShadow: '0 4px 16px rgba(243, 166, 38, 0.35)',
           display: 'inline-flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -419,13 +418,12 @@ ${notes}
           transition: 'all 0.2s ease',
         }}
       >
-        {loading ? 'Submitting Sourcing Inquiry...' : 'Submit Sourcing Inquiry & Tech Pack'}
+        {loading ? 'Submitting...' : 'Send Inquiry'}
       </button>
 
       {/* Microcopy & Guarantees */}
-      <div style={{ marginTop: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px', fontSize: '12.5px', color: '#64748b' }}>
-        <span>⏱️ Guaranteed reply within 12–24 business hours</span>
-        <span>🔒 100% NDA &amp; Design Privacy Protected</span>
+      <div style={{ marginTop: '10px', textAlign: 'center', fontSize: '12px', color: '#64748b' }}>
+        <span>🔒 100% NDA Protected &bull; Factory team replies within 24 business hours</span>
       </div>
     </form>
   );
