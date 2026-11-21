@@ -54,7 +54,7 @@ export const metadata: Metadata = {
 export default function PrivateLabelPage() {
   return (
     <div className="private-label-page">
-      {/* Section 1: Hero (ZYPFIT Reference Pattern) */}
+      {/* Section 1: Hero */}
       <section className="pl-hero">
           <div className="container">
             <BreadcrumbJsonLd
@@ -112,26 +112,44 @@ export default function PrivateLabelPage() {
 
             <div className="pl-options-grid">
               <article className="pl-option">
+                <div style={{ borderRadius: '8px', overflow: 'hidden', height: '180px', marginBottom: '16px', background: '#f1f5f9' }}>
+                  <img src="/images/catalog/factory-production/private-label-packaging-tags.webp" alt="Neck Labels & Woven Labels" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
                 <h3>Neck Labels &amp; Woven Labels</h3>
                 <p className="muted">Custom neck labels, size labels, care labels, woven labels and brand identity details for retail-ready apparel.</p>
               </article>
               <article className="pl-option">
+                <div style={{ borderRadius: '8px', overflow: 'hidden', height: '180px', marginBottom: '16px', background: '#f1f5f9' }}>
+                  <img src="/images/original-generated/private-label-trims-packaging.webp" alt="Hang Tags & Packaging" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
                 <h3>Hang Tags &amp; Packaging</h3>
                 <p className="muted">Hang tags, poly bags, carton marks, product packaging direction and presentation support for your private label line.</p>
               </article>
               <article className="pl-option">
+                <div style={{ borderRadius: '8px', overflow: 'hidden', height: '180px', marginBottom: '16px', background: '#f1f5f9' }}>
+                  <img src="/images/site/1776612585_manufacturing-designing-image.webp" alt="Logo Application" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
                 <h3>Logo Application</h3>
                 <p className="muted">Embroidery, screen printing, heat transfer, sublimation, puff printing and placement planning for each product category.</p>
               </article>
               <article className="pl-option">
+                <div style={{ borderRadius: '8px', overflow: 'hidden', height: '180px', marginBottom: '16px', background: '#f1f5f9' }}>
+                  <img src="/images/materials/activewear-compression-mesh-weave.webp" alt="Custom Fabric Direction" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
                 <h3>Custom Fabric Direction</h3>
                 <p className="muted">Fabric selection support for fleece, dry-fit, interlock, mesh, spandex blends, satin, compression fabrics and sportswear materials.</p>
               </article>
               <article className="pl-option">
+                <div style={{ borderRadius: '8px', overflow: 'hidden', height: '180px', marginBottom: '16px', background: '#f1f5f9' }}>
+                  <img src="/images/site/1776612585_manufacturing-cutting-image.webp" alt="Sample Development" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
                 <h3>Sample Development</h3>
                 <p className="muted">Sample-first production to confirm fabric, fit, sizing, construction, branding, color, trims and finishing before bulk orders.</p>
               </article>
               <article className="pl-option">
+                <div style={{ borderRadius: '8px', overflow: 'hidden', height: '180px', marginBottom: '16px', background: '#f1f5f9' }}>
+                  <img src="/images/catalog/factory-production/industrial-garment-stitching.webp" alt="Bulk Production Support" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
                 <h3>Bulk Production Support</h3>
                 <p className="muted">Production planning for startup brands, wholesalers, gyms, clubs, fight brands and online sellers scaling their collections.</p>
               </article>
@@ -280,16 +298,25 @@ export default function PrivateLabelPage() {
 
             <div className="pl-category-grid">
               <Link className="pl-category" href="/fitness-wear-manufacturer">
+                <div style={{ borderRadius: '8px', overflow: 'hidden', height: '180px', marginBottom: '16px', background: '#f1f5f9' }}>
+                  <img src="/images/categories/1776540259_fitness-wear.webp" alt="Private Label Fitness Wear" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
                 <h3>Private Label Fitness Wear</h3>
                 <p className="muted">Joggers, hoodies, leggings, activewear sets, compression wear, dry-fit gym t-shirts and gym apparel for fitness brands.</p>
                 <span className="category-mfg-link"><span>Explore Fitness Wear</span><ArrowRightIcon size={13} /></span>
               </Link>
               <Link className="pl-category" href="/sportswear-manufacturer-exporter">
+                <div style={{ borderRadius: '8px', overflow: 'hidden', height: '180px', marginBottom: '16px', background: '#f1f5f9' }}>
+                  <img src="/images/categories/1780941233_soccer-jersey.webp" alt="Private Label Sportswear" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
                 <h3>Private Label Sportswear</h3>
                 <p className="muted">Soccer jerseys, basketball uniforms, tracksuits, team uniforms, training wear and sublimation sports apparel for clubs and wholesalers.</p>
                 <span className="category-mfg-link"><span>Explore Sports Wear</span><ArrowRightIcon size={13} /></span>
               </Link>
               <Link className="pl-category" href="/boxing-gear-manufacturer-bulk">
+                <div style={{ borderRadius: '8px', overflow: 'hidden', height: '180px', marginBottom: '16px', background: '#f1f5f9' }}>
+                  <img src="/images/catalog/boxing-gear/pro-leather-boxing-gloves.webp" alt="Private Label Boxing Wear" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
                 <h3>Private Label Boxing Wear</h3>
                 <p className="muted">Boxing shorts, rash guards, fight wear, combat sports clothing, training shirts and gym tops for boxing and MMA brands.</p>
                 <span className="category-mfg-link"><span>Explore Boxing Wear</span><ArrowRightIcon size={13} /></span>

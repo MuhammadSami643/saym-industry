@@ -33,26 +33,26 @@ export default function Home() {
                 <p className="muted">Good manufacturing is not only the garment that leaves the production line. It is the quality of the decisions made before sampling, the control maintained during bulk production and the accuracy of the order that reaches your market.</p>
             </div>
             <div className="trust-grid">
-                <Link href="/low-moq-activewear-manufacturer" className="trust-card" style={{ textDecoration: 'none', display: 'block' }}>
-                    <h3 style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <Link href="/low-moq-activewear-manufacturer" className="trust-card" style={{ textDecoration: 'none', display: 'block', color: '#ffffff' }}>
+                    <h3 style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: '#ffffff' }}>
                         <span>Low MOQ Production</span>
                         <ArrowRightIcon size={14} style={{ color: 'var(--brand-orange)' }} />
                     </h3>
-                    <p className="muted">Typical orders can begin around 50 pieces per style, depending on fabric, construction, colors and branding.</p>
+                    <p className="muted" style={{ color: '#cbd5e1' }}>Typical orders can begin around 50 pieces per style, depending on fabric, construction, colors and branding.</p>
                 </Link>
-                <Link href="/activewear-manufacturer-for-startups" className="trust-card" style={{ textDecoration: 'none', display: 'block' }}>
-                    <h3 style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <Link href="/activewear-manufacturer-for-startups" className="trust-card" style={{ textDecoration: 'none', display: 'block', color: '#0f172a' }}>
+                    <h3 style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: '#0f172a' }}>
                         <span>Startup-Friendly Planning</span>
                         <ArrowRightIcon size={14} style={{ color: 'var(--brand-orange)' }} />
                     </h3>
-                    <p className="muted">We help new brands control SKU count, sample carefully and protect working capital instead of pushing an oversized opening order.</p>
+                    <p className="muted" style={{ color: '#334155' }}>We help new brands control SKU count, sample carefully and protect working capital instead of pushing an oversized opening order.</p>
                 </Link>
-                <Link href="/private-label-activewear-manufacturer" className="trust-card" style={{ textDecoration: 'none', display: 'block' }}>
-                    <h3 style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <Link href="/private-label-activewear-manufacturer" className="trust-card" style={{ textDecoration: 'none', display: 'block', color: '#0f172a' }}>
+                    <h3 style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: '#0f172a' }}>
                         <span>Private Label Customization</span>
                         <ArrowRightIcon size={14} style={{ color: 'var(--brand-orange)' }} />
                     </h3>
-                    <p className="muted">Develop custom fits, colors, panels, labels, hang tags, logo applications, packaging and presentation under your own brand.</p>
+                    <p className="muted" style={{ color: '#334155' }}>Develop custom fits, colors, panels, labels, hang tags, logo applications, packaging and presentation under your own brand.</p>
                 </Link>
                 <article className="trust-card">
                     <h3>Premium Performance Fabrics</h3>

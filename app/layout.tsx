@@ -139,6 +139,9 @@ const organizationSchema = {
       availableLanguage: ["English", "Urdu"],
     },
   ],
+  sameAs: [
+    "https://www.instagram.com/binrasoolenterprises",
+  ],
   priceRange: "$$",
 };
 
@@ -156,6 +159,7 @@ export default function RootLayout({
           as="image"
           href="/images/site/1776603661_home-hero-slider-image-1.webp"
           type="image/webp"
+          fetchPriority="high"
         />
         <script
           type="application/ld+json"

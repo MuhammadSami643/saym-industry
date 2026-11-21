@@ -30,6 +30,17 @@ export default function ProductsCatalogClient({ initialProducts }: ProductsCatal
     return ['all', ...Array.from(cats)];
   }, [initialProducts]);
 
+  // Category counts map
+  const categoryCounts = useMemo(() => {
+    const counts: Record<string, number> = { all: initialProducts.length };
+    initialProducts.forEach((p) => {
+      if (p.category) {
+        counts[p.category] = (counts[p.category] || 0) + 1;
+      }
+    });
+    return counts;
+  }, [initialProducts]);
+
   // Filter products
   const filteredProducts = useMemo(() => {
     return initialProducts.filter((p) => {
@@ -61,69 +72,7 @@ export default function ProductsCatalogClient({ initialProducts }: ProductsCatal
 
   return (
     <div>
-      {/* Fast Sample Guarantee Alert Strip */}
-      <div
-        style={{
-          background: 'linear-gradient(90deg, #0b1220 0%, #172235 100%)',
-          color: '#ffffff',
-          padding: '16px 20px',
-          borderRadius: '12px',
-          marginBottom: '36px',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: '16px',
-          border: '1px solid rgba(243, 166, 38, 0.3)',
-        }}
-      >
-        <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-          <div
-            style={{
-              width: '42px',
-              height: '42px',
-              borderRadius: '50%',
-              background: 'rgba(243, 166, 38, 0.2)',
-              color: 'var(--brand-orange, #f3a626)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '20px',
-              flexShrink: 0,
-            }}
-          >
-            ⚡
-          </div>
-          <div>
-            <div style={{ fontWeight: 800, fontSize: '15px', color: '#ffffff' }}>
-              Want to touch the fabric and inspect the stitching before committing to bulk?
-            </div>
-            <div style={{ fontSize: '13px', color: '#cbd5e1' }}>
-              Order a physical pre-production prototype delivered via DHL Express Air. <strong>100% refundable</strong> against your bulk order!
-            </div>
-          </div>
-        </div>
-
-        <button
-          type="button"
-          onClick={() => handleOpenSampleModal()}
-          className="btn btn-primary"
-          style={{
-            padding: '10px 22px',
-            fontSize: '13px',
-            fontWeight: 800,
-            whiteSpace: 'nowrap',
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '6px',
-          }}
-        >
-          <span>Order Physical Sample</span>
-          <ArrowRightIcon size={14} />
-        </button>
-      </div>
-
-      {/* Filter and Search Controls */}
+      {/* Simple Category Tabs & Search Bar */}
       <div
         style={{
           display: 'flex',
@@ -131,272 +80,206 @@ export default function ProductsCatalogClient({ initialProducts }: ProductsCatal
           alignItems: 'center',
           flexWrap: 'wrap',
           gap: '16px',
-          marginBottom: '28px',
+          marginBottom: '32px',
+          paddingBottom: '16px',
+          borderBottom: '1px solid #e2e8f0',
         }}
       >
-        {/* Category Pills */}
+        {/* B2B Category Filter Tabs */}
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              type="button"
-              onClick={() => setSelectedCategory(cat)}
-              style={{
-                border: 'none',
-                background:
-                  selectedCategory === cat
-                    ? 'var(--brand-orange, #f3a626)'
-                    : '#ffffff',
-                color: selectedCategory === cat ? 'var(--brand-black, #0b0b0d)' : '#475569',
-                fontWeight: 700,
-                fontSize: '13px',
-                padding: '8px 16px',
-                borderRadius: '999px',
-                cursor: 'pointer',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
-                borderWidth: '1px',
-                borderStyle: 'solid',
-                borderColor: selectedCategory === cat ? 'transparent' : '#e2e8f0',
-                transition: 'all 0.2s ease',
-                textTransform: 'capitalize',
-              }}
-            >
-              {cat === 'all' ? 'All Styles' : cat}
-            </button>
-          ))}
+          {categories.map((cat) => {
+            const isSelected = selectedCategory === cat;
+            return (
+              <button
+                key={cat}
+                type="button"
+                onClick={() => setSelectedCategory(cat)}
+                style={{
+                  border: isSelected ? '1.5px solid #0f172a' : '1px solid #cbd5e1',
+                  background: isSelected ? '#0f172a' : '#ffffff',
+                  color: isSelected ? '#ffffff' : '#334155',
+                  fontWeight: isSelected ? 800 : 600,
+                  fontSize: '13px',
+                  padding: '8px 14px',
+                  borderRadius: '6px',
+                  cursor: 'pointer',
+                  transition: 'all 0.15s ease',
+                }}
+              >
+                {cat === 'all' ? 'All Products' : cat}
+              </button>
+            );
+          })}
         </div>
 
-        {/* Search Bar & Download Line Sheet CTA */}
-        <div style={{ display: 'flex', gap: '10px', alignItems: 'center', flexWrap: 'wrap' }}>
-          <button
-            type="button"
-            onClick={() => setCatalogModalOpen(true)}
+        {/* Clean Minimal Search */}
+        <div style={{ position: 'relative', width: '260px' }}>
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="Search styles, fabrics..."
             style={{
-              background: '#0f172a',
-              color: '#ffffff',
-              border: 'none',
-              borderRadius: '999px',
-              padding: '8px 16px',
-              fontSize: '13px',
-              fontWeight: 800,
-              cursor: 'pointer',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '6px',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+              width: '100%',
+              padding: '9px 12px 9px 34px',
+              border: '1.5px solid #cbd5e1',
+              borderRadius: '8px',
+              fontSize: '13.5px',
+              background: '#ffffff',
+              color: '#0f172a',
+              outline: 'none',
+              boxSizing: 'border-box',
+            }}
+          />
+          <svg
+            width="15"
+            height="15"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#64748b"
+            strokeWidth="2.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+            style={{
+              position: 'absolute',
+              left: '12px',
+              top: '50%',
+              transform: 'translateY(-50%)',
+              pointerEvents: 'none',
             }}
           >
-            <span>📥</span> Download 2026 Line Sheet (PDF)
-          </button>
-
-          <div style={{ position: 'relative', minWidth: '240px' }}>
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search styles, fabrics, GSM..."
-              style={{
-                width: '100%',
-                padding: '8px 14px 8px 36px',
-                border: '1px solid #cbd5e1',
-                borderRadius: '999px',
-                fontSize: '13px',
-                background: '#ffffff',
-              }}
-            />
-            <span
-              style={{
-                position: 'absolute',
-                left: '12px',
-                top: '50%',
-                transform: 'translateY(-50%)',
-                color: '#94a3b8',
-                fontSize: '14px',
-              }}
-            >
-              🔍
-            </span>
-          </div>
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
         </div>
       </div>
 
-      {/* Products Grid */}
+      {/* Clean Minimal Product Grid */}
       {filteredProducts.length === 0 ? (
         <div
           style={{
             background: '#ffffff',
             borderRadius: '12px',
-            padding: '48px 24px',
+            padding: '48px 20px',
             textAlign: 'center',
             border: '1px solid #e2e8f0',
           }}
         >
-          <div style={{ fontSize: '32px', marginBottom: '8px' }}>🔍</div>
-          <h3 style={{ margin: '0 0 6px', color: '#0f172a' }}>No products match your filter</h3>
-          <p style={{ color: '#64748b', fontSize: '14px', margin: '0 0 16px' }}>
-            Looking for a custom apparel item not listed here? We manufacture anything from tech packs!
+          <h3 style={{ margin: '0 0 6px', color: '#0f172a', fontSize: '18px' }}>No styles found</h3>
+          <p style={{ color: '#64748b', fontSize: '13.5px', margin: '0 0 16px' }}>
+            Looking for something custom? We produce any style from your tech pack.
           </p>
           <button
             type="button"
             onClick={() => handleOpenSampleModal()}
             className="btn btn-primary"
-            style={{ fontSize: '13px' }}
+            style={{ fontSize: '13px', padding: '8px 18px' }}
           >
-            Request Custom Prototype Sample
+            Request Custom Prototype
           </button>
         </div>
       ) : (
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
-            gap: '26px',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+            gap: '24px',
           }}
         >
           {filteredProducts.map((p) => (
             <div
               key={p.id || p.name}
-              className="card"
               style={{
-                padding: '0',
+                borderRadius: '8px',
+                border: '1px solid #e2e8f0',
+                background: '#ffffff',
                 overflow: 'hidden',
                 display: 'flex',
                 flexDirection: 'column',
-                borderRadius: '14px',
-                border: '1px solid #e2e8f0',
-                background: '#ffffff',
-                boxShadow: '0 4px 16px rgba(0,0,0,0.04)',
-                transition: 'transform 0.2s ease, box-shadow 0.2s ease',
               }}
             >
-              {/* Product Image */}
+              {/* Image Container: Clean 1:1 Square */}
               <div
                 style={{
                   position: 'relative',
                   width: '100%',
-                  aspectRatio: '4/3',
+                  aspectRatio: '1 / 1',
+                  background: '#f8fafc',
                   overflow: 'hidden',
-                  background: '#e2e8f0',
                 }}
               >
                 <img
                   src={p.image_url || '/images/products/1780565647_slim-fit-gym-joggers.webp'}
                   alt={p.name}
+                  loading="lazy"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
-                <div
+              </div>
+
+              {/* Product Info */}
+              <div style={{ padding: '16px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                <span
                   style={{
-                    position: 'absolute',
-                    top: '12px',
-                    left: '12px',
-                    background: 'var(--brand-orange, #f3a626)',
-                    color: 'var(--brand-black, #0b0b0d)',
-                    fontWeight: 800,
-                    fontSize: '11px',
+                    fontSize: '11.5px',
+                    fontWeight: 700,
                     textTransform: 'uppercase',
                     letterSpacing: '0.06em',
-                    padding: '4px 10px',
-                    borderRadius: '999px',
+                    color: '#9a3412',
+                    marginBottom: '6px',
                   }}
                 >
                   {p.category}
-                </div>
+                </span>
 
-                <div
+                <h3
                   style={{
-                    position: 'absolute',
-                    bottom: '10px',
-                    right: '12px',
-                    background: 'rgba(15, 23, 42, 0.85)',
-                    backdropFilter: 'blur(4px)',
-                    color: '#ffffff',
-                    fontSize: '11px',
-                    fontWeight: 700,
-                    padding: '3px 8px',
-                    borderRadius: '6px',
+                    fontSize: '16px',
+                    fontWeight: 800,
+                    margin: '0 0 8px',
+                    color: '#0f172a',
+                    lineHeight: 1.35,
                   }}
                 >
-                  ⚡ Fast DHL Sampling Available
-                </div>
-              </div>
-
-              {/* Product Details */}
-              <div style={{ padding: '20px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-                <h3 style={{ fontSize: '1.2rem', margin: '0 0 8px', color: 'var(--text-main)' }}>
                   {p.name}
                 </h3>
+
                 <p
-                  className="muted"
                   style={{
                     fontSize: '13px',
-                    margin: '0 0 18px',
+                    color: '#475569',
+                    margin: '0 0 16px',
+                    lineHeight: 1.55,
                     flexGrow: 1,
-                    lineHeight: '1.6',
                   }}
                 >
                   {p.description}
                 </p>
 
-                {/* Specs / Highlights */}
-                <div
+                {/* B2B Direct Inquiry Action */}
+                <button
+                  type="button"
+                  onClick={() => handleOpenSampleModal(p)}
                   style={{
-                    display: 'flex',
+                    width: '100%',
+                    background: '#0f172a',
+                    color: '#ffffff',
+                    border: 'none',
+                    borderRadius: '6px',
+                    padding: '10px 14px',
+                    fontSize: '13px',
+                    fontWeight: 700,
+                    cursor: 'pointer',
+                    display: 'inline-flex',
                     alignItems: 'center',
-                    justifyContent: 'space-between',
-                    paddingBottom: '14px',
-                    marginBottom: '14px',
-                    borderBottom: '1px solid #f1f5f9',
-                    fontSize: '12px',
-                    color: '#64748b',
+                    justifyContent: 'center',
+                    gap: '6px',
+                    transition: 'background 0.15s ease',
                   }}
                 >
-                  <span>MOQ: <strong>50 pcs / colorway</strong></span>
-                  <span style={{ color: '#16a34a', fontWeight: 700 }}>✓ Custom Woven Labels</span>
-                </div>
-
-                {/* Dual Action Buttons */}
-                <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '8px' }}>
-                  <button
-                    type="button"
-                    onClick={() => handleOpenSampleModal(p)}
-                    style={{
-                      background: 'rgba(243, 166, 38, 0.15)',
-                      color: 'var(--brand-orange-dark, #c57608)',
-                      border: '1px solid var(--brand-orange, #f3a626)',
-                      borderRadius: '8px',
-                      padding: '8px 12px',
-                      fontSize: '12px',
-                      fontWeight: 800,
-                      cursor: 'pointer',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      gap: '5px',
-                    }}
-                  >
-                    <span>⚡ Order Sample</span>
-                  </button>
-
-                  <Link
-                    href={`/contact-us?product=${encodeURIComponent(p.name)}`}
-                    className="btn btn-primary"
-                    style={{
-                      padding: '8px 12px',
-                      fontSize: '12px',
-                      minHeight: 'auto',
-                      fontWeight: 700,
-                      textAlign: 'center',
-                      borderRadius: '8px',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      gap: '5px',
-                    }}
-                  >
-                    <span>Inquire Style</span>
-                    <ArrowRightIcon size={12} />
-                  </Link>
-                </div>
+                  <span>Inquire This Style</span>
+                  <ArrowRightIcon size={13} />
+                </button>
               </div>
             </div>
           ))}

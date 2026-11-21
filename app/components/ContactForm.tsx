@@ -275,7 +275,7 @@ ${notes}
             id="category"
             name="category"
             required
-            defaultValue="Sportswear & Teamwear"
+            defaultValue="Heavyweight Hoodies & Fleece"
             style={{
               width: '100%',
               padding: '9px 38px 9px 13px',
@@ -289,14 +289,17 @@ ${notes}
               cursor: 'pointer',
             }}
           >
-            <option value="Sportswear & Teamwear">Sportswear &amp; Team Uniforms</option>
-            <option value="Fitness & Activewear">Fitness Wear &amp; Gym (Leggings, Bras)</option>
-            <option value="Heavyweight Hoodies & Fleece">Heavyweight Hoodies (380–500 GSM)</option>
-            <option value="Streetwear & Outerwear">Streetwear Tees &amp; Jackets</option>
-            <option value="Boxing & Fight Gear">Boxing Wear &amp; Fight Gear</option>
-            <option value="MMA, BJJ & Compression">MMA, BJJ &amp; Rashguards</option>
-            <option value="Custom Denim & Jeans">Denim Jeans &amp; Jackets</option>
-            <option value="Full Brand Collection">Multi-Category Brand Collection</option>
+            <option value="Heavyweight Hoodies & Fleece">Heavyweight Hoodies &amp; Fleece</option>
+            <option value="Streetwear & Outerwear">Streetwear &amp; Outerwear</option>
+            <option value="Fitness & Activewear">Fitness &amp; Activewear</option>
+            <option value="Boxing Gloves & Fight Gear">Boxing Gloves &amp; Fight Gear</option>
+            <option value="MMA, BJJ Gis & Rashguards">MMA, BJJ Gis &amp; Rashguards</option>
+            <option value="Tracksuits & Warmups">Tracksuits &amp; Warmups</option>
+            <option value="Sublimated Teamwear & Kits">Sublimated Teamwear &amp; Kits</option>
+            <option value="Compression & Baselayers">Compression &amp; Baselayers</option>
+            <option value="Custom Denim & Jeans">Custom Denim &amp; Jeans</option>
+            <option value="Private Label Trims & Packaging">Private Label Trims &amp; Packaging</option>
+            <option value="Multi-Category / Full Collection">Multi-Category / Full Collection</option>
           </select>
         </div>
 
@@ -335,14 +338,13 @@ ${notes}
       {/* Row 4: Country */}
       <div className="form-group" style={{ marginBottom: '12px', display: 'flex', flexDirection: 'column' }}>
         <label className="form-label" htmlFor="country" style={{ fontSize: '12.5px', fontWeight: 700, color: '#1e293b', marginBottom: '4px' }}>
-          Destination Country (For DHL / Air / Sea Freight) <span style={{ color: '#ef4444' }}>*</span>
+          Destination Country (For DHL Air Delivery)
         </label>
         <input
           className="form-control"
           id="country"
           type="text"
           name="country"
-          required
           placeholder="e.g. United States, United Kingdom, Germany, Australia, Canada, etc."
           style={{
             width: '100%',
@@ -358,10 +360,10 @@ ${notes}
         />
       </div>
 
-      {/* Row 5: Detailed Specifications */}
+      {/* Row 5: Project Brief */}
       <div className="form-group" style={{ marginBottom: '14px', display: 'flex', flexDirection: 'column' }}>
         <label className="form-label" htmlFor="details" style={{ fontSize: '12.5px', fontWeight: 700, color: '#1e293b', marginBottom: '4px' }}>
-          Project Specifications, Fabrics &amp; Branding Details <span style={{ color: '#ef4444' }}>*</span>
+          Project Brief / Message <span style={{ color: '#ef4444' }}>*</span>
         </label>
         <textarea
           className="form-control"
@@ -369,7 +371,7 @@ ${notes}
           name="details"
           rows={3}
           required
-          placeholder="Describe your garments, fabric blend/GSM (e.g. 75/25 Nylon Spandex, 450 GSM French Terry), colors and custom branding requirements."
+          placeholder="Tell us what you want to manufacture, reference styles, target colors, or ask any questions (our team will guide you on fabric, GSM and sizing)."
           style={{
             width: '100%',
             padding: '9px 13px',

@@ -121,7 +121,7 @@ export default function FaqSection({
                     style={{
                       fontSize: '16px',
                       fontWeight: 700,
-                      color: isOpen ? 'var(--brand-orange-dark, #c57608)' : 'var(--text-main, #0f172a)',
+                      color: isOpen ? 'var(--brand-orange-dark, #9a3412)' : 'var(--text-main, #0f172a)',
                       lineHeight: 1.45,
                       flex: 1,
                     }}

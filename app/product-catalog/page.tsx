@@ -27,75 +27,44 @@ export default async function Products() {
   return (
     <div className="products-page">
       <ProductCatalogJsonLd products={products} />
-      {/* Header Banner */}
-      <section className="hero">
+      {/* Simple Clean Header */}
+      <section style={{ padding: '36px 0 24px', background: '#ffffff', borderBottom: '1px solid #e2e8f0' }}>
         <div className="container">
           <BreadcrumbJsonLd
             items={[
               { label: 'Home', href: '/' },
               { label: 'Product Catalog' },
             ]}
-            style={{ marginBottom: '20px' }}
+            style={{ marginBottom: '14px' }}
           />
-          <div className="pl-hero-grid">
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '20px' }}>
             <div>
-              <span className="pl-kicker">FACTORY DIRECT PRODUCT SHOWCASE &bull; SIALKOT, PAKISTAN</span>
-              <h1>Private Label Activewear &amp; Apparel Catalog</h1>
-              <p>
-                Explore our custom manufacturing options across fitness wear, sports performance apparel, fight gear and heavyweight streetwear. All styles are customizable with low MOQs, custom branding and fast DHL pre-production sampling.
+              <span style={{ fontSize: '12px', fontWeight: 800, color: '#7c2d12', textTransform: 'uppercase', letterSpacing: '0.08em', display: 'block', marginBottom: '6px' }}>
+                DIRECT SIALKOT FACTORY SHOWCASE
+              </span>
+              <h1 style={{ fontSize: '30px', fontWeight: 900, color: '#0f172a', margin: '0 0 8px', letterSpacing: '-0.02em' }}>
+                Product Catalog
+              </h1>
+              <p style={{ fontSize: '15px', color: '#334155', margin: 0, maxWidth: '640px', lineHeight: 1.6 }}>
+                Custom activewear, streetwear, combat gear and team uniforms manufactured with private label branding and low 50 pcs MOQ.
               </p>
             </div>
-            <div className="pl-summary">
-              <strong>Turnkey Private Label</strong>
-              <p>Full-package apparel manufacturing: custom neck labels, 400 GSM hangtags, frosted EVA polybags and DHL Express sampling.</p>
+            <div style={{ display: 'flex', gap: '10px' }}>
+              <Link href="/linesheet" className="btn btn-outline" style={{ padding: '9px 18px', fontSize: '13.5px', background: '#fff', color: '#0f172a', borderColor: '#cbd5e1', fontWeight: 700 }}>
+                📄 PDF Line Sheet
+              </Link>
+              <Link href="/contact-us" className="btn btn-primary" style={{ padding: '9px 20px', fontSize: '13.5px', fontWeight: 700 }}>
+                Request Custom Quote
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
       {/* Main Catalog Section */}
-      <section className="section" style={{ background: 'var(--bg-light)' }}>
+      <section style={{ background: '#f8fafc', padding: '32px 0 64px' }}>
         <div className="container">
-          <div className="home-section-head">
-            <div>
-              <span className="home-kicker">Custom Production Showcase</span>
-              <h2 style={{ marginTop: '8px' }}>Available Activewear &amp; Garment Styles</h2>
-              <p className="muted">
-                Each product is custom built to your technical specifications, fabric blend, GSM, colors, size chart and private label branding.
-              </p>
-            </div>
-            <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-              <Link href="/linesheet" className="btn btn-outline" style={{ background: '#fff', borderColor: '#cbd5e1' }}>
-                📄 View 2026 Line Sheet (PDF)
-              </Link>
-              <Link href="/contact-us" className="btn btn-primary">
-                Request a Custom Quote
-              </Link>
-            </div>
-          </div>
-
-          {/* Interactive Products Grid with Fast Sample Ordering Modal */}
           <ProductsCatalogClient initialProducts={products} />
-
-          {/* Quick CTA Box */}
-          <div className="home-cta" style={{ marginTop: '64px' }}>
-            <div>
-              <span className="home-kicker">Start Your Line</span>
-              <h2>Have custom tech packs or specific design requirements?</h2>
-              <p>
-                We produce custom apparel beyond this catalog. Send us your mockups, tech packs or reference samples for a detailed manufacturing review.
-              </p>
-            </div>
-            <div className="home-cta-actions">
-              <Link href="/contact-us" className="btn btn-primary">
-                Get a Custom Quote
-              </Link>
-              <Link href="/track-order" className="btn btn-secondary">
-                Track Sample Order
-              </Link>
-            </div>
-          </div>
-
         </div>
       </section>
     </div>

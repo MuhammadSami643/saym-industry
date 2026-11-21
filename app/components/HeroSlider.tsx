@@ -13,8 +13,10 @@ const SLIDES = [
 
 export default function HeroSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % SLIDES.length);
     }, 9000);
@@ -24,13 +26,35 @@ export default function HeroSlider() {
   return (
     <section className="home-hero" aria-label="Private label activewear manufacturing">
       <div className="home-hero-slides" aria-hidden="true">
-        {SLIDES.map((slide, idx) => (
-          <div
-            key={slide}
-            className={`home-hero-slide ${idx === currentIndex ? 'is-active' : ''}`}
-            style={{ backgroundImage: `url('${slide}')` }}
-          />
-        ))}
+        {SLIDES.map((slide, idx) => {
+          // On SSR and initial paint, only load slide 0 to prevent blocking mobile bandwidth with 5 heavy background images
+          const shouldLoad = idx === 0 || mounted;
+          return (
+            <div
+              key={slide}
+              className={`home-hero-slide ${idx === currentIndex ? 'is-active' : ''}`}
+              style={{ backgroundImage: shouldLoad ? `url('${slide}')` : 'none' }}
+            >
+              {idx === 0 && (
+                <img
+                  src={slide}
+                  alt="Private label activewear manufacturing facility Sialkot"
+                  fetchPriority="high"
+                  decoding="async"
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    opacity: 0,
+                    pointerEvents: 'none',
+                  }}
+                />
+              )}
+            </div>
+          );
+        })}
       </div>
       <div className="container">
         <div className="home-hero-content">
@@ -40,10 +64,10 @@ export default function HeroSlider() {
             Build premium custom activewear with a low MOQ private label manufacturer in Sialkot, Pakistan. We help startups and growing fitness brands with sampling, custom branding, performance fabrics and worldwide shipping.
           </p>
           <div className="home-hero-actions">
-            <Link href="/contact" className="btn btn-primary">
+            <Link href="/contact-us" className="btn btn-primary">
               Request a Manufacturing Quote
             </Link>
-            <Link href="/manufacturing" className="btn btn-outline">
+            <Link href="/manufacturing-process" className="btn btn-outline">
               View Manufacturing Capabilities
             </Link>
           </div>

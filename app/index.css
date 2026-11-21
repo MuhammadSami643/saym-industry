@@ -6,7 +6,9 @@
   /* Brand Primary Colors */
   --brand-orange: #f3a626;
   /* Primary Accent (Buttons, Highlights, Badges) */
-  --brand-orange-dark: #d98816;
+  --brand-orange-dark: #7c2d12;
+  /* Accessible Deep Amber/Rust (WCAG AAA compliant: >10:1 contrast on white/bg-light) */
+  --brand-orange-hover: #9a3412;
   /* Primary Accent Hover State */
   --brand-orange-light: #fff1d6;
   /* Warm Tint for Numbers and Icons */
@@ -26,14 +28,14 @@
   /* Footer Background */
 
   /* Text Colors */
-  --text-main: #111827;
-  /* Main Body and Headings */
-  --text-muted: #6b7280;
-  /* Subheadings and Description Text */
-  --text-light: #d9e0ea;
+  --text-main: #0f172a;
+  /* Main Body and Headings (Slate 900) */
+  --text-muted: #334155;
+  /* Subheadings and Description Text (Slate 700 - 8.5:1 contrast on white) */
+  --text-light: #f1f5f9;
   /* Light Text on Dark Backgrounds */
-  --text-subtle: #818c9c;
-  /* Footer and Copyright Text */
+  --text-subtle: #cbd5e1;
+  /* Footer and Copyright Text (Slate 300 - 10.5:1 contrast on dark) */
 
   /* Background & Border Colors */
   --white: #ffffff;
@@ -467,8 +469,8 @@ select.form-control {
 
 .nav-link.is-active,
 .nav-trigger.is-active {
-  color: var(--brand-orange-dark, #c57608);
-  font-weight: 600;
+  color: var(--brand-orange-dark, #9a3412);
+  font-weight: 700;
   background: var(--brand-orange-soft, rgba(243, 166, 38, 0.12));
 }
 
@@ -649,11 +651,17 @@ select.form-control {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--brand-orange);
+  color: var(--brand-orange-dark, #7c2d12);
   font-size: 12px;
   font-weight: 900;
   letter-spacing: .09em;
   text-transform: uppercase;
+}
+
+.home-hero .home-kicker,
+.dark-section .home-kicker,
+.site-footer .home-kicker {
+  color: #fbbf24;
 }
 
 .home-kicker::before {
@@ -869,12 +877,14 @@ select.form-control {
   gap: 16px;
 }
 
-.trust-card {
+.trust-card,
+a.trust-card {
   padding: 24px;
   border: 1px solid var(--border);
   border-radius: 10px;
   background: #fff;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  color: #0f172a;
 }
 
 a.trust-card:hover {
@@ -883,26 +893,41 @@ a.trust-card:hover {
   border-color: var(--brand-orange);
 }
 
-.trust-card h3 {
+.trust-card h3,
+a.trust-card h3,
+.trust-card h3 span,
+a.trust-card h3 span {
   margin: 0 0 9px;
   font-size: 1.08rem;
+  color: #0f172a !important;
 }
 
-.trust-card p {
+.trust-card p,
+a.trust-card p,
+.trust-card .muted,
+a.trust-card .muted {
   margin: 0;
+  color: #334155 !important;
 }
 
-.trust-card:first-child {
+.trust-card:first-child,
+a.trust-card:first-child {
   background: #111827;
   border-color: #111827;
 }
 
-.trust-card:first-child h3 {
-  color: #fff;
+.trust-card:first-child h3,
+a.trust-card:first-child h3,
+.trust-card:first-child h3 span,
+a.trust-card:first-child h3 span {
+  color: #ffffff !important;
 }
 
-.trust-card:first-child p {
-  color: #cbd5e1;
+.trust-card:first-child p,
+a.trust-card:first-child p,
+.trust-card:first-child .muted,
+a.trust-card:first-child .muted {
+  color: #cbd5e1 !important;
 }
 
 .audience-grid {
@@ -1545,7 +1570,7 @@ a.trust-card:hover {
 }
 
 .faq-item.is-open .faq-question {
-  color: var(--brand-orange-dark, #c57608);
+  color: var(--brand-orange-dark, #7c2d12);
 }
 
 .faq-icon {
@@ -1631,7 +1656,7 @@ a.trust-card:hover {
 .footer-copy {
   max-width: 390px;
   margin: 16px 0 0;
-  color: #aeb8c7;
+  color: #cbd5e1;
   line-height: 1.7;
 }
 
@@ -1655,7 +1680,7 @@ a.trust-card:hover {
 .footer-list a,
 .footer-contact a,
 .footer-contact div {
-  color: #9da7b7;
+  color: #cbd5e1;
   font-size: 13px;
   text-decoration: none;
   line-height: 1.6;
@@ -1673,7 +1698,7 @@ a.trust-card:hover {
 }
 
 .footer-contact {
-  color: #9da7b7;
+  color: #cbd5e1;
   font-size: 13px;
   line-height: 1.8;
 }
@@ -1689,12 +1714,12 @@ a.trust-card:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #94a3b8;
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e2e8f0;
   transition: all 0.2s ease;
   text-decoration: none;
 }
@@ -1714,7 +1739,7 @@ a.trust-card:hover {
   margin-top: 44px;
   padding-top: 22px;
   border-top: 1px solid rgba(255, 255, 255, .1);
-  color: #818c9c;
+  color: #cbd5e1;
   font-size: 13px;
 }
 
@@ -1904,32 +1929,54 @@ a.trust-card:hover {
   font-size: 13px;
   line-height: 1.4;
   margin: 0 0 10px;
-  color: #94a3b8;
+  color: #475569;
 }
 
 .breadcrumbs a,
 .breadcrumbs .breadcrumb-link {
-  color: #94a3b8;
+  color: #475569;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   transition: color 0.2s ease;
 }
 
 .breadcrumbs a:hover,
 .breadcrumbs .breadcrumb-link:hover {
-  color: var(--brand-orange, #f3a626);
+  color: var(--brand-orange-dark, #7c2d12);
 }
 
 .breadcrumbs .breadcrumb-sep {
-  color: #64748b;
-  opacity: 0.6;
-  font-size: 12px;
+  color: #94a3b8;
+  font-size: 13px;
   user-select: none;
 }
 
 .breadcrumbs .breadcrumb-current {
-  color: #f1f5f9;
-  font-weight: 600;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+/* Breadcrumbs when inside dark hero banners */
+.hero .breadcrumbs,
+.dark-section .breadcrumbs {
+  color: #94a3b8;
+}
+
+.hero .breadcrumbs a,
+.hero .breadcrumbs .breadcrumb-link,
+.dark-section .breadcrumbs a,
+.dark-section .breadcrumbs .breadcrumb-link {
+  color: #cbd5e1;
+}
+
+.hero .breadcrumbs .breadcrumb-current,
+.dark-section .breadcrumbs .breadcrumb-current {
+  color: #ffffff;
+}
+
+.hero .breadcrumbs .breadcrumb-sep,
+.dark-section .breadcrumbs .breadcrumb-sep {
+  color: #64748b;
 }
 
 .about-kicker,
@@ -2799,7 +2846,7 @@ a.trust-card:hover {
 }
 
 /* ========================================================
-   Private Label Page Styles (ZYPFIT Reference Design)
+   Private Label Page Styles (OEM / ODM System)
    ======================================================== */
 .pl-hero {
     background: #0f172a;
