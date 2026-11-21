@@ -11,12 +11,12 @@ export const metadata: Metadata = {
   title: "Private Label Activewear & Apparel Product Catalog | Bin Rasool Enterprises",
   description: "Browse custom fitness wear, gym joggers, high-waist compression leggings, sportswear tracksuits, boxing apparel and premium streetwear hoodies manufactured by Bin Rasool Enterprises in Sialkot, Pakistan. Fast physical DHL pre-production sampling available.",
   alternates: {
-    canonical: '/products',
+    canonical: '/product-catalog',
   },
   openGraph: {
     title: "Apparel Product Catalog | Bin Rasool Enterprises Sialkot",
     description: "Browse factory-direct custom activewear, streetwear, combat gear and denim manufactured with private label branding.",
-    url: "/products",
+    url: "/product-catalog",
     images: [{ url: "/images/products/1780565647_slim-fit-gym-joggers.webp", width: 1200, height: 630 }],
   },
 };
@@ -68,7 +68,7 @@ export default async function Products() {
               <Link href="/linesheet" className="btn btn-outline" style={{ background: '#fff', borderColor: '#cbd5e1' }}>
                 📄 View 2026 Line Sheet (PDF)
               </Link>
-              <Link href="/contact" className="btn btn-primary">
+              <Link href="/contact-us" className="btn btn-primary">
                 Request a Custom Quote
               </Link>
             </div>
@@ -87,7 +87,7 @@ export default async function Products() {
               </p>
             </div>
             <div className="home-cta-actions">
-              <Link href="/contact" className="btn btn-primary">
+              <Link href="/contact-us" className="btn btn-primary">
                 Get a Custom Quote
               </Link>
               <Link href="/track-order" className="btn btn-secondary">

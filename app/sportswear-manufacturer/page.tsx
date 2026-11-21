@@ -126,7 +126,7 @@ const SPEC_CARDS = [
 ];
 
 const RELATED_SERVICES = [
-  { name: "Private Label Activewear", href: "/private-label" },
+  { name: "Private Label Activewear", href: "/private-label-manufacturing" },
   { name: "Custom Tracksuits", href: "/products" },
   { name: "Fitness Wear Manufacturer", href: "/fitness-wear-manufacturer" },
   { name: "Boxing Wear Manufacturer", href: "/boxing-wear-manufacturer" },

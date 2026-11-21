@@ -136,42 +136,55 @@ img {
   padding: 12px 24px;
   font-size: 15px;
   font-weight: 700;
-  transition: all 0.25s ease;
+  transition: none !important;
   display: inline-flex;
   text-decoration: none;
+}
+
+.btn:hover {
+  transform: none !important;
+  transition: none !important;
 }
 
 .btn-primary {
   background: var(--brand-orange);
   color: var(--brand-black) !important;
   box-shadow: var(--shadow);
+  transition: none !important;
 }
 
 .btn-primary:hover {
   background: var(--brand-orange-dark);
-  color: #fff !important;
-  transform: translateY(-1px);
+  color: var(--brand-black) !important;
+  transform: none !important;
+  transition: none !important;
 }
 
 .btn-outline {
   color: var(--white);
   background: transparent;
   border-color: rgba(255, 255, 255, 0.42);
+  transition: none !important;
 }
 
 .btn-outline:hover {
   background: rgba(255, 255, 255, 0.14);
-  color: var(--white);
+  color: var(--white) !important;
+  transform: none !important;
+  transition: none !important;
 }
 
 .btn-dark {
   background: var(--brand-black);
   color: var(--white);
+  transition: none !important;
 }
 
 .btn-dark:hover {
   background: var(--brand-charcoal);
-  color: var(--white);
+  color: var(--white) !important;
+  transform: none !important;
+  transition: none !important;
 }
 
 /* ==========================================================================
@@ -318,7 +331,7 @@ select.form-control {
    NAVBAR & HEADER
    ========================================================================== */
 .site-header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
@@ -676,12 +689,11 @@ select.form-control {
 
 .home-hero {
   position: relative;
-  min-height: 760px;
+  min-height: 720px;
   display: flex;
   align-items: center;
   overflow: hidden;
   background: #0b1220;
-  margin-top: -85px;
 }
 
 .home-hero-slides,
@@ -715,7 +727,7 @@ select.form-control {
   position: relative;
   z-index: 2;
   max-width: 780px;
-  padding: 170px 0 92px;
+  padding: 100px 0 80px;
 }
 
 .home-hero h1 {
@@ -3294,14 +3306,16 @@ a.trust-card:hover {
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 14px rgba(243, 166, 38, 0.3);
-    transition: all 0.2s ease;
+    transition: none !important;
     border: none;
 }
 
 .sw-btn-primary:hover {
     background: var(--brand-orange-dark, #d98816);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(243, 166, 38, 0.4);
+    color: var(--brand-black, #0b0b0d) !important;
+    transform: none !important;
+    transition: none !important;
+    box-shadow: 0 4px 14px rgba(243, 166, 38, 0.3);
 }
 
 .sw-btn-outline {
@@ -3316,13 +3330,15 @@ a.trust-card:hover {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.2s ease;
+    transition: none !important;
 }
 
 .sw-btn-outline:hover {
     border-color: #94a3b8;
     background: #f8fafc;
-    transform: translateY(-2px);
+    color: #0f172a !important;
+    transform: none !important;
+    transition: none !important;
 }
 
 .sw-hero-img-box {

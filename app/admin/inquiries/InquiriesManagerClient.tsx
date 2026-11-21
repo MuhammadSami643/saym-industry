@@ -54,6 +54,16 @@ export default function InquiriesManagerClient({ initialInquiries }: { initialIn
   const [sendingReply, setSendingReply] = useState(false);
   const [replyResult, setReplyResult] = useState<{ success: boolean; msg: string } | null>(null);
 
+  // Floating Toast State
+  const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
+
+  const showToast = (message: string, type: 'success' | 'error' = 'success') => {
+    setToast({ message, type });
+    setTimeout(() => {
+      setToast(prev => (prev?.message === message ? null : prev));
+    }, 4500);
+  };
+
   // Push to Production Floor State
   const [prodInquiry, setProdInquiry] = useState<Inquiry | null>(null);
   const [prodItem, setProdItem] = useState('');
@@ -240,18 +250,21 @@ WhatsApp: +92 313 3599241`
 
   const handleSendReply = async () => {
     if (!replyEmail.trim() || !replyContent.trim()) {
-      alert('Recipient email and message content are required.');
+      showToast('Recipient email and message content are required.', 'error');
       return;
     }
     setSendingReply(true);
     setReplyResult(null);
+
+    const sentToEmail = replyEmail.trim();
+    const inqIdToUpdate = replyInquiry?.id;
 
     try {
       const res = await fetch('/api/admin/email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          recipients: [{ name: replyRecipientName.trim() || replyEmail.trim(), email: replyEmail.trim() }],
+          recipients: [{ name: replyRecipientName.trim() || sentToEmail, email: sentToEmail }],
           subject: replySubject.trim() || 'Manufacturing Update - Bin Rasool Enterprises',
           content: replyContent,
           buttonText: 'DISCUSS ON WHATSAPP',
@@ -262,15 +275,20 @@ WhatsApp: +92 313 3599241`
       const data = await res.json();
 
       if (res.ok && data.success) {
-        setReplyResult({ success: true, msg: `✓ Email successfully delivered to ${replyEmail} via Hostinger SMTP!` });
-        if (replyInquiry && replyInquiry.id) {
-          handleStatusChange(replyInquiry.id, 'contacted');
+        // Automatically close the modal popup and display floating success toast
+        setReplyInquiry(null);
+        setReplyResult(null);
+        showToast(`✓ Email successfully delivered to ${sentToEmail} via Hostinger SMTP!`, 'success');
+        if (inqIdToUpdate) {
+          handleStatusChange(inqIdToUpdate, 'contacted');
         }
       } else {
         setReplyResult({ success: false, msg: data.error || 'Failed to dispatch email' });
+        showToast(data.error || 'Failed to dispatch email', 'error');
       }
     } catch (e: any) {
       setReplyResult({ success: false, msg: e.message || 'Network error sending email' });
+      showToast(e.message || 'Network error sending email', 'error');
     } finally {
       setSendingReply(false);
     }
@@ -439,6 +457,72 @@ WhatsApp: +92 313 3599241`
           border: 1px solid rgba(248, 113, 113, 0.28);
         }
       `}</style>
+
+      {/* Floating Modern Toast Notification */}
+      <AnimatePresence>
+        {toast && (
+          <motion.div
+            initial={{ opacity: 0, y: -40, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -30, scale: 0.95 }}
+            transition={{ duration: 0.25, ease: 'easeOut' }}
+            style={{
+              position: 'fixed',
+              top: '28px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              zIndex: 999999,
+              background: '#0f172a',
+              border: `1.5px solid ${toast.type === 'success' ? '#22c55e' : '#ef4444'}`,
+              boxShadow: toast.type === 'success'
+                ? '0 20px 45px rgba(0, 0, 0, 0.7), 0 0 25px rgba(34, 197, 94, 0.3)'
+                : '0 20px 45px rgba(0, 0, 0, 0.7), 0 0 25px rgba(239, 68, 68, 0.3)',
+              borderRadius: '999px',
+              padding: '12px 24px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px',
+              color: '#ffffff',
+              fontSize: '14px',
+              fontWeight: 700,
+              maxWidth: '90vw',
+            }}
+          >
+            <span
+              style={{
+                width: '24px',
+                height: '24px',
+                borderRadius: '50%',
+                background: toast.type === 'success' ? '#22c55e' : '#ef4444',
+                color: toast.type === 'success' ? '#0b0b0d' : '#ffffff',
+                display: 'grid',
+                placeItems: 'center',
+                fontSize: '13px',
+                fontWeight: 900,
+                flexShrink: 0,
+              }}
+            >
+              {toast.type === 'success' ? '✓' : '!'}
+            </span>
+            <span style={{ lineHeight: 1.4 }}>{toast.message}</span>
+            <button
+              type="button"
+              onClick={() => setToast(null)}
+              style={{
+                background: 'transparent',
+                border: 'none',
+                color: '#94a3b8',
+                cursor: 'pointer',
+                fontSize: '15px',
+                padding: '0 0 0 8px',
+                lineHeight: 1,
+              }}
+            >
+              ✕
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Title & Actions */}
       <div style={{ marginBottom: '24px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '16px' }}>

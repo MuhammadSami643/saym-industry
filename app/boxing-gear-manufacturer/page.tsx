@@ -45,12 +45,12 @@ export const metadata: Metadata = {
     "Sialkot boxing gloves manufacturer"
   ],
   alternates: {
-    canonical: '/boxing-gear-manufacturer-bulk',
+    canonical: '/boxing-gear-manufacturer',
   },
   openGraph: {
     title: "OEM Boxing Gloves & Fight Gear Manufacturer Sialkot | Bin Rasool Enterprises",
     description: "Export quality genuine leather boxing gloves, pro sparring gloves, satin fight robes, custom corner jackets and shin guards wholesale.",
-    url: "/boxing-gear-manufacturer-bulk",
+    url: "/boxing-gear-manufacturer",
     images: [{ url: "/images/categories/1776540301_boxing-wear.webp", width: 1200, height: 630 }],
   },
 };
@@ -76,7 +76,7 @@ export default function CategoryPage() {
                 Precision-engineered combat sports equipment for international fight promotions, combat brands and commercial gyms. Handcrafted genuine A-grade cowhide leather gloves, IMF shock-absorbing foam and wholesale training gear with custom private labeling.
               </p>
               <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '26px' }}>
-                <Link href="/contact" className="btn btn-primary">
+                <Link href="/contact-us" className="btn btn-primary">
                   Request Fight Equipment Quote
                 </Link>
                 <Link href="/products" className="btn btn-outline" style={{ color: '#fff', borderColor: 'rgba(255,255,255,0.3)' }}>
@@ -112,7 +112,7 @@ export default function CategoryPage() {
                 <li><strong>Combat Gym Equipment &amp; MMA Promotion Gear</strong> – Focus mitts, kick shields, heavy bags &amp; gym apparel</li>
               </ul>
 
-              <Link href="/contact" className="btn btn-primary">
+              <Link href="/contact-us" className="btn btn-primary">
                 Inquire About Boxing Gear Production
               </Link>
             </div>
@@ -143,7 +143,7 @@ export default function CategoryPage() {
               </p>
             </div>
             <div className="home-cta-actions">
-              <Link href="/contact" className="btn btn-primary">
+              <Link href="/contact-us" className="btn btn-primary">
                 Contact Production Team
               </Link>
             </div>

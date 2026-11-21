@@ -41,7 +41,7 @@ export default function Navbar() {
 
   // Active route indicators
   const isHome = pathname === '/';
-  const isCompany = ['/about-us', '/manufacturing', '/private-label'].some(
+  const isCompany = ['/about-us', '/manufacturing-process', '/manufacturing', '/private-label-manufacturing', '/private-label'].some(
     p => pathname === p || pathname?.startsWith(p + '/')
   );
   const isManufacturer = [
@@ -52,23 +52,24 @@ export default function Navbar() {
     '/boxing-wear-manufacturer',
     '/boxing-wear-manufacturer-pakistan',
     '/sportswear-manufacturer-exporter',
-    '/boxing-gear-manufacturer-bulk',
+    '/boxing-gear-manufacturer',
   ].some(p => pathname === p || pathname?.startsWith(p + '/'));
   const isCategories = [
     '/custom-hoodies',
     '/streetwear',
     '/fitness-wear',
     '/boxing-gear',
+    '/boxing-gear-manufacturer',
     '/mma-gear',
     '/tracksuits',
     '/sportswear',
     '/compression-wear',
     '/custom-jeans',
-    '/products',
+    '/product-catalog',
   ].some(p => pathname === p || pathname?.startsWith(p + '/'));
   const isTrackOrder = pathname === '/track-order';
   const isBlog = pathname === '/blog' || pathname?.startsWith('/blog/');
-  const isContact = pathname === '/contact';
+  const isContact = pathname === '/contact-us' || pathname === '/contact';
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -183,8 +184,8 @@ export default function Navbar() {
                 </button>
                 <div className="dropdown-menu">
                   <Link href="/about-us" className={pathname === '/about-us' ? 'is-active' : ''} onClick={handleLinkClick}>About Us</Link>
-                  <Link href="/manufacturing" className={pathname === '/manufacturing' ? 'is-active' : ''} onClick={handleLinkClick}>Manufacturing Process</Link>
-                  <Link href="/private-label" className={pathname === '/private-label' ? 'is-active' : ''} onClick={handleLinkClick}>Private Label Services</Link>
+                  <Link href="/manufacturing-process" className={pathname === '/manufacturing-process' || pathname === '/manufacturing' ? 'is-active' : ''} onClick={handleLinkClick}>Manufacturing Process</Link>
+                  <Link href="/private-label-manufacturing" className={pathname === '/private-label-manufacturing' || pathname === '/private-label' ? 'is-active' : ''} onClick={handleLinkClick}>Private Label Services</Link>
                 </div>
               </div>
 
@@ -227,14 +228,14 @@ export default function Navbar() {
                   <Link href="/custom-hoodies" className={pathname === '/custom-hoodies' ? 'is-active' : ''} onClick={handleLinkClick}>Heavyweight Hoodies &amp; Fleece</Link>
                   <Link href="/streetwear" className={pathname === '/streetwear' ? 'is-active' : ''} onClick={handleLinkClick}>Streetwear &amp; Outerwear</Link>
                   <Link href="/fitness-wear" className={pathname === '/fitness-wear' ? 'is-active' : ''} onClick={handleLinkClick}>Fitness &amp; Activewear</Link>
-                  <Link href="/boxing-gear" className={pathname === '/boxing-gear' ? 'is-active' : ''} onClick={handleLinkClick}>Boxing Gloves &amp; Fight Gear</Link>
+                  <Link href="/boxing-gear-manufacturer" className={pathname === '/boxing-gear-manufacturer' || pathname === '/boxing-gear' ? 'is-active' : ''} onClick={handleLinkClick}>Boxing Gloves &amp; Fight Gear</Link>
                   <Link href="/mma-gear" className={pathname === '/mma-gear' ? 'is-active' : ''} onClick={handleLinkClick}>MMA, BJJ Gis &amp; Rashguards</Link>
                   <Link href="/tracksuits" className={pathname === '/tracksuits' ? 'is-active' : ''} onClick={handleLinkClick}>Tracksuits &amp; Warmups</Link>
                   <Link href="/sportswear" className={pathname === '/sportswear' ? 'is-active' : ''} onClick={handleLinkClick}>Sublimated Teamwear &amp; Kits</Link>
                   <Link href="/compression-wear" className={pathname === '/compression-wear' ? 'is-active' : ''} onClick={handleLinkClick}>Compression &amp; Baselayers</Link>
                   <Link href="/custom-jeans" className={pathname === '/custom-jeans' ? 'is-active' : ''} onClick={handleLinkClick}>Custom Denim &amp; Jeans</Link>
-                  <Link href="/private-label" className={pathname === '/private-label' ? 'is-active' : ''} onClick={handleLinkClick}>Private Label Trims &amp; Packaging</Link>
-                  <Link href="/products" className={pathname?.startsWith('/products') ? 'is-active' : ''} onClick={handleLinkClick} style={{ fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                  <Link href="/private-label-manufacturing" className={pathname === '/private-label-manufacturing' || pathname === '/private-label' ? 'is-active' : ''} onClick={handleLinkClick}>Private Label Trims &amp; Packaging</Link>
+                  <Link href="/product-catalog" className={pathname?.startsWith('/product-catalog') || pathname?.startsWith('/products') ? 'is-active' : ''} onClick={handleLinkClick} style={{ fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
                     <span>All Products Catalog</span>
                     <ArrowRightIcon size={13} />
                   </Link>
@@ -249,15 +250,15 @@ export default function Navbar() {
                 Blog
               </Link>
 
-              <Link className={`nav-link ${isContact ? 'is-active' : ''}`} href="/contact" onClick={handleLinkClick}>
-                Contact
+              <Link className={`nav-link ${isContact ? 'is-active' : ''}`} href="/contact-us" onClick={handleLinkClick}>
+                Contact Us
               </Link>
 
               <div style={{ padding: '8px 12px' }} className="nav-mobile-currency">
                 <CurrencySelector />
               </div>
 
-              <Link className="btn btn-primary nav-mobile-cta" href="/contact" onClick={handleLinkClick}>
+              <Link className="btn btn-primary nav-mobile-cta" href="/contact-us" onClick={handleLinkClick}>
                 Request a Quote
               </Link>
             </nav>
@@ -266,7 +267,7 @@ export default function Navbar() {
           {/* Right Action */}
           <div className="nav-right">
             <CurrencySelector compact />
-            <Link href="/contact" className="btn btn-primary" style={{ padding: '8px 16px', fontSize: '13px', minHeight: '38px', whiteSpace: 'nowrap' }}>
+            <Link href="/contact-us" className="btn btn-primary" style={{ padding: '8px 16px', fontSize: '13px', minHeight: '38px', whiteSpace: 'nowrap' }}>
               Request a Quote
             </Link>
           </div>

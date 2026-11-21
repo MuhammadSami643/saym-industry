@@ -15,12 +15,12 @@ export const metadata: Metadata = {
     "apparel export inquiry Pakistan"
   ],
   alternates: {
-    canonical: '/contact',
+    canonical: '/contact-us',
   },
   openGraph: {
     title: "Contact Us | Bin Rasool Enterprises Sialkot",
     description: "Get in touch for custom sportswear, fitness wear, boxing gear and denim manufacturing inquiries.",
-    url: "/contact",
+    url: "/contact-us",
     images: [{ url: "/images/site/1776603661_home-hero-slider-image-1.webp", width: 1200, height: 630 }],
   },
 };

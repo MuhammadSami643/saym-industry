@@ -8,12 +8,12 @@ export const metadata: Metadata = {
     title: "Manufacturing Capabilities & Process | Bin Rasool Enterprises Pakistan",
     description: "Explore Bin Rasool Enterprises's activewear manufacturing capabilities in Sialkot, Pakistan. Technical fabric sourcing, pattern making, cutting, stitching, printing, embroidery, QC and worldwide export.",
     alternates: {
-        canonical: '/manufacturing',
+        canonical: '/manufacturing-process',
     },
     openGraph: {
         title: "Apparel Factory Capabilities Sialkot | Bin Rasool Enterprises",
         description: "60,000+ pcs monthly apparel production, AQL 2.5 quality control, 4-needle flatlock stitching and custom private label packaging.",
-        url: "/manufacturing",
+        url: "/manufacturing-process",
         images: [{ url: "/images/site/1776603661_home-hero-slider-image-1.webp", width: 1200, height: 630 }],
     },
 };
@@ -430,7 +430,7 @@ export default function ManufacturingPage() {
                                 <p>Send your tech pack, sample reference or branding requirements. We will provide pricing, MOQ guidance and sample timelines.</p>
                             </div>
                             <div className="home-cta-actions">
-                                <Link href="/contact" className="btn btn-primary">
+                                <Link href="/contact-us" className="btn btn-primary">
                                     Start Inquiry
                                 </Link>
                             </div>

@@ -4,6 +4,41 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: '/contact',
+        destination: '/contact-us',
+        permanent: true,
+      },
+      {
+        source: '/get-quote',
+        destination: '/contact-us',
+        permanent: true,
+      },
+      {
+        source: '/products',
+        destination: '/product-catalog',
+        permanent: true,
+      },
+      {
+        source: '/categories',
+        destination: '/product-catalog',
+        permanent: true,
+      },
+      {
+        source: '/manufacturing',
+        destination: '/manufacturing-process',
+        permanent: true,
+      },
+      {
+        source: '/boxing-gear-manufacturer-bulk',
+        destination: '/boxing-gear-manufacturer',
+        permanent: true,
+      },
+      {
+        source: '/private-label',
+        destination: '/private-label-manufacturing',
+        permanent: true,
+      },
+      {
         source: '/sportswear-manufacturer-pakistan',
         destination: '/sportswear-manufacturer',
         permanent: true,
@@ -38,23 +73,14 @@ const nextConfig: NextConfig = {
         destination: '/fitness-wear-manufacturer',
         permanent: true,
       },
-      {
-        source: '/get-quote',
-        destination: '/contact',
-        permanent: true,
-      },
     ];
   },
   async rewrites() {
     return [
-      { source: '/categories', destination: '/products' },
-      { source: '/product-catalog', destination: '/products' },
-      { source: '/contact-us', destination: '/contact' },
-      { source: '/manufacturing-capabilities', destination: '/manufacturing' },
-      { source: '/private-label-manufacturing', destination: '/private-label' },
-      { source: '/sampling-process', destination: '/manufacturing' },
-      { source: '/quality-control', destination: '/manufacturing' },
-      { source: '/shipping-export', destination: '/manufacturing' },
+      { source: '/manufacturing-capabilities', destination: '/manufacturing-process' },
+      { source: '/sampling-process', destination: '/manufacturing-process' },
+      { source: '/quality-control', destination: '/manufacturing-process' },
+      { source: '/shipping-export', destination: '/manufacturing-process' },
       
       // Clean Category Rewrites
       { source: '/hoodies', destination: '/hoodies-manufacturer' },
@@ -63,37 +89,36 @@ const nextConfig: NextConfig = {
       { source: '/jeans', destination: '/jeans-manufacturer' },
       { source: '/denim', destination: '/jeans-manufacturer' },
       { source: '/custom-jeans', destination: '/jeans-manufacturer' },
-      { source: '/boxing-gear', destination: '/boxing-gear-manufacturer-bulk' },
+      { source: '/boxing-gear', destination: '/boxing-gear-manufacturer' },
       { source: '/boxing-wear', destination: '/boxing-wear-manufacturer' },
-      { source: '/combat-gear', destination: '/boxing-gear-manufacturer-bulk' },
+      { source: '/combat-gear', destination: '/boxing-gear-manufacturer' },
       { source: '/fitness-wear', destination: '/fitness-wear-manufacturer' },
       { source: '/activewear', destination: '/fitness-wear-manufacturer' },
       { source: '/sportswear', destination: '/sportswear-manufacturer' },
       { source: '/tracksuits', destination: '/sportswear-manufacturer' },
-      { source: '/low-moq-activewear-manufacturer', destination: '/private-label' },
-      { source: '/private-label-activewear-manufacturer', destination: '/private-label' },
+      { source: '/low-moq-activewear-manufacturer', destination: '/private-label-manufacturing' },
+      { source: '/private-label-activewear-manufacturer', destination: '/private-label-manufacturing' },
       { source: '/custom-activewear-manufacturer', destination: '/fitness-wear-manufacturer' },
       { source: '/custom-leggings-manufacturer', destination: '/fitness-wear-manufacturer' },
       { source: '/custom-sports-bra-manufacturer', destination: '/fitness-wear-manufacturer' },
       { source: '/private-label-gym-wear-manufacturer', destination: '/fitness-wear-manufacturer' },
       { source: '/private-label-fitness-wear-manufacturer', destination: '/fitness-wear-manufacturer' },
-      { source: '/oem-activewear-manufacturer', destination: '/private-label' },
-      { source: '/oem-gym-wear-manufacturer', destination: '/private-label' },
-      { source: '/white-label-activewear-manufacturer', destination: '/private-label' },
+      { source: '/oem-activewear-manufacturer', destination: '/private-label-manufacturing' },
+      { source: '/oem-gym-wear-manufacturer', destination: '/private-label-manufacturing' },
+      { source: '/white-label-activewear-manufacturer', destination: '/private-label-manufacturing' },
       { source: '/custom-athleisure-manufacturer', destination: '/fitness-wear-manufacturer' },
-      { source: '/activewear-manufacturer-for-fitness-influencers', destination: '/private-label' },
-      { source: '/activewear-manufacturer-for-gym-owners', destination: '/private-label' },
-      { source: '/activewear-manufacturer-for-small-brands', destination: '/private-label' },
-      { source: '/sustainable-activewear-manufacturer-pakistan', destination: '/manufacturing' },
+      { source: '/activewear-manufacturer-for-fitness-influencers', destination: '/private-label-manufacturing' },
+      { source: '/activewear-manufacturer-for-gym-owners', destination: '/private-label-manufacturing' },
+      { source: '/activewear-manufacturer-for-small-brands', destination: '/private-label-manufacturing' },
+      { source: '/sustainable-activewear-manufacturer-pakistan', destination: '/manufacturing-process' },
       { source: '/gym-wear-manufacturer-pakistan', destination: '/fitness-wear-manufacturer' },
       { source: '/activewear-manufacturer-sialkot', destination: '/fitness-wear-manufacturer' },
       { source: '/leggings-manufacturer-pakistan', destination: '/fitness-wear-manufacturer' },
       { source: '/sports-bra-manufacturer-pakistan', destination: '/fitness-wear-manufacturer' },
       { source: '/yoga-wear-manufacturer-pakistan', destination: '/fitness-wear-manufacturer' },
-      { source: '/wholesale-activewear-suppliers-uk', destination: '/private-label' },
-      { source: '/wholesale-activewear-suppliers-usa', destination: '/private-label' },
-      { source: '/wholesale-fitness-apparel-suppliers-europe', destination: '/private-label' },
-      { source: '/private-label-activewear-manufacturer-australia', destination: '/private-label' },
+      { source: '/wholesale-activewear-suppliers-uk', destination: '/private-label-manufacturing' },
+      { source: '/wholesale-activewear-suppliers-usa', destination: '/private-label-manufacturing' },
+      { source: '/wholesale-fitness-apparel-suppliers-europe', destination: '/private-label-manufacturing' },
 
       // High-Converting Export Niche Rewrites:
       // 1. Martial Arts & MMA Combat Gear
@@ -125,7 +150,7 @@ const nextConfig: NextConfig = {
       { source: '/puffer-jackets-manufacturer-bulk', destination: '/streetwear-manufacturer' },
       { source: '/windbreaker-jackets-manufacturer', destination: '/streetwear-manufacturer' },
 
-      { source: '/fitness-wear-manufacturer/joggers/:path*', destination: '/products' },
+      { source: '/fitness-wear-manufacturer/joggers/:path*', destination: '/product-catalog' },
     ];
   },
 };

@@ -27,7 +27,7 @@ interface OrderRecord {
   estimatedRemainingTime: string;
   carrier: string;
   trackingNumber: string;
-  overallStatus: 'Tech Pack' | 'Cutting' | 'Stitching & Branding' | 'Quality Control' | 'Steam Pressing' | 'Packaging' | 'Dispatched';
+  overallStatus: 'Tech Pack' | 'Cutting' | 'Stitching & Branding' | 'Quality Control' | 'Steam Pressing' | 'Packaging' | 'Dispatched' | 'Delivered' | 'Completed';
   milestones: OrderMilestone[];
 }
 
@@ -108,6 +108,15 @@ const DEMO_ORDERS: Record<string, OrderRecord> = {
         active: false,
         date: 'Est. Nov 18, 2026',
         estimatedDuration: '1-2 Days'
+      },
+      {
+        stage: '08',
+        title: 'Delivered',
+        desc: 'Shipment delivered to client address. Order completed.',
+        completed: false,
+        active: false,
+        date: 'Scheduled (Nov 21, 2026)',
+        estimatedDuration: 'Final Step'
       }
     ]
   },
@@ -120,10 +129,10 @@ const DEMO_ORDERS: Record<string, OrderRecord> = {
     quantity: '4 Sets (Prototyping & Fit Verification)',
     fabricSpec: '75% Micro-Nylon / 25% Spandex, 4-Way Stretch Compression',
     targetDispatch: 'November 12, 2026',
-    estimatedRemainingTime: 'Completed & Dispatched via Air Express',
+    estimatedRemainingTime: 'Completed & Delivered to Client',
     carrier: 'FedEx Priority Express',
     trackingNumber: 'FDX-8730991204-GB',
-    overallStatus: 'Dispatched',
+    overallStatus: 'Delivered',
     milestones: [
       {
         stage: '01',
@@ -187,14 +196,68 @@ const DEMO_ORDERS: Record<string, OrderRecord> = {
         active: false,
         date: 'Nov 11, 2026',
         estimatedDuration: '3-4 Days Global'
+      },
+      {
+        stage: '08',
+        title: 'Delivered',
+        desc: 'Package delivered and signed for. Order completed.',
+        completed: true,
+        active: false,
+        date: 'Nov 14, 2026',
+        estimatedDuration: 'Completed'
       }
     ]
   }
 };
 
+const STANDARD_FACTORY_STAGES = [
+  {
+    stage: '01',
+    title: 'Tech Pack Verification & Fabric Procurement',
+    desc: 'Pattern review, Pantone color lab dips and mill fabric batch procurement & testing.',
+    date: 'Stage 01'
+  },
+  {
+    stage: '02',
+    title: 'CAD Pattern Grading & Precision Cutting',
+    desc: 'Computerized size grading (XS–3XL), marker optimization and automated fabric cutting.',
+    date: 'Stage 02'
+  },
+  {
+    stage: '03',
+    title: 'Cut & Sew Assembly Line (In-Line AQL Inspection)',
+    desc: '4-needle flatlock assembly, screen printing, 3D embroidery and custom trim placement.',
+    date: 'Stage 03'
+  },
+  {
+    stage: '04',
+    title: 'AQL 2.5 Quality Audit & Seam Tolerance Checks',
+    desc: 'Measurement audit against approved golden sample, seam pull test and lab check.',
+    date: 'Stage 04'
+  },
+  {
+    stage: '05',
+    title: 'Garment Finishing & Industrial Steam Pressing',
+    desc: 'Vacuum steam tunnel finishing, crease removal, thread trimming and shape stabilization.',
+    date: 'Stage 05'
+  },
+  {
+    stage: '06',
+    title: 'Custom Polybagging, Export Boxing & Courier Dispatch',
+    desc: 'Individual frosted polybags, barcode labeling, export carton packing and DHL air handover.',
+    date: 'Stage 06'
+  },
+  {
+    stage: '07',
+    title: 'Delivered',
+    desc: 'Consignment delivered to client destination. Order completed.',
+    date: 'Stage 07'
+  }
+];
+
 export default function TrackOrderPage() {
   const [searchInput, setSearchInput] = useState('');
-  const [currentOrder, setCurrentOrder] = useState<OrderRecord | null>(DEMO_ORDERS['BRE-2026-9014']);
+  const [currentOrder, setCurrentOrder] = useState<OrderRecord | null>(null);
   const [errorMsg, setErrorMsg] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -238,86 +301,8 @@ export default function TrackOrderPage() {
       return;
     }
 
-    // Default active batch simulation for new queries
-    setCurrentOrder({
-      orderId: query,
-      clientName: 'Valued OEM Buyer',
-      brand: 'International Client Partner',
-      country: 'Worldwide Air/Sea Cargo',
-      item: 'Custom Cut & Sew Production Batch',
-      quantity: 'Active Batch',
-      fabricSpec: 'Factory Sourced Certified Mill Fabric',
-      targetDispatch: 'Est. 14 Working Days',
-      estimatedRemainingTime: 'Approx. 8-10 Working Days Total',
-      carrier: 'DHL / FedEx International',
-      trackingNumber: `AWB-${query}-PK`,
-      overallStatus: 'Cutting',
-      milestones: [
-        {
-          stage: '01',
-          title: 'Tech Pack Verification & Fabric Procurement',
-          desc: 'Yarn sourced and lab-dip swatches verified against Pantone standard.',
-          completed: true,
-          active: false,
-          date: 'Completed',
-          estimatedDuration: '3 Days'
-        },
-        {
-          stage: '02',
-          title: 'Pattern CAD Grading & Precision Fabric Cutting',
-          desc: 'Automated fabric layout and cutting table processing.',
-          completed: false,
-          active: true,
-          date: 'In Progress',
-          estimatedDuration: '4 Days'
-        },
-        {
-          stage: '03',
-          title: 'Industrial Stitching & Private Label Printing',
-          desc: 'Assembly line sewing, custom inner tags and decorative embroidery.',
-          completed: false,
-          active: false,
-          date: 'Scheduled',
-          estimatedDuration: '5-7 Days'
-        },
-        {
-          stage: '04',
-          title: 'AQL 2.5 Quality Audit & Seam Strength Check',
-          desc: 'Full measurement tolerance inspection and lab testing.',
-          completed: false,
-          active: false,
-          date: 'Scheduled',
-          estimatedDuration: '2 Days'
-        },
-        {
-          stage: '05',
-          title: 'Industrial Steam Pressing',
-          desc: 'Vacuum steam ironing, crease removal, thread trimming and garment shape stabilization.',
-          completed: false,
-          active: false,
-          date: 'Scheduled',
-          estimatedDuration: '24-48 Hours'
-        },
-        {
-          stage: '06',
-          title: 'Custom Retail Packaging',
-          desc: 'Brand woven tags, hangtags, barcodes, individual frosted polybags and master cartons.',
-          completed: false,
-          active: false,
-          date: 'Scheduled',
-          estimatedDuration: '24 Hours'
-        },
-        {
-          stage: '07',
-          title: 'Customs Clearance & Air Cargo Dispatch',
-          desc: 'Dry Port handover, DHL/FedEx AWB tracking issuance and air freight departure.',
-          completed: false,
-          active: false,
-          date: 'Scheduled',
-          estimatedDuration: '1-2 Days'
-        }
-      ]
-    });
+    setErrorMsg(`No active production batch found for "${query}". Please verify your Order ID or contact factory support.`);
+    setCurrentOrder(null);
     setLoading(false);
   };
 
@@ -369,7 +354,7 @@ export default function TrackOrderPage() {
                 type="text"
                 value={searchInput}
                 onChange={e => setSearchInput(e.target.value)}
-                placeholder="Enter Production or Sample ID (e.g. BRE-2026-9014 or BRE-SAMPLE-104)"
+                placeholder="Production Order ID (e.g. BRE-2026-9014)"
                 style={{
                   flex: '1 1 280px',
                   padding: '11px 16px',
@@ -382,6 +367,7 @@ export default function TrackOrderPage() {
               />
               <button
                 type="submit"
+                disabled={loading}
                 className="btn btn-primary"
                 style={{
                   padding: '11px 22px',
@@ -391,56 +377,13 @@ export default function TrackOrderPage() {
                   background: 'var(--brand-orange)',
                   color: 'var(--brand-black)',
                   border: 'none',
-                  cursor: 'pointer',
+                  cursor: loading ? 'not-allowed' : 'pointer',
                   boxShadow: '0 3px 12px rgba(243, 166, 38, 0.3)',
                 }}
               >
-                Track Production
+                {loading ? 'Searching...' : 'Track Production'}
               </button>
             </form>
-
-            {/* Quick Demo Batch Chips */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px', flexWrap: 'wrap', fontSize: '12px', color: '#64748b' }}>
-              <span style={{ fontWeight: 600 }}>Demo Batches:</span>
-              <button
-                type="button"
-                onClick={() => { setSearchInput('BRE-2026-9014'); setCurrentOrder(DEMO_ORDERS['BRE-2026-9014']); }}
-                style={{
-                  background: '#f8fafc',
-                  border: '1px solid #e2e8f0',
-                  padding: '4px 12px',
-                  borderRadius: '999px',
-                  cursor: 'pointer',
-                  fontWeight: 600,
-                  color: '#334155',
-                  fontSize: '12px',
-                  transition: 'all 0.15s ease',
-                }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = '#f3a626'; e.currentTarget.style.color = '#0f172a'; }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = '#e2e8f0'; e.currentTarget.style.color = '#334155'; }}
-              >
-                BRE-2026-9014 (Bulk Hoodies)
-              </button>
-              <button
-                type="button"
-                onClick={() => { setSearchInput('BRE-SAMPLE-104'); setCurrentOrder(DEMO_ORDERS['BRE-SAMPLE-104']); }}
-                style={{
-                  background: '#f8fafc',
-                  border: '1px solid #e2e8f0',
-                  padding: '4px 12px',
-                  borderRadius: '999px',
-                  cursor: 'pointer',
-                  fontWeight: 600,
-                  color: '#334155',
-                  fontSize: '12px',
-                  transition: 'all 0.15s ease',
-                }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = '#f3a626'; e.currentTarget.style.color = '#0f172a'; }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = '#e2e8f0'; e.currentTarget.style.color = '#334155'; }}
-              >
-                BRE-SAMPLE-104 (Activewear Sets)
-              </button>
-            </div>
 
             {errorMsg && (
               <div style={{ marginTop: '10px', color: '#ef4444', fontSize: '13px', fontWeight: 600 }}>
@@ -448,6 +391,103 @@ export default function TrackOrderPage() {
               </div>
             )}
           </div>
+
+          {/* Neutral Unmarked Milestones Pipeline (When no specific order is loaded yet) */}
+          {!currentOrder && (
+            <div
+              style={{
+                background: '#ffffff',
+                borderRadius: '14px',
+                border: '1px solid #e2e8f0',
+                boxShadow: '0 4px 20px rgba(15, 23, 42, 0.04)',
+                overflow: 'hidden',
+                padding: '24px 28px 28px',
+              }}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '22px', borderBottom: '1px solid #f1f5f9', paddingBottom: '16px', flexWrap: 'wrap', gap: '8px' }}>
+                <div>
+                  <h3 style={{ fontSize: '15px', fontWeight: 800, color: '#0f172a', margin: 0, textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                    Factory Production Milestones
+                  </h3>
+                  <p style={{ margin: '3px 0 0', fontSize: '13px', color: '#64748b' }}>
+                    Standard multi-stage apparel manufacturing &amp; AQL 2.5 export compliance pipeline.
+                  </p>
+                </div>
+                <span
+                  style={{
+                    fontSize: '11px',
+                    fontWeight: 700,
+                    color: '#64748b',
+                    background: '#f1f5f9',
+                    padding: '4px 12px',
+                    borderRadius: '999px',
+                    border: '1px solid #e2e8f0',
+                  }}
+                >
+                  Factory Standard Sequence
+                </span>
+              </div>
+
+              {/* Neutral Unmarked Milestones List */}
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                {STANDARD_FACTORY_STAGES.map((step, idx) => {
+                  const isLast = idx === STANDARD_FACTORY_STAGES.length - 1;
+
+                  return (
+                    <div key={idx} style={{ display: 'flex', gap: '14px', alignItems: 'flex-start', minHeight: isLast ? 'auto' : '64px' }}>
+                      {/* Milestone Neutral Node + Line */}
+                      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '28px', flexShrink: 0 }}>
+                        <div
+                          style={{
+                            width: '28px',
+                            height: '28px',
+                            borderRadius: '50%',
+                            background: '#f8fafc',
+                            color: '#94a3b8',
+                            border: '1.5px solid #cbd5e1',
+                            display: 'grid',
+                            placeItems: 'center',
+                            fontWeight: 700,
+                            fontSize: '11px',
+                            zIndex: 1,
+                          }}
+                        >
+                          {step.stage}
+                        </div>
+
+                        {!isLast && (
+                          <div
+                            style={{
+                              width: '2px',
+                              flex: 1,
+                              minHeight: '36px',
+                              background: '#e2e8f0',
+                              margin: '3px 0',
+                            }}
+                          />
+                        )}
+                      </div>
+
+                      {/* Milestone Text Row */}
+                      <div style={{ flex: 1, paddingBottom: isLast ? '0' : '16px' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '6px' }}>
+                          <h4 style={{ margin: 0, fontSize: '14.5px', fontWeight: 600, color: '#334155' }}>
+                            {step.title}
+                          </h4>
+                          <span style={{ fontSize: '11.5px', fontWeight: 600, color: '#94a3b8' }}>
+                            {step.date}
+                          </span>
+                        </div>
+                        <p style={{ margin: '3px 0 0', fontSize: '13px', color: '#64748b', lineHeight: 1.45 }}>
+                          {step.desc}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
 
           {/* Order Details Display Card */}
           {currentOrder && (
@@ -480,8 +520,8 @@ export default function TrackOrderPage() {
                     </span>
                     <span
                       style={{
-                        background: currentOrder.overallStatus === 'Dispatched' ? '#10b981' : '#f3a626',
-                        color: currentOrder.overallStatus === 'Dispatched' ? '#ffffff' : '#0f172a',
+                        background: (currentOrder.overallStatus === 'Dispatched' || currentOrder.overallStatus === 'Delivered' || currentOrder.overallStatus === 'Completed') ? '#10b981' : '#f3a626',
+                        color: (currentOrder.overallStatus === 'Dispatched' || currentOrder.overallStatus === 'Delivered' || currentOrder.overallStatus === 'Completed') ? '#ffffff' : '#0f172a',
                         fontSize: '11px',
                         fontWeight: 900,
                         padding: '3px 10px',
@@ -490,7 +530,11 @@ export default function TrackOrderPage() {
                         letterSpacing: '0.04em',
                       }}
                     >
-                      {currentOrder.overallStatus === 'Dispatched' ? 'Completed & Dispatched' : `Stage: ${currentOrder.overallStatus}`}
+                      {currentOrder.overallStatus === 'Delivered' || currentOrder.overallStatus === 'Completed'
+                        ? '✓ Delivered & Completed'
+                        : currentOrder.overallStatus === 'Dispatched'
+                        ? 'Completed & Dispatched'
+                        : `Stage: ${currentOrder.overallStatus}`}
                     </span>
                   </div>
                   <div style={{ fontSize: '13px', color: '#cbd5e1', marginTop: '4px' }}>

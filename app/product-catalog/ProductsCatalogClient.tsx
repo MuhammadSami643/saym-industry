@@ -378,7 +378,7 @@ export default function ProductsCatalogClient({ initialProducts }: ProductsCatal
                   </button>
 
                   <Link
-                    href={`/contact?product=${encodeURIComponent(p.name)}`}
+                    href={`/contact-us?product=${encodeURIComponent(p.name)}`}
                     className="btn btn-primary"
                     style={{
                       padding: '8px 12px',

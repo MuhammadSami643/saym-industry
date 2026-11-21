@@ -82,7 +82,7 @@ export default function Footer() {
             <p className="footer-title">Company</p>
             <ul className="footer-list">
               <li><Link href="/about-us">About Bin Rasool Enterprises</Link></li>
-              <li><Link href="/manufacturing">Manufacturing</Link></li>
+              <li><Link href="/manufacturing-process">Manufacturing Process</Link></li>
               <li><Link href="/about-us#quality">Quality Control</Link></li>
               <li><Link href="/about-us#shipping">Shipping &amp; Export</Link></li>
               <li><Link href="/blog">Insights</Link></li>
@@ -92,12 +92,12 @@ export default function Footer() {
           <div>
             <p className="footer-title">Services</p>
             <ul className="footer-list">
-              <li><Link href="/private-label">Private Label</Link></li>
+              <li><Link href="/private-label-manufacturing">Private Label</Link></li>
               <li><Link href="/fitness-wear">Custom Activewear</Link></li>
               <li><Link href="/linesheet">📄 2026 Line Sheet (PDF)</Link></li>
-              <li><Link href="/private-label#low-moq">Low MOQ Production</Link></li>
-              <li><Link href="/manufacturing#sampling">Sampling</Link></li>
-              <li><Link href="/products">Product Catalog</Link></li>
+              <li><Link href="/private-label-manufacturing#low-moq">Low MOQ Production</Link></li>
+              <li><Link href="/manufacturing-process#sampling">Sampling</Link></li>
+              <li><Link href="/product-catalog">Product Catalog</Link></li>
             </ul>
           </div>
 
@@ -120,7 +120,7 @@ export default function Footer() {
                 <a href="mailto:info@binrasoolenterprises.com">General: info@binrasoolenterprises.com</a>
               </div>
               <div style={{ marginTop: '6px' }}>
-                <Link href="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                <Link href="/contact-us" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
                   <span>Request a manufacturing quote</span>
                   <ArrowRightIcon size={13} />
                 </Link>

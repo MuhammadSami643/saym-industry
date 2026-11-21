@@ -272,7 +272,7 @@ export default function Home() {
                     </article>
                             </div>
             <div style={{ 'marginTop': '28px' }}>
-                <a href="/manufacturing" className="btn btn-primary">Explore Manufacturing Capabilities</a>
+                <a href="/manufacturing-process" className="btn btn-primary">Explore Manufacturing Capabilities</a>
             </div>
         </div>
     </section>
@@ -287,7 +287,7 @@ export default function Home() {
                         Fabric choice affects stretch, recovery, opacity, moisture handling, hand feel, print compatibility and cost. We discuss suitable constructions and blends against your product brief instead of forcing one material across every style.
                     </p>
                     <p className="muted">
-                        Brands that need original silhouettes, product-specific fit, custom panels or more technical construction can review our <a className="context-link" href="/custom-activewear-manufacturer">custom activewear manufacturer</a> capabilities. For complete garment labels, tags, packaging and brand presentation, see our <a className="context-link" href="/private-label">private label manufacturing</a> process.
+                        Brands that need original silhouettes, product-specific fit, custom panels or more technical construction can review our <a className="context-link" href="/custom-activewear-manufacturer">custom activewear manufacturer</a> capabilities. For complete garment labels, tags, packaging and brand presentation, see our <a className="context-link" href="/private-label-manufacturing">private label manufacturing</a> process.
                     </p>
                     <ul className="fabric-list">
                                                     <li>Polyester and spandex performance blends</li>
@@ -309,7 +309,7 @@ export default function Home() {
                         <li>Custom colors, panels, trims and size ranges</li>
                         <li>Export carton markings and packing instructions</li>
                     </ul>
-                    <a href="/private-label" className="btn btn-dark" style={{ 'marginTop': '24px' }}>View Private Label Services</a>
+                    <a href="/private-label-manufacturing" className="btn btn-dark" style={{ 'marginTop': '24px' }}>View Private Label Services</a>
                 </aside>
             </div>
         </div>
@@ -375,7 +375,7 @@ export default function Home() {
                 </article>
             </div>
             <div style={{ 'marginTop': '28px' }}>
-                <a href="/contact" className="btn btn-primary" style={{ marginRight: '12px' }}>Request Sample Quote</a>
+                <a href="/contact-us" className="btn btn-primary" style={{ marginRight: '12px' }}>Request Sample Quote</a>
                 <a href="/sampling-process" className="btn btn-dark">Review Sampling Process</a>
             </div>
         </div>
@@ -415,7 +415,7 @@ export default function Home() {
                     </p>
                     <div style={{ 'display': 'flex', 'gap': '10px', 'flexWrap': 'wrap', 'marginTop': '24px' }}>
                         <a href="/shipping-export" className="btn btn-primary">View Shipping and Export Support</a>
-                        <a href="/contact" className="btn btn-outline" style={{ 'borderColor': 'rgba(255,255,255,.35)', 'color': '#fff' }}>Discuss Your Destination</a>
+                        <a href="/contact-us" className="btn btn-outline" style={{ 'borderColor': 'rgba(255,255,255,.35)', 'color': '#fff' }}>Discuss Your Destination</a>
                     </div>
                 </div>
             </div>
@@ -429,7 +429,7 @@ export default function Home() {
                         <span className="home-kicker">Manufacturing examples</span>
                         <h2>Explore private label product options</h2>
                     </div>
-                    <a href="/products" className="btn btn-dark">Browse All Products</a>
+                    <a href="/product-catalog" className="btn btn-dark">Browse All Products</a>
                 </div>
                 <div className="home-card-grid">
                                             <a href="/fitness-wear-manufacturer/joggers/slim-fit-gym-joggers" className="home-card product-card" aria-label="View Slim Fit Gym Joggers">
@@ -474,7 +474,7 @@ export default function Home() {
                     <p>Send your product references or tech packs, quantity, fabric direction, size range, branding needs and delivery country. We will help you assess MOQ, sampling and the most practical production route.</p>
                 </div>
                 <div className="home-cta-actions">
-                    <a href="/contact" className="btn btn-primary">Request a Quote</a>
+                    <a href="/contact-us" className="btn btn-primary">Request a Quote</a>
                     <a href="https://wa.me/923133599241" className="btn btn-outline" target="_blank" rel="noopener" data-track-location="home_cta">Chat on WhatsApp</a>
                     <span className="cta-microcopy">Startup-friendly consultation. No oversized opening-order pressure.</span>
                 </div>

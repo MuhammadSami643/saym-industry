@@ -491,6 +491,75 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
     ]
   },
 
+  australia: {
+    slug: 'private-label-activewear-manufacturer-australia',
+    marketName: 'Australia Brands',
+    countryName: 'Australia & New Zealand',
+    badge: 'Australia & New Zealand Export Program • Sialkot Factory',
+    title: 'Private Label Activewear Manufacturer for Australia Brands',
+    description: 'Factory-direct activewear manufacturing for Australian gym wear labels, fitness influencers and outdoor performance brands across Sydney, Melbourne, Brisbane and Perth. Moisture-wicking UPF 50+ fabrics, custom trims and fast DHL air express.',
+    keywords: [
+      'private label activewear manufacturer australia',
+      'gym wear manufacturer sydney',
+      'custom activewear melbourne',
+      'australian sportswear clothing manufacturer',
+      'low moq activewear australia',
+      'fitness apparel manufacturer brisbane',
+      'perth custom gym wear supplier',
+      'upf 50 activewear manufacturer pakistan',
+      'sialkot activewear manufacturer australia'
+    ],
+    metrics: [
+      { val: '50 Pcs', lbl: 'Accessible Aussie MOQ' },
+      { val: '7-10 Days', lbl: 'DHL Sample Delivery' },
+      { val: '4-6 Days', lbl: 'Express Air to Sydney/Mel' },
+      { val: 'UPF 50+', lbl: 'UV Sun Protection Testing' }
+    ],
+    marketFocus: {
+      heading: 'Engineered for Australian Outdoor Fitness, Climate & High-Quality Standards',
+      points: [
+        {
+          title: 'UPF 50+ Sun Protection Fabrics',
+          desc: 'High-density circular knits and micro-mesh blends tested to block 98%+ of harmful UV rays, ideal for outdoor training, running and beach fitness.'
+        },
+        {
+          title: 'Southern Hemisphere Seasonal Sourcing',
+          desc: 'We synchronize production cycles with Australian summer and winter schedules, delivering Spring/Summer collections ahead of Q4 launch windows.'
+        },
+        {
+          title: 'Sweat-Wicking & Anti-Chafe Construction',
+          desc: '4-needle flatlock ergonomic seams and antibacterial silver-ion finishes engineered for high-humidity coastal and outback performance.'
+        },
+        {
+          title: 'Express Door-to-Door Delivery Across Australia',
+          desc: 'Direct shipments via DHL Express Air and consolidated sea freight to Sydney (Port Botany), Melbourne, Brisbane and Fremantle ports.'
+        }
+      ]
+    },
+    commercials: {
+      moq: '50 pieces per style/colorway across standard Australian sizes.',
+      sampleLeadTime: '7 to 10 business days dispatched via DHL Express with tracking.',
+      bulkLeadTime: '3 to 4 weeks after physical golden sample approval.',
+      shippingMode: 'DHL Express Air (4-6 days) or Consolidated Ocean Freight (18-22 days).',
+      paymentTerms: 'Bank Wire (T/T), AUD invoicing available upon request.',
+      compliance: 'AS/NZS 4399 (Sun Protection), OEKO-TEX Standard 100.'
+    },
+    faqs: [
+      {
+        question: "How long does shipping take to Australia (Sydney, Melbourne, Brisbane)?",
+        answer: "Express DHL courier shipments arrive directly at your doorstep or 3PL warehouse within 4 to 6 business days. For bulk container shipments, sea freight transit takes approximately 18 to 22 days to Australian ports."
+      },
+      {
+        question: "Can you manufacture activewear with UPF 50+ sun protection?",
+        answer: "Yes. Given the intense Australian sun, we source certified UV-blocking synthetic and blended activewear fabrics that achieve UPF 50+ ratings according to AS/NZS standards."
+      },
+      {
+        question: "What is your MOQ for Australian startup brands?",
+        answer: "Our minimum order quantity starts at just 50 pieces per style, split across standard Australian sizes (XS to 2XL), allowing new labels to launch without massive initial risk."
+      }
+    ]
+  },
+
   startups: {
     slug: 'activewear-manufacturer-for-startups',
     marketName: 'Startup Brands',
@@ -559,3 +628,12 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
     ]
   }
 };
+
+export function getMarketBySlug(slug: string): RegionalMarketConfig | undefined {
+  return Object.values(REGIONAL_MARKETS).find((m) => m.slug === slug);
+}
+
+export function getAllMarketSlugs(): string[] {
+  return Object.values(REGIONAL_MARKETS).map((m) => m.slug);
+}
+

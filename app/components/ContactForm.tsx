@@ -415,7 +415,7 @@ ${notes}
           alignItems: 'center',
           justifyContent: 'center',
           gap: '8px',
-          transition: 'all 0.2s ease',
+          transition: 'none',
         }}
       >
         {loading ? 'Submitting...' : 'Send Inquiry'}

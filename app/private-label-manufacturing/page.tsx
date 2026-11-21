@@ -41,12 +41,12 @@ export const metadata: Metadata = {
     "low MOQ private label clothing"
   ],
   alternates: {
-    canonical: '/private-label',
+    canonical: '/private-label-manufacturing',
   },
   openGraph: {
     title: "Complete Private Label Clothing & Packaging Factory | Bin Rasool Enterprises",
     description: "Turnkey apparel manufacturing: high density damask woven labels, 400 gsm hangtags, frosted zip polybags, 3D puff embroidery and FBA retail packaging.",
-    url: "/private-label",
+    url: "/private-label-manufacturing",
     images: [{ url: "/images/hero-factory.webp", width: 1200, height: 630 }],
   },
 };
@@ -54,10 +54,8 @@ export const metadata: Metadata = {
 export default function PrivateLabelPage() {
   return (
     <div className="private-label-page">
-      <main style={{ minHeight: '60vh' }}>
-
-        {/* Section 1: Hero (ZYPFIT Reference Pattern) */}
-        <section className="pl-hero">
+      {/* Section 1: Hero (ZYPFIT Reference Pattern) */}
+      <section className="pl-hero">
           <div className="container">
             <BreadcrumbJsonLd
               items={[
@@ -333,7 +331,7 @@ export default function PrivateLabelPage() {
                 <h2>Ready to build your private label apparel line?</h2>
                 <p>Send your logo, product category, reference images, quantity and branding requirements. We will help you plan the right sample and production direction.</p>
               </div>
-              <Link href="/contact" className="btn btn-primary" style={{ whiteSpace: 'nowrap', padding: '14px 28px' }}>
+              <Link href="/contact-us" className="btn btn-primary" style={{ whiteSpace: 'nowrap', padding: '14px 28px' }}>
                 Discuss Your Brand
               </Link>
             </div>
@@ -398,6 +396,11 @@ export default function PrivateLabelPage() {
                 <p className="muted">Private label activewear for Spanish online sellers, studios and growth-stage labels.</p>
                 <span className="category-mfg-link"><span>View Spain Page</span><ArrowRightIcon size={13} /></span>
               </Link>
+              <Link className="pl-category" href="/private-label-activewear-manufacturer-australia">
+                <h3>Australia &amp; NZ Brands</h3>
+                <p className="muted">UPF 50+ sun protection activewear, moisture-wicking gym apparel for Sydney, Melbourne &amp; Brisbane.</p>
+                <span className="category-mfg-link"><span>View Australia Page</span><ArrowRightIcon size={13} /></span>
+              </Link>
               <Link className="pl-category" href="/activewear-manufacturer-for-startups">
                 <h3>Startup Brands</h3>
                 <p className="muted">Low MOQ activewear manufacturing for startup fitness brands and influencers.</p>
@@ -412,16 +415,14 @@ export default function PrivateLabelPage() {
                 <Link href="/fitness-wear-manufacturer-sialkot" className="pl-related-pill">Gym Wear Manufacturer Sialkot</Link>
                 <Link href="/sportswear-manufacturer" className="pl-related-pill">Custom Sportswear Manufacturer</Link>
                 <Link href="/streetwear-manufacturer-pakistan" className="pl-related-pill">Custom Streetwear &amp; Hoodies</Link>
-                <Link href="/boxing-gear-manufacturer-bulk" className="pl-related-pill">Boxing &amp; Fight Wear Manufacturer</Link>
+                <Link href="/boxing-gear-manufacturer" className="pl-related-pill">Boxing &amp; Fight Wear Manufacturer</Link>
                 <Link href="/activewear-manufacturer-for-startups" className="pl-related-pill">Low MOQ Activewear for Startups</Link>
-                <Link href="/manufacturing" className="pl-related-pill">Apparel Manufacturing Process</Link>
-                <Link href="/products" className="pl-related-pill">Full Product Catalog</Link>
+                <Link href="/manufacturing-process" className="pl-related-pill">Apparel Manufacturing Process</Link>
+                <Link href="/product-catalog" className="pl-related-pill">Full Product Catalog</Link>
               </div>
             </div>
           </div>
         </section>
-
-      </main>
     </div>
   );
 }

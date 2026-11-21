@@ -17,7 +17,7 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
   return (
     <CurrencyProvider>
       <Navbar />
-      <main style={{ minHeight: '80vh', paddingTop: '85px' }}>{children}</main>
+      <main style={{ minHeight: '80vh' }}>{children}</main>
       <Footer />
       <FloatingWhatsAppSelector />
     </CurrencyProvider>

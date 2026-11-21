@@ -111,7 +111,7 @@ const FITNESS_SPECS = [
 ];
 
 const RELATED_SERVICES = [
-  { name: "Private Label Activewear", href: "/private-label" },
+  { name: "Private Label Activewear", href: "/private-label-manufacturing" },
   { name: "Sportswear Manufacturer", href: "/sportswear-manufacturer" },
   { name: "Boxing Wear Manufacturer", href: "/boxing-wear-manufacturer" },
   { name: "Custom Hoodies & Streetwear", href: "/hoodies-manufacturer" },

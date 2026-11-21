@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 const RELATED_SERVICES = [
   { name: "Streetwear Manufacturer", href: "/streetwear-manufacturer" },
   { name: "Hoodies Manufacturer", href: "/hoodies-manufacturer" },
-  { name: "Private Label Activewear", href: "/private-label" },
+  { name: "Private Label Activewear", href: "/private-label-manufacturing" },
   { name: "Sportswear Manufacturer", href: "/sportswear-manufacturer" },
   { name: "Fitness Wear Manufacturer", href: "/fitness-wear-manufacturer" },
   { name: "Boxing Wear Manufacturer", href: "/boxing-wear-manufacturer" },

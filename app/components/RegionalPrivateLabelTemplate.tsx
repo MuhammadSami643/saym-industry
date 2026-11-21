@@ -38,7 +38,7 @@ export default function RegionalPrivateLabelTemplate({ config }: { config: Regio
             <BreadcrumbJsonLd
               items={[
                 { label: 'Home', href: '/' },
-                { label: 'Private Label', href: '/private-label' },
+                { label: 'Private Label', href: '/private-label-manufacturing' },
                 { label: config.marketName },
               ]}
               style={{ marginBottom: '20px' }}
@@ -211,8 +211,9 @@ export default function RegionalPrivateLabelTemplate({ config }: { config: Regio
               <Link href="/private-label-activewear-manufacturer-netherlands" className="pl-related-pill">Netherlands Importers</Link>
               <Link href="/private-label-activewear-manufacturer-italy" className="pl-related-pill">Italy Boutiques</Link>
               <Link href="/private-label-activewear-manufacturer-spain" className="pl-related-pill">Spain Sports Labels</Link>
+              <Link href="/private-label-activewear-manufacturer-australia" className="pl-related-pill">Australia &amp; NZ</Link>
               <Link href="/activewear-manufacturer-for-startups" className="pl-related-pill">Startup Brand Entry</Link>
-              <Link href="/private-label" className="pl-related-pill" style={{ borderColor: 'var(--brand-orange)' }}>All Private Label Programs</Link>
+              <Link href="/private-label-manufacturing" className="pl-related-pill" style={{ borderColor: 'var(--brand-orange)' }}>All Private Label Programs</Link>
             </div>
           </div>
         </section>
