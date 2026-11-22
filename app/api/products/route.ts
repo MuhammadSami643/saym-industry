@@ -8,7 +8,7 @@ const DEFAULT_PRODUCTS = [
     name: '450 GSM Heavyweight Streetwear Hoodie',
     category: 'Heavyweight Hoodies & Fleece',
     description: 'Custom 450 GSM 100% combed cotton French Terry pullover with double-layer hood, kangaroo pocket and 2x2 ribbed hems.',
-    image_url: '/images/original-generated/streetwear-hoodies.webp',
+    image_url: '/images/catalog/hoodies/heavyweight-pullover-hoodie.webp',
     created_at: new Date().toISOString()
   },
   {
@@ -44,7 +44,7 @@ const DEFAULT_PRODUCTS = [
     name: 'Slim Fit Tapered Gym Joggers',
     category: 'Fitness & Activewear',
     description: 'Custom slim fit gym joggers in 4-way stretch fleece with concealed zipper pockets, metal aglets and embroidered logo.',
-    image_url: '/images/products/1780565647_slim-fit-gym-joggers.webp',
+    image_url: '/images/catalog/tracksuits/tapered-fleece-training-pants.webp',
     created_at: new Date().toISOString()
   },
   {
@@ -52,7 +52,7 @@ const DEFAULT_PRODUCTS = [
     name: 'Seamless High-Waist Gym Leggings Set',
     category: 'Fitness & Activewear',
     description: 'Squat-proof 75/25 Nylon Spandex high-waisted compression leggings and matching cross-back sports bra.',
-    image_url: '/images/categories/1776540259_fitness-wear.webp',
+    image_url: '/images/catalog/fitness-wear/compression-activewear-set.webp',
     created_at: new Date().toISOString()
   },
 
@@ -80,7 +80,7 @@ const DEFAULT_PRODUCTS = [
     name: 'Competition BJJ Gi Kimono (450 GSM)',
     category: 'MMA, BJJ Gis & Rashguards',
     description: '450 GSM pearl weave cotton jacket with 10oz ripstop pants, reinforced knee panels and EVA foam lapel.',
-    image_url: '/images/categories/1780941126_sublimation-sports-apparel.webp',
+    image_url: '/images/catalog/mma-bjj/bjj-gi-kimono-450gsm.webp',
     created_at: new Date().toISOString()
   },
   {
@@ -88,7 +88,7 @@ const DEFAULT_PRODUCTS = [
     name: 'Pro MMA Compression Rashguard',
     category: 'MMA, BJJ Gis & Rashguards',
     description: '85/15 Polyester Spandex 220 GSM rashguard with 6-panel anatomical flatlock stitching and full sublimation graphics.',
-    image_url: '/images/home-next-level/home-category-boxing.webp',
+    image_url: '/images/catalog/mma-bjj/pro-mma-compression-rashguard.webp',
     created_at: new Date().toISOString()
   },
 
@@ -98,7 +98,7 @@ const DEFAULT_PRODUCTS = [
     name: 'Performance Athletic Tracksuit Set',
     category: 'Tracksuits & Warmups',
     description: 'Full-zip athletic polyester tricot tracksuit jacket and tapered warmup pants with custom piping and ribbed cuffs.',
-    image_url: '/images/original-generated/category-tracksuits.webp',
+    image_url: '/images/catalog/tracksuits/mens-athletic-warmup-tracksuit.webp',
     created_at: new Date().toISOString()
   },
   {
@@ -106,7 +106,7 @@ const DEFAULT_PRODUCTS = [
     name: 'Tapered Fleece Training Pants',
     category: 'Tracksuits & Warmups',
     description: '320 GSM cotton-poly fleece training pants with elasticated ankle cuffs, drawstring waist and side zip pockets.',
-    image_url: '/images/catalog/fitness-wear/athletic-training-apparel.webp',
+    image_url: '/images/catalog/tracksuits/tapered-fleece-training-pants.webp',
     created_at: new Date().toISOString()
   },
 
@@ -134,7 +134,7 @@ const DEFAULT_PRODUCTS = [
     name: '4-Way Stretch Compression Baselayer Set',
     category: 'Compression & Baselayers',
     description: '240 GSM warp-knit compression top and tights with graduated muscle support and flatlock anti-chafing seams.',
-    image_url: '/images/home-next-level/hero-slide-3-fitness-activewear.webp',
+    image_url: '/images/catalog/fitness-wear/compression-activewear-set.webp',
     created_at: new Date().toISOString()
   },
 
@@ -144,7 +144,7 @@ const DEFAULT_PRODUCTS = [
     name: 'Raw Selvedge Denim Jeans & Jackets',
     category: 'Custom Denim & Jeans',
     description: '13.5oz ring-spun raw cotton selvedge denim with copper hardware, chainstitched hems and custom leather back patch.',
-    image_url: '/images/categories/1789894942_streetwear.webp',
+    image_url: '/images/catalog/denim-jeans/raw-denim-jeans-stack.webp',
     created_at: new Date().toISOString()
   },
   {
@@ -152,7 +152,7 @@ const DEFAULT_PRODUCTS = [
     name: 'Classic Vintage Washed Tapered Denim',
     category: 'Custom Denim & Jeans',
     description: '12oz comfort stretch denim with authentic stone wash, whiskering, custom embossed rivets and YKK zipper fly.',
-    image_url: '/images/categories/1776540279_sports-wear.webp',
+    image_url: '/images/catalog/denim-jeans/raw-denim-jeans-stack.webp',
     created_at: new Date().toISOString()
   },
 
@@ -162,7 +162,7 @@ const DEFAULT_PRODUCTS = [
     name: 'Custom Damask Neck Labels & Hangtags',
     category: 'Private Label Trims & Packaging',
     description: '50D high-density damask woven neck labels, satin care labels and 400 GSM foil-stamped coated retail hangtags.',
-    image_url: '/images/original-generated/private-label-trims-packaging.webp',
+    image_url: '/images/catalog/factory-production/private-label-packaging-tags.webp',
     created_at: new Date().toISOString()
   },
   {
@@ -170,7 +170,7 @@ const DEFAULT_PRODUCTS = [
     name: 'Custom Frosted EVA Zipper Polybags',
     category: 'Private Label Trims & Packaging',
     description: 'Eco-friendly frosted EVA zipper packaging bags with custom logo print, ventilation holes and Amazon FBA barcodes.',
-    image_url: '/images/home-next-level/hero-slide-5-private-label-craft.webp',
+    image_url: '/images/original-generated/private-label-trims-packaging.webp',
     created_at: new Date().toISOString()
   }
 ];
