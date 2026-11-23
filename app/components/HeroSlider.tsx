@@ -4,11 +4,10 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 const SLIDES = [
-  '/images/site/1776603661_home-hero-slider-image-1.webp',
-  '/images/site/1776603662_home-hero-slider-image-2.webp',
-  '/images/site/1776603680_home-hero-slider-image-3.webp',
-  '/images/site/1776603680_home-hero-slider-image-4.webp',
-  '/images/site/1776603680_home-hero-slider-image-5.webp'
+  '/images/site/hero-slide-factory-craft.webp',
+  '/images/site/hero-slide-streetwear-hoodies.webp',
+  '/images/site/hero-slide-athletic-tracksuits.webp',
+  '/images/site/hero-slide-boxing-combat-gear.webp'
 ];
 
 export default function HeroSlider() {

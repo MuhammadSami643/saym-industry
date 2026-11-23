@@ -186,6 +186,7 @@ export default function Navbar() {
                   <Link href="/about-us" className={pathname === '/about-us' ? 'is-active' : ''} onClick={handleLinkClick}>About Us</Link>
                   <Link href="/manufacturing-process" className={pathname === '/manufacturing-process' || pathname === '/manufacturing' ? 'is-active' : ''} onClick={handleLinkClick}>Manufacturing Process</Link>
                   <Link href="/private-label-manufacturing" className={pathname === '/private-label-manufacturing' || pathname === '/private-label' ? 'is-active' : ''} onClick={handleLinkClick}>Private Label Services</Link>
+                  <Link href="/order-sample" className={pathname === '/order-sample' ? 'is-active' : ''} onClick={handleLinkClick} style={{ color: '#c2410c', fontWeight: 700 }}>Order Sample Prototype (7-10 Days)</Link>
                 </div>
               </div>
 
@@ -244,6 +245,10 @@ export default function Navbar() {
 
               <Link className={`nav-link ${isTrackOrder ? 'is-active' : ''}`} href="/track-order" onClick={handleLinkClick}>
                 Track Production
+              </Link>
+
+              <Link className={`nav-link ${pathname === '/order-sample' ? 'is-active' : ''}`} href="/order-sample" onClick={handleLinkClick} style={{ color: '#c2410c', fontWeight: 700 }}>
+                Order Sample
               </Link>
 
               <Link className={`nav-link ${isBlog ? 'is-active' : ''}`} href="/blog" onClick={handleLinkClick}>

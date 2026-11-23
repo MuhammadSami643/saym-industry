@@ -16,7 +16,7 @@ const DEFAULT_PRODUCTS = [
     name: 'Minimalist French Terry Studio Hoodie',
     category: 'Heavyweight Hoodies & Fleece',
     description: '380 GSM pre-shrunk French Terry hoodie with dyed-to-match flat drawstrings and custom woven neck label.',
-    image_url: '/images/home-next-level/hero-slide-2-streetwear-hoodie.webp',
+    image_url: '/images/catalog/hoodies/minimalist-french-terry-hoodie.webp',
     created_at: new Date().toISOString()
   },
 
@@ -134,7 +134,7 @@ const DEFAULT_PRODUCTS = [
     name: '4-Way Stretch Compression Baselayer Set',
     category: 'Compression & Baselayers',
     description: '240 GSM warp-knit compression top and tights with graduated muscle support and flatlock anti-chafing seams.',
-    image_url: '/images/catalog/fitness-wear/compression-activewear-set.webp',
+    image_url: '/images/catalog/fitness-wear/mens-compression-baselayer-set.webp',
     created_at: new Date().toISOString()
   },
 
@@ -152,7 +152,7 @@ const DEFAULT_PRODUCTS = [
     name: 'Classic Vintage Washed Tapered Denim',
     category: 'Custom Denim & Jeans',
     description: '12oz comfort stretch denim with authentic stone wash, whiskering, custom embossed rivets and YKK zipper fly.',
-    image_url: '/images/catalog/denim-jeans/raw-denim-jeans-stack.webp',
+    image_url: '/images/catalog/denim-jeans/vintage-washed-tapered-denim.webp',
     created_at: new Date().toISOString()
   },
 
@@ -170,7 +170,7 @@ const DEFAULT_PRODUCTS = [
     name: 'Custom Frosted EVA Zipper Polybags',
     category: 'Private Label Trims & Packaging',
     description: 'Eco-friendly frosted EVA zipper packaging bags with custom logo print, ventilation holes and Amazon FBA barcodes.',
-    image_url: '/images/original-generated/private-label-trims-packaging.webp',
+    image_url: '/images/catalog/factory-production/frosted-eva-zipper-polybag.webp',
     created_at: new Date().toISOString()
   }
 ];

@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: "Custom Jeans & Selvedge Denim Manufacturer | Bin Rasool Enterprises",
     description: "Export denim manufacturer for raw selvedge, stone-washed baggy jeans, cargo denim and custom jackets.",
     url: "/jeans-manufacturer",
-    images: [{ url: "/images/categories/1776540327_jeans.webp", width: 1200, height: 630 }],
+    images: [{ url: "/images/catalog/denim-jeans/raw-denim-jeans-stack.webp", width: 1200, height: 630 }],
   },
 };
 
@@ -114,7 +114,7 @@ export default function JeansPage() {
 
             <div className="card" style={{ padding: '0', overflow: 'hidden', boxShadow: 'var(--shadow-lg)', borderRadius: '14px', border: '1px solid #e2e8f0' }}>
               <img
-                src="/images/categories/1776540327_jeans.webp"
+                src="/images/catalog/denim-jeans/raw-denim-jeans-stack.webp"
                 alt="Custom Jeans Manufacturing"
                 style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }}
               />

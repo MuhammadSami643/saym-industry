@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     title: "Complete Private Label Clothing & Packaging Factory | Bin Rasool Enterprises",
     description: "Turnkey apparel manufacturing: high density damask woven labels, 400 gsm hangtags, frosted zip polybags, 3D puff embroidery and FBA retail packaging.",
     url: "/private-label-manufacturing",
-    images: [{ url: "/images/hero-factory.webp", width: 1200, height: 630 }],
+    images: [{ url: "/images/site/hero-slide-factory-craft.webp", width: 1200, height: 630 }],
   },
 };
 
@@ -148,7 +148,7 @@ export default function PrivateLabelPage() {
               </article>
               <article className="pl-option">
                 <div style={{ borderRadius: '8px', overflow: 'hidden', height: '180px', marginBottom: '16px', background: '#f1f5f9' }}>
-                  <img src="/images/catalog/factory-production/industrial-garment-stitching.webp" alt="Bulk Production Support" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <img src="/images/site/1776612585_manufacturing-stitching-image.webp" alt="Bulk Production Support" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
                 <h3>Bulk Production Support</h3>
                 <p className="muted">Production planning for startup brands, wholesalers, gyms, clubs, fight brands and online sellers scaling their collections.</p>

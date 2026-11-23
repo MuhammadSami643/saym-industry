@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: "Compression Wear Manufacturer & Baselayers Factory | Bin Rasool Enterprises",
     description: "Export manufacturer of graduated compression tights, thermal baselayers, padded football shirts and custom arm sleeves from Sialkot.",
     url: "/compression-wear",
-    images: [{ url: "/images/categories/1776540268_fitness-wear.webp", width: 1200, height: 630 }],
+    images: [{ url: "/images/catalog/fitness-wear/mens-compression-baselayer-set.webp", width: 1200, height: 630 }],
   },
 };
 
@@ -111,7 +111,7 @@ export default function CompressionWearPage() {
 
             <div className="card" style={{ padding: '0', overflow: 'hidden', boxShadow: 'var(--shadow-lg)' }}>
               <img
-                src="/images/categories/1776540268_fitness-wear.webp"
+                src="/images/catalog/fitness-wear/mens-compression-baselayer-set.webp"
                 alt="Compression wear manufacturer Pakistan baselayer tights"
                 style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }}
               />

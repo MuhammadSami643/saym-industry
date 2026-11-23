@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: `${config.title} | Bin Rasool Enterprises`,
       description: config.description,
       url: `/${config.slug}`,
-      images: [{ url: '/images/hero-factory.webp', width: 1200, height: 630 }],
+      images: [{ url: '/images/site/hero-slide-factory-craft.webp', width: 1200, height: 630 }],
     },
   };
 }
