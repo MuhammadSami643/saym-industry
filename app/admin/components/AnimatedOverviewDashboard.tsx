@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import AnimatedCounter from '../../components/AnimatedCounter';
 import { ArrowRightIcon, PlusIcon } from '../../components/AdminIcons';
+import { LiveWebTrafficMonitorChart, TrafficAcquisitionChannels, CategoryDonutChart } from '../../components/AdminCharts';
 
 interface Props {
   inquiries: any[];
@@ -381,6 +382,29 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
             Zero international shipment rejections
           </div>
         </motion.div>
+      </motion.div>
+
+      {/* 2.5 Real-Time Live Web Traffic Monitor & Active Buyer Radar (Instagram Reel Style) */}
+      <motion.div
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.45, ease: "easeOut" as const }}
+        style={{ marginBottom: '24px' }}
+      >
+        <LiveWebTrafficMonitorChart />
+      </motion.div>
+
+      {/* 2.6 Traffic Acquisition Channels & Category Distribution Breakdown */}
+      <motion.div
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.45, ease: "easeOut" as const }}
+        style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1.4fr) minmax(0, 1fr)', gap: '16px', marginBottom: '24px' }}
+      >
+        <TrafficAcquisitionChannels />
+        <CategoryDonutChart />
       </motion.div>
 
       {/* 3. Middle Split Widgets: Export Wave Chart (Left 60%) + Machine Capacity (Right 40%) */}

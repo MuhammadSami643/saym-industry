@@ -46,7 +46,7 @@ export default function HeroSlider() {
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
-                    opacity: 0,
+                    zIndex: 0,
                     pointerEvents: 'none',
                   }}
                 />

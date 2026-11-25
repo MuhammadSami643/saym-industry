@@ -32,12 +32,27 @@ _Submitted via binrasoolenterprises.com_`;
 
 export async function dispatchWhatsAppAlert(payload: WhatsAppAlertPayload): Promise<{
   dispatched: boolean;
-  provider: 'meta' | 'twilio' | 'webhook' | 'simulated';
+  provider: 'meta' | 'callmebot' | 'twilio' | 'webhook' | 'simulated';
   error?: string;
 }> {
-  const factoryPhone = process.env.FACTORY_WHATSAPP_NUMBER || '923338600000';
+  const factoryPhone = process.env.FACTORY_WHATSAPP_NUMBER || process.env.NEXT_PUBLIC_FACTORY_WHATSAPP || '923133599241';
+  const cleanPhone = factoryPhone.replace(/[^0-9]/g, '');
 
-  // 1. Meta WhatsApp Cloud API (Graph API)
+  // 1. CallMeBot Free Direct WhatsApp Alert (Instant personal notification to phone)
+  if (process.env.CALLMEBOT_API_KEY) {
+    try {
+      const alertMsg = `🔔 *NEW B2B RFQ ALERT*\n👤 *Buyer:* ${payload.name} (${payload.company || 'Direct'})\n🌍 *Country:* ${payload.country || 'Global'}\n📧 *Email:* ${payload.email}\n📱 *Phone:* ${payload.phone || 'N/A'}\n📌 *Subject:* ${payload.subject}\n\n📝 *Details:*\n${payload.details.slice(0, 300)}`;
+      const callmebotUrl = `https://api.callmebot.com/whatsapp.php?phone=+${cleanPhone}&text=${encodeURIComponent(alertMsg)}&apikey=${process.env.CALLMEBOT_API_KEY}`;
+      const res = await fetch(callmebotUrl, { method: 'GET' });
+      if (res.ok) {
+        return { dispatched: true, provider: 'callmebot' };
+      }
+    } catch (cbErr: any) {
+      console.error('[WhatsApp] CallMeBot error:', cbErr);
+    }
+  }
+
+  // 2. Meta WhatsApp Cloud API (Graph API)
   if (process.env.META_WHATSAPP_TOKEN && process.env.META_WHATSAPP_PHONE_ID) {
     try {
       const url = `https://graph.facebook.com/v18.0/${process.env.META_WHATSAPP_PHONE_ID}/messages`;

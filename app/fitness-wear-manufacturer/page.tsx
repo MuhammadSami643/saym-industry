@@ -54,13 +54,13 @@ const FITNESS_CATEGORIES = [
   {
     title: "Supportive Sports Bras",
     description: "High, medium and light impact sports bras with removable molded pads, racerback styling and brushed elastic underbands.",
-    image: "/images/categories/1776540259_fitness-wear.webp",
+    image: "/images/catalog/fitness-wear/high-impact-supportive-sports-bra.webp",
     link: "/products",
   },
   {
     title: "High-Rise Biker Shorts",
     description: "Buttery-soft compression biker shorts with no-dig seamless waistbands and optional deep utility phone pockets.",
-    image: "/images/categories/1776540259_fitness-wear.webp",
+    image: "/images/catalog/fitness-wear/high-rise-compression-biker-shorts.webp",
     link: "/products",
   },
   {
@@ -72,13 +72,13 @@ const FITNESS_CATEGORIES = [
   {
     title: "Oversized Pump Covers & Gym Tees",
     description: "Heavyweight 240–280 GSM combed cotton drop-shoulder tees engineered for bodybuilding pump covers and athleisure streetwear.",
-    image: "/images/categories/1776540259_fitness-wear.webp",
+    image: "/images/catalog/fitness-wear/oversized-pump-cover-gym-tee.webp",
     link: "/products",
   },
   {
     title: "Seamless Knitted Activewear",
     description: "Engineered body-mapped jacquard circular knits providing targeted compression, moisture wicking and second-skin comfort.",
-    image: "/images/categories/1776540259_fitness-wear.webp",
+    image: "/images/catalog/fitness-wear/seamless-ribbed-activewear-set.webp",
     link: "/products",
   },
 ];

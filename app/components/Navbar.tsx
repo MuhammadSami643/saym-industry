@@ -53,13 +53,10 @@ export default function Navbar() {
     '/boxing-wear-manufacturer-pakistan',
     '/sportswear-manufacturer-exporter',
     '/boxing-gear-manufacturer',
-  ].some(p => pathname === p || pathname?.startsWith(p + '/'));
-  const isCategories = [
     '/custom-hoodies',
     '/streetwear',
     '/fitness-wear',
     '/boxing-gear',
-    '/boxing-gear-manufacturer',
     '/mma-gear',
     '/tracksuits',
     '/sportswear',
@@ -164,10 +161,6 @@ export default function Navbar() {
             </button>
 
             <nav className={`site-nav ${mobileOpen ? 'is-active' : ''}`}>
-              <Link className={`nav-link ${isHome ? 'is-active' : ''}`} href="/" onClick={handleLinkClick}>
-                Home
-              </Link>
-
               {/* Company Dropdown */}
               <div
                 className={`nav-dropdown ${openDropdown === 'company' ? 'is-open' : ''}`}
@@ -186,11 +179,11 @@ export default function Navbar() {
                   <Link href="/about-us" className={pathname === '/about-us' ? 'is-active' : ''} onClick={handleLinkClick}>About Us</Link>
                   <Link href="/manufacturing-process" className={pathname === '/manufacturing-process' || pathname === '/manufacturing' ? 'is-active' : ''} onClick={handleLinkClick}>Manufacturing Process</Link>
                   <Link href="/private-label-manufacturing" className={pathname === '/private-label-manufacturing' || pathname === '/private-label' ? 'is-active' : ''} onClick={handleLinkClick}>Private Label Services</Link>
-                  <Link href="/order-sample" className={pathname === '/order-sample' ? 'is-active' : ''} onClick={handleLinkClick} style={{ color: '#c2410c', fontWeight: 700 }}>Order Sample Prototype (7-10 Days)</Link>
+                  <Link href="/order-sample" className={pathname === '/order-sample' ? 'is-active' : ''} onClick={handleLinkClick}>Order Sample Prototype (7-10 Days)</Link>
                 </div>
               </div>
 
-              {/* Factory Units Dropdown */}
+              {/* Factory Units Dropdown (With All Industrial Divisions & Production Lines) */}
               <div
                 className={`nav-dropdown ${openDropdown === 'manufacturer' ? 'is-open' : ''}`}
                 onMouseEnter={() => handleMouseEnter('manufacturer')}
@@ -204,55 +197,71 @@ export default function Navbar() {
                 >
                   Factory Units <ChevronDownIcon />
                 </button>
-                <div className="dropdown-menu">
-                  <Link href="/sportswear-manufacturer" className={pathname === '/sportswear-manufacturer' || pathname === '/sportswear-manufacturer-pakistan' ? 'is-active' : ''} onClick={handleLinkClick}>Sportswear &amp; Teamwear Division</Link>
-                  <Link href="/fitness-wear-manufacturer" className={pathname === '/fitness-wear-manufacturer' || pathname === '/fitness-wear-manufacturer-sialkot' ? 'is-active' : ''} onClick={handleLinkClick}>Activewear &amp; Fitness Plant</Link>
-                  <Link href="/boxing-wear-manufacturer" className={pathname === '/boxing-wear-manufacturer' || pathname === '/boxing-wear-manufacturer-pakistan' ? 'is-active' : ''} onClick={handleLinkClick}>Boxing &amp; Fight Gear Workshop</Link>
-                </div>
-              </div>
+                <div className="dropdown-menu dropdown-menu-wide" style={{ minWidth: '300px' }}>
+                  <div style={{ padding: '6px 16px 4px', fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--brand-orange-dark, #c2410c)' }}>
+                    Specialized Manufacturing Plants
+                  </div>
+                  <Link href="/fitness-wear-manufacturer" className={pathname === '/fitness-wear-manufacturer' || pathname === '/fitness-wear-manufacturer-sialkot' ? 'is-active' : ''} onClick={handleLinkClick}>
+                    Activewear &amp; Fitness Plant
+                  </Link>
+                  <Link href="/sportswear-manufacturer" className={pathname === '/sportswear-manufacturer' || pathname === '/sportswear-manufacturer-pakistan' ? 'is-active' : ''} onClick={handleLinkClick}>
+                    Sportswear &amp; Teamwear Division
+                  </Link>
+                  <Link href="/boxing-wear-manufacturer" className={pathname === '/boxing-wear-manufacturer' || pathname === '/boxing-wear-manufacturer-pakistan' ? 'is-active' : ''} onClick={handleLinkClick}>
+                    Boxing &amp; Fight Gear Workshop
+                  </Link>
 
-              {/* Categories Dropdown */}
-              <div
-                className={`nav-dropdown ${openDropdown === 'categories' ? 'is-open' : ''}`}
-                onMouseEnter={() => handleMouseEnter('categories')}
-                onMouseLeave={handleMouseLeave}
-              >
-                <button
-                  className={`nav-trigger ${isCategories ? 'is-active' : ''}`}
-                  type="button"
-                  aria-expanded={openDropdown === 'categories'}
-                  onClick={(e) => handleDropdownClick('categories', e)}
-                >
-                  Categories <ChevronDownIcon />
-                </button>
-                <div className="dropdown-menu">
-                  <Link href="/custom-hoodies" className={pathname === '/custom-hoodies' ? 'is-active' : ''} onClick={handleLinkClick}>Heavyweight Hoodies &amp; Fleece</Link>
-                  <Link href="/streetwear" className={pathname === '/streetwear' ? 'is-active' : ''} onClick={handleLinkClick}>Streetwear &amp; Outerwear</Link>
-                  <Link href="/fitness-wear" className={pathname === '/fitness-wear' ? 'is-active' : ''} onClick={handleLinkClick}>Fitness &amp; Activewear</Link>
-                  <Link href="/boxing-gear-manufacturer" className={pathname === '/boxing-gear-manufacturer' || pathname === '/boxing-gear' ? 'is-active' : ''} onClick={handleLinkClick}>Boxing Gloves &amp; Fight Gear</Link>
-                  <Link href="/mma-gear" className={pathname === '/mma-gear' ? 'is-active' : ''} onClick={handleLinkClick}>MMA, BJJ Gis &amp; Rashguards</Link>
-                  <Link href="/tracksuits" className={pathname === '/tracksuits' ? 'is-active' : ''} onClick={handleLinkClick}>Tracksuits &amp; Warmups</Link>
-                  <Link href="/sportswear" className={pathname === '/sportswear' ? 'is-active' : ''} onClick={handleLinkClick}>Sublimated Teamwear &amp; Kits</Link>
-                  <Link href="/compression-wear" className={pathname === '/compression-wear' ? 'is-active' : ''} onClick={handleLinkClick}>Compression &amp; Baselayers</Link>
-                  <Link href="/custom-jeans" className={pathname === '/custom-jeans' ? 'is-active' : ''} onClick={handleLinkClick}>Custom Denim &amp; Jeans</Link>
-                  <Link href="/private-label-manufacturing" className={pathname === '/private-label-manufacturing' || pathname === '/private-label' ? 'is-active' : ''} onClick={handleLinkClick}>Private Label Trims &amp; Packaging</Link>
-                  <Link href="/product-catalog" className={pathname?.startsWith('/product-catalog') || pathname?.startsWith('/products') ? 'is-active' : ''} onClick={handleLinkClick} style={{ fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-                    <span>All Products Catalog</span>
+                  <div style={{ margin: '8px 12px', borderTop: '1px solid #e2e8f0' }}></div>
+
+                  <div style={{ padding: '6px 16px 4px', fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#64748b' }}>
+                    Production Lines &amp; Capabilities
+                  </div>
+                  <Link href="/custom-hoodies" className={pathname === '/custom-hoodies' ? 'is-active' : ''} onClick={handleLinkClick}>
+                    Heavyweight Hoodies &amp; Fleece
+                  </Link>
+                  <Link href="/streetwear" className={pathname === '/streetwear' ? 'is-active' : ''} onClick={handleLinkClick}>
+                    Streetwear &amp; Outerwear
+                  </Link>
+                  <Link href="/fitness-wear" className={pathname === '/fitness-wear' ? 'is-active' : ''} onClick={handleLinkClick}>
+                    Gym &amp; Activewear
+                  </Link>
+                  <Link href="/boxing-gear-manufacturer" className={pathname === '/boxing-gear-manufacturer' || pathname === '/boxing-gear' ? 'is-active' : ''} onClick={handleLinkClick}>
+                    Boxing Gloves &amp; Fight Gear
+                  </Link>
+                  <Link href="/mma-gear" className={pathname === '/mma-gear' ? 'is-active' : ''} onClick={handleLinkClick}>
+                    MMA, BJJ Gis &amp; Rashguards
+                  </Link>
+                  <Link href="/tracksuits" className={pathname === '/tracksuits' ? 'is-active' : ''} onClick={handleLinkClick}>
+                    Tracksuits &amp; Warmups
+                  </Link>
+                  <Link href="/sportswear" className={pathname === '/sportswear' ? 'is-active' : ''} onClick={handleLinkClick}>
+                    Sublimated Teamwear &amp; Kits
+                  </Link>
+                  <Link href="/compression-wear" className={pathname === '/compression-wear' ? 'is-active' : ''} onClick={handleLinkClick}>
+                    Compression &amp; Baselayers
+                  </Link>
+                  <Link href="/custom-jeans" className={pathname === '/custom-jeans' ? 'is-active' : ''} onClick={handleLinkClick}>
+                    Custom Denim &amp; Jeans
+                  </Link>
+                  <Link href="/private-label-manufacturing" className={pathname === '/private-label-manufacturing' || pathname === '/private-label' ? 'is-active' : ''} onClick={handleLinkClick}>
+                    Private Label Trims &amp; Packaging
+                  </Link>
+
+                  <div style={{ margin: '8px 12px', borderTop: '1px solid #e2e8f0' }}></div>
+
+                  <Link href="/product-catalog" className={pathname?.startsWith('/product-catalog') || pathname?.startsWith('/products') ? 'is-active' : ''} onClick={handleLinkClick} style={{ fontWeight: 800, color: '#0f172a', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                    <span>Explore All Products Catalog</span>
                     <ArrowRightIcon size={13} />
                   </Link>
                 </div>
               </div>
 
-              <Link className={`nav-link ${isTrackOrder ? 'is-active' : ''}`} href="/track-order" onClick={handleLinkClick}>
-                Track Production
-              </Link>
-
-              <Link className={`nav-link ${pathname === '/order-sample' ? 'is-active' : ''}`} href="/order-sample" onClick={handleLinkClick} style={{ color: '#c2410c', fontWeight: 700 }}>
+              <Link className={`nav-link ${pathname === '/order-sample' ? 'is-active' : ''}`} href="/order-sample" onClick={handleLinkClick}>
                 Order Sample
               </Link>
 
-              <Link className={`nav-link ${isBlog ? 'is-active' : ''}`} href="/blog" onClick={handleLinkClick}>
-                Blog
+              <Link className={`nav-link ${isTrackOrder ? 'is-active' : ''}`} href="/track-order" onClick={handleLinkClick}>
+                Track Production
               </Link>
 
               <Link className={`nav-link ${isContact ? 'is-active' : ''}`} href="/contact-us" onClick={handleLinkClick}>

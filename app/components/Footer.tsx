@@ -74,7 +74,7 @@ export default function Footer() {
               <li><Link href="/manufacturing-process">Manufacturing Process</Link></li>
               <li><Link href="/about-us#quality">Quality Control</Link></li>
               <li><Link href="/about-us#shipping">Shipping &amp; Export</Link></li>
-              <li><Link href="/blog">Insights</Link></li>
+              <li><Link href="/blog">Manufacturing Blog &amp; Insights</Link></li>
             </ul>
           </div>
 

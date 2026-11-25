@@ -18,32 +18,7 @@ export interface StoredInquiry {
 const DATA_DIR = path.join(process.cwd(), 'data');
 const INQUIRIES_FILE = path.join(DATA_DIR, 'inquiries.json');
 
-const SEED_INQUIRIES: StoredInquiry[] = [
-  {
-    id: 'mock-1',
-    name: 'Marcus Vance',
-    email: 'marcus@peakfitness.com',
-    phone: '+1 415 889 0122',
-    company: 'Peak Fitness USA',
-    country: 'United States',
-    subject: 'Custom Joggers & Gym Hoodies (500 pcs)',
-    details: 'Looking for 300 GSM French Terry gym hoodies and matching slim-fit joggers with custom silicone heat transfer logo.',
-    status: 'new',
-    date: new Date().toISOString()
-  },
-  {
-    id: 'mock-2',
-    name: 'Sarah Jenkins',
-    email: 'sarah@athletixstudio.co.uk',
-    phone: '+44 20 7946 0919',
-    company: 'Athletix Studio UK',
-    country: 'United Kingdom',
-    subject: 'Private Label Leggings & Sports Bras',
-    details: 'Hi Bin Rasool Enterprises, we want to launch a 4-colorway activewear capsule: 75% Nylon 25% Spandex squat proof leggings with matching bra tops.',
-    status: 'contacted',
-    date: new Date(Date.now() - 86400000).toISOString()
-  }
-];
+const SEED_INQUIRIES: StoredInquiry[] = [];
 
 function ensureFileExists() {
   try {

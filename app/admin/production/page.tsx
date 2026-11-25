@@ -21,92 +21,7 @@ interface BatchOrder {
   trackingNo: string;
 }
 
-const INITIAL_BATCHES: BatchOrder[] = [
-  {
-    id: 'BRE-2026-9014',
-    clientBrand: 'Vanguard Streetwear LLC',
-    country: 'United States',
-    item: '450 GSM Heavy French Terry Boxy Hoodies',
-    type: 'Bulk Production',
-    quantity: 600,
-    stage: 'Quality Control',
-    progress: 80,
-    startDate: 'Oct 28, 2026',
-    targetDispatch: 'Nov 18, 2026',
-    courier: 'DHL Express Air Cargo',
-    trackingNo: 'DHL-PK-9821449012'
-  },
-  {
-    id: 'BRE-SAMPLE-104',
-    clientBrand: 'Aura Athletics Ltd',
-    country: 'United Kingdom',
-    item: 'Seamless High-Waist Scrunch Leggings & Bra',
-    type: 'Sample Prototype',
-    quantity: 4,
-    stage: 'Dispatched',
-    progress: 100,
-    startDate: 'Nov 02, 2026',
-    targetDispatch: 'Nov 11, 2026',
-    courier: 'FedEx Priority',
-    trackingNo: 'FDX-8730991204-GB'
-  },
-  {
-    id: 'BRE-2026-9022',
-    clientBrand: 'Nordic Combat Equipment',
-    country: 'Germany',
-    item: 'Pro Sparring Boxing Gloves (Full Grain Cowhide)',
-    type: 'Bulk Production',
-    quantity: 400,
-    stage: 'Stitching & Branding',
-    progress: 60,
-    startDate: 'Nov 04, 2026',
-    targetDispatch: 'Nov 24, 2026',
-    courier: 'Emirates SkyCargo',
-    trackingNo: 'EK-AWB-44910283'
-  },
-  {
-    id: 'BRE-SAMPLE-105',
-    clientBrand: 'HypeDistrict Skatewear',
-    country: 'Australia',
-    item: 'Baggy Acid Wash Carpenter Denim & Leather Patches',
-    type: 'Sample Prototype',
-    quantity: 2,
-    stage: 'Cutting',
-    progress: 35,
-    startDate: 'Nov 08, 2026',
-    targetDispatch: 'Nov 19, 2026',
-    courier: 'DHL Air Express',
-    trackingNo: 'DHL-AU-1084920'
-  },
-  {
-    id: 'BRE-2026-9031',
-    clientBrand: 'Olympus Fight Club',
-    country: 'France',
-    item: 'Pearl Weave 450 GSM BJJ Gis & Sublimated Spats',
-    type: 'Bulk Production',
-    quantity: 350,
-    stage: 'Steam Pressing',
-    progress: 85,
-    startDate: 'Nov 01, 2026',
-    targetDispatch: 'Nov 21, 2026',
-    courier: 'Qatar Cargo Express',
-    trackingNo: 'QR-FR-39201948'
-  },
-  {
-    id: 'BRE-2026-9035',
-    clientBrand: 'IronPulse Active',
-    country: 'Canada',
-    item: 'Compression Baselayer Thermal Tops & Tights',
-    type: 'Bulk Production',
-    quantity: 500,
-    stage: 'Packaging',
-    progress: 92,
-    startDate: 'Nov 03, 2026',
-    targetDispatch: 'Nov 17, 2026',
-    courier: 'DHL Express Air',
-    trackingNo: 'DHL-CA-7782190'
-  }
-];
+const INITIAL_BATCHES: BatchOrder[] = [];
 
 const STAGES: BatchOrder['stage'][] = [
   'Tech Pack',
@@ -363,7 +278,15 @@ export default function ProductionPipelinePage() {
 
       {/* Batches List */}
       <div style={{ display: 'grid', gap: '16px' }}>
-        {filtered.map((b) => (
+        {filtered.length === 0 ? (
+          <div style={{ textAlign: 'center', padding: '56px 20px', background: '#11171a', borderRadius: '14px', border: '1px solid rgba(255, 255, 255, 0.07)', color: '#94a3b8' }}>
+            <div style={{ fontSize: '15px', fontWeight: 700, color: '#f1f5f9', marginBottom: '6px' }}>No Production Batches Active</div>
+            <p style={{ margin: 0, fontSize: '13px', color: '#64748b' }}>
+              Active bulk orders or sample prototypes will appear here once booked into production.
+            </p>
+          </div>
+        ) : (
+          filtered.map((b) => (
           <motion.div
             key={b.id}
             initial={{ opacity: 0, y: 14 }}
@@ -490,7 +413,7 @@ export default function ProductionPipelinePage() {
               </Link>
             </div>
           </motion.div>
-        ))}
+        )))}
       </div>
     </div>
   );

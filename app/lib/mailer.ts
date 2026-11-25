@@ -240,7 +240,7 @@ export async function sendInquiryNotificationEmails(payload: InquiryEmailPayload
       await transporter.sendMail({
         from: fromAddress,
         to: payload.email,
-        replyTo: adminEmail,
+        replyTo: process.env.REPLY_TO_EMAIL || 'info@binrasoolenterprises.com',
         subject: `Inquiry Confirmation - Bin Rasool Enterprises`,
         html: buyerHtml
       });

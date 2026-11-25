@@ -157,7 +157,7 @@ export default function RootLayout({
         <link
           rel="preload"
           as="image"
-          href="/images/site/1776603661_home-hero-slider-image-1.webp"
+          href="/images/site/hero-slide-factory-craft.webp"
           type="image/webp"
           fetchPriority="high"
         />

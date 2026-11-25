@@ -172,7 +172,7 @@ export default function Home() {
             </div>
             <div className="home-card-grid">
                 <a href="/fitness-wear" className="home-card category-card" aria-label="Explore Fitness Wear manufacturing">
-                    <img src="/images/categories/1776540259_fitness-wear.webp" alt="Private label fitness wear manufacturer in Sialkot Pakistan" loading="lazy" decoding="async" />
+                    <img src="/images/categories/1776540259_fitness-wear.webp" alt="Private label fitness wear manufacturer in Sialkot Pakistan" loading="lazy" decoding="async" width={420} height={280} />
                     <div className="category-card-body">
                         <h3>Fitness &amp; Activewear</h3>
                         <p className="muted">Cut-and-sew fitness apparel development, private labeling and bulk manufacturing for fitness brands.</p>
@@ -185,7 +185,7 @@ export default function Home() {
                     </div>
                 </a>
                 <a href="/sportswear" className="home-card category-card" aria-label="Explore Sports Wear manufacturing">
-                    <img src="/images/categories/1776540279_sports-wear.webp" alt="Custom sportswear manufacturer and wholesale supplier in Sialkot Pakistan" loading="lazy" decoding="async" />
+                    <img src="/images/categories/1776540279_sports-wear.webp" alt="Custom sportswear manufacturer and wholesale supplier in Sialkot Pakistan" loading="lazy" decoding="async" width={420} height={280} />
                     <div className="category-card-body">
                         <h3>Sports Wear &amp; Teamwear</h3>
                         <p className="muted">Sublimated team jerseys, club tracksuits and athletic uniforms engineered for professional durability.</p>
@@ -198,7 +198,7 @@ export default function Home() {
                     </div>
                 </a>
                 <a href="/boxing-gear" className="home-card category-card" aria-label="Explore Boxing Wear manufacturing">
-                    <img src="/images/categories/1776540301_boxing-wear.webp" alt="Custom boxing wear and fight gear manufacturer in Sialkot Pakistan" loading="lazy" decoding="async" />
+                    <img src="/images/categories/1776540301_boxing-wear.webp" alt="Custom boxing wear and fight gear manufacturer in Sialkot Pakistan" loading="lazy" decoding="async" width={420} height={280} />
                     <div className="category-card-body">
                         <h3>Boxing &amp; Combat Gear</h3>
                         <p className="muted">Competition sparring gloves, trunks, rashguards and custom fight kits tested for impact resistance.</p>
@@ -211,7 +211,7 @@ export default function Home() {
                     </div>
                 </a>
                 <a href="/streetwear" className="home-card category-card" aria-label="Explore Streetwear manufacturing">
-                    <img src="/images/categories/1789894942_streetwear.webp" alt="Bin Rasool Enterprises branded oversized hoodie, baggy sweatpants and varsity jacket in a colorful studio" loading="lazy" decoding="async" />
+                    <img src="/images/categories/1789894942_streetwear.webp" alt="Bin Rasool Enterprises branded oversized hoodie, baggy sweatpants and varsity jacket in a colorful studio" loading="lazy" decoding="async" width={420} height={280} />
                     <div className="category-card-body">
                         <h3>Streetwear &amp; Hoodies</h3>
                         <p className="muted">Cut-and-sew heavyweight luxury streetwear, acid wash tees and drop-shoulder hoodies for fashion labels.</p>

@@ -20,92 +20,7 @@ interface BuyerRecord {
   notes: string;
 }
 
-const INITIAL_BUYERS: BuyerRecord[] = [
-  {
-    id: 'BRE-B01',
-    name: 'Marcus Vance',
-    company: 'Vanguard Streetwear LLC',
-    email: 'marcus@vanguardapparel.com',
-    phone: '+1 310 555 0192',
-    country: 'United States',
-    tier: 'VIP Partner',
-    rfqCount: 5,
-    estVolume: '$42,500 USD',
-    category: 'Heavyweight Hoodies & Cargo Track Pants',
-    lastContact: 'Today',
-    notes: 'Orders 450 GSM French Terry exclusively. Strict on Pantone 19-4007 TPX.'
-  },
-  {
-    id: 'BRE-B02',
-    name: 'Sophie Bennett',
-    company: 'Aura Athletics Ltd',
-    email: 'sophie@auraathletics.co.uk',
-    phone: '+44 20 7946 0912',
-    country: 'United Kingdom',
-    tier: 'Wholesale Buyer',
-    rfqCount: 3,
-    estVolume: '$28,000 USD',
-    category: 'Seamless Gym Leggings & Sports Bras',
-    lastContact: '2 days ago',
-    notes: 'Requires OEKO-TEX certified nylon/spandex yarns. Reordering every 6 weeks.'
-  },
-  {
-    id: 'BRE-B03',
-    name: 'Lars Lindqvist',
-    company: 'Nordic Combat Equipment',
-    email: 'lars@nordiccombat.de',
-    phone: '+49 30 1234567',
-    country: 'Germany',
-    tier: 'VIP Partner',
-    rfqCount: 4,
-    estVolume: '$36,000 USD',
-    category: 'Full Grain Leather Boxing Gloves',
-    lastContact: 'Yesterday',
-    notes: 'Requires multilayer EVA/Latex padding with lace-up pro finish.'
-  },
-  {
-    id: 'BRE-B04',
-    name: 'Jack O’Connor',
-    company: 'HypeDistrict Skatewear',
-    email: 'jack@hypedistrict.com.au',
-    phone: '+61 2 9876 5432',
-    country: 'Australia',
-    tier: 'Sampling',
-    rfqCount: 1,
-    estVolume: '$6,000 USD',
-    category: 'Baggy Carpenter Denim & Leather Patches',
-    lastContact: '4 days ago',
-    notes: 'Evaluating counter-samples for 14 oz selvedge denim collection.'
-  },
-  {
-    id: 'BRE-B05',
-    name: 'Chloe Laurent',
-    company: 'Olympus Fight Club',
-    email: 'chloe@olympusfight.fr',
-    phone: '+33 1 42 68 55 00',
-    country: 'France',
-    tier: 'Wholesale Buyer',
-    rfqCount: 2,
-    estVolume: '$19,500 USD',
-    category: 'Pearl Weave BJJ Gis & Rashguards',
-    lastContact: '5 days ago',
-    notes: 'Italian ink sublimation required for all fight rashguards.'
-  },
-  {
-    id: 'BRE-B06',
-    name: 'David Rossi',
-    company: 'IronPulse Activewear',
-    email: 'david@ironpulse.ca',
-    phone: '+1 416 555 0188',
-    country: 'Canada',
-    tier: 'Prospect',
-    rfqCount: 1,
-    estVolume: '$18,500 USD',
-    category: 'Athletic Baselayers & Thermal Sets',
-    lastContact: '1 week ago',
-    notes: 'Submitted initial tech pack for winter baselayer order.'
-  }
-];
+const INITIAL_BUYERS: BuyerRecord[] = [];
 
 export default function BuyerCrmPage() {
   const [buyers, setBuyers] = useState<BuyerRecord[]>(INITIAL_BUYERS);
@@ -390,7 +305,17 @@ export default function BuyerCrmPage() {
               </tr>
             </thead>
             <tbody>
-              {filtered.map((b, idx) => {
+              {filtered.length === 0 ? (
+                <tr>
+                  <td colSpan={6} style={{ textAlign: 'center', padding: '56px 20px', color: '#94a3b8' }}>
+                    <div style={{ fontSize: '15px', fontWeight: 700, color: '#f1f5f9', marginBottom: '6px' }}>No Buyer Accounts Found</div>
+                    <p style={{ margin: 0, fontSize: '13px', color: '#64748b' }}>
+                      Buyer accounts registered from inbound inquiries or manual entry will appear here.
+                    </p>
+                  </td>
+                </tr>
+              ) : (
+                filtered.map((b, idx) => {
                 const phoneClean = b.phone.replace(/[^0-9]/g, '');
                 return (
                   <tr key={b.id} className="table-row-hover" style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.04)' }}>
@@ -447,7 +372,7 @@ export default function BuyerCrmPage() {
                     </td>
                   </tr>
                 );
-              })}
+              }))}
             </tbody>
           </table>
         </div>

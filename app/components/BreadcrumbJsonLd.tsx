@@ -10,9 +10,10 @@ interface BreadcrumbJsonLdProps {
   items: BreadcrumbItem[];
   className?: string;
   style?: React.CSSProperties;
+  theme?: 'light' | 'dark';
 }
 
-export default function BreadcrumbJsonLd({ items, className, style }: BreadcrumbJsonLdProps) {
+export default function BreadcrumbJsonLd({ items, className, style, theme }: BreadcrumbJsonLdProps) {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://binrasoolenterprises.com';
 
   const schemaItems = items.map((item, index) => ({
@@ -32,6 +33,13 @@ export default function BreadcrumbJsonLd({ items, className, style }: Breadcrumb
     itemListElement: schemaItems,
   };
 
+  const navClass = [
+    className || 'breadcrumbs',
+    theme === 'dark' ? 'is-dark' : '',
+  ]
+    .filter(Boolean)
+    .join(' ');
+
   return (
     <>
       <script
@@ -40,7 +48,7 @@ export default function BreadcrumbJsonLd({ items, className, style }: Breadcrumb
       />
       <nav
         aria-label="Breadcrumbs"
-        className={className || 'breadcrumbs'}
+        className={navClass}
         style={style}
       >
         {items.map((item, idx) => {

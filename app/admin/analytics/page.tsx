@@ -8,6 +8,8 @@ import {
   CategoryDonutChart,
   B2BConversionFunnel,
   FactoryCapacityGauges,
+  LiveWebTrafficMonitorChart,
+  TrafficAcquisitionChannels,
 } from '../../components/AdminCharts';
 
 export default function AnalyticsPage() {
@@ -122,6 +124,18 @@ export default function AnalyticsPage() {
           </div>
           <span style={{ fontSize: '11.5px', color: '#00e599', fontWeight: 700 }}>Direct FOB Sialkot clearance</span>
         </div>
+      </motion.div>
+
+      {/* Real-Time Live Web Traffic & Visitors Monitoring (SaaS Reel Aesthetic) */}
+      <motion.div
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ duration: 0.45, ease: "easeOut" as const }}
+        style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: '20px', marginBottom: '24px' }}
+      >
+        <LiveWebTrafficMonitorChart />
+        <TrafficAcquisitionChannels />
       </motion.div>
 
       {/* Row 1: Interactive Monthly Revenue Chart & Category Donut */}

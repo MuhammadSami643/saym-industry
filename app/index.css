@@ -143,21 +143,21 @@ img {
   text-decoration: none;
 }
 
-.btn:hover {
+.btn:hover,
+.btn:focus,
+.btn:active {
   transform: none !important;
   transition: none !important;
+  filter: none !important;
 }
 
-.btn-primary {
-  background: var(--brand-orange);
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background: var(--brand-orange) !important;
   color: var(--brand-black) !important;
-  box-shadow: var(--shadow);
-  transition: none !important;
-}
-
-.btn-primary:hover {
-  background: var(--brand-orange-dark);
-  color: var(--brand-black) !important;
+  box-shadow: var(--shadow) !important;
   transform: none !important;
   transition: none !important;
 }
@@ -660,7 +660,8 @@ select.form-control {
 
 .home-hero .home-kicker,
 .dark-section .home-kicker,
-.site-footer .home-kicker {
+.site-footer .home-kicker,
+.home-cta .home-kicker {
   color: #fbbf24;
 }
 
@@ -1396,7 +1397,7 @@ a.trust-card:first-child .muted {
 .home-cta p {
   max-width: 740px;
   margin: 0;
-  color: #d6dde8;
+  color: #e2e8f0;
 }
 
 .home-cta-actions {
@@ -1414,7 +1415,7 @@ a.trust-card:first-child .muted {
   display: block;
   width: 100%;
   margin-top: 10px;
-  color: #aeb9c8;
+  color: #cbd5e1;
   font-size: 12px;
   line-height: 1.5;
 }
@@ -1958,24 +1959,66 @@ a.trust-card:first-child .muted {
 
 /* Breadcrumbs when inside dark hero banners */
 .hero .breadcrumbs,
-.dark-section .breadcrumbs {
+.dark-section .breadcrumbs,
+.manufacturing-hero .breadcrumbs,
+.about-hero .breadcrumbs,
+.pl-hero .breadcrumbs,
+.breadcrumbs.is-dark,
+.breadcrumbs.breadcrumbs-dark {
   color: #94a3b8;
 }
 
 .hero .breadcrumbs a,
 .hero .breadcrumbs .breadcrumb-link,
 .dark-section .breadcrumbs a,
-.dark-section .breadcrumbs .breadcrumb-link {
-  color: #cbd5e1;
+.dark-section .breadcrumbs .breadcrumb-link,
+.manufacturing-hero .breadcrumbs a,
+.manufacturing-hero .breadcrumbs .breadcrumb-link,
+.about-hero .breadcrumbs a,
+.about-hero .breadcrumbs .breadcrumb-link,
+.pl-hero .breadcrumbs a,
+.pl-hero .breadcrumbs .breadcrumb-link,
+.breadcrumbs.is-dark a,
+.breadcrumbs.is-dark .breadcrumb-link,
+.breadcrumbs.breadcrumbs-dark a,
+.breadcrumbs.breadcrumbs-dark .breadcrumb-link {
+  color: #94a3b8;
+}
+
+.hero .breadcrumbs a:hover,
+.hero .breadcrumbs .breadcrumb-link:hover,
+.dark-section .breadcrumbs a:hover,
+.dark-section .breadcrumbs .breadcrumb-link:hover,
+.manufacturing-hero .breadcrumbs a:hover,
+.manufacturing-hero .breadcrumbs .breadcrumb-link:hover,
+.about-hero .breadcrumbs a:hover,
+.about-hero .breadcrumbs .breadcrumb-link:hover,
+.pl-hero .breadcrumbs a:hover,
+.pl-hero .breadcrumbs .breadcrumb-link:hover,
+.breadcrumbs.is-dark a:hover,
+.breadcrumbs.is-dark .breadcrumb-link:hover,
+.breadcrumbs.breadcrumbs-dark a:hover,
+.breadcrumbs.breadcrumbs-dark .breadcrumb-link:hover {
+  color: var(--brand-orange, #f3a626);
 }
 
 .hero .breadcrumbs .breadcrumb-current,
-.dark-section .breadcrumbs .breadcrumb-current {
+.dark-section .breadcrumbs .breadcrumb-current,
+.manufacturing-hero .breadcrumbs .breadcrumb-current,
+.about-hero .breadcrumbs .breadcrumb-current,
+.pl-hero .breadcrumbs .breadcrumb-current,
+.breadcrumbs.is-dark .breadcrumb-current,
+.breadcrumbs.breadcrumbs-dark .breadcrumb-current {
   color: #ffffff;
 }
 
 .hero .breadcrumbs .breadcrumb-sep,
-.dark-section .breadcrumbs .breadcrumb-sep {
+.dark-section .breadcrumbs .breadcrumb-sep,
+.manufacturing-hero .breadcrumbs .breadcrumb-sep,
+.about-hero .breadcrumbs .breadcrumb-sep,
+.pl-hero .breadcrumbs .breadcrumb-sep,
+.breadcrumbs.is-dark .breadcrumb-sep,
+.breadcrumbs.breadcrumbs-dark .breadcrumb-sep {
   color: #64748b;
 }
 
@@ -3341,8 +3384,11 @@ a.trust-card:first-child .muted {
     align-items: center;
 }
 
-.sw-btn-primary {
-    background: var(--brand-orange, #f3a626);
+.sw-btn-primary,
+.sw-btn-primary:hover,
+.sw-btn-primary:focus,
+.sw-btn-primary:active {
+    background: var(--brand-orange, #f3a626) !important;
     color: var(--brand-black, #0b0b0d) !important;
     padding: 14px 28px;
     border-radius: 999px;
@@ -3352,17 +3398,10 @@ a.trust-card:first-child .muted {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 14px rgba(243, 166, 38, 0.3);
-    transition: none !important;
-    border: none;
-}
-
-.sw-btn-primary:hover {
-    background: var(--brand-orange-dark, #d98816);
-    color: var(--brand-black, #0b0b0d) !important;
+    box-shadow: 0 4px 14px rgba(243, 166, 38, 0.3) !important;
     transform: none !important;
     transition: none !important;
-    box-shadow: 0 4px 14px rgba(243, 166, 38, 0.3);
+    border: none;
 }
 
 .sw-btn-outline {

@@ -13,8 +13,6 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [];
 
-
 export function getBlogPost(slug: string): BlogPost | undefined {
   return BLOG_POSTS.find(post => post.slug === slug);
 }
-
