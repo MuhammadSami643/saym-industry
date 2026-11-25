@@ -428,6 +428,11 @@ export default function PrivateLabelPage() {
                 <p className="muted">UPF 50+ sun protection activewear, moisture-wicking gym apparel for Sydney, Melbourne &amp; Brisbane.</p>
                 <span className="category-mfg-link"><span>View Australia Page</span><ArrowRightIcon size={13} /></span>
               </Link>
+              <Link className="pl-category" href="/private-label-activewear-manufacturer-south-africa">
+                <h3>South Africa Brands</h3>
+                <p className="muted">High-tensile sportswear, rugby club uniforms &amp; gymwear for Johannesburg, Cape Town &amp; Durban.</p>
+                <span className="category-mfg-link"><span>View South Africa Page</span><ArrowRightIcon size={13} /></span>
+              </Link>
               <Link className="pl-category" href="/activewear-manufacturer-for-startups">
                 <h3>Startup Brands</h3>
                 <p className="muted">Low MOQ activewear manufacturing for startup fitness brands and influencers.</p>

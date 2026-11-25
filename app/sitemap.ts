@@ -92,6 +92,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'private-label-activewear-manufacturer-italy',
     'private-label-activewear-manufacturer-spain',
     'private-label-activewear-manufacturer-australia',
+    'private-label-activewear-manufacturer-south-africa',
   ];
 
   const categoryPages: MetadataRoute.Sitemap = categorySlugs.map((slug) => ({

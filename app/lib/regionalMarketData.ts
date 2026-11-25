@@ -626,6 +626,80 @@ export const REGIONAL_MARKETS: Record<string, RegionalMarketConfig> = {
         answer: "Yes. Every startup order receives custom woven neck labels, custom hangtags and branded frosted zipper polybags so your product arrives 100% retail-ready."
       }
     ]
+  },
+
+  south_africa: {
+    slug: 'private-label-activewear-manufacturer-south-africa',
+    marketName: 'South Africa Brands',
+    countryName: 'South Africa',
+    badge: 'South Africa Export & Sourcing Program • Sialkot Factory',
+    title: 'Private Label Activewear & Sportswear Manufacturer for South Africa',
+    description: 'Factory-direct OEM activewear and sportswear manufacturing for South African fitness brands, gym chains, rugby clubs and combat labels across Johannesburg, Cape Town and Durban. 50 pcs low MOQ, SABS sizing blocks and express air cargo to OR Tambo (JNB).',
+    keywords: [
+      'private label activewear manufacturer south africa',
+      'custom gym wear manufacturer south africa',
+      'clothing manufacturer johannesburg',
+      'sportswear manufacturer cape town',
+      'custom activewear manufacturer durban',
+      'rugby teamwear manufacturer south africa',
+      'clothing manufacturers in pakistan for south africa',
+      'low moq clothing manufacturer south africa',
+      'custom gym apparel supplier south africa',
+      'private label clothing manufacturers south africa'
+    ],
+    metrics: [
+      { val: '50 Pcs', lbl: 'Low MOQ / Style' },
+      { val: '7-10 Days', lbl: 'DHL Proto Sampling' },
+      { val: '5-7 Days', lbl: 'Air Freight to JNB' },
+      { val: 'Full OEM', lbl: 'Labels, Tags & Bags' }
+    ],
+    marketFocus: {
+      heading: 'Engineered for South African Athletics, Sun Climate & Retail Ready',
+      points: [
+        {
+          title: 'High-Heat Breathability & UPF 50+ Sun Protection',
+          desc: 'Lightweight, sweat-wicking dry-fit poly-spandex knits and antibacterial fabrics engineered for the South African climate, outdoor training, running and gym sessions.'
+        },
+        {
+          title: 'Rugby, Teamwear & Combat Sports Strength',
+          desc: 'Reinforced 4-needle 6-thread flatlock and bar-tacked stress seams tested for high-contact athletics, rugby club uniforms, BJJ Gis and boxing fight gear.'
+        },
+        {
+          title: 'South African & International Sizing Grading',
+          desc: 'CAD pattern grading calibrated for South African athletic body dimensions across XS to 4XL with generous fits and squat-proof opacity.'
+        },
+        {
+          title: 'Direct Express Logistics to JNB, CPT & DUR',
+          desc: 'Scheduled air cargo transit into OR Tambo International Airport (Johannesburg) and Cape Town International Airport with full customs clearing guidance and door-to-door tracking.'
+        }
+      ]
+    },
+    commercials: {
+      moq: '50 pieces per style/colorway across standard size ranges.',
+      sampleLeadTime: '7 to 10 business days dispatched via DHL Express.',
+      bulkLeadTime: '3 to 4 weeks after physical sample approval.',
+      shippingMode: 'Priority Air Cargo (5–7 days to JNB/CPT) or Sea Freight to Durban / Cape Town Port.',
+      paymentTerms: 'Bank Wire (T/T), Letter of Credit (L/C).',
+      compliance: 'SABS sizing alignment, OEKO-TEX certified reactive dyes, 100% Non-Disclosure Agreement (NDA).'
+    },
+    faqs: [
+      {
+        question: "How do you handle shipping and customs delivery to South Africa?",
+        answer: "We ship orders via DHL Express and priority air freight directly into Johannesburg (OR Tambo - JNB) and Cape Town (CPT). We provide complete formal commercial invoices, packing lists and origin certificates so your clearing agent handles SARS customs entry smoothly without delays."
+      },
+      {
+        question: "What is your Minimum Order Quantity (MOQ) for South African clothing brands?",
+        answer: "Our standard MOQ starts from just 50 pieces per style/colorway, which you can split across standard sizes (S, M, L, XL, 2XL) to help emerging South African brands test new drops without high inventory risk."
+      },
+      {
+        question: "Can you manufacture rugby uniforms and high-contact sportswear?",
+        answer: "Yes. Sialkot has decades of world-class rugby and teamwear manufacturing heritage. We produce 280–320 GSM heavyweight rugby jerseys with reinforced collar plackets, sublimation printing and high-tensile polyester blends built to withstand intense match play."
+      },
+      {
+        question: "Do you supply complete private label branding for South African clients?",
+        answer: "Yes. Every order includes custom damask woven neck labels, branded wash care tags, 400 GSM custom hang tags and custom frosted EVA zipper polybags with scannable barcode stickers."
+      }
+    ]
   }
 };
 

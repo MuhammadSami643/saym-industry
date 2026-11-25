@@ -115,7 +115,8 @@ const organizationSchema = {
   url: siteUrl,
   logo: `${siteUrl}/images/site/1776250498_logo.webp`,
   image: `${siteUrl}/images/site/1776603661_home-hero-slider-image-1.webp`,
-  description: "Private label activewear, sportswear, boxing gear, hoodies, jeans and fitness apparel manufacturer from Sialkot, Pakistan.",
+  description: "Direct OEM and private label manufacturer for activewear, fitness wear, heavyweight streetwear hoodies, pro boxing gear and sublimated sportswear based in Sialkot, Pakistan. Low 50-piece MOQ and worldwide express export.",
+  slogan: "Direct OEM & Private Label Sportswear, Activewear & Combat Gear Manufacturer in Sialkot, Pakistan",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Pakki Kotli, Daska Road",
@@ -135,14 +136,94 @@ const organizationSchema = {
       telephone: "+923133599241",
       contactType: "sales & export inquiry",
       email: "sales@binrasoolenterprises.com",
-      areaServed: ["US", "GB", "CA", "AU", "DE", "FR", "NL", "AE"],
+      areaServed: ["US", "GB", "CA", "AU", "DE", "FR", "NL", "ES", "IT", "ZA", "AE"],
       availableLanguage: ["English", "Urdu"],
     },
   ],
   sameAs: [
+    "https://www.linkedin.com/company/bin-rasool-enterprises",
     "https://www.instagram.com/binrasoolenterprises",
   ],
   priceRange: "$$",
+  currenciesAccepted: "USD, GBP, EUR, AUD, ZAR, AED, CAD",
+  paymentAccepted: "Bank Wire (T/T), Letter of Credit (L/C)",
+  knowsAbout: [
+    "Private Label Sportswear Manufacturing",
+    "Custom Activewear & Gym Apparel",
+    "Heavyweight Streetwear & 450 GSM Hoodies",
+    "Custom Boxing Gloves & Combat Equipment",
+    "Sublimated Team Uniforms & Club Kits",
+    "BJJ Gis & MMA Rashguards",
+    "OEM & ODM Apparel Manufacturing Sialkot",
+    "Screen Printing, Sublimation & 3D Silicone Heat Transfers",
+    "Low MOQ Apparel Manufacturing 50 Pieces",
+    "Fast 7-10 Days DHL Express Prototype Sampling",
+  ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "B2B Apparel Manufacturing & OEM Programs",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "OEM & Private Label Activewear Manufacturing",
+          description: "Custom fitness wear, leggings, tracksuits and gym wear starting from 50 pieces MOQ per style across standard sizes.",
+        },
+        eligibleQuantity: {
+          "@type": "QuantitativeValue",
+          minValue: 50,
+          unitText: "pieces",
+        },
+        deliveryLeadTime: {
+          "@type": "QuantitativeValue",
+          minValue: 21,
+          maxValue: 28,
+          unitCode: "DAY",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Heavyweight Streetwear & Hoodie Manufacturing",
+          description: "450–500 GSM French Terry hoodies, puff screen printing, vintage acid wash, custom aglets and woven labels.",
+        },
+        eligibleQuantity: {
+          "@type": "QuantitativeValue",
+          minValue: 50,
+          unitText: "pieces",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Boxing Gloves & Combat Sports Gear",
+          description: "Genuine cowhide leather boxing gloves, sparring gear, MMA shorts and BJJ Gis handcrafted in Sialkot, Pakistan.",
+        },
+        eligibleQuantity: {
+          "@type": "QuantitativeValue",
+          minValue: 50,
+          unitText: "pairs",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Rapid Prototype Sampling Program",
+          description: "Physical pre-production prototype samples dispatched worldwide via DHL Express in 7 to 10 business days.",
+        },
+        deliveryLeadTime: {
+          "@type": "QuantitativeValue",
+          minValue: 7,
+          maxValue: 10,
+          unitCode: "DAY",
+        },
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
