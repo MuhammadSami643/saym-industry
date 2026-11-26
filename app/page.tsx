@@ -2,12 +2,16 @@ import Link from 'next/link';
 import HeroSlider from './components/HeroSlider';
 import FaqSection from './components/FaqSection';
 import { ArrowRightIcon } from './components/AdminIcons';
+import { getSiteMedia } from './lib/siteMediaStore';
 
-export default function Home() {
+export const revalidate = 60;
+
+export default async function Home() {
+  const siteMedia = await getSiteMedia();
   return (
     <div className="home-page">
       {/* 1. Hero Section with Interactive Background Slides */}
-      <HeroSlider />
+      <HeroSlider slides={siteMedia.hero_slides} />
 
       {/* 2-15. Middle Sections (Proof Strip, Categories, Capabilities, Process, etc.) */}
       <div className="proof-strip">
@@ -171,58 +175,28 @@ export default function Home() {
                 <p className="muted">Build a focused first collection or expand an established range with coordinated fabrics, colors, branding and packaging.</p>
             </div>
             <div className="home-card-grid">
-                <a href="/fitness-wear" className="home-card category-card" aria-label="Explore Fitness Wear manufacturing">
-                    <img src="/images/categories/1776540259_fitness-wear.webp" alt="Private label fitness wear manufacturer in Sialkot Pakistan" loading="lazy" decoding="async" width={420} height={280} />
-                    <div className="category-card-body">
-                        <h3>Fitness &amp; Activewear</h3>
-                        <p className="muted">Cut-and-sew fitness apparel development, private labeling and bulk manufacturing for fitness brands.</p>
-                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', margin: '0 0 16px' }}>
-                            <span style={{ fontSize: '11px', fontWeight: 700, background: '#f1f5f9', color: '#334155', padding: '3px 8px', borderRadius: '6px' }}>75/25 Nylon Spandex</span>
-                            <span style={{ fontSize: '11px', fontWeight: 700, background: '#f1f5f9', color: '#334155', padding: '3px 8px', borderRadius: '6px' }}>4-Needle Flatlock</span>
-                            <span style={{ fontSize: '11px', fontWeight: 700, background: '#f1f5f9', color: '#334155', padding: '3px 8px', borderRadius: '6px' }}>240 GSM Squat-Proof</span>
-                        </div>
-                        <span className="card-action" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', lineHeight: 1 }}><span>Explore Fitness Wear</span><ArrowRightIcon size={13} /></span>
-                    </div>
+              {siteMedia.category_cards.map((cat) => (
+                <a key={cat.id || cat.title} href={cat.link} className="home-card category-card" aria-label={`Explore ${cat.title} manufacturing`}>
+                  <img src={cat.image_url} alt={cat.alt || `${cat.title} manufacturer in Sialkot Pakistan`} loading="lazy" decoding="async" width={420} height={280} />
+                  <div className="category-card-body">
+                    <h3>{cat.title}</h3>
+                    <p className="muted">{cat.description}</p>
+                    {cat.tags && cat.tags.length > 0 && (
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', margin: '0 0 16px' }}>
+                        {cat.tags.map((tag, tIdx) => (
+                          <span key={tIdx} style={{ fontSize: '11px', fontWeight: 700, background: '#f1f5f9', color: '#334155', padding: '3px 8px', borderRadius: '6px' }}>
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                    <span className="card-action" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', lineHeight: 1 }}>
+                      <span>{cat.action_text || `Explore ${cat.title}`}</span>
+                      <ArrowRightIcon size={13} />
+                    </span>
+                  </div>
                 </a>
-                <a href="/sportswear" className="home-card category-card" aria-label="Explore Sports Wear manufacturing">
-                    <img src="/images/categories/1776540279_sports-wear.webp" alt="Custom sportswear manufacturer and wholesale supplier in Sialkot Pakistan" loading="lazy" decoding="async" width={420} height={280} />
-                    <div className="category-card-body">
-                        <h3>Sports Wear &amp; Teamwear</h3>
-                        <p className="muted">Sublimated team jerseys, club tracksuits and athletic uniforms engineered for professional durability.</p>
-                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', margin: '0 0 16px' }}>
-                            <span style={{ fontSize: '11px', fontWeight: 700, background: '#f1f5f9', color: '#334155', padding: '3px 8px', borderRadius: '6px' }}>Italian Sublimation Inks</span>
-                            <span style={{ fontSize: '11px', fontWeight: 700, background: '#f1f5f9', color: '#334155', padding: '3px 8px', borderRadius: '6px' }}>Moisture-Wicking Poly</span>
-                            <span style={{ fontSize: '11px', fontWeight: 700, background: '#f1f5f9', color: '#334155', padding: '3px 8px', borderRadius: '6px' }}>Reinforced Seams</span>
-                        </div>
-                        <span className="card-action" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', lineHeight: 1 }}><span>Explore Sports Wear</span><ArrowRightIcon size={13} /></span>
-                    </div>
-                </a>
-                <a href="/boxing-gear" className="home-card category-card" aria-label="Explore Boxing Wear manufacturing">
-                    <img src="/images/categories/1776540301_boxing-wear.webp" alt="Custom boxing wear and fight gear manufacturer in Sialkot Pakistan" loading="lazy" decoding="async" width={420} height={280} />
-                    <div className="category-card-body">
-                        <h3>Boxing &amp; Combat Gear</h3>
-                        <p className="muted">Competition sparring gloves, trunks, rashguards and custom fight kits tested for impact resistance.</p>
-                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', margin: '0 0 16px' }}>
-                            <span style={{ fontSize: '11px', fontWeight: 700, background: '#f1f5f9', color: '#334155', padding: '3px 8px', borderRadius: '6px' }}>1.2mm Full-Grain Leather</span>
-                            <span style={{ fontSize: '11px', fontWeight: 700, background: '#f1f5f9', color: '#334155', padding: '3px 8px', borderRadius: '6px' }}>Multi-Layer Latex Foam</span>
-                            <span style={{ fontSize: '11px', fontWeight: 700, background: '#f1f5f9', color: '#334155', padding: '3px 8px', borderRadius: '6px' }}>Anatomical Thumb Lock</span>
-                        </div>
-                        <span className="card-action" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', lineHeight: 1 }}><span>Explore Boxing Gear</span><ArrowRightIcon size={13} /></span>
-                    </div>
-                </a>
-                <a href="/streetwear" className="home-card category-card" aria-label="Explore Streetwear manufacturing">
-                    <img src="/images/categories/1789894942_streetwear.webp" alt="Bin Rasool Enterprises branded oversized hoodie, baggy sweatpants and varsity jacket in a colorful studio" loading="lazy" decoding="async" width={420} height={280} />
-                    <div className="category-card-body">
-                        <h3>Streetwear &amp; Hoodies</h3>
-                        <p className="muted">Cut-and-sew heavyweight luxury streetwear, acid wash tees and drop-shoulder hoodies for fashion labels.</p>
-                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', margin: '0 0 16px' }}>
-                            <span style={{ fontSize: '11px', fontWeight: 700, background: '#f1f5f9', color: '#334155', padding: '3px 8px', borderRadius: '6px' }}>380–500 GSM French Terry</span>
-                            <span style={{ fontSize: '11px', fontWeight: 700, background: '#f1f5f9', color: '#334155', padding: '3px 8px', borderRadius: '6px' }}>100% Combed Cotton</span>
-                            <span style={{ fontSize: '11px', fontWeight: 700, background: '#f1f5f9', color: '#334155', padding: '3px 8px', borderRadius: '6px' }}>High-Density 3D Puff</span>
-                        </div>
-                        <span className="card-action" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', lineHeight: 1 }}><span>Explore Streetwear</span><ArrowRightIcon size={13} /></span>
-                    </div>
-                </a>
+              ))}
             </div>
             <div style={{ 'marginTop': '26px' }}>
                 <a href="/categories" className="btn btn-dark">Browse All Product Categories</a>
@@ -432,16 +406,16 @@ export default function Home() {
                     <a href="/product-catalog" className="btn btn-dark">Browse All Products</a>
                 </div>
                 <div className="home-card-grid">
-                                            <a href="/fitness-wear-manufacturer/joggers/slim-fit-gym-joggers" className="home-card product-card" aria-label="View Slim Fit Gym Joggers">
-                                                            <img src="/images/products/1780565647_slim-fit-gym-joggers.webp" alt="Custom Slim Fit Gym Joggers Manufacturer in Sialkot Bulk Order" loading="lazy" decoding="async" />
-                                                        <div className="product-card-body">
-                                                                    <span className="card-tag">Joggers</span>
-                                                                <h3>Slim Fit Gym Joggers</h3>
-                                <p className="muted">Premium quality slim fit gym joggers manufactured for fitness brands, wholesalers and private label buyers. Available in custom fabrics, colors, branding and bulk production options.</p>
-                                <span className="card-action">View Product Details</span>
-                            </div>
-                        </a>
-                                    </div>
+                  <a href={siteMedia.featured_product.link} className="home-card product-card" aria-label={`View ${siteMedia.featured_product.title}`}>
+                    <img src={siteMedia.featured_product.image_url} alt={siteMedia.featured_product.alt || siteMedia.featured_product.title} loading="lazy" decoding="async" />
+                    <div className="product-card-body">
+                      <span className="card-tag">{siteMedia.featured_product.tag}</span>
+                      <h3>{siteMedia.featured_product.title}</h3>
+                      <p className="muted">{siteMedia.featured_product.description}</p>
+                      <span className="card-action">{siteMedia.featured_product.action_text || 'View Product Details'}</span>
+                    </div>
+                  </a>
+                </div>
             </div>
         </section>
     

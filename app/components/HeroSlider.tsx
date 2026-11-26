@@ -3,41 +3,56 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
-const SLIDES = [
-  '/images/site/hero-slide-factory-craft.webp',
-  '/images/site/hero-slide-streetwear-hoodies.webp',
-  '/images/site/hero-slide-athletic-tracksuits.webp',
-  '/images/site/hero-slide-boxing-combat-gear.webp'
+export interface SlideItem {
+  id?: string;
+  image_url: string;
+  title?: string;
+  subtitle?: string;
+  alt?: string;
+}
+
+const DEFAULT_SLIDES: SlideItem[] = [
+  { image_url: '/images/site/hero-slide-factory-craft.webp', alt: 'Private label activewear manufacturing facility Sialkot' },
+  { image_url: '/images/site/hero-slide-streetwear-hoodies.webp', alt: 'Custom streetwear and heavyweight hoodies manufacturer' },
+  { image_url: '/images/site/hero-slide-athletic-tracksuits.webp', alt: 'Athletic tracksuits and performance gym wear production' },
+  { image_url: '/images/site/hero-slide-boxing-combat-gear.webp', alt: 'Custom boxing gear and combat fight kits manufacturing' }
 ];
 
-export default function HeroSlider() {
+interface HeroSliderProps {
+  slides?: SlideItem[];
+}
+
+export default function HeroSlider({ slides }: HeroSliderProps) {
+  const activeSlides = slides && slides.length > 0 ? slides : DEFAULT_SLIDES;
   const [currentIndex, setCurrentIndex] = useState(0);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
+    if (activeSlides.length <= 1) return;
     const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % SLIDES.length);
+      setCurrentIndex((prev) => (prev + 1) % activeSlides.length);
     }, 9000);
     return () => clearInterval(timer);
-  }, []);
+  }, [activeSlides.length]);
 
   return (
     <section className="home-hero" aria-label="Private label activewear manufacturing">
       <div className="home-hero-slides" aria-hidden="true">
-        {SLIDES.map((slide, idx) => {
+        {activeSlides.map((slide, idx) => {
           // On SSR and initial paint, only load slide 0 to prevent blocking mobile bandwidth with 5 heavy background images
           const shouldLoad = idx === 0 || mounted;
+          const bgUrl = slide.image_url;
           return (
             <div
-              key={slide}
+              key={slide.id || slide.image_url || idx}
               className={`home-hero-slide ${idx === currentIndex ? 'is-active' : ''}`}
-              style={{ backgroundImage: shouldLoad ? `url('${slide}')` : 'none' }}
+              style={{ backgroundImage: shouldLoad ? `url('${bgUrl}')` : 'none' }}
             >
               {idx === 0 && (
                 <img
-                  src={slide}
-                  alt="Private label activewear manufacturing facility Sialkot"
+                  src={bgUrl}
+                  alt={slide.alt || "Private label activewear manufacturing facility Sialkot"}
                   fetchPriority="high"
                   decoding="async"
                   style={{
@@ -84,4 +99,3 @@ export default function HeroSlider() {
     </section>
   );
 }
-

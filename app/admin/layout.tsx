@@ -304,6 +304,12 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             </span>
           </Link>
 
+          <Link href="/admin/media" style={navItemClass('/admin/media')}>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '9px' }}>
+              <span style={{ color: isActive('/admin/media') ? '#00e599' : '#94a3b8' }}>🖼</span> Website Media
+            </span>
+          </Link>
+
           <Link href="/admin/analytics" style={navItemClass('/admin/analytics')}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '9px' }}>
               <span style={{ color: isActive('/admin/analytics') ? '#00e599' : '#94a3b8' }}>📊</span> Export Analytics

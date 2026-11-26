@@ -63,6 +63,8 @@ export async function POST(request: Request) {
     let subFolder = 'techpacks';
     if (requestedFolder === 'blog' || requestedFolder === 'blogs') {
       subFolder = 'blog';
+    } else if (requestedFolder === 'site' || requestedFolder === 'media') {
+      subFolder = 'site';
     } else if (isVideo) {
       subFolder = 'videos';
     } else if (isImage) {
