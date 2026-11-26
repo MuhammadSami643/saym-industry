@@ -484,20 +484,26 @@ export default function Footer() {
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: '6px',
+                    minHeight: 'auto',
+                    lineHeight: '1.2',
                   }}
                 >
                   <span>WhatsApp Factory</span>
                 </a>
                 <Link
                   href="/contact-us"
-                  className="btn btn-primary"
+                  className="btn-primary"
                   style={{
-                    padding: '8px 18px',
+                    padding: '8px 16px',
                     fontSize: '13px',
                     fontWeight: 700,
                     textDecoration: 'none',
                     borderRadius: '6px',
                     whiteSpace: 'nowrap',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    minHeight: 'auto',
+                    lineHeight: '1.2',
                   }}
                 >
                   Request Production Quote
