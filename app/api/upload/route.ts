@@ -55,19 +55,30 @@ export async function POST(request: Request) {
       );
     }
 
+    const IMAGE_EXTENSIONS = new Set(['.png', '.jpg', '.jpeg', '.webp', '.svg']);
     const isVideo = VIDEO_EXTENSIONS.has(ext);
-    const subFolder = isVideo ? 'videos' : 'techpacks';
+    const isImage = IMAGE_EXTENSIONS.has(ext);
+    const requestedFolder = formData.get('folder') as string | null;
+
+    let subFolder = 'techpacks';
+    if (requestedFolder === 'blog' || requestedFolder === 'blogs') {
+      subFolder = 'blog';
+    } else if (isVideo) {
+      subFolder = 'videos';
+    } else if (isImage) {
+      subFolder = 'images';
+    }
 
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
 
-    // Ensure upload directory exists in public/uploads/videos or techpacks
+    // Ensure upload directory exists
     const uploadDir = path.join(process.cwd(), 'public', 'uploads', subFolder);
     await mkdir(uploadDir, { recursive: true });
 
     // Generate safe unique filename
     const safeBase = path.basename(originalName, ext).replace(/[^a-zA-Z0-9_-]/g, '_');
-    const prefix = isVideo ? 'sample_video' : 'techpack';
+    const prefix = isVideo ? 'sample_video' : (subFolder === 'blog' ? 'blog' : (isImage ? 'img' : 'techpack'));
     const uniqueName = `${prefix}_${Date.now()}_${safeBase}${ext}`;
     const filePath = path.join(uploadDir, uniqueName);
 

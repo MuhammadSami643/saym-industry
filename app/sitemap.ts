@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { BLOG_POSTS } from './lib/blogs';
+import { getPublishedBlogs } from './lib/blogsStore';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://binrasoolenterprises.com';
@@ -103,7 +103,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // 3. Dynamic Blog Articles (Informational & Top-of-Funnel SEO)
-  const blogPages: MetadataRoute.Sitemap = BLOG_POSTS.map((post) => ({
+  const publishedBlogs = getPublishedBlogs();
+  const blogPages: MetadataRoute.Sitemap = publishedBlogs.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: currentDate,
     changeFrequency: 'monthly',

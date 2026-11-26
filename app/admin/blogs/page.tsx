@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BLOG_POSTS, BLOG_DRAFTS, BlogPost } from '../../lib/blogs';
@@ -27,6 +27,24 @@ export default function AdminBlogsPage() {
   const [search, setSearch] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [showAddModal, setShowAddModal] = useState(false);
+  const [modalTab, setModalTab] = useState<'editor' | 'preview'>('editor');
+  const [uploadingImage, setUploadingImage] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Load from /api/blogs dynamically on mount
+  useEffect(() => {
+    fetch('/api/blogs')
+      .then((res) => res.json())
+      .then((json) => {
+        if (json.success && Array.isArray(json.data)) {
+          const published = json.data.filter((b: BlogPost) => b.status === 'published');
+          const draftsList = json.data.filter((b: BlogPost) => b.status === 'draft');
+          setBlogs(published);
+          setDrafts(draftsList);
+        }
+      })
+      .catch((err) => console.warn('Could not load blogs from API, using fallback:', err));
+  }, []);
 
   // New blog form state
   const [newBlog, setNewBlog] = useState({
@@ -55,31 +73,100 @@ export default function AdminBlogsPage() {
     return matchCat && matchSearch;
   });
 
-  const handlePublishDraft = (draft: BlogPost) => {
-    setDrafts((prev) => prev.filter((d) => d.slug !== draft.slug));
-    const publishedItem: BlogPost = { ...draft, status: 'published' };
-    setBlogs((prev) => [publishedItem, ...prev]);
-    setPreviewDraft(null);
-    setNotification(`"${draft.title}" has been published to live site!`);
-    setTimeout(() => setNotification(null), 4000);
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setUploadingImage(true);
+    try {
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('folder', 'blog');
+
+      const res = await fetch('/api/upload', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const json = await res.json();
+      if (json.success && json.url) {
+        setNewBlog((prev) => ({ ...prev, image: json.url }));
+        setNotification('Cover image uploaded successfully!');
+        setTimeout(() => setNotification(null), 3500);
+      } else {
+        alert(json.error || 'Failed to upload image.');
+      }
+    } catch (err) {
+      console.error('Upload error:', err);
+      alert('Upload failed. Check console.');
+    } finally {
+      setUploadingImage(false);
+    }
   };
 
-  const handleUnpublishToDraft = (post: BlogPost) => {
-    setBlogs((prev) => prev.filter((b) => b.slug !== post.slug));
-    const draftItem: BlogPost = { ...post, status: 'draft' };
-    setDrafts((prev) => [draftItem, ...prev]);
-    setNotification(`"${post.title}" moved to Drafts.`);
-    setTimeout(() => setNotification(null), 4000);
+  const handlePublishDraft = async (draft: BlogPost) => {
+    try {
+      const idOrSlug = (draft as any).id || draft.slug;
+      const res = await fetch(`/api/blogs/${idOrSlug}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status: 'published' }),
+      });
+
+      if (res.ok) {
+        setDrafts((prev) => prev.filter((d) => d.slug !== draft.slug));
+        const publishedItem: BlogPost = { ...draft, status: 'published' };
+        setBlogs((prev) => [publishedItem, ...prev]);
+        setPreviewDraft(null);
+        setNotification(`"${draft.title}" published to live site!`);
+        setTimeout(() => setNotification(null), 4000);
+      }
+    } catch (err) {
+      console.error('Error publishing draft:', err);
+    }
   };
 
-  const handleDeleteDraft = (slug: string) => {
-    setDrafts((prev) => prev.filter((d) => d.slug !== slug));
+  const handleUnpublishToDraft = async (post: BlogPost) => {
+    try {
+      const idOrSlug = (post as any).id || post.slug;
+      const res = await fetch(`/api/blogs/${idOrSlug}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status: 'draft' }),
+      });
+
+      if (res.ok) {
+        setBlogs((prev) => prev.filter((b) => b.slug !== post.slug));
+        const draftItem: BlogPost = { ...post, status: 'draft' };
+        setDrafts((prev) => [draftItem, ...prev]);
+        setNotification(`"${post.title}" moved to Drafts.`);
+        setTimeout(() => setNotification(null), 4000);
+      }
+    } catch (err) {
+      console.error('Error unpublishing post:', err);
+    }
   };
 
-  const handleCreateBlog = (e: React.FormEvent, publishImmediately = false) => {
+  const handleDeleteDraft = async (slug: string) => {
+    if (!confirm('Are you sure you want to delete this article?')) return;
+    try {
+      const res = await fetch(`/api/blogs/${slug}`, { method: 'DELETE' });
+      if (res.ok) {
+        setDrafts((prev) => prev.filter((d) => d.slug !== slug));
+        setBlogs((prev) => prev.filter((b) => b.slug !== slug));
+        setNotification('Article deleted permanently from database.');
+        setTimeout(() => setNotification(null), 4000);
+      }
+    } catch (err) {
+      console.error('Error deleting draft:', err);
+    }
+  };
+
+  const handleCreateBlog = async (e: React.FormEvent, publishImmediately = false) => {
     e.preventDefault();
     if (!newBlog.title.trim() || !newBlog.excerpt.trim()) return;
 
+    setIsSubmitting(true);
     const slug = newBlog.title
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, '-')
@@ -95,44 +182,60 @@ export default function AdminBlogsPage() {
       .map((t) => t.trim())
       .filter(Boolean);
 
-    const created: BlogPost = {
+    const postPayload = {
       slug,
-      title: newBlog.title,
+      title: newBlog.title.trim(),
       category: newBlog.category,
       date: new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
       readTime: newBlog.readTime,
       author: newBlog.author,
       image: newBlog.image,
-      excerpt: newBlog.excerpt,
-      content: paragraphs.length > 0 ? paragraphs : [newBlog.excerpt],
+      excerpt: newBlog.excerpt.trim(),
+      content: paragraphs.length > 0 ? paragraphs : [newBlog.excerpt.trim()],
       tags: tags.length > 0 ? tags : ['Manufacturing', 'Sialkot'],
       status: publishImmediately ? 'published' : 'draft',
     };
 
-    if (publishImmediately) {
-      setBlogs((prev) => [created, ...prev]);
-      setActiveTab('published');
-      setNotification(`"${created.title}" published live!`);
-    } else {
-      setDrafts((prev) => [created, ...prev]);
-      setActiveTab('drafts');
-      setNotification(`"${created.title}" saved to Drafts for your review!`);
+    try {
+      const res = await fetch('/api/blogs', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(postPayload),
+      });
+
+      const json = await res.json();
+      const created = json.data || postPayload;
+
+      if (publishImmediately) {
+        setBlogs((prev) => [created, ...prev]);
+        setActiveTab('published');
+        setNotification(`"${created.title}" published live in database!`);
+      } else {
+        setDrafts((prev) => [created, ...prev]);
+        setActiveTab('drafts');
+        setNotification(`"${created.title}" saved to Drafts in database!`);
+      }
+
+      setShowAddModal(false);
+      setTimeout(() => setNotification(null), 4000);
+
+      // Reset form
+      setNewBlog({
+        title: '',
+        category: 'Activewear Manufacturing',
+        readTime: '6 min read',
+        author: 'Bin Rasool Technical Team',
+        image: '/images/blog/how-to-start-a-private-label-activewear-brand-2026.jpg',
+        excerpt: '',
+        contentRaw: '',
+        tagsRaw: 'Activewear, Private Label, Sialkot',
+      });
+    } catch (err) {
+      console.error('Error saving blog to database:', err);
+      alert('Could not save to database. Please try again.');
+    } finally {
+      setIsSubmitting(false);
     }
-
-    setTimeout(() => setNotification(null), 4000);
-
-    // Reset form & close modal
-    setNewBlog({
-      title: '',
-      category: 'Activewear Manufacturing',
-      readTime: '6 min read',
-      author: 'Bin Rasool Technical Team',
-      image: '/images/blog/how-to-start-a-private-label-activewear-brand-2026.jpg',
-      excerpt: '',
-      contentRaw: '',
-      tagsRaw: 'Activewear, Private Label, Sialkot',
-    });
-    setShowAddModal(false);
   };
 
   return (
@@ -1316,15 +1419,51 @@ export default function AdminBlogsPage() {
 
                 <div>
                   <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, color: '#cbd5e1', marginBottom: '6px' }}>
-                    Featured Cover Image URL
+                    Featured Cover Image (Upload from PC or Paste URL)
                   </label>
-                  <input
-                    type="text"
-                    value={newBlog.image}
-                    onChange={(e) => setNewBlog({ ...newBlog, image: e.target.value })}
-                    placeholder="/images/catalog/fitness-wear/compression-activewear-set.webp"
-                    style={{ width: '100%', padding: '10px 14px', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.04)', color: '#fff', fontSize: '13px' }}
-                  />
+                  <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                    <input
+                      type="text"
+                      value={newBlog.image}
+                      onChange={(e) => setNewBlog({ ...newBlog, image: e.target.value })}
+                      placeholder="/images/blog/..."
+                      style={{ flex: 1, padding: '10px 14px', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.04)', color: '#fff', fontSize: '13px' }}
+                    />
+                    <label
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                        padding: '10px 16px',
+                        borderRadius: '10px',
+                        background: uploadingImage ? 'rgba(56, 189, 248, 0.3)' : 'rgba(56, 189, 248, 0.15)',
+                        border: '1px solid rgba(56, 189, 248, 0.4)',
+                        color: '#38bdf8',
+                        fontSize: '12.5px',
+                        fontWeight: 800,
+                        cursor: uploadingImage ? 'not-allowed' : 'pointer',
+                        whiteSpace: 'nowrap',
+                        transition: 'all 0.15s ease',
+                      }}
+                    >
+                      <span>{uploadingImage ? '⏳ Uploading...' : '📷 Upload From PC'}</span>
+                      <input
+                        type="file"
+                        accept="image/*"
+                        disabled={uploadingImage}
+                        onChange={handleImageUpload}
+                        style={{ display: 'none' }}
+                      />
+                    </label>
+                  </div>
+                  {newBlog.image && (
+                    <div style={{ marginTop: '10px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                      <div style={{ width: '80px', height: '45px', borderRadius: '8px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.2)', background: '#000' }}>
+                        <img src={newBlog.image} alt="Preview" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      </div>
+                      <span style={{ fontSize: '11px', color: '#00e599', fontWeight: 600 }}>✓ Cover Image Ready</span>
+                    </div>
+                  )}
                 </div>
 
                 <div>
@@ -1342,16 +1481,110 @@ export default function AdminBlogsPage() {
                 </div>
 
                 <div>
-                  <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, color: '#cbd5e1', marginBottom: '6px' }}>
-                    Article Body (Separate paragraphs with double Enter)
-                  </label>
-                  <textarea
-                    rows={6}
-                    value={newBlog.contentRaw}
-                    onChange={(e) => setNewBlog({ ...newBlog, contentRaw: e.target.value })}
-                    placeholder="Write article content here. Use ## for H2 headings, ### for H3 headings, and * ** for bullet points."
-                    style={{ width: '100%', padding: '10px 14px', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.04)', color: '#fff', fontSize: '13px', resize: 'vertical' }}
-                  />
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+                    <label style={{ fontSize: '12px', fontWeight: 700, color: '#cbd5e1' }}>
+                      Article Body / HTML (Paste Formatted Content from Antigravity) *
+                    </label>
+                    <div style={{ display: 'flex', gap: '6px' }}>
+                      <button
+                        type="button"
+                        onClick={() => setModalTab('editor')}
+                        style={{
+                          padding: '4px 12px',
+                          borderRadius: '6px',
+                          fontSize: '11px',
+                          fontWeight: 800,
+                          background: modalTab === 'editor' ? '#38bdf8' : 'rgba(255,255,255,0.06)',
+                          color: modalTab === 'editor' ? '#070b0d' : '#94a3b8',
+                          border: 'none',
+                          cursor: 'pointer',
+                        }}
+                      >
+                        ✏️ Write / Paste
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setModalTab('preview')}
+                        style={{
+                          padding: '4px 12px',
+                          borderRadius: '6px',
+                          fontSize: '11px',
+                          fontWeight: 800,
+                          background: modalTab === 'preview' ? '#00e599' : 'rgba(255,255,255,0.06)',
+                          color: modalTab === 'preview' ? '#070b0d' : '#94a3b8',
+                          border: 'none',
+                          cursor: 'pointer',
+                        }}
+                      >
+                        👁️ Live Formatted Preview
+                      </button>
+                    </div>
+                  </div>
+
+                  {modalTab === 'editor' ? (
+                    <textarea
+                      rows={9}
+                      value={newBlog.contentRaw}
+                      onChange={(e) => setNewBlog({ ...newBlog, contentRaw: e.target.value })}
+                      placeholder={`Paste formatted article text or HTML here...\n\nAntigravity can generate this for you directly.\nExample:\n## Step 1: Fabric Selection\nChoose 75/25 Nylon Spandex interlock...\n\n* **Squat-proof opacity**\n* **4-way stretch**`}
+                      style={{
+                        width: '100%',
+                        padding: '12px 14px',
+                        borderRadius: '10px',
+                        border: '1px solid rgba(255,255,255,0.1)',
+                        background: 'rgba(255,255,255,0.04)',
+                        color: '#fff',
+                        fontSize: '13px',
+                        fontFamily: 'monospace',
+                        lineHeight: 1.6,
+                        resize: 'vertical',
+                      }}
+                    />
+                  ) : (
+                    <div
+                      style={{
+                        minHeight: '200px',
+                        maxHeight: '300px',
+                        overflowY: 'auto',
+                        padding: '16px 20px',
+                        borderRadius: '10px',
+                        border: '1px solid rgba(0,229,153,0.3)',
+                        background: '#070b0d',
+                        color: '#e2e8f0',
+                        fontSize: '13px',
+                        lineHeight: 1.7,
+                      }}
+                    >
+                      {newBlog.contentRaw.trim() ? (
+                        newBlog.contentRaw.split('\n\n').map((block, idx) => {
+                          const trimmed = block.trim();
+                          if (trimmed.startsWith('### ')) {
+                            return <h4 key={idx} style={{ fontSize: '15px', fontWeight: 800, color: '#f3a626', margin: '14px 0 6px' }}>{trimmed.replace('### ', '')}</h4>;
+                          }
+                          if (trimmed.startsWith('## ')) {
+                            return <h3 key={idx} style={{ fontSize: '17px', fontWeight: 800, color: '#38bdf8', margin: '18px 0 8px' }}>{trimmed.replace('## ', '')}</h3>;
+                          }
+                          if (trimmed.startsWith('* ')) {
+                            const items = trimmed.split('\n').filter(l => l.trim().startsWith('* '));
+                            return (
+                              <ul key={idx} style={{ paddingLeft: '20px', margin: '8px 0' }}>
+                                {items.map((it, i) => (
+                                  <li key={i} style={{ marginBottom: '4px' }}>
+                                    {it.replace('* ', '').replace(/\*\*(.*?)\*\*/g, '$1')}
+                                  </li>
+                                ))}
+                              </ul>
+                            );
+                          }
+                          return <p key={idx} style={{ margin: '0 0 10px', color: '#cbd5e1' }}>{trimmed}</p>;
+                        })
+                      ) : (
+                        <p style={{ color: '#64748b', fontStyle: 'italic', margin: 0 }}>
+                          Paste content in the editor tab to see the live formatted preview here.
+                        </p>
+                      )}
+                    </div>
+                  )}
                 </div>
 
                 <div>
@@ -1399,11 +1632,12 @@ export default function AdminBlogsPage() {
                       cursor: 'pointer',
                     }}
                   >
-                    💾 Save as Draft
+                    {isSubmitting ? '⏳ Saving...' : '💾 Save as Draft to Database'}
                   </button>
 
                   <button
                     type="button"
+                    disabled={isSubmitting}
                     onClick={(e) => handleCreateBlog(e, true)}
                     style={{
                       background: '#00e599',
@@ -1413,11 +1647,12 @@ export default function AdminBlogsPage() {
                       padding: '10px 22px',
                       fontSize: '13px',
                       fontWeight: 800,
-                      cursor: 'pointer',
+                      cursor: isSubmitting ? 'not-allowed' : 'pointer',
+                      opacity: isSubmitting ? 0.7 : 1,
                       boxShadow: '0 0 16px rgba(0, 229, 153, 0.4)',
                     }}
                   >
-                    🚀 Publish Live
+                    {isSubmitting ? '⏳ Publishing...' : '🚀 Publish Live to Database'}
                   </button>
                 </div>
               </form>

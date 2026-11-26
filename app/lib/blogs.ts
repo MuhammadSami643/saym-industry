@@ -1,4 +1,5 @@
 export interface BlogPost {
+  id?: string;
   slug: string;
   title: string;
   category: string;
@@ -10,6 +11,8 @@ export interface BlogPost {
   content: string[];
   tags: string[];
   status?: 'published' | 'draft';
+  created_at?: string;
+  updated_at?: string;
 }
 
 // 🟢 LIVE PUBLISHED ARTICLES (Publicly visible on website /blog)

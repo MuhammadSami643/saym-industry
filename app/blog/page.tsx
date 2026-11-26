@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd';
-import { BLOG_POSTS } from '../lib/blogs';
+import { getPublishedBlogs } from '../lib/blogsStore';
 import { ArrowRightIcon } from '../components/AdminIcons';
+
+export const revalidate = 60;
 
 export const metadata = {
   title: "Private Label Activewear & Sportswear Manufacturing Blog | Bin Rasool Enterprises",
@@ -9,6 +11,7 @@ export const metadata = {
 };
 
 export default function BlogPage() {
+  const publishedPosts = getPublishedBlogs();
   return (
     <div className="blog-page">
       {/* Hero Header */}
@@ -42,7 +45,7 @@ export default function BlogPage() {
             </div>
           </div>
 
-          {BLOG_POSTS.length === 0 ? (
+          {publishedPosts.length === 0 ? (
             <div style={{ textAlign: 'center', padding: '64px 20px', background: '#ffffff', borderRadius: '12px', border: '1px solid var(--border)' }}>
               <div style={{ fontSize: '36px', marginBottom: '12px' }}>📝</div>
               <h3 style={{ fontSize: '1.25rem', marginBottom: '8px', color: 'var(--text-main)' }}>Articles Coming Soon</h3>
@@ -52,7 +55,7 @@ export default function BlogPage() {
             </div>
           ) : (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '26px' }}>
-              {BLOG_POSTS.map((post) => (
+              {publishedPosts.map((post) => (
                 <article key={post.slug} className="card clickable-card" style={{ padding: '0', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
                   <Link href={`/blog/${post.slug}`} style={{ display: 'block', width: '100%', aspectRatio: '16/9', overflow: 'hidden', background: '#e2e8f0' }}>
                     <img

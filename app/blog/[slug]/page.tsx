@@ -3,21 +3,27 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import BreadcrumbJsonLd from '../../components/BreadcrumbJsonLd';
 import { BLOG_POSTS, getBlogPost } from '../../lib/blogs';
+import { getBlogBySlug, getPublishedBlogs } from '../../lib/blogsStore';
 import { ArrowRightIcon } from '../../components/AdminIcons';
+
+export const revalidate = 60;
+export const dynamicParams = true;
 
 interface Props {
   params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
-  return BLOG_POSTS.map((post) => ({
+  const published = getPublishedBlogs();
+  const base = published.length > 0 ? published : BLOG_POSTS;
+  return base.map((post) => ({
     slug: post.slug,
   }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const post = getBlogPost(slug);
+  const post = getBlogBySlug(slug) || getBlogPost(slug);
 
   if (!post) {
     return {
@@ -38,13 +44,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
-  const post = getBlogPost(slug);
+  const post = getBlogBySlug(slug) || getBlogPost(slug);
 
   if (!post) {
     notFound();
   }
 
-  const relatedPosts = BLOG_POSTS.filter((p) => p.slug !== post.slug).slice(0, 2);
+  const allPublished = getPublishedBlogs();
+  const relatedPosts = (allPublished.length > 0 ? allPublished : BLOG_POSTS).filter((p) => p.slug !== post.slug).slice(0, 2);
 
   return (
     <article className="blog-post-page">
