@@ -123,19 +123,31 @@ export default async function BlogPostPage({ params }: Props) {
           {/* Article Paragraphs */}
           <div style={{ fontSize: '16px', lineHeight: 1.85, color: '#334155' }}>
             {post.content.map((paragraph, idx) => {
-              if (paragraph.startsWith('### ')) {
-                const [heading, ...rest] = paragraph.replace('### ', '').split('\n');
+              if (paragraph.startsWith('## ')) {
+                const [heading, ...rest] = paragraph.replace('## ', '').split('\n');
                 return (
-                  <div key={idx} style={{ marginTop: '36px', marginBottom: '18px' }}>
-                    <h2 style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--text-main)', margin: '0 0 12px' }}>
+                  <div key={idx} style={{ marginTop: '42px', marginBottom: '18px' }}>
+                    <h2 style={{ fontSize: '1.65rem', fontWeight: 800, color: 'var(--text-main)', margin: '0 0 12px', lineHeight: 1.3 }}>
                       {heading}
                     </h2>
-                    {rest.length > 0 && <p style={{ margin: 0 }}>{rest.join('\n')}</p>}
+                    {rest.length > 0 && <p style={{ margin: 0, color: '#334155' }}>{rest.join('\n')}</p>}
                   </div>
                 );
               }
 
-              if (paragraph.includes('* **')) {
+              if (paragraph.startsWith('### ')) {
+                const [heading, ...rest] = paragraph.replace('### ', '').split('\n');
+                return (
+                  <div key={idx} style={{ marginTop: '30px', marginBottom: '14px' }}>
+                    <h3 style={{ fontSize: '1.3rem', fontWeight: 700, color: 'var(--text-main)', margin: '0 0 10px', lineHeight: 1.35 }}>
+                      {heading}
+                    </h3>
+                    {rest.length > 0 && <p style={{ margin: 0, color: '#334155' }}>{rest.join('\n')}</p>}
+                  </div>
+                );
+              }
+
+              if (paragraph.includes('* **') || paragraph.startsWith('* ')) {
                 const lines = paragraph.split('\n').filter(Boolean);
                 return (
                   <div key={idx} style={{ margin: '24px 0' }}>

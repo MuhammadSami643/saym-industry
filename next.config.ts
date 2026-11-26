@@ -14,6 +14,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/request-sample',
+        destination: '/order-sample',
+        permanent: true,
+      },
+      {
         source: '/products',
         destination: '/product-catalog',
         permanent: true,

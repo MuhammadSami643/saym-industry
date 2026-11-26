@@ -414,7 +414,7 @@ export default function Home() {
                         Bin Rasool Enterprises supports buyers outside Pakistan with remote sample approvals, production communication, export packing and shipment planning. Courier, air or sea freight options can be discussed according to order size, destination, timing and buyer preference.
                     </p>
                     <div style={{ 'display': 'flex', 'gap': '10px', 'flexWrap': 'wrap', 'marginTop': '24px' }}>
-                        <a href="/shipping-export" className="btn btn-primary">View Shipping and Export Support</a>
+                        <a href="/manufacturing-process" className="btn btn-primary">View Shipping and Export Support</a>
                         <a href="/contact-us" className="btn btn-outline" style={{ 'borderColor': 'rgba(255,255,255,.35)', 'color': '#fff' }}>Discuss Your Destination</a>
                     </div>
                 </div>

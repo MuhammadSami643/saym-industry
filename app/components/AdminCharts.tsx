@@ -3,42 +3,42 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
-// Monthly export revenue and unit volume data
+// Monthly export revenue and unit volume data (Zero / Real Baseline)
 const MONTHLY_DATA = [
-  { month: 'Jan', volume: 28, revenue: 42, samples: 12 },
-  { month: 'Feb', volume: 34, revenue: 54, samples: 16 },
-  { month: 'Mar', volume: 45, revenue: 68, samples: 21 },
-  { month: 'Apr', volume: 52, revenue: 79, samples: 25 },
-  { month: 'May', volume: 48, revenue: 73, samples: 22 },
-  { month: 'Jun', volume: 64, revenue: 98, samples: 31 },
-  { month: 'Jul', volume: 71, revenue: 112, samples: 36 },
-  { month: 'Aug', volume: 68, revenue: 104, samples: 34 },
-  { month: 'Sep', volume: 82, revenue: 126, samples: 41 },
-  { month: 'Oct', volume: 94, revenue: 148, samples: 48 },
-  { month: 'Nov', volume: 88, revenue: 139, samples: 44 },
-  { month: 'Dec', volume: 102, revenue: 165, samples: 52 },
+  { month: 'Jan', volume: 0, revenue: 0, samples: 0 },
+  { month: 'Feb', volume: 0, revenue: 0, samples: 0 },
+  { month: 'Mar', volume: 0, revenue: 0, samples: 0 },
+  { month: 'Apr', volume: 0, revenue: 0, samples: 0 },
+  { month: 'May', volume: 0, revenue: 0, samples: 0 },
+  { month: 'Jun', volume: 0, revenue: 0, samples: 0 },
+  { month: 'Jul', volume: 0, revenue: 0, samples: 0 },
+  { month: 'Aug', volume: 0, revenue: 0, samples: 0 },
+  { month: 'Sep', volume: 0, revenue: 0, samples: 0 },
+  { month: 'Oct', volume: 0, revenue: 0, samples: 0 },
+  { month: 'Nov', volume: 0, revenue: 0, samples: 0 },
+  { month: 'Dec', volume: 0, revenue: 0, samples: 0 },
 ];
 
 const CATEGORIES = [
-  { name: 'Streetwear & Hoodies', share: 38, count: 184, color: '#00e599' },
-  { name: 'Denim & Jeans', share: 24, count: 116, color: '#38bdf8' },
-  { name: 'Fitness & Activewear', share: 20, count: 97, color: '#fbbf24' },
-  { name: 'Boxing & Combat Gear', share: 18, count: 87, color: '#f87171' },
+  { name: 'Streetwear & Hoodies', share: 0, count: 0, color: '#00e599' },
+  { name: 'Denim & Jeans', share: 0, count: 0, color: '#38bdf8' },
+  { name: 'Fitness & Activewear', share: 0, count: 0, color: '#fbbf24' },
+  { name: 'Boxing & Combat Gear', share: 0, count: 0, color: '#f87171' },
 ];
 
 const FUNNEL_STAGES = [
-  { stage: '1. RFQ & Tech Pack Inquiries', count: 484, pct: 100, color: '#38bdf8' },
-  { stage: '2. Cost Estimate & Spec Review', count: 372, pct: 76.8, color: '#2dd4bf' },
-  { stage: '3. Pre-Production Sample Made', count: 248, pct: 51.2, color: '#fbbf24' },
-  { stage: '4. Bulk Order & Advance Remittance', count: 186, pct: 38.4, color: '#00e599' },
-  { stage: '5. Export Dispatch (Air / Sea Cargo)', count: 179, pct: 37.0, color: '#34d399' },
+  { stage: '1. RFQ & Tech Pack Inquiries', count: 0, pct: 0, color: '#38bdf8' },
+  { stage: '2. Cost Estimate & Spec Review', count: 0, pct: 0, color: '#2dd4bf' },
+  { stage: '3. Pre-Production Sample Made', count: 0, pct: 0, color: '#fbbf24' },
+  { stage: '4. Bulk Order & Advance Remittance', count: 0, pct: 0, color: '#00e599' },
+  { stage: '5. Export Dispatch (Air / Sea Cargo)', count: 0, pct: 0, color: '#34d399' },
 ];
 
 const SHOP_FLOOR_METRICS = [
-  { name: 'Fabric Cutting & Laser CAD', pct: 88, target: '95,000 m/mo', color: '#38bdf8' },
-  { name: '4-Needle Flatlock Stitching', pct: 94, target: '60,000 pcs/mo', color: '#00e599' },
-  { name: 'Screen & 3D Puff Printing', pct: 78, target: '45,000 pcs/mo', color: '#fbbf24' },
-  { name: 'AQL 2.5 QA Inspection & Packing', pct: 92, target: '100% Export Pass', color: '#2dd4bf' },
+  { name: 'Fabric Cutting & Laser CAD', pct: 0, target: 'Standby', color: '#38bdf8' },
+  { name: '4-Needle Flatlock Stitching', pct: 0, target: 'Standby', color: '#00e599' },
+  { name: 'Screen & 3D Puff Printing', pct: 0, target: 'Standby', color: '#fbbf24' },
+  { name: 'AQL 2.5 QA Inspection & Packing', pct: 0, target: 'Inspection Ready', color: '#2dd4bf' },
 ];
 
 /* 1. Interactive Dark Obsidian Area & Wave Revenue Chart */
@@ -298,6 +298,14 @@ export function CategoryDonutChart() {
         {/* Donut Graphic */}
         <div style={{ position: 'relative', width: `${size}px`, height: `${size}px` }}>
           <svg width={size} height={size} style={{ transform: 'rotate(-90deg)' }}>
+            <circle
+              cx={size / 2}
+              cy={size / 2}
+              r={radius}
+              fill="transparent"
+              stroke="rgba(255, 255, 255, 0.08)"
+              strokeWidth={strokeWidth}
+            />
             {CATEGORIES.map((cat, idx) => {
               const dashLength = (cat.share / 100) * circumference;
               const dashOffset = -cumulativeOffset;
@@ -338,10 +346,10 @@ export function CategoryDonutChart() {
             }}
           >
             <span style={{ fontSize: '22px', fontWeight: 900, color: '#ffffff' }}>
-              {activeIdx !== null ? `${CATEGORIES[activeIdx].share}%` : '100%'}
+              0%
             </span>
             <span style={{ fontSize: '11px', color: '#94a3b8', fontWeight: 700 }}>
-              {activeIdx !== null ? CATEGORIES[activeIdx].name.split(' ')[0] : 'All Styles'}
+              Standby
             </span>
           </div>
         </div>
@@ -498,63 +506,56 @@ export function FactoryCapacityGauges() {
 const TRAFFIC_TIMEFRAMES = {
   'today': {
     label: 'Today (Hourly)',
-    totalVisits: '1,248',
-    uniqueBuyers: '842',
-    avgDuration: '3m 18s',
-    bounceRate: '26.4%',
-    growth: '+18.2%',
+    totalVisits: '0',
+    uniqueBuyers: '0',
+    avgDuration: '0m 00s',
+    bounceRate: '0.0%',
+    growth: '0.0%',
     points: [
-      { t: '00:00', val: 18 }, { t: '02:00', val: 12 }, { t: '04:00', val: 14 },
-      { t: '06:00', val: 28 }, { t: '08:00', val: 64 }, { t: '10:00', val: 98 },
-      { t: '12:00', val: 122 }, { t: '14:00', val: 146 }, { t: '16:00', val: 168 },
-      { t: '18:00', val: 182 }, { t: '20:00', val: 194 }, { t: '22:00', val: 202 }
+      { t: '00:00', val: 0 }, { t: '04:00', val: 0 }, { t: '08:00', val: 0 },
+      { t: '12:00', val: 0 }, { t: '16:00', val: 0 }, { t: '20:00', val: 0 }
     ]
   },
   '7d': {
     label: 'Last 7 Days',
-    totalVisits: '8,940',
-    uniqueBuyers: '5,620',
-    avgDuration: '3m 44s',
-    bounceRate: '24.1%',
-    growth: '+24.6%',
+    totalVisits: '0',
+    uniqueBuyers: '0',
+    avgDuration: '0m 00s',
+    bounceRate: '0.0%',
+    growth: '0.0%',
     points: [
-      { t: 'Mon', val: 1120 }, { t: 'Tue', val: 1340 }, { t: 'Wed', val: 1480 },
-      { t: 'Thu', val: 1620 }, { t: 'Fri', val: 1540 }, { t: 'Sat', val: 920 },
-      { t: 'Sun', val: 920 }
+      { t: 'Mon', val: 0 }, { t: 'Tue', val: 0 }, { t: 'Wed', val: 0 },
+      { t: 'Thu', val: 0 }, { t: 'Fri', val: 0 }, { t: 'Sat', val: 0 },
+      { t: 'Sun', val: 0 }
     ]
   },
   '30d': {
     label: 'Last 30 Days',
-    totalVisits: '38,420',
-    uniqueBuyers: '24,180',
-    avgDuration: '4m 02s',
-    bounceRate: '22.8%',
-    growth: '+36.8%',
+    totalVisits: '0',
+    uniqueBuyers: '0',
+    avgDuration: '0m 00s',
+    bounceRate: '0.0%',
+    growth: '0.0%',
     points: [
-      { t: 'Week 1', val: 7800 }, { t: 'Week 2', val: 9400 },
-      { t: 'Week 3', val: 10200 }, { t: 'Week 4', val: 11020 }
+      { t: 'Week 1', val: 0 }, { t: 'Week 2', val: 0 },
+      { t: 'Week 3', val: 0 }, { t: 'Week 4', val: 0 }
     ]
   },
   '90d': {
     label: 'Quarterly (90D)',
-    totalVisits: '114,800',
-    uniqueBuyers: '72,400',
-    avgDuration: '4m 15s',
-    bounceRate: '21.5%',
-    growth: '+52.4%',
+    totalVisits: '0',
+    uniqueBuyers: '0',
+    avgDuration: '0m 00s',
+    bounceRate: '0.0%',
+    growth: '0.0%',
     points: [
-      { t: 'Month 1', val: 28000 }, { t: 'Month 2', val: 39400 },
-      { t: 'Month 3', val: 47400 }
+      { t: 'Month 1', val: 0 }, { t: 'Month 2', val: 0 },
+      { t: 'Month 3', val: 0 }
     ]
   }
 };
 
-const LIVE_ACTIVE_PAGES = [
-  { path: '/private-label-activewear-manufacturer-australia', label: 'Australia Private Label Program', count: 7, flag: '🇦🇺' },
-  { path: '/product-catalog', label: 'B2B Garment Catalog (19 Items)', count: 5, flag: '🇺🇸' },
-  { path: '/boxing-gear-manufacturer', label: 'Custom Boxing Gloves & Headguards', count: 4, flag: '🇬🇧' },
-  { path: '/order-sample', label: 'Order Sample Prototype Form', count: 3, flag: '🇩🇪' },
-];
+const LIVE_ACTIVE_PAGES: Array<{ path: string; label: string; count: number; flag: string }> = [];
 
 export function LiveWebTrafficMonitorChart() {
   const [timeframe, setTimeframe] = useState<'today' | '7d' | '30d' | '90d'>('7d');
@@ -562,7 +563,8 @@ export function LiveWebTrafficMonitorChart() {
 
   const current = TRAFFIC_TIMEFRAMES[timeframe];
   const data = current.points;
-  const maxVal = Math.max(...data.map(d => d.val)) * 1.15;
+  const rawMax = Math.max(...data.map(d => d.val));
+  const maxVal = rawMax > 0 ? rawMax * 1.15 : 100;
   const height = 180;
   const width = 640;
   const paddingX = 40;
@@ -628,7 +630,7 @@ export function LiveWebTrafficMonitorChart() {
               }}
             >
               <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#00e599', boxShadow: '0 0 8px #00e599' }} />
-              19 BUYERS ACTIVE NOW
+              0 BUYERS ACTIVE (STANDBY)
             </span>
           </div>
           <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 900, color: '#ffffff' }}>
@@ -671,17 +673,17 @@ export function LiveWebTrafficMonitorChart() {
         <div style={{ background: 'rgba(255, 255, 255, 0.02)', padding: '10px 14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
           <div style={{ fontSize: '10.5px', color: '#94a3b8', fontWeight: 700 }}>Unique Brand Leads</div>
           <div style={{ fontSize: '18px', fontWeight: 900, color: '#38bdf8', marginTop: '2px' }}>{current.uniqueBuyers}</div>
-          <span style={{ fontSize: '10px', color: '#38bdf8', fontWeight: 600 }}>Qualified buyers</span>
+          <span style={{ fontSize: '10px', color: '#38bdf8', fontWeight: 600 }}>Standby</span>
         </div>
         <div style={{ background: 'rgba(255, 255, 255, 0.02)', padding: '10px 14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
           <div style={{ fontSize: '10.5px', color: '#94a3b8', fontWeight: 700 }}>Avg. Session Time</div>
           <div style={{ fontSize: '18px', fontWeight: 900, color: '#fbbf24', marginTop: '2px' }}>{current.avgDuration}</div>
-          <span style={{ fontSize: '10px', color: '#cbd5e1' }}>High engagement</span>
+          <span style={{ fontSize: '10px', color: '#cbd5e1' }}>Standby</span>
         </div>
         <div style={{ background: 'rgba(255, 255, 255, 0.02)', padding: '10px 14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
           <div style={{ fontSize: '10.5px', color: '#94a3b8', fontWeight: 700 }}>B2B Bounce Rate</div>
           <div style={{ fontSize: '18px', fontWeight: 900, color: '#2dd4bf', marginTop: '2px' }}>{current.bounceRate}</div>
-          <span style={{ fontSize: '10px', color: '#2dd4bf', fontWeight: 600 }}>Top 5% quartile</span>
+          <span style={{ fontSize: '10px', color: '#2dd4bf', fontWeight: 600 }}>Standby</span>
         </div>
       </div>
 
@@ -786,30 +788,36 @@ export function LiveWebTrafficMonitorChart() {
         <div style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', color: '#94a3b8', letterSpacing: '0.06em', marginBottom: '10px' }}>
           Live High-Intent Page Traffic:
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '8px' }}>
-          {LIVE_ACTIVE_PAGES.map((page, i) => (
-            <div
-              key={i}
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                background: 'rgba(255, 255, 255, 0.02)',
-                padding: '8px 12px',
-                borderRadius: '6px',
-                border: '1px solid rgba(255, 255, 255, 0.04)',
-                fontSize: '12px',
-              }}
-            >
-              <span style={{ color: '#cbd5e1', display: 'flex', alignItems: 'center', gap: '6px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                <span>{page.flag}</span> {page.label}
-              </span>
-              <span style={{ color: '#00e599', fontWeight: 800, fontSize: '11px', background: 'rgba(0, 229, 153, 0.1)', padding: '2px 6px', borderRadius: '4px' }}>
-                {page.count} active
-              </span>
-            </div>
-          ))}
-        </div>
+        {LIVE_ACTIVE_PAGES.length === 0 ? (
+          <div style={{ padding: '16px', textAlign: 'center', background: 'rgba(255, 255, 255, 0.02)', borderRadius: '6px', border: '1px solid rgba(255, 255, 255, 0.04)', fontSize: '12px', color: '#94a3b8' }}>
+            Live traffic tracker standby &bull; Real-time buyer sessions across US, UK, EU, Australia &amp; Canada will appear as visitors arrive.
+          </div>
+        ) : (
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '8px' }}>
+            {LIVE_ACTIVE_PAGES.map((page, i) => (
+              <div
+                key={i}
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  background: 'rgba(255, 255, 255, 0.02)',
+                  padding: '8px 12px',
+                  borderRadius: '6px',
+                  border: '1px solid rgba(255, 255, 255, 0.04)',
+                  fontSize: '12px',
+                }}
+              >
+                <span style={{ color: '#cbd5e1', display: 'flex', alignItems: 'center', gap: '6px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                  <span>{page.flag}</span> {page.label}
+                </span>
+                <span style={{ color: '#00e599', fontWeight: 800, fontSize: '11px', background: 'rgba(0, 229, 153, 0.1)', padding: '2px 6px', borderRadius: '4px' }}>
+                  {page.count} active
+                </span>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
@@ -817,10 +825,10 @@ export function LiveWebTrafficMonitorChart() {
 
 /* 6. TRAFFIC ACQUISITION & REFERRAL SOURCES */
 const ACQUISITION_CHANNELS = [
-  { name: 'Google Organic Search (B2B SEO)', share: 44, visits: '16,900', color: '#00e599', icon: '🔍', desc: 'High-intent private label activewear & boxing keywords' },
-  { name: 'Direct WhatsApp & RFQ Clicks', share: 28, visits: '10,750', color: '#38bdf8', icon: '💬', desc: 'Repeat brands & instant quote inquiries' },
-  { name: 'Instagram & Sialkot Reels', share: 16, visits: '6,150', color: '#fbbf24', icon: '📸', desc: 'Apparel manufacturing reels & factory walkthroughs' },
-  { name: 'LinkedIn B2B Sourcing Network', share: 12, visits: '4,620', color: '#a855f7', icon: '💼', desc: 'Sportswear procurement managers & distributors' },
+  { name: 'Google Organic Search (B2B SEO)', share: 0, visits: '0', color: '#00e599', icon: '🔍', desc: 'Awaiting indexed search sessions' },
+  { name: 'Direct WhatsApp & RFQ Clicks', share: 0, visits: '0', color: '#38bdf8', icon: '💬', desc: 'Direct buyer click-throughs' },
+  { name: 'Instagram & Sialkot Reels', share: 0, visits: '0', color: '#fbbf24', icon: '📸', desc: 'Social and video referral traffic' },
+  { name: 'LinkedIn B2B Sourcing Network', share: 0, visits: '0', color: '#a855f7', icon: '💼', desc: 'B2B procurement referrals' },
 ];
 
 export function TrafficAcquisitionChannels() {

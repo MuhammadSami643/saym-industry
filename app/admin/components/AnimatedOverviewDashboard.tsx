@@ -25,24 +25,24 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
   // Timeframe data series for the realistic export volume & revenue wave
   const waveDataMap = {
     '7d': [
-      { date: 'MON', produced: 840, shipped: 720, label: 'Apex USA Hoodies' },
-      { date: 'TUE', produced: 920, shipped: 850, label: 'Aura UK Leggings' },
-      { date: 'WED', produced: 1100, shipped: 990, label: 'Nordic DE Gloves' },
-      { date: 'THU', produced: 1050, shipped: 1010, label: 'Hype AUS Denim' },
-      { date: 'FRI', produced: 1280, shipped: 1140, label: 'Olympus FR Fight Gis' },
-      { date: 'SAT', produced: 950, shipped: 880, label: 'IronPulse CA Sweats' },
-      { date: 'SUN', produced: 600, shipped: 540, label: 'Maintenance Window' },
+      { date: 'MON', produced: 0, shipped: 0, label: 'Standby' },
+      { date: 'TUE', produced: 0, shipped: 0, label: 'Standby' },
+      { date: 'WED', produced: 0, shipped: 0, label: 'Standby' },
+      { date: 'THU', produced: 0, shipped: 0, label: 'Standby' },
+      { date: 'FRI', produced: 0, shipped: 0, label: 'Standby' },
+      { date: 'SAT', produced: 0, shipped: 0, label: 'Standby' },
+      { date: 'SUN', produced: 0, shipped: 0, label: 'Standby' },
     ],
     '30d': [
-      { date: 'WEEK 1', produced: 6200, shipped: 5800, label: 'US West Coast Air Shipments' },
-      { date: 'WEEK 2', produced: 7400, shipped: 7100, label: 'UK & EU Winter Bulk Batch' },
-      { date: 'WEEK 3', produced: 8100, shipped: 7950, label: 'Australia Summer Drop Run' },
-      { date: 'WEEK 4', produced: 9300, shipped: 8900, label: 'Global DHL Sea/Air Dispatch' },
+      { date: 'WEEK 1', produced: 0, shipped: 0, label: 'Standby' },
+      { date: 'WEEK 2', produced: 0, shipped: 0, label: 'Standby' },
+      { date: 'WEEK 3', produced: 0, shipped: 0, label: 'Standby' },
+      { date: 'WEEK 4', produced: 0, shipped: 0, label: 'Standby' },
     ],
     '90d': [
-      { date: 'OCT', produced: 28400, shipped: 26800, label: 'Fall Hoodies & French Terry' },
-      { date: 'NOV', produced: 32100, shipped: 31200, label: 'Winter Outerwear & BJJ Gis' },
-      { date: 'DEC', produced: 38600, shipped: 37400, label: 'Spring Activewear Tech Line' },
+      { date: 'MONTH 1', produced: 0, shipped: 0, label: 'Standby' },
+      { date: 'MONTH 2', produced: 0, shipped: 0, label: 'Standby' },
+      { date: 'MONTH 3', produced: 0, shipped: 0, label: 'Standby' },
     ],
   };
 
@@ -50,78 +50,28 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
 
   // Real Sialkot Factory Floor Machine Utilization Stages
   const floorDepartments = [
-    { name: 'FABRIC LASER CAD', count: 48, fillPct: 88, color: '#00e599', target: '95,000 m/mo' },
-    { name: '4-NEEDLE FLATLOCK', count: 62, fillPct: 95, color: '#00e599', target: '60,000 pcs/mo' },
-    { name: 'SCREEN & PUFF PRINT', count: 84, fillPct: 78, color: '#38bdf8', target: '45,000 pcs/mo' },
-    { name: 'STEAM PRESS & FINISH', count: 142, fillPct: 92, color: '#00e599', target: '70,000 pcs/mo' },
-    { name: 'AQL 2.5 QA AUDIT', count: 56, fillPct: 99, color: '#2dd4bf', target: '100% Export Pass' },
-    { name: 'EXPORT PACKAGING', count: 38, fillPct: 84, color: '#fbbf24', target: 'Polybag & Barcode' },
-    { name: 'DHL DISPATCH HUB', count: 19, fillPct: 40, color: '#f87171', target: 'Daily 4:00 PM Pickup' },
+    { name: 'FABRIC LASER CAD', count: 0, fillPct: 0, color: '#00e599', target: 'Standby' },
+    { name: '4-NEEDLE FLATLOCK', count: 0, fillPct: 0, color: '#00e599', target: 'Standby' },
+    { name: 'SCREEN & PUFF PRINT', count: 0, fillPct: 0, color: '#38bdf8', target: 'Standby' },
+    { name: 'STEAM PRESS & FINISH', count: 0, fillPct: 0, color: '#00e599', target: 'Standby' },
+    { name: 'AQL 2.5 QA AUDIT', count: 0, fillPct: 0, color: '#2dd4bf', target: 'Inspection Ready' },
+    { name: 'EXPORT PACKAGING', count: 0, fillPct: 0, color: '#fbbf24', target: 'Standby' },
+    { name: 'DHL DISPATCH HUB', count: 0, fillPct: 0, color: '#f87171', target: 'Daily Pickup' },
   ];
 
-  // Real Garment Production Batches
-  const productionBatches = [
-    {
-      id: 'BRE-2026-9041',
-      buyer: 'Liam Vance',
-      brand: 'Apex Athletic USA',
-      country: '🇺🇸',
-      item: '500 GSM French Terry Boxy Hoodies (600 pcs)',
-      stage: 'Steam Press & QC Audit',
-      progress: 85,
-      deliveryClock: '3 days remaining',
-      priority: 'EXPEDITED',
-      tagColor: 'tag-rose',
-    },
-    {
-      id: 'BRE-2026-9038',
-      buyer: 'Sophie Bennett',
-      brand: 'Aura Athletics UK',
-      country: '🇬🇧',
-      item: 'Seamless Ribbed Gym Leggings & Tops (1,200 pcs)',
-      stage: '4-Needle Flatlock Stitching',
-      progress: 60,
-      deliveryClock: '6 days remaining',
-      priority: 'HIGH',
-      tagColor: 'tag-amber',
-    },
-    {
-      id: 'BRE-2026-9029',
-      buyer: 'Lars Lindqvist',
-      brand: 'Nordic Combat DE',
-      country: '🇩🇪',
-      item: '16oz Pro Lace-Up Boxing Gloves (400 pairs)',
-      stage: 'Hand Stitching & Latex Padding',
-      progress: 45,
-      deliveryClock: '8 days remaining',
-      priority: 'NORMAL',
-      tagColor: 'tag-cyan',
-    },
-    {
-      id: 'BRE-2026-9018',
-      buyer: 'Jack O’Connor',
-      brand: 'HypeDistrict AUS',
-      country: '🇦🇺',
-      item: '14oz Selvedge Raw Denim Carpenter Jeans (500 pcs)',
-      stage: 'Laser Whiskering & Stone Wash',
-      progress: 30,
-      deliveryClock: '11 days remaining',
-      priority: 'NORMAL',
-      tagColor: 'tag-cyan',
-    },
-    {
-      id: 'BRE-2026-8994',
-      buyer: 'Chloe Laurent',
-      brand: 'Olympus Fight FR',
-      country: '🇫🇷',
-      item: 'Pearl Weave BJJ Competition Gis (300 sets)',
-      stage: 'Final QA & Custom Polybag Packing',
-      progress: 95,
-      deliveryClock: 'Tomorrow (DHL Air)',
-      priority: 'EXPEDITED',
-      tagColor: 'tag-mint',
-    },
-  ];
+  // Garment Production Batches (Zero / Real Baseline)
+  const productionBatches: Array<{
+    id: string;
+    buyer: string;
+    brand: string;
+    country: string;
+    item: string;
+    stage: string;
+    progress: number;
+    deliveryClock: string;
+    priority: string;
+    tagColor: string;
+  }> = [];
 
   const filteredBatches = productionBatches.filter(b => {
     if (activeBatchTab === 'stitching') return b.stage.includes('Stitching');
@@ -262,7 +212,7 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
             </span>
           </div>
           <p style={{ margin: 0, color: '#94a3b8', fontSize: '13.5px' }}>
-            Bin Rasool Enterprises &bull; <strong style={{ color: '#ffffff' }}>48 active production batches</strong> running across stitching, embroidery &amp; QA lines.
+            Bin Rasool Enterprises &bull; <strong style={{ color: '#ffffff' }}>{productionBatches.length} active production batches</strong> in manufacturing queue.
           </p>
         </div>
 
@@ -325,13 +275,13 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
             <span style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#94a3b8' }}>
               MONTHLY EXPORT INVOICING
             </span>
-            <span className="tag-pill tag-mint">+18.4% MoM</span>
+            <span className="tag-pill tag-mint">0% MoM</span>
           </div>
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em' }}>
-            <AnimatedCounter value={348200} prefix="$" duration={1.8} delay={0.25} />
+            <AnimatedCounter value={0} prefix="$" duration={1.2} delay={0.25} />
           </div>
           <div style={{ fontSize: '12px', color: '#cbd5e1', marginTop: '4px' }}>
-            Direct FOB Karachi / DHL Sialkot Air
+            No export shipments invoiced this month
           </div>
         </motion.div>
 
@@ -341,13 +291,13 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
             <span style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#94a3b8' }}>
               ACTIVE FACTORY RUNS
             </span>
-            <span className="tag-pill tag-cyan">48 Batches</span>
+            <span className="tag-pill tag-cyan">{productionBatches.length} Batches</span>
           </div>
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em' }}>
-            <AnimatedCounter value={142500} suffix=" pcs" duration={1.8} delay={0.3} />
+            <AnimatedCounter value={0} suffix=" pcs" duration={1.2} delay={0.3} />
           </div>
           <div style={{ fontSize: '12px', color: '#cbd5e1', marginTop: '4px' }}>
-            Hoodies, Active, Combat &amp; Denim
+            All production lines on standby
           </div>
         </motion.div>
 
@@ -357,13 +307,13 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
             <span style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#94a3b8' }}>
               PENDING BUYER RFQS
             </span>
-            <span className="tag-pill tag-amber">6 Tech Packs</span>
+            <span className="tag-pill tag-amber">{inquiries.length} Tech Packs</span>
           </div>
-          <div style={{ fontSize: '28px', fontWeight: 800, color: '#fbbf24', letterSpacing: '-0.02em' }}>
-            <AnimatedCounter value={inquiries.length > 0 ? inquiries.length : 23} duration={1.4} delay={0.35} />
+          <div style={{ fontSize: '28px', fontWeight: 800, color: inquiries.length > 0 ? '#fbbf24' : '#ffffff', letterSpacing: '-0.02em' }}>
+            <AnimatedCounter value={inquiries.length} duration={1.2} delay={0.35} />
           </div>
           <div style={{ fontSize: '12px', color: '#cbd5e1', marginTop: '4px' }}>
-            Average quotation turnaround: 2.4h
+            Inbound inquiries from website forms
           </div>
         </motion.div>
 
@@ -376,35 +326,12 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
             <span className="tag-pill tag-mint">Export Grade</span>
           </div>
           <div style={{ fontSize: '28px', fontWeight: 800, color: '#00e599', letterSpacing: '-0.02em' }}>
-            <AnimatedCounter value={99.2} suffix="%" decimals={1} duration={1.8} delay={0.4} />
+            <AnimatedCounter value={100} suffix="%" duration={1.2} delay={0.4} />
           </div>
           <div style={{ fontSize: '12px', color: '#cbd5e1', marginTop: '4px' }}>
-            Zero international shipment rejections
+            Inspection lines calibrated to AQL 2.5 standard
           </div>
         </motion.div>
-      </motion.div>
-
-      {/* 2.5 Real-Time Live Web Traffic Monitor & Active Buyer Radar (Instagram Reel Style) */}
-      <motion.div
-        initial={{ opacity: 0, y: 18 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.1 }}
-        transition={{ duration: 0.45, ease: "easeOut" as const }}
-        style={{ marginBottom: '24px' }}
-      >
-        <LiveWebTrafficMonitorChart />
-      </motion.div>
-
-      {/* 2.6 Traffic Acquisition Channels & Category Distribution Breakdown */}
-      <motion.div
-        initial={{ opacity: 0, y: 18 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.1 }}
-        transition={{ duration: 0.45, ease: "easeOut" as const }}
-        style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1.4fr) minmax(0, 1fr)', gap: '16px', marginBottom: '24px' }}
-      >
-        <TrafficAcquisitionChannels />
-        <CategoryDonutChart />
       </motion.div>
 
       {/* 3. Middle Split Widgets: Export Wave Chart (Left 60%) + Machine Capacity (Right 40%) */}
@@ -430,13 +357,13 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
                 <div>
                   <span style={{ fontSize: '10.5px', textTransform: 'uppercase', color: '#94a3b8', fontWeight: 800 }}>REVENUE SHIPPED</span>
                   <div style={{ fontSize: '16px', fontWeight: 800, color: '#00e599' }}>
-                    <AnimatedCounter value={348} prefix="$" suffix="k USD" duration={1.6} delay={0.4} />
+                    <AnimatedCounter value={0} prefix="$" suffix=" USD" duration={1.2} delay={0.4} />
                   </div>
                 </div>
                 <div style={{ borderLeft: '1px solid rgba(255,255,255,0.08)', paddingLeft: '16px' }}>
                   <span style={{ fontSize: '10.5px', textTransform: 'uppercase', color: '#94a3b8', fontWeight: 800 }}>UNITS DISPATCHED</span>
                   <div style={{ fontSize: '16px', fontWeight: 800, color: '#38bdf8' }}>
-                    <AnimatedCounter value={142} suffix="k Pcs" duration={1.6} delay={0.45} />
+                    <AnimatedCounter value={0} suffix=" Pcs" duration={1.2} delay={0.45} />
                   </div>
                 </div>
               </div>
@@ -474,8 +401,7 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
             >
               <defs>
                 <linearGradient id="mintExportWaveFill" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#00e599" stopOpacity="0.25" />
-                  <stop offset="70%" stopColor="#00e599" stopOpacity="0.03" />
+                  <stop offset="0%" stopColor="#00e599" stopOpacity="0.12" />
                   <stop offset="100%" stopColor="#00e599" stopOpacity="0" />
                 </linearGradient>
 
@@ -491,57 +417,43 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
               {/* Background horizontal guide lines */}
               <line x1="0" y1="40" x2="600" y2="40" stroke="rgba(255,255,255,0.05)" strokeDasharray="4 4" />
               <line x1="0" y1="90" x2="600" y2="90" stroke="rgba(255,255,255,0.05)" strokeDasharray="4 4" />
-              <line x1="0" y1="140" x2="600" y2="140" stroke="rgba(255,255,255,0.05)" strokeDasharray="4 4" />
+              <line x1="0" y1="145" x2="600" y2="145" stroke="rgba(255,255,255,0.1)" />
 
-              {/* Volume Dashed Curve (Cyan) */}
-              <motion.path
-                initial={{ pathLength: 0, opacity: 0 }}
-                animate={{ pathLength: 1, opacity: 0.6 }}
-                transition={{ duration: 1.2, ease: "easeOut" }}
-                d="M 10 130 C 100 110, 160 70, 240 78 C 320 86, 380 140, 470 120 C 530 105, 560 65, 590 50"
-                fill="none"
-                stroke="rgba(56, 189, 248, 0.45)"
-                strokeWidth="2"
-                strokeDasharray="4 4"
-              />
-
-              {/* Area fill under main curve */}
+              {/* Baseline Area fill under zero */}
               <motion.path
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                d="M 10 115 C 90 85, 150 45, 230 55 C 310 65, 370 125, 460 105 C 520 90, 550 50, 590 35 L 590 170 L 10 170 Z"
+                d="M 10 145 L 590 145 L 590 170 L 10 170 Z"
                 fill="url(#mintExportWaveFill)"
               />
 
-              {/* Main Glowing Revenue Sine Wave */}
+              {/* Main Zero Baseline Line */}
               <motion.path
                 key={timeframe}
                 initial={{ pathLength: 0, opacity: 0 }}
                 animate={{ pathLength: 1, opacity: 1 }}
-                transition={{ duration: 1.3, ease: "easeOut" }}
-                d="M 10 115 C 90 85, 150 45, 230 55 C 310 65, 370 125, 460 105 C 520 90, 550 50, 590 35"
+                transition={{ duration: 1.1, ease: "easeOut" }}
+                d="M 10 145 L 590 145"
                 fill="none"
                 stroke="#00e599"
-                strokeWidth="3"
+                strokeWidth="2.5"
                 strokeLinecap="round"
                 filter="url(#neonGlowLine)"
               />
 
-              {/* Interactive Data Nodes */}
+              {/* Interactive Data Nodes on Baseline */}
               {currentWaveData.map((d, i) => {
                 const total = currentWaveData.length;
                 const x = 30 + (i / (total - 1)) * 540;
-                // Spline approximate Y
-                const yValues = [115, 80, 55, 95, 105, 60, 35];
-                const y = yValues[i % yValues.length];
+                const y = 145;
 
                 return (
                   <g key={i} style={{ cursor: 'pointer' }} onMouseEnter={() => setActivePoint(i)}>
                     <circle
                       cx={x}
                       cy={y}
-                      r={activePoint === i ? 6 : 4}
+                      r={activePoint === i ? 5.5 : 3.5}
                       fill={activePoint === i ? '#ffffff' : '#00e599'}
                       stroke="#090d0f"
                       strokeWidth={2}
@@ -582,10 +494,10 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
                 }}
               >
                 <div style={{ color: '#00e599', fontWeight: 800, marginBottom: '2px' }}>
-                  {currentWaveData[activePoint].label}
+                  {currentWaveData[activePoint].label} ({currentWaveData[activePoint].date})
                 </div>
                 <div style={{ color: '#ffffff' }}>
-                  Produced: <strong>{currentWaveData[activePoint].produced.toLocaleString()} pcs</strong> &bull; Shipped: <strong>{currentWaveData[activePoint].shipped.toLocaleString()} pcs</strong>
+                  Produced: <strong>0 pcs</strong> &bull; Shipped: <strong>0 pcs</strong>
                 </div>
               </div>
             )}
@@ -604,7 +516,7 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
                   Machine &amp; Line Utilization
                 </h3>
               </div>
-              <span className="tag-pill tag-mint">91.8% Peak</span>
+              <span className="tag-pill tag-mint">0.0% Standby</span>
             </div>
 
             {/* Department Progress Bars */}
@@ -613,8 +525,8 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
                 <div key={idx}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', marginBottom: '4px' }}>
                     <span style={{ fontWeight: 600, color: '#cbd5e1' }}>{dept.name}</span>
-                    <span style={{ color: '#00e599', fontWeight: 800 }}>
-                      {dept.fillPct}% <span style={{ color: '#64748b', fontWeight: 600 }}>({dept.count} on line)</span>
+                    <span style={{ color: '#94a3b8', fontWeight: 700 }}>
+                      {dept.fillPct}% <span style={{ color: '#64748b', fontWeight: 600 }}>({dept.target})</span>
                     </span>
                   </div>
                   <div style={{ height: '6px', background: 'rgba(255, 255, 255, 0.06)', borderRadius: '999px', overflow: 'hidden' }}>
@@ -654,7 +566,7 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
                 DAILY DHL AIRWAY CLEARANCE
               </div>
               <div style={{ fontSize: '13px', fontWeight: 800, color: '#ffffff', marginTop: '2px' }}>
-                4 Air Freight Pallets Ready
+                0 Air Freight Pallets Ready
               </div>
             </div>
             <Link
@@ -674,6 +586,29 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
             </Link>
           </div>
         </motion.div>
+      </motion.div>
+
+      {/* Real-Time Live Web Traffic Monitor & Active Buyer Radar */}
+      <motion.div
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.45, ease: "easeOut" as const }}
+        style={{ marginBottom: '24px' }}
+      >
+        <LiveWebTrafficMonitorChart />
+      </motion.div>
+
+      {/* Traffic Acquisition Channels & Category Distribution Breakdown */}
+      <motion.div
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.45, ease: "easeOut" as const }}
+        style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1.4fr) minmax(0, 1fr)', gap: '16px', marginBottom: '24px' }}
+      >
+        <TrafficAcquisitionChannels />
+        <CategoryDonutChart />
       </motion.div>
 
       {/* 4. Bottom Operational Queues & Live Inquiries (65% / 35% Split) */}
@@ -700,7 +635,7 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
               href="/admin/production"
               style={{ fontSize: '12px', fontWeight: 700, color: '#00e599', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '5px' }}
             >
-              <span>View All 48 Batches</span>
+              <span>View All {productionBatches.length} Batches</span>
               <ArrowRightIcon size={12} />
             </Link>
           </div>
@@ -717,45 +652,55 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
                 </tr>
               </thead>
               <tbody>
-                {filteredBatches.map((b) => (
-                  <tr
-                    key={b.id}
-                    style={{
-                      borderBottom: '1px solid rgba(255, 255, 255, 0.04)',
-                      transition: 'background 0.15s ease',
-                    }}
-                    onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(0, 229, 153, 0.03)')}
-                    onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
-                  >
-                    <td style={{ padding: '12px 14px' }}>
-                      <div style={{ fontWeight: 800, color: '#ffffff' }}>{b.buyer} {b.country}</div>
-                      <div style={{ fontSize: '11.5px', color: '#94a3b8', marginTop: '2px' }}>{b.brand} &bull; <span style={{ color: '#38bdf8' }}>{b.id}</span></div>
-                    </td>
-                    <td style={{ padding: '12px 14px', color: '#e2e8f0', maxWidth: '240px' }}>
-                      {b.item}
-                    </td>
-                    <td style={{ padding: '12px 14px' }}>
-                      <div style={{ fontWeight: 700, color: '#ffffff' }}>{b.stage}</div>
-                      <div style={{ height: '4px', width: '80px', background: 'rgba(255,255,255,0.08)', borderRadius: '999px', marginTop: '4px', overflow: 'hidden' }}>
-                        <motion.div
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${b.progress}%` }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.85, ease: "easeOut" as const }}
-                          style={{ height: '100%', background: '#00e599', borderRadius: '999px' }}
-                        />
-                      </div>
-                    </td>
-                    <td style={{ padding: '12px 14px', color: '#cbd5e1', fontWeight: 600 }}>
-                      {b.deliveryClock}
-                    </td>
-                    <td style={{ padding: '12px 14px', textAlign: 'right' }}>
-                      <span className={`tag-pill ${b.tagColor}`}>
-                        {b.priority}
-                      </span>
+                {filteredBatches.length === 0 ? (
+                  <tr>
+                    <td colSpan={5} style={{ padding: '36px 14px', textAlign: 'center', color: '#94a3b8' }}>
+                      <div style={{ fontSize: '28px', marginBottom: '8px' }}>🏭</div>
+                      <div style={{ fontSize: '14px', fontWeight: 700, color: '#f1f5f9', marginBottom: '4px' }}>No Production Batches Running</div>
+                      <div style={{ fontSize: '12px', color: '#64748b' }}>Initiate a new batch or convert an inquiry to start tracking shop floor progress.</div>
                     </td>
                   </tr>
-                ))}
+                ) : (
+                  filteredBatches.map((b) => (
+                    <tr
+                      key={b.id}
+                      style={{
+                        borderBottom: '1px solid rgba(255, 255, 255, 0.04)',
+                        transition: 'background 0.15s ease',
+                      }}
+                      onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(0, 229, 153, 0.03)')}
+                      onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
+                    >
+                      <td style={{ padding: '12px 14px' }}>
+                        <div style={{ fontWeight: 800, color: '#ffffff' }}>{b.buyer} {b.country}</div>
+                        <div style={{ fontSize: '11.5px', color: '#94a3b8', marginTop: '2px' }}>{b.brand} &bull; <span style={{ color: '#38bdf8' }}>{b.id}</span></div>
+                      </td>
+                      <td style={{ padding: '12px 14px', color: '#e2e8f0', maxWidth: '240px' }}>
+                        {b.item}
+                      </td>
+                      <td style={{ padding: '12px 14px' }}>
+                        <div style={{ fontWeight: 700, color: '#ffffff' }}>{b.stage}</div>
+                        <div style={{ height: '4px', width: '80px', background: 'rgba(255,255,255,0.08)', borderRadius: '999px', marginTop: '4px', overflow: 'hidden' }}>
+                          <motion.div
+                            initial={{ width: 0 }}
+                            whileInView={{ width: `${b.progress}%` }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.85, ease: "easeOut" as const }}
+                            style={{ height: '100%', background: '#00e599', borderRadius: '999px' }}
+                          />
+                        </div>
+                      </td>
+                      <td style={{ padding: '12px 14px', color: '#cbd5e1', fontWeight: 600 }}>
+                        {b.deliveryClock}
+                      </td>
+                      <td style={{ padding: '12px 14px', textAlign: 'right' }}>
+                        <span className={`tag-pill ${b.tagColor}`}>
+                          {b.priority}
+                        </span>
+                      </td>
+                    </tr>
+                  ))
+                )}
               </tbody>
             </table>
           </div>
@@ -786,15 +731,15 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
                         Sialkot Operations AI
                       </div>
                       <div style={{ fontSize: '10.5px', color: '#34d399', fontWeight: 700 }}>
-                        Fabric Lot Inspection Alert
+                        Production Standby
                       </div>
                     </div>
                   </div>
-                  <span className="tag-pill tag-mint">ACTIVE</span>
+                  <span className="tag-pill tag-mint">READY</span>
                 </div>
 
                 <p style={{ fontSize: '12.5px', lineHeight: '1.5', color: '#cbd5e1', margin: '0 0 14px' }}>
-                  450 GSM French Terry lot <strong style={{ color: '#ffffff' }}>#FT-209</strong> from Faisalabad knitting mills has cleared shrinkage lab tests (3.1%). Ready for cutting line #2.
+                  All factory lines and fabric cutting tables currently on standby. Sialkot Operations AI will automatically flag batch QA &amp; shrinkage alerts here as orders run.
                 </p>
 
                 <div style={{ display: 'flex', gap: '8px' }}>
@@ -820,7 +765,7 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
                       transition: 'all 0.15s ease',
                     }}
                   >
-                    <span>Release to Cutting</span>
+                    <span>Open Production</span>
                     <ArrowRightIcon size={13} style={{ color: '#34d399' }} />
                   </Link>
                   <button
@@ -853,7 +798,7 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
                   LIVE INTAKE
                 </span>
                 <h4 style={{ fontSize: '14px', fontWeight: 800, margin: '2px 0 0', color: '#ffffff' }}>
-                  Recent Buyer Inquiries
+                  Recent Buyer Inquiries ({inquiries.length})
                 </h4>
               </div>
               <Link href="/admin/inquiries" style={{ fontSize: '11.5px', color: '#34d399', fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
@@ -863,30 +808,34 @@ export default function AnimatedOverviewDashboard({ inquiries, products }: Props
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              {(inquiries.length > 0 ? inquiries.slice(0, 3) : [
-                { name: 'Liam Vance', company: 'Apex Athletic', country: 'United States', details: '600 pcs French Terry Hoodies with custom puff print' },
-                { name: 'Marcus Sterling', company: 'Iron Athletics UK', country: 'United Kingdom', details: '1,200 pcs Seamless Leggings & Sports Bras' },
-                { name: 'Lars Lindqvist', company: 'Nordic Combat', country: 'Germany', details: '300 pairs Pro 16oz Leather Boxing Gloves' },
-              ]).map((inq: any, i: number) => (
-                <div
-                  key={i}
-                  style={{
-                    background: 'rgba(13, 19, 22, 0.75)',
-                    border: '1px solid rgba(255, 255, 255, 0.06)',
-                    borderRadius: '12px',
-                    padding: '12px 14px',
-                    backdropFilter: 'blur(8px)',
-                  }}
-                >
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
-                    <span style={{ fontWeight: 700, fontSize: '12px', color: '#ffffff' }}>{inq.name}</span>
-                    <span style={{ fontSize: '10.5px', color: '#38bdf8', fontWeight: 700 }}>{inq.company || inq.country || 'Inquiry Client'}</span>
-                  </div>
-                  <div style={{ fontSize: '11.5px', color: '#94a3b8', lineHeight: '1.4', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                    {inq.details || 'Technical pack attached for custom apparel quotation.'}
-                  </div>
+              {inquiries.length === 0 ? (
+                <div style={{ textAlign: 'center', padding: '32px 14px', color: '#94a3b8', background: 'rgba(13, 19, 22, 0.45)', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.05)' }}>
+                  <div style={{ fontSize: '24px', marginBottom: '8px' }}>📬</div>
+                  <div style={{ fontSize: '13px', fontWeight: 700, color: '#f1f5f9', marginBottom: '4px' }}>No Buyer Inquiries in Queue</div>
+                  <div style={{ fontSize: '11.5px', color: '#64748b' }}>Inbound RFQs &amp; tech packs from the website will appear here in real time.</div>
                 </div>
-              ))}
+              ) : (
+                inquiries.slice(0, 3).map((inq: any, i: number) => (
+                  <div
+                    key={i}
+                    style={{
+                      background: 'rgba(13, 19, 22, 0.75)',
+                      border: '1px solid rgba(255, 255, 255, 0.06)',
+                      borderRadius: '12px',
+                      padding: '12px 14px',
+                      backdropFilter: 'blur(8px)',
+                    }}
+                  >
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
+                      <span style={{ fontWeight: 700, fontSize: '12px', color: '#ffffff' }}>{inq.name}</span>
+                      <span style={{ fontSize: '10.5px', color: '#38bdf8', fontWeight: 700 }}>{inq.company || inq.country || 'Inquiry Client'}</span>
+                    </div>
+                    <div style={{ fontSize: '11.5px', color: '#94a3b8', lineHeight: '1.4', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                      {inq.details || 'Technical pack attached for custom apparel quotation.'}
+                    </div>
+                  </div>
+                ))
+              )}
             </div>
           </motion.div>
         </div>
