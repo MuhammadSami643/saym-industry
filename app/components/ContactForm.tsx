@@ -67,6 +67,10 @@ ${notes}
         setSuccess(true);
         if (data.whatsAppDirectUrl) {
           setWhatsAppLink(data.whatsAppDirectUrl);
+          // Instant direct open WhatsApp for buyer
+          try {
+            window.open(data.whatsAppDirectUrl, '_blank');
+          } catch (e) {}
         }
         form.reset();
       }

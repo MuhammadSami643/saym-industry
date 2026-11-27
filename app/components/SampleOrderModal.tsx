@@ -182,7 +182,11 @@ Total Sample & Courier Estimate: $${totalUsd} USD (${currency.code})
       const waText = encodeURIComponent(
         `Hi Bin Rasool Enterprises! 👋\nI just requested a physical sample for: *${garmentName}*\nType: *${sampleType === 'fit' ? 'Blank Fit Sample' : 'Custom Branded Prototype'}*\nSize: ${size} | Color: ${color}\nBuyer: ${buyerName} (${brandName || 'My Brand'})\nDestination: ${country}\nPlease confirm receipt and let me know when production starts!`
       );
-      setWhatsappUrl(`https://wa.me/923133599241?text=${waText}`);
+      const targetWa = resData.whatsAppDirectUrl || `https://wa.me/923133599241?text=${waText}`;
+      setWhatsappUrl(targetWa);
+      try {
+        window.open(targetWa, '_blank');
+      } catch (e) {}
 
       setSubmitted(true);
     } catch (err: any) {

@@ -119,14 +119,22 @@ ${notes || 'Standard brand sizing and fit.'}
         setError(data.error || 'Failed to submit sample request. Please try again or message us on WhatsApp.');
       } else {
         setSuccess(true);
+        let targetWaUrl = '';
         if (data.whatsAppDirectUrl) {
+          targetWaUrl = data.whatsAppDirectUrl;
           setWhatsAppLink(data.whatsAppDirectUrl);
         } else {
           const waMessage = encodeURIComponent(
             `Hi Bin Rasool Enterprises! I just submitted a Sample Prototype Order on your website for ${sampleQty} ${category}. My brand is ${brand || name}. Please confirm receipt and sample timeline.`
           );
-          setWhatsAppLink(`https://wa.me/923133599241?text=${waMessage}`);
+          targetWaUrl = `https://wa.me/923133599241?text=${waMessage}`;
+          setWhatsAppLink(targetWaUrl);
         }
+        try {
+          if (targetWaUrl) {
+            window.open(targetWaUrl, '_blank');
+          }
+        } catch (e) {}
       }
     } catch (err: any) {
       setLoading(false);
