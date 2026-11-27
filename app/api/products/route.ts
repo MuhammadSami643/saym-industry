@@ -52,7 +52,7 @@ const DEFAULT_PRODUCTS = [
     name: 'Seamless High-Waist Gym Leggings Set',
     category: 'Fitness & Activewear',
     description: 'Squat-proof 75/25 Nylon Spandex high-waisted compression leggings and matching cross-back sports bra.',
-    image_url: '/images/catalog/fitness-wear/compression-activewear-set.webp',
+    image_url: '/images/catalog/fitness-wear/mocha-matching-seamless-workout-set-flatlay.jpg',
     created_at: new Date().toISOString()
   },
 
@@ -134,7 +134,7 @@ const DEFAULT_PRODUCTS = [
     name: '4-Way Stretch Compression Baselayer Set',
     category: 'Compression & Baselayers',
     description: '240 GSM warp-knit compression top and tights with graduated muscle support and flatlock anti-chafing seams.',
-    image_url: '/images/catalog/fitness-wear/mens-compression-baselayer-set.webp',
+    image_url: '/images/catalog/fitness-wear/black-mens-compression-baselayer-set-flatlay.jpg',
     created_at: new Date().toISOString()
   },
 
