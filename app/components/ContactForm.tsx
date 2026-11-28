@@ -1,10 +1,20 @@
 "use client";
 
 import { useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import TechPackUploader from './TechPackUploader';
 import { ArrowRightIcon, WhatsAppIcon } from './AdminIcons';
 
 export default function ContactForm() {
+  const searchParams = useSearchParams();
+  const categoryParam = searchParams.get('category');
+  const productParam = searchParams.get('product');
+
+  const defaultCategory = categoryParam || "Heavyweight Hoodies & Fleece";
+  const defaultDetails = productParam
+    ? `Inquiry for custom OEM production of: ${productParam}.\n\nPlease share MOQ tiers, available fabric swatches, sample development lead time, and bulk wholesale pricing.`
+    : "";
+
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [whatsAppLink, setWhatsAppLink] = useState<string | null>(null);
@@ -279,7 +289,8 @@ ${notes}
             id="category"
             name="category"
             required
-            defaultValue="Heavyweight Hoodies & Fleece"
+            defaultValue={defaultCategory}
+            key={defaultCategory}
             style={{
               width: '100%',
               padding: '9px 38px 9px 13px',
@@ -375,6 +386,8 @@ ${notes}
           name="details"
           rows={3}
           required
+          defaultValue={defaultDetails}
+          key={defaultDetails}
           placeholder="Tell us what you want to manufacture, reference styles, target colors, or ask any questions (our team will guide you on fabric, GSM and sizing)."
           style={{
             width: '100%',

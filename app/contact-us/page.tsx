@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import ContactForm from '../components/ContactForm';
 import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd';
 import { WhatsAppIcon, MailIcon, MapPinIcon, ClockIcon } from '../components/AdminIcons';
@@ -59,7 +60,9 @@ export default function ContactPage() {
           >
             {/* Left Column: Clean Contact Form */}
             <div style={{ flex: '1 1 540px' }}>
-              <ContactForm />
+              <Suspense fallback={<div style={{ padding: '30px', background: '#ffffff', borderRadius: '14px', border: '1px solid #e2e8f0' }}>Loading inquiry form...</div>}>
+                <ContactForm />
+              </Suspense>
             </div>
 
             {/* Right Column: Unified Single Contact Card */}

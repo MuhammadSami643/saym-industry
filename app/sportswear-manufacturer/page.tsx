@@ -41,40 +41,76 @@ export const metadata: Metadata = {
 
 const CATEGORIES = [
   {
-    title: "Soccer Jersey",
-    description: "Premium custom soccer jerseys, goalkeeper kits and match uniforms for clubs, academies and private label sports brands.",
-    image: "/images/categories/1780941233_soccer-jersey.webp",
-    link: "/products",
+    title: "Soccer / Football Match Kit",
+    description: "Full dye-sublimated match jerseys and matching athletic shorts with underarm micro-mesh ventilation panels.",
+    image: "/images/catalog/teamwear/royal-blue-soccer-match-kit-flatlay.jpg",
+    link: "/contact-us?category=Sublimated%20Teamwear%20%26%20Kits&product=Soccer%20%2F%20Football%20Match%20Kit",
   },
   {
-    title: "Basketball Uniform",
-    description: "Professional lightweight moisture-wicking basketball uniforms, reversible scrimmage tops and court shorts for teams and leagues.",
-    image: "/images/categories/1780941289_basketball-uniform.webp",
-    link: "/products",
+    title: "Goalkeeper Padded Match Kit",
+    description: "Long-sleeve goalkeeper jerseys with integrated EVA protective elbow padding and matching padded hip shorts.",
+    image: "/images/catalog/teamwear/neon-goalkeeper-padded-match-kit-flatlay.jpg",
+    link: "/contact-us?category=Sublimated%20Teamwear%20%26%20Kits&product=Goalkeeper%20Padded%20Match%20Kit",
   },
   {
-    title: "Tracksuits",
-    description: "High-quality presentation tracksuits, brushed fleece warmup sets and micro poly tricot training suits for athletes and club travel.",
-    image: "/images/categories/1780941369_tracksuits.webp",
-    link: "/products",
+    title: "Pro Basketball Uniform Set",
+    description: "V-neck moisture-wicking bird-eye mesh sleeveless tanks and matching 9-inch court shorts with striped rib trims.",
+    image: "/images/catalog/teamwear/black-crimson-basketball-uniform-set-flatlay.jpg",
+    link: "/contact-us?category=Sublimated%20Teamwear%20%26%20Kits&product=Pro%20Basketball%20Uniform%20Set",
   },
   {
-    title: "Training Wear",
-    description: "Performance training wear designed for athletic agility: gym tees, compression base layers, training bibs and technical shorts.",
-    image: "/images/categories/1780941401_training-wear.webp",
-    link: "/products",
+    title: "Baseball Button-Down Jersey",
+    description: "Heavyweight poly-knit vintage pinstripe jerseys with full 6-button front plackets, braid piping and curved hems.",
+    image: "/images/catalog/teamwear/pinstripe-baseball-button-down-jersey-flatlay.jpg",
+    link: "/contact-us?category=Sublimated%20Teamwear%20%26%20Kits&product=Baseball%20Button-Down%20Jersey",
   },
   {
-    title: "Team Uniform",
-    description: "Professional custom team uniforms for multisport clubs, universities and schools with coordinated colorways and player details.",
-    image: "/images/categories/1780941073_team-uniform.webp",
-    link: "/products",
+    title: "Rugby & American Football Jersey",
+    description: "280 GSM tear-resistant 4-way stretch game jerseys with double-ply shoulder yokes and reinforced rugby plackets.",
+    image: "/images/catalog/teamwear/maroon-hoop-rugby-jersey-flatlay.jpg",
+    link: "/contact-us?category=Sublimated%20Teamwear%20%26%20Kits&product=Rugby%20%26%20American%20Football%20Jersey",
   },
   {
-    title: "Sublimation Sports Apparel",
-    description: "Custom digital dye-sublimation sports apparel featuring edge-to-edge Japanese EPSON prints and Italian anti-fade vibrant inks.",
-    image: "/images/categories/1780941126_sublimation-sports-apparel.webp",
-    link: "/products",
+    title: "Cricket Sublimated Match Kit",
+    description: "Breathable honeycomb dry-fit polo match jerseys with 3-button plackets and matching athletic cricket match trousers.",
+    image: "/images/catalog/teamwear/green-gold-cricket-sublimated-kit-flatlay.jpg",
+    link: "/contact-us?category=Sublimated%20Teamwear%20%26%20Kits&product=Cricket%20Sublimated%20Match%20Kit",
+  },
+  {
+    title: "Ice Hockey Sublimated Jersey",
+    description: "280 GSM bird-eye double-knit heavyweight hockey jerseys with wide V-neck collar inserts and reinforced elbow panels.",
+    image: "/images/catalog/teamwear/navy-red-ice-hockey-jersey-flatlay.jpg",
+    link: "/contact-us?category=Sublimated%20Teamwear%20%26%20Kits&product=Ice%20Hockey%20Sublimated%20Jersey",
+  },
+  {
+    title: "Athletic Team Warm-Up Tracksuit",
+    description: "Smooth poly-tricot presentation tracksuits featuring full-zip stand-collar jackets and tapered zippered-cuff pants.",
+    image: "/images/catalog/teamwear/navy-athletic-team-warmup-tracksuit-flatlay.jpg",
+    link: "/contact-us?category=Sublimated%20Teamwear%20%26%20Kits&product=Athletic%20Team%20Warm-Up%20Tracksuit",
+  },
+  {
+    title: "Coaches Sideline Windbreaker Anorak",
+    description: "Water-resistant micro-ripstop nylon sideline jackets with technical hoods, waterproof half-zips and kangaroo flap pockets.",
+    image: "/images/catalog/teamwear/black-coaches-sideline-windbreaker-flatlay.jpg",
+    link: "/contact-us?category=Sublimated%20Teamwear%20%26%20Kits&product=Coaches%20Sideline%20Windbreaker%20Anorak",
+  },
+  {
+    title: "Classic Wool & Leather Varsity Jacket",
+    description: "24 oz heavyweight melange wool body with genuine cowhide leather sleeves, enamel snaps and striped 2x2 rib trims.",
+    image: "/images/catalog/teamwear/forest-green-leather-varsity-jacket-flatlay.jpg",
+    link: "/contact-us?category=Sublimated%20Teamwear%20%26%20Kits&product=Classic%20Wool%20%26%20Leather%20Varsity%20Jacket",
+  },
+  {
+    title: "Track & Field Racing Singlet Set",
+    description: "Ultra-lightweight aerated mesh racerback running singlets with micro-perforations and 3-inch athletic split shorts.",
+    image: "/images/catalog/teamwear/coral-track-field-running-kit-flatlay.jpg",
+    link: "/contact-us?category=Sublimated%20Teamwear%20%26%20Kits&product=Track%20%26%20Field%20Racing%20Singlet%20Set",
+  },
+  {
+    title: "Soccer Training Scrimmage Bibs",
+    description: "Fluorescent neon micro-mesh practice pinnies with deep scoop necks and reinforced contrast binding for drills.",
+    image: "/images/catalog/teamwear/neon-soccer-training-scrimmage-bibs-flatlay.jpg",
+    link: "/contact-us?category=Sublimated%20Teamwear%20%26%20Kits&product=Soccer%20Training%20Scrimmage%20Bibs",
   },
 ];
 
@@ -202,7 +238,7 @@ export default function SportswearManufacturerPage() {
                   <h3>{cat.title}</h3>
                   <p>{cat.description}</p>
                   <Link href={cat.link} className="sw-category-link">
-                    <span>View Products</span>
+                    <span>Get Factory Quote</span>
                     <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
                       <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
                     </svg>

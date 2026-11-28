@@ -49,91 +49,91 @@ const FITNESS_CATEGORIES = [
     title: "High-Waist Squat-Proof Leggings",
     description: "75/25 Nylon Spandex 4-way stretch interlock with gusseted crotch, flatlock seams and zero-transparency opacity.",
     image: "/images/catalog/fitness-wear/charcoal-high-waist-squat-proof-leggings-flatlay.jpg",
-    link: "/contact",
+    link: "/contact-us?category=Fitness%20%26%20Activewear&product=High-Waist%20Squat-Proof%20Leggings",
   },
   {
     title: "Seamless Ribbed Push-Up Leggings",
     description: "Engineered body-mapped circular micro-ribbed knits providing targeted compression, push-up glute contouring and second-skin comfort.",
     image: "/images/catalog/fitness-wear/blue-seamless-ribbed-push-up-leggings-flatlay.jpg",
-    link: "/contact",
+    link: "/contact-us?category=Fitness%20%26%20Activewear&product=Seamless%20Ribbed%20Push-Up%20Leggings",
   },
   {
     title: "Booty-Scrunch Glute Contour Leggings",
     description: "Custom ruched rear scrunch detailing with crescent under-glute shading for maximum aesthetic enhancement and athletic shape.",
     image: "/images/catalog/fitness-wear/dusty-mauve-booty-scrunch-leggings-flatlay.jpg",
-    link: "/contact",
+    link: "/contact-us?category=Fitness%20%26%20Activewear&product=Booty-Scrunch%20Glute%20Contour%20Leggings",
   },
   {
     title: "Crossover V-Waist Flared Yoga Pants",
     description: "Ultra-soft buttery brushed fabric with signature criss-cross crossover waistband and tailored bell-bottom flare hem.",
     image: "/images/catalog/fitness-wear/black-crossover-flared-yoga-pants-flatlay.jpg",
-    link: "/contact",
+    link: "/contact-us?category=Fitness%20%26%20Activewear&product=Crossover%20V-Waist%20Flared%20Yoga%20Pants",
   },
   {
     title: "High-Impact Supportive Sports Bra",
     description: "High, medium and light impact sports bras with removable molded pads, racerback styling and brushed elastic underbands.",
     image: "/images/catalog/fitness-wear/high-impact-supportive-sports-bra.webp",
-    link: "/contact",
+    link: "/contact-us?category=Fitness%20%26%20Activewear&product=High-Impact%20Supportive%20Sports%20Bra",
   },
   {
     title: "Longline Square-Neck Yoga Crop Bra",
     description: "Extended longline silhouette with supportive dual cross-back strappy detailing and integrated removable padding.",
     image: "/images/catalog/fitness-wear/sage-longline-yoga-crop-bra-flatlay.jpg",
-    link: "/contact",
+    link: "/contact-us?category=Fitness%20%26%20Activewear&product=Longline%20Square-Neck%20Yoga%20Crop%20Bra",
   },
   {
     title: "High-Rise Compression Biker Shorts",
     description: "7-inch inseam compression biker shorts with no-dig seamless waistband and dual ergonomic drop-in utility phone pockets.",
     image: "/images/catalog/fitness-wear/olive-high-rise-biker-shorts-flatlay.jpg",
-    link: "/contact",
+    link: "/contact-us?category=Fitness%20%26%20Activewear&product=High-Rise%20Compression%20Biker%20Shorts",
   },
   {
     title: "2-Piece Matching Seamless Workout Set",
     description: "Coordinated racerback sports bra and full-length high-waist ribbed leggings set knitted as a matching private label bundle.",
     image: "/images/catalog/fitness-wear/mocha-matching-seamless-workout-set-flatlay.jpg",
-    link: "/contact",
+    link: "/contact-us?category=Fitness%20%26%20Activewear&product=2-Piece%20Matching%20Seamless%20Workout%20Set",
   },
   {
     title: "Long-Sleeve Seamless Gym Crop Top",
     description: "Raglan-sleeve circular knit crop top featuring integrated thumbholes at cuffs and engineered underarm breathable mesh eyelets.",
     image: "/images/catalog/fitness-wear/sand-seamless-long-sleeve-crop-top-flatlay.jpg",
-    link: "/contact",
+    link: "/contact-us?category=Fitness%20%26%20Activewear&product=Long-Sleeve%20Seamless%20Gym%20Crop%20Top",
   },
   {
     title: "Tapered Athletic Gym Joggers",
     description: "320 GSM heavyweight cotton-poly fleece joggers with bonded waterproof zipper pockets, custom drawstrings and ribbed cuffs.",
     image: "/images/catalog/fitness-wear/charcoal-tapered-gym-joggers-flatlay.jpg",
-    link: "/contact",
+    link: "/contact-us?category=Fitness%20%26%20Activewear&product=Tapered%20Athletic%20Gym%20Joggers",
   },
   {
     title: "Oversized Pump Cover Gym Tees",
     description: "Heavyweight 260 GSM combed cotton drop-shoulder boxy tees engineered for bodybuilding pump covers and streetwear athleisure.",
     image: "/images/catalog/fitness-wear/washed-black-oversized-pump-cover-tee-flatlay.jpg",
-    link: "/contact",
+    link: "/contact-us?category=Fitness%20%26%20Activewear&product=Oversized%20Pump%20Cover%20Gym%20Tees",
   },
   {
     title: "Men's 2-in-1 Workout Running Shorts",
     description: "Lightweight 4-way stretch outer shell with built-in compression spandex inner liner, phone pocket and curved side split hems.",
     image: "/images/catalog/fitness-wear/black-mens-two-in-one-workout-shorts-flatlay.jpg",
-    link: "/contact",
+    link: "/contact-us?category=Fitness%20%26%20Activewear&product=Men's%202-in-1%20Workout%20Running%20Shorts",
   },
   {
     title: "Bodybuilding Y-Back Stringer Tank",
     description: "Classic bodybuilding deep-cut scoop neck stringer with thin shoulder straps, athletic racerback taper and curved scallop hem.",
     image: "/images/catalog/fitness-wear/burgundy-bodybuilding-y-back-stringer-flatlay.jpg",
-    link: "/contact",
+    link: "/contact-us?category=Fitness%20%26%20Activewear&product=Bodybuilding%20Y-Back%20Stringer%20Tank",
   },
   {
     title: "Men's Compression Baselayer Suit",
     description: "Graduated compression long-sleeve rashguard top and matching compression tights with 4-needle 6-thread ergonomic flatlock seams.",
     image: "/images/catalog/fitness-wear/black-mens-compression-baselayer-set-flatlay.jpg",
-    link: "/contact",
+    link: "/contact-us?category=Fitness%20%26%20Activewear&product=Men's%20Compression%20Baselayer%20Suit",
   },
   {
     title: "Athletic Quarter-Zip Performance Pullover",
     description: "Technical 4-way stretch interlock pullover featuring a stand collar, reverse-coil 1/4 zipper, chin guard and raglan sleeves.",
     image: "/images/catalog/fitness-wear/navy-quarter-zip-training-pullover-flatlay.jpg",
-    link: "/contact",
+    link: "/contact-us?category=Fitness%20%26%20Activewear&product=Athletic%20Quarter-Zip%20Performance%20Pullover",
   },
 ];
 
@@ -263,7 +263,7 @@ export default function FitnessWearManufacturerPage() {
                   <h3>{cat.title}</h3>
                   <p>{cat.description}</p>
                   <Link href={cat.link} className="sw-category-link">
-                    <span>View Products</span>
+                    <span>Get Factory Quote</span>
                     <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
                       <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
                     </svg>
