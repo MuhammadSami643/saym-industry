@@ -36,40 +36,76 @@ export const metadata: Metadata = {
 
 const BOXING_CATEGORIES = [
   {
+    title: "Pro Sparring Boxing Gloves (16 oz)",
+    description: "Handcrafted A-grade cowhide leather with multi-layer IMF shock-absorbing foam, breathable palm vents, and wide Velcro support.",
+    image: "/images/catalog/boxing-gear/pro-cowhide-sparring-boxing-gloves-flatlay.jpg",
+    link: "/contact-us?category=Boxing%20Gloves%20%26%20Fight%20Gear&product=Pro%20Sparring%20Boxing%20Gloves%20(16%20oz)",
+  },
+  {
+    title: "Pro Competition Lace-Up Fight Gloves (10 oz)",
+    description: "Championship 10 oz fight gloves in rich crimson leather with authentic white lace-up closure and streamlined latex-horsehair padding.",
+    image: "/images/catalog/boxing-gear/pro-competition-lace-up-fight-gloves-flatlay.jpg",
+    link: "/contact-us?category=Boxing%20Gloves%20%26%20Fight%20Gear&product=Pro%20Competition%20Lace-Up%20Fight%20Gloves%20(10%20oz)",
+  },
+  {
     title: "Custom Satin Boxing Trunks",
-    description: "Traditional heavy silk-satin trunks with wide 4-inch elastic waistbands, side splits and 3D metallic embroidery.",
-    image: "/images/categories/1776540301_boxing-wear.webp",
-    link: "/products",
+    description: "Heavyweight 220 GSM poly-satin trunks with wide 4-inch multi-channel elastic waistbands, gold side panels, and curved mobility slits.",
+    image: "/images/catalog/boxing-gear/custom-satin-boxing-trunks-flatlay.jpg",
+    link: "/contact-us?category=Boxing%20Gloves%20%26%20Fight%20Gear&product=Custom%20Satin%20Boxing%20Trunks",
   },
   {
-    title: "Fighter Walkout Robes",
-    description: "Full-length hooded or shawl collar walkout robes in satin, velvet or fleece with contrast lapels and custom sponsor logos.",
-    image: "/images/categories/1776540301_boxing-wear.webp",
-    link: "/products",
+    title: "Pro Fighter Walkout Hooded Robe",
+    description: "Full-length championship hooded walkout robes in heavyweight black silk-satin with contrast white shawl lapels and matching tie sash.",
+    image: "/images/catalog/boxing-gear/pro-fighter-walkout-hooded-robe-flatlay.jpg",
+    link: "/contact-us?category=Boxing%20Gloves%20%26%20Fight%20Gear&product=Pro%20Fighter%20Walkout%20Hooded%20Robe",
   },
   {
-    title: "Sublimated BJJ Rash Guards",
-    description: "Heavyweight 220–260 GSM polyester-spandex compression rash guards with 4-way flatlock stretch and Japanese dye-sublimation.",
-    image: "/images/categories/1776540301_boxing-wear.webp",
-    link: "/products",
+    title: "Sublimated BJJ & MMA Rash Guard",
+    description: "Heavyweight 250 GSM 4-way stretch compression rash guards with 4-needle flatlock seams and inner silicone anti-ride hem.",
+    image: "/images/catalog/boxing-gear/sublimated-bjj-mma-rash-guard-flatlay.jpg",
+    link: "/contact-us?category=MMA%2C%20BJJ%20Gis%20%26%20Rashguards&product=Sublimated%20BJJ%20%26%20MMA%20Rash%20Guard",
   },
   {
-    title: "MMA Fight Shorts",
-    description: "Ripstop or microfiber combat shorts with inner drawstring, hook-and-loop fly, lycra crotch flex panel and reinforced high side slits.",
-    image: "/images/categories/1776540301_boxing-wear.webp",
-    link: "/products",
+    title: "Pro MMA Cage Fight Shorts",
+    description: "Tear-resistant microfiber combat shorts with integrated 4-way lycra crotch flex gussets, reinforced side slits, and dual Velcro fly.",
+    image: "/images/catalog/boxing-gear/pro-mma-fight-shorts-flatlay.jpg",
+    link: "/contact-us?category=MMA%2C%20BJJ%20Gis%20%26%20Rashguards&product=Pro%20MMA%20Cage%20Fight%20Shorts",
   },
   {
-    title: "Corner Team Jackets & Tracksuits",
-    description: "Coordinated warmup sets and short-sleeve button-down corner jackets with sponsor embroidery for trainers and cornermen.",
-    image: "/images/categories/1776540301_boxing-wear.webp",
-    link: "/products",
+    title: "Traditional Muay Thai Shorts",
+    description: "Authentic emerald green poly-satin kickboxing shorts with 8-strip ruched elastic waistbands, gold accents, and high curved side cuts.",
+    image: "/images/catalog/boxing-gear/traditional-muay-thai-shorts-flatlay.jpg",
+    link: "/contact-us?category=Boxing%20Gloves%20%26%20Fight%20Gear&product=Traditional%20Muay%20Thai%20Shorts",
   },
   {
-    title: "Boxing Accessories & Corner Towels",
-    description: "100% ring-spun terry cotton corner towels, custom satin hand wrap pouches and embroidered gym gear bags.",
-    image: "/images/categories/1776540301_boxing-wear.webp",
-    link: "/products",
+    title: "Cornerman Coach Button-Up Jacket",
+    description: "Tailored ringside corner jackets in silky white poly-satin with contrast black collar, snap buttons, dual chest pockets, and piping.",
+    image: "/images/catalog/boxing-gear/cornerman-coach-button-jacket-flatlay.jpg",
+    link: "/contact-us?category=Boxing%20Gloves%20%26%20Fight%20Gear&product=Cornerman%20Coach%20Button-Up%20Jacket",
+  },
+  {
+    title: "Full-Protection Leather Headguard",
+    description: "A-grade genuine cowhide leather sparring headgear with sculpted cheek protectors, padded ear crossbars, and top crown lace adjustment.",
+    image: "/images/catalog/boxing-gear/leather-sparring-headguard-flatlay.jpg",
+    link: "/contact-us?category=Boxing%20Gloves%20%26%20Fight%20Gear&product=Full-Protection%20Leather%20Headguard",
+  },
+  {
+    title: "Curved Leather Focus Punch Mitts",
+    description: "Ergonomic curved punch pads with multi-layer high-density shock foam, target center circle, coach palm ball, and wrist wedge.",
+    image: "/images/catalog/boxing-gear/curved-leather-focus-punch-mitts-flatlay.jpg",
+    link: "/contact-us?category=Boxing%20Gloves%20%26%20Fight%20Gear&product=Curved%20Leather%20Focus%20Punch%20Mitts",
+  },
+  {
+    title: "Heavy-Duty Leather Instep Shin Guards",
+    description: "Double-padded shin and instep guards in genuine cowhide leather with dual wide hook-and-loop calf straps and elastic foot stirrups.",
+    image: "/images/catalog/boxing-gear/leather-instep-shin-guards-flatlay.jpg",
+    link: "/contact-us?category=Boxing%20Gloves%20%26%20Fight%20Gear&product=Heavy-Duty%20Leather%20Instep%20Shin%20Guards",
+  },
+  {
+    title: "Heavy Cotton Corner Towels & Handwrap Set",
+    description: "100% ring-spun plush terry cotton corner towels paired with 180-inch semi-elastic Mexican handwraps and breathable gear pouches.",
+    image: "/images/catalog/boxing-gear/corner-towels-handwrap-set-flatlay.jpg",
+    link: "/contact-us?category=Boxing%20Gloves%20%26%20Fight%20Gear&product=Heavy%20Cotton%20Corner%20Towels%20%26%20Handwrap%20Set",
   },
 ];
 
@@ -134,7 +170,7 @@ export default function BoxingWearManufacturerPage() {
                 Bin Rasool Enterprises is an export manufacturer in Sialkot, Pakistan, engineering custom satin boxing trunks, fighter walkout robes, corner team jackets, BJJ rash guards and MMA fight shorts for combat sports promotions, gyms and private label fightwear brands worldwide.
               </p>
               <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '26px' }}>
-                <Link href="/contact" className="btn btn-primary">
+                <Link href="/contact-us" className="btn btn-primary">
                   Request a Fight Gear Quote
                 </Link>
                 <Link href="/products" className="btn btn-outline" style={{ color: '#fff', borderColor: 'rgba(255,255,255,0.3)' }}>
@@ -199,7 +235,7 @@ export default function BoxingWearManufacturerPage() {
                   <h3>{cat.title}</h3>
                   <p>{cat.description}</p>
                   <Link href={cat.link} className="sw-category-link">
-                    <span>View Products</span>
+                    <span>Get Factory Quote</span>
                     <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
                       <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
                     </svg>
@@ -253,7 +289,7 @@ export default function BoxingWearManufacturerPage() {
               Send your design mockups, fight kit requirements or sponsor artwork. Our production team will confirm fabric options, embroidery sizing and provide clear factory quotes within 24 hours.
             </p>
             <div>
-              <Link href="/contact" className="sw-btn-primary" style={{ padding: '16px 36px', fontSize: '16px' }}>
+              <Link href="/contact-us" className="sw-btn-primary" style={{ padding: '16px 36px', fontSize: '16px' }}>
                 Request Fight Gear Quote
               </Link>
             </div>

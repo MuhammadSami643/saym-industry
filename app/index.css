@@ -3441,7 +3441,8 @@ a.trust-card:first-child .muted {
 }
 
 .fitness-wear-page .container,
-.sportswear-page .container {
+.sportswear-page .container,
+.boxing-wear-page .container {
     max-width: 1360px;
     padding-left: 24px;
     padding-right: 24px;

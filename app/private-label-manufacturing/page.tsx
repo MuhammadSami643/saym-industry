@@ -315,7 +315,7 @@ export default function PrivateLabelPage() {
               </Link>
               <Link className="pl-category" href="/boxing-gear-manufacturer-bulk">
                 <div style={{ borderRadius: '8px', overflow: 'hidden', height: '180px', marginBottom: '16px', background: '#f1f5f9' }}>
-                  <img src="/images/catalog/boxing-gear/pro-leather-boxing-gloves.webp" alt="Private Label Boxing Wear" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <img src="/images/catalog/boxing-gear/pro-cowhide-sparring-boxing-gloves-flatlay.jpg" alt="Private Label Boxing Wear" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
                 <h3>Private Label Boxing Wear</h3>
                 <p className="muted">Boxing shorts, rash guards, fight wear, combat sports clothing, training shirts and gym tops for boxing and MMA brands.</p>
